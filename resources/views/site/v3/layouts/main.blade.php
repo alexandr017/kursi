@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>@yield('title', 'kursi.ru')</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="@yield('meta_description', 'kursi.ru')">
+    <link rel="stylesheet" href="/v3/css/style.css">
+</head>
+<body>
+@include('site.v3.modules.1-header.1-header')
+@yield('content')
+@include('site.v3.modules.2-footer.2-footer')
+@yield('additional-scripts')
+</body>
+</html>
