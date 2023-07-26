@@ -229,7 +229,7 @@ class ImportController extends Controller
         $postsIds = $comments->pluck('column.2')->toArray();
         $posts = Post::query()->whereIn('old_id', $postsIds)->get();
 
-       $data =  $comments->map(function ($comment, $key) use ($posts) {
+       $data = $comments->map(function ($comment, $key) use ($posts) {
 
             $item = $comment['column'];
             $post = $posts->where('old_id', $item[2])->first();
@@ -250,7 +250,9 @@ class ImportController extends Controller
                 'content' => $item[12],
                 'old_id' => $item[0],
             ];
-        });
+        })->reject(function ($item) {
+           return !$item;
+       });
 
         $data = $data->transform(function ($item) use ($data) {
             if ($item['parent_id']) {
