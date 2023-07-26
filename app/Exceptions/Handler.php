@@ -3,6 +3,8 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Response;
+use Illuminate\Validation\ValidationException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -26,5 +28,28 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+
+    public function render($request, Throwable $exception)
+    {
+        if ($exception instanceof ValidationException) {
+            $httpCode = Response::HTTP_UNPROCESSABLE_ENTITY;
+            $statusCode = BusinessLogicException::VALIDATION_FAILED;
+            $details['message'] = $exception->getMessage();
+            foreach ($exception->errors() as $key => $error) {
+                $details['errors'][$key] = $error[0] ?? 'Unknown error';
+            }
+
+            $data = [
+                'status'  => $statusCode,
+                'errors' => $details,
+            ];
+
+            return response()->json($data, $httpCode);
+        }
+
+        return parent::render($request, $exception);
+
     }
 }

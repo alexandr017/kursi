@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PostComments\PostComment;
 use Illuminate\Http\Request;
 use App\Models\Posts\Post;
 use App\Models\Posts\PostCategory;
@@ -213,5 +214,56 @@ class ImportController extends Controller
         $xmlObj = simplexml_load_string($xmlStr);
         //$courses = $xmlObj->Каталог->Товары->Товар;
 
+    }
+
+    public function runComments()
+    {
+        $file = storage_path('/import/b_blog_comment.xml');
+        $xmlStr = file_get_contents($file);
+
+        $xmlObj = simplexml_load_string($xmlStr);
+
+        $comments = json_decode(json_encode($xmlObj), true);
+        $comments = collect($comments['database']['table']);
+
+        $postsIds = $comments->pluck('column.2')->toArray();
+        $posts = Post::query()->whereIn('old_id', $postsIds)->get();
+
+       $data = $comments->map(function ($comment, $key) use ($posts) {
+
+            $item = $comment['column'];
+            $post = $posts->where('old_id', $item[2])->first();
+
+            if (is_null($post)) {
+                return false;
+            }
+
+            return [
+                'id' => ++$key,
+                'post_id' => $post->id,
+                'parent_id' => $item[3] == 'NULL'? null :  $item[3],
+                'user_id' => null, // ToDo: Need to implement after users sync;
+                'name' => $item[6] == 'NULL' ? 'Unknown name' :  $item[6],
+                'email' => $item[7] == 'NULL' ? 'Unknown email' :  $item[7],
+                'created_at' => $item[10],
+                'status' => $item[13] == 'P' ? PostComment::STATUS_ACTIVATED: PostComment::STATUS_MODERATION,
+                'content' => $item[12],
+                'old_id' => $item[0],
+            ];
+        })->reject(function ($item) {
+           return !$item;
+       });
+
+        $data = $data->transform(function ($item) use ($data) {
+            if ($item['parent_id']) {
+                $parent = $data->where('old_id', $item['parent_id'])->first();
+                $item['parent_id'] = $parent['id'];
+            }
+
+            return $item;
+        });
+
+
+        PostComment::query()->insert($data->toArray());
     }
 }

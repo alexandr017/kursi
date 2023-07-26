@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.9.7
+- https://www.phpmyadmin.net
+-
+- Host: localhost
+- Generation Time: Jul 25, 2023 at 07:10 PM
+- Server version: 5.7.21-20-beget-5.7.21-20-1-log
+- PHP Version: 5.6.40
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="vitaliyg_kursy" collation="utf8_general_ci" charset="utf8">
+            <pma:table name="b_blog_comment">
+                CREATE TABLE `b_blog_comment` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `BLOG_ID` int(11) NOT NULL,
+                  `POST_ID` int(11) NOT NULL,
+                  `PARENT_ID` int(11) DEFAULT NULL,
+                  `AUTHOR_ID` int(11) DEFAULT NULL,
+                  `ICON_ID` int(11) DEFAULT NULL,
+                  `AUTHOR_NAME` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  `AUTHOR_EMAIL` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  `AUTHOR_IP` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  `AUTHOR_IP1` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  `DATE_CREATE` datetime NOT NULL,
+                  `TITLE` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  `POST_TEXT` text COLLATE utf8mb4_unicode_ci NOT NULL,
+                  `PUBLISH_STATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'P',
+                  `HAS_PROPS` varchar(1) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  `SHARE_DEST` text COLLATE utf8mb4_unicode_ci,
+                  `PATH` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+                  PRIMARY KEY (`ID`),
+                  KEY `IX_BLOG_COMM_1` (`BLOG_ID`,`POST_ID`),
+                  KEY `IX_BLOG_COMM_2` (`AUTHOR_ID`),
+                  KEY `IX_BLOG_COMM_3` (`DATE_CREATE`,`AUTHOR_ID`),
+                  KEY `IX_BLOG_COMM_4` (`POST_ID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'vitaliyg_kursy'
+    -->
+    <database name="vitaliyg_kursy">
+        <!-- Table b_blog_comment -->
+        <table name="b_blog_comment">
+            <column name="ID">32</column>
+            <column name="BLOG_ID">5</column>
+            <column name="POST_ID">364</column>
+            <column name="PARENT_ID">NULL</column>
+            <column name="AUTHOR_ID">3</column>
+            <column name="ICON_ID">NULL</column>
+            <column name="AUTHOR_NAME">NULL</column>
+            <column name="AUTHOR_EMAIL">NULL</column>
+            <column name="AUTHOR_IP">109.111.189.99</column>
+            <column name="AUTHOR_IP1"></column>
+            <column name="DATE_CREATE">2023-01-23 09:14:29</column>
+            <column name="TITLE">NULL</column>
+            <column name="POST_TEXT">Полезный материал. Немного знал, но профессии но эта статья прояснила картину</column>
+            <column name="PUBLISH_STATUS">P</column>
+            <column name="HAS_PROPS">NULL</column>
+            <column name="SHARE_DEST">NULL</column>
+            <column name="PATH">http://kursi.web-kaktus.ru/articles/administrirovanie/kto-takoj-sistemnyj-administrator/?commentId=32#32</column>
+        </table>
+        <table name="b_blog_comment">
+            <column name="ID">33</column>
+            <column name="BLOG_ID">5</column>
+            <column name="POST_ID">221</column>
+            <column name="PARENT_ID">NULL</column>
+            <column name="AUTHOR_ID">4</column>
+            <column name="ICON_ID">NULL</column>
+            <column name="AUTHOR_NAME">NULL</column>
+            <column name="AUTHOR_EMAIL">NULL</column>
+            <column name="AUTHOR_IP">109.111.189.99</column>
+            <column name="AUTHOR_IP1"></column>
+            <column name="DATE_CREATE">2023-01-23 13:27:20</column>
+            <column name="TITLE">NULL</column>
+            <column name="POST_TEXT">Очень хорошо раскрыта тема, информация полезна :like: </column>
+            <column name="PUBLISH_STATUS">P</column>
+            <column name="HAS_PROPS">NULL</column>
+            <column name="SHARE_DEST">NULL</column>
+            <column name="PATH">http://kursi.web-kaktus.ru/articles/dizajn/chto-takoe-zolotoe-sechenie/?commentId=33#33</column>
+        </table>
+        <table name="b_blog_comment">
+            <column name="ID">34</column>
+            <column name="BLOG_ID">5</column>
+            <column name="POST_ID">552</column>
+            <column name="PARENT_ID">NULL</column>
+            <column name="AUTHOR_ID">3</column>
+            <column name="ICON_ID">NULL</column>
+            <column name="AUTHOR_NAME">NULL</column>
+            <column name="AUTHOR_EMAIL">NULL</column>
+            <column name="AUTHOR_IP">185.33.24.202</column>
+            <column name="AUTHOR_IP1"></column>
+            <column name="DATE_CREATE">2023-02-02 11:55:03</column>
+            <column name="TITLE">NULL</column>
+            <column name="POST_TEXT">Круто! Спасибо за информацию!</column>
+            <column name="PUBLISH_STATUS">P</column>
+            <column name="HAS_PROPS">NULL</column>
+            <column name="SHARE_DEST">NULL</column>
+            <column name="PATH">http://kursi.web-kaktus.ru/articles/marketing/chto-takoe-smm-prodvizhenie/?commentId=34#34</column>
+        </table>
+        <table name="b_blog_comment">
+            <column name="ID">35</column>
+            <column name="BLOG_ID">5</column>
+            <column name="POST_ID">554</column>
+            <column name="PARENT_ID">NULL</column>
+            <column name="AUTHOR_ID">NULL</column>
+            <column name="ICON_ID">NULL</column>
+            <column name="AUTHOR_NAME">Михаил</column>
+            <column name="AUTHOR_EMAIL">tylertkollert@gmail.com</column>
+            <column name="AUTHOR_IP">109.111.189.99</column>
+            <column name="AUTHOR_IP1"></column>
+            <column name="DATE_CREATE">2023-02-13 11:46:12</column>
+            <column name="TITLE">NULL</column>
+            <column name="POST_TEXT">Спасибо, полезные материал!</column>
+            <column name="PUBLISH_STATUS">P</column>
+            <column name="HAS_PROPS">NULL</column>
+            <column name="SHARE_DEST">NULL</column>
+            <column name="PATH">http://kursi.web-kaktus.ru/articles/programmirovanie/chto-takoe-bazy-dannyh/?commentId=#comment_id###comment_id#</column>
+        </table>
+        <table name="b_blog_comment">
+            <column name="ID">37</column>
+            <column name="BLOG_ID">5</column>
+            <column name="POST_ID">548</column>
+            <column name="PARENT_ID">NULL</column>
+            <column name="AUTHOR_ID">3</column>
+            <column name="ICON_ID">NULL</column>
+            <column name="AUTHOR_NAME">NULL</column>
+            <column name="AUTHOR_EMAIL">NULL</column>
+            <column name="AUTHOR_IP">109.111.189.99</column>
+            <column name="AUTHOR_IP1"></column>
+            <column name="DATE_CREATE">2023-02-17 12:06:40</column>
+            <column name="TITLE">NULL</column>
+            <column name="POST_TEXT">ТОП</column>
+            <column name="PUBLISH_STATUS">P</column>
+            <column name="HAS_PROPS">NULL</column>
+            <column name="SHARE_DEST">NULL</column>
+            <column name="PATH">http://kursi.web-kaktus.ru/znaniya/programmirovanie/chto-takoe-ip-adres/?commentId=#comment_id###comment_id#</column>
+        </table>
+        <table name="b_blog_comment">
+            <column name="ID">38</column>
+            <column name="BLOG_ID">5</column>
+            <column name="POST_ID">553</column>
+            <column name="PARENT_ID">NULL</column>
+            <column name="AUTHOR_ID">NULL</column>
+            <column name="ICON_ID">NULL</column>
+            <column name="AUTHOR_NAME">Виталий</column>
+            <column name="AUTHOR_EMAIL">vanya2000@gmai.com</column>
+            <column name="AUTHOR_IP">109.111.189.99</column>
+            <column name="AUTHOR_IP1"></column>
+            <column name="DATE_CREATE">2023-03-20 11:04:11</column>
+            <column name="TITLE">NULL</column>
+            <column name="POST_TEXT">Спасибо за информацию!!!</column>
+            <column name="PUBLISH_STATUS">K</column>
+            <column name="HAS_PROPS">NULL</column>
+            <column name="SHARE_DEST">NULL</column>
+            <column name="PATH">https://kursy.ru/znaniya/marketing/chto-takoe-rekomendatelnye-sistemy/?commentId=#comment_id###comment_id#</column>
+        </table>
+        <table name="b_blog_comment">
+            <column name="ID">39</column>
+            <column name="BLOG_ID">5</column>
+            <column name="POST_ID">155</column>
+            <column name="PARENT_ID">NULL</column>
+            <column name="AUTHOR_ID">NULL</column>
+            <column name="ICON_ID">NULL</column>
+            <column name="AUTHOR_NAME">Санатбек</column>
+            <column name="AUTHOR_EMAIL">azimurzaevsanatbek@gmail.com</column>
+            <column name="AUTHOR_IP">31.173.85.169</column>
+            <column name="AUTHOR_IP1"></column>
+            <column name="DATE_CREATE">2023-06-05 16:14:34</column>
+            <column name="TITLE">NULL</column>
+            <column name="POST_TEXT">У меня сегодня начнется онлайн курс на разработчика флаттер и тут нашел очень полезное инфо ,Благодарю вам&lt;br&gt;
+&lt;br&gt;</column>
+            <column name="PUBLISH_STATUS">K</column>
+            <column name="HAS_PROPS">NULL</column>
+            <column name="SHARE_DEST">NULL</column>
+            <column name="PATH">https://kursy.ru/znaniya/programmirovanie/kto-takoj-flutter-razrabotchik/?commentId=#comment_id###comment_id#</column>
+        </table>
+    </database>
+</pma_xml_export>

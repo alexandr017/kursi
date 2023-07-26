@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             PostSeeder::class,
             EmployeesSeeder::class,
             CompaniesSeeder::class,
+            CommentsSeeder::class,
         ]);
     }
 }
