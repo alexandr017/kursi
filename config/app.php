@@ -171,6 +171,7 @@ return [
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        App\Providers\RepositoryServiceProvider::class,
 
     ])->toArray(),
 

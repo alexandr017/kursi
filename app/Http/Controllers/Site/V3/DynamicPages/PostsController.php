@@ -13,7 +13,9 @@ class PostsController extends Controller implements DynamicPagesInterface
     {
         $post = Post::where(['id' => $sectionID, 'status' => 1])
             ->whereNull(['deleted_at'])
-            ->first();
+            ->with(['comments' => function($query) {
+                $query->whereNull(['parent_id'])->with('childes');
+            }])->first();
 
         if ($post == null) {
             abort(4040);
