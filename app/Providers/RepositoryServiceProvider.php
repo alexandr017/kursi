@@ -2,10 +2,8 @@
 
 namespace App\Providers;
 
-use App\Repositories\Read\Comment\CommentReadRepository;
-use App\Repositories\Read\Comment\CommentReadRepositoryInterface;
-use App\Repositories\Write\Comment\CommentWriteRepository;
-use App\Repositories\Write\Comment\CommentWriteRepositoryInterface;
+use App\Repositories\Comments\CommentRepository;
+use App\Repositories\Comments\CommentRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -16,12 +14,8 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(
-            CommentWriteRepositoryInterface::class,
-            CommentWriteRepository::class
-        );
-        $this->app->bind(
-            CommentReadRepositoryInterface::class,
-            CommentReadRepository::class
+            CommentRepositoryInterface::class,
+            CommentRepository::class
         );
     }
 

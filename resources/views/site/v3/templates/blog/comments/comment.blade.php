@@ -96,9 +96,9 @@
                     alert(data.errors.message)
                 }
                 window.location.reload()
-                // console.log('Response:', data);
             })
             .catch(error => {
+                alert('Something went wrong')
                 console.error('Error:', error);
             });
     }

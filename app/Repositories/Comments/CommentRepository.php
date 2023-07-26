@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Repositories\Write\Comment;
+namespace App\Repositories\Comments;
 
 use App\Exceptions\SavingErrorException;
 use App\Models\PostComments\PostComment;
 
-class CommentWriteRepository implements CommentWriteRepositoryInterface
+class CommentRepository implements CommentRepositoryInterface
 {
     public function save(PostComment $comment): bool
     {

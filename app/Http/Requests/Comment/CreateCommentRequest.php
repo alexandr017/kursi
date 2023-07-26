@@ -59,7 +59,7 @@ class CreateCommentRequest extends FormRequest
 
     public function getUserEmail(): string
     {
-        return $this->user()?->email ?? $this->get(self::NAME);
+        return $this->user()?->email ?? $this->get(self::EMAIL);
     }
 
     public function getCommentContent(): string

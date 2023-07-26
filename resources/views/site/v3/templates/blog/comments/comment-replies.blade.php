@@ -172,10 +172,9 @@
                     alert(data.errors.message)
                 }
                 window.location.reload()
-                console.log('Response:', data);
             })
             .catch(error => {
-                alert();
+                alert('Something went wrong');
                 console.error('Error:', error);
             });
     }
