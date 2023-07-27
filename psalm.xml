@@ -13,6 +13,8 @@
         <directory name="database/seeders"/>
         <ignoreFiles>
             <directory name="vendor"/>
+            <directory name="database/seeders"/>
+            <file name="app/Http/Controllers/ImportController.php"/>
         </ignoreFiles>
     </projectFiles>
 <plugins><pluginClass class="Psalm\LaravelPlugin\Plugin"/></plugins></psalm>

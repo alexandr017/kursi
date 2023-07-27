@@ -12,6 +12,10 @@
 @include('site.v3.modules.1-header.1-header')
 @yield('content')
 @include('site.v3.modules.2-footer.2-footer')
+
 @yield('additional-scripts')
+
+@include('site.structured-data')
+@yield('custom-structured data')
 </body>
 </html>

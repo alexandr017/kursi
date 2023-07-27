@@ -2,6 +2,7 @@
 use App\Http\Controllers\Site\V3\Comments\CommentsController;
 
 Route::get('/', [App\Http\Controllers\Site\V3\IndexPage\IndexPageController::class, 'index']);
+Route::get('/about', [App\Http\Controllers\Site\V3\About\AboutPageIndexController::class, 'index']);
 
 Route::get('/znaniya', [App\Http\Controllers\Site\V3\BlogIndexPage\BlogIndexPageController::class, 'index']);
 // about

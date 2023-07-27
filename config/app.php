@@ -172,6 +172,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
+        Webwizo\Shortcodes\ShortcodesServiceProvider::class,
 
     ])->toArray(),
 
@@ -188,6 +189,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'Shortcode'   => Webwizo\Shortcodes\Facades\Shortcode::class,
 
     ])->toArray(),
 

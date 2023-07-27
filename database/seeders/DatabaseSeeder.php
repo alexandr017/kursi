@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             EmployeesSeeder::class,
             CompaniesSeeder::class,
             CommentsSeeder::class,
+            SeoForPageSeeder::class
         ]);
     }
 }
