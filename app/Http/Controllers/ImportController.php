@@ -316,7 +316,7 @@ class ImportController extends Controller
                 'statistics_link' => (string)$cource->ЗначенияСвойств->ЗначенияСвойства[26]->Значение,
                 'affiliate_link' => (string)$cource->ЗначенияСвойств->ЗначенияСвойства[17]->Значение,
                 'direct_link' => (string)$cource->ЗначенияСвойств->ЗначенияСвойства[1]->Значение,
-                'status' => (string)$cource->ЗначенияСвойств->ЗначенияСвойства[1]->Значение == 'true' ? Course::STATUS_ACTIVE : Course::STATUS_INACTIVE,
+                'status' => (string)$cource->ЗначенияСвойств->ЗначенияСвойства[0]->Значение == 'true' ? Course::STATUS_ACTIVE : Course::STATUS_INACTIVE,
                 'duration' => (int)$cource->ЗначенияСвойств->ЗначенияСвойства[18]->Значение ?: 0,
                 'duration_type' => (string)$cource->ЗначенияСвойств->ЗначенияСвойства[19]->Значение,
                 'duration_in_hours' => (int)$cource->ЗначенияСвойств->ЗначенияСвойства[20]->Значение ?: 0,
@@ -330,8 +330,7 @@ class ImportController extends Controller
                 'installment_payment' => (int)$cource->ЗначенияСвойств->ЗначенияСвойства[16]->Значение ?: 0,
                 'currency' => (string)$cource->Цены->Цена?->Валюта ?: 'RUB',
                 'is_cost_by_query' => 0, // ToDo: Need to implement;
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
+                'created_at' => $now,
                 'old_id' => (int)$cource->Ид,
             ];
 
