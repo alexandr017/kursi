@@ -2,16 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Courses\Course;
+use App\Models\Courses\CourseTag;
+use App\Models\Listing\Listing;
+use App\Models\Listing\ListingCourse;
 use App\Models\PostComments\PostComment;
+use App\Models\Tags\Tag;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Posts\Post;
 use App\Models\Posts\PostCategory;
 use App\Models\Urls\Url;
 use App\Models\Team\Employee;
 use App\Models\Companies\Company;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 
 class ImportController extends Controller
 {
+    private Collection $employes;
+    private Collection $listings;
+    private Collection $oldLisingCourses;
+
     public function runBlog()
     {
         //$file = $_SERVER['DOCUMENT_ROOT'] . '/../storage/import/blog.xml';
@@ -206,14 +218,137 @@ class ImportController extends Controller
     }
 
 
+    private function buildListings($value, $parentId = null)
+    {
+        $id  = Str::uuid()->toString();
+
+        $new = [
+            'id' => $id,
+            'name' => (string)$value->Наименование[0],
+            'title' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[3]->Значение,
+            'description' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
+            'author_id' => $this->employes->where('old_id', (int)$value->ЗначенияСвойств->ЗначенияСвойства[4]->Значение)->first()?->id,
+            'content' => (string)$value->Описание,
+            'status' => $value->БитриксАктивность == 'true' ? Listing::STATUS_ACTIVE: Listing::STATUS_INACTIVE,
+            'slug' => (string)$value->БитриксКод,
+            'rating_count' => (int)$value->ЗначенияСвойств->ЗначенияСвойства[7]->Значение,
+            'rating_sum' => (float)$value->ЗначенияСвойств->ЗначенияСвойства[8]->Значение,
+            'rating_value' => (float)$value->ЗначенияСвойств->ЗначенияСвойства[9]->Значение,
+            'meta_title' => (string)$value->НаследуемыеШаблоны->Шаблон[0]->Значение,
+            'meta_description' => (string)($value->НаследуемыеШаблоны->Шаблон[3]->Значение ?? $value->НаследуемыеШаблоны->Шаблон[1]->Значение),
+            'h1' => (string)$value->НаследуемыеШаблоны->Шаблон[2]->Значение,
+            'breadcrumbs' => '', //ToDo: need to implement,
+            'old_id' => (string)$value->Ид,
+            'parent_id' => $parentId,
+            'lead' => 'lead',//ToDo: need to implement
+            'created_at' => Carbon::now(),
+        ];
+
+        $this->listings->push($new);
+
+        foreach ($value->ЗначенияСвойств->ЗначенияСвойства[10]->Значение as $listingCourse) {
+            $newListingCourse = [
+                'course_old_id' => (int)$listingCourse->ID,
+                'course_new_id' => $id,
+                'sort' => (int)$listingCourse->SORT
+            ];
+
+            $this->oldLisingCourses[(string)$value->Ид] = $newListingCourse;
+        }
+
+        if (isset($value->Группы->Группа)) {
+            foreach ($value->Группы->Группа as $newValue) {
+                $this->buildListings($newValue, $id);
+            }
+        }
+    }
     public function runCourses()
     {
-
         $file = storage_path('/import/courses.xml');
         $xmlStr = file_get_contents($file);
         $xmlObj = simplexml_load_string($xmlStr);
-        //$courses = $xmlObj->Каталог->Товары->Товар;
 
+        $now = Carbon::now();
+
+        $this->listings = collect();
+        $this->oldLisingCourses = collect();
+        $this->employes = Employee::query()->get();
+
+        foreach ($xmlObj->Классификатор->Группы->Группа as $value) {
+            $this->buildListings($value);
+        }
+
+        Listing::query()->insert($this->listings->toArray());
+
+        $companies = Company::query()->get();
+
+        $courseTags = collect();
+        $listingsCourses = collect();
+        $courses = collect();
+        $tags = Tag::query()->get();
+
+        foreach ($xmlObj->ПакетПредложений->Предложения->Предложение as $cource) {
+
+            $id = Str::uuid()->toString();
+
+            foreach ((array)$cource->ЗначенияСвойств->ЗначенияСвойства[22]->Значение as $tag) {
+                $courseTags->push([
+                    'tag_id' => $tags->where('old_id', $tag)->first()->id,
+                    'course_id' => $id,
+                    'created_at' => $now,
+                ]);
+            }
+
+            foreach ((array)$cource->Группы->Ид as $listingOldId) {
+                $listingsCourses->push([
+                    'course_id' => $id,
+                    'listing_id' => $this->oldLisingCourses[$listingOldId]['course_new_id'],
+                    'sort' => $this->oldLisingCourses[$listingOldId]['sort'],
+                    'created_at' => $now,
+                ]);
+            }
+
+            $newCourse = [
+                'id' => $id,
+                'title' => (string)$cource->Наименование,
+                'company_id' => $companies->where('old_id', (int)$cource->ЗначенияСвойств->ЗначенияСвойства[11]->Значение)->first()?->id,
+                'external_id' => (int)$cource->ЗначенияСвойств->ЗначенияСвойства[12]->Значение ?: null,
+                'statistics_link' => (string)$cource->ЗначенияСвойств->ЗначенияСвойства[26]->Значение,
+                'affiliate_link' => (string)$cource->ЗначенияСвойств->ЗначенияСвойства[17]->Значение,
+                'direct_link' => (string)$cource->ЗначенияСвойств->ЗначенияСвойства[1]->Значение,
+                'status' => (string)$cource->ЗначенияСвойств->ЗначенияСвойства[1]->Значение == 'true' ? Course::STATUS_ACTIVE : Course::STATUS_INACTIVE,
+                'duration' => (int)$cource->ЗначенияСвойств->ЗначенияСвойства[18]->Значение ?: 0,
+                'duration_type' => (string)$cource->ЗначенияСвойств->ЗначенияСвойства[19]->Значение,
+                'duration_in_hours' => (int)$cource->ЗначенияСвойств->ЗначенияСвойства[20]->Значение ?: 0,
+                'reviews_count' =>  0, // Everywhere it is 0
+                'cost' => ((int)$cource->ЗначенияСвойств->ЗначенияСвойства[13]->Значение && (int)$cource->ЗначенияСвойств->ЗначенияСвойства[15]->Значение)
+                    ? (int)$cource->ЗначенияСвойств->ЗначенияСвойства[13]->Значение * 100 / (int)$cource->ЗначенияСвойств->ЗначенияСвойства[15]->Значение
+                    : ((int)$cource->ЗначенияСвойств->ЗначенияСвойства[13]->Значение ?: 0),
+                'sale_cost' => (int)$cource->ЗначенияСвойств->ЗначенияСвойства[13]->Значение ?: 0,
+                'sale_value' => (int)$cource->ЗначенияСвойств->ЗначенияСвойства[15]->Значение ?: 0,
+                'installment_period' => (int)$cource->ЗначенияСвойств->ЗначенияСвойства[14]->Значение ?: 0,
+                'installment_payment' => (int)$cource->ЗначенияСвойств->ЗначенияСвойства[16]->Значение ?: 0,
+                'currency' => (string)$cource->Цены->Цена?->Валюта ?: 'RUB',
+                'is_cost_by_query' => 0, // ToDo: Need to implement;
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'old_id' => (int)$cource->Ид,
+            ];
+
+            $courses->push($newCourse);
+        }
+
+        $courses->chunk(500)->each(function ($items) {
+            Course::query()->insert($items->toArray());
+        });
+
+        $courseTags->chunk(500)->each(function ($items) {
+            CourseTag::query()->insert($items->toArray());
+        });
+
+        $listingsCourses->chunk(500)->each(function ($items) {
+            ListingCourse::query()->insert($items->toArray());
+        });
     }
 
     public function runComments()
@@ -265,5 +400,75 @@ class ImportController extends Controller
 
 
         PostComment::query()->insert($data->toArray());
+    }
+
+    public function runTags(): void
+    {
+        $now = Carbon::now();
+
+        $tags = [
+          [
+              'old_id' => 1,
+              'name' => 'Чат',
+              'created_at' => $now
+          ],
+          [
+              'old_id' => 2,
+              'name' => 'Помощь с трудоустройством',
+              'created_at' => $now
+          ],
+          [
+              'old_id' => 3,
+              'name' => 'Сертификат',
+              'created_at' => $now
+          ],
+          [
+              'old_id' => 4,
+              'name' => 'Рассрочка',
+              'created_at' => $now
+          ],
+          [
+              'old_id' => 5,
+              'name' => 'Продвинутым',
+              'created_at' => $now
+          ],
+          [
+              'old_id' => 6,
+              'name' => 'Пробный период',
+              'created_at' => $now
+          ],
+          [
+              'old_id' => 7,
+              'name' => 'Новичкам',
+              'created_at' => $now
+          ],
+          [
+              'old_id' => 8,
+              'name' => 'Наставник',
+              'created_at' => $now
+          ],
+          [
+              'old_id' => 9,
+              'name' => 'Тарифы',
+              'created_at' => $now
+          ],
+          [
+              'old_id' => 10,
+              'name' => 'Для детей',
+              'created_at' => $now
+          ],
+          [
+              'old_id' => 11,
+              'name' => 'Гарантия трудоустройства',
+              'created_at' => $now
+          ],
+          [
+              'old_id' => 12,
+              'name' => 'Очно',
+              'created_at' => $now
+          ],
+        ];
+
+        Tag::query()->insert($tags);
     }
 }
