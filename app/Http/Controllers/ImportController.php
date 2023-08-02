@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Companies\SchoolReview;
 use App\Models\Courses\Course;
 use App\Models\Courses\CourseTag;
 use App\Models\Listing\Listing;
@@ -17,6 +18,7 @@ use App\Models\Team\Employee;
 use App\Models\Companies\Company;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Throwable;
 
 class ImportController extends Controller
 {
@@ -469,5 +471,100 @@ class ImportController extends Controller
         ];
 
         Tag::query()->insert($tags);
+    }
+
+    public function runSchoolsReviews()
+    {
+        $csvFilePath = storage_path('/import/schools_reviewes.csv');
+        $csvData = file_get_contents($csvFilePath);
+        $rows = explode("\n", $csvData);
+        $reviewSchools = collect();
+
+        foreach ($rows as $row) {
+            $rowData = str_getcsv($row, ';', '"');
+            if (count($rowData) < 19) {
+                continue;
+            }
+
+            $reviewSchools->push([
+                'review_id' => $rowData[0],
+                'school_id' => $rowData[15],
+            ]);
+        }
+
+        $file = storage_path('/import/schools_reviewes.xml');
+        $xmlStr = file_get_contents($file);
+        $xmlObj = simplexml_load_string($xmlStr);
+
+        $schools = Company::query()->get();
+
+        $reviews = collect();
+        foreach ($xmlObj->Каталог->Товары->Товар as $review) {
+            $new = [
+                'title' => (string)$review->Наименование,
+                'old_id' => (int)$review->Ид,
+                'status' => (string)$review->ЗначенияСвойств->ЗначенияСвойства[0]->Значение == 'true' ? 1 : 0,
+                'character_code' => (string)$review->ЗначенияСвойств->ЗначенияСвойства[1]->Значение ?: null,
+                'sort' => (int)$review->ЗначенияСвойств->ЗначенияСвойства[2]->Значение,
+                'pluses' => (string)$review->ЗначенияСвойств->ЗначенияСвойства[8]->Значение,
+                'minuses' => (string)$review->ЗначенияСвойств->ЗначенияСвойства[9]->Значение,
+                'content' => (string)$review->ЗначенияСвойств->ЗначенияСвойства[10]->Значение,
+                'rating' => (float)$review->ЗначенияСвойств->ЗначенияСвойства[11]->Значение,
+                'author_name' => (string)$review->ЗначенияСвойств->ЗначенияСвойства[12]->Значение,
+                'code' => (int)$review->ЗначенияСвойств->ЗначенияСвойства[13]->Значение ?: null,
+                'created_at' => (string)$review->ЗначенияСвойств->ЗначенияСвойства[15]->Значение ?
+                    Carbon::parse((string)$review->ЗначенияСвойств->ЗначенияСвойства[15]->Значение)
+                    : null,
+            ];
+
+            $schoolOldId = $reviewSchools->where('review_id', $new['old_id'])->first()['school_id'];
+            $school = $schools->where('old_id', $schoolOldId)->first();
+
+            if (is_null($school)) {
+                continue;
+            }
+
+            $new['school_id'] = $school->id;
+
+            try {
+                $new['content'] = unserialize($new['content']['TEXT']);
+            } catch (Throwable) {
+                try {
+                    $new['content'] = $this->clearReviews($new['content']);
+                } catch (Throwable) {
+                    continue;
+                }
+            }
+
+            $new['minuses'] = $this->clearReviews($new['minuses']);
+            $new['pluses'] = $this->clearReviews($new['pluses']);
+
+            $reviews->push($new);
+        }
+
+        $reviews->chunk(500)->each(function ($items) {
+            SchoolReview::query()->insert($items->toArray());
+        });
+    }
+
+    private function clearReviews(string $text)
+    {
+        preg_match('/"TEXT";s:(\d+):"([^"]+)"/', $text, $matches);
+
+        if (count($matches) === 3) {
+            $text = html_entity_decode($matches[2]);
+
+            if (preg_match('/<[^>]*>/', $text) === 1) {
+                $cleanedString = str_replace(["\n", "\t"], '', $text);
+            } else {
+                $cleanedString = $text;
+            }
+        } elseif (empty($matches)) {
+            return null;
+        } else {
+            $cleanedString = $text;
+        }
+
+        return $cleanedString;
     }
 }
