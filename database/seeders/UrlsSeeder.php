@@ -12,9 +12,6 @@ class UrlsSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('urls')->insert([
-            ['url' => 'test/page','section_type' => 1, 'section_id' => 11],
-        ]);
 
     }
 }

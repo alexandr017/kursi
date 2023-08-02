@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('breadcrumbs');
             $table->text('content');
             $table->unsignedTinyInteger('status');
-            $table->decimal('rating_value', 3, 2);
-            $table->unsignedInteger('rating_count');
+            $table->decimal('rating_value', 3, 2)->nullable();
+            $table->unsignedInteger('rating_count')->nullable();
             $table->softDeletes();
             $table->unsignedInteger('old_id')->nullable();
         });

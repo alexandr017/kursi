@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
             TagsSeeder::class,
             CoursesSeeder::class,
             SchoolsReviewsSeeder::class,
+            PageSeeder::class,
         ]);
     }
 }

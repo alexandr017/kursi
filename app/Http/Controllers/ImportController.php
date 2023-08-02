@@ -10,14 +10,12 @@ use App\Models\Listing\ListingCourse;
 use App\Models\PostComments\PostComment;
 use App\Models\Tags\Tag;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use App\Models\Posts\Post;
 use App\Models\Posts\PostCategory;
 use App\Models\Urls\Url;
 use App\Models\Team\Employee;
 use App\Models\Companies\Company;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Str;
 use Throwable;
 
 class ImportController extends Controller
@@ -25,6 +23,8 @@ class ImportController extends Controller
     private Collection $employes;
     private Collection $listings;
     private Collection $oldLisingCourses;
+
+    const SECTION_LISTING_TYPE_ID = 6;
 
     public function runBlog()
     {
@@ -40,71 +40,71 @@ class ImportController extends Controller
 
         //DB::transaction(function() use($fileTable, $SKIP_ROWS, $TAKE_ROWS) {
 
-            $categories = $xmlObj->Классификатор->Группы->Группа;
-            foreach ($categories as $item) {
+        $categories = $xmlObj->Классификатор->Группы->Группа;
+        foreach ($categories as $item) {
 
-                $data = [
-                    'title' => (string) $item->НаследуемыеШаблоны->Шаблон[0]->Значение,
-                    'meta_description' => (string) $item->НаследуемыеШаблоны->Шаблон[1]->Значение,
-                    'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
-                    'breadcrumbs' => '', // todo
-                    'content' => (string) $item->Описание,
-                    'status' => 1,
-                    'old_id' => (int) $item->Ид
-                ];
+            $data = [
+                'title' => (string) $item->НаследуемыеШаблоны->Шаблон[0]->Значение,
+                'meta_description' => (string) $item->НаследуемыеШаблоны->Шаблон[1]->Значение,
+                'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
+                'breadcrumbs' => '', // todo
+                'content' => (string) $item->Описание,
+                'status' => 1,
+                'old_id' => (int) $item->Ид
+            ];
 
-                $category = new PostCategory($data);
-                $category->save();
+            $category = new PostCategory($data);
+            $category->save();
 
-                $alias = 'znaniya/' . (string) $item->БитриксКод;
+            $alias = 'znaniya/' . (string) $item->БитриксКод;
 
-                $oldCategoryIdToNewID[(int) $item->Ид] = ['id' => $category->id, 'alias' => $alias];
-
-
-                $url = new Url([
-                    'url' => $alias,
-                    'section_type' => SECTION_POST_CATEGORY_TYPE_ID,
-                    'section_id' => $category->id
-                ]);
-                $url->save();
-
-            }
+            $oldCategoryIdToNewID[(int) $item->Ид] = ['id' => $category->id, 'alias' => $alias];
 
 
-            $posts = $xmlObj->Каталог->Товары->Товар;
-            foreach ($posts as $item) {
+            $url = new Url([
+                'url' => $alias,
+                'section_type' => SECTION_POST_CATEGORY_TYPE_ID,
+                'section_id' => $category->id
+            ]);
+            $url->save();
 
-                $data = [
-                    'category_id' => $oldCategoryIdToNewID[(int) $item->Группы->Ид]['id'],
-                    'title' => (string) $item->НаследуемыеШаблоны->Шаблон[0]->Значение,
-                    'meta_description' => (string) $item->НаследуемыеШаблоны->Шаблон[1]->Значение,
-                    'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
-                    'breadcrumbs' => '', // todo
-                    'preview' => $item->Картинка, // todo копировать
-                    'lead' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
-                    'content' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[6]->Значение,
-                    'author_id' => 1, // todo
-                    'status' => 1, // todo
-                    'rating_value' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[11]->Значение,
-                    'rating_count' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[10]->Значение,
-                    'old_id' => (string) $item->Ид
-                    // todo дата создания и публикаци
-                ];
-
-                $post = new Post($data);
-                $post->save();
-
-                $alias = $oldCategoryIdToNewID[(int) $item->Группы->Ид]['alias'] . '/' . (string) $item->ЗначенияСвойств->ЗначенияСвойства[1]->Значение;
-
-                $url = new Url([
-                    'url' => $alias,
-                    'section_type' => SECTION_POST_TYPE_ID,
-                    'section_id' => $post->id
-                ]);
-                $url->save();
+        }
 
 
-            }
+        $posts = $xmlObj->Каталог->Товары->Товар;
+        foreach ($posts as $item) {
+
+            $data = [
+                'category_id' => $oldCategoryIdToNewID[(int) $item->Группы->Ид]['id'],
+                'title' => (string) $item->НаследуемыеШаблоны->Шаблон[0]->Значение,
+                'meta_description' => (string) $item->НаследуемыеШаблоны->Шаблон[1]->Значение,
+                'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
+                'breadcrumbs' => '', // todo
+                'preview' => $item->Картинка, // todo копировать
+                'lead' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
+                'content' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[6]->Значение,
+                'author_id' => 1, // todo
+                'status' => 1, // todo
+                'rating_value' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[11]->Значение,
+                'rating_count' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[10]->Значение,
+                'old_id' => (string) $item->Ид
+                // todo дата создания и публикаци
+            ];
+
+            $post = new Post($data);
+            $post->save();
+
+            $alias = $oldCategoryIdToNewID[(int) $item->Группы->Ид]['alias'] . '/' . (string) $item->ЗначенияСвойств->ЗначенияСвойства[1]->Значение;
+
+            $url = new Url([
+                'url' => $alias,
+                'section_type' => SECTION_POST_TYPE_ID,
+                'section_id' => $post->id
+            ]);
+            $url->save();
+
+
+        }
 
         //});
     }
@@ -220,12 +220,9 @@ class ImportController extends Controller
     }
 
 
-    private function buildListings($value, $parentId = null)
+    private function buildListings($value, $parentId = null, $alias = null)
     {
-        $id  = Str::uuid()->toString();
-
         $new = [
-            'id' => $id,
             'name' => (string)$value->Наименование[0],
             'title' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[3]->Значение,
             'description' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
@@ -246,12 +243,22 @@ class ImportController extends Controller
             'created_at' => Carbon::now(),
         ];
 
-        $this->listings->push($new);
+        $listing = new Listing($new);
+        $listing->save();
+
+        $alias = is_null($alias) ? $listing->slug : $alias . '/'. $listing->slug;
+
+        $url = new Url([
+            'url' => $alias,
+            'section_type' => self::SECTION_LISTING_TYPE_ID,
+            'section_id' => $listing->id
+        ]);
+        $url->save();
 
         foreach ($value->ЗначенияСвойств->ЗначенияСвойства[10]->Значение as $listingCourse) {
             $newListingCourse = [
                 'course_old_id' => (int)$listingCourse->ID,
-                'course_new_id' => $id,
+                'course_new_id' => $listing->id,
                 'sort' => (int)$listingCourse->SORT
             ];
 
@@ -260,7 +267,7 @@ class ImportController extends Controller
 
         if (isset($value->Группы->Группа)) {
             foreach ($value->Группы->Группа as $newValue) {
-                $this->buildListings($newValue, $id);
+                $this->buildListings($newValue, $listing->id, $alias);
             }
         }
     }
@@ -280,38 +287,15 @@ class ImportController extends Controller
             $this->buildListings($value);
         }
 
-        Listing::query()->insert($this->listings->toArray());
-
         $companies = Company::query()->get();
 
         $courseTags = collect();
         $listingsCourses = collect();
-        $courses = collect();
         $tags = Tag::query()->get();
 
         foreach ($xmlObj->ПакетПредложений->Предложения->Предложение as $cource) {
 
-            $id = Str::uuid()->toString();
-
-            foreach ((array)$cource->ЗначенияСвойств->ЗначенияСвойства[22]->Значение as $tag) {
-                $courseTags->push([
-                    'tag_id' => $tags->where('old_id', $tag)->first()->id,
-                    'course_id' => $id,
-                    'created_at' => $now,
-                ]);
-            }
-
-            foreach ((array)$cource->Группы->Ид as $listingOldId) {
-                $listingsCourses->push([
-                    'course_id' => $id,
-                    'listing_id' => $this->oldLisingCourses[$listingOldId]['course_new_id'],
-                    'sort' => $this->oldLisingCourses[$listingOldId]['sort'],
-                    'created_at' => $now,
-                ]);
-            }
-
             $newCourse = [
-                'id' => $id,
                 'title' => (string)$cource->Наименование,
                 'company_id' => $companies->where('old_id', (int)$cource->ЗначенияСвойств->ЗначенияСвойства[11]->Значение)->first()?->id,
                 'external_id' => (int)$cource->ЗначенияСвойств->ЗначенияСвойства[12]->Значение ?: null,
@@ -336,12 +320,24 @@ class ImportController extends Controller
                 'old_id' => (int)$cource->Ид,
             ];
 
-            $courses->push($newCourse);
-        }
+            $course = new Course($newCourse);
+            $course->save();
 
-        $courses->chunk(500)->each(function ($items) {
-            Course::query()->insert($items->toArray());
-        });
+            foreach ((array)$cource->ЗначенияСвойств->ЗначенияСвойства[22]->Значение as $tag) {
+                $courseTags->push([
+                    'tag_id' => $tags->where('old_id', $tag)->first()->id,
+                    'course_id' => $course->id,
+                ]);
+            }
+
+            foreach ((array)$cource->Группы->Ид as $listingOldId) {
+                $listingsCourses->push([
+                    'course_id' => $course->id,
+                    'listing_id' => $this->oldLisingCourses[$listingOldId]['course_new_id'],
+                    'sort' => $this->oldLisingCourses[$listingOldId]['sort'],
+                ]);
+            }
+        }
 
         $courseTags->chunk(500)->each(function ($items) {
             CourseTag::query()->insert($items->toArray());
@@ -365,7 +361,7 @@ class ImportController extends Controller
         $postsIds = $comments->pluck('column.2')->toArray();
         $posts = Post::query()->whereIn('old_id', $postsIds)->get();
 
-       $data = $comments->map(function ($comment, $key) use ($posts) {
+        $data = $comments->map(function ($comment, $key) use ($posts) {
 
             $item = $comment['column'];
             $post = $posts->where('old_id', $item[2])->first();
@@ -387,8 +383,8 @@ class ImportController extends Controller
                 'old_id' => $item[0],
             ];
         })->reject(function ($item) {
-           return !$item;
-       });
+            return !$item;
+        });
 
         $data = $data->transform(function ($item) use ($data) {
             if ($item['parent_id']) {
@@ -408,66 +404,66 @@ class ImportController extends Controller
         $now = Carbon::now();
 
         $tags = [
-          [
-              'old_id' => 1,
-              'name' => 'Чат',
-              'created_at' => $now
-          ],
-          [
-              'old_id' => 2,
-              'name' => 'Помощь с трудоустройством',
-              'created_at' => $now
-          ],
-          [
-              'old_id' => 3,
-              'name' => 'Сертификат',
-              'created_at' => $now
-          ],
-          [
-              'old_id' => 4,
-              'name' => 'Рассрочка',
-              'created_at' => $now
-          ],
-          [
-              'old_id' => 5,
-              'name' => 'Продвинутым',
-              'created_at' => $now
-          ],
-          [
-              'old_id' => 6,
-              'name' => 'Пробный период',
-              'created_at' => $now
-          ],
-          [
-              'old_id' => 7,
-              'name' => 'Новичкам',
-              'created_at' => $now
-          ],
-          [
-              'old_id' => 8,
-              'name' => 'Наставник',
-              'created_at' => $now
-          ],
-          [
-              'old_id' => 9,
-              'name' => 'Тарифы',
-              'created_at' => $now
-          ],
-          [
-              'old_id' => 10,
-              'name' => 'Для детей',
-              'created_at' => $now
-          ],
-          [
-              'old_id' => 11,
-              'name' => 'Гарантия трудоустройства',
-              'created_at' => $now
-          ],
-          [
-              'old_id' => 12,
-              'name' => 'Очно',
-              'created_at' => $now
-          ],
+            [
+                'old_id' => 1,
+                'name' => 'Чат',
+                'created_at' => $now
+            ],
+            [
+                'old_id' => 2,
+                'name' => 'Помощь с трудоустройством',
+                'created_at' => $now
+            ],
+            [
+                'old_id' => 3,
+                'name' => 'Сертификат',
+                'created_at' => $now
+            ],
+            [
+                'old_id' => 4,
+                'name' => 'Рассрочка',
+                'created_at' => $now
+            ],
+            [
+                'old_id' => 5,
+                'name' => 'Продвинутым',
+                'created_at' => $now
+            ],
+            [
+                'old_id' => 6,
+                'name' => 'Пробный период',
+                'created_at' => $now
+            ],
+            [
+                'old_id' => 7,
+                'name' => 'Новичкам',
+                'created_at' => $now
+            ],
+            [
+                'old_id' => 8,
+                'name' => 'Наставник',
+                'created_at' => $now
+            ],
+            [
+                'old_id' => 9,
+                'name' => 'Тарифы',
+                'created_at' => $now
+            ],
+            [
+                'old_id' => 10,
+                'name' => 'Для детей',
+                'created_at' => $now
+            ],
+            [
+                'old_id' => 11,
+                'name' => 'Гарантия трудоустройства',
+                'created_at' => $now
+            ],
+            [
+                'old_id' => 12,
+                'name' => 'Очно',
+                'created_at' => $now
+            ],
         ];
 
         Tag::query()->insert($tags);
