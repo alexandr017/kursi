@@ -9,20 +9,20 @@ use App\Models\Listing\ListingCourse;
 use App\Models\PostComments\PostComment;
 use App\Models\Tags\Tag;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use App\Models\Posts\Post;
 use App\Models\Posts\PostCategory;
 use App\Models\Urls\Url;
 use App\Models\Team\Employee;
 use App\Models\Companies\Company;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Str;
 
 class ImportController extends Controller
 {
     private Collection $employes;
     private Collection $listings;
     private Collection $oldLisingCourses;
+
+    const SECTION_LISTING_TYPE_ID = 6;
 
     public function runBlog()
     {
@@ -218,12 +218,9 @@ class ImportController extends Controller
     }
 
 
-    private function buildListings($value, $parentId = null)
+    private function buildListings($value, $parentId = null, $alias = null)
     {
-        $id  = Str::uuid()->toString();
-
         $new = [
-            'id' => $id,
             'name' => (string)$value->Наименование[0],
             'title' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[3]->Значение,
             'description' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
@@ -244,12 +241,22 @@ class ImportController extends Controller
             'created_at' => Carbon::now(),
         ];
 
-        $this->listings->push($new);
+        $listing = new Listing($new);
+        $listing->save();
+
+        $alias = is_null($alias) ? $listing->slug : $alias . '/'. $listing->slug;
+
+        $url = new Url([
+            'url' => $alias,
+            'section_type' => self::SECTION_LISTING_TYPE_ID,
+            'section_id' => $listing->id
+        ]);
+        $url->save();
 
         foreach ($value->ЗначенияСвойств->ЗначенияСвойства[10]->Значение as $listingCourse) {
             $newListingCourse = [
                 'course_old_id' => (int)$listingCourse->ID,
-                'course_new_id' => $id,
+                'course_new_id' => $listing->id,
                 'sort' => (int)$listingCourse->SORT
             ];
 
@@ -258,7 +265,7 @@ class ImportController extends Controller
 
         if (isset($value->Группы->Группа)) {
             foreach ($value->Группы->Группа as $newValue) {
-                $this->buildListings($newValue, $id);
+                $this->buildListings($newValue, $listing->id, $alias);
             }
         }
     }
@@ -278,38 +285,15 @@ class ImportController extends Controller
             $this->buildListings($value);
         }
 
-        Listing::query()->insert($this->listings->toArray());
-
         $companies = Company::query()->get();
 
         $courseTags = collect();
         $listingsCourses = collect();
-        $courses = collect();
         $tags = Tag::query()->get();
 
         foreach ($xmlObj->ПакетПредложений->Предложения->Предложение as $cource) {
 
-            $id = Str::uuid()->toString();
-
-            foreach ((array)$cource->ЗначенияСвойств->ЗначенияСвойства[22]->Значение as $tag) {
-                $courseTags->push([
-                    'tag_id' => $tags->where('old_id', $tag)->first()->id,
-                    'course_id' => $id,
-                    'created_at' => $now,
-                ]);
-            }
-
-            foreach ((array)$cource->Группы->Ид as $listingOldId) {
-                $listingsCourses->push([
-                    'course_id' => $id,
-                    'listing_id' => $this->oldLisingCourses[$listingOldId]['course_new_id'],
-                    'sort' => $this->oldLisingCourses[$listingOldId]['sort'],
-                    'created_at' => $now,
-                ]);
-            }
-
             $newCourse = [
-                'id' => $id,
                 'title' => (string)$cource->Наименование,
                 'company_id' => $companies->where('old_id', (int)$cource->ЗначенияСвойств->ЗначенияСвойства[11]->Значение)->first()?->id,
                 'external_id' => (int)$cource->ЗначенияСвойств->ЗначенияСвойства[12]->Значение ?: null,
@@ -334,12 +318,24 @@ class ImportController extends Controller
                 'old_id' => (int)$cource->Ид,
             ];
 
-            $courses->push($newCourse);
-        }
+            $course = new Course($newCourse);
+            $course->save();
 
-        $courses->chunk(500)->each(function ($items) {
-            Course::query()->insert($items->toArray());
-        });
+            foreach ((array)$cource->ЗначенияСвойств->ЗначенияСвойства[22]->Значение as $tag) {
+                $courseTags->push([
+                    'tag_id' => $tags->where('old_id', $tag)->first()->id,
+                    'course_id' => $course->id,
+                ]);
+            }
+
+            foreach ((array)$cource->Группы->Ид as $listingOldId) {
+                $listingsCourses->push([
+                    'course_id' => $course->id,
+                    'listing_id' => $this->oldLisingCourses[$listingOldId]['course_new_id'],
+                    'sort' => $this->oldLisingCourses[$listingOldId]['sort'],
+                ]);
+            }
+        }
 
         $courseTags->chunk(500)->each(function ($items) {
             CourseTag::query()->insert($items->toArray());
