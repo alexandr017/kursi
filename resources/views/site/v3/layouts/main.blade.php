@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="@yield('meta_description', 'kursi.ru')">
     <link rel="stylesheet" href="/v3/css/style.css">
+    @yield('style')
 </head>
 <body>
 @include('site.v3.modules.1-header.1-header')
@@ -16,6 +17,6 @@
 @yield('additional-scripts')
 
 @include('site.structured-data')
-@yield('custom-structured data')
+@yield('custom-structured-data')
 </body>
 </html>

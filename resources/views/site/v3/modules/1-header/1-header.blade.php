@@ -2,13 +2,13 @@
     <div class="top-cont">
         <div class="top max-width">
             <a href="/" class="logo">
-                <img src="https://kursy.ru/local/templates/kursi/img/logo.svg" alt="Курсы.ру">                  </a>
+                <img src="/v3/images/logo.svg" alt="Курсы.ру">                  </a>
             <div class="header_right_side-modile_open" onclick="showMobileMenu()">
-                <img src="/local/templates/kursi/img/burger.svg" alt="Открыть меню" title="Открыть меню">
+                <img src="/v3/images/logo.svg" alt="Открыть меню" title="Открыть меню">
             </div>
             <div class="header_right_side " id="header-menu-cont">
                 <a href="/" class="mobile-logo">
-                    <img src="/local/templates/kursi/img/logo.svg" alt="Курсы.ру" title="Курсы.ру">
+                    <img src="/v3/images/logo.svg" alt="Курсы.ру" title="Курсы.ру">
                 </a>
                 <div class="menu">
 
@@ -26,7 +26,7 @@
                                 <div class="ul_cont">
                                     <div class="ul second_lvl">
                                         <div class="header_top_menu-mobile_back_btn" onclick="hideSect.bind(this)(event)">
-                                            <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад"> Назад
+                                            <img src="/v3/images/arrow.svg" alt="Назад" title="Назад"> Назад
                                         </div>
 
 
@@ -38,14 +38,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/122/cd9banmy67jqcbsy282exzkuhqcxtovz/administration_01.svg" class="section_img black_img" alt="Администрирование" title="Администрирование">
                                                 <img src="/upload/uf/399/l9c4iyk0df229osw159xx1hdxdn3ep2v/administration_02.svg" class="section_img blue_img" alt="Администрирование" title="Администрирование">
                                                 <img src="/upload/uf/62b/7vhor9l71z31r6dzrio5eyteatn4n6j3/administration_03.svg" class="section_img grey_img" alt="Администрирование" title="Администрирование">
 
                                                 <a href="/administrirovanie/">
-                                                    Администрирование															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Администрирование															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -175,14 +175,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/40e/21ryzwk6kngz8p3r3afkn3p4z1o37pb3/analytics_01.svg" class="section_img black_img" alt="Аналитика" title="Аналитика">
                                                 <img src="/upload/uf/75b/50lrfgdun3hrc7f7jt8512md34g495p0/analytics_02.svg" class="section_img blue_img" alt="Аналитика" title="Аналитика">
                                                 <img src="/upload/uf/35d/lxyt5y4to1aenjflgdru2vomklqp0aje/analytics_03.svg" class="section_img grey_img" alt="Аналитика" title="Аналитика">
 
                                                 <a href="/analitika/">
-                                                    Аналитика															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Аналитика															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -513,14 +513,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/f99/cym071jgfc8jo78ta1q87i9m538dx5oa/design_01.svg" class="section_img black_img" alt="Дизайн" title="Дизайн">
                                                 <img src="/upload/uf/e31/m0j0si595ny9fygnua520k6x6wudy047/design_02.svg" class="section_img blue_img" alt="Дизайн" title="Дизайн">
                                                 <img src="/upload/uf/80d/g84bujufpy3vflukxvvx289sxm6lwddq/design_03.svg" class="section_img grey_img" alt="Дизайн" title="Дизайн">
 
                                                 <a href="/dizajn/">
-                                                    Дизайн															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Дизайн															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -1264,14 +1264,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/2c9/viu2g5t5adp4zeqng8prol7st8urmcym/dlya_detej.svg" class="section_img black_img" alt="Для детей" title="Для детей">
                                                 <img src="/upload/uf/76f/6v624tqyer711m7ssm0zz1ebwii3y1kn/dlya_detej_2_.svg" class="section_img blue_img" alt="Для детей" title="Для детей">
                                                 <img src="/upload/uf/344/siuofq66sqs0lqwmqan7fpzw4iglg1of/dlya_detej_3_.svg" class="section_img grey_img" alt="Для детей" title="Для детей">
 
                                                 <a href="/dlya-detej/">
-                                                    Для детей															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Для детей															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -3009,14 +3009,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/b26/kgaed9kbfr9poug9em4wtjaoit1bung9/foreign_languages_01.svg" class="section_img black_img" alt="Иностранные языки" title="Иностранные языки">
                                                 <img src="/upload/uf/f06/s1pxxlfrsl8j06ximblkm9l1jh04dxrv/foreign_languages_02.svg" class="section_img blue_img" alt="Иностранные языки" title="Иностранные языки">
                                                 <img src="/upload/uf/67b/yxzk9ppp15idlmbruid85c854ufss754/foreign_languages_03.svg" class="section_img grey_img" alt="Иностранные языки" title="Иностранные языки">
 
                                                 <a href="/inostrannye-yazyki/">
-                                                    Иностранные языки															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Иностранные языки															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -3537,14 +3537,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/666/o5gijusonw88yvz16k7tn0ml4fr312gl/the_beauty_and_health01.svg" class="section_img black_img" alt="Красота и здоровье" title="Красота и здоровье">
                                                 <img src="/upload/uf/d17/kj80bdkp207shujys9zijba1aawhwwix/the_beauty_and_health_02.svg" class="section_img blue_img" alt="Красота и здоровье" title="Красота и здоровье">
                                                 <img src="/upload/uf/ef8/59lg9cvo9kwapwyripmm538nl8afksoh/the_beauty_and_health_03.svg" class="section_img grey_img" alt="Красота и здоровье" title="Красота и здоровье">
 
                                                 <a href="/krasota-i-zdorove/">
-                                                    Красота и здоровье															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Красота и здоровье															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -3897,14 +3897,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/ab7/r56bef1a6og3frxltbl8v6d0z6rsxro2/marketing_01.svg" class="section_img black_img" alt="Маркетинг" title="Маркетинг">
                                                 <img src="/upload/uf/30b/p7mfjw22q6t58c4kax9dslm6n1l5xf5e/marketing_02.svg" class="section_img blue_img" alt="Маркетинг" title="Маркетинг">
                                                 <img src="/upload/uf/5db/bmk1e7wnmxv98c2fhd46cdq7c8ue5qpu/marketing_03.svg" class="section_img grey_img" alt="Маркетинг" title="Маркетинг">
 
                                                 <a href="/marketing/">
-                                                    Маркетинг															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Маркетинг															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -4369,14 +4369,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/cf7/7ynjdx6gx2an70uis5smsmhaxcwqj8p5/business_and_management_01.svg" class="section_img black_img" alt="Менеджмент" title="Менеджмент">
                                                 <img src="/upload/uf/9fd/xkqxuq5k8rz9wk06iek8ked2k863zq2y/business_and_management_02.svg" class="section_img blue_img" alt="Менеджмент" title="Менеджмент">
                                                 <img src="/upload/uf/eb7/a6fy1omwed68pr4xorllzlba4l1hf6aj/business_and_management_03.svg" class="section_img grey_img" alt="Менеджмент" title="Менеджмент">
 
                                                 <a href="/menedzhment/">
-                                                    Менеджмент															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Менеджмент															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -5131,14 +5131,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/097/60a4lbws5kmzkrwuhw7tujlcnbvjhvng/Applied_programs_01.svg" class="section_img black_img" alt="Прикладные программы" title="Прикладные программы">
                                                 <img src="/upload/uf/102/exgt0m8zpckycm894e7t0wce7rzgaixs/Applied_programs_02.svg" class="section_img blue_img" alt="Прикладные программы" title="Прикладные программы">
                                                 <img src="/upload/uf/5e0/37a3cchji5ad136jcpixnqev4w2s0mgm/Applied_programs_03.svg" class="section_img grey_img" alt="Прикладные программы" title="Прикладные программы">
 
                                                 <a href="/prikladnye-programmy/">
-                                                    Прикладные программы															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Прикладные программы															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -5223,14 +5223,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/6e7/55cqqn15qhfwn82bgln41imnectgl85n/programming_01.svg" class="section_img black_img" alt="Программирование" title="Программирование">
                                                 <img src="/upload/uf/297/ufd2w54skoz51n8izztxqfh13iea5cvq/programming_02.svg" class="section_img blue_img" alt="Программирование" title="Программирование">
                                                 <img src="/upload/uf/8d3/s1inxmefqwcbwtatbmxc4zszusb9u55l/programming_03.svg" class="section_img grey_img" alt="Программирование" title="Программирование">
 
                                                 <a href="/programmirovanie/">
-                                                    Программирование															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Программирование															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -6129,14 +6129,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/6b7/5wefjgq3su3aithnwko9xxku5077ybtp/Needlework_01.svg" class="section_img black_img" alt="Рукоделие" title="Рукоделие">
                                                 <img src="/upload/uf/c46/vxsdgovtietqh2j622wpcnutfgrwt86b/Needlework_02.svg" class="section_img blue_img" alt="Рукоделие" title="Рукоделие">
                                                 <img src="/upload/uf/76a/orwag2d74cz8bvupu57cafoq221ojfas/Needlework_03.svg" class="section_img grey_img" alt="Рукоделие" title="Рукоделие">
 
                                                 <a href="/rukodelie/">
-                                                    Рукоделие															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Рукоделие															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -6277,14 +6277,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/2de/rb46pbm7f5izax6odjs5hkmg9mmmy1gd/Self_development_01.svg" class="section_img black_img" alt="Саморазвитие" title="Саморазвитие">
                                                 <img src="/upload/uf/c8d/i91vsq1tzo1t9gud3ycm0j6sf0hqy5of/Self_development_02.svg" class="section_img blue_img" alt="Саморазвитие" title="Саморазвитие">
                                                 <img src="/upload/uf/7cd/ejt4kn32r5dqcltrt8v3maqrypp5vtmi/Self_development_03.svg" class="section_img grey_img" alt="Саморазвитие" title="Саморазвитие">
 
                                                 <a href="/samorazvitie/">
-                                                    Саморазвитие															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Саморазвитие															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -6570,14 +6570,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/99c/3pvinu2llzem8ogbevf3w1tlohdbarjc/sport_01.svg" class="section_img black_img" alt="Спорт" title="Спорт">
                                                 <img src="/upload/uf/3d0/m3iqmegewt1k82ss8xgwxdag304n1bzz/sport_02.svg" class="section_img blue_img" alt="Спорт" title="Спорт">
                                                 <img src="/upload/uf/afe/s130iuc69wh73cu25342g8szldq31dol/sport_03.svg" class="section_img grey_img" alt="Спорт" title="Спорт">
 
                                                 <a href="/sport/">
-                                                    Спорт															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Спорт															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -6718,14 +6718,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/9c1/q036ykjljbc1uyzxxu1eo70cq0473arz/Creation_and_content_01.svg" class="section_img black_img" alt="Творчество и контент" title="Творчество и контент">
                                                 <img src="/upload/uf/ac9/74ttigssdier3watk2ixq9ita7p075jc/Creation_and_content_02.svg" class="section_img blue_img" alt="Творчество и контент" title="Творчество и контент">
                                                 <img src="/upload/uf/5fa/comqqx2lc9acttheph80jj7oi3t784f7/Creation_and_content_03.svg" class="section_img grey_img" alt="Творчество и контент" title="Творчество и контент">
 
                                                 <a href="/tvorchestvo-i-kontent/">
-                                                    Творчество и контент															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Творчество и контент															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -7268,14 +7268,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/4ea/21w140ui5o79mqm18f76pkynuv11miww/finance_01.svg" class="section_img black_img" alt="Финансы" title="Финансы">
                                                 <img src="/upload/uf/005/o0peluowlaez8kpsvulf1c2o40ic75wa/finance_02.svg" class="section_img blue_img" alt="Финансы" title="Финансы">
                                                 <img src="/upload/uf/4ad/ra35iwph3rysbpg0ou0j1rj2yuspks6q/finance_03.svg" class="section_img grey_img" alt="Финансы" title="Финансы">
 
                                                 <a href="/finansy/">
-                                                    Финансы															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Финансы															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>
@@ -7472,14 +7472,14 @@
                                             <div class="header_top_menu-text" onclick="return false;">
 
                                                 <div class="header_top_menu-mobile_subback_btn">
-                                                    <img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад">
+                                                    <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                                 </div>
                                                 <img src="/upload/uf/190/e1ca74h7ldyf7qkvw3z5759gdjcusk1x/another_01.svg" class="section_img black_img" alt="Другое" title="Другое">
                                                 <img src="/upload/uf/8c6/g76sgrt8a6pt90ow0nft2hpd1k1w06ob/another_02.svg" class="section_img blue_img" alt="Другое" title="Другое">
                                                 <img src="/upload/uf/8a5/zirdwfgruo7cw6ohrooax01nyu6tgudq/another_03.svg" class="section_img grey_img" alt="Другое" title="Другое">
 
                                                 <a href="/drugoe/">
-                                                    Другое															<img src="/local/templates/kursi/components/bitrix/menu/header_top/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
+                                                    Другое															<img src="/v3/images/arrow.svg" alt="Назад" title="Назад" class="mobile_next_btn">
                                                 </a>
 
                                             </div>

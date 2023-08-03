@@ -3,9 +3,12 @@
 @section ('og_title', Shortcode::compile($page->h1))
 @section ('meta_description', Shortcode::compile($page->meta_description))
 
-@section('content')
-    <?php // todo : подключение стилей link переделать ?>
+@section('style')
     <link rel="stylesheet" href="https://kursy.ru/bitrix/cache/css/s1/kursi/page_328ba2dd40407034f13ea925e72c4d30/page_328ba2dd40407034f13ea925e72c4d30_v1.css?168473026413467">
+
+@endsection
+
+@section('content')
 
     <div class="content max-width">
         @include('site.v3.modules.51-our-dashboard.51-our-dashboard', compact('countSchools', 'coursesCount', 'employeesCount', 'reviewsCount'))
@@ -31,7 +34,7 @@
     @parent
 @endsection
 
-@section('custom-structured data')
+@section('custom-structured-data')
     @parent
     @foreach($team as $employee)
         <script type="application/ld+json">
