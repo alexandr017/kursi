@@ -4,7 +4,7 @@
         <div class="about_smi-item_cont swiper-slide swiper-slide-active" role="group" aria-label="1 / 2">
             <div class="about_smi-smi_cont">
                 <div class="about_smi-smi_logo">
-                    <img src="/upload/uf/8e3/63mcygbn0r414mubxmrfsgv3l10o5hpl/logo-3V-NEWS.png.webp" alt="">
+                    <img src="/images/smi-about-us/logo-v3-news.webp" alt="3Dnews.ru">
                 </div>
                 <div class="about_smi-smi_text">3Dnews.ru</div>
             </div>
@@ -16,7 +16,7 @@
         <div class="about_smi-item_cont swiper-slide swiper-slide-next" role="group" aria-label="2 / 2">
             <div class="about_smi-smi_cont">
                 <div class="about_smi-smi_logo">
-                    <img src="/upload/uf/997/z2h9cwrpabeoqly8koi6h9x76gewzuo5/Group-1.png.webp" alt="">
+                    <img src="/images/smi-about-us/group-1.webp" alt="Nevnov.ru">
                 </div>
                 <div class="about_smi-smi_text">Nevnov.ru</div>
             </div>

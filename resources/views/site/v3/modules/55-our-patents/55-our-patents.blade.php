@@ -2,10 +2,10 @@
 <div class="about_pattents-cont swiper_styles-slider swiper-initialized swiper-horizontal swiper-backface-hidden">
     <div class="about_pattents-items swiper-wrapper swiper_styles-wrapper" id="swiper-wrapper-f2e3ff3fbf7ca565" aria-live="polite">
         <div class="about_pattents-item_cont swiper-slide swiper-slide-active" role="group" aria-label="1 / 2">
-            <img src="/upload/uf/4ee/xxon0en1p9g80msh82irte2av7xvp0eu/BD-Kursy_1-1.png" alt="Фотография патента">
+            <img src="/images/pattents/db-kursy-1-1.png" alt="Фотография патента">
         </div>
         <div class="about_pattents-item_cont swiper-slide swiper-slide-next" role="group" aria-label="2 / 2">
-            <img src="/upload/uf/f70/46juk6fqj86dopz5c2l1xebbivnhazhn/EVM-Kursy_1-1.png" alt="Фотография патента">
+            <img src="/images/pattents/evm-kursy-1-1.png" alt="Фотография патента">
         </div>
     </div>
     <div class="swiper_styles-pagination_cont">

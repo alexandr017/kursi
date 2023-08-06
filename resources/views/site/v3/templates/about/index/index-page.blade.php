@@ -4,8 +4,10 @@
 @section ('meta_description', Shortcode::compile($page->meta_description))
 
 @section('style')
+    <link href='//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://kursy.ru/bitrix/cache/css/s1/kursi/page_328ba2dd40407034f13ea925e72c4d30/page_328ba2dd40407034f13ea925e72c4d30_v1.css?168473026413467">
-
+    <link rel="stylesheet" href="https://kursy.ru/bitrix/cache/css/s1/kursi/page_b7bca44da3fe7b3c467673a661dbdc20/page_b7bca44da3fe7b3c467673a661dbdc20_v1.css?169053611013467">
 @endsection
 
 @section('content')

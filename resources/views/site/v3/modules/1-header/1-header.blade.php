@@ -7725,7 +7725,7 @@
                 </div>
                 <div class="open_search">
 
-                    <img src="/local/templates/kursi/img/search.svg" alt="Поиск по сайту" title="Поиск по сайту" onclick="showSearchPopup()" class="search_page-open_btn">
+                    <img src="/v3/images/header/search.svg" alt="Поиск по сайту" title="Поиск по сайту" onclick="showSearchPopup()" class="search_page-open_btn">
 
 
 

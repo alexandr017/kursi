@@ -8,7 +8,7 @@
         @foreach($team as $employee)
             <div class="swiper-slide @if($i == 1) swiper-slide-active @else swiper-slide-next @endif" role="group" aria-label="{{$i}} / {{$team->count()}}">
                 <div class="person-item">
-                    <img class="person_picture" border="0" src="/upload/iblock/fda/g4am3tgg6dbupmf57nhbzlxr1xek271w/DSCF6082-1-_1_.webp" alt="Нестеренко Иван" title="Иван Нестеренко" loading="lazy">
+                    <img class="person_picture" src="{{$employee->photo}}" alt="{{$employee->name}}" title="{{$employee->name}}" loading="lazy">
                     <div class="person_info">
                         <div class="person_name">{{$employee->name}}</div>
                         <div class="person_post">{{$employee->job}}</div>

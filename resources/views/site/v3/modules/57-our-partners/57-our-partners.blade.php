@@ -2,23 +2,23 @@
 <div class="about_partners-cont swiper_styles-slider swiper-initialized swiper-horizontal swiper-backface-hidden">
     <div class="about_partners-items swiper-wrapper swiper_styles-wrapper" id="swiper-wrapper-5ec025a551083b847" aria-live="polite">
         <a class="about_partners-item_cont swiper-slide swiper-slide-active" href="https://go.redav.online/15b67c6f26f30c50" rel="nofollow" role="group" aria-label="1 / 4">
-            <img class="about_partners-hover_img" src="/upload/uf/147/frrk6k5iotvhuxcb1qm30ivxoakze8m6/skillbox.png" alt="Skillbox" title="Skillbox">
-            <img class="about_partners-main_img" src="/upload/uf/28e/44cwf6xbm12u3vnjctu0y42dp1ewopd2/skillbox.png" alt="Skillbox" title="Skillbox">
+            <img class="about_partners-hover_img" src="/images/partners/about/skillbox.png" alt="Skillbox" title="Skillbox">
+            <img class="about_partners-main_img" src="/images/partners/about/skillbox.png" alt="Skillbox" title="Skillbox">
             <p>Skillbox</p>
         </a>
         <a class="about_partners-item_cont swiper-slide swiper-slide-next" href="https://go.redav.online/8421614e5dedbf40" rel="nofollow" role="group" aria-label="2 / 4">
-            <img class="about_partners-hover_img" src="/upload/uf/c9e/shesi1wq8o57llfkkij1afrpt6kvtnpa/Netolog.png" alt="Нетология" title="Нетология">
-            <img class="about_partners-main_img" src="/upload/uf/c9e/shesi1wq8o57llfkkij1afrpt6kvtnpa/Netolog.png" alt="Нетология" title="Нетология">
+            <img class="about_partners-hover_img" src="/images/partners/about/netolog.png" alt="Нетология" title="Нетология">
+            <img class="about_partners-main_img" src="/images/partners/about/netolog.png" alt="Нетология" title="Нетология">
             <p>Нетология</p>
         </a>
         <a class="about_partners-item_cont swiper-slide" href="https://go.redav.online/e65e54dde4fdaa00" rel="nofollow" role="group" aria-label="3 / 4">
-            <img class="about_partners-hover_img" src="/upload/uf/f38/ufdvydxx40g1u9mxihshtpvqefp8ru6d/geek.png" alt="Geekbrains" title="Geekbrains">
-            <img class="about_partners-main_img" src="/upload/uf/f38/ufdvydxx40g1u9mxihshtpvqefp8ru6d/geek.png" alt="Geekbrains" title="Geekbrains">
+            <img class="about_partners-hover_img" src="/images/partners/about/geek.png" alt="Geekbrains" title="Geekbrains">
+            <img class="about_partners-main_img" src="/images/partners/about/geek.png" alt="Geekbrains" title="Geekbrains">
             <p>Geekbrains</p>
         </a>
         <a class="about_partners-item_cont swiper-slide" href="https://go.redav.online/01fab8829e577290" rel="nofollow" role="group" aria-label="4 / 4">
-            <img class="about_partners-hover_img" src="/upload/uf/95d/49e3vq9votdzmym6svw0j1aon1sr0oqg/skyeng.png" alt="Skyeng" title="Skyeng">
-            <img class="about_partners-main_img" src="/upload/uf/95d/49e3vq9votdzmym6svw0j1aon1sr0oqg/skyeng.png" alt="Skyeng" title="Skyeng">
+            <img class="about_partners-hover_img" src="/images/partners/about/skyeng.png" alt="Skyeng" title="Skyeng">
+            <img class="about_partners-main_img" src="/images/partners/about/skyeng.png" alt="Skyeng" title="Skyeng">
             <p>Skyeng</p>
         </a>
     </div>

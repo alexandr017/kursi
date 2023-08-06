@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site\V3\DynamicPages;
 
 use App\Http\Controllers\Controller;
+use App\Services\Breadcrumbs\BreadcrumbsRender;
 use Illuminate\Http\Request;
 use App\Models\Team\Employee;
 
@@ -19,6 +20,8 @@ class EmployeeController extends Controller implements DynamicPagesInterface
             abort('404');
         }
 
-        return view('site.v3.templates.about.team.employee', compact('employee'));
+        $breadcrumbs = BreadcrumbsRender::get($employee->breadcrumb, $employee->h1);
+
+        return view('site.v3.templates.about.team.employee', compact('employee', 'breadcrumbs'));
     }
 }

@@ -129,11 +129,11 @@ class ImportController extends Controller
 
             $data = [
                 'name' => (string) $item->Наименование,
-                'photo' => '', // todo
+                'photo' => '/images/employees/' . \Str::slug((string) $item->Наименование) . '.webp',
                 'title' => (string) $item->НаследуемыеШаблоны->Шаблон[0]->Значение,
                 'meta_description' => (string) $item->НаследуемыеШаблоны->Шаблон[1]->Значение,
                 'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
-                'breadcrumbs' => '', // todo
+                'breadcrumbs' => 'Сотрудники@about\r\n' . (string) $item->Наименование,
                 'lead' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
                 'content' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[6]->Значение,
                 'old_id' => (int) $item->Ид,
@@ -160,6 +160,7 @@ class ImportController extends Controller
             ]);
             $url->save();
         }
+
 
     }
 

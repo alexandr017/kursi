@@ -2,7 +2,7 @@
     <div class="footer_content max-width">
         <div class="footer-company_info_block">
             <div class="logo">
-                <img src="https://kursy.ru/local/templates/kursi/img/logo_bottom_long.svg" alt="Логотип Курсы.ру">          </div>
+                <img src="/v3/images/logo-bottom-long.svg" alt="Логотип Курсы.ру">          </div>
             <div class="phone">
                 <a href="tel:+7 (804) 700-20-77">+7 (804) 700-20-77</a>
             </div>
@@ -68,20 +68,20 @@
             <div class="social_links-list">
                 <p class="news-item" id="bx_3218110189_7">
                     <a href="https://www.youtube.com/@kursyrueng" rel="nofollow">
-                        <img class="white_icon" src="/upload/iblock/87f/38d9bfl0167g8s1owqnnrq5tndkijfxd.svg" alt="YT" title="YT">
-                        <img class="blue_icon" src="/upload/iblock/0b3/2tf77wdz945c30zclvsq19mmp5oxraf3/youtube.svg" alt="YT" title="YT">
+                        <img class="white_icon" src="/v3/images/footer/youtube-white.svg" alt="YT" title="YT">
+                        <img class="blue_icon" src="/v3/images/footer/youtube-black.svg" alt="YT" title="YT">
                     </a>
                 </p>
                 <p class="news-item" id="bx_3218110189_6">
                     <a href="https://vk.com/kursyru" rel="nofollow">
-                        <img class="white_icon" src="/upload/iblock/7e9/9pfu0jrw1xh8hz2c2pmw90budipy92zq.svg" alt="VK" title="VK">
-                        <img class="blue_icon" src="/upload/iblock/47b/dscfr7tqpanaykci6apo8mwglny0w3pj/vk.svg" alt="VK" title="VK">
+                        <img class="white_icon" src="/v3/images/footer/vk-white.svg" alt="VK" title="VK">
+                        <img class="blue_icon" src="/v3/images/footer/vk-black.svg" alt="VK" title="VK">
                     </a>
                 </p>
                 <p class="news-item" id="bx_3218110189_4">
                     <a href=" https://t.me/kursy_education" rel="nofollow">
-                        <img class="white_icon" src="/upload/iblock/611/apa9x9bkhb3k1ih03jf83335cekwp7rw.svg" alt="Telegram" title="Telegram">
-                        <img class="blue_icon" src="/upload/iblock/133/6kgc9qtuq0mpy2hla5ea9r3q3t718jkl/tg.svg" alt="Telegram" title="Telegram">
+                        <img class="white_icon" src="/v3/images/footer/tg-white.svg" alt="Telegram" title="Telegram">
+                        <img class="blue_icon" src="/v3/images/footer/tg-black.svg" alt="Telegram" title="Telegram">
                     </a>
                 </p>
             </div>
