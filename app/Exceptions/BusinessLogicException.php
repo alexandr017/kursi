@@ -8,6 +8,7 @@ abstract class BusinessLogicException extends Exception
 {
     const VALIDATION_FAILED = 600;
     const SAVING_ERROR = 601;
+    const LISTING_NOT_FOUND = 602;
 
     abstract public function getStatus(): int;
     abstract public function getStatusMessage(): string;
