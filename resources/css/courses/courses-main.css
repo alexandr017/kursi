@@ -119,6 +119,10 @@ p.school_minicard-reviews_text {
     text-decoration: none;
 }
 
+.product-sort-btn img {
+    margin-left: 5px;
+}
+
 .tagpage-ajax_container {
     position: relative;
 }
@@ -350,6 +354,7 @@ img {
     display: flex;
     font-size: 18px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .product-sort-btn.active {

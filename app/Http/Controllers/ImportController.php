@@ -16,6 +16,8 @@ use App\Models\Urls\Url;
 use App\Models\Team\Employee;
 use App\Models\Companies\Company;
 use Illuminate\Support\Collection;
+use Str;
+use Symfony\Component\DomCrawler\Crawler;
 use Throwable;
 
 class ImportController extends Controller
@@ -73,6 +75,26 @@ class ImportController extends Controller
 
         $posts = $xmlObj->Каталог->Товары->Товар;
         foreach ($posts as $item) {
+            $content = (string) $item->ЗначенияСвойств->ЗначенияСвойства[6]->Значение;
+            $new  = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $content);
+
+            $crawler = new Crawler();
+            $crawler->addHtmlContent($new);
+
+            $imgElements = $crawler->filter('img')->extract(['src']);
+
+            foreach ($imgElements as $imgElement) {
+                $newSrc = '/images/posts/others/' . basename($imgElement);
+
+                if (empty($imgElement)) {
+                    continue;
+                }
+
+
+//                copy(substr($imgElement, 1), 'public' . $newSrc);
+
+                $content = str_replace($imgElement, $newSrc, $content);
+            }
 
             $data = [
                 'category_id' => $oldCategoryIdToNewID[(int) $item->Группы->Ид]['id'],
@@ -80,9 +102,9 @@ class ImportController extends Controller
                 'meta_description' => (string) $item->НаследуемыеШаблоны->Шаблон[1]->Значение,
                 'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
                 'breadcrumbs' => '', // todo
-                'preview' => $item->Картинка, // todo копировать
+                'preview' => '/images/posts/previews/' . Str::slug((string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение) . '.webp',
                 'lead' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
-                'content' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[6]->Значение,
+                'content' => (string) $content,
                 'author_id' => 1, // todo
                 'status' => 1, // todo
                 'rating_value' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[11]->Значение,
@@ -90,6 +112,9 @@ class ImportController extends Controller
                 'old_id' => (string) $item->Ид
                 // todo дата создания и публикаци
             ];
+
+//            $oldPath = str_replace( 'res_files', 'upload', (string)$item->Картинка);
+//            copy($oldPath, 'public' . $data['preview']);
 
             $post = new Post($data);
             $post->save();
@@ -194,7 +219,7 @@ class ImportController extends Controller
                 'sort_order' => (int) $item->ЗначенияСвойств->ЗначенияСвойства[2]->Значение,
                 'lead' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
                 'content' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[6]->Значение,
-                'logo' => '', // todo
+                'logo' => '/images/companies/' . Str::slug((string)$item->Наименование) . '.webp',
                 'link' => (int)  $item->ЗначенияСвойств->ЗначенияСвойства[15]->Значение,
                 'email' => $email,
                 'hotline' => $phone, // todo ЗначенияСвойства номер 16
@@ -205,6 +230,18 @@ class ImportController extends Controller
 
 
             ];
+
+//            Я уже запустил и сохранил картинки. Это будем использовать только тогда, когда у нас будет новый xml file для импорта.
+//            Нам нужно будет из  указанной директории очистить старые данные и запустить seeder для сохранения новых данных
+//
+//            try {
+//                $oldPath   = 'upload/' . (string)$item->ЗначенияСвойств->ЗначенияСвойства[12]->Значение;
+//                $newPath =  $data['logo'];
+//                copy($oldPath, 'public' . $newPath);
+//            } catch (Throwable $exception) {
+//                $data['photo'] = null;
+//            }
+
 
             $company = new Company($data);
             $company->save();
@@ -225,6 +262,7 @@ class ImportController extends Controller
     {
         $new = [
             'name' => (string)$value->Наименование[0],
+            'photo' => '/images/listings/' . Str::slug((string)$value->ЗначенияСвойств->ЗначенияСвойства[3]->Значение) . '.webp',
             'title' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[3]->Значение,
             'description' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
             'author_id' => $this->employes->where('old_id', (int)$value->ЗначенияСвойств->ЗначенияСвойства[4]->Значение)->first()?->id,
@@ -243,6 +281,18 @@ class ImportController extends Controller
             'lead' => 'lead',//ToDo: need to implement
             'created_at' => Carbon::now(),
         ];
+
+//      Я уже запустил и сохранил картинки. Это будем использовать только тогда, когда у нас будет новый xml file для импорта.
+//      Нам нужно будет из  указанной директории очистить старые данные и запустить seeder для сохранения новых данных
+//
+//        try {
+//            $oldPath   = 'upload/' . (string)$value->БитриксКартинкаДетальная;
+//            $newPath =  $new['photo'];
+//            copy($oldPath, 'public' . $newPath);
+//        } catch (Throwable $exception) {
+//            $new['photo'] = null;
+//        }
+
 
         $listing = new Listing($new);
         $listing->save();
@@ -408,61 +458,73 @@ class ImportController extends Controller
             [
                 'old_id' => 1,
                 'name' => 'Чат',
+                'image' => '/images/tags/chat.svg',
                 'created_at' => $now
             ],
             [
                 'old_id' => 2,
                 'name' => 'Помощь с трудоустройством',
+                'image' => '/images/tags/pomosch_v_trudoustroystve.svg',
                 'created_at' => $now
             ],
             [
                 'old_id' => 3,
                 'name' => 'Сертификат',
+                'image' => '/images/tags/sertifikat.svg',
                 'created_at' => $now
             ],
             [
                 'old_id' => 4,
                 'name' => 'Рассрочка',
+                'image' => '/images/tags/rassrochka.svg',
                 'created_at' => $now
             ],
             [
                 'old_id' => 5,
                 'name' => 'Продвинутым',
+                'image' => '/images/tags/prodvinutym.svg',
                 'created_at' => $now
             ],
             [
                 'old_id' => 6,
                 'name' => 'Пробный период',
+                'image' => '/images/tags/probnyy_period.svg',
                 'created_at' => $now
             ],
             [
                 'old_id' => 7,
                 'name' => 'Новичкам',
+                'image' => '/images/tags/novichok.svg',
                 'created_at' => $now
             ],
             [
                 'old_id' => 8,
                 'name' => 'Наставник',
+                'image' => '/images/tags/nastavnik.svg',
                 'created_at' => $now
             ],
             [
                 'old_id' => 9,
                 'name' => 'Тарифы',
+                'image' => '/images/tags/tarify.svg',
                 'created_at' => $now
             ],
             [
                 'old_id' => 10,
                 'name' => 'Для детей',
+                'image' => '/images/tags/dlya_detej.svg',
                 'created_at' => $now
             ],
             [
                 'old_id' => 11,
                 'name' => 'Гарантия трудоустройства',
+                'image' => '/images/tags/garantiya_trudoustrojstva.svg',
                 'created_at' => $now
             ],
             [
                 'old_id' => 12,
                 'name' => 'Очно',
+                'image' => '/images/tags/ochno.svg',
                 'created_at' => $now
             ],
         ];

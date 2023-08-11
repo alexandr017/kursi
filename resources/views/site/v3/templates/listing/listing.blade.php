@@ -15,16 +15,16 @@
             </div>
 
             <div class="tagpage_head-img">
-                <img src="https://kursy.ru/upload/iblock/ee7/2xmtipetlh10bsmeos236hl1jtnvmo1o/mfso.webp"
+                <img src="{{$listing->photo}}"
                      alt="{{$listing->title}}">
             </div>
         </div>
 
-        @include('site.v3.modules.courses.courses-main', ['courses' => $listing->courses, 'tags' => $tags, 'listingId' => $listing->id])
+        @include('site.v3.modules.courses.courses-main', ['courses' => $listing->courses, 'tags' => $listing->tags, 'listingId' => $listing->id])
 
-        <div class="mobile_mascot">
-            <img src="/upload/iblock/ee7/2xmtipetlh10bsmeos236hl1jtnvmo1o/mfso.webp" alt="">
-        </div>
+{{--        <div class="mobile_mascot">--}}
+{{--            <img src="{{$listing->photo}}" alt="">--}}
+{{--        </div>--}}
         {{--tagpage-ajax_container Component--}}
 
 

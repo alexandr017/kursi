@@ -3,26 +3,26 @@
         <div class="product-sort-cont">
             <button class="product-sort-btn" data-sort-order=""  data-sort-value="reviews_count" onclick="sortPanelAjax(event, {{$listingId}})">
                 Количество отзывов
-{{--                <img src="/resources/assets/images/arrow_up_blue.svg" alt="Фильтрация по возрастанию" title="Фильтрация по возрастанию">--}}
+                <img src="/images/sort-panel/arrow_up_black.svg" alt="Фильтрация по возрастанию" title="Фильтрация по возрастанию">
             </button>
 
             <button class="product-sort-btn" data-sort-order="" data-sort-value="school_reviews_avg_rating" onclick="sortPanelAjax(event, {{$listingId}})">
                 Рейтинг
-                {{--                            <img src="/local/templates/kursi/components/codeblogpro/sort.panel/.default/img/arrow_up_black.svg" alt="Фильтрация по возрастанию" title="Фильтрация по возрастанию">--}}
+                <img src="/images/sort-panel/arrow_up_black.svg" alt="Фильтрация по возрастанию" title="Фильтрация по возрастанию">
             </button>
 
             <button class="product-sort-btn" data-sort-order="" data-sort-value="sale_cost" onclick="sortPanelAjax(event, {{$listingId}})">
                 Цена
-                {{--                            <img src="/local/templates/kursi/components/codeblogpro/sort.panel/.default/img/arrow_up_black.svg" alt="Фильтрация по возрастанию" title="Фильтрация по возрастанию">--}}
+                <img src="/images/sort-panel/arrow_up_black.svg" alt="Фильтрация по возрастанию" title="Фильтрация по возрастанию">
             </button>
             <button class="product-sort-btn" data-sort-order="" data-sort-value="installment_period" onclick="sortPanelAjax(event, {{$listingId}})">
                 Платёж по рассрочке
-                {{--                            <img src="/local/templates/kursi/components/codeblogpro/sort.panel/.default/img/arrow_up_black.svg" alt="Фильтрация по возрастанию" title="Фильтрация по возрастанию">--}}
+                <img src="/images/sort-panel/arrow_up_black.svg" alt="Фильтрация по возрастанию" title="Фильтрация по возрастанию">
             </button>
 
             <button class="product-sort-btn" data-sort-order="" data-sort-value="duration_in_hours" onclick="sortPanelAjax(event, {{$listingId}})">
                 Длительность в часах
-                {{--                            <img src="/local/templates/kursi/components/codeblogpro/sort.panel/.default/img/arrow_up_black.svg" alt="Фильтрация по возрастанию" title="Фильтрация по возрастанию">--}}
+                <img src="/images/sort-panel/arrow_up_black.svg" alt="Фильтрация по возрастанию" title="Фильтрация по возрастанию">
             </button>
         </div>
 
@@ -48,7 +48,7 @@
                                         onchange="handleTagFilter({{$tag->id}})"
                                 >
                                 <label for="SF_PROPERTY_40_{{$tag->id}}">
-                                    <img src="https://kursy.ru/upload/uf/c49/kh3bj5seiklathxhsiw8u7mmgsrfa6jw/ochno.svg" alt="Очно" title="Очно">
+                                    <img src="{{$tag->image}}" alt="Очно" title="Очно">
                                     <p>{{$tag->name}}</p>
                                 </label>
                             </div>
@@ -65,7 +65,7 @@
 
     @include('site.v3.modules.courses.courses', ['courses' => $courses])
 
-    <div class="product-items-more-btn show_more_btn_color" data-use="show-more-3" onclick="showMore()">
+    <div class="product-items-more-btn show_more_btn_color" data-use="show-more-3" id="88" onclick="showMore()">
         Показать ещё
     </div>
     <!-- component-end -->

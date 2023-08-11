@@ -17,8 +17,6 @@ class ListingController extends Controller implements DynamicPagesInterface
 
         $listing = $getListingAction->run($sectionID);
 
-        $tags = Tag::query()->get();
-
-        return view('site.v3.templates.listing.listing', compact('listing', 'tags'));
+        return view('site.v3.templates.listing.listing', compact('listing'));
     }
 }
