@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Admin\SeoForPage;
+namespace App\Http\Controllers\Admin\Posts;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class SeoForPageController extends Controller
+class PostCommentsController extends Controller
 {
     /**
      * Display a listing of the resource.

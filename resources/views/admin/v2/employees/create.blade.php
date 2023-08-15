@@ -3,7 +3,7 @@
 @section('h1', 'Сотдрудники')
 
 @section('content')
-    <form action="{{ route('admin.employees.create') }}" method="post">
+    <form action="{{ route('admin.employees.store') }}" method="post">
 
         <input type="hidden" name="_token" id="key" value="{{ csrf_token() }}">
 
@@ -14,5 +14,4 @@
     </form>
 
     <div class="clearfix"></div>
-    <br>
 @stop

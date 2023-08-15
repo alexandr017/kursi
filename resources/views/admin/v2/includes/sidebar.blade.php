@@ -26,27 +26,27 @@
 
                     <li class="nav-divider">Информацонный раздел</li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.post-categories.index') }}"><i class="fas fa-fw fa-chart-pie"></i> Категории</a>
+                        <a class="nav-link" href="{{ route('admin.post-categories.index') }}"><i class="far fa-folder-open"></i> Категории</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.posts.index') }}"><i class="fas fa-fw fa-chart-pie"></i> Записи</a>
+                        <a class="nav-link" href="{{ route('admin.posts.index') }}"><i class="fas fa-list"></i> Записи</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard-finance.html"><i class="fas fa-fw fa-chart-pie"></i> Комменатрии</a>
+                        <a class="nav-link" href="{{ route('admin.post-comments.index') }}l"><i class="far fa-comment"></i> Комменатрии</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.pages.index') }}"><i class="fas fa-fw fa-chart-pie"></i> Страницы</a>
+                        <a class="nav-link" href="{{ route('admin.pages.index') }}"><i class="far fa-file"></i> Страницы</a>
                     </li>
 
                     <li class="nav-divider">Админ. раздел</li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.employees.index') }}"><i class="fas fa-fw fa-chart-pie"></i> Сотрудники</a>
+                        <a class="nav-link" href="{{ route('admin.employees.index') }}"><i class="fas fa-user-md"></i> Сотрудники</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.short-codes.index') }}"><i class="fas fa-fw fa-chart-pie"></i> Шорткоды</a>
+                        <a class="nav-link" href="{{ route('admin.short-codes.index') }}"><i class="fas fa-code"></i> Шорткоды</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.seo-for-pages.index') }}"><i class="fas fa-fw fa-chart-pie"></i> СЕО для страниц</a>
+                        <a class="nav-link" href="{{ route('admin.static-pages.index') }}"><i class="far fa-sticky-note"></i> Статические страницы</a>
                     </li>
                 </ul>
             </div>

@@ -1,6 +1,19 @@
 
 @include('admin.v2.includes.seo-fields')
 
+<div class="form-group">
+    <label for="url"><i class="red">*</i> URL (без https://kursy.ru/)</label>
+    <input type="text" class="form-control" name="url" id="url" required
+           @if(old('url'))
+               value="{{old('url')}}"
+           @else
+               @if(isset($item))
+                   value="{{$item->urls->url}}"
+        @endif
+        @endif
+    >
+</div>
+
 
 <div class="form-group">
     <label for="content"><i class="red"></i> Контент</label>

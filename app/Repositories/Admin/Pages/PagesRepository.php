@@ -29,8 +29,8 @@ class PagesRepository
 
     public function createPage(array $data) : null|object // todo ?
     {
-        if (!isset($data['average_rating']) && !isset($data['number_of_votes'])) {
-            [$data['average_rating'], $data['number_of_votes']] = FakeRating::makeRating();
+        if (!isset($data['rating_value']) && !isset($data['rating_count'])) {
+            [$data['rating_value'], $data['rating_count']] = FakeRating::makeRating();
         }
 
         return DB::transaction(function() use($data) {
@@ -47,7 +47,6 @@ class PagesRepository
 
             return $page;
         });
-
     }
 
     public function updatePage(int $id, array $data) : null|object
@@ -84,7 +83,6 @@ class PagesRepository
             $url->delete();
 
             return $page;
-
         });
     }
 

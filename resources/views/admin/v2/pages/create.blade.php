@@ -14,5 +14,4 @@
     </form>
 
     <div class="clearfix"></div>
-    <br>
 @stop

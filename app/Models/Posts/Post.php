@@ -3,6 +3,7 @@
 namespace App\Models\Posts;
 
 use App\Models\PostComments\PostComment;
+use App\Models\Posts\PostCategory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -21,5 +22,10 @@ class Post extends Model
     public function comments(): HasMany
     {
         return $this->hasMany(PostComment::class);
+    }
+
+    public function category() : null|object
+    {
+        return $this->belongsTo(PostCategory::class);
     }
 }

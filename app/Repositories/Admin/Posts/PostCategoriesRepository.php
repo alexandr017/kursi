@@ -61,7 +61,6 @@ class PostCategoriesRepository
             }
 
             return $page;
-
         });
     }
 
@@ -76,7 +75,6 @@ class PostCategoriesRepository
             $url->delete();
 
             return $page;
-
         });
     }
 

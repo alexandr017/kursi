@@ -1,7 +1,7 @@
 
 <div class="form-group">
     <label for="name"><i class="red">*</i> Имя</label>
-    <input type="text" class="form-control" name="logo" id="logo" required
+    <input type="text" class="form-control" name="name" id="name" required
            @if(old('name'))
                value="{{old('name')}}"
            @else
@@ -14,7 +14,7 @@
 
 <div class="form-group">
     <label for="photo"><i class="red">*</i> Ссылка на фото</label>
-    <input type="text" class="form-control" name="logo" id="photo" required
+    <input type="text" class="form-control" name="photo" id="photo" required
            @if(old('photo'))
                value="{{old('photo')}}"
            @else
@@ -26,6 +26,19 @@
 </div>
 
 @include('admin.v2.includes.seo-fields')
+
+<div class="form-group">
+    <label for="url"><i class="red">*</i> URL (без https://kursy.ru/)</label>
+    <input type="text" class="form-control" name="url" id="url" required
+           @if(old('url'))
+               value="{{old('url')}}"
+           @else
+               @if(isset($item))
+                   value="{{$item->urls->url}}"
+        @endif
+        @endif
+    >
+</div>
 
 <div class="form-group">
     <label for="lead"><i class="red">*</i> Лид</label>
@@ -138,8 +151,8 @@
 
 
 <div class="form-group">
-    <label for="rating_value"><i class="red">*</i> Рейтинг</label>
-    <input type="number" class="form-control" name="rating_value" id="rating_value" step="0.1" min="3" max="5" required
+    <label for="rating_value">Рейтинг</label>
+    <input type="number" class="form-control" name="rating_value" id="rating_value" step="0.1" min="3" max="5"
            @if(old('rating_value'))
                value="{{old('rating_value')}}"
            @else
@@ -151,8 +164,8 @@
 </div>
 
 <div class="form-group">
-    <label for="rating_count"><i class="red">*</i> Количество голосов</label>
-    <input type="number" class="form-control" name="rating_count" id="rating_count" step="1" required
+    <label for="rating_count">Количество голосов</label>
+    <input type="number" class="form-control" name="rating_count" id="rating_count" step="1"
            @if(old('rating_count'))
                value="{{old('rating_count')}}"
            @else

@@ -1,15 +1,13 @@
 @extends('admin.v2.layout')
-@section('title', 'Записи - Редактирование')
-@section('h1', 'Записи - Редактирование')
+@section('title', 'Статические страницы - Создание')
+@section('h1', 'Статические страницы - Создание')
 
 @section('content')
-    <form action="{{ route('admin.post-categories.update',$item->id) }}" method="post">
-
-        {{ method_field('PATCH') }}
+    <form action="{{ route('admin.static-pages.store') }}" method="post">
 
         <input type="hidden" name="_token" id="key" value="{{ csrf_token() }}">
 
-        @include('admin.v2.posts.categories._form')
+        @include('admin.v2.static-pages._form')
 
         <button type="submit" class="btn btn-success pull-right"><i class="fa fa-save"></i> Сохранить</button>
 

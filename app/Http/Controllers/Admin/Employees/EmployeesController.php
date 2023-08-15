@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin\Employees;
 
 use App\Http\Controllers\Admin\AdminController;
-use Illuminate\Http\Request;
 use App\Repositories\Admin\Employees\EmployeesRepository;
+use App\Http\Requests\Admin\Employees\EmployeeRequest;
 
 class EmployeesController extends AdminController
 {
@@ -43,17 +43,21 @@ class EmployeesController extends AdminController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(EmployeeRequest $request)
     {
-        //
-    }
+        $data = $request->all();
+        $data = emptyDataToNull($data);
+        $result = $this->employeesRepository->createEmployee($data);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+        if ($result) {
+            return redirect()
+                ->route('admin.employees.index')
+                ->with('flash_success', 'Сотрудник добавлен!');
+        } else {
+            return redirect()
+                ->route('admin.employees.index')
+                ->with('flash_errors', 'Ошибка добавления!');
+        }
     }
 
     /**
@@ -74,9 +78,21 @@ class EmployeesController extends AdminController
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(EmployeeRequest $request, string $id)
     {
-        //
+        $data = $request->all();
+        $data = emptyDataToNull($data);
+        $result = $this->employeesRepository->updateEmployee($id, $data);
+
+        if ($result) {
+            return redirect()
+                ->route('admin.employees.index')
+                ->with('flash_success', 'Сотрудник обнавлен!');
+        } else {
+            return redirect()
+                ->route('admin.employees.index')
+                ->with('flash_errors', 'Ошибка обновления!');
+        }
     }
 
     /**
@@ -84,6 +100,16 @@ class EmployeesController extends AdminController
      */
     public function destroy(string $id)
     {
-        //
+        $result = $this->employeesRepository->deleteEmployee($id);
+
+        if ($result) {
+            return redirect()
+                ->route('admin.employees.index')
+                ->with('flash_success', 'Сотрудник удален!');
+        } else {
+            return redirect()
+                ->route('admin.employees.index')
+                ->with('flash_errors', 'Ошибка удаления!');
+        }
     }
 }

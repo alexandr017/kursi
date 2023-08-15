@@ -35,20 +35,6 @@
 </div>
 
 <div class="form-group">
-    <label for="url"><i class="red">*</i> URL (без https://kursy.ru/)</label>
-    <input type="text" class="form-control" name="url" id="url" required
-           @if(old('url'))
-           value="{{old('url')}}"
-           @else
-           @if(isset($item))
-           value="{{$item->urls->url}}"
-            @endif
-            @endif
-    >
-</div>
-
-
-<div class="form-group">
     <label for="breadcrumbs"><i class="red"></i> Хлебные крошки</label>
     <?php
     $breadcrumbs = old('breadcrumbs')

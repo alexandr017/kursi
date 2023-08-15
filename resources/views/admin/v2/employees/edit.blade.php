@@ -3,7 +3,7 @@
 @section('h1', 'Сотдрудники')
 
 @section('content')
-    <form action="{{ route('admin.employees.edit',$item->id) }}" method="post">
+    <form action="{{ route('admin.employees.update',$item->id) }}" method="post">
 
         {{ method_field('PATCH') }}
 
@@ -16,5 +16,4 @@
     </form>
 
     <div class="clearfix"></div>
-    <br>
 @stop

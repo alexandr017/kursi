@@ -38,6 +38,18 @@
         .red {
             color: red;
         }
+
+        .pull-right {
+            float: right;
+        }
+
+        .pull-right[type=submit] {
+            margin-top: 10px;
+        }
+
+        .clearfix {
+            clear: both;
+        }
     </style>
 </head>
 <body>
