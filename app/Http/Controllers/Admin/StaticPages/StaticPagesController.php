@@ -71,7 +71,7 @@ class StaticPagesController extends AdminController
         }
 
         $breadcrumbs = [
-            ['h1' => 'Страницы', 'link' => route('admin.pages.index')],
+            ['h1' => 'Статические страницы', 'link' => route('admin.static-pages.index')],
             ['h1' => 'Редактирование'],
         ];
 

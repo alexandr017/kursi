@@ -4,6 +4,7 @@ namespace App\Models\Posts;
 
 use App\Models\PostComments\PostComment;
 use App\Models\Posts\PostCategory;
+use App\Models\Urls\Url;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -11,6 +12,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
+    private const SECTION_TYPE = 3;
+
     use HasFactory;
     use SoftDeletes;
 
@@ -27,5 +30,11 @@ class Post extends Model
     public function category() : null|object
     {
         return $this->belongsTo(PostCategory::class);
+    }
+
+    public function urls()
+    {
+        return $this->hasOne(Url::class, 'section_id','id')
+            ->where('section_type', Post::SECTION_TYPE);
     }
 }

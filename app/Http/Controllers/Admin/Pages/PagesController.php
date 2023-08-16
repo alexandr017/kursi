@@ -68,6 +68,10 @@ class PagesController extends AdminController
     {
         $item = $this->pageRepository->find($id);
 
+        if ($item == null) {
+            abort(404);
+        }
+
         $breadcrumbs = [
             ['h1' => 'Страницы', 'link' => route('admin.pages.index')],
             ['h1' => 'Редактирование'],

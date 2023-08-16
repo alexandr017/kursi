@@ -78,4 +78,9 @@ class PostCategoriesRepository
         });
     }
 
+    public function getCategoriesForSelect() : array
+    {
+        return PostCategory::select('id', 'h1')->whereNull('deleted_at')->pluck('h1', 'id')->toArray();
+    }
+
 }

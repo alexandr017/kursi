@@ -52,8 +52,8 @@ class EmployeesRepository
 
     public function updateEmployee(int $id, array $data) : null|object
     {
-        if (!isset($data['average_rating']) && !isset($data['number_of_votes'])) {
-            [$data['average_rating'], $data['number_of_votes']] = FakeRating::makeRating();
+        if (!isset($data['rating_value']) && !isset($data['rating_count'])) {
+            [$data['rating_value'], $data['rating_count']] = FakeRating::makeRating();
         }
 
         return DB::transaction(function() use($id, $data) {
@@ -87,5 +87,9 @@ class EmployeesRepository
         });
     }
 
+    public function getEmployeesForSelect() : array
+    {
+        return Employee::select('id', 'name')->whereNull('deleted_at')->pluck('name', 'id')->toArray();
+    }
 
 }

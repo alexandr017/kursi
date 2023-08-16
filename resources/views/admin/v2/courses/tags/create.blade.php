@@ -1,15 +1,13 @@
 @extends('admin.v2.layout')
-@section('title', 'Записи - Редактирование')
-@section('h1', 'Записи - Редактирование')
+@section('title', 'Сотдрудники')
+@section('h1', 'Сотдрудники')
 
 @section('content')
-    <form action="{{ route('admin.posts.update',$item->id) }}" method="post">
-
-        {{ method_field('PATCH') }}
+    <form action="{{ route('admin.employees.store') }}" method="post">
 
         <input type="hidden" name="_token" id="key" value="{{ csrf_token() }}">
 
-        @include('admin.v2.posts.posts._form')
+        @include('admin.v2.employees._form')
 
         <button type="submit" class="btn btn-success pull-right"><i class="fa fa-save"></i> Сохранить</button>
 

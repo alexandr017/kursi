@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\IndexPage\IndexPageController;
 
+use App\Http\Controllers\Admin\Courses\CourseTagsController;
+
 use App\Http\Controllers\Admin\Pages\PagesController;
 use App\Http\Controllers\Admin\Posts\PostCategoriesController;
 use App\Http\Controllers\Admin\Posts\PostsController;
@@ -16,6 +18,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('index', [IndexPageController::class, 'index'])->name('index');
 
     // education section
+    Route::resource('course-tags', CourseTagsController::class)->except('show');
 
 
     // info section
@@ -30,5 +33,3 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('static-pages', StaticPagesController::class)->except(['show', 'destroy']);
 
 });
-
-

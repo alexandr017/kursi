@@ -56,7 +56,7 @@
 <div class="form-group">
     <label for="status"><i class="red ">*</i> Статус</label>
     <select name="status" id="status" class="form-control" required>
-        <option value="1">Включен</option>
-        <option value="0">Отключен</option>
+        <option value="1" @if(isset($item) && $item->status == 1) selected @endif>Включен</option>
+        <option value="0" @if(isset($item) && $item->status == 0) selected @endif>Отключен</option>
     </select>
 </div>

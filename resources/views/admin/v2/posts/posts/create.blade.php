@@ -3,11 +3,11 @@
 @section('h1', 'Записи - Создание')
 
 @section('content')
-    <form action="{{ route('admin.post-categories.store') }}" method="post">
+    <form action="{{ route('admin.posts.store') }}" method="post">
 
         <input type="hidden" name="_token" id="key" value="{{ csrf_token() }}">
 
-        @include('admin.v2.posts.categories._form')
+        @include('admin.v2.posts.posts._form')
 
         <button type="submit" class="btn btn-success pull-right"><i class="fa fa-save"></i> Сохранить</button>
 

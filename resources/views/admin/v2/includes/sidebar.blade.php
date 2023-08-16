@@ -21,7 +21,7 @@
                         <a class="nav-link" href="dashboard-finance.html"><i class="fas fa-fw fa-chart-pie"></i> Курсы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard-finance.html"><i class="fas fa-fw fa-chart-pie"></i> Теги</a>
+                        <a class="nav-link" href="{{ route('admin.course-tags.index') }}"><i class="fas fa-fw fa-chart-pie"></i> Теги</a>
                     </li>
 
                     <li class="nav-divider">Информацонный раздел</li>
@@ -32,7 +32,7 @@
                         <a class="nav-link" href="{{ route('admin.posts.index') }}"><i class="fas fa-list"></i> Записи</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.post-comments.index') }}l"><i class="far fa-comment"></i> Комменатрии</a>
+                        <a class="nav-link" href="{{ route('admin.post-comments.index') }}"><i class="far fa-comment"></i> Комменатрии</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.pages.index') }}"><i class="far fa-file"></i> Страницы</a>

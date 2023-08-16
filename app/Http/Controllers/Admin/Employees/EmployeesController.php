@@ -67,6 +67,10 @@ class EmployeesController extends AdminController
     {
         $item = $this->employeesRepository->find($id);
 
+        if ($item == null) {
+            abort(404);
+        }
+
         $breadcrumbs = [
             ['h1' => 'Сотрудники', 'link' => route('admin.employees.index')],
             ['h1' => 'Редактирование'],
