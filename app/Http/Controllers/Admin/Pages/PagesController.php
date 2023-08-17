@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin\Pages;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests\Admin\Pages\PageRequest;
 use App\Repositories\Admin\Pages\PagesRepository;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class PagesController extends AdminController
 {
@@ -12,13 +14,14 @@ class PagesController extends AdminController
 
     public function __construct()
     {
-        $this->pageRepository = app(PagesRepository::class);
+        $this->pageRepository = new PagesRepository;
     }
 
     /**
      * Display a listing of the resource.
+     * @return View
      */
-    public function index()
+    public function index() : View
     {
         $pages = $this->pageRepository->getAllPagesForShow();
 
@@ -29,8 +32,9 @@ class PagesController extends AdminController
 
     /**
      * Show the form for creating a new resource.
+     * @return View
      */
-    public function create()
+    public function create() : View
     {
         $breadcrumbs = [
             ['h1' => 'Страницы', 'link' => route('admin.pages.index')],
@@ -42,8 +46,10 @@ class PagesController extends AdminController
 
     /**
      * Store a newly created resource in storage.
+     * @param PageRequest $request
+     * @return RedirectResponse
      */
-    public function store(PageRequest $request)
+    public function store(PageRequest $request) : RedirectResponse
     {
         $data = $request->all();
         $data = emptyDataToNull($data);
@@ -63,8 +69,10 @@ class PagesController extends AdminController
 
     /**
      * Show the form for editing the specified resource.
+     * @param string $id
+     * @return View
      */
-    public function edit(string $id)
+    public function edit(string $id) : View
     {
         $item = $this->pageRepository->find($id);
 
@@ -82,8 +90,11 @@ class PagesController extends AdminController
 
     /**
      * Update the specified resource in storage.
+     * @param PageRequest $request
+     * @param string $id
+     * @return RedirectResponse
      */
-    public function update(PageRequest $request, string $id)
+    public function update(PageRequest $request, string $id) : RedirectResponse
     {
         $data = $request->all();
         $data = emptyDataToNull($data);
@@ -102,8 +113,10 @@ class PagesController extends AdminController
 
     /**
      * Remove the specified resource from storage.
+     * @param string $id
+     * @return RedirectResponse
      */
-    public function destroy(string $id)
+    public function destroy(string $id) : RedirectResponse
     {
         $result = $this->pageRepository->deletePage($id);
 

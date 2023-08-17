@@ -1,13 +1,13 @@
 @extends('admin.v2.layout')
-@section('title', 'Курсы тегов - Создание')
-@section('h1', 'Курсы тегов - Создание')
+@section('title', 'Листинги - Создание')
+@section('h1', 'Листинги - Создание')
 
 @section('content')
-    <form action="{{ route('admin.course-tags.store') }}" method="post">
+    <form action="{{ route('admin.listings.store') }}" method="post">
 
         <input type="hidden" name="_token" id="key" value="{{ csrf_token() }}">
 
-        @include('admin.v2.courses.tags._form')
+        @include('admin.v2.listings._form')
 
         <button type="submit" class="btn btn-success pull-right"><i class="fa fa-save"></i> Сохранить</button>
 

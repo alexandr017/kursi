@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Eloquent;
 
 
 /**
@@ -23,6 +24,11 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property float $rating_value
  * @property ?Carbon $created_at
  * @property ?Carbon $updated_at
+ */
+/**
+ * Page
+ *
+ * @mixin Eloquent
  */
 class Listing extends Model
 {

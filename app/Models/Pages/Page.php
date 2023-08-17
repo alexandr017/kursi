@@ -2,12 +2,17 @@
 
 namespace App\Models\Pages;
 
-use App\Models\Team\Employee;
 use App\Models\Urls\Url;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Eloquent;
 
+/**
+ * Page
+ *
+ * @mixin Eloquent
+ */
 class Page extends Model
 {
     private const SECTION_TYPE = 1;

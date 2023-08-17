@@ -16,7 +16,7 @@ class PostsRepository
         return DB::table('posts')
             ->leftJoin('urls', 'urls.section_id', 'posts.id')
             ->leftJoin('post_categories', 'post_categories.id', 'posts.category_id')
-            ->select('posts.id', 'posts.h1', 'posts.status', 'urls.url', 'post_categories.h1 as categoryH1')
+            ->select(['posts.id', 'posts.h1', 'posts.status', 'urls.url', 'post_categories.h1 as categoryH1'])
             ->where(['urls.section_type' => PostsRepository::SECTION_TYPE])
             ->whereNull('posts.deleted_at')
             ->get()
@@ -75,7 +75,7 @@ class PostsRepository
         });
     }
 
-    public function deletePost(int $id)
+    public function deletePost(int $id) : null|object
     {
         return DB::transaction(function() use($id) {
 

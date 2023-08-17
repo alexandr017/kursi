@@ -5,7 +5,13 @@ namespace App\Models\StaticPages;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Eloquent;
 
+/**
+ * StaticPage
+ *
+ * @mixin Eloquent
+ */
 class StaticPage extends Model
 {
     use HasFactory;

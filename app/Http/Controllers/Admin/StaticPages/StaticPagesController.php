@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin\StaticPages;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests\Admin\StaticPages\StaticPageRequest;
 use App\Repositories\Admin\StaticPages\StaticPagesRepository;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class StaticPagesController extends AdminController
 {
@@ -12,12 +14,13 @@ class StaticPagesController extends AdminController
 
     public function __construct()
     {
-        $this->pageRepository = app(StaticPagesRepository::class);
+        $this->pageRepository = new StaticPagesRepository;
     }
     /**
      * Display a listing of the resource.
+     * @return View
      */
-    public function index()
+    public function index() : View
     {
         $pages = $this->pageRepository->getAllPagesForShow();
 
@@ -28,8 +31,9 @@ class StaticPagesController extends AdminController
 
     /**
      * Show the form for creating a new resource.
+     * @return View
      */
-    public function create()
+    public function create() : View
     {
         $breadcrumbs = [
             ['h1' => 'Статические страницы', 'link' => route('admin.static-pages.index')],
@@ -42,7 +46,7 @@ class StaticPagesController extends AdminController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StaticPageRequest $request)
+    public function store(StaticPageRequest $request) : RedirectResponse
     {
         $data = $request->all();
         $data = emptyDataToNull($data);
@@ -61,8 +65,9 @@ class StaticPagesController extends AdminController
 
     /**
      * Show the form for editing the specified resource.
+     * @return View
      */
-    public function edit(string $id)
+    public function edit(string $id) : View
     {
         $item = $this->pageRepository->find($id);
 
@@ -81,7 +86,7 @@ class StaticPagesController extends AdminController
     /**
      * Update the specified resource in storage.
      */
-    public function update(StaticPageRequest $request, string $id)
+    public function update(StaticPageRequest $request, string $id) : RedirectResponse
     {
         $data = $request->all();
         $data = emptyDataToNull($data);

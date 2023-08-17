@@ -6,7 +6,13 @@ use App\Models\Urls\Url;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Eloquent;
 
+/**
+ * Post
+ *
+ * @mixin Eloquent
+ */
 class PostCategory extends Model
 {
     private const SECTION_TYPE = 2;

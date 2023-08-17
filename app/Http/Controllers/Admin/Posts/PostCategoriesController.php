@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin\Posts;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests\Admin\Posts\PostCategoryRequest;
 use App\Repositories\Admin\Posts\PostCategoriesRepository;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class PostCategoriesController extends AdminController
 {
@@ -12,13 +14,14 @@ class PostCategoriesController extends AdminController
 
     public function __construct()
     {
-        $this->postCategoryRepository = app(PostCategoriesRepository::class);
+        $this->postCategoryRepository = new PostCategoriesRepository;
     }
 
     /**
      * Display a listing of the resource.
+     * @return View
      */
-    public function index()
+    public function index() : View
     {
         $categories = $this->postCategoryRepository->getAllCategoriesForShow();
 
@@ -29,8 +32,9 @@ class PostCategoriesController extends AdminController
 
     /**
      * Show the form for creating a new resource.
+     * @return View
      */
-    public function create()
+    public function create() : View
     {
         $breadcrumbs = [
             ['h1' => 'Категории записей', 'link' => route('admin.post-categories.index')],
@@ -42,8 +46,10 @@ class PostCategoriesController extends AdminController
 
     /**
      * Store a newly created resource in storage.
+     * @param PostCategoryRequest $request
+     * @return RedirectResponse
      */
-    public function store(PostCategoryRequest $request)
+    public function store(PostCategoryRequest $request) : RedirectResponse
     {
         $data = $request->all();
         $data = emptyDataToNull($data);
@@ -64,8 +70,10 @@ class PostCategoriesController extends AdminController
 
     /**
      * Show the form for editing the specified resource.
+     * @param string $id
+     * @return View
      */
-    public function edit(string $id)
+    public function edit(string $id) : View
     {
         $item = $this->postCategoryRepository->find($id);
 
@@ -79,8 +87,11 @@ class PostCategoriesController extends AdminController
 
     /**
      * Update the specified resource in storage.
+     * @param PostCategoryRequest $request
+     * @param string $id
+     * @return RedirectResponse
      */
-    public function update(PostCategoryRequest $request, string $id)
+    public function update(PostCategoryRequest $request, string $id) : RedirectResponse
     {
         $data = $request->all();
         $data = emptyDataToNull($data);
@@ -99,8 +110,10 @@ class PostCategoriesController extends AdminController
 
     /**
      * Remove the specified resource from storage.
+     * @param string $id
+     * @return RedirectResponse
      */
-    public function destroy(string $id)
+    public function destroy(string $id) : RedirectResponse
     {
         $result = $this->postCategoryRepository->deleteCategory($id);
 

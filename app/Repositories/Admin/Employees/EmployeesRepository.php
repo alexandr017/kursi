@@ -15,7 +15,7 @@ class EmployeesRepository
     {
         return DB::table('employees')
             ->leftJoin('urls', 'urls.section_id', 'employees.id')
-            ->select('employees.id', 'employees.name', 'employees.status', 'urls.url')
+            ->select(['employees.id', 'employees.name', 'employees.status', 'urls.url'])
             ->where(['urls.section_type' => EmployeesRepository::SECTION_TYPE])
             ->whereNull('employees.deleted_at')
             ->get()
@@ -34,7 +34,6 @@ class EmployeesRepository
         }
 
         return DB::transaction(function() use($data) {
-
             $employee = new Employee($data);
             $employee->save();
 
@@ -49,14 +48,14 @@ class EmployeesRepository
         });
     }
 
-
     public function updateEmployee(int $id, array $data) : null|object
     {
         if (!isset($data['rating_value']) && !isset($data['rating_count'])) {
             [$data['rating_value'], $data['rating_count']] = FakeRating::makeRating();
         }
 
-        return DB::transaction(function() use($id, $data) {
+        return DB::transaction(function() use($id, $data) : null|object
+        {
 
             $employee = Employee::find($id);
             $employee->update($data);
@@ -72,24 +71,24 @@ class EmployeesRepository
         });
     }
 
-
-    public function deleteEmployee(int $id)
+    public function deleteEmployee(int $id) : null|object
     {
-        return DB::transaction(function() use($id) {
+        return DB::transaction(function() use($id) : null|object
+        {
 
-            $page = Employee::find($id);
-            $page->delete();
+            $employee = Employee::find($id);
+            $employee->delete();
 
             $url = Url::where(['section_id' => $id, 'section_type' => EmployeesRepository::SECTION_TYPE])->first();
             $url->delete();
 
-            return $page;
+            return $employee;
         });
     }
 
     public function getEmployeesForSelect() : array
     {
-        return Employee::select('id', 'name')->whereNull('deleted_at')->pluck('name', 'id')->toArray();
+        return Employee::select(['id', 'name'])->whereNull('deleted_at')->pluck('name', 'id')->toArray();
     }
 
 }

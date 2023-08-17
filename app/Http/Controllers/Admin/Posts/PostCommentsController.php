@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests\Admin\Posts\PostCommentRequest;
 use App\Repositories\Admin\Posts\PostsRepository;
 use App\Repositories\Admin\Posts\PostCommentsRepository;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class PostCommentsController extends AdminController
 {
@@ -14,14 +16,15 @@ class PostCommentsController extends AdminController
 
     public function __construct()
     {
-        $this->postsRepository = app(PostsRepository::class);
-        $this->postCommentsRepository = app(PostCommentsRepository::class);
+        $this->postsRepository = new PostsRepository;
+        $this->postCommentsRepository = new PostCommentsRepository;
     }
 
     /**
      * Display a listing of the resource.
+     * @return View
      */
-    public function index()
+    public function index() : View
     {
         $comments = $this->postCommentsRepository->getAllCommentsForShow();
 
@@ -32,8 +35,9 @@ class PostCommentsController extends AdminController
 
     /**
      * Show the form for creating a new resource.
+     * @return View
      */
-    public function create()
+    public function create() : View
     {
         $posts = $this->postsRepository->getPostsForSelect();
 
@@ -47,8 +51,10 @@ class PostCommentsController extends AdminController
 
     /**
      * Store a newly created resource in storage.
+     * @param PostCommentRequest $request
+     * @return RedirectResponse
      */
-    public function store(PostCommentRequest $request)
+    public function store(PostCommentRequest $request) : RedirectResponse
     {
         $data = $request->all();
         $data = emptyDataToNull($data);
@@ -68,8 +74,10 @@ class PostCommentsController extends AdminController
 
     /**
      * Show the form for editing the specified resource.
+     * @param string $id
+     * @return View
      */
-    public function edit(string $id)
+    public function edit(string $id) : View
     {
         $item = $this->postCommentsRepository->find($id);
 
@@ -89,8 +97,11 @@ class PostCommentsController extends AdminController
 
     /**
      * Update the specified resource in storage.
+     * @param PostCommentRequest $request
+     * @param string $id
+     * @return RedirectResponse
      */
-    public function update(PostCommentRequest $request, string $id)
+    public function update(PostCommentRequest $request, string $id) : RedirectResponse
     {
         $data = $request->all();
         $data = emptyDataToNull($data);
@@ -109,8 +120,10 @@ class PostCommentsController extends AdminController
 
     /**
      * Remove the specified resource from storage.
+     * @param string $id
+     * @return RedirectResponse
      */
-    public function destroy(string $id)
+    public function destroy(string $id) : RedirectResponse
     {
         $result = $this->postCommentsRepository->deleteComment($id);
 

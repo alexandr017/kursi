@@ -7,6 +7,8 @@ use App\Http\Requests\Admin\Posts\PostRequest;
 use App\Repositories\Admin\Posts\PostsRepository;
 use App\Repositories\Admin\Posts\PostCategoriesRepository;
 use App\Repositories\Admin\Employees\EmployeesRepository;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class PostsController extends AdminController
 {
@@ -16,15 +18,16 @@ class PostsController extends AdminController
 
     public function __construct()
     {
-        $this->postRepository = app(PostsRepository::class);
-        $this->postCategoriesRepository = app(PostCategoriesRepository::class);
-        $this->employeesRepository = app(EmployeesRepository::class);
+        $this->postRepository = new PostsRepository;
+        $this->postCategoriesRepository = new PostCategoriesRepository;
+        $this->employeesRepository = new EmployeesRepository;
     }
 
     /**
      * Display a listing of the resource.
+     * @return View
      */
-    public function index()
+    public function index() : View
     {
         $posts = $this->postRepository->getAllPostsForShow();
 
@@ -35,8 +38,9 @@ class PostsController extends AdminController
 
     /**
      * Show the form for creating a new resource.
+     * @return View
      */
-    public function create()
+    public function create() : View
     {
         $categories = $this->postCategoriesRepository->getCategoriesForSelect();
         $employees = $this->employeesRepository->getEmployeesForSelect();
@@ -51,8 +55,10 @@ class PostsController extends AdminController
 
     /**
      * Store a newly created resource in storage.
+     * @param PostRequest $request
+     * @return RedirectResponse
      */
-    public function store(PostRequest $request)
+    public function store(PostRequest $request) : RedirectResponse
     {
         $data = $request->all();
         $data = emptyDataToNull($data);
@@ -71,8 +77,10 @@ class PostsController extends AdminController
 
     /**
      * Show the form for editing the specified resource.
+     * @param string $id
+     * @return View
      */
-    public function edit(string $id)
+    public function edit(string $id) : View
     {
         $item = $this->postRepository->find($id);
 
@@ -93,8 +101,11 @@ class PostsController extends AdminController
 
     /**
      * Update the specified resource in storage.
+     * @param PostRequest $request
+     * @param string $id
+     * @return RedirectResponse
      */
-    public function update(PostRequest $request, string $id)
+    public function update(PostRequest $request, string $id) : RedirectResponse
     {
         $data = $request->all();
         $data = emptyDataToNull($data);
@@ -113,8 +124,10 @@ class PostsController extends AdminController
 
     /**
      * Remove the specified resource from storage.
+     * @param string $id
+     * @return RedirectResponse
      */
-    public function destroy(string $id)
+    public function destroy(string $id) : RedirectResponse
     {
         $result = $this->postRepository->deletePost($id);
 

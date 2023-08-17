@@ -6,7 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Urls\Url;
+use Eloquent;
 
+/**
+ * Employee
+ *
+ * @mixin Eloquent
+ */
 class Employee extends Model
 {
     private const SECTION_TYPE = 4;

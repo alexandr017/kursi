@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin\Employees;
 use App\Http\Controllers\Admin\AdminController;
 use App\Repositories\Admin\Employees\EmployeesRepository;
 use App\Http\Requests\Admin\Employees\EmployeeRequest;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class EmployeesController extends AdminController
 {
@@ -12,13 +14,14 @@ class EmployeesController extends AdminController
 
     public function __construct()
     {
-        $this->employeesRepository = app(EmployeesRepository::class);
+        $this->employeesRepository = new EmployeesRepository;
     }
 
     /**
      * Display a listing of the resource.
+     * @return View
      */
-    public function index()
+    public function index() : View
     {
         $employees = $this->employeesRepository->getAllEmployeesForShow();
 
@@ -29,8 +32,9 @@ class EmployeesController extends AdminController
 
     /**
      * Show the form for creating a new resource.
+     * @return View
      */
-    public function create()
+    public function create() : View
     {
         $breadcrumbs = [
             ['h1' => 'Сотрудники', 'link' => route('admin.employees.index')],
@@ -42,8 +46,10 @@ class EmployeesController extends AdminController
 
     /**
      * Store a newly created resource in storage.
+     * @param EmployeeRequest $request
+     * @return RedirectResponse
      */
-    public function store(EmployeeRequest $request)
+    public function store(EmployeeRequest $request) : RedirectResponse
     {
         $data = $request->all();
         $data = emptyDataToNull($data);
@@ -62,8 +68,10 @@ class EmployeesController extends AdminController
 
     /**
      * Show the form for editing the specified resource.
+     * @param string $id
+     * @return View
      */
-    public function edit(string $id)
+    public function edit(string $id) : View
     {
         $item = $this->employeesRepository->find($id);
 
@@ -82,7 +90,7 @@ class EmployeesController extends AdminController
     /**
      * Update the specified resource in storage.
      */
-    public function update(EmployeeRequest $request, string $id)
+    public function update(EmployeeRequest $request, string $id) : RedirectResponse
     {
         $data = $request->all();
         $data = emptyDataToNull($data);
@@ -101,8 +109,10 @@ class EmployeesController extends AdminController
 
     /**
      * Remove the specified resource from storage.
+     * @param string $id
+     * @return RedirectResponse
      */
-    public function destroy(string $id)
+    public function destroy(string $id) : RedirectResponse
     {
         $result = $this->employeesRepository->deleteEmployee($id);
 

@@ -15,7 +15,7 @@ class PagesRepository
     {
         return DB::table('pages')
             ->leftJoin('urls', 'urls.section_id', 'pages.id')
-            ->select('pages.id', 'pages.h1', 'pages.status', 'urls.url')
+            ->select(['pages.id', 'pages.h1', 'pages.status', 'urls.url'])
             ->where(['urls.section_type' => PagesRepository::SECTION_TYPE])
             ->whereNull('pages.deleted_at')
             ->get()
@@ -72,7 +72,7 @@ class PagesRepository
         });
     }
 
-    public function deletePage(int $id)
+    public function deletePage(int $id) : null|object
     {
         return DB::transaction(function() use($id) {
 

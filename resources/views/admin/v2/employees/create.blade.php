@@ -1,6 +1,6 @@
 @extends('admin.v2.layout')
-@section('title', 'Сотдрудники')
-@section('h1', 'Сотдрудники')
+@section('title', 'Сотдрудники - Создание')
+@section('h1', 'Сотдрудники - Создание')
 
 @section('content')
     <form action="{{ route('admin.employees.store') }}" method="post">

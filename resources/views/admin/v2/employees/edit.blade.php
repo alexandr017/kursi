@@ -1,6 +1,6 @@
 @extends('admin.v2.layout')
-@section('title', 'Сотдрудники')
-@section('h1', 'Сотдрудники')
+@section('title', 'Сотдрудники - Редактирование')
+@section('h1', 'Сотдрудники - Редактирование')
 
 @section('content')
     <form action="{{ route('admin.employees.update',$item->id) }}" method="post">

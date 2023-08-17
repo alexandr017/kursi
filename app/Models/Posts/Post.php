@@ -3,13 +3,18 @@
 namespace App\Models\Posts;
 
 use App\Models\PostComments\PostComment;
-use App\Models\Posts\PostCategory;
 use App\Models\Urls\Url;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Eloquent;
 
+/**
+ * Post
+ *
+ * @mixin Eloquent
+ */
 class Post extends Model
 {
     private const SECTION_TYPE = 3;

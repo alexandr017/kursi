@@ -9,19 +9,19 @@
                 <ul class="navbar-nav flex-column">
                     <li class="nav-divider">Образовательный раздел</li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard-finance.html"><i class="fas fa-fw fa-chart-pie"></i> Листинги</a>
+                        <a class="nav-link" href="{{ route('admin.listings.index') }}"><i class="fas fa-map-signs"></i> Листинги</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard-finance.html"><i class="fas fa-fw fa-chart-pie"></i> Компания</a>
+                        <a class="nav-link" href="dashboard-finance.html"><i class="fas fa-building"></i> Компания</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard-finance.html"><i class="fas fa-fw fa-chart-pie"></i> Отзывы</a>
+                        <a class="nav-link" href="dashboard-finance.html"><i class="far fa-comment"></i> Отзывы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard-finance.html"><i class="fas fa-fw fa-chart-pie"></i> Курсы</a>
+                        <a class="nav-link" href="{{ route('admin.courses.index') }}"><i class="far fa-address-card"></i> Курсы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.course-tags.index') }}"><i class="fas fa-fw fa-chart-pie"></i> Теги</a>
+                        <a class="nav-link" href="{{ route('admin.course-tags.index') }}"><i class="fas fa-tags"></i> Теги</a>
                     </li>
 
                     <li class="nav-divider">Информацонный раздел</li>
