@@ -2,6 +2,7 @@
 
 namespace App\Models\Companies;
 
+use App\Models\Courses\Course;
 use App\Models\Urls\Url;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -24,6 +25,10 @@ class Company extends Model
     public function reviews(): HasMany
     {
         return $this->hasMany(SchoolReview::class, 'school_id', 'id');
+    }
+    public function courses(): HasMany
+    {
+        return $this->hasMany(Course::class, 'company_id', 'id');
     }
 
     public function url(): HasOne

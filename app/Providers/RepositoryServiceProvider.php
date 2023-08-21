@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Repositories\Comments\CommentRepository;
 use App\Repositories\Comments\CommentRepositoryInterface;
+use App\Repositories\Company\CompanyRepository;
+use App\Repositories\Company\CompanyRepositoryInterface;
 use App\Repositories\Courses\CoursesRepository;
 use App\Repositories\Courses\CoursesRepositoryInterface;
 use App\Repositories\Listing\ListingRepository;
@@ -34,6 +36,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             TagRepositoryInterface::class,
             TagRepository::class
+        );
+        $this->app->bind(
+            CompanyRepositoryInterface::class,
+            CompanyRepository::class
         );
     }
 
