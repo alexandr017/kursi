@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers\Admin\IndexPage;
 
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\Admin\AdminController;
-use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
 
 class IndexPageController extends AdminController
 {
-    public function index()
+    public function index() : View
     {
         return view('admin.v2.index.index');
     }
 
-    public function demo()
+    public function demo() : View
     {
         return view('admin.v2.demo');
     }

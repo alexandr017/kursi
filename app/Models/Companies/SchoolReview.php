@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Eloquent;
 
 /**
  * App\Models\ListingRating\ListingRating
@@ -27,6 +28,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property ?int $old_id
  * @property ?Carbon $created_at
  * @property ?Carbon $updated_at
+ */
+
+/**
+ * Company
+ *
+ * @mixin Eloquent
  */
 class SchoolReview extends Model
 {
