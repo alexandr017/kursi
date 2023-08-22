@@ -18,7 +18,7 @@ Route::fallback(function(){
 });
 
 Route::post('/{post_id}/comments', [CommentsController::class, 'create']);
-Route::get('/{listing_id}/courses', [CoursesController::class, 'index']);
+//Route::get('/{listing_id}/courses', [CoursesController::class, 'index']); // todo отключил так как конфликтует с роутом админки /admin/courses
 Route::post('/listings/{listing_id}/review', [ListingRatingController::class, 'create']);
 
 include "site-sitemap.php";

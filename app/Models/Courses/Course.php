@@ -11,13 +11,27 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Eloquent;
 
+/**
+ * Course
+ *
+ * @mixin Eloquent
+ */
 class Course extends Model
 {
     use HasFactory;
 
     const STATUS_ACTIVE = 1;
     const STATUS_INACTIVE = 0;
+
+    protected $table = 'courses';
+
+    protected $fillable = ['title', 'company_id', 'external_id', 'statistics_link', 'affiliate_link', 'direct_link',
+        'duration', 'duration_type', 'cost', 'sale_cost', 'sale_value', 'payment_value', 'currency', 'payment_type',
+        'is_cost_by_query', 'reviews_count', 'installment_period', 'installment_payment', 'duration_in_hours', 'status',
+        'old_id'
+    ];
 
     public function tags(): BelongsToMany
     {

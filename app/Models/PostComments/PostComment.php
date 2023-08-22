@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property ?Carbon $deleted_at
  */
 
+// todo наверно стоит эту модель положить в папку Posts (и подружить механизм создания комментов с сайта и админки)
 class PostComment extends Model
 {
     use HasFactory;
