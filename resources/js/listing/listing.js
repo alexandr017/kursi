@@ -21,6 +21,7 @@ function showMore() {
 
 function sortPanelAjax(evt, listingId) {
     const element = evt.target;
+    const img = element.querySelector('img');
 
     sortOrder = element.getAttribute('data-sort-order');
     sortValue = element.getAttribute('data-sort-value');
@@ -35,7 +36,9 @@ function sortPanelAjax(evt, listingId) {
     }
 
     sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+    let src = sortOrder === 'desc' ? '/images/sort-panel/arrow_down_blue.svg' : '/images/sort-panel/arrow_up_blue.svg'
     element.setAttribute('data-sort-order', sortOrder);
+    img.setAttribute('src', src)
 
     this.sendRequest()
 }
@@ -101,6 +104,7 @@ function updateSortButtons () {
     elements.forEach(element => {
         element.classList.remove('active');
         element.setAttribute('data-sort-order', '');
+        element.querySelector('img').setAttribute('src', '/images/sort-panel/arrow_up_black.svg');
     });
 }
 

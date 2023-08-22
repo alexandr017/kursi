@@ -14,13 +14,13 @@
 
         <div class="kurse_card-school">
             <div class="school_minicard-cont">
-                <a class="school_minicard-logo" href="/schools/uchebnyy-tsentr-spetsialist/">
-{{--                    <img src="/upload/iblock/52c/15t0kb8a63szzwvdek97qmj4jj4ktwgl/uchebnyj_czentr_speczialist.webp" alt="Учебный Центр «Специалист»" title="Учебный Центр «Специалист»">--}}
+                <a class="school_minicard-logo" href="/{{$course->school?->url?->url}}">
+                    <img src="{{$course->school->logo}}" alt="{{$course->school?->h1}}" title="{{$course->school?->h1}}">
                 </a>
 
                 <div class="school_minicard-text">
                     <div class="school_minicard-title">
-                        <a href="/schools/uchebnyy-tsentr-spetsialist/">
+                        <a href="/{{$course->school?->url?->url}}">
                             {{$course->school?->name}}
                         </a>
                     </div>
@@ -32,9 +32,9 @@
                                     {{round($course->school_reviews_avg_rating ?: 0, 2)}}
                                 </div>
 
-{{--                                <img src="https://kursy.ru/local/templates/kursi/img/rating_star_blue.svg" alt="Картинка оценки курса" title="Картинка оценки курса">--}}
+                                <img src="/images/system/rating_star_blue.svg" alt="Картинка оценки курса" title="Картинка оценки курса">
                             </div>
-                            <a class="school_minicard-reviews" href="/schools/uchebnyy-tsentr-spetsialist/#reviews">
+                            <a class="school_minicard-reviews" href="/{{$course->school?->url?->url}}/#reviews">
                                 (
                                 <p class="school_minicard-reviews_value">
                                     {{$course->reviews_count ?: 0}}
@@ -45,7 +45,7 @@
                                 )
                             </a>
                         @else
-                            <a class="school_minicard-reviews" href="/schools/uchebnyy-tsentr-spetsialist/#reviews">
+                            <a class="school_minicard-reviews" href="/{{$course->school?->url?->url}}/#reviews">
                                 <p class="school_minicard-reviews_value">
                                     0
                                 </p>
@@ -85,7 +85,7 @@
             </div>
         </div>
         <!-- <div class="kurse_card-link"> -->
-        <a class="kurse_card-link" rel="sponsored" href="https://www.specialist.ru/track/t-buhmsfo" onclick="ym(91433233,'reachGoal','CourseAggregator'); return true;" target="_blank">Подробнее</a>
+        <a class="kurse_card-link" rel="sponsored" href="{{$course->affiliate_link}}" onclick="ym(91433233,'reachGoal','CourseAggregator'); return true;" target="_blank">Подробнее</a>
         <!-- </div> -->
     </div>
 </div>

@@ -16,6 +16,7 @@
         "laravelcollective/html": "^6.4",
         "spatie/data-transfer-object": "^3.9",
         "squizlabs/php_codesniffer": "*",
+        "symfony/dom-crawler": "^6.3",
         "webwizo/laravel-shortcodes": "1.0.*"
     },
     "require-dev": {
