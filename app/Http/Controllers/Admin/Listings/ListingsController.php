@@ -86,12 +86,14 @@ class ListingsController extends AdminController
             abort(404);
         }
 
+        $employees = $this->employeesRepository->getEmployeesForSelect();
+
         $breadcrumbs = [
             ['h1' => 'Листиинги', 'link' => route('admin.listings.index')],
             ['h1' => 'Редактирование'],
         ];
 
-        return view('admin.v2.listings.edit', compact('item', 'breadcrumbs'));
+        return view('admin.v2.listings.edit', compact('item', 'employees', 'breadcrumbs'));
     }
 
     /**

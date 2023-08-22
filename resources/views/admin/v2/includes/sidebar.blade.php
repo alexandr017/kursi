@@ -12,13 +12,13 @@
                         <a class="nav-link" href="{{ route('admin.listings.index') }}"><i class="fas fa-map-signs"></i> Листинги</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard-finance.html"><i class="fas fa-building"></i> Компания</a>
+                        <a class="nav-link" href="{{ route('admin.companies.index') }}"><i class="fas fa-building"></i> Компании</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dashboard-finance.html"><i class="far fa-comment"></i> Отзывы</a>
+                        <a class="nav-link" href="{{ route('admin.company-reviews.index') }}"><i class="far fa-comment"></i> Отзывы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.courses.index') }}"><i class="far fa-address-card"></i> Курсы</a>
+                        <a class="nav-link" href=""><i class="far fa-address-card"></i> Курсы</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('admin.course-tags.index') }}"><i class="fas fa-tags"></i> Теги</a>

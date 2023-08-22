@@ -1,18 +1,5 @@
 
 <div class="form-group">
-    <label for="parent_id">ID родительского листинга</label>
-    <input type="text" class="form-control" name="parent_id" id="parent_id"
-           @if(old('parent_id'))
-               value="{{old('parent_id')}}"
-           @else
-               @if(isset($item))
-                   value="{{$item->parent_id}}"
-        @endif
-        @endif
-    >
-</div>
-
-<div class="form-group">
     <label for="name"><i class="red">*</i> Название</label>
     <input type="text" class="form-control" name="name" id="name" required
            @if(old('name'))
@@ -25,12 +12,7 @@
     >
 </div>
 
-
 @include('admin.v2.includes.seo-fields')
-
-'description' => [],
-'slug' => [],
-'meta_title' => [],
 
 <div class="form-group">
     <label for="url"><i class="red">*</i> URL (без https://kursy.ru/)</label>
@@ -44,31 +26,6 @@
         @endif
     >
 </div>
-
-
-<div class="form-group">
-    <label for="author_id"><i class="red"></i> Автор</label>
-    <select name="author_id" id="author_id" class="form-control">
-        @foreach($employees as $id => $name)
-            <option value="{{$id}}" @if(isset($item) && $item->author_id == $id) selected @endif>{{$name}}</option>
-        @endforeach
-    </select>
-</div>
-
-<div class="form-group">
-    <label for="preview"><i class="red">*</i> Превью</label>
-    <input type="text" class="form-control" name="preview" id="preview" required
-           @if(old('preview'))
-               value="{{old('preview')}}"
-           @else
-               @if(isset($item))
-                   value="{{$item->preview}}"
-        @endif
-        @endif
-    >
-</div>
-
-
 
 
 <div class="form-group">
@@ -90,6 +47,59 @@
         : (isset($item) ? $item->content : '');
     ?>
     <textarea class="form-control" name="content" id="content">{{$content}}</textarea>
+</div>
+
+
+<div class="form-group">
+    <label for="logo"><i class="red">*</i> Превью</label>
+    <input type="text" class="form-control" name="logo" id="logo" required
+           @if(old('logo'))
+               value="{{old('logo')}}"
+           @else
+               @if(isset($item))
+                   value="{{$item->logo}}"
+        @endif
+        @endif
+    >
+</div>
+
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" name="email" id="email"
+           @if(old('email'))
+               value="{{old('email')}}"
+           @else
+               @if(isset($item))
+                   value="{{$item->email}}"
+        @endif
+        @endif
+    >
+</div>
+
+<div class="form-group">
+    <label for="hotline">Горячая линия</label>
+    <input type="text" class="form-control" name="hotline" id="hotline"
+           @if(old('hotline'))
+               value="{{old('hotline')}}"
+           @else
+               @if(isset($item))
+                   value="{{$item->hotline}}"
+        @endif
+        @endif
+    >
+</div>
+
+<div class="form-group">
+    <label for="hotline">Ссылка на сайт</label>
+    <input type="url" class="form-control" name="link" id="link"
+           @if(old('link'))
+               value="{{old('link')}}"
+           @else
+               @if(isset($item))
+                   value="{{$item->link}}"
+        @endif
+        @endif
+    >
 </div>
 
 <div class="form-group">
@@ -117,8 +127,6 @@
         @endif
     >
 </div>
-
-'rating_sum' => [],
 
 <div class="form-group">
     <label for="status"><i class="red ">*</i> Статус</label>

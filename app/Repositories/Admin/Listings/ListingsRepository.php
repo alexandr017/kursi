@@ -29,6 +29,11 @@ class ListingsRepository
 
     public function createListing(array $data) : null|object // todo ?
     {
+        $data['description'] = 'test'; // todo мне кажется это поле не надо
+        $data['slug'] = 'test'; // todo мне кажется это поле не надо
+        $data['meta_title'] = 'test'; // todo мне кажется это поле не надо
+        $data['rating_sum'] = 0; // todo мне кажется это поле не надо
+
         if (!isset($data['rating_value']) && !isset($data['rating_count'])) {
             [$data['rating_value'], $data['rating_count']] = FakeRating::makeRating();
         }
@@ -54,6 +59,11 @@ class ListingsRepository
         if (!isset($data['average_rating']) && !isset($data['number_of_votes'])) {
             [$data['average_rating'], $data['number_of_votes']] = FakeRating::makeRating();
         }
+
+        $data['description'] = 'test'; // todo мне кажется это поле не надо
+        $data['slug'] = 'test'; // todo мне кажется это поле не надо
+        $data['meta_title'] = 'test'; // todo мне кажется это поле не надо
+        $data['rating_sum'] = 0; // todo мне кажется это поле не надо
 
         return DB::transaction(function() use($id, $data) {
 

@@ -4,8 +4,6 @@ namespace App\Repositories\Admin\Posts;
 
 use DB;
 use App\Models\Posts\PostComment;
-use App\Services\FakeRating\FakeRating;
-use App\Models\Urls\Url;
 
 class PostCommentsRepository
 {

@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\IndexPage\IndexPageController;
 
 use App\Http\Controllers\Admin\Listings\ListingsController;
+use App\Http\Controllers\Admin\Companies\CompaniesController;
+use App\Http\Controllers\Admin\Companies\CompanyReviewsController;
 use App\Http\Controllers\Admin\Courses\CoursesController;
 use App\Http\Controllers\Admin\Courses\CourseTagsController;
 
@@ -21,6 +23,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     // education section
     Route::resource('listings', ListingsController::class)->except('show');
+    Route::resource('companies', CompaniesController::class)->except('show');
+    Route::resource('company-reviews', CompanyReviewsController::class)->except('show');
     Route::resource('courses', CoursesController::class)->except('show');
     Route::resource('course-tags', CourseTagsController::class)->except('show');
 

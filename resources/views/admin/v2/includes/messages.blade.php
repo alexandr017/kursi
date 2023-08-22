@@ -1,10 +1,5 @@
-@if ($errors->any())
-    <div class="alert alert-danger">
-        @foreach ($errors->all() as $error)
-            {!! $error !!}<br/>
-        @endforeach
-    </div>
-@elseif (session()->get('flash_success'))
+
+@if (session()->get('flash_success'))
     <div class="alert alert-success">
         @if(is_array(json_decode(session()->get('flash_success'), true)))
             {!! implode('', session()->get('flash_success')->all(':message<br/>')) !!}
@@ -15,7 +10,13 @@
 @elseif (session()->get('flash_warning'))
     <div class="alert alert-warning">
         @if(is_array(json_decode(session()->get('flash_warning'), true)))
-            {!! implode('', session()->get('flash_warning')->all(':message<br/>')) !!}
+            @php $errorsFormSession = json_decode(session()->get('flash_warning')) @endphp
+            {!! json_decode('', session()->get('flash_warning')) !!}
+            @foreach($errorsFormSession as $error)
+                @if(isset($error[0]))
+                {!! $error[0] !!}<br>
+                @endif
+            @endforeach
         @else
             {!! session()->get('flash_warning') !!}
         @endif

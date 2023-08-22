@@ -34,10 +34,15 @@ class Listing extends Model
 {
     use HasFactory;
 
+    protected $table = 'listings';
+
+    protected $fillable = [
+        'parent_id', 'name', 'title', 'description', 'slug', 'meta_description', 'meta_title', 'h1',
+        'breadcrumbs', 'lead', 'content', 'author_id', 'rating_value', 'rating_count', 'rating_sum', 'status'];
+
     const STATUS_ACTIVE = 1;
     const STATUS_INACTIVE = 0;
     const SECTION_TYPE = 6;
-
 
     public function courses(): BelongsToMany
     {
@@ -67,6 +72,13 @@ class Listing extends Model
     public function url(): HasOne
     {
         return $this->hasOne(Url::class, 'section_id', 'id')->where('section_type', self::SECTION_TYPE);
+    }
+
+    // этот метод для админки юзается
+    public function urls()
+    {
+        return $this->hasOne(Url::class, 'section_id','id')
+            ->where('section_type', self::SECTION_TYPE);
     }
 
     public function getRatingsCount(): int

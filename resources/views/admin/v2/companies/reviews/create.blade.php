@@ -1,15 +1,13 @@
 @extends('admin.v2.layout')
-@section('title', 'Курсы - Редактирование')
-@section('h1', 'Курсы - Редактирование')
+@section('title', 'Отзывы компаний - Создание')
+@section('h1', 'Отзывы компаний - Создание')
 
 @section('content')
-    <form action="{{ route('admin.courses.update',$item->id) }}" method="post">
-
-        {{ method_field('PATCH') }}
+    <form action="{{ route('admin.company-reviews.store') }}" method="post">
 
         <input type="hidden" name="_token" id="key" value="{{ csrf_token() }}">
 
-        @include('admin.v2.courses.courses._form')
+        @include('admin.v2.companies.reviews._form')
 
         <button type="submit" class="btn btn-success pull-right"><i class="fa fa-save"></i> Сохранить</button>
 
