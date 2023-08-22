@@ -71,7 +71,6 @@
     color: #ffffff;
 }
 
-
 @media (max-width: 860px) {
     .kurse_card.card_mobile {
         padding: 32px 24px;
@@ -96,19 +95,30 @@
     align-items: center;
 }
 
-.swiper_styles-button-prev.swiper-button-disabled {
-    background-image: url(/local/templates/kursi/img/slider_disable_right_btn.svg);
-}
-
 .swiper_styles-button-prev {
     transform: rotateZ(179deg);
 }
+
 .swiper_styles-button-prev, .swiper_styles-button-next {
     background-position: center;
     background-size: contain;
     width: 32px;
     height: 32px;
     cursor: pointer;
+}
+
+.swiper_styles-button-prev,
+.swiper_styles-button-next {
+    background-image: url(../../../public/images/system/slider_right_btn.svg);
+}
+
+.swiper_styles-button-prev:hover,
+.swiper_styles-button-next:hover {
+    background-image: url(../../../public/images/system/slider_hover_right_btn.svg);
+}
+
+.swiper-button-disabled {
+    background-image: url(../../../public/images/system/slider_disable_right_btn.svg);
 }
 
 .swiper_styles-pagination.swiper-pagination {
@@ -121,7 +131,6 @@
     grid-gap: 5px;
     font-weight: 500;
     font-size: 18px;
-    /* line-height: 28px; */
     text-align: center;
     color: #101820;
 
@@ -133,10 +142,6 @@
     width: 32px;
     height: 32px;
     cursor: pointer;
-}
-
-.swiper_styles-button-next:hover {
-    background-image: url(/local/templates/kursi/img/slider_right_btn.svg);
 }
 
 
