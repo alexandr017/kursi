@@ -64,30 +64,37 @@
                     {!! $company->lead !!}
                 </div>
 
-                <div class="school_contacts">
-                    <h2 class="school_contact_title subblock_title">
-                        Горячая линия школы
-                    </h2>
-                    <div class="school_contact_cont">
-                        <div class="school_contact_logo">
+                @if($company->hotline || $company->email)
+                    <div class="school_contacts">
+                        <h2 class="school_contact_title subblock_title">
+                            Горячая линия школы
+                        </h2>
+                        @if($company->hotline)
+                            <div class="school_contact_cont">
+                                <div class="school_contact_logo">
 
-                            <img src="/images/system/Calling.svg" alt="Телефон поддержки" title="Телефон поддержки">
-                        </div>
-                        <div class="school_contact_value">
-                            <a href="tel:{{$company->hotline}}">{{$company->hotline}}</a>
-                        </div>
+                                    <img src="/images/system/Calling.svg" alt="Телефон поддержки" title="Телефон поддержки">
+                                </div>
+                                <div class="school_contact_value">
+                                    <a href="tel:{{$company->hotline}}">{{$company->hotline}}</a>
+                                </div>
+                            </div>
+                        @endif
+
+                        @if($company->email)
+                            <div class="school_contact_cont">
+                                <div class="school_contact_logo">
+
+                                    <img src="/images/system/Mail.svg" alt="Почта поддержки" title="Почта поддержки">
+                                </div>
+                                <div class="school_contact_value">
+                                    <a href="mailto:{{$company->email}}">{{$company->email}}</a>
+                                </div>
+                            </div>
+                        @endif
+
                     </div>
-                    <div class="school_contact_cont">
-                        <div class="school_contact_logo">
-
-                            <img src="/images/system/Mail.svg" alt="Почта поддержки" title="Почта поддержки">
-                        </div>
-                        <div class="school_contact_value">
-                            <a href="mailto:{{$company->email}}">{{$company->email}}</a>
-                        </div>
-                    </div>
-                </div>
-
+                @endif
 
                 <div class="school_kurses">
                     <h2 class="school_kurses_title subblock_title">

@@ -36,8 +36,7 @@ class CompanyRepository implements CompanyRepositoryInterface
                         ->limit(2);
                     },
                 'courses' => function($query) {
-//                 $query->where('installment_period', '!=', 0);
-                 $query->limit(10);
+                 $query->limit(10); //ToDo: Need to get parameter in sync and make filter via that parameter;
                  $query->with(['tags', 'school.url']);
                }
             ])->whereNull('deleted_at')
