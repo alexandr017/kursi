@@ -27,7 +27,6 @@ class Company extends Model
 
     public $timestamps;
 
-    const SECTION_TYPE = 5;
 
     public function reviews(): HasMany
     {
@@ -41,6 +40,7 @@ class Company extends Model
     public function url(): HasOne
     {
         return $this->hasOne(Url::class, 'section_id')->where('section_type', self::SECTION_TYPE);
+    }
 
     // этот метод для админки юзается
     public function urls()
