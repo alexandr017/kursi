@@ -2052,17 +2052,17 @@ p.footer_block_title {
 
 .swiper_styles-button-prev,
 .swiper_styles-button-next {
-    background-image: url(/local/templates/kursi/img/slider_right_btn.svg);
+    background-image: url(../../images/system/slider_right_btn.svg);
 }
 
 .swiper_styles-button-prev.disable,
 .swiper_styles-button-next.disable {
-    background-image: url(/local/templates/kursi/img/slider_disable_right_btn.svg);
+    background-image: url(../../images/system/slider_disable_right_btn.svg);
 }
 
 .swiper_styles-button-prev:hover,
 .swiper_styles-button-next:hover {
-    background-image: url(/local/templates/kursi/img/slider_hover_right_btn.svg);
+    background-image: url(../../images/system/slider_hover_right_btn.svg);
 }
 
 
@@ -2084,7 +2084,6 @@ p.footer_block_title {
     display: flex;
     flex-direction: row;
     width: 100%;
-    align-items: flex-end;
     justify-content: center;
     position: absolute;
     bottom: 5px;
@@ -2129,7 +2128,8 @@ p.footer_block_title {
 .swiper_styles-button-prev.swiper-button-disabled:hover,
 .swiper_styles-button-next.swiper-button-disabled,
 .swiper_styles-button-prev.swiper-button-disabled {
-    background-image: url(/local/templates/kursi/img/slider_disable_right_btn.svg);
+    /*background-image: url(https://kursy.ru/local/templates/kursi/img/slider_disable_right_btn.svg);*/
+    background-image: url(../../images/system/slider_disable_right_btn.svg);
 }
 
 .swiper_styles-pagination.swiper-pagination.swiper-pagination-lock{

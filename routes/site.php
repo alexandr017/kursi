@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\Site\V3\Comments\CommentsController;
+use App\Http\Controllers\Site\V3\CompanyReviews\CompanyReviewController;
 use App\Http\Controllers\Site\V3\Courses\CoursesController;
 use App\Http\Controllers\Site\V3\ListingRating\ListingRatingController;
 use App\Http\Controllers\Site\V3\Tags\TagController;
@@ -20,5 +21,9 @@ Route::fallback(function(){
 Route::post('/{post_id}/comments', [CommentsController::class, 'create']);
 //Route::get('/{listing_id}/courses', [CoursesController::class, 'index']); // todo отключил так как конфликтует с роутом админки /admin/courses
 Route::post('/listings/{listing_id}/review', [ListingRatingController::class, 'create']);
+
+Route::get('companies/{company_id}/reviews', [CompanyReviewController::class, 'index']);
+Route::post('companies/{company_id}/reviews', [CompanyReviewController::class, 'create']);
+
 
 include "site-sitemap.php";
