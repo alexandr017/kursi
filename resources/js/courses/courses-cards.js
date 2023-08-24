@@ -7,6 +7,15 @@ const currentPage = document.getElementById('current-page');
 const nextButton = document.querySelector('.slider_kursi_slider_970728d78bc2c2a36f99-button-next');
 const prevButton = document.querySelector('.slider_kursi_slider_970728d78bc2c2a36f99-button-prev');
 
+decideNextButtonDisable();
+
+function decideNextButtonDisable() {
+    if (cardContainers.length <= 4) {
+        nextButton.attributes['aria-disabled'].value = 'true';
+        nextButton.classList.add('swiper-button-disabled');
+    }
+}
+
 function showNextCards() {
     if (nextButton.attributes['aria-disabled'].value === 'true') return;
 
