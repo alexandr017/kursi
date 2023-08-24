@@ -6,6 +6,7 @@ use DB;
 use App\Models\Posts\Post;
 use App\Services\FakeRating\FakeRating;
 use App\Models\Urls\Url;
+use Throwable;
 
 class PostsRepository
 {
@@ -25,19 +26,22 @@ class PostsRepository
 
     }
 
-    public function find(int $id) : null|object
+    public function find(int $id) : null|Post
     {
         return Post::find($id);
     }
 
-    public function createPost(array $data) : null|object // todo ?
+    /**
+     * @throws Throwable
+     */
+    public function createPost(array $data) : Post
     {
         if (!isset($data['rating_value']) && !isset($data['rating_count'])) {
             [$data['rating_value'], $data['rating_count']] = FakeRating::makeRating();
         }
 
-        return DB::transaction(function() use($data) {
-
+        return DB::transaction(function() use($data) : Post
+        {
             $post = new Post($data);
             $post->save();
 
@@ -53,13 +57,17 @@ class PostsRepository
 
     }
 
-    public function updatePost(int $id, array $data) : null|object
+    /**
+     * @throws Throwable
+     */
+    public function updatePost(int $id, array $data) : null|Post
     {
         if (!isset($data['rating_value']) && !isset($data['rating_count'])) {
             [$data['rating_value'], $data['rating_count']] = FakeRating::makeRating();
         }
 
-        return DB::transaction(function() use($id, $data) {
+        return DB::transaction(function() use($id, $data) : null|Post
+        {
 
             $post = Post::find($id);
             $post->update($data);
@@ -75,10 +83,13 @@ class PostsRepository
         });
     }
 
-    public function deletePost(int $id) : null|object
+    /**
+     * @throws Throwable
+     */
+    public function deletePost(int $id) : null|Post
     {
-        return DB::transaction(function() use($id) {
-
+        return DB::transaction(function() use($id) : null|Post
+        {
             $post = Post::find($id);
             $post->delete();
 
@@ -86,7 +97,6 @@ class PostsRepository
             $url->delete();
 
             return $post;
-
         });
     }
 

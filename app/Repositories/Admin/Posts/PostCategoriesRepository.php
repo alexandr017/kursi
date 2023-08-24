@@ -6,6 +6,7 @@ use DB;
 use App\Models\Posts\PostCategory;
 use App\Services\FakeRating\FakeRating;
 use App\Models\Urls\Url;
+use Throwable;
 
 class PostCategoriesRepository
 {
@@ -22,14 +23,18 @@ class PostCategoriesRepository
             ->toArray();
     }
 
-    public function find(int $id) : null|object
+    public function find(int $id) : null|PostCategory
     {
         return PostCategory::find($id);
     }
 
-    public function createCategory(array $data) : null|object // todo ?
+    /**
+     * @throws Throwable
+     */
+    public function createCategory(array $data) : PostCategory
     {
-        return DB::transaction(function() use($data) {
+        return DB::transaction(function() use($data) : PostCategory
+        {
 
             $page = new PostCategory($data);
             $page->save();
@@ -46,9 +51,13 @@ class PostCategoriesRepository
 
     }
 
-    public function updateCategory(int $id, array $data) : null|object
+    /**
+     * @throws Throwable
+     */
+    public function updateCategory(int $id, array $data) : null|PostCategory
     {
-        return DB::transaction(function() use($id, $data) {
+        return DB::transaction(function() use($id, $data)  : null|PostCategory
+        {
 
             $page = PostCategory::find($id);
             $page->update($data);
@@ -64,10 +73,13 @@ class PostCategoriesRepository
         });
     }
 
-    public function deleteCategory(int $id) : null|object
+    /**
+     * @throws Throwable
+     */
+    public function deleteCategory(int $id) : null|PostCategory
     {
-        return DB::transaction(function() use($id) {
-
+        return DB::transaction(function() use($id) : null|PostCategory
+        {
             $page = PostCategory::find($id);
             $page->delete();
 

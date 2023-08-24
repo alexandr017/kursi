@@ -48,6 +48,11 @@ class StaticPagesController extends AdminController
      */
     public function store(StaticPageRequest $request) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->pageRepository->createPage($data);
@@ -65,6 +70,7 @@ class StaticPagesController extends AdminController
 
     /**
      * Show the form for editing the specified resource.
+     * @param string $id
      * @return View
      */
     public function edit(string $id) : View
@@ -88,6 +94,11 @@ class StaticPagesController extends AdminController
      */
     public function update(StaticPageRequest $request, string $id) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->pageRepository->updatePage($id, $data);

@@ -8,13 +8,13 @@
     <br>
     <br>
 
-    <table class="table table-hover">
+    <table class="table table-hover" id="coolTable">
         <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Название</th>
             <th scope="col">Статус</th>
-            <th scope="col">Действия</th>
+            <th scope="col" style="min-width: 100px">Действия</th>
         </tr>
         </thead>
         <tbody>
@@ -44,17 +44,4 @@
         </tbody>
     </table>
 
-
-
 @endsection
-
-
-@section('additional-scripts')
-    @parent
-
-@endsection
-
-
-
-
-

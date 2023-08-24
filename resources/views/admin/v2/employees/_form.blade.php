@@ -54,8 +54,6 @@
 </div>
 
 
-
-
 <div class="form-group">
     <label for="content">Контент</label>
     <?php
@@ -65,8 +63,6 @@
     ?>
     <textarea class="form-control" name="content" id="content">{{$content}}</textarea>
 </div>
-
-
 
 
 <div class="form-group">
@@ -137,44 +133,21 @@
 
 
 <div class="form-group">
-    <label for="sort_order"><i class="red">*</i> Порядок отображения/ сортировки</label>
+    <label for="sort_order"><i class="red">*</i> Порядок отображения / сортировки</label>
     <input type="number" class="form-control" name="sort_order" id="sort_order" step="1" required
            @if(old('sort_order'))
                value="{{old('sort_order')}}"
            @else
                @if(isset($item))
                    value="{{$item->sort_order}}"
+                @else
+                    value="500"
                 @endif
            @endif
     >
 </div>
 
-
-<div class="form-group">
-    <label for="rating_value">Рейтинг</label>
-    <input type="number" class="form-control" name="rating_value" id="rating_value" step="0.1" min="3" max="5"
-           @if(old('rating_value'))
-               value="{{old('rating_value')}}"
-           @else
-               @if(isset($item))
-                   value="{{$item->rating_value}}"
-        @endif
-        @endif
-    >
-</div>
-
-<div class="form-group">
-    <label for="rating_count">Количество голосов</label>
-    <input type="number" class="form-control" name="rating_count" id="rating_count" step="1"
-           @if(old('rating_count'))
-               value="{{old('rating_count')}}"
-           @else
-               @if(isset($item))
-                   value="{{$item->rating_count}}"
-        @endif
-        @endif
-    >
-</div>
+@include('admin.v2.includes.rating')
 
 <div class="form-group">
     <label for="status"><i class="red ">*</i> Статус</label>
@@ -183,3 +156,12 @@
         <option value="0" @if(isset($item) && $item->status == 0) selected @endif>Отключен</option>
     </select>
 </div>
+
+@section('additional-scripts')
+    @parent
+    <script>
+        window.CKEDITOR_elements = ['content'];
+    </script>
+    <script src="/admin/modules/ckeditor/ckeditor.js"></script>
+    <script src="/admin/modules/ckeditor/config.js"></script>
+@endsection

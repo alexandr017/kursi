@@ -31,13 +31,13 @@ class Handler extends ExceptionHandler
     }
 
 
-    public function render($request, Throwable $exception)
+    public function render($request, Throwable $e)
     {
-        if ($exception instanceof ValidationException) {
+        if ($e instanceof ValidationException) {
             $httpCode = Response::HTTP_UNPROCESSABLE_ENTITY;
             $statusCode = BusinessLogicException::VALIDATION_FAILED;
-            $details['message'] = $exception->getMessage();
-            foreach ($exception->errors() as $key => $error) {
+            $details['message'] = $e->getMessage();
+            foreach ($e->errors() as $key => $error) {
                 $details['errors'][$key] = $error[0] ?? 'Unknown error';
             }
 
@@ -49,7 +49,7 @@ class Handler extends ExceptionHandler
             return response()->json($data, $httpCode);
         }
 
-        return parent::render($request, $exception);
+        return parent::render($request, $e);
 
     }
 }

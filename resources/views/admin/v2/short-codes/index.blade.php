@@ -8,7 +8,7 @@
         Полное описание с шорткодами смотрите в <a href="https://docs.google.com/spreadsheets/d/13sXdrqWVY0fD3BlrqFmW8CHzhKMJRiQxjL5ptYoT3k8/edit#gid=0" target="_blank">официальной докуменации шорткодов</a>.
     </div>
 
-    <table class="table table-hover">
+    <table class="table table-hover" id="coolTable">
         <thead>
         <tr>
             <th scope="col">Название</th>
@@ -133,7 +133,3 @@
     </table>
 
 @endsection
-
-
-
-

@@ -22,7 +22,7 @@ class StaticPagesRepository
         return StaticPage::find($id);
     }
 
-    public function createPage(array $data) : object
+    public function createPage(array $data) : StaticPage
     {
         if (!isset($data['rating_value']) && !isset($data['rating_count'])) {
             [$data['rating_value'], $data['rating_count']] = FakeRating::makeRating();
@@ -33,7 +33,7 @@ class StaticPagesRepository
         return $page;
     }
 
-    public function updatePage(int $id, array $data) : null|object
+    public function updatePage(int $id, array $data) : null|StaticPage
     {
         $page = StaticPage::find($id);
 

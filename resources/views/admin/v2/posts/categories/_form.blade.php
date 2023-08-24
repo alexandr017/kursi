@@ -33,3 +33,12 @@
         <option value="0" @if(isset($item) && $item->status == 0) selected @endif>Отключен</option>
     </select>
 </div>
+
+@section('additional-scripts')
+    @parent
+    <script>
+        window.CKEDITOR_elements = ['content'];
+    </script>
+    <script src="/admin/modules/ckeditor/ckeditor.js"></script>
+    <script src="/admin/modules/ckeditor/config.js"></script>
+@endsection

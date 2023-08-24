@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\Posts\PostsController;
 use App\Http\Controllers\Admin\Posts\PostCommentsController;
 
 use App\Http\Controllers\Admin\Employees\EmployeesController;
+use App\Http\Controllers\Admin\Users\UsersController;
 use App\Http\Controllers\Admin\ShortCodes\ShortCodesController;
 use App\Http\Controllers\Admin\StaticPages\StaticPagesController;
 
@@ -23,6 +24,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     // education section
     Route::resource('listings', ListingsController::class)->except('show');
+    Route::get('listings/{id}/edit/courses', [ListingsController::class, 'coursesList'])->name('listings.courses');
+    Route::post('listings/{id}/edit/courses', [ListingsController::class, 'coursesListUpdate']);
     Route::resource('companies', CompaniesController::class)->except('show');
     Route::resource('company-reviews', CompanyReviewsController::class)->except('show');
     Route::resource('courses', CoursesController::class)->except('show');
@@ -37,6 +40,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     // admin section
     Route::resource('employees', EmployeesController::class)->except('show');
+    Route::resource('users', UsersController::class)->except('show');
     Route::get('short-codes', [ShortCodesController::class, 'index'])->name('short-codes.index');
     Route::resource('static-pages', StaticPagesController::class)->except(['show', 'destroy']);
 

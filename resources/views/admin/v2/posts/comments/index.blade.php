@@ -8,7 +8,7 @@
     <br>
     <br>
 
-    <table class="table table-hover">
+    <table class="table table-hover" id="coolTable">
         <thead>
         <tr>
             <th scope="col">#</th>
@@ -46,17 +46,4 @@
         </tbody>
     </table>
 
-
-
 @endsection
-
-
-@section('additional-scripts')
-    @parent
-
-@endsection
-
-
-
-
-

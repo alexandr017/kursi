@@ -3,9 +3,12 @@
 namespace App\Http\Requests\Admin\Posts;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\ValidationRule;
+use App\Http\Requests\Admin\AdminRequestTrait;
 
 class PostRequest extends FormRequest
 {
+    use AdminRequestTrait;
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -17,7 +20,7 @@ class PostRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {

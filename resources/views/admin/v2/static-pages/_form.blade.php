@@ -22,30 +22,14 @@
     <textarea class="form-control" name="content" id="content">{{$content}}</textarea>
 </div>
 
+@include('admin.v2.includes.rating')
 
+@section('additional-scripts')
+    @parent
+    <script>
+        window.CKEDITOR_elements = ['lead', 'content'];
+    </script>
+    <script src="/admin/modules/ckeditor/ckeditor.js"></script>
+    <script src="/admin/modules/ckeditor/config.js"></script>
+@endsection
 
-<div class="form-group">
-    <label for="rating_value">Значение рейтинг</label>
-    <input type="number" class="form-control" name="rating_value" id="rating_value" step="0.1" min="3" max="5"
-           @if(old('rating_value'))
-               value="{{old('rating_value')}}"
-           @else
-               @if(isset($item))
-                   value="{{$item->rating_value}}"
-        @endif
-        @endif
-    >
-</div>
-
-<div class="form-group">
-    <label for="rating_count">Количество голосов</label>
-    <input type="number" class="form-control" name="rating_count" id="rating_count" step="1"
-           @if(old('rating_count'))
-               value="{{old('rating_count')}}"
-           @else
-               @if(isset($item))
-                   value="{{$item->rating_count}}"
-        @endif
-        @endif
-    >
-</div>

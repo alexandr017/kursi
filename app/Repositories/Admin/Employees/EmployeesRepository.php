@@ -6,6 +6,7 @@ use DB;
 use App\Models\Team\Employee;
 use App\Services\FakeRating\FakeRating;
 use App\Models\Urls\Url;
+use Throwable;
 
 class EmployeesRepository
 {
@@ -22,12 +23,12 @@ class EmployeesRepository
             ->toArray();
     }
 
-    public function find(int $id) : null|object
+    public function find(int $id) : null|Employee
     {
         return Employee::find($id);
     }
 
-    public function createEmployee(array $data) : null|object // todo ?
+    public function createEmployee(array $data) : Employee
     {
         if (!isset($data['rating_value']) && !isset($data['rating_count'])) {
             [$data['rating_value'], $data['rating_count']] = FakeRating::makeRating();
@@ -48,13 +49,16 @@ class EmployeesRepository
         });
     }
 
-    public function updateEmployee(int $id, array $data) : null|object
+    /**
+     * @throws Throwable
+     */
+    public function updateEmployee(int $id, array $data) : null|Employee
     {
         if (!isset($data['rating_value']) && !isset($data['rating_count'])) {
             [$data['rating_value'], $data['rating_count']] = FakeRating::makeRating();
         }
 
-        return DB::transaction(function() use($id, $data) : null|object
+        return DB::transaction(function() use($id, $data) : null|Employee
         {
 
             $employee = Employee::find($id);
@@ -71,9 +75,12 @@ class EmployeesRepository
         });
     }
 
-    public function deleteEmployee(int $id) : null|object
+    /**
+     * @throws Throwable
+     */
+    public function deleteEmployee(int $id) : null|Employee
     {
-        return DB::transaction(function() use($id) : null|object
+        return DB::transaction(function() use($id) : null|Employee
         {
 
             $employee = Employee::find($id);

@@ -16,12 +16,12 @@ class CourseTagsRepository
             ->toArray();
     }
 
-    public function find(int $id) : null|object
+    public function find(int $id) : null|Tag
     {
         return Tag::find($id);
     }
 
-    public function createTag(array $data) : null|object // todo ?
+    public function createTag(array $data) : Tag
     {
         $data['old_id'] = 0; // todo: General error: 1364 Field 'old_id' doesn't have a default value
         $tag = new Tag($data);
@@ -31,7 +31,7 @@ class CourseTagsRepository
     }
 
 
-    public function updateTag(int $id, array $data) : null|object
+    public function updateTag(int $id, array $data) : null|Tag
     {
         $tag = Tag::find($id);
 
@@ -43,7 +43,7 @@ class CourseTagsRepository
         return null;
     }
 
-    public function deleteTag(int $id) : null|object
+    public function deleteTag(int $id) : null|Tag
     {
         $tag = Tag::find($id);
 

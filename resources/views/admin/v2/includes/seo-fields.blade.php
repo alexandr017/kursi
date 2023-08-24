@@ -35,7 +35,7 @@
 </div>
 
 <div class="form-group">
-    <label for="breadcrumbs"><i class="red"></i> Хлебные крошки</label>
+    <label for="breadcrumbs"><i class="red">*</i> Хлебные крошки</label>
     <?php
     $breadcrumbs = old('breadcrumbs')
         ? old('breadcrumbs')

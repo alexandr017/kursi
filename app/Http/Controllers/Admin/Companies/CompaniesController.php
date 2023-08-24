@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\Companies\CompanyRequest;
 use App\Repositories\Admin\Companies\CompaniesRepository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Throwable;
 
 class CompaniesController extends AdminController
 {
@@ -48,6 +49,7 @@ class CompaniesController extends AdminController
      * Store a newly created resource in storage.
      * @param CompanyRequest $request
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function store(CompanyRequest $request) : RedirectResponse
     {
@@ -98,9 +100,15 @@ class CompaniesController extends AdminController
      * @param CompanyRequest $request
      * @param string $id
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function update(CompanyRequest $request, string $id) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->companyRepository->updateCompany($id, $data);
@@ -120,6 +128,7 @@ class CompaniesController extends AdminController
      * Remove the specified resource from storage.
      * @param string $id
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function destroy(string $id) : RedirectResponse
     {

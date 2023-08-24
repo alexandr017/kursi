@@ -9,6 +9,7 @@ use App\Repositories\Admin\Posts\PostCategoriesRepository;
 use App\Repositories\Admin\Employees\EmployeesRepository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Throwable;
 
 class PostsController extends AdminController
 {
@@ -57,9 +58,15 @@ class PostsController extends AdminController
      * Store a newly created resource in storage.
      * @param PostRequest $request
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function store(PostRequest $request) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->postRepository->createPost($data);
@@ -104,9 +111,15 @@ class PostsController extends AdminController
      * @param PostRequest $request
      * @param string $id
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function update(PostRequest $request, string $id) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->postRepository->updatePost($id, $data);
@@ -126,6 +139,7 @@ class PostsController extends AdminController
      * Remove the specified resource from storage.
      * @param string $id
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function destroy(string $id) : RedirectResponse
     {

@@ -22,27 +22,32 @@
 </div>
 
 
-title varchar(255)
-status tinyint
-character_code varchar(255)
-sort int
-pluses text
-minuses text
-content text
-rating double(8,2)
-author_name varchar(255)
-code int
+<?php //todo скорее всего неиспользуемые ?>
+character_code
+sort
+code
+
 
 
 
 <div class="form-group">
-    <label for="lead"><i class="red"></i> Лид</label>
+    <label for="pluses">Плюсы</label>
     <?php
-    $lead = old('lead')
-        ? old('lead')
-        : (isset($item) ? $item->lead : '');
+    $pluses = old('pluses')
+        ? old('pluses')
+        : (isset($item) ? $item->pluses : '');
     ?>
-    <textarea class="form-control" name="lead" id="lead">{{$lead}}</textarea>
+    <textarea class="form-control" name="pluses" id="pluses">{{$pluses}}</textarea>
+</div>
+
+<div class="form-group">
+    <label for="minuses">Минусы</label>
+    <?php
+    $minuses = old('minuses')
+        ? old('minuses')
+        : (isset($item) ? $item->minuses : '');
+    ?>
+    <textarea class="form-control" name="minuses" id="minuses">{{$minuses}}</textarea>
 </div>
 
 
@@ -58,82 +63,32 @@ code int
 
 
 <div class="form-group">
-    <label for="logo"><i class="red">*</i> Превью</label>
-    <input type="text" class="form-control" name="logo" id="logo" required
-           @if(old('logo'))
-               value="{{old('logo')}}"
+    <label for="rating">Рейтинг</label>
+    <input type="number" class="form-control" name="rating" id="rating"
+           @if(old('rating'))
+               value="{{old('rating')}}"
            @else
                @if(isset($item))
-                   value="{{$item->logo}}"
+                   value="{{$item->rating}}"
         @endif
         @endif
     >
 </div>
 
+
 <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" class="form-control" name="email" id="email"
-           @if(old('email'))
-               value="{{old('email')}}"
+    <label for="author_name">Имя автора</label>
+    <input type="number" class="form-control" name="author_name" id="author_name" step="0.1" min="3" max="5"
+           @if(old('author_name'))
+               value="{{old('author_name')}}"
            @else
                @if(isset($item))
-                   value="{{$item->email}}"
+                   value="{{$item->author_name}}"
         @endif
         @endif
     >
 </div>
 
-<div class="form-group">
-    <label for="hotline">Горячая линия</label>
-    <input type="text" class="form-control" name="hotline" id="hotline"
-           @if(old('hotline'))
-               value="{{old('hotline')}}"
-           @else
-               @if(isset($item))
-                   value="{{$item->hotline}}"
-        @endif
-        @endif
-    >
-</div>
-
-<div class="form-group">
-    <label for="hotline">Ссылка на сайт</label>
-    <input type="url" class="form-control" name="link" id="link"
-           @if(old('link'))
-               value="{{old('link')}}"
-           @else
-               @if(isset($item))
-                   value="{{$item->link}}"
-        @endif
-        @endif
-    >
-</div>
-
-<div class="form-group">
-    <label for="rating_value">Рейтинг</label>
-    <input type="number" class="form-control" name="rating_value" id="rating_value" step="0.1" min="3" max="5"
-           @if(old('rating_value'))
-               value="{{old('rating_value')}}"
-           @else
-               @if(isset($item))
-                   value="{{$item->rating_value}}"
-        @endif
-        @endif
-    >
-</div>
-
-<div class="form-group">
-    <label for="rating_count">Количество голосов</label>
-    <input type="number" class="form-control" name="rating_count" id="rating_count" step="1"
-           @if(old('rating_count'))
-               value="{{old('rating_count')}}"
-           @else
-               @if(isset($item))
-                   value="{{$item->rating_count}}"
-        @endif
-        @endif
-    >
-</div>
 
 <div class="form-group">
     <label for="status"><i class="red ">*</i> Статус</label>

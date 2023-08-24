@@ -6,6 +6,7 @@ use DB;
 use App\Models\Pages\Page;
 use App\Services\FakeRating\FakeRating;
 use App\Models\Urls\Url;
+use Throwable;
 
 class PagesRepository
 {
@@ -22,18 +23,22 @@ class PagesRepository
             ->toArray();
     }
 
-    public function find(int $id) : null|object
+    public function find(int $id) : null|Page
     {
         return Page::find($id);
     }
 
-    public function createPage(array $data) : null|object // todo ?
+    /**
+     * @throws Throwable
+     */
+    public function createPage(array $data) : Page
     {
         if (!isset($data['rating_value']) && !isset($data['rating_count'])) {
             [$data['rating_value'], $data['rating_count']] = FakeRating::makeRating();
         }
 
-        return DB::transaction(function() use($data) {
+        return DB::transaction(function() use($data) : Page
+        {
 
             $page = new Page($data);
             $page->save();
@@ -49,13 +54,17 @@ class PagesRepository
         });
     }
 
-    public function updatePage(int $id, array $data) : null|object
+    /**
+     * @throws Throwable
+     */
+    public function updatePage(int $id, array $data) : null|Page
     {
         if (!isset($data['average_rating']) && !isset($data['number_of_votes'])) {
             [$data['average_rating'], $data['number_of_votes']] = FakeRating::makeRating();
         }
 
-        return DB::transaction(function() use($id, $data) {
+        return DB::transaction(function() use($id, $data) : null|Page
+        {
 
             $page = Page::find($id);
             $page->update($data);
@@ -72,10 +81,13 @@ class PagesRepository
         });
     }
 
-    public function deletePage(int $id) : null|object
+    /**
+     * @throws Throwable
+     */
+    public function deletePage(int $id) : null|Page
     {
-        return DB::transaction(function() use($id) {
-
+        return DB::transaction(function() use($id) : null|Page
+        {
             $page = Page::find($id);
             $page->delete();
 

@@ -3,6 +3,10 @@
 @section('h1', 'Компании - Редактирование')
 
 @section('content')
+    <a href="#" class="btn btn-primary"><i class="fas fa-map-signs"></i> Привязанные листинги</a>
+    <br>
+    <br>
+
     <form action="{{ route('admin.companies.update',$item->id) }}" method="post">
 
         {{ method_field('PATCH') }}

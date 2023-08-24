@@ -3,14 +3,13 @@
 namespace App\Http\Requests\Admin\Companies;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Validation\ValidationException;
-use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Contracts\Validation\ValidationRule;
+use App\Http\Requests\Admin\AdminRequestTrait;
 
 class CompanyRequest extends FormRequest
 {
-    private array $errors = [];
+    use AdminRequestTrait;
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -19,20 +18,10 @@ class CompanyRequest extends FormRequest
         return true;
     }
 
-    public function failedValidation(Validator $validator)
-    {
-        $this->errors = (new ValidationException($validator))->errors();
-    }
-
-    public function getErrors() : array
-    {
-        return $this->errors;
-    }
-
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {

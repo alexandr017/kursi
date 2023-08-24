@@ -18,12 +18,12 @@ class CompanyReviewsRepository
             ->toArray();
     }
 
-    public function find(int $id) : null|object
+    public function find(int $id) : null|SchoolReview
     {
         return SchoolReview::find($id);
     }
 
-    public function createReview(array $data) : null|object // todo ?
+    public function createReview(array $data) : SchoolReview
     {
         $review = new SchoolReview($data);
         $review->save();
@@ -31,7 +31,7 @@ class CompanyReviewsRepository
         return $review;
     }
 
-    public function updateReview(int $id, array $data) : null|object
+    public function updateReview(int $id, array $data) : null|SchoolReview
     {
         $review = SchoolReview::find($id);
         $review->update($data);
@@ -39,7 +39,7 @@ class CompanyReviewsRepository
         return $review;
     }
 
-    public function deleteReview(int $id) : null|object
+    public function deleteReview(int $id) : null|SchoolReview
     {
         $review = SchoolReview::find($id);
         $review->delete();

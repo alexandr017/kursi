@@ -6,6 +6,7 @@ use DB;
 use App\Models\Companies\Company;
 use App\Services\FakeRating\FakeRating;
 use App\Models\Urls\Url;
+use Throwable;
 
 class CompaniesRepository
 {
@@ -27,13 +28,17 @@ class CompaniesRepository
         return Company::find($id);
     }
 
-    public function createCompany(array $data) : null|object // todo ?
+    /**
+     * @throws Throwable
+     */
+    public function createCompany(array $data) : Company
     {
         if (!isset($data['rating_value']) && !isset($data['rating_count'])) {
             [$data['rating_value'], $data['rating_count']] = FakeRating::makeRating();
         }
 
-        return DB::transaction(function() use($data) {
+        return DB::transaction(function() use($data) : Company
+        {
 
             $company = new Company($data);
             $company->save();
@@ -49,14 +54,17 @@ class CompaniesRepository
         });
     }
 
-    public function updateCompany(int $id, array $data) : null|object
+    /**
+     * @throws Throwable
+     */
+    public function updateCompany(int $id, array $data) : null|Company
     {
         if (!isset($data['average_rating']) && !isset($data['number_of_votes'])) {
             [$data['average_rating'], $data['number_of_votes']] = FakeRating::makeRating();
         }
 
-        return DB::transaction(function() use($id, $data) {
-
+        return DB::transaction(function() use($id, $data) : null|Company
+        {
             $company = Company::find($id);
             $company->update($data);
 
@@ -71,10 +79,13 @@ class CompaniesRepository
         });
     }
 
-    public function deleteCompany(int $id) : null|object
+    /**
+     * @throws Throwable
+     */
+    public function deleteCompany(int $id) : null|Company
     {
-        return DB::transaction(function() use($id) {
-
+        return DB::transaction(function() use($id) : null|Company
+        {
             $company = Company::find($id);
             $company->delete();
 
@@ -83,5 +94,10 @@ class CompaniesRepository
 
             return $company;
         });
+    }
+
+    public function getCompaniesForSelect() : array
+    {
+        return Company::select(['id', 'name'])->whereNull('deleted_at')->pluck('name', 'id')->toArray();
     }
 }

@@ -36,17 +36,4 @@
         </tbody>
     </table>
 
-
-
 @endsection
-
-
-@section('additional-scripts')
-    @parent
-
-@endsection
-
-
-
-
-

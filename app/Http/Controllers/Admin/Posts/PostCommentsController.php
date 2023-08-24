@@ -42,7 +42,7 @@ class PostCommentsController extends AdminController
         $posts = $this->postsRepository->getPostsForSelect();
 
         $breadcrumbs = [
-            ['h1' => 'Комментарии', 'link' => route('admin.posts.index')],
+            ['h1' => 'Комментарии', 'link' => route('admin.post-comments.index')],
             ['h1' => 'Создание']
         ];
 
@@ -56,6 +56,11 @@ class PostCommentsController extends AdminController
      */
     public function store(PostCommentRequest $request) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->postCommentsRepository->createComment($data);
@@ -103,6 +108,11 @@ class PostCommentsController extends AdminController
      */
     public function update(PostCommentRequest $request, string $id) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->postCommentsRepository->updateComment($id, $data);

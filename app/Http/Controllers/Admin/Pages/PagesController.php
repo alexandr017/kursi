@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\Pages\PageRequest;
 use App\Repositories\Admin\Pages\PagesRepository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Throwable;
 
 class PagesController extends AdminController
 {
@@ -48,9 +49,15 @@ class PagesController extends AdminController
      * Store a newly created resource in storage.
      * @param PageRequest $request
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function store(PageRequest $request) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->pageRepository->createPage($data);
@@ -93,9 +100,15 @@ class PagesController extends AdminController
      * @param PageRequest $request
      * @param string $id
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function update(PageRequest $request, string $id) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->pageRepository->updatePage($id, $data);
@@ -115,6 +128,7 @@ class PagesController extends AdminController
      * Remove the specified resource from storage.
      * @param string $id
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function destroy(string $id) : RedirectResponse
     {

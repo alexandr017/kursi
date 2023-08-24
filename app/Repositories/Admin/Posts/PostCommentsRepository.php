@@ -18,12 +18,12 @@ class PostCommentsRepository
             ->toArray();
     }
 
-    public function find(int $id) : null|object
+    public function find(int $id) : null|PostComment
     {
         return PostComment::find($id);
     }
 
-    public function createComment(array $data) : null|object // todo ?
+    public function createComment(array $data) : PostComment
     {
         $comment = new PostComment($data);
         $comment->save();
@@ -31,7 +31,7 @@ class PostCommentsRepository
         return $comment;
     }
 
-    public function updateComment(int $id, array $data) : null|object
+    public function updateComment(int $id, array $data) : null|PostComment
     {
         $comment = PostComment::find($id);
         $comment->update($data);
@@ -39,7 +39,7 @@ class PostCommentsRepository
         return $comment;
     }
 
-    public function deleteComment(int $id) : null|object
+    public function deleteComment(int $id) : null|PostComment
     {
         $comment = PostComment::find($id);
         $comment->delete();

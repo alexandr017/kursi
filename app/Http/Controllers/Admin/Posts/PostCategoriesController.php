@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\Posts\PostCategoryRequest;
 use App\Repositories\Admin\Posts\PostCategoriesRepository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Throwable;
 
 class PostCategoriesController extends AdminController
 {
@@ -48,9 +49,15 @@ class PostCategoriesController extends AdminController
      * Store a newly created resource in storage.
      * @param PostCategoryRequest $request
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function store(PostCategoryRequest $request) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->postCategoryRepository->createCategory($data);
@@ -90,9 +97,15 @@ class PostCategoriesController extends AdminController
      * @param PostCategoryRequest $request
      * @param string $id
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function update(PostCategoryRequest $request, string $id) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->postCategoryRepository->updateCategory($id, $data);
@@ -112,6 +125,7 @@ class PostCategoriesController extends AdminController
      * Remove the specified resource from storage.
      * @param string $id
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function destroy(string $id) : RedirectResponse
     {

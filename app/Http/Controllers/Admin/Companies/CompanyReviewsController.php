@@ -46,7 +46,7 @@ class CompanyReviewsController extends AdminController
             ['h1' => 'Создание']
         ];
 
-        $schools = [1 => 'test'];
+        $schools = $this->companiesRepository->getCompaniesForSelect();
 
         return view('admin.v2.companies.reviews.create', compact( 'schools', 'breadcrumbs'));
     }
@@ -58,6 +58,11 @@ class CompanyReviewsController extends AdminController
      */
     public function store(CompanyReviewRequest $request) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $errors = $request->getErrors();
         if (count($errors) > 0) {
             return back()->withInput()->with('flash_warning', json_encode($errors));
@@ -108,6 +113,11 @@ class CompanyReviewsController extends AdminController
      */
     public function update(CompanyReviewRequest $request, string $id) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->companyReviewsRepository->updateReview($id, $data);

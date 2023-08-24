@@ -6,8 +6,10 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests\Admin\Listings\ListingRequest;
 use App\Repositories\Admin\Listings\ListingsRepository;
 use App\Repositories\Admin\Employees\EmployeesRepository;
+use App\Repositories\Admin\Courses\CoursesRepository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Throwable;
 
 class ListingsController extends AdminController
 {
@@ -15,10 +17,13 @@ class ListingsController extends AdminController
 
     private mixed $employeesRepository;
 
+    private mixed $coursesRepository;
+
     public function __construct()
     {
         $this->listingRepository = new ListingsRepository;
         $this->employeesRepository = new EmployeesRepository;
+        $this->coursesRepository = new CoursesRepository;
     }
 
     /**
@@ -54,9 +59,15 @@ class ListingsController extends AdminController
      * Store a newly created resource in storage.
      * @param ListingRequest $request
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function store(ListingRequest $request) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->listingRepository->createListing($data);
@@ -101,9 +112,15 @@ class ListingsController extends AdminController
      * @param ListingRequest $request
      * @param string $id
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function update(ListingRequest $request, string $id) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->listingRepository->updateListing($id, $data);
@@ -123,6 +140,7 @@ class ListingsController extends AdminController
      * Remove the specified resource from storage.
      * @param string $id
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function destroy(string $id) : RedirectResponse
     {
@@ -137,5 +155,31 @@ class ListingsController extends AdminController
                 ->route('admin.listings.index')
                 ->with('flash_errors', 'Ошибка удаления!');
         }
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     * @param int $id
+     * @return View
+     */
+    public function coursesList(int $id) : View
+    {
+        $courses = $this->coursesRepository->getAllCoursesForShow();
+        $currentCourses = []; // todo
+
+        $breadcrumbs = [
+            ['h1' => 'Листиинги', 'link' => route('admin.listings.index')],
+            ['h1' => 'Редактирование'],
+        ];
+
+        return view('admin.v2.listings.courses', compact('courses', 'currentCourses', 'breadcrumbs'));
+    }
+
+    public function coursesListUpdate(int $id) : RedirectResponse
+    {
+        // todo
+        return redirect()
+            ->route('admin.listings.index')
+            ->with('flash_success', 'Курсы перепривязаны к листингу!');
     }
 }

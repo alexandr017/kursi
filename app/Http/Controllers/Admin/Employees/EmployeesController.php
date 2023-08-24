@@ -7,6 +7,7 @@ use App\Repositories\Admin\Employees\EmployeesRepository;
 use App\Http\Requests\Admin\Employees\EmployeeRequest;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Throwable;
 
 class EmployeesController extends AdminController
 {
@@ -51,6 +52,11 @@ class EmployeesController extends AdminController
      */
     public function store(EmployeeRequest $request) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->employeesRepository->createEmployee($data);
@@ -92,6 +98,11 @@ class EmployeesController extends AdminController
      */
     public function update(EmployeeRequest $request, string $id) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->employeesRepository->updateEmployee($id, $data);
@@ -111,6 +122,7 @@ class EmployeesController extends AdminController
      * Remove the specified resource from storage.
      * @param string $id
      * @return RedirectResponse
+     * @throws Throwable
      */
     public function destroy(string $id) : RedirectResponse
     {

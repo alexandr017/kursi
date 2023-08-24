@@ -51,6 +51,11 @@ class CourseTagsController extends AdminController
      */
     public function store(CourseTagRequest $request) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->courseTagRepository->createTag($data);
@@ -95,6 +100,11 @@ class CourseTagsController extends AdminController
      */
     public function update(CourseTagRequest $request, string $id) : RedirectResponse
     {
+        $errors = $request->getErrors();
+        if (count($errors) > 0) {
+            return back()->withInput()->with('flash_warning', json_encode($errors));
+        }
+
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->courseTagRepository->updateTag($id, $data);

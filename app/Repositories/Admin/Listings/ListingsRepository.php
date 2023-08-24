@@ -6,6 +6,7 @@ use DB;
 use App\Models\Listing\Listing;
 use App\Services\FakeRating\FakeRating;
 use App\Models\Urls\Url;
+use Throwable;
 
 class ListingsRepository
 {
@@ -22,12 +23,15 @@ class ListingsRepository
             ->toArray();
     }
 
-    public function find(int $id) : null|object
+    public function find(int $id) : null|Listing
     {
         return Listing::find($id);
     }
 
-    public function createListing(array $data) : null|object // todo ?
+    /**
+     * @throws Throwable
+     */
+    public function createListing(array $data) : Listing
     {
         $data['description'] = 'test'; // todo мне кажется это поле не надо
         $data['slug'] = 'test'; // todo мне кажется это поле не надо
@@ -38,7 +42,8 @@ class ListingsRepository
             [$data['rating_value'], $data['rating_count']] = FakeRating::makeRating();
         }
 
-        return DB::transaction(function() use($data) {
+        return DB::transaction(function() use($data) : Listing
+        {
 
             $listing = new Listing($data);
             $listing->save();
@@ -54,7 +59,10 @@ class ListingsRepository
         });
     }
 
-    public function updateListing(int $id, array $data) : null|object
+    /**
+     * @throws Throwable
+     */
+    public function updateListing(int $id, array $data) : null|Listing
     {
         if (!isset($data['average_rating']) && !isset($data['number_of_votes'])) {
             [$data['average_rating'], $data['number_of_votes']] = FakeRating::makeRating();
@@ -65,7 +73,8 @@ class ListingsRepository
         $data['meta_title'] = 'test'; // todo мне кажется это поле не надо
         $data['rating_sum'] = 0; // todo мне кажется это поле не надо
 
-        return DB::transaction(function() use($id, $data) {
+        return DB::transaction(function() use($id, $data) : null|Listing
+        {
 
             $listing = Listing::find($id);
             $listing->update($data);
@@ -82,9 +91,13 @@ class ListingsRepository
         });
     }
 
-    public function deleteListing(int $id) : null|object
+    /**
+     * @throws Throwable
+     */
+    public function deleteListing(int $id) : null|Listing
     {
-        return DB::transaction(function() use($id) {
+        return DB::transaction(function() use($id) : null|Listing
+        {
 
             $listing = Listing::find($id);
             $listing->delete();

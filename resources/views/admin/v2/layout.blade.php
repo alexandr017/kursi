@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="/admin/v2/assets//vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="/admin/v2/assets//vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="/admin/v2/assets//vendor/fonts/flag-icon-css/flag-icon.min.css">
+
+    <link rel="stylesheet" href="/admin/modules/dataTables/datatables.min.css">
     <title>@yield('title')</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,6 +53,7 @@
             clear: both;
         }
     </style>
+
 </head>
 <body>
 <div class="dashboard-main-wrapper">
@@ -119,9 +122,22 @@
 <script src="/admin/v2/assets//vendor/charts/c3charts/C3chartjs.js"></script>
 <script src="/admin/v2/assets//libs/js/dashboard-ecommerce.js"></script>
 
+@yield('additional-scripts')
+
+<script src="/admin/modules/dataTables/datatables.min.js"></script>
+
 <script>
     $('.rest-destroy').on('click',function(){
         return confirm("Вы действительно хотите удалить текущий элемент?");
+    });
+
+    $(document).ready(function(){
+        $("#coolTable").DataTable({
+            "sort": true,
+            "pageLength": 50,
+            "language": {"url": "/backend/dataTables/datatables.json"}
+        });
+
     });
 </script>
 
