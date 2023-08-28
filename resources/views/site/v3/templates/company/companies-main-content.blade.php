@@ -1,22 +1,22 @@
-<div class="schools-ajax_cont">
+<div class="schools-ajax_cont" id="companies-main-content">
     <div class="product-sort-cont">
-        <button class="companies-sort-btn" data-sort-value="property_vote_count" data-sort-order="" onclick="sortPanel(event, 'companies-sort-btn')">
+        <button class="companies-sort-btn" data-sort-value="rating_count" data-sort-order="" onclick="sortPanel(event, 'companies-sort-btn')">
             Количество отзывов
             <img src="/images/sort-panel/arrow_up_black.svg" alt="Фильтрация" title="Фильтрация">
         </button>
 
-        <button class="companies-sort-btn" data-sort-value="property_rating" data-sort-order="" onclick="sortPanel(event, 'companies-sort-btn')">
+        <button class="companies-sort-btn" data-sort-value="rating_value" data-sort-order="" onclick="sortPanel(event, 'companies-sort-btn')">
             Рейтинг
             <img src="/images/sort-panel/arrow_up_black.svg" alt="Фильтрация" title="Фильтрация">
         </button>
 
-        <button class="companies-sort-btn" data-sort-value="property_lessons_count" data-sort-order="" onclick="sortPanel(event, 'companies-sort-btn')">
+        <button class="companies-sort-btn" data-sort-value="courses_count" data-sort-order="" onclick="sortPanel(event, 'companies-sort-btn')">
             Количество курсов
             <img src="/images/sort-panel/arrow_up_black.svg" alt="Фильтрация" title="Фильтрация">
         </button>
     </div>
 
-    @include('site.v3.templates.company.company-catalog-section')
+    @include('site.v3.templates.company.company-catalog-section', ['companies' => $companies])
 </div>
 
 @push('styles')
@@ -24,5 +24,5 @@
 @endpush
 
 @push('scripts')
-    <script type="text/javascript" src="{{ Vite::asset('resources/js/sort.js') }}"></script>
+    <script type="text/javascript" src="{{ Vite::asset('resources/js/company/companies.js') }}"></script>
 @endpush

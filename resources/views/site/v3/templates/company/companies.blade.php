@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        @include('site.v3.templates.company.companies-main-content')
+        @include('site.v3.templates.company.companies-main-content', ['companies' => $companies])
     </div>
 
     @push('styles')
