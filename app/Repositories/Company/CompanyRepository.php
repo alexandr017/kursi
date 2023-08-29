@@ -6,6 +6,7 @@ use App\Exceptions\Company\CompanyNotFoundException;
 use App\Exceptions\SavingErrorException;
 use App\Models\Companies\Company;
 use App\Models\Companies\SchoolReview;
+use App\Services\Company\Dto\IndexCompaniesDto;
 use App\Services\CompanyReview\Dto\IndexCompanyReviewsDto;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
@@ -73,5 +74,26 @@ class CompanyRepository implements CompanyRepositoryInterface
         }
 
         return true;
+    }
+
+    public function index(IndexCompaniesDto $dto): LengthAwarePaginator
+    {
+        $query = $this->query();
+
+        $query->withCount('courses')
+            ->with(['url']);
+
+        if ($dto->sortKey) {
+            $query->orderBy($dto->sortKey, $dto->sortValue);
+        } else {
+            $query->orderBy('sort_order', 'desc');
+        }
+
+        return $query->paginate(
+            $dto->perPage,
+            ['*'],
+            'page',
+            $dto->page
+        );
     }
 }

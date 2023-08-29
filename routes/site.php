@@ -9,6 +9,7 @@ Route::get('/', [App\Http\Controllers\Site\V3\IndexPage\IndexPageController::cla
 Route::get('/about', [App\Http\Controllers\Site\V3\About\AboutPageIndexController::class, 'index']);
 
 Route::get('/znaniya', [App\Http\Controllers\Site\V3\BlogIndexPage\BlogIndexPageController::class, 'index']);
+Route::get('/schools', [\App\Http\Controllers\Site\V3\DynamicPages\IndexCompaniesMainPageController::class, 'index']);
 // about
 // search (post)
 // schools
