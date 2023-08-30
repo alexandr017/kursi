@@ -31,7 +31,7 @@ class ImportController extends Controller
     public function runBlog()
     {
         //$file = $_SERVER['DOCUMENT_ROOT'] . '/../storage/import/blog.xml';
-        $file = storage_path('/import/blog.xml');
+        $file = storage_path('/import-30-08/blog.xml');
         $xmlStr = file_get_contents($file);
         $xmlObj = simplexml_load_string($xmlStr);
 
@@ -48,7 +48,7 @@ class ImportController extends Controller
             $data = [
                 'title' => (string) $item->НаследуемыеШаблоны->Шаблон[0]->Значение,
                 'meta_description' => (string) $item->НаследуемыеШаблоны->Шаблон[1]->Значение,
-                'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
+                'h1' => (string) (!is_null($item->НаследуемыеШаблоны->Шаблон[2]) ? $item->НаследуемыеШаблоны->Шаблон[2]->Значение : $item->ЗначенияСвойств->ЗначенияСвойства->Значение),
                 'breadcrumbs' => '', // todo
                 'content' => (string) $item->Описание,
                 'status' => 1,
@@ -114,7 +114,12 @@ class ImportController extends Controller
             ];
 
 //            $oldPath = str_replace( 'res_files', 'upload', (string)$item->Картинка);
-//            copy($oldPath, 'public' . $data['preview']);
+
+//            try {
+//                copy($oldPath, 'public' . $data['preview']);
+//            } catch (Throwable) {
+//                copy('upload/' . $oldPath, 'public' . $data['preview']);
+//            }
 
             $post = new Post($data);
             $post->save();
@@ -137,7 +142,7 @@ class ImportController extends Controller
 
     public function runEmployee()
     {
-        $file = storage_path('/import/employees.xml');
+        $file = storage_path('/import-30-08/employees.xml');
         $xmlStr = file_get_contents($file);
         $xmlObj = simplexml_load_string($xmlStr);
 
@@ -192,7 +197,7 @@ class ImportController extends Controller
 
     public function runCompanies()
     {
-        $file = storage_path('/import/schools.xml');
+        $file = storage_path('/import-30-08/schools.xml');
         $xmlStr = file_get_contents($file);
         $xmlObj = simplexml_load_string($xmlStr);
 
@@ -324,7 +329,7 @@ class ImportController extends Controller
     }
     public function runCourses()
     {
-        $file = storage_path('/import/courses.xml');
+        $file = storage_path('/import-30-08/courses.xml');
         $xmlStr = file_get_contents($file);
         $xmlObj = simplexml_load_string($xmlStr);
 
@@ -401,7 +406,7 @@ class ImportController extends Controller
 
     public function runComments()
     {
-        $file = storage_path('/import/b_blog_comment.xml');
+        $file = storage_path('/import-30-08/b_blog_comment.xml');
         $xmlStr = file_get_contents($file);
 
         $xmlObj = simplexml_load_string($xmlStr);
@@ -534,7 +539,7 @@ class ImportController extends Controller
 
     public function runSchoolsReviews()
     {
-        $csvFilePath = storage_path('/import/schools_reviewes.csv');
+        $csvFilePath = storage_path('/import-30-08/schools_reviewes.csv');
         $csvData = file_get_contents($csvFilePath);
         $rows = explode("\n", $csvData);
         $reviewSchools = collect();
@@ -551,7 +556,7 @@ class ImportController extends Controller
             ]);
         }
 
-        $file = storage_path('/import/schools_reviewes.xml');
+        $file = storage_path('/import-30-08/schools_reviewes.xml');
         $xmlStr = file_get_contents($file);
         $xmlObj = simplexml_load_string($xmlStr);
 

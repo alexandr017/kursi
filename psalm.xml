@@ -1,20 +1,3 @@
-<?xml version="1.0"?>
-<psalm
-    errorLevel="7"
-    resolveFromConfigFile="true"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="https://getpsalm.org/schema/config"
-    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
-    findUnusedBaselineEntry="true"
->
-    <projectFiles>
-        <directory name="app"/>
-        <directory name="database/factories"/>
-        <directory name="database/seeders"/>
-        <ignoreFiles>
-            <directory name="vendor"/>
-            <directory name="database/seeders"/>
-            <file name="app/Http/Controllers/ImportController.php"/>
-        </ignoreFiles>
-    </projectFiles>
-<plugins><pluginClass class="Psalm\LaravelPlugin\Plugin"/></plugins></psalm>
+version https://git-lfs.github.com/spec/v1
+oid sha256:797e5335d40afc4d52dccd9f70cc447e3f5ef33a398ca594198c02023ef80410
+size 755
