@@ -371,3 +371,27 @@ form {
 .swiper-slide-pasive {
     display: none!important;
 }
+
+.card_mobile .kurse_card-title {
+    margin-bottom: 16px;
+    line-height: 24px;
+}
+
+.card_mobile .kurse_card-length {
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+p.kurse_card-length_title {
+    margin-right: 5px;
+    display: block;
+}
+
+p.kurse_card-length_value {
+    text-transform: lowercase;
+}
+
+.kurse_card.card_white .school_minicard-rating_value {
+    color: #469ED7;
+}

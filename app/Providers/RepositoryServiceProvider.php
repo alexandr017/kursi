@@ -10,6 +10,8 @@ use App\Repositories\Courses\CoursesRepository;
 use App\Repositories\Courses\CoursesRepositoryInterface;
 use App\Repositories\Listing\ListingRepository;
 use App\Repositories\Listing\ListingRepositoryInterface;
+use App\Repositories\Posts\PostRepository;
+use App\Repositories\Posts\PostRepositoryInterface;
 use App\Repositories\Tags\TagRepository;
 use App\Repositories\Tags\TagRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
@@ -40,6 +42,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             CompanyRepositoryInterface::class,
             CompanyRepository::class
+        );
+        $this->app->bind(
+            PostRepositoryInterface::class,
+            PostRepository::class
         );
     }
 

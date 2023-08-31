@@ -109,7 +109,10 @@ class ImportController extends Controller
                 'status' => 1, // todo
                 'rating_value' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[11]->Значение,
                 'rating_count' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[10]->Значение,
-                'old_id' => (string) $item->Ид
+                'old_id' => (string) $item->Ид,
+                'created_at' => (string)$item->ЗначенияСвойств->ЗначенияСвойства[14]->Значение ?
+                    Carbon::parse((string)$item->ЗначенияСвойств->ЗначенияСвойства[14]->Значение)
+                    : null,
                 // todo дата создания и публикаци
             ];
 
@@ -369,6 +372,9 @@ class ImportController extends Controller
                 'is_cost_by_query' => 0, // ToDo: Need to implement;
                 'created_at' => $now,
                 'old_id' => (int)$cource->Ид,
+                'is_popular' => (string)$cource->ЗначенияСвойств->ЗначенияСвойства[23]->Значение == 'YES',
+                'has_promotion' => (string)$cource->ЗначенияСвойств->ЗначенияСвойства[24]->Значение == 'YES',
+                'is_best' => (string)$cource->ЗначенияСвойств->ЗначенияСвойства[25]->Значение == 'YES',
             ];
 
             $course = new Course($newCourse);

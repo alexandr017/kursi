@@ -6,7 +6,9 @@
     >
         <div class="swiper_styles-wraper swiper-wrapper" id="swiper-wrapper-75d4bfbee56cdc94" aria-live="polite">
             @foreach($courses as $key => $course)
-                @if($key%2 == 0)
+                @if(isset($fromMainPage))
+                    @php($class = 'card_white')
+                @elseif($key%2 == 0)
                     @php($class = 'card_green')
                 @else
                     @php($class = 'card_black')

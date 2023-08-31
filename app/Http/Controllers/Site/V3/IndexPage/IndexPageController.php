@@ -3,18 +3,21 @@
 namespace App\Http\Controllers\Site\V3\IndexPage;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Services\MainPage\Action\IndexMainPageAction;
 
 class IndexPageController extends Controller
 {
-    public function index()
-    {
-        $pages = \DB::table('urls')->get();
+    public function index(
+        IndexMainPageAction $action
+    ) {
+        $data = $action->run();
 
-        foreach ($pages as $page) {
-            echo "<a href='$page->url'>$page->url</a><br>";
-        }
-        exit;
-        dd('index page');
+        return view('site.v3.templates.mainpage.mainpage',[
+            'listings' => $data->listings,
+            'popularCourses' => $data->popularCourses,
+            'withPromotionCourses' => $data->withPromotionCourses,
+            'reviews' => $data->reviews,
+            'posts' => $data->posts,
+            ]);
     }
 }

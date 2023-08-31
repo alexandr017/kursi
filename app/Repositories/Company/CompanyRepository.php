@@ -96,4 +96,13 @@ class CompanyRepository implements CompanyRepositoryInterface
             $dto->page
         );
     }
+
+    public function getPopularReviews(): Collection
+    {
+        return $this->reviewsQuery()
+            ->with(['company'])
+            ->orderByDesc('rating')
+            ->limit(15)
+            ->get();
+    }
 }
