@@ -130,3 +130,7 @@ a {
     color: #101820;
     white-space: initial;
 }
+
+.swiper-slide-pasive {
+    display: none;
+}

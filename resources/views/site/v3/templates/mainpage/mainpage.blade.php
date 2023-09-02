@@ -7,10 +7,7 @@
 */ ?>
 
 @section('content')
-
-
     <div class="content max-width ">
-
         @include('site.v3.modules.mainpage.mainpage-head')
         @include('site.v3.modules.mainpage.mainpage-categories', ['listings' => $listings])
 
@@ -21,19 +18,12 @@
         @include('site.v3.modules.courses.courses-cards', ['courses' => $withPromotionCourses  ])
 
         <h2 class="index_subtitle popular">Последние статьи</h2>
-
         @include('site.v3.modules.mainpage.mainpage-posts', ['posts' => $posts])
 
-
         @include('site.v3.modules.mainpage.mainpage-news')
-
-
     </div>
 
     @push('styles')
         <link href="{{ Vite::asset('resources/css/mainpage/mainpage.css') }}" rel="stylesheet">
     @endpush
-
-
-
 @endsection

@@ -36,3 +36,7 @@ function openReview(e) {
         }
     }
 }
+
+function handleCategoryItems(event) {
+    event.target.parentElement.querySelector('#category-items-second-part').style.display = event.target.checked ? 'block' : 'none';
+}

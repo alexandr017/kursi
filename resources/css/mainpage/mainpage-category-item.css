@@ -99,7 +99,7 @@ ul.second_lvl input {
 ul.second_lvl > input:checked ~ li {
     display: block;
 }
-ul.second_lvl > li {
+ul.second_lvl div > li {
     margin-bottom: 9px;
 }
 li {
@@ -126,6 +126,7 @@ ul.second_lvl > input:checked ~ .open_section_btn {
 ul.second_lvl > label {
     position: relative;
 }
+
 ul.second_lvl > label {
     font-weight: 500;
     font-size: 16px;
@@ -135,16 +136,23 @@ ul.second_lvl > label {
     margin-top: auto;
     cursor: pointer;
 }
+
 ul.second_lvl > label {
     margin-top: auto;
+}
+
+ul.second_lvl .close_section_btn {
+    display: none;
 }
 
 ul.second_lvl > input:checked ~ .close_section_btn {
     display: block;
 }
+
 ul.second_lvl > label {
     position: relative;
 }
+
 ul.second_lvl > label {
     font-weight: 500;
     font-size: 16px;
@@ -168,3 +176,28 @@ ul.second_lvl > label:after {
 label.close_section_btn:after {
     background: url(https://kursy.ru/local/templates/kursi/img/chevron/chevron-up.svg);
 }
+
+.swiper-slide-pasive {
+    display: none;
+}
+
+.listing-link:hover .section_slider-blue_img {
+    display: block;
+}
+
+.listing-link:hover .section_slider-grey_img,
+.listing-link:hover .section_slider-black_img {
+    display: none;
+}
+
+@media screen and (max-width: 860px) {
+    .section_slider-grey_img {
+        display: block;
+    }
+
+    .section_slider-blue_img,
+    .section_slider-black_img {
+        display: none;
+    }
+}
+

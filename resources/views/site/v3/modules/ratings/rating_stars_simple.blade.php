@@ -1,8 +1,8 @@
-<div class="universalrating" id="rating_{{$listing->id}}">
+<div class="universalrating" id="rating_">
     <div class="universalrating-title">
         Информация была полезна?
     </div>
--
+
     <div class="universalrating-form">
         <form>
             <div id="half-stars-example" class="disabled">
@@ -77,22 +77,16 @@
     </div>
     <div class="universalrating-total">
         <p>
-            <span class="quantity">{{$listing->rating_count}}</span> оценок, среднее <span class="rating">{{$listing->rating_value}}</span> из 5
+            <span class="quantity">{{4}}</span> оценок, среднее <span class="rating">{{5}}</span> из 5
         </p>
     </div>
 </div>
 
-{{--<style media="screen">--}}
-
-{{--</style>--}}
 
 @push('styles')
     <link href="{{ Vite::asset('resources/css/listing/rating_stars.css') }}" rel="stylesheet">
 @endpush
 
 @push('scripts')
-    <script type="text/javascript" src="{{ Vite::asset('resources/js/listing/rating_stars.js') }}"></script>
+    <script type="text/javascript" src="{{ Vite::asset('resources/js/ratings/rating_stars_simple.js') }}"></script>
 @endpush
-{{--<script>--}}
-
-{{--</script>--}}

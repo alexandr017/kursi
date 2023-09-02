@@ -69,3 +69,22 @@ ol {
     background-size: contain;
     transition: 0.1s;
 }
+
+.universalrating {
+    margin-top: 56px;
+}
+
+.universalrating-title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 46px;
+    color: #101820;
+}
+
+.universalrating-total {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #A9AAAA;
+    margin-bottom: 100px;
+}

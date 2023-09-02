@@ -7,7 +7,7 @@ return [
     'Иностранные языки' => 'foreign_languages',
     'Красота и здоровье' => 'the_beauty_and_health',
     'Маркетинг' => 'marketing',
-    'Менеджмент' => 'businedd_and_management',
+    'Менеджмент' => 'business_and_management',
     'Прикладные программы' => 'applied_programs',
     'Программирование' => 'programming',
     'Рукоделие' => 'needlework',

@@ -20,12 +20,13 @@
         <div class="swiper_styles-pagination_cont">
             <div
                 class="slider_kursi_slider_970728d78bc2c2a36f99-button-prev swiper_styles-button-prev swiper-button-disabled"
+                id="prev_button"
                 tabindex="-1"
                 role="button"
                 aria-label="Previous slide"
                 aria-controls="swiper-wrapper-32741108d34487f14"
                 aria-disabled="true"
-                onclick="showPrevCards()"
+                onclick="showCards(event, 'prev', 'kursi_slider-cont')"
             ></div>
 
             <div class="slider_kursi_slider_970728d78bc2c2a36f99-pagination swiper_styles-pagination swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal">
@@ -34,18 +35,32 @@
                 <span class="swiper-pagination-total">{{$courses->count()}}</span>
             </div>
 
-            <div
-                class="slider_kursi_slider_970728d78bc2c2a36f99-button-next swiper_styles-button-next"
-                tabindex="0"
-                role="button"
-                aria-label="Next slide"
-                aria-controls="swiper-wrapper-32741108d34487f14"
-                aria-disabled="false"
-                onclick="showNextCards()"
-            ></div>
+            @if($courses->count() < 5)
+                <div
+                    class="slider_kursi_slider_970728d78bc2c2a36f99-button-next swiper_styles-button-next swiper-button-disabled"
+                    id="next_button"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Next slide"
+                    aria-controls="swiper-wrapper-32741108d34487f14"
+                    aria-disabled="true"
+                    onclick="showCards(event, 'next', 'kursi_slider-cont')"
+                ></div>
+            @else
+                <div
+                    class="slider_kursi_slider_970728d78bc2c2a36f99-button-next swiper_styles-button-next"
+                    id="next_button"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Next slide"
+                    aria-controls="swiper-wrapper-32741108d34487f14"
+                    aria-disabled="false"
+                    onclick="showCards(event, 'next', 'kursi_slider-cont')"
+                ></div>
+            @endif
         </div>
     </div>
-    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
 </div>
 
 @push('styles')

@@ -35,7 +35,7 @@
 
 </div>
 
-
 @push('styles')
     <link href="{{ Vite::asset('resources/css/post/post-card.css') }}" rel="stylesheet">
 @endpush
+

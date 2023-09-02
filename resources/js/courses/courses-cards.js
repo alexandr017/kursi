@@ -1,53 +1,19 @@
-// Get the card containers
-const cardContainers = document.querySelectorAll('.kursi_slider-cont');
-// Current index and page of the displayed card group
-let currentIndex = 0;
-const currentPage = document.getElementById('current-page');
+function showCards(event, direction, cardContainerName) {
+    const swiperContainer = event.target.parentElement.parentElement;
+    const cardContainers = swiperContainer.querySelectorAll(`.${cardContainerName}`);
+    const prevButton = swiperContainer.querySelector('#prev_button');
+    const nextButton = swiperContainer.querySelector('#next_button');
+    const currentPage = swiperContainer.querySelector('.swiper-pagination #current-page');
+    const currentIndex = parseInt(currentPage.textContent) - 1;
 
-const nextButton = document.querySelector('.slider_kursi_slider_970728d78bc2c2a36f99-button-next');
-const prevButton = document.querySelector('.slider_kursi_slider_970728d78bc2c2a36f99-button-prev');
-
-decideNextButtonDisable();
-
-function decideNextButtonDisable() {
-    if (cardContainers.length <= 4) {
-        nextButton.attributes['aria-disabled'].value = 'true';
-        nextButton.classList.add('swiper-button-disabled');
-    }
-}
-
-function showNextCards() {
-    if (nextButton.attributes['aria-disabled'].value === 'true') return;
-
-    cardContainers[currentIndex].classList.add('swiper-slide-pasive');
-    currentIndex++;
-    currentPage.innerHTML = currentIndex + 1;
-
-    if (currentIndex + 4 === cardContainers.length) {
-    nextButton.attributes['aria-disabled'].value = 'true';
-    nextButton.classList.add('swiper-button-disabled');
-}
-
-    if (prevButton.attributes['aria-disabled'].value === 'true') {
-        prevButton.attributes['aria-disabled'].value = 'false';
-        prevButton.classList.remove('swiper-button-disabled');
-    }
-}
-
-function showPrevCards() {
-    if (prevButton.attributes['aria-disabled'].value === 'true') return;
-
-    cardContainers[currentIndex - 1].classList.remove('swiper-slide-pasive');
-    currentIndex--;
-    currentPage.innerHTML = currentIndex + 1;
-
-    if (nextButton.attributes['aria-disabled'].value === 'true') {
-        nextButton.attributes['aria-disabled'].value = 'false';
-        nextButton.classList.remove('swiper-button-disabled');
+    if ((direction === 'next' && currentIndex + 4 >= cardContainers.length) || (direction === 'prev' && currentIndex <= 0)) {
+        return;
     }
 
-    if (currentIndex <= 0) {
-        prevButton.attributes['aria-disabled'].value = 'true';
-        prevButton.classList.add('swiper-button-disabled');
-    }
+    cardContainers[currentIndex].classList.toggle('swiper-slide-pasive', direction === 'next');
+    currentPage.textContent = direction === 'next' ? currentIndex + 2 : currentIndex;
+    nextButton.setAttribute('aria-disabled', direction === 'next' ? (currentIndex + 4 >= cardContainers.length).toString() : 'false');
+    prevButton.setAttribute('aria-disabled', direction === 'prev' ? (currentIndex <= 0).toString() : 'false');
+    nextButton.classList.toggle('swiper-button-disabled', direction === 'next' && currentIndex + 4 >= cardContainers.length);
+    prevButton.classList.toggle('swiper-button-disabled', direction === 'prev' && currentIndex <= 0);
 }
