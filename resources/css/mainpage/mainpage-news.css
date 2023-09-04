@@ -88,3 +88,7 @@ ol {
     color: #A9AAAA;
     margin-bottom: 100px;
 }
+
+.content_accordion_block .accordion_item input[type="checkbox"]:checked ~ .accordion_item-title .arrow {
+    background-image: url(../../../public/images/system/checkedArrow.svg);
+}
