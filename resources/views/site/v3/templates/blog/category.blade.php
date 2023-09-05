@@ -10,8 +10,8 @@
 */ ?>
 
 @section('content')
-    <div class="content max-width">
 
+    <div class="content max-width">
         <div class="blog_head page_head">
             <h1 class="blog_head-title page_head-title">
                 Полезные статьи по разным профессиям
@@ -27,37 +27,106 @@
         </div>
 
         <div class="blog_sections-cont">
-
             @foreach($categories as $category)
-                <div id="bx_{{$category->id}}" class="blog_sections-item ">
+                <div id="bx_{{$category->id}}" class="blog_sections-item @if(request()->is($category->urls?->url)) blog_sections-item_active @endif">
                     <a href="/{{$category->urls?->url}}">
                         {{$category->h1}}
                     </a>
                 </div>
             @endforeach
-
         </div>
 
-        <div class="news-list">
+        <div class="news_list-cont">
+            <div class="news-list">
+                @foreach($posts as $post)
+                    @include('site.v3.modules.post.post-card', ['post' => $post])
+                @endforeach
+            </div>
 
-            @foreach($posts as $post)
-                @include('site.v3.modules.post.post-card', ['post' => $post])
+            @if($posts->lastPage() > 1)
+                <div class="bx-pagination">
+                    <div class="bx-pagination-container">
+                        <ul>
+                            <li class="bx-pag-prev">
+                                @if($posts->currentPage() > $posts->lastPage())
+                                    <a href="?page={{$posts->currentPage() - 1}}">
+                                        <img src="https://kursy.ru/local/templates/kursi/components/bitrix/system.pagenavigation/kursi_blog/img/arrow.svg" alt="">
+                                    </a>
+                                @else
+                                    <img src="https://kursy.ru/local/templates/kursi/components/bitrix/system.pagenavigation/kursi_blog/img/arrow.svg" alt="">
+                                @endif
+                            </li>
 
-            @endforeach
+                            @if($posts->currentPage() >= $posts->lastPage() - 4)
+                                <li class="@if($posts->currentPage() === 1) bx-active @endif">
+                                    <a href="?page=1"><span>{{1}}</span></a>
+                                </li>
 
+                                <li>...</li>
+
+                                @for ($i = $posts->lastPage() - 4; $i <= $posts->lastPage(); $i++)
+                                    <li class="@if($i === $posts->currentPage()) bx-active @endif">
+                                        <a href="?page={{$i}}"><span>{{ $i }}</span></a>
+                                    </li>
+                                @endfor
+                            @elseif($posts->currentPage() <= 4)
+                                @for ($i = 1; $i <= 4; $i++)
+                                    <li class="@if($i === $posts->currentPage()) bx-active @endif">
+                                        <a href="?page={{$i}}"><span>{{ $i }}</span></a>
+                                    </li>
+                                @endfor
+
+                                <li>...</li>
+
+                                <li class="@if($posts->currentPage() === $posts->lastPage()) bx-active @endif">
+                                    <a href="?page={{$posts->lastPage()}}"><span>{{$posts->lastPage()}}</span></a>
+                                </li>
+                            @else
+                                <li class="@if($posts->currentPage() === 1) bx-active @endif">
+                                    <a href="?page=1"><span>{{1}}</span></a>
+                                </li>
+
+                                <li>...</li>
+
+                                @for ($i = $posts->currentPage() - 3; $i <= $posts->currentPage() ; $i++)
+                                    <li class="@if($i === $posts->currentPage()) bx-active @endif">
+                                        <a href="?page={{$i}}"><span>{{ $i }}</span></a>
+                                    </li>
+                                @endfor
+
+                                <li>...</li>
+
+                                <li class="@if($posts->currentPage() === $posts->lastPage()) bx-active @endif">
+                                    <a href="?page={{$posts->lastPage()}}"><span>{{$posts->lastPage()}}</span></a>
+                                </li>
+                            @endif
+
+                            <li class="bx-pag-next">
+                                @if($posts->currentPage() < $posts->lastPage())
+                                    <a href="?page={{$posts->currentPage() + 1}}">
+                                        <img src="https://kursy.ru/local/templates/kursi/components/bitrix/system.pagenavigation/kursi_blog/img/arrow.svg" alt="">
+                                    </a>
+                                @else
+                                    <img src="https://kursy.ru/local/templates/kursi/components/bitrix/system.pagenavigation/kursi_blog/img/arrow.svg" alt="">
+                                @endif
+                            </li>
+                        </ul>
+
+                        <div style="clear:both"></div>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
 
     @push('styles')
         <link href="{{ Vite::asset('resources/css/blog/category.css') }}" rel="stylesheet">
     @endpush
-
 @endsection
 
 
 @section('additional-scripts')
     @parent
-
 @endsection
 
 
