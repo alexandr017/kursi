@@ -2,13 +2,13 @@
 
     <div class="news_item-head">
         <div class="news_item-pic">
-            <a href="{{$post->urls?->url}}">
+            <a href="/{{$post->urls?->url}}">
                 <img class="preview_picture" border="0" src="{{$post->preview}}" alt="{{$post->h1}}" title="{{$post->h1}}" style="float:left">
             </a>
         </div>
 
         <div class="news_item-section_tag">
-            <a href="{{$post->category?->urls?->url}}">
+            <a href="/{{$post->category?->urls?->url}}">
                 {{$post->category->h1}}
             </a>
         </div>
