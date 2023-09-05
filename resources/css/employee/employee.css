@@ -29,6 +29,10 @@
     height: 156px;
     padding: 24px 0;
     margin: auto;
+    background-image: url(http://127.0.0.1:8000/images/employees/ivan-nesterenko.webp);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%
 }
 
 .author_card-name {

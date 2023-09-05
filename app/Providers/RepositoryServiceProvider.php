@@ -10,6 +10,8 @@ use App\Repositories\Courses\CoursesRepository;
 use App\Repositories\Courses\CoursesRepositoryInterface;
 use App\Repositories\Listing\ListingRepository;
 use App\Repositories\Listing\ListingRepositoryInterface;
+use App\Repositories\PostCategory\PostCategoryRepository;
+use App\Repositories\PostCategory\PostCategoryRepositoryInterface;
 use App\Repositories\Posts\PostRepository;
 use App\Repositories\Posts\PostRepositoryInterface;
 use App\Repositories\Tags\TagRepository;
@@ -46,6 +48,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             PostRepositoryInterface::class,
             PostRepository::class
+        );
+        $this->app->bind(
+            PostCategoryRepositoryInterface::class,
+            PostCategoryRepository::class
         );
     }
 

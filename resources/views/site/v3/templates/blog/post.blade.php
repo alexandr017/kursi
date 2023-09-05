@@ -1,37 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-</head>
-<body>
-<div class="container">
-    <h1>{{$post->h1}}</h1>
+@extends('site.v3.layouts.main')
 
-    {!! $post->lead !!}
+@section('content')
+    <div class="content max-width ">
 
-    preview
-        {!! $post->content !!}
+        <div class="news_detail_cont ">
 
-    @include('site.v3.templates.blog.comments.comment')
+            <div class="news_detail-head html_editor_body_cont">
+                <h1 class="news_detail-title">
+                    {{$post->h1}}
+                </h1>
 
-</div>
+                <div class="news_detail-lid_par">
+                    <p>
+                        {!! $post->lead !!}
+                    </p>
+                </div>
 
-<style>
-    body {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        padding: 8px 8px 8px 18px;
-        box-sizing: border-box;
-        margin: 0 auto;
-    }
+                <div>
+                    @include('site.v3.modules.employee.employee', ['employee' => $post->author])
+                </div>
 
-    .container {
-        max-width: 100%;
-        margin: 0 auto;
-        width: 100%;
-        padding: 0 50px;
-    }
 
-</style>
+                <img class="detail_picture" border="0" src="{{$post->preview}}" alt="{{$post->h1}} кратко" title="{{$post->h1}}">
+            </div>
 
-</body>
-</html>
+            <div class="news_detail html_editor_body_cont">
+                {!! $post->content !!}
+            </div>
+        </div>
+
+        <div class="comment_cont kursi_blog">
+            @include('site.v3.templates.blog.comments.comment')
+        </div>
+    </div>
+
+
+    @push('styles')
+        <link href="{{ Vite::asset('resources/css/post/post.css') }}" rel="stylesheet">
+    @endpush
+
+@endsection
+

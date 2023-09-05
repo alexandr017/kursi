@@ -3,9 +3,11 @@
 namespace App\Models\Posts;
 
 use App\Models\PostComments\PostComment;
+use App\Models\Team\Employee;
 use App\Models\Urls\Url;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Eloquent;
@@ -40,5 +42,10 @@ class Post extends Model
     {
         return $this->hasOne(Url::class, 'section_id','id')
             ->where('section_type', Post::SECTION_TYPE);
+    }
+
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(Employee::class, 'author_id');
     }
 }

@@ -10,13 +10,14 @@ class DynamicSiteController extends Controller
     {
         $currentPath = \Request::path();
         $resource = \DB::table('urls')->where(['url' => $currentPath])->first();
+        $page = \Request::get('page') ?? 1;
 
         if ($resource != null) {
             $class = $this->getClassName($resource->section_type);
             if ($class == null) {
                 abort(404);
             }
-            return (new $class())->render($resource->section_id);
+            return (new $class())->render($resource->section_id, paginatePage: (int)$page);
 
         } else {
             $currentPath = preg_replace('/\/$/', '', $currentPath);

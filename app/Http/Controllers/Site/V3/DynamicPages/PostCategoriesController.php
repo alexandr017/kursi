@@ -3,7 +3,8 @@
 namespace App\Http\Controllers\Site\V3\DynamicPages;
 
 use App\Http\Controllers\Controller;
-use App\Models\Posts\PostCategory;
+use App\Services\PostCategory\Action\IndexPostCategoryAction;
+use App\Services\PostCategory\Dto\IndexPostCategoryDto;
 
 // Dynamic type 2
 class PostCategoriesController extends Controller implements DynamicPagesInterface
@@ -13,25 +14,10 @@ class PostCategoriesController extends Controller implements DynamicPagesInterfa
 
     public function render($sectionID, $isAmp = false, $paginatePage = 1)
     {
-        $category = PostCategory::where(['id' => $sectionID, 'status' => 1])
-            ->whereNull('deleted_at')
-            ->first();
+        $dto = new IndexPostCategoryDto(sectionId: $sectionID, page: $paginatePage);
+        $action = resolve(IndexPostCategoryAction::class);
+        $result = $action->run($dto);
 
-        if ($category == null) {
-            abort(404);
-        }
-
-
-        $posts = \DB::table('posts')
-            ->leftJoin('urls', 'posts.id', 'urls.section_id',)
-            ->select('posts.*', 'urls.url') // todo тут скорее всего вместо posts.* можно несколько полей взять
-            ->where(['posts.status' => 1, 'urls.section_type' => PostCategoriesController::POST_SECTION_TYPE_ID])
-            ->whereNull('posts.deleted_at')
-            ->get();
-
-            // todo paginate
-
-        return view('site.v3.templates.blog.category', compact('posts'));
-
+        return view('site.v3.templates.blog.category', ['posts' => $result->posts, 'category' => $result->category, 'categories' => $result->categories]);
     }
 }
