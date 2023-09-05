@@ -57,7 +57,21 @@
                                 @endif
                             </li>
 
-                            @if($posts->currentPage() >= $posts->lastPage() - 4)
+                            @if($posts->currentPage() <= 4)
+                                @for ($i = 1; $i <= 4 && $i < $posts->lastPage(); $i++)
+                                    <li class="@if($i === $posts->currentPage()) bx-active @endif">
+                                        <a href="?page={{$i}}"><span>{{ $i }}</span></a>
+                                    </li>
+                                @endfor
+
+                                @if($posts->lastPage() > 4)
+                                   <li>...</li>
+                                @endif
+
+                                <li class="@if($posts->currentPage() === $posts->lastPage()) bx-active @endif">
+                                    <a href="?page={{$posts->lastPage()}}"><span>{{$posts->lastPage()}}</span></a>
+                                </li>
+                            @elseif($posts->currentPage() >= $posts->lastPage() - 4)
                                 <li class="@if($posts->currentPage() === 1) bx-active @endif">
                                     <a href="?page=1"><span>{{1}}</span></a>
                                 </li>
@@ -69,18 +83,6 @@
                                         <a href="?page={{$i}}"><span>{{ $i }}</span></a>
                                     </li>
                                 @endfor
-                            @elseif($posts->currentPage() <= 4)
-                                @for ($i = 1; $i <= 4; $i++)
-                                    <li class="@if($i === $posts->currentPage()) bx-active @endif">
-                                        <a href="?page={{$i}}"><span>{{ $i }}</span></a>
-                                    </li>
-                                @endfor
-
-                                <li>...</li>
-
-                                <li class="@if($posts->currentPage() === $posts->lastPage()) bx-active @endif">
-                                    <a href="?page={{$posts->lastPage()}}"><span>{{$posts->lastPage()}}</span></a>
-                                </li>
                             @else
                                 <li class="@if($posts->currentPage() === 1) bx-active @endif">
                                     <a href="?page=1"><span>{{1}}</span></a>
