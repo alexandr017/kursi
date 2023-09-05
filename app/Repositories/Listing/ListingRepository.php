@@ -7,6 +7,7 @@ use App\Exceptions\SavingErrorException;
 use App\Models\Listing\Listing;
 use App\Models\ListingRating\ListingRating;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 
 class ListingRepository implements ListingRepositoryInterface
 {
@@ -68,5 +69,13 @@ class ListingRepository implements ListingRepositoryInterface
         }
 
         return true;
+    }
+
+    public function getParentsWithChildes(): Collection
+    {
+        return $this->query()
+            ->whereNull('parent_id')
+            ->with(['childes.url', 'url'])
+            ->get();
     }
 }

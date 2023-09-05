@@ -5,6 +5,7 @@ namespace App\Repositories\Courses;
 use App\Models\Courses\Course;
 use App\Services\Courses\Dto\IndexCoursesDto;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class CoursesRepository implements CoursesRepositoryInterface
@@ -48,5 +49,27 @@ class CoursesRepository implements CoursesRepositoryInterface
             'page',
             $dto->page
         );
+    }
+
+    public function getPopulars(): Collection
+    {
+        return $this->query()
+            ->withAvg('schoolReviews', 'rating')
+            ->withCount('schoolReviews as reviews_count')
+            ->with(['tags', 'school'])
+            ->where('is_popular', 1)
+            ->limit(15)
+            ->get();
+    }
+
+    public function getPromotions(): Collection
+    {
+        return $this->query()
+            ->withAvg('schoolReviews', 'rating')
+            ->withCount('schoolReviews as reviews_count')
+            ->with(['tags', 'school'])
+            ->where('has_promotion', 1)
+            ->limit(15)
+            ->get();
     }
 }

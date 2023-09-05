@@ -2492,7 +2492,7 @@ ul.c_styled li:before {
 }
 
 .content_accordion_block .accordion_item input[type="checkbox"]:checked ~ .accordion_item-title:hover .arrow {
-    background-image: url(/local/templates/kursi/img/faq_arrows/checkedHover.svg);
+    background-image: url(../../../images/system/checkedHover.svg);
 }
 
 .content_accordion_block .accordion_item input[type="checkbox"]:checked ~ .accordion_item-title .arrow {
@@ -2504,7 +2504,7 @@ ul.c_styled li:before {
 }
 
 .content_accordion_block .accordion_item-title:hover .arrow {
-    background-image: url(/local/templates/kursi/img/faq_arrows/hideHover.svg);
+    background-image: url(../../../images/system/hideHover.svg);
 }
 
 .content_accordion_block .arrow {
