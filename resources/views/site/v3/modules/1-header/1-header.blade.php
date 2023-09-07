@@ -14,26 +14,25 @@
 
                 <div class="header_top_menu">
                     <div class="ul first_lvl">
-                        <div class="li kursy-top_menu-cont">
+                        <div class="li kursy-top_menu-cont" id="catalogButton" onclick="handleCatalogOpen()">
                             <div class="header_top_menu-text">
                                 <img
                                     src="https://kursy.ru//local/components/sigodinweb/menu.sections/templates/.default/img/menu_img.svg"
                                     alt=""
                                     class="kursy-open_btn-open-img active"
                                     id="openCatalog"
-                                    onclick="openCatalog()"
                                 >
                                 <img
                                     src="https://kursy.ru//local/components/sigodinweb/menu.sections/templates/.default/img/menu_close_img.svg"
-                                    alt="" class="kursy-open_btn-close-img"
+                                    alt=""
+                                    class="kursy-open_btn-close-img"
                                     id="closeCatalog"
-                                    onclick="closeCatalog()"
                                 >
                                 <a class="catalog">
                                     Каталог
                                 </a>
                             </div>
-                            <div class="ul_cont" id="openedCatalog">
+                            <div class="ul_cont">
                                 <div class="ul second_lvl">
                                     <div class="header_top_menu-mobile_back_btn" onclick="hideSect.bind(this)(event)">
                                         <img src="/v3/images/arrow.svg" alt="Назад" title="Назад"> Назад
@@ -3492,6 +3491,7 @@
                                             type="text"
                                             autocomplete="off"
                                             oninput="handleSearch(value)"
+                                            onchange="handleSearch(value)"
                                         >
 
                                         <label for="search_page_reset" id="search_page_reset_label" style="display: none">
@@ -3559,6 +3559,10 @@
     </div>
     @include('site.v3.modules.3-breadcrumbs.3-breadcrumbs')
 </header>
+
+@push('scripts')
+    <script type="text/javascript" src="{{ Vite::asset('resources/js/header/header.js') }}"></script>
+@endpush
 
 <style>
     .menu {
@@ -3663,6 +3667,10 @@
         align-items: center;
     }
 
+    .search_page-header form input[type="text"]:focus {
+        border: 1px solid #469ED7;
+    }
+
     label.search_page-submit_label {
         width: max-content;
         left: 24px;
@@ -3705,24 +3713,11 @@
     .active {
         display: block;
     }
+
+    #search_page_reset_label {
+        width: 24px;
+        height: 24px;
+    }
+
 </style>
-
-<script>
-    function handleSearch(value) {
-        const resetButton = document.getElementById('search_page_reset_label');
-       resetButton.style.display = value ? 'block' : 'none';
-    }
-
-    function openCatalog() {
-        /*document.getElementById('openedCatalog').style.display = "inline-flex";
-        document.getElementById('closeCatalog').classList.add('active');
-        document.getElementById('openCatalog').classList.remove('active');*/
-    }
-
-    function closeCatalog() {
-      /*  document.getElementById('openedCatalog').style.display = "none";
-        document.getElementById('openCatalog').classList.add('active');
-        document.getElementById('closeCatalog').classList.remove('active');*/
-    }
-</script>
 
