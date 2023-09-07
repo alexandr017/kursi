@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UrlTypesSeeder::class,
             UrlsSeeder::class,
-            PostSeeder::class,
             EmployeesSeeder::class,
+            PostSeeder::class,
             CompaniesSeeder::class,
             CommentsSeeder::class,
             SeoForPageSeeder::class,

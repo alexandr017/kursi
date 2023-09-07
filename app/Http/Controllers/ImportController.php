@@ -51,7 +51,8 @@ class ImportController extends Controller
                 'h1' => (string) (!is_null($item->НаследуемыеШаблоны->Шаблон[2]) ? $item->НаследуемыеШаблоны->Шаблон[2]->Значение : $item->ЗначенияСвойств->ЗначенияСвойства->Значение),
                 'breadcrumbs' => '', // todo
                 'content' => (string) $item->Описание,
-                'status' => 1,
+                'status' => $item->БитриксАктивность == 'true' ? 1: 0,
+                'sort_order' => (integer)$item->БитриксСортировка,
                 'old_id' => (int) $item->Ид
             ];
 
@@ -72,6 +73,7 @@ class ImportController extends Controller
 
         }
 
+        $employees = Employee::query()->get();
 
         $posts = $xmlObj->Каталог->Товары->Товар;
         foreach ($posts as $item) {
@@ -105,8 +107,8 @@ class ImportController extends Controller
                 'preview' => '/images/posts/previews/' . Str::slug((string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение) . '.webp',
                 'lead' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
                 'content' => (string) $content,
-                'author_id' => 1, // todo
-                'status' => 1, // todo
+                'author_id' => $employees->where('old_id', (string)$item->ЗначенияСвойств->ЗначенияСвойства[8]->Значение)->first()?->id ?? 1,
+                'status' => (string)$item->ЗначенияСвойств->ЗначенияСвойства[0]->Значение == 'true' ? 1: 0,
                 'rating_value' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[11]->Значение,
                 'rating_count' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[10]->Значение,
                 'old_id' => (string) $item->Ид,
@@ -154,6 +156,28 @@ class ImportController extends Controller
         $employees = $xmlObj->Каталог->Товары->Товар;
 
         foreach ($employees  as $item) {
+            $content = (string) $item->ЗначенияСвойств->ЗначенияСвойства[6]->Значение;
+            $new  = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $content);
+
+            $crawler = new Crawler();
+            $crawler->addHtmlContent($new);
+
+            $imgElements = $crawler->filter('img')->extract(['src']);
+
+            foreach ($imgElements as $imgElement) {
+                $newSrc = '/images/employees/others/' . basename($imgElement);
+
+                if (empty($imgElement)) {
+                    continue;
+                }
+
+//                copy(substr($imgElement, 1), 'public' . $newSrc);
+
+                $content = str_replace($imgElement, $newSrc, $content);
+            }
+
+            $content = str_replace('/local/templates/kursi/img/video_play.svg', '/images/system/video_play.svg', $content);
+
             preg_match_all('#\bhttps?://[^,\s()<>]+(?:\([\w\d]+\)|([^,[:punct:]\s]|/))#', (string) $item->ЗначенияСвойств->ЗначенияСвойства[9]->Значение, $match);
             $vkLink = (isset($match[0][0])) ? $match[0][0] : null;
 
@@ -168,7 +192,7 @@ class ImportController extends Controller
                 'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
                 'breadcrumbs' => 'Сотрудники@about\r\n' . (string) $item->Наименование,
                 'lead' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
-                'content' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[6]->Значение,
+                'content' => $content,
                 'old_id' => (int) $item->Ид,
                 'status' => 1,
                 'rating_value' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[12]->Значение,
