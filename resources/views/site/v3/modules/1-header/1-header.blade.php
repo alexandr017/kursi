@@ -39,7 +39,7 @@
                                     </div>
 
                                     <div class="li header_menu-selected_parent  ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                             </div>
@@ -117,7 +117,7 @@
                                     </div>
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
                                             </div>
@@ -293,7 +293,7 @@
                                     </div>
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
 
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
@@ -617,7 +617,7 @@
 		</pre> -->
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
 
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
@@ -1342,7 +1342,7 @@
 		</pre> -->
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
 
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
@@ -1578,7 +1578,7 @@
 		</pre> -->
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
 
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
@@ -1742,7 +1742,7 @@
 		</pre> -->
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
 
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
@@ -1954,7 +1954,7 @@
 		</pre> -->
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
 
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
@@ -2280,7 +2280,7 @@
 		</pre> -->
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
 
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
@@ -2336,7 +2336,7 @@
 		</pre> -->
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
 
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
@@ -2718,7 +2718,7 @@
 		</pre> -->
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
 
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
@@ -2798,7 +2798,7 @@
 		</pre> -->
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
 
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
@@ -2935,7 +2935,7 @@
 		</pre> -->
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
 
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
@@ -3015,7 +3015,7 @@
 		</pre> -->
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
 
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
@@ -3257,7 +3257,7 @@
 		</pre> -->
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
 
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
@@ -3361,7 +3361,7 @@
 		</pre> -->
 
                                     <div class="li   ">
-                                        <div class="header_top_menu-text" onclick="return false;">
+                                        <div class="header_top_menu-text" >
 
                                             <div class="header_top_menu-mobile_subback_btn">
                                                 <img src="/v3/images/arrow.svg" alt="Назад" title="Назад">
