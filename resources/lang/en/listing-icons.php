@@ -15,5 +15,6 @@ return [
     'Спорт' => 'sport',
     'Творчество и контент' => 'creation_and_content',
     'Финансы' => 'finance',
-    'Другое' => 'another'
+    'Другое' => 'another',
+    'Бесплатные' => 'besplatnie',
 ];

@@ -53,7 +53,7 @@ function sendRequest ()
         page = 1
     }
 
-    let url = `/${listingId}/courses?page=${page}`;
+    let url = `/listings/${listingId}/courses?page=${page}`;
 
     if (sortValue && sortOrder) {
         url += `&sort_value=${sortOrder}&sort_key=${sortValue}`
