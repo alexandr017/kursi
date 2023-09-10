@@ -4,7 +4,7 @@
             {{$title ?? 'Автор'}}
         </div>
         <div class="author_card-img">
-            <img src="https://kursy.ru/upload/iblock/45e/ikrjacl0owpjqvcypequ6nxf62q0sw1e/kruzhochki150_12.png" alt="{{$employee->name}}" title="{{$employee->name}}">
+            <img src="{{str_replace('webp', 'png', $employee->photo)}}" alt="{{$employee->name}}" title="{{$employee->name}}">
         </div>
         <div class="author_card-name">
             {{$employee->name}}
