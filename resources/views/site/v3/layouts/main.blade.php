@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="@yield('meta_description', 'kursi.ru')">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="/v3/css/style.css">
+    <link rel="stylesheet" href="{{ Vite::asset('resources/css/v3/style.css') }}">
+{{--    <link rel="stylesheet" href="{{ Vite::asset('pub/js/header/header.js') }}">--}}
     @yield('style')
     @stack('styles')
 </head>

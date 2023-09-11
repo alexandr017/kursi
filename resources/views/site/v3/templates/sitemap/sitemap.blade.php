@@ -11,7 +11,7 @@
 
 @section('content')
 
-    <link rel="stylesheet" href="/v3/css/html-sitemap.css"> <?php // todo подключение стилей не должно быть в body ?>
+    <link rel="stylesheet" href="{{ Vite::asset('resources/css/v3/html-sitemap.css') }}"> <?php // todo подключение стилей не должно быть в body ?>
 
     <div class="content max-width">
 
