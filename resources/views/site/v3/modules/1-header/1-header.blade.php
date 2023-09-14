@@ -3564,6 +3564,21 @@
     <script type="text/javascript" src="{{ Vite::asset('resources/js/header/header.js') }}"></script>
 @endpush
 
+<script>
+    function handleSearch(value) {
+        const resetButton = document.getElementById('search_page_reset_label');
+        resetButton.style.display = value ? 'block' : 'none';
+    }
+
+    function handleCatalogOpen() {
+        document.getElementById('catalogButton').classList.toggle('active');;
+        document.getElementById('closeCatalog').classList.toggle('active');
+        document.getElementById('openCatalog').classList.toggle('active');
+    }
+
+</script>
+
+
 <style>
     .menu {
         height: 100%;
