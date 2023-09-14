@@ -3,7 +3,9 @@
         <div class="author_card-title">
             {{$title ?? 'Автор'}}
         </div>
-        <div class="author_card-img"></div>
+        <div class="author_card-img">
+            <img src="{{str_replace('webp', 'png', $employee->photo)}}" alt="{{$employee->name}}" title="{{$employee->name}}">
+        </div>
         <div class="author_card-name">
             {{$employee->name}}
         </div>
