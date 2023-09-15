@@ -16,5 +16,16 @@ class CreateCompanyReviewAction
         $review = SchoolReview::create($dto);
 
         $this->companyRepository->saveReview($review);
+        $reviews = $this->companyRepository->getReviewsByCompanyId($dto->companyId);
+
+        $company = $this->companyRepository->getCompany($dto->companyId);
+
+        $sumRating = $reviews->sum('rating');
+        $avg = $sumRating / $reviews->count();
+
+        $company->setRatingValue($avg);
+        $company->setRatingCount($reviews->count());
+
+        $this->companyRepository->save($company);
     }
 }

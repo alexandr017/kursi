@@ -105,4 +105,20 @@ class CompanyRepository implements CompanyRepositoryInterface
             ->limit(15)
             ->get();
     }
+
+    public function getReviewsByCompanyId(int $companyId): Collection
+    {
+        return $this->reviewsQuery()
+            ->where('school_id', $companyId)
+            ->get();
+    }
+
+    public function save(Company $company): bool
+    {
+        if (!$company->save()) {
+            throw new SavingErrorException();
+        }
+
+        return true;
+    }
 }

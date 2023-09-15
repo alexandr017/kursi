@@ -48,4 +48,14 @@ class Company extends Model
         return $this->hasOne(Url::class, 'section_id','id')
             ->where('section_type', self::SECTION_TYPE);
     }
+
+    public function setRatingValue(float $rating): void
+    {
+        $this->rating_value = $rating;
+    }
+
+    public function setRatingCount(int $count): void
+    {
+        $this->rating_count = $count;
+    }
 }
