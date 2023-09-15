@@ -9,17 +9,28 @@
         </button>
 
         <div id="add_comment_block">
+            <div class="blog-comment-field blog-comment-field-user">
 
-            <div id="user_info">
-                <div>
-                    <p style="margin-bottom: 5px"> Name </p>
-                    <input id="user-name" class="user_info_sections" type="text" name="example_input" placeholder="Enter your name here">
+                <div class="blog-comment-field blog-comment-field-author">
+                    <div class="blog-comment-field-text comments-editor_title">
+                        <label for="user_name">
+                            Ваше имя
+                        </label>
+                        <span class="blog-required-field">*</span>
+                    </div>
+                    <input maxlength="255" size="30" tabindex="3" type="text" name="user_name" id="user_name" value="">
                 </div>
-                <div>
-                    <p style="margin: 0"> Email </p>
-                    <input id="user-email" class="user_info_sections" type="text" placeholder="Enter your email here">
+
+                <div class="blog-comment-field blog-comment-field-email">
+                    <div class="blog-comment-field-text comments-editor_title">
+                        <label for="">E-mail</label>
+                    </div>
+                    <input maxlength="255" size="30" tabindex="4" type="text" name="user_email" id="user_email" value="">
                 </div>
+
             </div>
+
+
             <div class="comments-editor_title">
                 Комментарий
             </div>
@@ -147,7 +158,7 @@
     }
 
     #area_for_comments {
-        width: 524px;
+        width: 100%;
         min-height: 156px;
         border-radius: 8px;
         border: 1px solid #D9D9D9;
@@ -192,5 +203,59 @@
     .blog_comment_show > a:hover,
     .blog_comment_delete > a:hover {
         text-decoration: underline;
+    }
+
+    .kursi_blog .blog-comment-field.blog-comment-field-user {
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+    div.blog-comment-field-user {
+        width: 100%;
+        padding-bottom: 5px;
+    }
+    div.blog-comment-field {
+    }
+
+    .kursi_blog .blog-comment-field.blog-comment-field-user > div {
+        width: 100%;
+    }
+
+    div.blog-comment-field-author, div.blog-comment-field-email {
+        float: left;
+        width: 47%;
+    }
+
+    .kursi_blog .comments-editor_title {
+        margin-top: 24px;
+        margin-bottom: 8px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #101820;
+    }
+
+    div.blog-comment-field-text {
+        padding-bottom: 0.2em;
+        width: 100%;
+    }
+
+    .blog-required-field {
+        color: red;
+    }
+
+    .kursi_blog .blog-comment-field input {
+        padding: 13px;
+        border-radius: 8px;
+        border: 1px solid #D9D9D9;
+        outline: none;
+    }
+
+    div.blog-comment-field-author input, div.blog-comment-field-email input {
+        width: 100%;
+    }
+
+    .kursi_blog #add_comment_block {
+        width: 50%;
+        min-width: 350px;
     }
 </style>
