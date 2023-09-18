@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Companies\SchoolReview;
 use App\Models\Courses\Course;
 use App\Models\Courses\CourseTag;
+use App\Models\History\History;
 use App\Models\Listing\Listing;
 use App\Models\Listing\ListingCourse;
 use App\Models\PostComments\PostComment;
@@ -97,6 +98,8 @@ class ImportController extends Controller
 
                 $content = str_replace($imgElement, $newSrc, $content);
             }
+
+            $content = str_replace('/local/templates/kursi/img/video_play.svg', '/images/system/video_play.svg', $content);
 
             $data = [
                 'category_id' => $oldCategoryIdToNewID[(int) $item->Группы->Ид]['id'],
@@ -201,7 +204,7 @@ class ImportController extends Controller
                 'email' => $email,
                 'vk_link' => $vkLink,
                 'telegram_link' => null,
-                'education' => null, // todo скорее всего перенести руками
+                'education' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[11]->Значение,
                 'sort_order'  => (int) $item->ЗначенияСвойств->ЗначенияСвойства[2]->Значение
             ];
 
@@ -660,5 +663,44 @@ class ImportController extends Controller
         }
 
         return $cleanedString;
+    }
+
+    public function runHistory()
+    {
+        $data = [
+            [
+                'step' => 1,
+                'main_preview' => '/images/history/history-step-1.png',
+                'mini_preview' => '/images/history/history-step-1-mini.svg',
+                'content' => 'Появилась идея создания образовательного агрегатора и был создан сайт litragramm.ru для проверки гипотез',
+            ],
+            [
+                'step' => 2,
+                'main_preview' => '/images/history/history-step-2.png',
+                'mini_preview' => '/images/history/history-step-2-mini.svg',
+                'content' => 'Начали формировать команду для работы над проектом',
+            ],
+            [
+                'step' => 3,
+                'main_preview' => '/images/history/history-step-3.png',
+                'mini_preview' => '/images/history/history-step-3-mini.svg',
+                'content' => 'Запустили соцсети: VK, YouTube, Inst, Telegram',
+            ],
+            [
+                'step' => 4,
+                'main_preview' => '/images/history/history-step-4.png',
+                'mini_preview' => '/images/history/history-step-4-mini.svg',
+                'content' => 'Куплен один из старейших образовательных доменов - kursy.ru',
+            ],
+            [
+                'step' => 5,
+                'main_preview' => '/images/history/history-step-5.svg',
+                'mini_preview' => '/images/history/history-step-5-mini.svg',
+                'content' => 'Опубликовали весь контент и запустили сайт',
+            ],
+        ];
+
+        History::query()->insert($data);
+
     }
 }

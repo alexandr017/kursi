@@ -159,3 +159,15 @@ img {
     display: inline-flex;
 }
 
+.person_body-education ul {
+    padding-left: 42px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.person_body-education ul li {
+    margin-bottom: 20px;
+}
+

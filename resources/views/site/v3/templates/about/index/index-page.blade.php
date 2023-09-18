@@ -19,7 +19,7 @@
 
         @include('site.v3.modules.53-our-team.53-our-team', compact('team'))
 
-        @include('site.v3.modules.54-our-history.54-our-history')
+        @include('site.v3.modules.54-our-history.54-our-history', compact('histories'))
 
         @include('site.v3.modules.55-our-patents.55-our-patents')
 

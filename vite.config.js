@@ -34,6 +34,8 @@ export default defineConfig({
                 'resources/css/mainpage/mainpage-posts.css',
                 'resources/css/post/post.css',
                 'resources/css/post/post-card.css',
+                'resources/css/employee/employee-info.css',
+                'resources/css/history/history.css',
                 'resources/js/company/companies.js',
                 'resources/js/company/company-review.js',
                 'resources/js/company/company-review-add.js',

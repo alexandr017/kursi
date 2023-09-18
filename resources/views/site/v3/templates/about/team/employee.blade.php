@@ -68,9 +68,14 @@
 
                     <div class="person_body-education">
                         <div class="person_body-education_title">
-
                             Образование
                         </div>
+
+                        <ul>
+                            <li class="person_body-education_item">
+                                {{$employee->education}}
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -113,6 +118,7 @@
         const videoWrapper = document.createElement('div');
         videoWrapper.className = 'video_page-wrapper video_optional-width';
         videoWrapper.id = 'videoContent';
+        videoWrapper.addEventListener('click', handleOutsideClick);
 
         const innerHTML = `
         <div class="vertical_position-wrapper-video null">
@@ -124,7 +130,7 @@
                     </svg>
                 </div>
                 <div class="iframe-shadow" style="line-height: 0;">
-                    <iframe allowfullscreen="" class="border-radius" style="width: 100%; height: 100%" src=${videoUrl} allow="autoplay"></iframe>
+                    <iframe class="border-radius" style="width: 100%; height: 100%" src=${videoUrl}?autoplay=1 allow="autoplay"></iframe>
                 </div>
             </div>
         </div>
@@ -132,6 +138,15 @@
 
         videoWrapper.innerHTML = innerHTML;
         document.body.appendChild(videoWrapper);
+    }
+
+
+    function handleOutsideClick(event) {
+        const clickedElement = event.target;
+
+        if (!clickedElement.closest('.videoContent')) {
+            closeVideoContent();
+        }
     }
 
     function getVideoUrl() {
