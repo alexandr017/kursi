@@ -43,6 +43,10 @@
                 @endforeach
             </div>
 
+
+            @include('site.v3.modules.4-pagination.pagination', ['pageAlias' => $pageAlias, 'numberPage' => $pageNumber])
+
+
             @if($posts->lastPage() > 1)
                 <div class="bx-pagination">
                     <div class="bx-pagination-container">

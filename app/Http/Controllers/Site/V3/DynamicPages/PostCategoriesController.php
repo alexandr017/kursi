@@ -18,6 +18,13 @@ class PostCategoriesController extends Controller implements DynamicPagesInterfa
         $action = resolve(IndexPostCategoryAction::class);
         $result = $action->run($dto);
 
-        return view('site.v3.templates.blog.category', ['posts' => $result->posts, 'category' => $result->category, 'categories' => $result->categories]);
+        return view('site.v3.templates.blog.category', [
+            'posts' => $result->posts,
+            'category' => $result->category,
+            'categories' => $result->categories,
+            'pageNumber' => $paginatePage,
+            'pagesCount' => $result->posts->lastPage(),
+            'pageAlias' => $result->category->urls->url
+            ]);
     }
 }
