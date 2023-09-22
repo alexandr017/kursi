@@ -174,7 +174,7 @@ ul.second_lvl > label:after {
 }
 
 label.close_section_btn:after {
-    background: url(https://kursy.ru/local/templates/kursi/img/chevron/chevron-up.svg);
+    background: url(/v3/images/chevron-up.svg);
 }
 
 .swiper-slide-pasive {

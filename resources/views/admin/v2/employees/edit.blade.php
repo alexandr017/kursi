@@ -3,6 +3,8 @@
 @section('h1', 'Сотдрудники - Редактирование')
 
 @section('content')
+    <a class="btn-preview" href="/{{$item->urls->url}}" target="_blank"><i class="fa fa-eye"></i> {{Request::root()}}/{{$item->urls->url}}</a>
+
     <form action="{{ route('admin.employees.update',$item->id) }}" method="post">
 
         {{ method_field('PATCH') }}

@@ -11,12 +11,20 @@ class BlogIndexPageController extends Controller
 {
     public function index(
         IndexBlogRequest $request,
-        IndexPostCategoryAction $action
+        IndexPostCategoryAction $action,
+        $pageNumber = 1
     ) {
-        $dto = IndexPostCategoryDto::fromBlogIndexRequest($request);
+        $dto = IndexPostCategoryDto::fromBlogIndexRequest($request, page: $pageNumber);
         $result = $action->run($dto);
 
-        return view('site.v3.templates.blog.category', ['posts' => $result->posts, 'category' => $result->category, 'categories' => $result->categories]);
+        return view('site.v3.templates.blog.category', [
+            'posts' => $result->posts,
+            'category' => $result->category,
+            'categories' => $result->categories,
+            'pageNumber' => (int) $pageNumber,
+            'pagesCount' => $result->posts->lastPage(),
+            'pageAlias' => 'znaniya',
+        ]);
     }
 
 }

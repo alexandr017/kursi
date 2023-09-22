@@ -54,10 +54,10 @@
                             <li class="bx-pag-prev">
                                 @if($posts->currentPage() > $posts->lastPage())
                                     <a href="?page={{$posts->currentPage() - 1}}">
-                                        <img src="https://kursy.ru/local/templates/kursi/components/bitrix/system.pagenavigation/kursi_blog/img/arrow.svg" alt="">
+                                        <img src="/v3/images/arrow-nav.svg" alt="">
                                     </a>
                                 @else
-                                    <img src="https://kursy.ru/local/templates/kursi/components/bitrix/system.pagenavigation/kursi_blog/img/arrow.svg" alt="">
+                                    <img src="/v3/images/arrow-nav.svg" alt="">
                                 @endif
                             </li>
 
@@ -110,10 +110,10 @@
                             <li class="bx-pag-next">
                                 @if($posts->currentPage() < $posts->lastPage())
                                     <a href="?page={{$posts->currentPage() + 1}}">
-                                        <img src="https://kursy.ru/local/templates/kursi/components/bitrix/system.pagenavigation/kursi_blog/img/arrow.svg" alt="">
+                                        <img src="/v3/images/arrow-nav.svg" alt="">
                                     </a>
                                 @else
-                                    <img src="https://kursy.ru/local/templates/kursi/components/bitrix/system.pagenavigation/kursi_blog/img/arrow.svg" alt="">
+                                    <img src="/v3/images/arrow-nav.svg" alt="">
                                 @endif
                             </li>
                         </ul>

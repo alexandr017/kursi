@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Employees;
 use App\Http\Controllers\Admin\AdminController;
 use App\Repositories\Admin\Employees\EmployeesRepository;
 use App\Http\Requests\Admin\Employees\EmployeeRequest;
+use App\Services\Breadcrumbs\BreadcrumbsConverter;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Throwable;
@@ -59,6 +60,7 @@ class EmployeesController extends AdminController
 
         $data = $request->all();
         $data = emptyDataToNull($data);
+        $data['breadcrumbs'] = BreadcrumbsConverter::put($data['url'], $data['h1']);
         $result = $this->employeesRepository->createEmployee($data);
 
         if ($result) {

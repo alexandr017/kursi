@@ -10,6 +10,7 @@ use App\Repositories\Admin\Courses\CoursesRepository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Throwable;
+use App\Services\Breadcrumbs\BreadcrumbsConverter;
 
 class ListingsController extends AdminController
 {
@@ -70,6 +71,7 @@ class ListingsController extends AdminController
 
         $data = $request->all();
         $data = emptyDataToNull($data);
+        $data['breadcrumbs'] = BreadcrumbsConverter::put($data['url'], $data['h1']);
         $result = $this->listingRepository->createListing($data);
 
         if ($result) {

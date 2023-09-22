@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site\V3\About;
 
 use App\Http\Controllers\Controller;
+use App\Services\Breadcrumbs\BreadcrumbsRender;
 use Illuminate\Http\Request;
 
 class AboutPageIndexController extends Controller
@@ -51,6 +52,10 @@ class AboutPageIndexController extends Controller
             abort(404);
         }
 
-        return view('site.v3.templates.about.index.index-page', compact('page', 'countSchools', 'coursesCount', 'employeesCount', 'reviewsCount', 'team'));
+        $breadcrumbs = BreadcrumbsRender::get($page->breadcrumbs, $page->h1);
+
+        $editLink = "/admin/static-pages/".self::SEO_PAGE_ID."/edit";
+
+        return view('site.v3.templates.about.index.index-page', compact('page', 'countSchools', 'coursesCount', 'employeesCount', 'reviewsCount', 'team', 'breadcrumbs', 'editLink'));
     }
 }

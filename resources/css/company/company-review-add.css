@@ -25,12 +25,12 @@
 }
 
 .rating__label.hovered .star-left {
-    background-image: url(https://kursy.ru/local/templates/kursi/img/rating/LeftBlue.svg);
+    background-image: url(/v3/images/LeftBlue.svg);
     background-position: right;
 }
 
 .rating__label.hovered .star-right {
-    background-image: url(https://kursy.ru/local/templates/kursi/img/rating/RightBlue.svg);
+    background-image: url(/v3/images/RightBlue.svg);
     background-position: left;
     margin-right: 24px;
 }

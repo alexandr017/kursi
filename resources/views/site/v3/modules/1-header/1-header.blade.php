@@ -5,7 +5,7 @@
                 <img src="/v3/images/logo.svg" alt="Курсы.ру">
             </a>
             <div class="header_right_side-modile_open" onclick="showMobileMenu()">
-                <img src="https://kursy.ru/local/templates/kursi/img/burger.svg" alt="Открыть меню" title="Открыть меню">
+                <img src="/v3/images/burger.svg" alt="Открыть меню" title="Открыть меню">
             </div>
             <div class="header_right_side " id="header-menu-cont">
                 <a href="/" class="mobile-logo">
@@ -17,13 +17,13 @@
                         <div class="li kursy-top_menu-cont" id="catalogButton" onclick="handleCatalogOpen()">
                             <div class="header_top_menu-text">
                                 <img
-                                    src="https://kursy.ru//local/components/sigodinweb/menu.sections/templates/.default/img/menu_img.svg"
+                                    src="/v3/images/menu_img.svg"
                                     alt=""
                                     class="kursy-open_btn-open-img active"
                                     id="openCatalog"
                                 >
                                 <img
-                                    src="https://kursy.ru//local/components/sigodinweb/menu.sections/templates/.default/img/menu_close_img.svg"
+                                    src="/v3/images/menu_close_img.svg"
                                     alt=""
                                     class="kursy-open_btn-close-img"
                                     id="closeCatalog"
@@ -3476,7 +3476,7 @@
                                 <div class="search_page-header">
                                     <form action="" method="get">
                                         <label for="search_page_submit" class="search_page-submit_label">
-                                            <img src="https://kursy.ru/local/components/sigodinweb/search/templates/.default/img/search.svg" alt="Поиск" title="Поиск">
+                                            <img src="/v3/images/search.svg" alt="Поиск" title="Поиск">
                                             <input type="submit" value="Искать" id="search_page_submit">
                                         </label>
 
@@ -3495,13 +3495,13 @@
                                         >
 
                                         <label for="search_page_reset" id="search_page_reset_label" style="display: none">
-                                            <img src="https://kursy.ru/local/components/sigodinweb/search/templates/.default/img/close.svg" class="search_page_reset_img" style="" alt="Сбросить поиск" title="Сбросить поиск">
+                                            <img src="/v3/images/close.svg" class="search_page_reset_img" style="" alt="Сбросить поиск" title="Сбросить поиск">
                                             <input type="reset" id="search_page_reset" value="Очистить" onclick="clearSearch()">
                                         </label>
                                     </form>
 
                                     <div class="search_page-close_btn mobile" onclick="hideSearchPopup()">
-                                        <img src="https://kursy.ru/local/components/sigodinweb/search/templates/.default/img/closepage.svg" alt="Закрыть поиск" title="Закрыть поиск">
+                                        <img src="/v3/images/closepage.svg" alt="Закрыть поиск" title="Закрыть поиск">
                                         <p>Отмена</p>
                                     </div>
 

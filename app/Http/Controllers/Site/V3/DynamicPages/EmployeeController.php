@@ -20,8 +20,10 @@ class EmployeeController extends Controller implements DynamicPagesInterface
             abort('404');
         }
 
-        $breadcrumbs = BreadcrumbsRender::get($employee->breadcrumb, $employee->h1);
+        $breadcrumbs = BreadcrumbsRender::get($employee->breadcrumbs, $employee->h1);
 
-        return view('site.v3.templates.about.team.employee', compact('employee', 'breadcrumbs'));
+        $editLink = "/admin/employees/{$employee->id}/edit";
+
+        return view('site.v3.templates.about.team.employee', compact('employee', 'breadcrumbs', 'editLink'));
     }
 }

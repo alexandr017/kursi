@@ -52,6 +52,20 @@
         .clearfix {
             clear: both;
         }
+
+        .btn-preview {
+            background-color: #ebebf3;
+            color: #444;
+            border-color: #000;
+            border-radius: 5px;
+            padding: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .btn-preview > i {
+            vertical-align: -2px;
+        }
     </style>
 
 </head>

@@ -637,4 +637,109 @@ class ImportController extends Controller
 
         return $cleanedString;
     }
+
+
+    public function setCorrectBreadcrumbs()
+    {
+        $postCategories = \DB::table('post_categories')->select('id')->whereNull('deleted_at')->get();
+        foreach ($postCategories as $_postCategory) {
+            $postCategory = \App\Models\Posts\PostCategory::find($_postCategory->id);
+            $postCategory->breadcrumbs = "Статьи@znaniya
+$postCategory->h1";
+            $postCategory->save();
+        }
+
+
+
+        $postCategoriesRow = \DB::table('post_categories')
+            ->leftJoin('urls', 'urls.section_id', 'post_categories.id')
+            ->select('post_categories.id', 'urls.url', 'post_categories.h1')
+            ->where(['urls.section_type' => 2])
+            ->whereNull('post_categories.deleted_at')
+            ->get();
+
+        foreach ($postCategoriesRow as $item) {
+            $postCategories[$item->id] = ['link' => $item->url, 'h1' => $item->h1];
+        }
+
+        $posts = \DB::table('posts')->select('id')->whereNull('deleted_at')->get();
+        foreach ($posts as $_post) {
+            $post = \App\Models\Posts\Post::find($_post->id);
+            if (isset($postCategories[$post->category_id])) {
+                $categoryBreadcrumbs = $postCategories[$post->category_id]['h1'] . '@'. $postCategories[$post->category_id]['link'];
+                $post->breadcrumbs = "Статьи@znaniya
+$categoryBreadcrumbs
+$post->h1";
+                $post->save();
+            }
+        }
+
+
+
+
+        $employees = \DB::table('employees')->select('id')->whereNull('deleted_at')->get();
+        foreach ($employees as $_employee) {
+            $employee = \App\Models\Team\Employee::find($_employee->id);
+            $employee->breadcrumbs = "Сотрудники@about
+$employee->h1";
+            $employee->save();
+        }
+
+
+
+
+        $companies = \DB::table('companies')->select('id')->whereNull('deleted_at')->get();
+        foreach ($companies as $_company) {
+            $company = \App\Models\Companies\Company::find($_company->id);
+            $company->breadcrumbs = "Школы@schools
+$company->h1";
+            $company->save();
+        }
+
+        $listings = \DB::table('listings')
+            ->leftJoin('urls', 'urls.section_id', 'listings.id')
+            ->select('listings.id', 'urls.url')
+            ->where(['urls.section_type' => 6])
+            ->whereNull('listings.deleted_at')
+            ->get();
+
+        foreach ($listings as $_listing) {
+            //if ('dlya-detej/shkola/olimpiady/programmirovanie/11-klass' == $_listing->url) {
+                $breadcrumbs = '';
+                $partsAlias = explode('/', $_listing->url);
+                $tmpUrl = '';
+                $lastElement = end($partsAlias);
+                foreach ($partsAlias as $part) {
+                    $tmpUrl .= $tmpUrl == ''
+                        ? $part
+                        : '/' . $part;
+
+                    $listingTmp = \DB::table('listings')
+                        ->leftJoin('urls', 'urls.section_id', 'listings.id')
+                        ->select('listings.name')
+                        ->where(['urls.section_type' => 6, 'urls.url' => $tmpUrl])
+                        ->whereNull('listings.deleted_at')
+                        ->first();
+
+                    if ($listingTmp == null) {
+                        dd($partsAlias, $part);
+                    }
+                    if ($part != $lastElement) {
+                        $breadcrumbs .= $listingTmp->name . '@' . $tmpUrl . PHP_EOL;
+                    } else {
+                        $breadcrumbs .= $listingTmp->name;
+                    }
+
+
+                }
+                //dd($breadcrumbs);
+
+                $listing = \App\Models\Listing\Listing::find($_listing->id);
+                $listing->breadcrumbs = $breadcrumbs;
+                $listing->save();
+            //}
+            //$_listing =
+        }
+
+    }
 }

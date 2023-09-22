@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Site\V3\DynamicPages;
 use App\Http\Controllers\Controller;
 use App\Models\Listing\Listing;
 use App\Models\Tags\Tag;
+use App\Services\Breadcrumbs\BreadcrumbsRender;
 use App\Services\Listing\Actions\GetListingAction;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,10 @@ class ListingController extends Controller implements DynamicPagesInterface
 
         $listing = $getListingAction->run($sectionID);
 
-        return view('site.v3.templates.listing.listing', compact('listing'));
+        $breadcrumbs = BreadcrumbsRender::get($listing->breadcrumbs, $listing->h1);
+
+        $editLink = "/admin/listings/{$listing->id}/edit";
+
+        return view('site.v3.templates.listing.listing', compact('listing', 'breadcrumbs', 'editLink'));
     }
 }

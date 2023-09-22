@@ -1,0 +1,708 @@
+
+
+/* Start:/local/templates/kursi/components/sigodinweb/highloadblock.list/about_better/style.css?16905244522202*/
+.about_better-items {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+
+.about_better-item_cont {
+    width: calc(50% - 10px);
+    display: grid;
+    grid-template-areas:
+        "img title"
+        "img text";
+    background: #FFFFFF;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 45px;
+    row-gap: 20px;
+    overflow: hidden;
+    align-items: flex-end;
+    column-gap: 40px;
+    margin-bottom: 20px;
+    grid-template-columns: 1fr 2fr;
+}
+
+.about_better-item_title, .about_better-item_text {
+    margin-left: 16px;
+}
+
+.about_better-img_cont img {
+    width: 100%;
+    /* min-width: 120px; */
+    height: auto;
+}
+
+.about_better-img_cont {
+    grid-area: img;
+    display: flex;
+    align-items: flex-end;
+}
+
+.about_better-item_title {
+    grid-area: title;
+    padding: 40px 70px 0 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    color: #101820;
+}
+
+.about_better-item_text {
+    grid-area: text;
+    align-self: flex-start;
+    padding: 0 70px 40px 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #101820;
+}
+
+.about_better-title h2 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 46px;
+    color: #101820;
+    margin-bottom: 40px;
+}
+
+
+
+
+.about_better-item_cont .about_better-item_title {
+    margin-left: 32px;
+    margin-bottom: 24px;
+    padding-right: 40px;
+}
+
+.about_better-item_cont .about_better-item_text {
+    margin-left: 32px;
+    padding-bottom: 40px;
+    padding-right: 40px;
+}
+
+.about_better-item_title {
+    line-height: 24px;
+}
+
+.about_better-item_cont {
+    grid-gap: 0;
+}
+
+@media (max-width: 1100px) {
+    .about_better-item_cont {
+        display: block;
+    }
+
+    .about_better-img_cont{
+        margin-top: -40px;
+    }
+
+    .about_better-img_cont img{
+        max-height: 200px;
+        width: unset;
+        min-height: unset;
+    }
+
+    .about_better-title h2 {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 800px) {
+    .about_better-items {
+        justify-content: space-around;
+    }
+
+    .about_better-item_cont {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+/* End */
+
+
+/* Start:/local/templates/kursi/components/bitrix/news.list/about_persons/style.css?16905244522158*/
+.person_item {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.person-list .swiper-slide{
+    width: auto;
+    display: flex;
+    height: auto;
+}
+
+.person-list {
+    display: inline-flex;
+    width: 100%;
+    position: relative;
+    /* justify-content: space-between; */
+}
+
+.person-item {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 20px;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 45px;
+    /* min-width: 33%; */
+    min-width: 360px;
+    max-width: 360px;
+    overflow: hidden;
+}
+
+.person_info {
+    min-height: 20%;
+    padding: 16px;
+    background: white;
+    flex: 1;
+    align-items: self-start;
+    justify-content: end;
+    /* height: 20%; */
+    display: flex;
+    flex-direction: column;
+}
+
+.person_picture {
+    /* height: auto; */
+    background: #101820;
+    /* height: 80%; */
+    /* flex: 1; */
+    width: auto;
+    object-fit: cover;
+}
+
+.person_link a{
+    display: block;
+    padding: 11px 20px;
+    text-decoration: none;
+}
+
+.person_link {
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    /* margin-bottom: 40px; */
+}
+
+.person_name {
+    font-weight: 500;
+    font-size: 24px;
+    flex: 1;
+    line-height: 150%;
+    color: #101820;
+    margin-bottom: 8px;
+}
+
+.person-item.last_element_label{
+    display: none;
+}
+
+.person_post {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #101820;
+    margin-bottom: auto;
+}
+
+img.person_picture {
+    height: 300px;
+}
+
+@media(max-width: 860px){
+    /* .person_link {
+        width: 90%;
+        margin-top: 24px;
+        margin-bottom: 24px;
+    } */
+
+    .person_name {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+        margin-top: 24px;
+        padding-bottom: 8px;
+    }
+
+    .person_info {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .person_post {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .person_link a {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .person-item {
+        min-width: 328px;
+        max-width: 328px;
+    }
+
+
+}
+
+/* End */
+
+
+/* Start:/local/templates/kursi/components/sigodinweb/highloadblock.list/about_history/style.css?16905244522585*/
+.about_hystory-item_cont {
+    /* display: none; */
+    width: 100%;
+    /* opacity: 0; */
+    /* height: 0; */
+    /* overflow: hidden; */
+}
+
+/* .about_hystory-main_img_cont {
+    margin-right: 10vw;
+} */
+
+.about_hystory-main_img_cont img {
+    max-width: 100%;
+}
+
+.about_hystory-info_cont {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about_hystory-mini_img {
+    margin-bottom: 20px;
+}
+
+.about_hystory-item_text {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 34px;
+    color: #101820;
+    margin-top: 20px;
+}
+
+.about_hystory-item_cont.swiper-slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    opacity: 1;
+    grid-gap: 40px;
+    height: auto;
+    align-items: center;
+}
+
+
+.about_hystory-cont {
+    position: relative;
+    margin: 0 55px;
+    padding: 0 55px;
+    overflow: hidden;
+}
+
+/* .about_hystory-container .swiper_styles-button-prev, .about_hystory-container .swiper_styles-button-next { */
+/* position: absolute; */
+/* z-index: 10000000; */
+/* top: 50%;/ */
+/* } */
+
+.about_hystory-container .swiper_styles-pagination_cont{
+    position: unset;
+}
+
+.about_hystory-cont.swiper_styles-slider{
+    padding-bottom: 80px;
+}
+
+.about_hystory-container .swiper_styles-pagination_cont{
+    margin-bottom: 40px;
+}
+
+.about_hystory-container {
+    position: relative;
+    margin: 0 auto;
+}
+
+/* .about_hystory-container .swiper_styles-button-prev {
+    left: 0;
+}
+
+.about_hystory-container .swiper_styles-button-next {
+    right: 0;
+} */
+
+.about_hystory-cont .slider_buttons_cont {
+    justify-content: space-between;
+    margin: 0;
+}
+
+.about_hystory-cont .slider_button.slider_button_prev {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotateZ(180deg);
+}
+
+.about_hystory-cont .slider_button.slider_button_next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.about_hystory-cont .slider_num_cont {
+    display: none;
+}
+
+.about_hystory-cont .slider_button {
+    width: 56px;
+    height: 56px;
+    background-color: white;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    overflow: hidden;
+    border: 1px solid #D9D9D9;
+}
+
+@media(max-width: 860px){
+    .about_hystory-cont{
+        margin: 0;
+        padding: 0;
+    }
+
+    .about_hystory-main_img_cont {
+        display: flex;
+        justify-content: center;
+    }
+
+    .about_hystory-cont-button-prev {
+        margin-right: 24px;
+    }
+
+    .about_hystory-item_cont.swiper-slide {
+        grid-template-columns: 1fr;
+        word-break: break-word;
+        user-select: none;
+    }
+}
+
+/* End */
+
+
+/* Start:/local/templates/kursi/components/sigodinweb/highloadblock.list/about_pattents/style.css?1690524452504*/
+.about_pattents-items {
+    display: inline-flex;
+}
+
+.about_pattents-item_cont img {
+    width: 360px;
+    height: unset;
+    margin-right: 20px;
+}
+
+.about_pattents-cont{
+    position: relative;
+}
+
+
+.about_pattents-item_cont.swiper-slide {
+    width: auto;
+}
+
+@media(max-width: 860px){
+    .about_pattents-item_cont.swiper-slide {
+        width: 100%;
+        margin-right: 20px;
+    }
+
+    .about_pattents-item_cont img {
+        width: 100%;
+        height: unset;
+        margin-right: 28px;
+    }
+}
+
+/* End */
+
+
+/* Start:/local/templates/kursi/components/sigodinweb/highloadblock.list/about_smi/style.css?16905244521282*/
+
+
+.about_smi-cont{
+    position: relative;
+}
+
+.about_smi-item_cont {
+    background: #FFFFFF;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 45px;
+    max-width: 360px;
+    min-width: 280px;
+    margin-right: 20px;
+    padding: 40px;
+    padding-top: 48px;
+}
+
+.about_smi-smi_cont {
+    margin-bottom: 80px;
+}
+
+.about_smi-smi_logo {
+    margin-bottom: 25px;
+}
+
+.about_smi-smi_text {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    color: #101820;
+}
+
+.about_smi-text_cont {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: #101820;
+    margin-bottom: 48px;
+}
+
+.about_smi-link_cont a {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #469ED7;
+    text-decoration: none;
+    padding: 9px;
+    border: 1px solid;
+    border-radius: 100px;
+    width: 100%;
+}
+
+.about_smi-link_cont a:hover{
+    color: #ffffff;
+    background: #66B7EC;
+}
+
+.about_smi-link_cont a:active{
+    color: #ffffff;
+    background: #2185C6;
+}
+
+.about_smi-items {
+    display: inline-flex;
+}
+
+.about_smi-link_cont {
+    display: flex;
+}
+
+
+
+@media(max-width: 860px){
+    .about_smi-smi_logo img {
+        width: 100%;
+    }
+
+}
+
+/* End */
+
+
+/* Start:/local/templates/kursi/components/sigodinweb/highloadblock.list/about_partners/style.css?16905244521102*/
+.about_partners-items {
+    display: inline-flex;
+}
+
+/* .about_partners-item_cont.swiper-slide {
+  width: auto;
+} */
+
+.about_partners-item_cont.swiper-slide {
+    width: 170px;
+    padding: 50px 16px;
+}
+
+.about_partners-item_cont {
+    border: 1.5px solid #D9D9D9;
+    border-radius: 20px;
+    padding: 50px;
+    text-decoration: none;
+    margin-right: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.about_partners-item_cont img {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 45px;
+    object-fit: cover;
+}
+
+.about_partners-item_cont p {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+
+    text-align: center;
+    color: #101820;
+}
+
+.about_partners-item_cont:hover {
+}
+
+.about_partners-cont {
+    margin-bottom: 120px;
+    position: relative;
+}
+
+img.about_partners-hover_img {
+    display: none;
+}
+
+.about_partners-item_cont.swiper-slide:hover > .about_partners-hover_img {
+    display: inline;
+}
+
+.about_partners-item_cont.swiper-slide:hover > .about_partners-main_img {
+    display: none;
+}
+
+/* End */
+
+
+/* Start:/local/templates/kursi/components/bitrix/news.list/about_sociallist/style.css?16905244522036*/
+.about_social_links-list{
+    display: inline-flex;
+}
+
+.about_social_links-list a, .about_social_links-list p {
+    display: flex;
+}
+
+.about_social_links-list a {
+    margin-right: 12px;
+}
+
+
+.about_social_links-list .blue_icon{
+    display: none;
+}
+
+.about_social_links-list a:hover .black_icon{
+    display: none;
+}
+
+.about_social_links-list a:hover .blue_icon{
+    display: block;
+}
+
+.about_social_links-list {
+    flex-direction: column;
+    max-width: 50%;
+    min-width: 482px;
+}
+
+.about_social_links-list_cont {
+    display: inline-flex;
+}
+
+h2.about_social_links-list_title {
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 46px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+p.about_social_links-list_text {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 34px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.about_social_links-list a {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    margin-right: 50px;
+}
+
+.about_social_links-list a img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.about_social_links-list {
+    margin-bottom: 100px;
+}
+
+@media(max-width: 860px){
+    h2.about_social_links-list_title {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 40px;
+    }
+
+    p.about_social_links-list_text {
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 32px;
+    }
+
+    .about_social_links-list a {
+        margin: 0;
+    }
+    /*
+        .about_social_links-list_cont {
+            justify-content: space-around;
+        } */
+
+    .about_social_links-list {
+        /* margin-bottom: px; */
+    }
+
+    .about_social_links-list_cont .news-item{
+        margin-right: 20px;
+    }
+
+
+    /* .about_social_links-list_cont {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    } */
+
+    .about_social_links-list {
+        min-width: unset;
+        max-width: unset;
+    }
+}
+
+/* End */
+/* /local/templates/kursi/components/sigodinweb/highloadblock.list/about_better/style.css?16905244522202 */
+/* /local/templates/kursi/components/bitrix/news.list/about_persons/style.css?16905244522158 */
+/* /local/templates/kursi/components/sigodinweb/highloadblock.list/about_history/style.css?16905244522585 */
+/* /local/templates/kursi/components/sigodinweb/highloadblock.list/about_pattents/style.css?1690524452504 */
+/* /local/templates/kursi/components/sigodinweb/highloadblock.list/about_smi/style.css?16905244521282 */
+/* /local/templates/kursi/components/sigodinweb/highloadblock.list/about_partners/style.css?16905244521102 */
+/* /local/templates/kursi/components/bitrix/news.list/about_sociallist/style.css?16905244522036 */

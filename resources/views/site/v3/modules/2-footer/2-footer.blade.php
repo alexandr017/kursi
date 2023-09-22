@@ -69,19 +69,19 @@
                 <p class="news-item" id="bx_3218110189_7">
                     <a href="https://www.youtube.com/@kursyrueng" rel="nofollow">
                         <img class="white_icon" src="/v3/images/footer/youtube-white.svg" alt="YT" title="YT">
-                        <img class="blue_icon" src="/v3/images/footer/youtube-black.svg" alt="YT" title="YT">
+                        <img class="blue_icon" src="/v3/images/footer/youtube-blue.svg" alt="YT" title="YT">
                     </a>
                 </p>
                 <p class="news-item" id="bx_3218110189_6">
                     <a href="https://vk.com/kursyru" rel="nofollow">
                         <img class="white_icon" src="/v3/images/footer/vk-white.svg" alt="VK" title="VK">
-                        <img class="blue_icon" src="/v3/images/footer/vk-black.svg" alt="VK" title="VK">
+                        <img class="blue_icon" src="/v3/images/footer/vk-blue.svg" alt="VK" title="VK">
                     </a>
                 </p>
                 <p class="news-item" id="bx_3218110189_4">
                     <a href=" https://t.me/kursy_education" rel="nofollow">
                         <img class="white_icon" src="/v3/images/footer/tg-white.svg" alt="Telegram" title="Telegram">
-                        <img class="blue_icon" src="/v3/images/footer/tg-black.svg" alt="Telegram" title="Telegram">
+                        <img class="blue_icon" src="/v3/images/footer/tg-blue.svg" alt="Telegram" title="Telegram">
                     </a>
                 </p>
             </div>

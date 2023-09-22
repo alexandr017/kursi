@@ -10,9 +10,9 @@ class HTMLSitemapController extends Controller
 {
     const SECTION_POST_CATEGORY_TYPE_ID =  2;
 
-    public function index() : \View
+    public function index()
     {
-        $postCategories = DB::table('post_categories')
+        $postCategories = \DB::table('post_categories')
             ->select(['post_categories.h1', 'urls.url'])
             ->leftJoin('urls', 'post_categories.id', 'urls.section_id')
             ->where(['post_categories.status' => 1, 'urls.section_type' => HTMLSitemapController::SECTION_POST_CATEGORY_TYPE_ID])

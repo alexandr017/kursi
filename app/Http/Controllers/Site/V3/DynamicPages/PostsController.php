@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Site\V3\DynamicPages;
 use App\Http\Controllers\Controller;
 use App\Models\Posts\PostCategory;
 use App\Models\Posts\Post;
+use App\Services\Breadcrumbs\BreadcrumbsRender;
 
 // Dynamic type 3
 class PostsController extends Controller implements DynamicPagesInterface
@@ -30,8 +31,12 @@ class PostsController extends Controller implements DynamicPagesInterface
             abort(404);
         }
 
+        $breadcrumbs = BreadcrumbsRender::get($post->breadcrumbs, $post->h1);
+
         // todo comments
 
-        return view('site.v3.templates.blog.post', compact('post'));
+        $editLink = "/admin/posts/{$post->id}/edit";
+
+        return view('site.v3.templates.blog.post', compact('post', 'breadcrumbs', 'editLink'));
     }
 }
