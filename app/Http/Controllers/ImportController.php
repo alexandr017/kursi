@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Companies\SchoolReview;
 use App\Models\Courses\Course;
 use App\Models\Courses\CourseTag;
+use App\Models\History\History;
 use App\Models\Listing\Listing;
 use App\Models\Listing\ListingCourse;
 use App\Models\PostComments\PostComment;
@@ -51,7 +52,8 @@ class ImportController extends Controller
                 'h1' => (string) (!is_null($item->НаследуемыеШаблоны->Шаблон[2]) ? $item->НаследуемыеШаблоны->Шаблон[2]->Значение : $item->ЗначенияСвойств->ЗначенияСвойства->Значение),
                 'breadcrumbs' => '', // todo
                 'content' => (string) $item->Описание,
-                'status' => 1,
+                'status' => $item->БитриксАктивность == 'true' ? 1: 0,
+                'sort_order' => (integer)$item->БитриксСортировка,
                 'old_id' => (int) $item->Ид
             ];
 
@@ -72,6 +74,7 @@ class ImportController extends Controller
 
         }
 
+        $employees = Employee::query()->get();
 
         $posts = $xmlObj->Каталог->Товары->Товар;
         foreach ($posts as $item) {
@@ -96,6 +99,8 @@ class ImportController extends Controller
                 $content = str_replace($imgElement, $newSrc, $content);
             }
 
+            $content = str_replace('/local/templates/kursi/img/video_play.svg', '/images/system/video_play.svg', $content);
+
             $data = [
                 'category_id' => $oldCategoryIdToNewID[(int) $item->Группы->Ид]['id'],
                 'title' => (string) $item->НаследуемыеШаблоны->Шаблон[0]->Значение,
@@ -105,8 +110,8 @@ class ImportController extends Controller
                 'preview' => '/images/posts/previews/' . Str::slug((string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение) . '.webp',
                 'lead' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
                 'content' => (string) $content,
-                'author_id' => 1, // todo
-                'status' => 1, // todo
+                'author_id' => $employees->where('old_id', (string)$item->ЗначенияСвойств->ЗначенияСвойства[8]->Значение)->first()?->id ?? 1,
+                'status' => (string)$item->ЗначенияСвойств->ЗначенияСвойства[0]->Значение == 'true' ? 1: 0,
                 'rating_value' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[11]->Значение,
                 'rating_count' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[10]->Значение,
                 'old_id' => (string) $item->Ид,
@@ -154,6 +159,28 @@ class ImportController extends Controller
         $employees = $xmlObj->Каталог->Товары->Товар;
 
         foreach ($employees  as $item) {
+            $content = (string) $item->ЗначенияСвойств->ЗначенияСвойства[6]->Значение;
+            $new  = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $content);
+
+            $crawler = new Crawler();
+            $crawler->addHtmlContent($new);
+
+            $imgElements = $crawler->filter('img')->extract(['src']);
+
+            foreach ($imgElements as $imgElement) {
+                $newSrc = '/images/employees/others/' . basename($imgElement);
+
+                if (empty($imgElement)) {
+                    continue;
+                }
+
+//                copy(substr($imgElement, 1), 'public' . $newSrc);
+
+                $content = str_replace($imgElement, $newSrc, $content);
+            }
+
+            $content = str_replace('/local/templates/kursi/img/video_play.svg', '/images/system/video_play.svg', $content);
+
             preg_match_all('#\bhttps?://[^,\s()<>]+(?:\([\w\d]+\)|([^,[:punct:]\s]|/))#', (string) $item->ЗначенияСвойств->ЗначенияСвойства[9]->Значение, $match);
             $vkLink = (isset($match[0][0])) ? $match[0][0] : null;
 
@@ -168,7 +195,7 @@ class ImportController extends Controller
                 'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
                 'breadcrumbs' => 'Сотрудники@about\r\n' . (string) $item->Наименование,
                 'lead' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
-                'content' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[6]->Значение,
+                'content' => $content,
                 'old_id' => (int) $item->Ид,
                 'status' => 1,
                 'rating_value' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[12]->Значение,
@@ -177,7 +204,7 @@ class ImportController extends Controller
                 'email' => $email,
                 'vk_link' => $vkLink,
                 'telegram_link' => null,
-                'education' => null, // todo скорее всего перенести руками
+                'education' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[11]->Значение,
                 'sort_order'  => (int) $item->ЗначенияСвойств->ЗначенияСвойства[2]->Значение
             ];
 
@@ -638,6 +665,43 @@ class ImportController extends Controller
         return $cleanedString;
     }
 
+    public function runHistory()
+    {
+        $data = [
+            [
+                'step' => 1,
+                'main_preview' => '/images/history/history-step-1.png',
+                'mini_preview' => '/images/history/history-step-1-mini.svg',
+                'content' => 'Появилась идея создания образовательного агрегатора и был создан сайт litragramm.ru для проверки гипотез',
+            ],
+            [
+                'step' => 2,
+                'main_preview' => '/images/history/history-step-2.png',
+                'mini_preview' => '/images/history/history-step-2-mini.svg',
+                'content' => 'Начали формировать команду для работы над проектом',
+            ],
+            [
+                'step' => 3,
+                'main_preview' => '/images/history/history-step-3.png',
+                'mini_preview' => '/images/history/history-step-3-mini.svg',
+                'content' => 'Запустили соцсети: VK, YouTube, Inst, Telegram',
+            ],
+            [
+                'step' => 4,
+                'main_preview' => '/images/history/history-step-4.png',
+                'mini_preview' => '/images/history/history-step-4-mini.svg',
+                'content' => 'Куплен один из старейших образовательных доменов - kursy.ru',
+            ],
+            [
+                'step' => 5,
+                'main_preview' => '/images/history/history-step-5.svg',
+                'mini_preview' => '/images/history/history-step-5-mini.svg',
+                'content' => 'Опубликовали весь контент и запустили сайт',
+            ],
+        ];
+
+        History::query()->insert($data);
+    }
 
     public function setCorrectBreadcrumbs()
     {
@@ -705,38 +769,38 @@ $company->h1";
 
         foreach ($listings as $_listing) {
             //if ('dlya-detej/shkola/olimpiady/programmirovanie/11-klass' == $_listing->url) {
-                $breadcrumbs = '';
-                $partsAlias = explode('/', $_listing->url);
-                $tmpUrl = '';
-                $lastElement = end($partsAlias);
-                foreach ($partsAlias as $part) {
-                    $tmpUrl .= $tmpUrl == ''
-                        ? $part
-                        : '/' . $part;
+            $breadcrumbs = '';
+            $partsAlias = explode('/', $_listing->url);
+            $tmpUrl = '';
+            $lastElement = end($partsAlias);
+            foreach ($partsAlias as $part) {
+                $tmpUrl .= $tmpUrl == ''
+                    ? $part
+                    : '/' . $part;
 
-                    $listingTmp = \DB::table('listings')
-                        ->leftJoin('urls', 'urls.section_id', 'listings.id')
-                        ->select('listings.name')
-                        ->where(['urls.section_type' => 6, 'urls.url' => $tmpUrl])
-                        ->whereNull('listings.deleted_at')
-                        ->first();
+                $listingTmp = \DB::table('listings')
+                    ->leftJoin('urls', 'urls.section_id', 'listings.id')
+                    ->select('listings.name')
+                    ->where(['urls.section_type' => 6, 'urls.url' => $tmpUrl])
+                    ->whereNull('listings.deleted_at')
+                    ->first();
 
-                    if ($listingTmp == null) {
-                        dd($partsAlias, $part);
-                    }
-                    if ($part != $lastElement) {
-                        $breadcrumbs .= $listingTmp->name . '@' . $tmpUrl . PHP_EOL;
-                    } else {
-                        $breadcrumbs .= $listingTmp->name;
-                    }
-
-
+                if ($listingTmp == null) {
+                    dd($partsAlias, $part);
                 }
-                //dd($breadcrumbs);
+                if ($part != $lastElement) {
+                    $breadcrumbs .= $listingTmp->name . '@' . $tmpUrl . PHP_EOL;
+                } else {
+                    $breadcrumbs .= $listingTmp->name;
+                }
 
-                $listing = \App\Models\Listing\Listing::find($_listing->id);
-                $listing->breadcrumbs = $breadcrumbs;
-                $listing->save();
+
+            }
+            //dd($breadcrumbs);
+
+            $listing = \App\Models\Listing\Listing::find($_listing->id);
+            $listing->breadcrumbs = $breadcrumbs;
+            $listing->save();
             //}
             //$_listing =
         }

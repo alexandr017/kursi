@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site\V3\About;
 
 use App\Http\Controllers\Controller;
+use App\Models\History\History;
 use App\Services\Breadcrumbs\BreadcrumbsRender;
 use Illuminate\Http\Request;
 
@@ -34,11 +35,9 @@ class AboutPageIndexController extends Controller
             ->count();
 
         // todo: на момент запувка парсера нет таблицы с отзывами
-//        $reviewsCount = \DB::table('reviews')
-//            ->where(['status' => 1])
-//            ->whereNull('deleted_at')
-//            ->count();
-        $reviewsCount = 0;
+        $reviewsCount = \DB::table('school_reviews')
+            ->where(['status' => 1])
+            ->count();
 
         $team = \DB::table('employees')
             ->leftJoin('urls', 'employees.id', 'urls.section_id')
@@ -52,10 +51,14 @@ class AboutPageIndexController extends Controller
             abort(404);
         }
 
+        $histories = History::query()
+            ->orderBy('step')
+            ->get();
+
         $breadcrumbs = BreadcrumbsRender::get($page->breadcrumbs, $page->h1);
 
         $editLink = "/admin/static-pages/".self::SEO_PAGE_ID."/edit";
 
-        return view('site.v3.templates.about.index.index-page', compact('page', 'countSchools', 'coursesCount', 'employeesCount', 'reviewsCount', 'team', 'breadcrumbs', 'editLink'));
+        return view('site.v3.templates.about.index.index-page', compact('page', 'countSchools', 'coursesCount', 'employeesCount', 'reviewsCount', 'team', 'histories', 'breadcrumbs', 'editLink'));
     }
 }

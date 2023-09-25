@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
 <h2 class="index_subtitle news">Наши патенты</h2>
 <div class="about_pattents-cont swiper_styles-slider swiper-initialized swiper-horizontal swiper-backface-hidden">
     <div class="about_pattents-items swiper-wrapper swiper_styles-wrapper" id="swiper-wrapper-f2e3ff3fbf7ca565" aria-live="polite">
@@ -16,3 +18,23 @@
 
     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
 </div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    addEventListener("load", () => {
+        const swiper_about_pattents = new Swiper('.about_pattents-cont', {
+            speed: 400,
+            slidesPerView: "auto",
+            spaceBetween: 100,
+            navigation: {
+                nextEl: '.about_pattents-cont-button-next',
+                prevEl: '.about_pattents-cont-button-prev',
+            },
+            pagination: {
+                el: ".about_pattents-cont-pagination",
+                type: "fraction",
+            },
+        });
+    });
+</script>

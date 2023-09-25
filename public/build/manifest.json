@@ -1,0 +1,247 @@
+{
+  "local/templates/kursi/components/sigodinweb/highloadblock.list/about_history/img/arrow.svg": {
+    "file": "assets/arrow-1f4de317.svg",
+    "src": "local/templates/kursi/components/sigodinweb/highloadblock.list/about_history/img/arrow.svg"
+  },
+  "local/templates/kursi/img/faq_arrows/checkedArrow.svg": {
+    "file": "assets/checkedArrow-358c1a64.svg",
+    "src": "public/images/system/checkedArrow.svg"
+  },
+  "local/templates/kursi/img/faq_arrows/checkedClick.svg": {
+    "file": "assets/checkedClick-8bc0300f.svg",
+    "src": "local/templates/kursi/img/faq_arrows/checkedClick.svg"
+  },
+  "local/templates/kursi/img/faq_arrows/hideArrow.svg": {
+    "file": "assets/hideArrow-80a4a76b.svg",
+    "src": "public/images/system/hideArrow.svg"
+  },
+  "local/templates/kursi/img/faq_arrows/hideClick.svg": {
+    "file": "assets/hideClick-87c9a6da.svg",
+    "src": "local/templates/kursi/img/faq_arrows/hideClick.svg"
+  },
+  "public/images/system/checkedArrow.svg": {
+    "file": "assets/checkedArrow-358c1a64.svg",
+    "src": "public/images/system/checkedArrow.svg"
+  },
+  "public/images/system/hideArrow.svg": {
+    "file": "assets/hideArrow-80a4a76b.svg",
+    "src": "public/images/system/hideArrow.svg"
+  },
+  "public/images/system/slider_disable_right_btn.svg": {
+    "file": "assets/slider_disable_right_btn-bb6833d1.svg",
+    "src": "public/images/system/slider_disable_right_btn.svg"
+  },
+  "public/images/system/slider_hover_right_btn.svg": {
+    "file": "assets/slider_hover_right_btn-5ea15487.svg",
+    "src": "public/images/system/slider_hover_right_btn.svg"
+  },
+  "public/images/system/slider_right_btn.svg": {
+    "file": "assets/slider_right_btn-647810b1.svg",
+    "src": "public/images/system/slider_right_btn.svg"
+  },
+  "public/v3/css/html-sitemap.css": {
+    "file": "assets/html-sitemap-e360ab66.css",
+    "isEntry": true,
+    "src": "public/v3/css/html-sitemap.css"
+  },
+  "public/v3/css/style.css": {
+    "file": "assets/style-14e804bb.css",
+    "isEntry": true,
+    "src": "public/v3/css/style.css"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/css/blog/category.css": {
+    "file": "assets/category-5f163d74.css",
+    "isEntry": true,
+    "src": "resources/css/blog/category.css"
+  },
+  "resources/css/company/companies-main-content.css": {
+    "file": "assets/companies-main-content-1bc5f5e5.css",
+    "isEntry": true,
+    "src": "resources/css/company/companies-main-content.css"
+  },
+  "resources/css/company/companies.css": {
+    "file": "assets/companies-8d960ae2.css",
+    "isEntry": true,
+    "src": "resources/css/company/companies.css"
+  },
+  "resources/css/company/company-catalog-item.css": {
+    "file": "assets/company-catalog-item-c9410c01.css",
+    "isEntry": true,
+    "src": "resources/css/company/company-catalog-item.css"
+  },
+  "resources/css/company/company-catalog-section.css": {
+    "file": "assets/company-catalog-section-61256fb4.css",
+    "isEntry": true,
+    "src": "resources/css/company/company-catalog-section.css"
+  },
+  "resources/css/company/company-review-add.css": {
+    "file": "assets/company-review-add-3ff6082c.css",
+    "isEntry": true,
+    "src": "resources/css/company/company-review-add.css"
+  },
+  "resources/css/company/company-review.css": {
+    "file": "assets/company-review-39241e82.css",
+    "isEntry": true,
+    "src": "resources/css/company/company-review.css"
+  },
+  "resources/css/company/company-reviews-main.css": {
+    "file": "assets/company-reviews-main-b6b1ca59.css",
+    "isEntry": true,
+    "src": "resources/css/company/company-reviews-main.css"
+  },
+  "resources/css/company/company-reviews.css": {
+    "file": "assets/company-reviews-6d5ea18d.css",
+    "isEntry": true,
+    "src": "resources/css/company/company-reviews.css"
+  },
+  "resources/css/company/company.css": {
+    "file": "assets/company-d2e5fa30.css",
+    "isEntry": true,
+    "src": "resources/css/company/company.css"
+  },
+  "resources/css/courses/course-card.css": {
+    "file": "assets/course-card-c9b2a5c8.css",
+    "isEntry": true,
+    "src": "resources/css/courses/course-card.css"
+  },
+  "resources/css/courses/course.css": {
+    "file": "assets/course-fb1cf356.css",
+    "isEntry": true,
+    "src": "resources/css/courses/course.css"
+  },
+  "resources/css/courses/courses-cards.css": {
+    "file": "assets/courses-cards-de45540a.css",
+    "isEntry": true,
+    "src": "resources/css/courses/courses-cards.css"
+  },
+  "resources/css/courses/courses-main.css": {
+    "file": "assets/courses-main-fd071271.css",
+    "isEntry": true,
+    "src": "resources/css/courses/courses-main.css"
+  },
+  "resources/css/employee/employee-info.css": {
+    "file": "assets/employee-info-dee4e539.css",
+    "isEntry": true,
+    "src": "resources/css/employee/employee-info.css"
+  },
+  "resources/css/employee/employee.css": {
+    "file": "assets/employee-514b91cc.css",
+    "isEntry": true,
+    "src": "resources/css/employee/employee.css"
+  },
+  "resources/css/header/header.css": {
+    "file": "assets/header-6e782d5a.css",
+    "isEntry": true,
+    "src": "resources/css/header/header.css"
+  },
+  "resources/css/history/history.css": {
+    "file": "assets/history-37a02ed2.css",
+    "isEntry": true,
+    "src": "resources/css/history/history.css"
+  },
+  "resources/css/listing/listing.css": {
+    "file": "assets/listing-08f8c16b.css",
+    "isEntry": true,
+    "src": "resources/css/listing/listing.css"
+  },
+  "resources/css/listing/rating_stars.css": {
+    "file": "assets/rating_stars-7bf5ecda.css",
+    "isEntry": true,
+    "src": "resources/css/listing/rating_stars.css"
+  },
+  "resources/css/mainpage/mainpage-categories.css": {
+    "file": "assets/mainpage-categories-e3d3d938.css",
+    "isEntry": true,
+    "src": "resources/css/mainpage/mainpage-categories.css"
+  },
+  "resources/css/mainpage/mainpage-category-item.css": {
+    "file": "assets/mainpage-category-item-831e2af3.css",
+    "isEntry": true,
+    "src": "resources/css/mainpage/mainpage-category-item.css"
+  },
+  "resources/css/mainpage/mainpage-head.css": {
+    "file": "assets/mainpage-head-4c21da05.css",
+    "isEntry": true,
+    "src": "resources/css/mainpage/mainpage-head.css"
+  },
+  "resources/css/mainpage/mainpage-news.css": {
+    "file": "assets/mainpage-news-11337b93.css",
+    "isEntry": true,
+    "src": "resources/css/mainpage/mainpage-news.css"
+  },
+  "resources/css/mainpage/mainpage-posts.css": {
+    "file": "assets/mainpage-posts-06f9ee2b.css",
+    "isEntry": true,
+    "src": "resources/css/mainpage/mainpage-posts.css"
+  },
+  "resources/css/mainpage/mainpage.css": {
+    "file": "assets/mainpage-a53a7fd5.css",
+    "isEntry": true,
+    "src": "resources/css/mainpage/mainpage.css"
+  },
+  "resources/css/post/post-card.css": {
+    "file": "assets/post-card-dab587b4.css",
+    "isEntry": true,
+    "src": "resources/css/post/post-card.css"
+  },
+  "resources/css/post/post.css": {
+    "file": "assets/post-2a6ac77e.css",
+    "isEntry": true,
+    "src": "resources/css/post/post.css"
+  },
+  "resources/js/company/companies.js": {
+    "file": "assets/companies-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/js/company/companies.js"
+  },
+  "resources/js/company/company-review-add.js": {
+    "file": "assets/company-review-add-968dbb35.js",
+    "isEntry": true,
+    "src": "resources/js/company/company-review-add.js"
+  },
+  "resources/js/company/company-review.js": {
+    "file": "assets/company-review-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/js/company/company-review.js"
+  },
+  "resources/js/company/company-reviews.js": {
+    "file": "assets/company-reviews-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/js/company/company-reviews.js"
+  },
+  "resources/js/courses/courses-cards.js": {
+    "file": "assets/courses-cards-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/js/courses/courses-cards.js"
+  },
+  "resources/js/header/header.js": {
+    "file": "assets/header-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/js/header/header.js"
+  },
+  "resources/js/listing/listing.js": {
+    "file": "assets/listing-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/js/listing/listing.js"
+  },
+  "resources/js/listing/rating_stars.js": {
+    "file": "assets/rating_stars-d5294b39.js",
+    "isEntry": true,
+    "src": "resources/js/listing/rating_stars.js"
+  },
+  "resources/js/news/news.js": {
+    "file": "assets/news-4ed993c7.js",
+    "isEntry": true,
+    "src": "resources/js/news/news.js"
+  },
+  "resources/js/ratings/rating_stars_simple.js": {
+    "file": "assets/rating_stars_simple-968dbb35.js",
+    "isEntry": true,
+    "src": "resources/js/ratings/rating_stars_simple.js"
+  }
+}

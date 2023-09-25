@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
 <h2 class="index_subtitle news">Наши партнеры</h2>
 <div class="about_partners-cont swiper_styles-slider swiper-initialized swiper-horizontal swiper-backface-hidden">
     <div class="about_partners-items swiper-wrapper swiper_styles-wrapper" id="swiper-wrapper-5ec025a551083b847" aria-live="polite">
@@ -29,3 +31,22 @@
     </div>
     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
 </div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    addEventListener("load", () => {
+        const swiper_partners_hystory = new Swiper('.about_partners-cont', {
+            speed: 400,
+            slidesPerView: "auto",
+            navigation: {
+                nextEl: '.about_partners-cont-button-next',
+                prevEl: '.about_partners-cont-button-prev',
+            },
+            pagination: {
+                el: ".about_partners-cont-pagination",
+                type: "fraction",
+            },
+        });
+    });
+</script>

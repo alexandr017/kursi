@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
 <div class="kursi_slider_cont_scroll">
     <div
         class="swiper_styles-slider slider_kursi_slider_224a58da6a119cab6c81 kursi_slider_cont bx-blue swiper-initialized swiper-horizontal swiper-backface-hidden"
@@ -18,46 +20,9 @@
         </div>
 
         <div class="swiper_styles-pagination_cont">
-            <div
-                class="slider_kursi_slider_970728d78bc2c2a36f99-button-prev swiper_styles-button-prev swiper-button-disabled"
-                id="prev_button"
-                tabindex="-1"
-                role="button"
-                aria-label="Previous slide"
-                aria-controls="swiper-wrapper-32741108d34487f14"
-                aria-disabled="true"
-                onclick="showCards(event, 'prev', 'kursi_slider-cont')"
-            ></div>
-
-            <div class="slider_kursi_slider_970728d78bc2c2a36f99-pagination swiper_styles-pagination swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal">
-                <span class="swiper-pagination-current" id="current-page">1</span>
-                /
-                <span class="swiper-pagination-total">{{$courses->count()}}</span>
-            </div>
-
-            @if($courses->count() < 5)
-                <div
-                    class="slider_kursi_slider_970728d78bc2c2a36f99-button-next swiper_styles-button-next swiper-button-disabled"
-                    id="next_button"
-                    tabindex="0"
-                    role="button"
-                    aria-label="Next slide"
-                    aria-controls="swiper-wrapper-32741108d34487f14"
-                    aria-disabled="true"
-                    onclick="showCards(event, 'next', 'kursi_slider-cont')"
-                ></div>
-            @else
-                <div
-                    class="slider_kursi_slider_970728d78bc2c2a36f99-button-next swiper_styles-button-next"
-                    id="next_button"
-                    tabindex="0"
-                    role="button"
-                    aria-label="Next slide"
-                    aria-controls="swiper-wrapper-32741108d34487f14"
-                    aria-disabled="false"
-                    onclick="showCards(event, 'next', 'kursi_slider-cont')"
-                ></div>
-            @endif
+            <div class="slider_kursi_slider_e309f8ec3c7c0821e5e9-button-prev swiper_styles-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-c67ef53564e5b9ce" aria-disabled="false"></div>
+            <div class="slider_kursi_slider_e309f8ec3c7c0821e5e9-pagination swiper_styles-pagination swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal"><span class="swiper-pagination-current">2</span> / <span class="swiper-pagination-total">15</span></div>
+            <div class="slider_kursi_slider_e309f8ec3c7c0821e5e9-button-next swiper_styles-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-c67ef53564e5b9ce" aria-disabled="false"></div>
         </div>
     </div>
     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
@@ -67,6 +32,24 @@
     <link href="{{ Vite::asset('resources/css/courses/courses-cards.css') }}" rel="stylesheet">
 @endpush
 
-@push('scripts')
-    <script type="text/javascript" src="{{ Vite::asset('resources/js/courses/courses-cards.js') }}"></script>
-@endpush
+{{--@push('scripts')--}}
+{{--    <script type="text/javascript" src="{{ Vite::asset('resources/js/courses/courses-cards.js') }}"></script>--}}
+{{--@endpush--}}
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    addEventListener("load", () => {
+        const swiper_styles_pagination_cont = new Swiper('.slider_kursi_slider_224a58da6a119cab6c81', {
+            speed: 400,
+            slidesPerView: 'auto',
+            navigation: {
+                nextEl: '.slider_kursi_slider_e309f8ec3c7c0821e5e9-button-next',
+                prevEl: '.slider_kursi_slider_e309f8ec3c7c0821e5e9-button-prev',
+            },
+            pagination: {
+                el: ".slider_kursi_slider_e309f8ec3c7c0821e5e9-pagination",
+                type: "fraction",
+            },
+        });
+    });
+</script>
