@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\Posts\PostRequest;
 use App\Repositories\Admin\Posts\PostsRepository;
 use App\Repositories\Admin\Posts\PostCategoriesRepository;
 use App\Repositories\Admin\Employees\EmployeesRepository;
+use App\Services\Breadcrumbs\BreadcrumbsConverter;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Throwable;
@@ -69,6 +70,7 @@ class PostsController extends AdminController
 
         $data = $request->all();
         $data = emptyDataToNull($data);
+        $data['breadcrumbs'] = BreadcrumbsConverter::put($data['url'], $data['h1']);
         $result = $this->postRepository->createPost($data);
 
         if ($result) {

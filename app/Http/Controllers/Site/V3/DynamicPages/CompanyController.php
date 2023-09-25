@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site\V3\DynamicPages;
 
 use App\Http\Controllers\Controller;
+use App\Services\Breadcrumbs\BreadcrumbsRender;
 use App\Services\Company\Action\GetCompanyAction;
 use App\Models\Companies\Company;
 
@@ -14,6 +15,10 @@ class CompanyController extends Controller implements DynamicPagesInterface
         $action = resolve(GetCompanyAction::class);
         $company = $action->run($sectionID);
 
-        return view('site.v3.templates.company.company', compact('company'));
+        $breadcrumbs = BreadcrumbsRender::get($company->breadcrumbs, $company->h1);
+
+        $editLink = "/admin/companies/{$company->id}/edit";
+
+        return view('site.v3.templates.company.company', compact('company', 'breadcrumbs', 'editLink'));
     }
 }

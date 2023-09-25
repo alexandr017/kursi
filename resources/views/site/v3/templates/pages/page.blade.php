@@ -4,7 +4,7 @@
 @section ('meta_description', Shortcode::compile($page->meta_description))
 
 @section('style')
-    <link rel="stylesheet" href="https://kursy.ru/bitrix/cache/css/s1/kursi/template_11112b076476604384c17596a600048f/template_11112b076476604384c17596a600048f_v1.css?169077819195863">
+    <link rel="stylesheet" href="/v3/css/page.css">
 @endsection
 
 @section('content')

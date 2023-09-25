@@ -29,7 +29,7 @@
         <div class="short_filter-cont">
             <div class="short_filter-property_cont" style="position: relative">
                 <label class="short_filter-property_title" for="opener_40" onclick="handleShowFilters()">
-                    <img src="https://kursy.ru/local/components/sigodinweb/short.filter/templates/.default/img/filter.svg" alt="" title="Фильтр">
+                    <img src="/v3/images/filter.svg" alt="" title="Фильтр">
                     <p>Фильтр</p>
                 </label>
                 <input type="checkbox" style="display: none" id="opener_40" name="opener[]" value="40" checked="" data-gtm-form-interact-field-id="5">

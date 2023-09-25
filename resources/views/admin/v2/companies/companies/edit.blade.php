@@ -3,6 +3,9 @@
 @section('h1', 'Компании - Редактирование')
 
 @section('content')
+    <a class="btn-preview" href="/{{$item->urls->url}}" target="_blank"><i class="fa fa-eye"></i> {{Request::root()}}/{{$item->urls->url}}</a>
+    <br>
+
     <a href="#" class="btn btn-primary"><i class="fas fa-map-signs"></i> Привязанные листинги</a>
     <br>
     <br>

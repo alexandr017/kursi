@@ -853,7 +853,7 @@ label.sub_section_id {
 .subscribe-form button {
     width: 48px;
     height: 48px;
-    background: url(/local/templates/kursi/components/bitrix/sender.subscribe/kursy_subscribe/images/send.svg);
+    background: url(/v3/images/footer/mail.svg);
     border: none;
     background-size: contain;
     cursor: pointer;
@@ -902,13 +902,13 @@ p.subscribe_form-title {
 }
 
 .subscribe-form button:hover {
-    background: url(/local/templates/kursi/components/bitrix/sender.subscribe/kursy_subscribe/images/send_hover.svg);
+    background: url(/v3/images/footer/mail-hover.svg);
     border-radius: 8px;
     background-color: #2E8FCE;
 }
 
 .subscribe-form button:active {
-    background: url(/local/templates/kursi/components/bitrix/sender.subscribe/kursy_subscribe/images/send_hover.svg);
+    background: url(/v3/images/footer/mail-active.svg);
     border-radius: 8px;
     background-color: #2185C6;
 }

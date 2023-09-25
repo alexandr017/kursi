@@ -11,10 +11,10 @@ class IndexPostCategoryDto extends DataTransferObject
     public int $perPage = 6;
     public ?int $sectionId;
 
-    public static function fromBlogIndexRequest(IndexBlogRequest $request): self
+    public static function fromBlogIndexRequest(IndexBlogRequest $request, $page): self
     {
         return new self(
-            page: $request->getPage() ?? 1,
+            page: $page ?? 1,
             perPage: $request->getPerPage() ?? 6
         );
     }

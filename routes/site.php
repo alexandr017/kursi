@@ -7,8 +7,10 @@ use App\Http\Controllers\Site\V3\Tags\TagController;
 
 Route::get('/', [App\Http\Controllers\Site\V3\IndexPage\IndexPageController::class, 'index']);
 Route::get('/about', [App\Http\Controllers\Site\V3\About\AboutPageIndexController::class, 'index']);
+Route::get('/contacts', [App\Http\Controllers\Site\V3\Contacts\ContactsPageController::class, 'index']);
 
 Route::get('/znaniya', [App\Http\Controllers\Site\V3\BlogIndexPage\BlogIndexPageController::class, 'index']);
+Route::get('/znaniya/page/{pageNumber}', [App\Http\Controllers\Site\V3\BlogIndexPage\BlogIndexPageController::class, 'index']);
 Route::get('/schools', [\App\Http\Controllers\Site\V3\DynamicPages\IndexCompaniesMainPageController::class, 'index']);
 // about
 // search (post)

@@ -12,12 +12,17 @@ class IndexPageController extends Controller
     ) {
         $data = $action->run();
 
+        $PAGE_ID = 1;
+
+        $editLink = "/admin/static-pages/$PAGE_ID/edit";
+
         return view('site.v3.templates.mainpage.mainpage',[
             'listings' => $data->listings,
             'popularCourses' => $data->popularCourses,
             'withPromotionCourses' => $data->withPromotionCourses,
             'reviews' => $data->reviews,
             'posts' => $data->posts,
+            'editLink' => $editLink
             ]);
     }
 }

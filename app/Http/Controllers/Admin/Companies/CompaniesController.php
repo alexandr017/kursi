@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Companies;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests\Admin\Companies\CompanyRequest;
 use App\Repositories\Admin\Companies\CompaniesRepository;
+use App\Services\Breadcrumbs\BreadcrumbsConverter;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Throwable;
@@ -60,7 +61,7 @@ class CompaniesController extends AdminController
 
         $data = $request->all();
         $data = emptyDataToNull($data);
-
+        $data['breadcrumbs'] = BreadcrumbsConverter::put($data['url'], $data['h1']);
         $result = $this->companyRepository->createCompany($data);
 
         if ($result) {

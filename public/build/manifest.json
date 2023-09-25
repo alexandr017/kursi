@@ -1,11 +1,7 @@
 {
-  "local/templates/kursi/components/bitrix/sender.subscribe/kursy_subscribe/images/send.svg": {
-    "file": "assets/send-1b0ee959.svg",
-    "src": "local/templates/kursi/components/bitrix/sender.subscribe/kursy_subscribe/images/send.svg"
-  },
-  "local/templates/kursi/components/bitrix/sender.subscribe/kursy_subscribe/images/send_hover.svg": {
-    "file": "assets/send_hover-dbbd92a6.svg",
-    "src": "local/templates/kursi/components/bitrix/sender.subscribe/kursy_subscribe/images/send_hover.svg"
+  "local/templates/kursi/components/sigodinweb/highloadblock.list/about_history/img/arrow.svg": {
+    "file": "assets/arrow-1f4de317.svg",
+    "src": "local/templates/kursi/components/sigodinweb/highloadblock.list/about_history/img/arrow.svg"
   },
   "local/templates/kursi/img/faq_arrows/checkedArrow.svg": {
     "file": "assets/checkedArrow-358c1a64.svg",
@@ -17,7 +13,7 @@
   },
   "local/templates/kursi/img/faq_arrows/hideArrow.svg": {
     "file": "assets/hideArrow-80a4a76b.svg",
-    "src": "local/templates/kursi/img/faq_arrows/hideArrow.svg"
+    "src": "public/images/system/hideArrow.svg"
   },
   "local/templates/kursi/img/faq_arrows/hideClick.svg": {
     "file": "assets/hideClick-87c9a6da.svg",
@@ -29,7 +25,7 @@
   },
   "public/images/system/hideArrow.svg": {
     "file": "assets/hideArrow-80a4a76b.svg",
-    "src": "local/templates/kursi/img/faq_arrows/hideArrow.svg"
+    "src": "public/images/system/hideArrow.svg"
   },
   "public/images/system/slider_disable_right_btn.svg": {
     "file": "assets/slider_disable_right_btn-bb6833d1.svg",
@@ -49,7 +45,7 @@
     "src": "public/v3/css/html-sitemap.css"
   },
   "public/v3/css/style.css": {
-    "file": "assets/style-85476374.css",
+    "file": "assets/style-14e804bb.css",
     "isEntry": true,
     "src": "public/v3/css/style.css"
   },
@@ -84,7 +80,7 @@
     "src": "resources/css/company/company-catalog-section.css"
   },
   "resources/css/company/company-review-add.css": {
-    "file": "assets/company-review-add-7958b946.css",
+    "file": "assets/company-review-add-3ff6082c.css",
     "isEntry": true,
     "src": "resources/css/company/company-review-add.css"
   },
@@ -144,7 +140,7 @@
     "src": "resources/css/header/header.css"
   },
   "resources/css/history/history.css": {
-    "file": "assets/history-65afa528.css",
+    "file": "assets/history-37a02ed2.css",
     "isEntry": true,
     "src": "resources/css/history/history.css"
   },
@@ -154,7 +150,7 @@
     "src": "resources/css/listing/listing.css"
   },
   "resources/css/listing/rating_stars.css": {
-    "file": "assets/rating_stars-a4bf3eee.css",
+    "file": "assets/rating_stars-7bf5ecda.css",
     "isEntry": true,
     "src": "resources/css/listing/rating_stars.css"
   },
@@ -164,7 +160,7 @@
     "src": "resources/css/mainpage/mainpage-categories.css"
   },
   "resources/css/mainpage/mainpage-category-item.css": {
-    "file": "assets/mainpage-category-item-6223363e.css",
+    "file": "assets/mainpage-category-item-831e2af3.css",
     "isEntry": true,
     "src": "resources/css/mainpage/mainpage-category-item.css"
   },

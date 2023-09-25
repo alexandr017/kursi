@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Posts;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests\Admin\Posts\PostCategoryRequest;
 use App\Repositories\Admin\Posts\PostCategoriesRepository;
+use App\Services\Breadcrumbs\BreadcrumbsConverter;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Throwable;
@@ -60,6 +61,7 @@ class PostCategoriesController extends AdminController
 
         $data = $request->all();
         $data = emptyDataToNull($data);
+        $data['breadcrumbs'] = BreadcrumbsConverter::put($data['url'], $data['h1']);
         $result = $this->postCategoryRepository->createCategory($data);
 
         if ($result) {

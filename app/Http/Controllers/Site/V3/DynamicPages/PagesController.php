@@ -19,6 +19,8 @@ class PagesController extends Controller implements DynamicPagesInterface
 
         $breadcrumbs = BreadcrumbsRender::get($page->breadcrumb, $page->h1);
 
-        return view('site.v3.templates.pages.page', compact('page', 'breadcrumbs'));
+        $editLink = "/admin/pages/$page->id/edit";
+
+        return view('site.v3.templates.pages.page', compact('page', 'breadcrumbs', 'editLink'));
     }
 }

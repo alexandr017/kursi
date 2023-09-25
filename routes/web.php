@@ -21,4 +21,5 @@ Route::get('import/blog', [App\Http\Controllers\ImportController::class, 'runBlo
 Route::get('import/employee', [App\Http\Controllers\ImportController::class, 'runEmployee']);
 Route::get('import/companies', [App\Http\Controllers\ImportController::class, 'runCompanies']);
 Route::get('import/courses', [App\Http\Controllers\ImportController::class, 'runcourses']);
+Route::get('import/set-correct-breadcrumbs', [App\Http\Controllers\ImportController::class, 'setCorrectBreadcrumbs']);
 

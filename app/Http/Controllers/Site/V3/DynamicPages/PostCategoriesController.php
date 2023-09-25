@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site\V3\DynamicPages;
 
 use App\Http\Controllers\Controller;
+use App\Services\Breadcrumbs\BreadcrumbsRender;
 use App\Services\PostCategory\Action\IndexPostCategoryAction;
 use App\Services\PostCategory\Dto\IndexPostCategoryDto;
 
@@ -18,6 +19,19 @@ class PostCategoriesController extends Controller implements DynamicPagesInterfa
         $action = resolve(IndexPostCategoryAction::class);
         $result = $action->run($dto);
 
-        return view('site.v3.templates.blog.category', ['posts' => $result->posts, 'category' => $result->category, 'categories' => $result->categories]);
+        $breadcrumbs = BreadcrumbsRender::get($result->category->breadcrumbs, $result->category->h1);
+
+        $editLink = "/admin/post-categories/{$result->category->id}/edit";
+
+        return view('site.v3.templates.blog.category', [
+            'posts' => $result->posts,
+            'category' => $result->category,
+            'categories' => $result->categories,
+            'pageNumber' => $paginatePage,
+            'pagesCount' => $result->posts->lastPage(),
+            'pageAlias' => $result->category->urls->url,
+            'breadcrumbs' => $breadcrumbs,
+            'editLink' => $editLink
+            ]);
     }
 }
