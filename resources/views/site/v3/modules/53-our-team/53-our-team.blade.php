@@ -1,9 +1,9 @@
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
 <h2 class="index_subtitle command">Команда</h2>
 <div class="person-list swiper_styles-slider slider_person_slider_31bd70ba83bb5ae47065 swiper-initialized swiper-horizontal" id="person_slider_31bd70ba83bb5ae47065">
 
     <div class="swiper_styles-wraper swiper-wrapper" id="swiper-wrapper-83fe791d272b75eb" aria-live="polite" style="transform: translate3d(0px, 0px, 0px);">
-
-
         @php $i = 1 @endphp
         @foreach($team as $employee)
             <div class="swiper-slide @if($i == 1) swiper-slide-active @else swiper-slide-next @endif" role="group" aria-label="{{$i}} / {{$team->count()}}">
@@ -20,9 +20,6 @@
             </div>
             @php $i++ @endphp
         @endforeach
-
-
-
     </div>
 
 
@@ -35,3 +32,22 @@
     <div class="person-item last_element_label"></div>
     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
 </div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    addEventListener("load", () => {
+        const swiper_person_list = new Swiper('.person-list', {
+            speed: 400,
+            slidesPerView: 3,
+            navigation: {
+                nextEl: '.slider_person_slider_31bd70ba83bb5ae47065-button-next',
+                prevEl: '.slider_person_slider_31bd70ba83bb5ae47065-button-prev',
+            },
+            pagination: {
+                el: ".slider_person_slider_31bd70ba83bb5ae47065-pagination",
+                type: "fraction",
+            },
+        });
+    });
+</script>

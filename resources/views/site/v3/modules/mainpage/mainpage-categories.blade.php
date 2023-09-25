@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
 <div class="catalog-section-list-cont">
     <div class="catalog_section_list-title_cont">
         <div class="catalog_section_list-title">
@@ -16,47 +18,10 @@
         </ul>
 
         <div class="swiper_styles-pagination_cont">
-            <div
-                class="swiper_styles-button-prev swiper-button-disabled"
-                id="prev_button"
-                tabindex="-1"
-                role="button"
-                aria-label="Previous slide"
-                aria-controls="swiper-wrapper-32741108d34487f14"
-                aria-disabled="true"
-                onclick="showCards(event, 'prev', 'categories_slider-cont')"
-            ></div>
-
-            <div class="slider_kursi_slider_970728d78bc2c2a36f99-pagination swiper_styles-pagination swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal">
-                <span class="swiper-pagination-current" id="current-page">1</span>
-                /
-                <span class="swiper-pagination-total">{{$listings->count()}}</span>
-            </div>
-
-            @if($listings->count() < 5)
-                <div
-                    class="swiper_styles-button-next swiper-button-disabled"
-                    id="next_button"
-                    tabindex="0"
-                    role="button"
-                    aria-label="Next slide"
-                    aria-controls="swiper-wrapper-32741108d34487f14"
-                    aria-disabled="true"
-                    onclick="showCards(event, 'next', 'categories_slider-cont')"
-                ></div>
-            @else
-                <div
-                    class="swiper_styles-button-next"
-                    id="next_button"
-                    tabindex="0"
-                    role="button"
-                    aria-label="Next slide"
-                    aria-controls="swiper-wrapper-32741108d34487f14"
-                    aria-disabled="false"
-                    onclick="showCards(event, 'next', 'categories_slider-cont')"
-                ></div>
-            @endif
+            <div class="slider_section_slider_aaa1818d7ab807d28bc3-button-prev swiper_styles-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-2721e96c8883337e" aria-disabled="false"></div>
+            <div class="slider_section_slider_aaa1818d7ab807d28bc3-button-next swiper_styles-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-2721e96c8883337e" aria-disabled="false"></div>
         </div>
+
         <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
 </div>
 
@@ -68,25 +33,17 @@
 {{--    <script type="text/javascript" src="{{ Vite::asset('resources/js/courses/courses-cards.js') }}"></script>--}}
 {{--@endpush--}}
 
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 <script>
-    function showCards(event, direction, cardContainerName) {
-        const swiperContainer = event.target.parentElement.parentElement;
-        const cardContainers = swiperContainer.querySelectorAll(`.${cardContainerName}`);
-        const prevButton = swiperContainer.querySelector('#prev_button');
-        const nextButton = swiperContainer.querySelector('#next_button');
-        const currentPage = swiperContainer.querySelector('.swiper-pagination #current-page');
-        const currentIndex = parseInt(currentPage.textContent) - 1;
-
-        if ((direction === 'next' && currentIndex + 4 >= cardContainers.length) || (direction === 'prev' && currentIndex <= 0)) {
-            return;
-        }
-
-        cardContainers[currentIndex].classList.toggle('swiper-slide-pasive', direction === 'next');
-        currentPage.textContent = direction === 'next' ? currentIndex + 2 : currentIndex;
-        nextButton.setAttribute('aria-disabled', direction === 'next' ? (currentIndex + 4 >= cardContainers.length).toString() : 'false');
-        prevButton.setAttribute('aria-disabled', direction === 'prev' ? (currentIndex <= 0).toString() : 'false');
-        nextButton.classList.toggle('swiper-button-disabled', direction === 'next' && currentIndex + 4 >= cardContainers.length);
-        prevButton.classList.toggle('swiper-button-disabled', direction === 'prev' && currentIndex <= 0);
-    }
-
+    addEventListener("load", () => {
+        const catalog_section_list = new Swiper('.catalog-section-list', {
+            speed: 400,
+            slidesPerView: 'auto',
+            navigation: {
+                nextEl: '.slider_section_slider_aaa1818d7ab807d28bc3-button-next',
+                prevEl: '.slider_section_slider_aaa1818d7ab807d28bc3-button-prev',
+            }
+        });
+    });
 </script>

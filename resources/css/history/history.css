@@ -34,9 +34,11 @@
     display: flex;
     align-items: stretch;
 }
+
 .swiper-android .swiper-slide, .swiper-wrapper {
     transform: translate3d(0px,0,0);
 }
+
 .swiper-wrapper {
     position: relative;
     width: 100%;
@@ -95,4 +97,8 @@
     line-height: 34px;
     color: #101820;
     margin-top: 20px;
+}
+
+.about_hystory-cont .slider_button {
+    background-image: url(/local/templates/kursi/components/sigodinweb/highloadblock.list/about_history/img/arrow.svg);
 }

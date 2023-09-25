@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
 <div class="news_detail_cont ">
     <div class="news_detail html_editor_body_cont">
         <h2>
@@ -118,53 +120,22 @@
         <div class="content_timeline_block swiper swiper-initialized swiper-horizontal swiper-grid swiper-grid-column">
             <div class="timeline_items swiper-wrapper" id="swiper-wrapper-92a2597e549764b1" aria-live="polite" style="width: 2250px; transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
                 <div class="news-cont  timeline_element-title_filler swiper-slide swiper-slide-active" role="group" aria-label="1 / 18"></div>
-
                 <div class="news-cont  timeline_element-text_filler swiper-slide swiper-slide-next" role="group" aria-label="2 / 18" style="margin-top: 0px;"></div>
 
                 @foreach(__('mainpage-news-table-info') as $key => $info)
-                   <div class="news-cont timeline_element-title swiper-slide" id="timeline_item_1" role="group" aria-label="3 / 18"><b>{{$info['title-bold']}}</b> {{$info['title']}}</div>
-                   <div class="news-cont timeline_element-text swiper-slide" id="timeline_item_1_text" role="group" aria-label="4 / 18" style="margin-top: 0px;">{{$info['content']}}</div>
+                    <div class="news-cont timeline_element-title swiper-slide" id="timeline_item_1" role="group" aria-label="3 / 18"><b>{{$info['title-bold']}}</b> {{$info['title']}}</div>
+                    <div class="news-cont timeline_element-text swiper-slide" id="timeline_item_1_text" role="group" aria-label="4 / 18" style="margin-top: 0px;">{{$info['content']}}</div>
                 @endforeach
             </div>
 
             <div class="swiper_styles-pagination_cont">
-                <div
-                    class="swiper_styles-button-prev swiper-button-disabled"
-                    id="prev_button"
-                    tabindex="-1"
-                    role="button"
-                    aria-label="Previous slide"
-                    aria-disabled="true"
-                    onclick="showNew(event, 'prev', 'news-cont')"
-                ></div>
-
-                <div class="swiper_styles-pagination swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal">
-                    <span class="swiper-pagination-current" id="current-page">1</span>
+                <div class="slider_content_timeline_block-button-prev swiper_styles-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-510a26545e33a0d0e" aria-disabled="true"></div>
+                <div class="slider_content_timeline_block-pagination swiper_styles-pagination swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal">
+                    <span class="swiper-pagination-current">1</span>
                     /
-                    <span class="swiper-pagination-total">{{ count(__('mainpage-news-table-info')) }}</span>
+                    <span class="swiper-pagination-total">9</span>
                 </div>
-
-                @if(false)
-                    <div
-                        class="swiper_styles-button-next swiper-button-disabled"
-                        id="next_button"
-                        tabindex="0"
-                        role="button"
-                        aria-label="Next slide"
-                        aria-disabled="true"
-                        onclick="showNew(event, 'next', 'news-cont')"
-                    ></div>
-                @else
-                    <div
-                        class="swiper_styles-button-next"
-                        id="next_button"
-                        tabindex="0"
-                        role="button"
-                        aria-label="Next slide"
-                        aria-disabled="false"
-                        onclick="showNew(event, 'next', 'news-cont')"
-                    ></div>
-                @endif
+                <div class="slider_content_timeline_block-button-next swiper_styles-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-510a26545e33a0d0e" aria-disabled="false"></div>
             </div>
         </div>
         <p>
@@ -321,31 +292,24 @@
 {{--    <script type="text/javascript" src="{{ Vite::asset('resources/js/news/news.js') }}"></script>--}}
 {{--@endpush--}}
 
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 <script>
-    function showNew(event, direction) {
-        const swiperContainer = event.target.parentElement.parentElement.querySelector('.swiper-wrapper');
-        const cardContainers = swiperContainer.querySelectorAll('.news-cont');
-        const prevButton = swiperContainer.parentElement.querySelector('#prev_button');
-        const nextButton = swiperContainer.parentElement.querySelector('#next_button');
-        const currentPage = swiperContainer.parentElement.querySelector('.swiper-pagination #current-page');
-        let currentIndex  = (+currentPage.textContent - 1) * 2;
-
-        if ((direction === 'next' && currentIndex + 8 >= cardContainers.length) || (direction === 'prev' && currentIndex <= 0)) {
-            return;
-        }
-
-        cardContainers[currentIndex].classList.toggle('swiper-slide-pasive', direction === 'next');
-        cardContainers[currentIndex + 1].classList.toggle('swiper-slide-pasive', direction === 'next');
-        currentPage.textContent = direction === 'next' ?  +currentPage.textContent + 1 :  +currentPage.textContent - 1;
-        nextButton.setAttribute('aria-disabled', direction === 'next' ? (currentIndex + 8 >= cardContainers.length).toString() : 'false');
-        prevButton.setAttribute('aria-disabled', direction === 'prev' ? (currentIndex <= 0).toString() : 'false');
-        nextButton.classList.toggle('swiper-button-disabled', direction === 'next' && currentIndex + 8 >= cardContainers.length);
-        prevButton.classList.toggle('swiper-button-disabled', direction === 'prev' && currentIndex <= 0);
-
-        nextButton.setAttribute('aria-disabled', currentIndex + 8 >= cardContainers.length);
-        prevButton.setAttribute('aria-disabled', currentIndex <= 0);
-        nextButton.classList.toggle('swiper-button-disabled', currentIndex + 8 >= cardContainers.length);
-        prevButton.classList.toggle('swiper-button-disabled', currentIndex <= 0);
-    }
-
+  addEventListener("load", () => {
+      const timeline_slider_swiper = new Swiper('.content_timeline_block', {
+          speed: 400,
+          slidesPerView: 2,
+          navigation: {
+              nextEl: '.slider_content_timeline_block-button-next',
+              prevEl: '.slider_content_timeline_block-button-prev',
+          },
+          pagination: {
+              el: ".slider_content_timeline_block-pagination",
+              type: "fraction",
+          },
+          grid: {
+              rows: 2,
+          },
+      });
+  });
 </script>
