@@ -16,4 +16,5 @@ interface CompanyRepositoryInterface
     public function saveReview(SchoolReview $review): bool;
     public function index(IndexCompaniesDto $dto): LengthAwarePaginator;
     public function getPopularReviews(): Collection;
+    public function getBySearch(string $q, int $page = 1): LengthAwarePaginator;
 }

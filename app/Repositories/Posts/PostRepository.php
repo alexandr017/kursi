@@ -43,4 +43,19 @@ class PostRepository implements PostRepositoryInterface
             $dto->page
         );
     }
+
+    public function getBySearch(string $q, int $page = 1): LengthAwarePaginator
+    {
+        return $this->query()
+            ->where('title', 'like', "%$q%")
+            ->orWhere('content', 'like', "%$q%")
+            ->orderByDesc('rating_value')
+            ->with(['urls', 'category.urls'])
+            ->paginate(
+                2,
+                ['*'],
+                'page',
+                $page
+            );
+    }
 }

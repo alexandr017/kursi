@@ -1,8 +1,10 @@
 <div class="product-item-container company-item" id="bx_3966226736_15348_7e1b8e3524755c391129a9d7e6f2d206" data-entity="item">
     <div class="product-item">
-    <div class="product-item-num">
-        {{$key}}
-    </div>
+        @if(isset($key))
+            <div class="product-item-num">
+                {{$key}}
+            </div>
+        @endif
 
     <a class="product-item-image-wrapper" href="/{{$company->url?->url}}" title="{{$company->name}}" data-entity="image-wrapper">
         <span class="product-item-image-slider-slide-container slide" id="bx_3966226736_15348_7e1b8e3524755c391129a9d7e6f2d206_pict_slider" style="display: none;" data-slider-interval="3000" data-slider-wrap="true"></span>
