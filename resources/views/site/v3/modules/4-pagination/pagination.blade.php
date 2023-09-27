@@ -74,36 +74,7 @@
     </div>
 @endif
 
-<style>
-    .pagination.flex {
-        margin-top: 40px;
-    }
+@push('styles')
+    <link href="{{ Vite::asset('resources/css/pagination/pagination.css') }}" rel="stylesheet">
+@endpush
 
-    .pagination-inner-link {
-        padding: 15px;
-        text-decoration: none;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 29px;
-        color: #a9aaaa;
-    }
-
-    .pagination-next-btn.next-btn.flex {
-        padding: 15px;
-        color: #101820;
-    }
-
-    .pagination-prev-btn.prev-btn.flex {
-        padding: 15px;
-        color: #101820;
-    }
-
-    .pagination-current-page {
-        padding: 15px;
-        text-decoration: none;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 29px;
-        color: #101820;
-    }
-</style>

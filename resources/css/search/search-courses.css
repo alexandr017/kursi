@@ -1,0 +1,49 @@
+.search_cont {
+    padding-bottom: 40px;
+}
+
+.search-items-more-btn {
+    color: #469ED7;
+    text-align: center;
+    background: white;
+    border: 1px solid #469ED7;
+    padding: 11px;
+    font-size: 18px;
+    border-radius: 47px;
+    cursor: pointer;
+    margin: 40px auto 0 0;
+    width: 250px;
+}
+
+@media (max-width: 860px) {
+    .search-items-more-btn {
+        width: unset;
+    }
+
+    .kurses_search_sections .product-item-list-col-3 {
+        white-space: initial;
+        display: block;
+    }
+
+    .kurse_card.card_pc {
+        padding: 40px;
+        width: 45%;
+        height: auto;
+        margin-right: 5px;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 300px;
+        max-width: 360px;
+        justify-content: space-between;
+    }
+
+    section.kurses_search_sections .kurse_card.card_pc {
+        width: 100%;
+        max-width: unset;
+    }
+
+    .card_pc .kurse_card-title {
+        margin-bottom: 26px;
+    }
+}
