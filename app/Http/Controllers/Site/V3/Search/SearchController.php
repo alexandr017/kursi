@@ -38,7 +38,7 @@ class SearchController extends Controller
     ) {
         $companies = $action->run($request->getQ(), $request->getPage());
 
-        return view('site.v3.modules.search.search-courses', compact('companies'));
+        return view('site.v3.modules.search.search-companies', compact('companies'));
 
     }
 
@@ -48,6 +48,6 @@ class SearchController extends Controller
     ) {
         $posts = $action->run($request->getQ(), $request->getPage());
 
-        return view('site.v3.modules.search.search-courses', compact('posts'));
+        return view('site.v3.modules.search.search-posts', compact('posts'));
     }
 }
