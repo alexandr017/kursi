@@ -17,14 +17,14 @@
         <a href="/{{$pageAlias}}/page/5{{$pagesGetParam}}" class="pagination-inner-link<?php if($pageNumber==5) echo ' pagination-current-page';?>">5</a>
         <a href="/{{$pageAlias}}/page/<?= $pagesCount ?>{{$pagesGetParam}}" class="pagination-next-btn next-btn flex">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 10 17" fill="none">
-                <path d="M1 16L9 8.5L1 1" stroke="#888888" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M1 16L9 8.5L1 1" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </a>
 
         <?php else : ?>
         <a href="/{{$pageAlias}}{{$pagesGetParam}}" class="pagination-prev-btn prev-btn flex">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
-                <path d="M9 1L1 9L9 17" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 1L1 9L9 17" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </a>
         <a href="/{{$pageAlias}}/page/<?= ($pageNumber - 2) ?>{{$pagesGetParam}}" class="pagination-inner-link"><?= ($pageNumber - 2) ?></a>
@@ -37,7 +37,7 @@
             <?php if(($pageNumber != ceil($pagesCount)) && ($pageNumber+2 != ceil($pagesCount))): ?>
         <a href="/{{$pageAlias}}/page/<?= $pagesCount ?>{{$pagesGetParam}}" class="pagination-next-btn next-btn flex">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 10 17" fill="none">
-                <path d="M1 16L9 8.5L1 1" stroke="#888888" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M1 16L9 8.5L1 1" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </a>
         <?php endif ?>
@@ -46,7 +46,7 @@
             <?php if($pageNumber+1 != ceil($pagesCount) && ($pageNumber != $pagesCount)) : ?>
         <a href="/{{$pageAlias}}/page/<?= $pagesCount ?>{{$pagesGetParam}}" class="pagination-next-btn next-btn flex">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 10 17" fill="none">
-                <path d="M1 16L9 8.5L1 1" stroke="#888888" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M1 16L9 8.5L1 1" stroke="#000000" stroke-linecap="round" stroke-width="2" stroke-linejoin="round"/>
             </svg>
         </a>
         <?php else : ?>
@@ -73,3 +73,37 @@
         <?php } ?>
     </div>
 @endif
+
+<style>
+    .pagination.flex {
+        margin-top: 40px;
+    }
+
+    .pagination-inner-link {
+        padding: 15px;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        color: #a9aaaa;
+    }
+
+    .pagination-next-btn.next-btn.flex {
+        padding: 15px;
+        color: #101820;
+    }
+
+    .pagination-prev-btn.prev-btn.flex {
+        padding: 15px;
+        color: #101820;
+    }
+
+    .pagination-current-page {
+        padding: 15px;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        color: #101820;
+    }
+</style>
