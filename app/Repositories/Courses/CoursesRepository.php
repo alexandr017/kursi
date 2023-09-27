@@ -72,4 +72,19 @@ class CoursesRepository implements CoursesRepositoryInterface
             ->limit(15)
             ->get();
     }
+
+    public function getBySearch(string $search, int $page = 1): LengthAwarePaginator
+    {
+        return $this->query()
+            ->withAvg('schoolReviews', 'rating')
+            ->withCount('schoolReviews as reviews_count')
+            ->with(['tags', 'school'])
+            ->where('title', 'like', "%$search%")
+            ->paginate(
+                3,
+                ['*'],
+                'page',
+                $page
+            );
+    }
 }

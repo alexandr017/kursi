@@ -12,6 +12,13 @@ Route::get('/contacts', [App\Http\Controllers\Site\V3\Contacts\ContactsPageContr
 Route::get('/znaniya', [App\Http\Controllers\Site\V3\BlogIndexPage\BlogIndexPageController::class, 'index']);
 Route::get('/znaniya/page/{pageNumber}', [App\Http\Controllers\Site\V3\BlogIndexPage\BlogIndexPageController::class, 'index']);
 Route::get('/schools', [\App\Http\Controllers\Site\V3\DynamicPages\IndexCompaniesMainPageController::class, 'index']);
+Route::prefix('/search')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Site\V3\Search\SearchController::class, 'search']);
+    Route::get('/companies', [\App\Http\Controllers\Site\V3\Search\SearchController::class, 'searchCompanies']);
+    Route::get('/courses', [\App\Http\Controllers\Site\V3\Search\SearchController::class, 'searchCourses']);
+    Route::get('/posts', [\App\Http\Controllers\Site\V3\Search\SearchController::class, 'searchPosts']);
+});
+
 // about
 // search (post)
 // schools

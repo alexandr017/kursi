@@ -3474,7 +3474,7 @@
 
                             <div class="search_page-main_cont" id="search-popup-cont">
                                 <div class="search_page-header">
-                                    <form action="" method="get">
+                                    <form action="/search" method="get" onsubmit="return validateSearch()">
                                         <label for="search_page_submit" class="search_page-submit_label">
                                             <img src="/v3/images/search.svg" alt="Поиск" title="Поиск">
                                             <input type="submit" value="Искать" id="search_page_submit">
@@ -3576,6 +3576,13 @@
         document.getElementById('openCatalog').classList.toggle('active');
     }
 
+    function validateSearch() {
+        const inputValue = document.getElementById('qplSKIW').value.trim();
+        if (inputValue === '') {
+            return false;
+        }
+        return true;
+    }
 </script>
 
 

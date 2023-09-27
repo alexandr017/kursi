@@ -70,7 +70,7 @@
     "src": "resources/css/company/companies.css"
   },
   "resources/css/company/company-catalog-item.css": {
-    "file": "assets/company-catalog-item-c9410c01.css",
+    "file": "assets/company-catalog-item-d3e0bc4d.css",
     "isEntry": true,
     "src": "resources/css/company/company-catalog-item.css"
   },
@@ -184,6 +184,11 @@
     "isEntry": true,
     "src": "resources/css/mainpage/mainpage.css"
   },
+  "resources/css/pagination/pagination.css": {
+    "file": "assets/pagination-9578271d.css",
+    "isEntry": true,
+    "src": "resources/css/pagination/pagination.css"
+  },
   "resources/css/post/post-card.css": {
     "file": "assets/post-card-dab587b4.css",
     "isEntry": true,
@@ -193,6 +198,11 @@
     "file": "assets/post-2a6ac77e.css",
     "isEntry": true,
     "src": "resources/css/post/post.css"
+  },
+  "resources/css/search/search-courses.css": {
+    "file": "assets/search-courses-07bb9fbb.css",
+    "isEntry": true,
+    "src": "resources/css/search/search-courses.css"
   },
   "resources/js/company/companies.js": {
     "file": "assets/companies-4ed993c7.js",
