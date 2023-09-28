@@ -18,14 +18,14 @@
                         </label>
                         <span class="blog-required-field">*</span>
                     </div>
-                    <input maxlength="255" size="30" tabindex="3" type="text" name="user_name" id="user_name" value="">
+                    <input maxlength="255" size="30" tabindex="3" type="text" name="user_name" id="user-name" value="">
                 </div>
 
                 <div class="blog-comment-field blog-comment-field-email">
                     <div class="blog-comment-field-text comments-editor_title">
                         <label for="">E-mail</label>
                     </div>
-                    <input maxlength="255" size="30" tabindex="4" type="text" name="user_email" id="user_email" value="">
+                    <input maxlength="255" size="30" tabindex="4" type="text" name="user_email" id="user-email" value="">
                 </div>
 
             </div>

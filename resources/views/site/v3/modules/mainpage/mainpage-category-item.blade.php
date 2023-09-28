@@ -55,8 +55,10 @@
     <link href="{{ Vite::asset('resources/css/mainpage/mainpage-category-item.css') }}" rel="stylesheet">
 @endpush
 
-@push('scripts')
-    <script type="text/javascript" src="{{ Vite::asset('resources/js/company/company-review.js') }}"></script>
-@endpush
+<script>
+    function handleCategoryItems(event) {
+        event.target.parentElement.querySelector('#category-items-second-part').style.display = event.target.checked ? 'block' : 'none';
+    }
+</script>
 
 
