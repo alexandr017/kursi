@@ -1,7 +1,7 @@
 @if($posts->isNotEmpty())
     <div class="search_cont">
         <div class="search_head">
-            Онлайн-школы
+            Статьи
         </div>
 
         <div class="catalog-section  blog_search_sections">
