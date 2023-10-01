@@ -16,6 +16,8 @@ use App\Repositories\Posts\PostRepository;
 use App\Repositories\Posts\PostRepositoryInterface;
 use App\Repositories\Tags\TagRepository;
 use App\Repositories\Tags\TagRepositoryInterface;
+use App\Repositories\Url\UrlRepository;
+use App\Repositories\Url\UrlRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -52,6 +54,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             PostCategoryRepositoryInterface::class,
             PostCategoryRepository::class
+        );
+        $this->app->bind(
+            UrlRepositoryInterface::class,
+            UrlRepository::class
         );
     }
 

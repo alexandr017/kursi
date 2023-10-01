@@ -20,4 +20,7 @@ class Url extends Model
     protected $fillable = ['url', 'section_type', 'section_id'];
 
     public $timestamps = false;
+
+    const DLYA_DETEJ = 'dlya-detej';
+    const BESPLATNYE = 'besplatnye';
 }

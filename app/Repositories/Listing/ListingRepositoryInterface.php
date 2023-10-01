@@ -13,4 +13,7 @@ interface ListingRepositoryInterface
     public function saveListingRating(ListingRating $listingRating): bool;
     public function save(Listing $listing): bool;
     public function getParentsWithChildes(): Collection;
+    public function getChildes(string $parentId, array $relations = []): Collection;
+    public function getListingsForChildes(string $parentId): Collection;
+    public function getListingsForFreeCourses(string $parentId): Collection;
 }
