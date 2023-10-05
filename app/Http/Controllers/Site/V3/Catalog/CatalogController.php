@@ -12,8 +12,9 @@ class CatalogController extends Controller
         IndexCatalogRequest $request,
         IndexCatalogChildesAction $action
     ) {
-        $listings = $action->run($request->getPath());
+        $path = $request->getPath();
+        $listings = $action->run($path);
 
-        return view('site.v3.modules.1-header.header-catalog', compact('listings'));
+        return view('site.v3.modules.1-header.header-catalog', compact('listings', 'path'));
     }
 }

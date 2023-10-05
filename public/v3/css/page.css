@@ -1392,7 +1392,6 @@ div.search-popup-el-cnt{text-align:right; float:right;}
     margin-right: 10px;
     display: inline-flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .menu_filler{
@@ -1435,7 +1434,6 @@ div.search-popup-el-cnt{text-align:right; float:right;}
     justify-content: flex-start;
     align-self: baseline;
     align-content: start;
-    margin: 0 20px;
     flex-flow: wrap;
     margin-left: 60px;
 }
