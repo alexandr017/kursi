@@ -12,9 +12,12 @@ return [
     'Программирование' => 'programming',
     'Рукоделие' => 'needlework',
     'Саморазвитие' => 'self_development',
+    'Развитие' => 'self_development',
     'Спорт' => 'sport',
     'Творчество и контент' => 'creation_and_content',
+    'Творчество' => 'creation_and_content',
     'Финансы' => 'finance',
     'Другое' => 'another',
     'Бесплатные' => 'besplatnie',
+    'Школа' => 'shkola'
 ];

@@ -78,4 +78,41 @@ class ListingRepository implements ListingRepositoryInterface
             ->with(['childes.url', 'url'])
             ->get();
     }
+
+    public function getChildes(string $parentId, array $relations = []): Collection
+    {
+        return $this->query()
+            ->where('parent_id', $parentId)
+            ->with($relations)
+            ->get();
+    }
+
+    public function getListingsForChildes(string $parentId): Collection
+    {
+        return $this->query()
+            ->where('parent_id', $parentId)
+            ->with(['url','childes' => function($q) {
+                $q->with(['url','childes' => function($q) {
+                    $q->with(['url','childes']);
+                }]);
+            }])
+            ->get();
+    }
+
+    public function getListingsForFreeCourses(string $parentId): Collection
+    {
+        return $this->query()
+            ->where('parent_id', $parentId)
+            ->whereHas('courses', function ($query) {
+                $query->where('sale_cost', 0);
+            })
+            ->with(['childes' => function($query) {
+                $query->whereHas('courses', function ($q) {
+                    $q->where('sale_cost', 0);
+                });
+
+                $query->with(['url']);
+            }])
+            ->get();
+    }
 }

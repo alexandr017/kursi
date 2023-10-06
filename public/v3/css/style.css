@@ -169,15 +169,13 @@ span.colored_text {
 }
 
 .ul.second_lvl > .li > .ul_cont{
+    padding: 0;
     position: absolute;
     height: 100%;
     display: none;
-    top: 88px;
-    right: 160px;
-    left: 160px;
     grid-template-columns: minmax(250px, 25%) auto;
-
     overflow: auto;
+    top: 0;
 }
 
 .ul.second_lvl > .li > .header_top_menu-text {
@@ -192,7 +190,6 @@ span.colored_text {
     margin-right: 10px;
     display: inline-flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .menu_filler{
@@ -208,9 +205,9 @@ span.colored_text {
     margin-bottom: 8px;
 }
 
-.ul.third_lvl a {
-    color: #101820;
-}
+/*.ul.third_lvl a {*/
+/*    color: #101820;*/
+/*}*/
 .ul.second_lvl > .li > .header_top_menu-text > a, .ul.second_lvl > .li > .header_top_menu-text > p {
     padding: 14px;
     /* display: block; */
@@ -234,9 +231,7 @@ span.colored_text {
     justify-content: flex-start;
     align-self: baseline;
     align-content: start;
-    margin: 0 20px;
     flex-flow: wrap;
-    margin-left: 60px;
 }
 
 .header_top_menu-text{
@@ -278,29 +273,29 @@ img.section_img {
 }
 
 
-@media( max-width: 1000px ){
-    .ul.first_lvl > .li > .ul_cont{
-        top: calc(100% - 28px);
-        height: calc(100vh - 100% + 28px);
-    }
-}
+/*@media( max-width: 1000px ){*/
+/*    .ul.first_lvl > .li > .ul_cont{*/
+/*        top: calc(100% - 28px);*/
+/*        height: calc(100vh - 100% + 28px);*/
+/*    }*/
+/*}*/
 
 @media(min-width:860px){
     img.section_img.black_img{
         display: block;
     }
 
-    .ul.second_lvl:not(:hover) > .li.header_menu-selected_parent > .header_top_menu-text > .section_img.black_img,
+    .ul.second_lvl > .li.header_menu-selected_parent > .header_top_menu-text > .section_img.black_img,
     .ul.second_lvl > .li:hover > .header_top_menu-text > .section_img.black_img{
         display:none;
     }
 
-    .ul.second_lvl:not(:hover) > .li.header_menu-selected_parent > .header_top_menu-text > .section_img.blue_img,
+    .ul.second_lvl > .li.header_menu-selected_parent > .header_top_menu-text > .section_img.blue_img,
     .ul.second_lvl > .li:hover > .header_top_menu-text > .section_img.blue_img{
         display:block;
     }
 
-    .ul.second_lvl:not(:hover) > .li.header_menu-selected_parent > .ul_cont,
+    .ul.second_lvl > .li.header_menu-selected_parent > .ul_cont,
     .ul.second_lvl > .li:hover > .ul_cont {
         background: white;
         display: grid;
@@ -314,8 +309,10 @@ img.section_img {
     .ul.third_lvl a:hover {
         color: #469ED7;
     }
-    .ul.second_lvl:not(:hover) > .li.header_menu-selected_parent > .header_top_menu-text > a:after, .ul.second_lvl > .li.header_menu-selected_parent > .header_top_menu-text > p:after,
-    .ul.second_lvl > .li:hover > .header_top_menu-text > a:after, .ul.second_lvl > .li:hover > .header_top_menu-text > p:after {
+    .ul.second_lvl > .li.header_menu-selected_parent > .header_top_menu-text > a:after,
+    .ul.second_lvl > .li.header_menu-selected_parent > .header_top_menu-text > p:after,
+    .ul.second_lvl > .li:hover > .header_top_menu-text > a:after,
+    .ul.second_lvl > .li:hover > .header_top_menu-text > p:after {
         content: "";
         position: absolute;
         top: 0;
@@ -327,8 +324,9 @@ img.section_img {
         background: rgba(70, 158, 215, 0.08);
         border-radius: 2px;
     }
-    .ul.second_lvl:not(:hover) > .li.header_menu-selected_parent > .header_top_menu-text > a:before, .ul.second_lvl > .li.header_menu-selected_parent > .header_top_menu-text > p:before,
-    .ul.second_lvl > .li:hover > .header_top_menu-text > a:before, .ul.second_lvl > .li:hover > .header_top_menu-text > p:before {
+
+    .ul.second_lvl > .li.header_menu-selected_parent > .header_top_menu-text > a:before,
+    .ul.second_lvl > .li.header_menu-selected_parent > .header_top_menu-text > p:before {
         content: "";
         position: absolute;
         width: 7px;
@@ -345,11 +343,9 @@ img.section_img {
         max-width: 1440px;
         margin: auto;
         width: 100%;
-        padding: 48px 160px;
         flex-direction: column;
         grid-template-columns: minmax(250px, 25%);
         position: relative;
-        padding-top: calc(48px + 40px - 14px);
         height: calc(100vh - 100%);
         background: white;
         height: auto;
@@ -360,11 +356,6 @@ img.section_img {
     }
 
     @media( max-width: 1000px ){
-        .header_top_menu .li.active > .ul_cont > .second_lvl {
-            padding: 28px;
-            padding-top: calc(28px + 40px - 14px);
-        }
-
         .ul.second_lvl > .li.active > .ul_cont{
             right: 28px;
             left: 28px;
