@@ -27,8 +27,8 @@
         </div>
 
         <div class="short_filter-cont">
-            <div class="short_filter-property_cont" style="position: relative">
-                <label class="short_filter-property_title" for="opener_40" onclick="handleShowFilters()">
+            <div class="short_filter-property_cont" style="position: relative" id="short_filter-property_cont">
+                <label class="short_filter-property_title" for="opener_40" onclick="handleShowFilters()" >
                     <img src="/v3/images/filter.svg" alt="" title="Фильтр">
                     <p>Фильтр</p>
                 </label>

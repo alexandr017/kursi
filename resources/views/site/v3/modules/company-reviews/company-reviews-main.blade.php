@@ -2,7 +2,7 @@
     <h2 class="school_reviews_title subblock_title" id="vote">
         Отзывы о школе
         <span class="school_reviews_title_count">
-            (22)
+            ({{$company->reviews_count}})
         </span>
     </h2>
 

@@ -2,7 +2,7 @@
     <div class="universalrating-title">
         Информация была полезна?
     </div>
--
+
     <div class="universalrating-form">
         <form>
             <div id="half-stars-example" class="disabled">

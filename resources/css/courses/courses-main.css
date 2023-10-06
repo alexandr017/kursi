@@ -271,7 +271,8 @@ img {
 .short_filter-property_value label {
     cursor: pointer;
     position: relative;
-    padding: 16px calc(16px + 24px + 16px) 16px 16px;
+    padding-right: calc(16px + 24px + 16px);
+    padding-left: 16px;
 }
 
 .short_filter-property_value label {
@@ -417,16 +418,15 @@ img {
 }
 
 .short_filter-property_value label {
-    cursor: pointer;
-    position: relative;
-    padding: 16px calc(16px + 24px + 16px) 16px 16px;
-}
-
-.short_filter-property_value label {
     display: inline-flex;
     width: 100%;
     font-weight: 500;
     font-size: 18px;
     line-height: 28px;
     color: #101820;
+}
+
+p.kurse_card-length_title {
+    margin-right: 5px;
+    display: block;
 }

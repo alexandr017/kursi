@@ -44,7 +44,7 @@
 
                         <div class="school_short_card-footer">
                             <div class="school_short_card-footer_kurses_count">
-                                Курсов:&nbsp;
+                                Курсов:
                                 <span>
                                     {{$company->courses_count}}
                                 </span>
