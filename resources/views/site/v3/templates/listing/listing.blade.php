@@ -83,6 +83,14 @@
             let showMoreItems = false;
             let page = 1;
 
+            document.addEventListener('click', function(event) {
+                let myElement = document.getElementById('short_filter-property_cont');
+
+                if (!myElement.contains(event.target)) {
+                    document.getElementById('filtersList').style.display = 'none'
+                }
+            });
+
             function handleShowFilters() {
                 const filters = document.getElementById('filtersList');
 

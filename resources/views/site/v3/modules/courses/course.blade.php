@@ -8,7 +8,7 @@
                 Длительность:
             </p>
             <p class="kurse_card-length_value">
-                {{$course->duration}} {{__('courses_duration_types.' . $course->duration_type)}}
+                {{ $course->duration}} {{__('courses_duration_types.' . $course->duration_type)}}
             </p>
         </div>
 
@@ -73,14 +73,14 @@
         <div class="kurse_card-price">
             @if($course->cost != $course->sale_cost)
                 <div class="kurse_card-old_price">
-                    {{$course->cost}}₽
+                    {{ substr(number_format($course->cost, 0, '', ' '), 0, -3) . ' ' . substr($course->cost, -3) }} ₽
                 </div>
             @endif
 
 
             <div class="kurse_card-now_price">
                 <div class="kurse_card-price_sum">
-                    {{$course->sale_cost}}₽
+                    {{ substr(number_format($course->sale_cost, 0, '', ' '), 0, -3) . ' ' . substr($course->sale_cost, -3) }} ₽
                 </div>
             </div>
         </div>

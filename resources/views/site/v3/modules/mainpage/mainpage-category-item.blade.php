@@ -45,8 +45,10 @@
             @endforeach
         </div>
 
-        <label for=`open_section_{{$listing->id}}` class="open_section_btn"> Ещё {{$listing->childes->count() - 5}} </label>
-        <label for=`open_section_{{$listing->id}}` class="close_section_btn"> Скрыть {{$listing->childes->count() - 5}} </label>
+        @if($listing->childes->count() > 5)
+            <label for=`open_section_{{$listing->id}}` class="open_section_btn"> Ещё {{$listing->childes->count() - 5}} </label>
+            <label for=`open_section_{{$listing->id}}` class="close_section_btn"> Скрыть {{$listing->childes->count() - 5}} </label>
+        @endif
     </ul>
 </li>
 

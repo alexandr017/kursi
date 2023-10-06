@@ -10,6 +10,7 @@
             <p class="kurse_card-length_title">
                 Длительность:
             </p>
+            <p>rknrvnjfn </p>
             <p class="kurse_card-length_value">
                  {{ $course->duration}} {{__('courses_duration_types.' . $course->duration_type)}}
             </p>
