@@ -17,7 +17,7 @@ class PagesController extends Controller implements DynamicPagesInterface
             abort(404);
         }
 
-        $breadcrumbs = BreadcrumbsRender::get($page->breadcrumb, $page->h1);
+        $breadcrumbs = BreadcrumbsRender::get($page->breadcrumbs, $page->h1);
 
         $editLink = "/admin/pages/$page->id/edit";
 
