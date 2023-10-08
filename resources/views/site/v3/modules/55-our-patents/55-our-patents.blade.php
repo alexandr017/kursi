@@ -26,7 +26,7 @@
         const swiper_about_pattents = new Swiper('.about_pattents-cont', {
             speed: 400,
             slidesPerView: "auto",
-            spaceBetween: 100,
+            spaceBetween: 20,
             navigation: {
                 nextEl: '.about_pattents-cont-button-next',
                 prevEl: '.about_pattents-cont-button-prev',
