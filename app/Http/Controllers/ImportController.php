@@ -117,7 +117,7 @@ class ImportController extends Controller
                 'old_id' => (string) $item->Ид,
                 'created_at' => (string)$item->ЗначенияСвойств->ЗначенияСвойства[14]->Значение ?
                     Carbon::parse((string)$item->ЗначенияСвойств->ЗначенияСвойства[14]->Значение)
-                    : null,
+                    : Carbon::parse(__('post-create-manual-date.' . (string) $item->Ид)),
                 // todo дата создания и публикаци
             ];
 
@@ -194,12 +194,13 @@ class ImportController extends Controller
                 'meta_description' => (string) $item->НаследуемыеШаблоны->Шаблон[1]->Значение,
                 'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
                 'breadcrumbs' => 'Сотрудники@about\r\n' . (string) $item->Наименование,
-                'lead' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
+                'lead' => str_replace('&nbsp;', ' ',(string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение),
                 'content' => $content,
                 'old_id' => (int) $item->Ид,
                 'status' => 1,
-                'rating_value' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[12]->Значение,
-                'rating_count' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[14]->Значение,
+                'rating_value' => (float) $item->ЗначенияСвойств->ЗначенияСвойства[12]->Значение,
+                'rating_count' => (int) $item->ЗначенияСвойств->ЗначенияСвойства[14]->Значение,
+                'rating_sum' => (float) $item->ЗначенияСвойств->ЗначенияСвойства[13]->Значение,
                 'job' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[8]->Значение,
                 'email' => $email,
                 'vk_link' => $vkLink,

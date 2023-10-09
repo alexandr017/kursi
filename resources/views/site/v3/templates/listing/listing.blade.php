@@ -34,7 +34,7 @@
             </div>
 
             <div class="article_body-author">
-                @include('site.v3.modules.employee.employee', ['title' => 'Автор подборки', 'employee' => $listing->author])
+                @include('site.v3.modules.employee.employee', ['title' => 'Автор подборки', 'employee' => $listing->author, 'date' => $listing->created_at ])
             </div>
         </div>
 
