@@ -31,6 +31,15 @@
                             </p>
                         </div>
                         <div class="person_detail-contacts_cont">
+                            @if($employee->vk_link)
+                                <div class="person_detail-short_contacts">
+
+                                    <div class="person_detail-short_contact_item">
+                                        <a href="{{$employee->vk_link}}"><img src="/images/employees/others/vk_black.svg" alt=""></a>
+                                    </div>
+                                </div>
+                            @endif
+
                             <div class="person_detail-short_contacts">
 
                             </div>

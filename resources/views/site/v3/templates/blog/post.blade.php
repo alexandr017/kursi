@@ -17,7 +17,7 @@
                 </div>
 
                 <div>
-                    @include('site.v3.modules.employee.employee', ['employee' => $post->author])
+                    @include('site.v3.modules.employee.employee', ['employee' => $post->author, 'date' => $post->created_at])
                 </div>
 
 
