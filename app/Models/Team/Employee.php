@@ -29,4 +29,29 @@ class Employee extends Model
         return $this->hasOne(Url::class, 'section_id','id')
             ->where('section_type', Employee::SECTION_TYPE);
     }
+
+    public function getRatingsCount(): int
+    {
+        return $this->rating_count;
+    }
+
+    public function getRatingsSum(): int
+    {
+        return $this->rating_sum;
+    }
+
+    public function incrementRatingCount(): void
+    {
+        $this->rating_count ++;
+    }
+
+    public function addRatingsSum(float $ratingsSum): void
+    {
+        $this->rating_sum += $ratingsSum;
+    }
+
+    public function setRatingsValue(float $ratingValue): void
+    {
+        $this->rating_value = $ratingValue;
+    }
 }

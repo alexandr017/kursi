@@ -314,7 +314,7 @@ class ImportController extends Controller
             'breadcrumbs' => '', //ToDo: need to implement,
             'old_id' => (string)$value->Ид,
             'parent_id' => $parentId,
-            'lead' => 'lead',//ToDo: need to implement
+            'lead' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
             'created_at' => Carbon::now(),
         ];
 
