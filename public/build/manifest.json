@@ -1,4 +1,24 @@
 {
+  "local/templates/kursi/components/sigodinweb/highloadblock.list/about_history/img/arrow.svg": {
+    "file": "assets/arrow-1f4de317.svg",
+    "src": "local/templates/kursi/components/sigodinweb/highloadblock.list/about_history/img/arrow.svg"
+  },
+  "local/templates/kursi/img/faq_arrows/checkedArrow.svg": {
+    "file": "assets/checkedArrow-358c1a64.svg",
+    "src": "public/images/system/checkedArrow.svg"
+  },
+  "local/templates/kursi/img/faq_arrows/checkedClick.svg": {
+    "file": "assets/checkedClick-8bc0300f.svg",
+    "src": "local/templates/kursi/img/faq_arrows/checkedClick.svg"
+  },
+  "local/templates/kursi/img/faq_arrows/hideArrow.svg": {
+    "file": "assets/hideArrow-80a4a76b.svg",
+    "src": "public/images/system/hideArrow.svg"
+  },
+  "local/templates/kursi/img/faq_arrows/hideClick.svg": {
+    "file": "assets/hideClick-87c9a6da.svg",
+    "src": "local/templates/kursi/img/faq_arrows/hideClick.svg"
+  },
   "public/images/system/checkedArrow.svg": {
     "file": "assets/checkedArrow-358c1a64.svg",
     "src": "public/images/system/checkedArrow.svg"
@@ -25,7 +45,7 @@
     "src": "public/v3/css/html-sitemap.css"
   },
   "public/v3/css/style.css": {
-    "file": "assets/style-5c7c04cc.css",
+    "file": "assets/style-7ac9678a.css",
     "isEntry": true,
     "src": "public/v3/css/style.css"
   },
@@ -60,7 +80,7 @@
     "src": "resources/css/company/company-catalog-section.css"
   },
   "resources/css/company/company-review-add.css": {
-    "file": "assets/company-review-add-1b424875.css",
+    "file": "assets/company-review-add-a6b00be8.css",
     "isEntry": true,
     "src": "resources/css/company/company-review-add.css"
   },
@@ -120,7 +140,7 @@
     "src": "resources/css/header/header.css"
   },
   "resources/css/history/history.css": {
-    "file": "assets/history-845cb103.css",
+    "file": "assets/history-37a02ed2.css",
     "isEntry": true,
     "src": "resources/css/history/history.css"
   },
@@ -130,7 +150,7 @@
     "src": "resources/css/listing/listing.css"
   },
   "resources/css/listing/rating_stars.css": {
-    "file": "assets/rating_stars-a20735ef.css",
+    "file": "assets/rating_stars-eb274394.css",
     "isEntry": true,
     "src": "resources/css/listing/rating_stars.css"
   },

@@ -206,6 +206,9 @@
                     </div>
                 </div>
             </div>
+
+            @include('site.v3.templates.employee.employee_rating_stars', ['employee' => $employee])
+
         </div>
 
 

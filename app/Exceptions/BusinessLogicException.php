@@ -11,6 +11,7 @@ abstract class BusinessLogicException extends Exception
     const LISTING_NOT_FOUND = 602;
     const COMPANY_NOT_FOUND = 603;
     const POST_CATEGORY_NOT_FOUND = 604;
+    const EMPLOYEE_NOT_FOUND = 605;
 
     abstract public function getStatus(): int;
     abstract public function getStatusMessage(): string;
