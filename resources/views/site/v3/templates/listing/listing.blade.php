@@ -6,20 +6,17 @@
 @section('content')
 
     <div class="content max-width">
-        <div class="tagpage_head"><h1
-                    class="tagpage_head-title"
-                    id="bx_1847241719_243"
-            >{{$listing->title}}</h1> h1
+        <div class="tagpage_head">
+            <h1 class="tagpage_head-title">{{$listing->h1}}</h1>
 
             <div class="tagpage_head-desk">
                 <div class="tagpage_head-desk_test">
-                    {{$listing->description}}lead
+                    {{$listing->lead}}
                 </div>
             </div>
 
             <div class="tagpage_head-img">
-                <img src="{{$listing->photo}}"
-                     alt="{{$listing->title}}">
+                <img src="{{$listing->photo}}" alt="{{$listing->title}}">
             </div>
         </div>
 
@@ -41,15 +38,13 @@
             </div>
         </div>
 
-        <div id="comp_82a98fe7db6be019771aa4ae37d40938">
+        <div>
             @include('site.v3.templates.listing.rating_stars', ['listing' => $listing])
         </div>
 
         <div class="linker_cont">
-            <div class="linker_title" id="bx_4145281613_460">
-                <h2>
-                    Все курсы {{$listing->parent->name}}
-                </h2>
+            <div class="linker_title">
+                <h2>Все курсы {{$listing->parent->name}}</h2>
             </div>
 
             {{--            <input type="checkbox" id="linker_show_input" name="" value="">--}}
@@ -64,9 +59,10 @@
                     </li>
                 @endforeach
             </ul>
-            <div style="clear: both;">
-            </div>
+            <div style="clear: both;"></div>
         </div>
+
+    </div>
 
 
         @push('styles')

@@ -1,12 +1,15 @@
 <footer>
-    <div class="footer_content">
+    <div class="footer_content max-width">
         <div class="footer-company_info_block">
             <div class="logo">
+                @if(Request::path() != '/')
                 <a href="/">
                     <img src="/v3/images/logo-bottom-long.svg" alt="Логотип Курсы.ру">
                 </a>
+                @else
+                    <img src="/v3/images/logo-bottom-long.svg" alt="Логотип Курсы.ру">
+                @endif
             </div>
-            </a>
             <div class="phone">
                 <a href="tel:+7 (804) 700-20-77">+7 (804) 700-20-77</a>
             </div>

@@ -21,10 +21,6 @@ Route::prefix('/search')->group(function () {
     Route::get('/posts', [\App\Http\Controllers\Site\V3\Search\SearchController::class, 'searchPosts']);
 });
 
-// about
-// search (post)
-// schools
-// contacts
 
 Route::fallback(function(){
     return (new App\Http\Controllers\Site\V3\DynamicSiteController())->render();

@@ -6,9 +6,7 @@
         <div class="news_detail_cont ">
 
             <div class="news_detail-head html_editor_body_cont">
-                <h1 class="news_detail-title">
-                    {{$post->h1}}
-                </h1>
+                <h1 class="news_detail-title">{{$post->h1}}</h1>
 
                 <div class="news_detail-lid_par">
                     <p>

@@ -1,9 +1,13 @@
 <header>
     <div class="top-cont">
         <div class="top max-width">
+            @if(Request::path() != '/')
             <a href="/" class="logo">
                 <img src="/v3/images/logo.svg" alt="Курсы.ру">
             </a>
+            @else
+                <img src="/v3/images/logo.svg" alt="Курсы.ру">
+            @endif
 
             <div class="header_right_side-modile_open" onclick="showMobileMenu()">
                 <img src="/v3/images/burger.svg" alt="Открыть меню" title="Открыть меню">

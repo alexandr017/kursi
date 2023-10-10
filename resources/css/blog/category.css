@@ -84,7 +84,7 @@ a:-webkit-any-link {
 }
 
 .blog_sections-item:hover a {
-    color: white;
+    color: white !important;
 }
 
 .blog_sections-item.blog_sections-item_active {
