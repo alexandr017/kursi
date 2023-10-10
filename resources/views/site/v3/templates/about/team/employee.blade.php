@@ -6,6 +6,10 @@
 @section('og_title', Shortcode::compile($employee->h1))
 @section('meta_description', Shortcode::compile($employee->meta_description))
 
+@push('styles')
+        <link href="{{ Vite::asset('resources/css/employee/employee-info.css') }}" rel="stylesheet">
+    @endpush
+
 @section('style')
 <style>
     @media (max-width: 860px) {
@@ -122,6 +126,7 @@
 </style>
 @endsection
 
+
 @section('content')
     <div class="content max-width">
 
@@ -144,6 +149,15 @@
                             </p>
                         </div>
                         <div class="person_detail-contacts_cont">
+                            @if($employee->vk_link)
+                                <div class="person_detail-short_contacts">
+
+                                    <div class="person_detail-short_contact_item">
+                                        <a href="{{$employee->vk_link}}"><img src="/images/employees/others/vk_black.svg" alt=""></a>
+                                    </div>
+                                </div>
+                            @endif
+
                             <div class="person_detail-short_contacts">
 
                             </div>
@@ -205,9 +219,7 @@
 
     </div>
 
-    @push('styles')
-        <link href="{{ Vite::asset('resources/css/employee/employee-info.css') }}" rel="stylesheet">
-    @endpush
+    
 
 @endsection
 
@@ -215,24 +227,25 @@
 @section('additional-scripts')
     @parent
 
-    <script>
-        document.addEventListener('DOMContentLoaded', hearListeners);
 
-        function hearListeners() {
-            document.querySelectorAll('.content_video_block').forEach(function(element) {
-                element.addEventListener("click", addVideoContent);
-            });
-        }
+<script>
+    document.addEventListener('DOMContentLoaded', hearListeners);
 
-        function addVideoContent(event) {
-            let videoUrl = getVideoUrl(event);
+    function hearListeners() {
+        document.querySelectorAll('.content_video_block').forEach(function(element) {
+            element.addEventListener("click", addVideoContent);
+        });
+    }
 
-            const videoWrapper = document.createElement('div');
-            videoWrapper.className = 'video_page-wrapper video_optional-width';
-            videoWrapper.id = 'videoContent';
-            videoWrapper.addEventListener('click', handleOutsideClick);
+    function addVideoContent(event) {
+        let videoUrl = getVideoUrl(event);
 
-            const innerHTML = `
+        const videoWrapper = document.createElement('div');
+        videoWrapper.className = 'video_page-wrapper video_optional-width';
+        videoWrapper.id = 'videoContent';
+        videoWrapper.addEventListener('click', handleOutsideClick);
+
+        const innerHTML = `
         <div class="vertical_position-wrapper-video null">
             <div class="video-wrapper_position">
                 <div class="wrapper_svg" onclick="closeVideoContent()">
@@ -248,35 +261,36 @@
         </div>
     `;
 
-            videoWrapper.innerHTML = innerHTML;
-            document.body.appendChild(videoWrapper);
+        videoWrapper.innerHTML = innerHTML;
+        document.body.appendChild(videoWrapper);
+    }
+
+
+    function handleOutsideClick(event) {
+        const clickedElement = event.target;
+
+        if (!clickedElement.closest('.videoContent')) {
+            closeVideoContent();
+        }
+    }
+
+    function getVideoUrl() {
+        let clickedElement = event.target;
+
+        while (clickedElement && !clickedElement.hasAttribute("data-url")) {
+            clickedElement = clickedElement.parentElement;
         }
 
+        return clickedElement.getAttribute("data-url");
+    }
 
-        function handleOutsideClick(event) {
-            const clickedElement = event.target;
+    function closeVideoContent() {
+        const videoContent = document.querySelector('#videoContent');
 
-            if (!clickedElement.closest('.videoContent')) {
-                closeVideoContent();
-            }
+        if (videoContent) {
+            videoContent.remove();
         }
+    }
+</script>
 
-        function getVideoUrl() {
-            let clickedElement = event.target;
-
-            while (clickedElement && !clickedElement.hasAttribute("data-url")) {
-                clickedElement = clickedElement.parentElement;
-            }
-
-            return clickedElement.getAttribute("data-url");
-        }
-
-        function closeVideoContent() {
-            const videoContent = document.querySelector('#videoContent');
-
-            if (videoContent) {
-                videoContent.remove();
-            }
-        }
-    </script>
 @endsection

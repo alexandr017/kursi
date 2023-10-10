@@ -37,7 +37,7 @@
             </div>
 
             <div class="article_body-author">
-                @include('site.v3.modules.employee.employee', ['title' => 'Автор подборки', 'employee' => $listing->author])
+                @include('site.v3.modules.employee.employee', ['title' => 'Автор подборки', 'employee' => $listing->author, 'date' => $listing->created_at ])
             </div>
         </div>
 
@@ -85,6 +85,14 @@
             let tagsFilters = [];
             let showMoreItems = false;
             let page = 1;
+
+            document.addEventListener('click', function(event) {
+                let myElement = document.getElementById('short_filter-property_cont');
+
+                if (!myElement.contains(event.target)) {
+                    document.getElementById('filtersList').style.display = 'none'
+                }
+            });
 
             function handleShowFilters() {
                 const filters = document.getElementById('filtersList');

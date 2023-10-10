@@ -51,7 +51,6 @@ h1 {
     line-height: 34px;
     color: #C1C4C7;
     margin-bottom: 40px;
-    margin-top: 100px;
 }
 
 .person_detail-lid {
@@ -169,5 +168,13 @@ img {
 
 .person_body-education ul li {
     margin-bottom: 20px;
+}
+
+.person_detail-short_contact_item {
+    margin-right: 20px;
+}
+
+.person_detail-short_contact_item img {
+    height: 35px;
 }
 

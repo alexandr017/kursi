@@ -17,7 +17,7 @@
     <div class="news_item-data">
         <div class="news_item-data_head">
             <div class="news_item-date_time">
-                {{$post->created_at?->formatLocalized('%e %B %Y')}}
+                {{$post->created_at?->locale('ru')->isoFormat('D MMMM Y')}}
             </div>
             <div class="news_item-rating">
                 {{$post->rating_value}}

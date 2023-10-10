@@ -25,7 +25,7 @@
 
     <div class="swiper_styles-pagination_cont">
         <div class="slider_person_slider_31bd70ba83bb5ae47065-button-prev swiper_styles-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-83fe791d272b75eb" aria-disabled="true"></div>
-        <div class="slider_person_slider_31bd70ba83bb5ae47065-pagination swiper_styles-pagination swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal"><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">13</span></div>
+        <div class="slider_person_slider_31bd70ba83bb5ae47065-pagination swiper_styles-pagination swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal"><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">{{$team->count()}}</span></div>
         <div class="slider_person_slider_31bd70ba83bb5ae47065-button-next swiper_styles-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-83fe791d272b75eb" aria-disabled="false"></div>
     </div>
 

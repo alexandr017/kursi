@@ -13,7 +13,7 @@
             {{$employee->job}}
         </div>
         <div class="author_card-date">
-            {{date('Y-m-d', strtotime($employee->created_at))}}
+            {{$date->locale('ru')->isoFormat('D MMMM Y')}}
         </div>
     </div>
 </div>
