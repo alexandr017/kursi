@@ -2,12 +2,13 @@
 //$ampLink = linkToAMP();
 ?>
 @extends('site.v3.layouts.main')
-<?php /*
-@section ('title', Shortcode::compile($page->title))
-@section ('og_title', Shortcode::compile($page->h1))
-@section ('meta_description', Shortcode::compile($page->meta_description))
+@section ('title', Shortcode::compile($company->title))
+@section ('og_title', Shortcode::compile($company->h1))
+@section ('meta_description', Shortcode::compile($company->meta_description))
 
-*/ ?>
+@push('styles')
+    <link href="{{ Vite::asset('resources/css/company/company.css') }}" rel="stylesheet">
+@endpush
 
 @section('content')
 
@@ -120,11 +121,6 @@
 
     </div>
 
-
-    @push('styles')
-        <link href="{{ Vite::asset('resources/css/company/company.css') }}" rel="stylesheet">
-    @endpush
-
 @endsection
 
 
@@ -133,6 +129,67 @@
 
 @endsection
 
+{{--@dd($company->reviews)--}}
+@section('custom-structured-data')
+    <script type="application/ld+json">
+        {
+  "@context": "https://www.schema.org",
+  "@type": "Product",
+  "brand": "SkillFactory",
+  "logo": "https://kursy.ru{{str_replace('https://kursy.ru', '', $company->logo)}}",
+  "name": "SkillFactory",
+  "category": "{{$company->name}}",
+  "description": "{{$company->lead}}",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "bestRating": "5",
+    "ratingValue": {{$company->rating_value}},
+    "reviewCount": {{$company->rating_count}}
+  },
+  "offers": {
+    "@type": "AggregateOffer",
+    "offerCount": {{$company->courses_count}},
+    "highPrice": "480000",
+    "lowPrice": "43560",
+    "priceCurrency": "Rub",
+    "offers": [
+    @foreach($company->courses as $course)
+    {
+        "@type": "Offer",
+        "name": "{{$course->title}}",
+      "url": "{{$course->affiliate_link}}",
+      "price": "{{$course->cost}}",
+      "offeredBy": {
+        "@type": "EducationalOrganization",
+        "name": "{{$company->name}}",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://kursy.ru{{str_replace('https://kursy.ru', '', $company->logo)}}"
+        }
+      }
+    }
+    @if($course != $company->courses->last())
+    ,
+    @endif
+        @endforeach
+  ]
+  },
+        "review": [
+@foreach($company->reviews as $review)
+            {
+          "@type": "Review",
+          "name": "{{$review->title}}",
+      "reviewBody": "{{$review->content}} @if($review->pluses) | {{$review->pluses}} @endif  @if($review->minuses)  | {{$review->minuses}} @endif ",
+      "datePublished": "{{date('Y-m-d', strtotime($company->reviews->first()->created_at))}}",
+      "reviewRating": { "@type": "Rating", "ratingValue": {{(int) $review->rating}} },
+      "author": { "@type": "Person", "name": "{{$review->author_name}}" }
+    }
+    @if($review != $company->reviews->last())
+                ,
+@endif
+        @endforeach
+        ]
 
-
-
+  }
+</script>
+@endsection

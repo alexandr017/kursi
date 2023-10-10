@@ -45,13 +45,14 @@
 
 @yield('additional-scripts')
 
-@include('site.structured-data')
-@yield('custom-structured-data')
 
 @stack('scripts')
 
 @include('site.admin-nav')
 @include('site.analytics-scripts')
+
+@include('site.structured-data')
+@yield('custom-structured-data')
 
 
 <script type="text/javascript">
