@@ -26,9 +26,4 @@ class EmployeeController extends Controller implements DynamicPagesInterface
 
         return view('site.v3.templates.about.team.employee', compact('employee', 'breadcrumbs', 'editLink'));
     }
-
-    public function rate()
-    {
-
-    }
 }
