@@ -8,6 +8,8 @@ use App\Repositories\Company\CompanyRepository;
 use App\Repositories\Company\CompanyRepositoryInterface;
 use App\Repositories\Courses\CoursesRepository;
 use App\Repositories\Courses\CoursesRepositoryInterface;
+use App\Repositories\Employee\EmployeeRepository;
+use App\Repositories\Employee\EmployeeRepositoryInterface;
 use App\Repositories\Listing\ListingRepository;
 use App\Repositories\Listing\ListingRepositoryInterface;
 use App\Repositories\PostCategory\PostCategoryRepository;
@@ -58,6 +60,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             UrlRepositoryInterface::class,
             UrlRepository::class
+        );
+        $this->app->bind(
+            EmployeeRepositoryInterface::class,
+            EmployeeRepository::class
         );
     }
 
