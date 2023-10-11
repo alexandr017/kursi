@@ -181,6 +181,13 @@ span.colored_text {
 .ul.second_lvl > .li > .header_top_menu-text {
     position: relative;
     z-index: 100000;
+    padding: 0 20px;
+}
+
+.ul.second_lvl > .li.header_menu-selected_parent > .header_top_menu-text,
+.ul.second_lvl > .li:hover > .header_top_menu-text {
+    background: #469ED714;
+    border-radius: 2px;
 }
 
 .block {
@@ -309,9 +316,8 @@ img.section_img {
     .ul.third_lvl a:hover {
         color: #469ED7;
     }
-    .ul.second_lvl > .li.header_menu-selected_parent > .header_top_menu-text > a:after,
+
     .ul.second_lvl > .li.header_menu-selected_parent > .header_top_menu-text > p:after,
-    .ul.second_lvl > .li:hover > .header_top_menu-text > a:after,
     .ul.second_lvl > .li:hover > .header_top_menu-text > p:after {
         content: "";
         position: absolute;
@@ -355,19 +361,19 @@ img.section_img {
         display: inline-flex;
     }
 
-    @media( max-width: 1000px ){
-        .ul.second_lvl > .li.active > .ul_cont{
-            right: 28px;
-            left: 28px;
-            top: calc(28px + 40px);
-        }
-    }
-
     .block.mobile_show_all{
         display: none;
     }
 
 }
+
+/*@media( max-width: 1000px ){*/
+/*    .ul.second_lvl > .li.active > .ul_cont{*/
+/*        right: 28px;*/
+/*        left: 28px;*/
+/*        top: calc(28px + 40px);*/
+/*    }*/
+/*}*/
 
 @media(max-width:860px){
 
@@ -1790,6 +1796,7 @@ footer a:hover {
 }
 
 .html_editor_body_cont ol {
+    padding: 0;
     margin: 25px;
     margin-left: 29px;
 }
@@ -2122,7 +2129,7 @@ footer a:hover {
 .c_styled li:before {
     content: counters(section,".");
     position:absolute;
-    left: -28px;
+    left: -32px;
     z-index:-1;
     display:inline-block;
     width: 24px;
@@ -2432,7 +2439,7 @@ ul.c_styled li:before {
 }
 
 .content_accordion_block .accordion_item input[type="checkbox"]:checked ~ .accordion_item-title .arrow {
-    background-image: url(/local/templates/kursi/img/faq_arrows/checkedArrow.svg);
+    background-image: url(../../../images/system/checkedArrow.svg);
 }
 
 .content_accordion_block .accordion_item-title:active .arrow {
@@ -2446,7 +2453,7 @@ ul.c_styled li:before {
 .content_accordion_block .arrow {
     width: 24px;
     height: 24px;
-    background-image: url(/local/templates/kursi/img/faq_arrows/hideArrow.svg);
+    background-image: url(../../../images/system/hideArrow.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
