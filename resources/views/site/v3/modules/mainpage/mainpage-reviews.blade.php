@@ -36,6 +36,11 @@
 </script>
 
 <style>
+    .review_slider-item.swiper-slide > * {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
     .swiper_styles-slider {
         padding-bottom: 80px;
     }
