@@ -35,7 +35,7 @@
             </div>
             <div class="review_card-right_cont">
                 <div class="review_card-date">
-                    {{$review->created_at->formatLocalized('%e %B %Y')}}
+                    {{$review->created_at?->locale('ru')->isoFormat('D MMMM Y')}}
                 </div>
                 <div class="review_card-author">
                     {{$review->author_name}}

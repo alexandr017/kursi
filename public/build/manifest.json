@@ -3,17 +3,9 @@
     "file": "assets/arrow-1f4de317.svg",
     "src": "local/templates/kursi/components/sigodinweb/highloadblock.list/about_history/img/arrow.svg"
   },
-  "local/templates/kursi/img/faq_arrows/checkedArrow.svg": {
-    "file": "assets/checkedArrow-358c1a64.svg",
-    "src": "public/images/system/checkedArrow.svg"
-  },
   "local/templates/kursi/img/faq_arrows/checkedClick.svg": {
     "file": "assets/checkedClick-8bc0300f.svg",
     "src": "local/templates/kursi/img/faq_arrows/checkedClick.svg"
-  },
-  "local/templates/kursi/img/faq_arrows/hideArrow.svg": {
-    "file": "assets/hideArrow-80a4a76b.svg",
-    "src": "public/images/system/hideArrow.svg"
   },
   "local/templates/kursi/img/faq_arrows/hideClick.svg": {
     "file": "assets/hideClick-87c9a6da.svg",
@@ -45,7 +37,7 @@
     "src": "public/v3/css/html-sitemap.css"
   },
   "public/v3/css/style.css": {
-    "file": "assets/style-7ac9678a.css",
+    "file": "assets/style-408c263b.css",
     "isEntry": true,
     "src": "public/v3/css/style.css"
   },
@@ -55,7 +47,7 @@
     "src": "resources/css/app.css"
   },
   "resources/css/blog/category.css": {
-    "file": "assets/category-e7b3792c.css",
+    "file": "assets/category-91207f54.css",
     "isEntry": true,
     "src": "resources/css/blog/category.css"
   },
@@ -85,7 +77,7 @@
     "src": "resources/css/company/company-review-add.css"
   },
   "resources/css/company/company-review.css": {
-    "file": "assets/company-review-39241e82.css",
+    "file": "assets/company-review-a3b8e678.css",
     "isEntry": true,
     "src": "resources/css/company/company-review.css"
   },
