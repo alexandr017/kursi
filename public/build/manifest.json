@@ -171,6 +171,11 @@
     "isEntry": true,
     "src": "resources/css/mainpage/mainpage-posts.css"
   },
+  "resources/css/mainpage/mainpage-reviews.css": {
+    "file": "assets/mainpage-reviews-6f8750dd.css",
+    "isEntry": true,
+    "src": "resources/css/mainpage/mainpage-reviews.css"
+  },
   "resources/css/mainpage/mainpage.css": {
     "file": "assets/mainpage-a53a7fd5.css",
     "isEntry": true,

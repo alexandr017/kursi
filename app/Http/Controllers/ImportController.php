@@ -239,8 +239,8 @@ class ImportController extends Controller
 
         foreach ($companies  as $item) {
             // todo для телефона дописать регулярку
-            preg_match_all('/^\\+?\\d{1,4}?[-.\\s]?\\(?\\d{1,3}?\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}$/', (string) $item->ЗначенияСвойств->ЗначенияСвойства[16]->Значение[0], $match);
-            $phone = (isset($match[0][0])) ? $match[0][0] : null;
+            preg_match('/[+]?\d{1,3} \(\d{3}\) \d{3}-\d{2}-\d{2}/', (string) $item->ЗначенияСвойств->ЗначенияСвойства[16]->Значение[0], $match);
+            $phone = (isset($match[0])) ? $match[0] : null;
 
 
             preg_match_all('/[a-z0-9_\-\+\.]+@[a-z0-9\-]+\.([a-z]{2,4})(?:\.[a-z]{2})?/i', (string) $item->ЗначенияСвойств->ЗначенияСвойства[16]->Значение[1], $match);
@@ -256,9 +256,9 @@ class ImportController extends Controller
                 'lead' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
                 'content' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[6]->Значение,
                 'logo' => '/images/companies/' . Str::slug((string)$item->Наименование) . '.webp',
-                'link' => (int)  $item->ЗначенияСвойств->ЗначенияСвойства[15]->Значение,
+                'link' => $item->ЗначенияСвойств->ЗначенияСвойства[15]->Значение,
                 'email' => $email,
-                'hotline' => $phone, // todo ЗначенияСвойства номер 16
+                'hotline' => $phone,
                 'old_id' => (int) $item->Ид,
                 'status' => 1,
                 'rating_value' => (float) $item->ЗначенияСвойств->ЗначенияСвойства[10]->Значение,
@@ -296,13 +296,35 @@ class ImportController extends Controller
 
     private function buildListings($value, $parentId = null, $alias = null)
     {
+        $content = (string)$value->Описание;
+        $new  = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $content);
+
+        $crawler = new Crawler();
+        $crawler->addHtmlContent($new);
+
+        $imgElements = $crawler->filter('img')->extract(['src']);
+
+        foreach ($imgElements as $imgElement) {
+            $newSrc = '/images/listings/others/' . basename($imgElement);
+
+            if (empty($imgElement)) {
+                continue;
+            }
+
+//            copy(substr($imgElement, 1), 'public' . $newSrc);
+
+            $content = str_replace($imgElement, $newSrc, $content);
+        }
+
+        $content = str_replace('/local/templates/kursi/img/video_play.svg', '/images/system/video_play.svg', $content);
+
         $new = [
             'name' => (string)$value->Наименование[0],
             'photo' => '/images/listings/' . Str::slug((string)$value->ЗначенияСвойств->ЗначенияСвойства[3]->Значение) . '.webp',
             'title' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[3]->Значение,
             'description' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
             'author_id' => $this->employes->where('old_id', (int)$value->ЗначенияСвойств->ЗначенияСвойства[4]->Значение)->first()?->id,
-            'content' => (string)$value->Описание,
+            'content' => $content,
             'status' => $value->БитриксАктивность == 'true' ? Listing::STATUS_ACTIVE: Listing::STATUS_INACTIVE,
             'slug' => (string)$value->БитриксКод,
             'rating_count' => (int)$value->ЗначенияСвойств->ЗначенияСвойства[7]->Значение,
