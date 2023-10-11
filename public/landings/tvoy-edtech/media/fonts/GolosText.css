@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'GolosText';
+	src: 
+		url('golos-text_regular.woff2') format('woff2'),
+		url('golos-text_tegular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}

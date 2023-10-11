@@ -22,6 +22,8 @@ Route::prefix('/search')->group(function () {
 });
 
 
+Route::view('tvoy-edtech', 'site.landings.tvoy-edtech');
+
 Route::fallback(function(){
     return (new App\Http\Controllers\Site\V3\DynamicSiteController())->render();
 });

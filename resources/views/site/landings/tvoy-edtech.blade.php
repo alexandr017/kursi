@@ -6,12 +6,7 @@
     <meta name="description" content="У вас есть идея, как улучшить образование? Тогда примите участие в конкурсе «Твой EDTECH» и выиграйте iMac! Студенты могут представить свою идею проекта, который поможет повысить эффективность образования." />
     <script type="text/javascript" data-skip-moving="true">(function(w, d, n) {var cl = "bx-core";var ht = d.documentElement;var htc = ht ? ht.className : undefined;if (htc === undefined || htc.indexOf(cl) !== -1){return;}var ua = n.userAgent;if (/(iPad;)|(iPhone;)/i.test(ua)){cl += " bx-ios";}else if (/Windows/i.test(ua)){cl += ' bx-win';}else if (/Macintosh/i.test(ua)){cl += " bx-mac";}else if (/Linux/i.test(ua) && !/Android/i.test(ua)){cl += " bx-linux";}else if (/Android/i.test(ua)){cl += " bx-android";}cl += (/(ipad|iphone|android|mobile|touch)/i.test(ua) ? " bx-touch" : " bx-no-touch");cl += w.devicePixelRatio && w.devicePixelRatio >= 2? " bx-retina": " bx-no-retina";var ieVersion = -1;if (/AppleWebKit/.test(ua)){cl += " bx-chrome";}else if (/Opera/.test(ua)){cl += " bx-opera";}else if (/Firefox/.test(ua)){cl += " bx-firefox";}ht.className = htc ? htc + " " + cl : cl;})(window, document, navigator);</script>
 
-    <link href="/bitrix/cache/css/s1/landing_edtech/template_acf924df11a2673df6a49d2a1c681663/template_acf924df11a2673df6a49d2a1c681663_v1.css?169053555148613" type="text/css"  data-template-style="true" rel="stylesheet" />
-
-
-
-
-
+    <link href="/landings/tvoy-edtech/media/template_acf924df11a2673df6a49d2a1c681663_v1.css?169053555148613" type="text/css"  data-template-style="true" rel="stylesheet" />
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +17,7 @@
     <!-- Top.Mail.Ru counter --><noscript><div><img src="https://top-fwz1.mail.ru/counter?id=3371378;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div></noscript><!-- /Top.Mail.Ru counter -->
 
     <title>Конкурс «Твой EDTECH» - выиграй iMac за лучшую идею</title>
-    <link rel="shortcut icon" href="/local/templates/kursi/img/favicon.svg">
+    <link rel="shortcut icon" href="/v3/images/favicon.svg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
 
@@ -147,24 +142,24 @@
 
 <header>
 
-    <a href="/"><img src="/local/templates/landing_edtech/img/header_black_logo.svg" alt="" class="mobile_logo"></a>
+    <a href="/"><img src="/landings/tvoy-edtech/media/header_black_logo.svg" alt="" class="mobile_logo"></a>
 
 
     <div class="header_right_side-modile_open" onclick="showMobileMenu()" >
-        <img src="/local/templates/landing_edtech/img/mobile_menu_open.svg" alt="Открыть меню" title="Открыть меню">
+        <img src="/landings/tvoy-edtech/media/mobile_menu_open.svg" alt="Открыть меню" title="Открыть меню">
     </div>
 
 
     <div class="mobile_cont" id="header-menu-cont">
         <div class="mobile_menu_head">
             <a href="/">
-                <img src="/local/templates/landing_edtech/img/footer_logo.svg" alt="" class="logo">
+                <img src="/landings/tvoy-edtech/media/footer_logo.svg" alt="" class="logo">
             </a>
-            <img src="/local/templates/landing_edtech/img/mobile_menu_close.svg" alt="" class="menu_close" onclick="hideMobileMenu()">
+            <img src="/landings/tvoy-edtech/media/mobile_menu_close.svg" alt="" class="menu_close" onclick="hideMobileMenu()">
         </div>
 
         <a href="/" class="pc_menu_head">
-            <img src="/local/templates/landing_edtech/img/header_black_logo.svg" alt="" class="logo">
+            <img src="/landings/tvoy-edtech/media/header_black_logo.svg" alt="" class="logo">
         </a>
 
 
@@ -243,7 +238,7 @@
             </div>
         </div>
         <div class="register_header_btn ">
-            <a href="#register" class="white_btn" onclick="hideMobileMenu()">Подать заявку</a>
+            <a href="https://t.me/yakovlevrmn" target="_blank" class="white_btn">Подать заявку</a>
         </div>
 
     </div>
@@ -254,23 +249,23 @@
         <h1>Конкурс «Твой&nbsp;EDTECH»</h1>
         <div class="page_head-dates">C 9 марта по 30 апреля </div>
         <div class="page_head-sub_title">Создай проект на основе цифровых технологий и дай возможность твоей идее изменить будущее образования!</div>
-        <a class="page_head-register_btn black_btn_blue_hover" href="#register">Подать заявку</a>
+        <a class="page_head-register_btn black_btn_blue_hover" href="https://t.me/yakovlevrmn" target="_blank">Подать заявку</a>
     </div>
 
-    <img src="/local/templates/landing_edtech/img/header_bg.png" alt="">
+    <img src="/landings/tvoy-edtech/media/header_bg.png" alt="">
 </div>
 
 
 <div class="runing_string-cont">
     <div class="runing_string-content">
         <p>Выиграй IMac и 100 000 ₽</p>
-        <img src="/local/templates/landing_edtech/img/rs1.svg" alt="">
+        <img src="/landings/tvoy-edtech/media/rs1.svg" alt="">
         <p>Выиграй IMac и 100 000 ₽</p>
-        <img src="/local/templates/landing_edtech/img/rs2.svg" alt="">
+        <img src="/landings/tvoy-edtech/media/rs2.svg" alt="">
         <p>Выиграй IMac и 100 000 ₽</p>
-        <img src="/local/templates/landing_edtech/img/rs1.svg" alt="">
+        <img src="/landings/tvoy-edtech/media/rs1.svg" alt="">
         <p>Выиграй IMac и 100 000 ₽</p>
-        <img src="/local/templates/landing_edtech/img/rs2.svg" alt="">
+        <img src="/landings/tvoy-edtech/media/rs2.svg" alt="">
     </div>
 
 
@@ -282,9 +277,9 @@
     <h2 class="page_about_title page_block_title">Трансляция</h2>
 
     <div class="page_timer-stream" id="stream_block" style="display: none;">
-        <div class="content_video_block" data-url="https://www.youtube.com/embed/ofcrziXpnG4" style="background-image: url(/upload/medialibrary/a1c/82itnwq5jxnvse52rfo016kxnw8ee2vp/IMG_2142.PNG); background-size: cover;">
-            <img src="/upload/medialibrary/a1c/82itnwq5jxnvse52rfo016kxnw8ee2vp/IMG_2142.PNG">
-            <div class="content_video_block-play" style="background-image: url(/local/templates/landing_edtech/img/video_play.svg)">
+        <div class="content_video_block" data-url="https://www.youtube.com/embed/ofcrziXpnG4" style="background-image: url(/landings/tvoy-edtech/media/IMG_2142.PNG); background-size: cover;">
+            <img src="/landings/tvoy-edtech/media/IMG_2142.PNG">
+            <div class="content_video_block-play" style="background-image: url(/landings/tvoy-edtech/media/video_play.svg)">
             </div>
         </div>
 
@@ -311,9 +306,9 @@
 <div class="page_about-cont" id="about">
     <h2 class="page_about_title page_block_title">О конкурсе</h2>
     <div class="page_about-video">
-        <div class="content_video_block" data-url="https://www.youtube.com/embed/1tnhikEgXok" style="background-image: url(/upload/medialibrary/9fe/dxs4tmdtin8o9u08pnrra19lxdxsbsar/Frame-4-_2_.png)">
-            <img src="/upload/medialibrary/9fe/dxs4tmdtin8o9u08pnrra19lxdxsbsar/Frame-4-_2_.png">
-            <div class="content_video_block-play" style="background-image: url(/local/templates/landing_edtech/img/video_play.svg)">
+        <div class="content_video_block" data-url="https://www.youtube.com/embed/1tnhikEgXok" style="background-image: url(/landings/tvoy-edtech/media/Frame-4-_2_.png)">
+            <img src="/landings/tvoy-edtech/media/Frame-4-_2_.png">
+            <div class="content_video_block-play" style="background-image: url(/landings/tvoy-edtech/media/video_play.svg)">
             </div>
         </div>
 
@@ -322,7 +317,7 @@
         <p>
             Конкурс «Твой EDTECH» — уникальная возможность проявить творческий потенциал и предложить инновационные идеи в области образования. Участие бесплатное для всех студентов. Подайте заявку сейчас, реализуйте свою идею, получите уникальный опыт и мощный iMac
         </p>
-        <a href="https://kursy.ru/tvoy-edtech/PolozhenieShkolarship.pdf" target="_blank" class="white_btn">Посмотреть положение</a>
+        <a href="/landings/tvoy-edtech/PolozhenieShkolarship.pdf" target="_blank" class="white_btn">Посмотреть положение</a>
     </div>
 </div>
 
@@ -334,8 +329,8 @@
         </span>
     </div>
     <div class="page_need-items_cont">
-        <div class="page_need-item" style="background-image:url(/local/templates/landing_edtech/img/item_bg_1.svg);" >
-            <img src="/local/templates/landing_edtech/img/item_img_1.svg" alt="">
+        <div class="page_need-item" style="background-image:url(/landings/tvoy-edtech/media/item_bg_1.svg);" >
+            <img src="/landings/tvoy-edtech/media/item_img_1.svg" alt="">
             <h3>Участники</h3>
             <ul>
                 <li>Команда до 5 человек или индивидуальное участие</li>
@@ -343,8 +338,8 @@
                 <li>Действующие студенты ВУЗов и ССУЗов. Любая форма обучения</li>
             </ul>
         </div>
-        <div class="page_need-item" style="background-image:url(/local/templates/landing_edtech/img/item_bg_2.svg);">
-            <img src="/local/templates/landing_edtech/img/item_img_2.svg" alt="">
+        <div class="page_need-item" style="background-image:url(/landings/tvoy-edtech/media/item_bg_2.svg);">
+            <img src="/landings/tvoy-edtech/media/item_img_2.svg" alt="">
             <h3>Технологии</h3>
             <ul>
                 <li>Искусственный интеллект</li>
@@ -354,8 +349,8 @@
                 <li>NLP-chat</li>
             </ul>
         </div>
-        <div class="page_need-item" style="background-image:url(/local/templates/landing_edtech/img/item_bg_3.svg);">
-            <img src="/local/templates/landing_edtech/img/item_img_3.svg" alt="">
+        <div class="page_need-item" style="background-image:url(/landings/tvoy-edtech/media/item_bg_3.svg);">
+            <img src="/landings/tvoy-edtech/media/item_img_3.svg" alt="">
             <h3>Проект</h3>
             <ul>
                 <li>Повышение кост-эффективности для бизнеса</li>
@@ -375,7 +370,7 @@
     </div>
     <div class="page_stages-items_cont">
         <div class="page_stages-item">
-            <img src="/local/templates/landing_edtech/img/stages_1.svg" alt="">
+            <img src="/landings/tvoy-edtech/media/stages_1.svg" alt="">
             <div class="page_stages-stage_info_cont">
                 <p class="page_stages-dates">С 9 марта по 30 апреля</p>
                 <div class="page_stages-stage_info">
@@ -385,7 +380,7 @@
             </div>
         </div>
         <div class="page_stages-item">
-            <img src="/local/templates/landing_edtech/img/stages_2.svg" alt="">
+            <img src="/landings/tvoy-edtech/media/stages_2.svg" alt="">
             <div class="page_stages-stage_info_cont">
                 <p class="page_stages-dates">С 9 марта по 30 апреля</p>
                 <div class="page_stages-stage_info">
@@ -395,7 +390,7 @@
             </div>
         </div>
         <div class="page_stages-item">
-            <img src="/local/templates/landing_edtech/img/stages_3.svg" alt="">
+            <img src="/landings/tvoy-edtech/media/stages_3.svg" alt="">
             <div class="page_stages-stage_info_cont">
                 <p class="page_stages-dates">С 1 по 2 мая</p>
                 <div class="page_stages-stage_info">
@@ -405,7 +400,7 @@
             </div>
         </div>
         <div class="page_stages-item">
-            <img src="/local/templates/landing_edtech/img/stages_4.svg" alt="">
+            <img src="/landings/tvoy-edtech/media/stages_4.svg" alt="">
             <div class="page_stages-stage_info_cont">
                 <p class="page_stages-dates">6 мая</p>
                 <div class="page_stages-stage_info">
@@ -416,7 +411,7 @@
         </div>
     </div>
 
-    <a href="#register" class="blue_btn">Подать заявку</a>
+    <a href="https://t.me/yakovlevrmn" target="_blank" class="blue_btn">Подать заявку</a>
 
 </div>
 
@@ -429,19 +424,19 @@
     <div class="page_prize-items">
         <div class="page_prize-item first-place">
             <div class="page_prize-num">1 место</div>
-            <img src="/local/templates/landing_edtech/img/prize_1.png" alt="">
+            <img src="/landings/tvoy-edtech/media/prize_1.png" alt="">
             <div class="page_prize-sum">iMac и<br>100 000 ₽</div>
             <div class="page_prize-subtitle">IMac на чипе M1 с диагональю 24 дюйма<br>и деньги на реализацию проекта</div>
         </div>
         <div class="page_prize-item second-place">
             <div class="page_prize-num">2 место</div>
-            <img src="/local/templates/landing_edtech/img/prize_2.png" alt="">
+            <img src="/landings/tvoy-edtech/media/prize_2.png" alt="">
             <div class="page_prize-sum">25 000 ₽</div>
             <div class="page_prize-subtitle">Денежный приз для воплощения ваших<br>идей в жизнь</div>
         </div>
         <div class="page_prize-item third-place">
             <div class="page_prize-num">3 место</div>
-            <img src="/local/templates/landing_edtech/img/prize_3.png" alt="">
+            <img src="/landings/tvoy-edtech/media/prize_3.png" alt="">
             <div class="page_prize-sum">10 000 ₽</div>
             <div class="page_prize-subtitle">Приз для дополнительной мотивации на<br>творческую работу</div>
         </div>
@@ -450,8 +445,8 @@
 
 <div class="page_register-wrapper" id="register">
     <div class="page_register-cont" id="register">
-        <img src="/local/templates/landing_edtech/img/register.png" alt="" class="register_bg_pc">
-        <img src="/local/templates/landing_edtech/img/register_mobile.png" alt="" class="register_bg_mobile">
+        <img src="/landings/tvoy-edtech/media/register.png" alt="" class="register_bg_pc">
+        <img src="/landings/tvoy-edtech/media/register_mobile.png" alt="" class="register_bg_mobile">
 
         <h2>Подать заявку</h2>
         <div class="page_register-subtitle">Подайте заявку прямо сейчас и начните работу над своим проектом!</div>
@@ -461,8 +456,7 @@
                 <span class="page_register-date_subtitle">Прием заявок</span>
             </div>
             <div class="page_register-footer_right">
-                <a href="form/command/" class="black_btn">У меня есть команда</a>
-                <a href="form/solo/" class="white_btn_black_hover">Я один</a>
+                <a href="https://t.me/yakovlevrmn" target="_blank" class="black_btn">Подать заявку</a>
             </div>
         </div>
     </div>
@@ -577,26 +571,26 @@
 <div class="runing_string-cont">
     <div class="runing_string-content">
         <p>Выиграй IMac и 100 000 ₽</p>
-        <img src="/local/templates/landing_edtech/img/rs1.svg" alt="">
+        <img src="/landings/tvoy-edtech/media/rs1.svg" alt="">
         <p>Выиграй IMac и 100 000 ₽</p>
-        <img src="/local/templates/landing_edtech/img/rs2.svg" alt="">
+        <img src="/landings/tvoy-edtech/media/rs2.svg" alt="">
         <p>Выиграй IMac и 100 000 ₽</p>
-        <img src="/local/templates/landing_edtech/img/rs1.svg" alt="">
+        <img src="/landings/tvoy-edtech/media/rs1.svg" alt="">
         <p>Выиграй IMac и 100 000 ₽</p>
-        <img src="/local/templates/landing_edtech/img/rs2.svg" alt="">
+        <img src="/landings/tvoy-edtech/media/rs2.svg" alt="">
         <p>Выиграй IMac и 100 000 ₽</p>
-        <img src="/local/templates/landing_edtech/img/rs1.svg" alt="">
+        <img src="/landings/tvoy-edtech/media/rs1.svg" alt="">
         <p>Выиграй IMac и 100 000 ₽</p>
-        <img src="/local/templates/landing_edtech/img/rs2.svg" alt="">
+        <img src="/landings/tvoy-edtech/media/rs2.svg" alt="">
         <p>Выиграй IMac и 100 000 ₽</p>
-        <img src="/local/templates/landing_edtech/img/rs1.svg" alt="">
+        <img src="/landings/tvoy-edtech/media/rs1.svg" alt="">
         <p>Выиграй IMac и 100 000 ₽</p>
-        <img src="/local/templates/landing_edtech/img/rs2.svg" alt="">
+        <img src="/landings/tvoy-edtech/media/rs2.svg" alt="">
     </div>
 </div>
 <footer>
-    <img src="/local/templates/landing_edtech/img/footer_1.png" class="top_bg" alt="">
-    <img src="/local/templates/landing_edtech/img/footer_2.png" class="right_bg" alt="">
+    <img src="/landings/tvoy-edtech/media/footer_1.png" class="top_bg" alt="">
+    <img src="/landings/tvoy-edtech/media/footer_2.png" class="right_bg" alt="">
 
     <div class="footer_content">
         <div class="footer_top">
@@ -734,52 +728,18 @@
                     </ul>
                 </div>
             </div>
-            <a href="/"><img src="/local/templates/landing_edtech/img/footer_logo.svg" alt=""></a>
+            <a href="/"><img src="/landings/tvoy-edtech/media/footer_logo.svg" alt=""></a>
         </div>
     </div>
 
 </footer>
-<script>BX.setJSList(['/bitrix/js/main/core/core_ajax.js','/bitrix/js/main/core/core_promise.js','/bitrix/js/main/polyfill/promise/js/promise.js','/bitrix/js/main/loadext/loadext.js','/bitrix/js/main/loadext/extension.js','/bitrix/js/main/polyfill/promise/js/promise.js','/bitrix/js/main/polyfill/find/js/find.js','/bitrix/js/main/polyfill/includes/js/includes.js','/bitrix/js/main/polyfill/matches/js/matches.js','/bitrix/js/ui/polyfill/closest/js/closest.js','/bitrix/js/main/polyfill/fill/main.polyfill.fill.js','/bitrix/js/main/polyfill/find/js/find.js','/bitrix/js/main/polyfill/matches/js/matches.js','/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','/bitrix/js/main/core/core.js','/bitrix/js/main/polyfill/intersectionobserver/js/intersectionobserver.js','/bitrix/js/main/lazyload/dist/lazyload.bundle.js','/bitrix/js/main/polyfill/core/dist/polyfill.bundle.js','/bitrix/js/main/parambag/dist/parambag.bundle.js']);
-</script>
 
-<script type="text/javascript">
-    (function () {
-        "use strict";
 
-        var counter = function ()
-        {
-            var cookie = (function (name) {
-                var parts = ("; " + document.cookie).split("; " + name + "=");
-                if (parts.length == 2) {
-                    try {return JSON.parse(decodeURIComponent(parts.pop().split(";").shift()));}
-                    catch (e) {}
-                }
-            })("BITRIX_CONVERSION_CONTEXT_s1");
-
-            if (cookie && cookie.EXPIRE >= BX.message("SERVER_TIME"))
-                return;
-
-            var request = new XMLHttpRequest();
-            request.open("POST", "/bitrix/tools/conversion/ajax_counter.php", true);
-            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            request.send(
-                "SITE_ID="+encodeURIComponent("s1")+
-                "&sessid="+encodeURIComponent(BX.bitrix_sessid())+
-                "&HTTP_REFERER="+encodeURIComponent(document.referrer)
-            );
-        };
-
-        if (window.frameRequestStart === true)
-            BX.addCustomEvent("onFrameDataReceived", counter);
-        else
-            BX.ready(counter);
-    })();
-</script>
 <script type="text/javascript">
     if (window == window.top) {
         document.addEventListener("DOMContentLoaded", function() {
             var div = document.createElement("div");
-            div.innerHTML = ' <div id="nca-cookiesaccept-line" class="nca-cookiesaccept-line style-1 " > <div id="nca-nca-position-left"id="nca-bar" class="nca-bar nca-style- nca-animation-none nca-position-left "> <div class="nca-cookiesaccept-line-text"><div class="site_text"><img src="/local/templates/kursi/img/cookies.svg" ><span>Используя наш сайт сайт вы даете согласие на обработку файлов cookie и <a href="/privacy/">пользовательских данных</a>.</span></div><span class="land_text">Используя наш сайт, вы даете согласие на использование файлов <a href="/privacy/">cookie</a>.</span></div> <div><button type="button" id="nca-cookiesaccept-line-accept-btn" onclick="ncaCookieAcceptBtn()" >Принять</button></div> </div> </div> ';
+            div.innerHTML = ' <div id="nca-cookiesaccept-line" class="nca-cookiesaccept-line style-1 " > <div id="nca-nca-position-left"id="nca-bar" class="nca-bar nca-style- nca-animation-none nca-position-left "> <div class="nca-cookiesaccept-line-text"><div class="site_text"><img src="/landings/tvoy-edtech/media/cookies.svg" ><span>Используя наш сайт сайт вы даете согласие на обработку файлов cookie и <a href="/privacy/">пользовательских данных</a>.</span></div><span class="land_text">Используя наш сайт, вы даете согласие на использование файлов <a href="/privacy/">cookie</a>.</span></div> <div><button type="button" id="nca-cookiesaccept-line-accept-btn" onclick="ncaCookieAcceptBtn()" >Принять</button></div> </div> </div> ';
             document.body.appendChild(div);
         });
     }
@@ -813,48 +773,13 @@
     ncaCookieAcceptCheck();
 
 </script>
-<script type="text/javascript"> var _tmr = window._tmr || (window._tmr = []); _tmr.push({id: "3371378", type: "pageView", start: (new Date()).getTime()}); (function (d, w, id) { if (d.getElementById(id)) return; var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id; ts.src = "https://top-fwz1.mail.ru/js/code.js"; var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);}; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "tmr-code");</script><script type="text/javascript"  src="/bitrix/cache/js/s1/landing_edtech/template_471363f28dbf8587185992a779dfbcbe/template_471363f28dbf8587185992a779dfbcbe_v1.js?16905355512178"></script>
+<script type="text/javascript"> var _tmr = window._tmr || (window._tmr = []); _tmr.push({id: "3371378", type: "pageView", start: (new Date()).getTime()}); (function (d, w, id) { if (d.getElementById(id)) return; var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id; ts.src = "https://top-fwz1.mail.ru/js/code.js"; var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);}; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "tmr-code");</script><script type="text/javascript"  src="/landings/tvoy-edtech/media/template_471363f28dbf8587185992a779dfbcbe_v1.js?16905355512178"></script>
 <script type="text/javascript">var _ba = _ba || []; _ba.push(["aid", "40dff1e0e421eec2965d75a92b89ac06"]); _ba.push(["host", "kursy.ru"]); (function() {var ba = document.createElement("script"); ba.type = "text/javascript"; ba.async = true;ba.src = (document.location.protocol == "https:" ? "https://" : "http://") + "bitrix.info/ba.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ba, s);})();</script>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script><script type="text/javascript">
-    BX.showWait = function(node, msg) {
-        // тут созадние элемента
-        // console.log("show", node);
-        // console.log("show", msg);
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js">
 
-
-        let loader_bg = document.createElement("div");
-        loader_bg.className = "kursi_template-loader_bg";
-
-        let loader_img = document.createElement("img");
-        loader_img.src = "/local/templates/landing_edtech/img/loader.svg";
-        loader_bg.insertAdjacentElement("beforeend", loader_img);
-
-        if(node){
-            node.insertAdjacentElement("beforeend", loader_bg);
-        }
-        else{
-            document.body.insertAdjacentElement("beforeend", loader_bg);
-        }
-
-        console.log("show", loader_bg);
-
-    };
-    BX.closeWait = function(node, obMsg) {
-        // тут удаление его
-
-        let spinners = document.getElementsByClassName('kursi_template-loader_bg');
-
-        for (var i = 0; i < spinners.length; i++) {
-            spinners[i].remove();
-        }
-
-
-        // console.log("hide", spinners);
-        // console.log("hide", node);
-        // console.log("hide", obMsg);
-    };
-</script><script>
+</script>
+<script>
     function showMobileMenu() {
         let menu = document.getElementById('header-menu-cont');
         menu.classList.add("open");
