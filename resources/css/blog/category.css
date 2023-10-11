@@ -83,6 +83,10 @@ a:-webkit-any-link {
     cursor: pointer;
 }
 
+.blog_sections-item.blog_sections-item_active:hover a {
+    color: #ffffff;
+}
+
 .blog_sections-item:hover a {
     color: white !important;
 }

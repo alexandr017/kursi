@@ -47,3 +47,29 @@
         });
     });
 </script>
+
+<style>
+    .catalog-section-list-cont .swiper_styles-pagination_cont {
+        top: 5px;
+        bottom: unset;
+        right: 0;
+        justify-content: end;
+        left: unset;
+        width: unset;
+    }
+
+    .swiper_styles-pagination_cont {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: flex-end;
+        justify-content: center;
+        position: absolute;
+        bottom: 5px;
+        align-items: center;
+    }
+
+    .catalog-section-list {
+        padding-bottom: 0;
+    }
+</style>
