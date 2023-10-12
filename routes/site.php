@@ -7,6 +7,7 @@ use App\Http\Controllers\Site\V3\Courses\CoursesController;
 use App\Http\Controllers\Site\V3\EmployeeRating\EmployeeRatingController;
 use App\Http\Controllers\Site\V3\ListingRating\ListingRatingController;
 use App\Http\Controllers\Site\V3\Tags\TagController;
+use App\Http\Controllers\Site\V3\RatingPages\RatingPagesController;
 
 Route::get('/', [App\Http\Controllers\Site\V3\IndexPage\IndexPageController::class, 'index']);
 Route::get('/about', [App\Http\Controllers\Site\V3\About\AboutPageIndexController::class, 'index']);
@@ -28,6 +29,8 @@ Route::view('tvoy-edtech', 'site.landings.tvoy-edtech');
 Route::fallback(function(){
     return (new App\Http\Controllers\Site\V3\DynamicSiteController())->render();
 });
+
+Route::post('fetch/rating/add-vote', [RatingPagesController::class, 'create']);
 
 Route::post('/{post_id}/comments', [CommentsController::class, 'create']);
 Route::get('/listings/{listing_id}/courses', [CoursesController::class, 'index']); // todo отключил так как конфликтует с роутом админки /admin/courses

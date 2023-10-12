@@ -3,23 +3,564 @@
 @section ('og_title', Shortcode::compile($page->h1))
 @section ('meta_description', Shortcode::compile($page->meta_description))
 
+
+
 @section('style')
     <link href='//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        p.contacts_page-big_person-title{
+            font-weight:600;
+            font-size:32px;
+            line-height:46px;
+            color:#101820;
+            grid-area:title;
+            background:#F5F5F5;
+            border-radius:30px 30px 0 0;
+            padding:56px;
+            padding-bottom:24px;
+        }
+        p.contacts_page-big_person-subtitle{
+            font-weight:400;
+            font-size:24px;
+            line-height:34px;
+            color:#101820;
+            margin-bottom:auto;
+            grid-area:subtitle;
+            display:flex;
+            background:#F5F5F5;
+            height:100%;
+            padding:0 56px;
+        }
+        h1{
+            font-weight:700;
+            font-size:53px;
+            line-height:63px;
+            color:#101820;
+            margin-top:80px;
+            margin-bottom:56px;
+        }
+        .mobile{
+            display:none;
+        }
+        .custom_checkbox input[type="checkbox"]{
+            display:none;
+        }
+        .custom_checkbox input:checked ~ .custom_label:before{
+            content:"";
+            position:absolute;
+            top:1px;
+            left:-23px;
+            width:16px;
+            height:16px;
+            background-position:center;
+            background-repeat:no-repeat;
+        }
+        .custom_checkbox .custom_label:after{
+            position:absolute;
+            content:"";
+            top:0;
+            left:-24px;
+            width:16px;
+            height:16px;
+            border-radius:1px;
+            border:1px solid #F5F5F5;
+        }
+        .custom_checkbox .custom_label{
+            margin-left:calc(8px + 16px);
+            position:relative;
+            cursor:pointer;
+        }
+        .custom_checkbox{
+            margin-bottom:40px;
+            margin-top:40px;
+        }
+        .contacts_page-text_title h2{
+            font-size:32px;
+            line-height:46px;
+            font-weight:600;
+            color:#101820;
+        }
+        .contacts_page-text_title{
+            margin-top:120px;
+            margin-bottom:40px;
+            max-width:50%;
+        }
+        .contacts_page-text_subtitle{
+            max-width:50%;
+            font-size:18px;
+            line-height:150%;
+            font-weight:400;
+            color:#101820;
+            margin-bottom:24px;
+        }
+        .contacts_page-text_link{
+            font-size:24px;
+            line-height:34px;
+            font-weight:600;
+        }
+        .contacts_page-slider_item.swiper-slide{
+            width:550px;
+            height:455px;
+            margin-right:21px;
+        }
+        .contacts_page-slider_item img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            border-radius:30px;
+        }
+        .contacts_page-slider_block{
+            display:inline-flex;
+            width:100%;
+            margin-top:120px;
+            position:relative;
+            user-select:none;
+        }
+        .contacts_page-map_cont{
+            border-radius:30px;
+            overflow:hidden;
+        }
+        .contacts_page-big_person-name{
+            font-weight:500;
+            font-size:24px;
+            line-height:150%;
+            color:#101820;
+            margin-bottom:auto;
+        }
+        .contacts_page-big_person-link a{
+            display:block;
+            padding:11px 20px;
+            text-decoration:none;
+        }
+        .contacts_page-big_person-link{
+            margin:auto;
+            margin-top:20px;
+            margin-bottom:19px;
+        }
+        .contacts_page-big_person-info{
+            background:#F5F5F5;
+            border-radius:45px;
+            padding:56px;
+            display:inline-flex;
+            flex-direction:column;
+        }
+        .contacts_page-big_person-department{
+            font-weight:400;
+            font-size:18px;
+            line-height:150%;
+            color:#101820;
+        }
+        .contacts_page-big_person-data{
+            min-height:20%;
+            padding:20px 40px;
+            background:white;
+            flex:1;
+            align-items:self-start;
+            justify-content:end;
+            display:flex;
+            flex-direction:column;
+        }
+        .contacts_page-big_person-contacts > img{
+            margin-right:34px;
+            width:56px;
+            height:56px;
+        }
+        .contacts_page-big_person-contacts{
+            display:inline-flex;
+            align-items:center;
+            grid-area:contacts;
+            background:#F5F5F5;
+            padding:56px;
+            padding-top:24px;
+            border-radius:0 0 30px 30px;
+        }
+        .contacts_page-big_person-contact p{
+            font-weight:400;
+            font-size:14px;
+            line-height:20px;
+            color:#101820;
+        }
+        .contacts_page-big_person-contact img{
+            width:40px;
+            height:40px;
+            margin-right:30px;
+        }
+        .contacts_page-big_person-contact a{
+            font-weight:600;
+            font-size:32px;
+            line-height:46px;
+            color:#101820;
+            text-decoration:none;
+            white-space:nowrap;
+        }
+        .contacts_page-big_person-contact > a{
+            display:flex;
+        }
+        .contacts_page-big_person-cont{
+            display:grid;
+            margin-bottom:48px;
+            grid-template-areas:"person_card title" "person_card subtitle" "person_card contacts";
+            grid-template-rows:auto 1fr auto;
+        }
+        .contacts_page-big_person-card .contacts_page-pc_picture{
+            background:#101820;
+            width:auto;
+            object-fit:cover;
+        }
+        .contacts_page-big_person-card .contacts_page-mobile_picture{
+            display:none;
+        }
+        .contacts_page-big_person-card{
+            display:inline-flex;
+            flex-direction:column;
+            justify-content:space-between;
+            margin-right:20px;
+            box-shadow:2px 2px 10px 2px rgba(0,0,0,0.05);
+            border-radius:30px;
+            min-width:360px;
+            max-width:360px;
+            grid-area:person_card;
+            background:white;
+            overflow:hidden;
+        }
+        .callback-resulte_title{
+            margin-bottom:16px;
+            font-size:32px;
+            font-weight:600;
+            color:#101820;
+        }
+        .callback-resulte_subtitle{
+            font-size:18px;
+            font-weight:400;
+            margin-bottom:31px;
+            color:#101820;
+        }
+        .callback-result_users_photos > img:nth-child(2){
+            margin-left:-26px;
+            z-index:-1;
+        }
+        .callback-result_users_photos > img{
+            border:2px solid white;
+            border-radius:50%;
+            width:56px;
+            height:56px;
+        }
+        .callback-result_users_photos{
+            display:inline-flex;
+            justify-content:center;
+            width:100%;
+            margin:20px 0;
+        }
+        .callback-result_cont{
+            position:fixed;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            background:white;
+            box-shadow:2px 2px 20px rgba(16,24,32,0.05);
+            padding:25px;
+            border-radius:35px;
+            z-index:1000;
+            text-align:center;
+            max-width:380px;
+        }
+        .callback-result_close img{
+            cursor:pointer;
+        }
+        .callback-result_close{
+            display:flex;
+            width:100%;
+            justify-content:flex-end;
+        }
+        @media(max-width:860px){
+            p.contacts_page-big_person-title{
+                background:white;
+                padding:16px 0;
+                font-size:24px;
+                line-height:30px;
+                font-weight:500;
+            }
+            p.contacts_page-big_person-subtitle{
+                background:white;
+                padding:0;
+                font-size:16px;
+                line-height:24px;
+            }
+            p.contacts_page-big_person-name{
+                font-size:20px;
+                line-height:30px;
+                font-weight:500;
+            }
+            p.contacts_page-big_person-department{
+                color:#A9AAAA;
+                font-size:16px;
+                line-height:24px;
+                font-weight:500;
+            }
+            img.contacts_page-pc_picture{
+                display:none;
+            }
+            h1{
+                font-size:40px;
+                line-height:52px;
+                margin-top:56px;
+                margin-bottom:30px;
+            }
+            a.contacts_page-big_person-name{
+                margin-bottom:8px;
+                font-size:20px;
+                line-height:30px;
+            }
+            .pc{
+                display:none;
+            }
+            .mobile{
+                display:inline;
+            }
+            .contacts_page-text_title h2{
+                font-size:25px;
+                line-height:32px;
+            }
+            .contacts_page-text_title{
+                margin-top: 80px;
+                margin-bottom: 40px;
+            }
+            .contacts_page-text_subtitle{
+                font-size:18px;
+                line-height:28px;
+                margin-bottom:16px;
+                max-width:unset;
+            }
+            .contacts_page-slider_item.swiper-slide{
+                width:90%;
+                height:auto;
+            }
+            .contacts_page-slider_item{
+                width:328px;
+                height:271px;
+            }
+            .contacts_page-slider_block{
+                margin-top:42px;
+            }
+            .contacts_page-big_person-link{
+                display:none;
+            }
+            .contacts_page-big_person-line{
+                border-bottom:1px solid #D9D9D9;
+            }
+            .contacts_page-big_person-data{
+                padding:16px 0;
+            }
+            .contacts_page-big_person-contacts{
+                background:white;
+                padding:0;
+                padding-top:24px;
+                align-items:flex-start;
+            }
+            .contacts_page-big_person-contact img{
+                margin-right:24px;
+            }
+            .contacts_page-big_person-contact a{
+                margin-bottom:8px;
+            }
+            .contacts_page-big_person-cont{
+                grid-template-areas:"title" "subtitle" "person_card" "contacts";
+                margin-bottom:40px;
+                padding-bottom:40px;
+            }
+            .contacts_page-big_person-card .contacts_page-mobile_picture{
+                display:block;
+                width:88px;
+                height:88px;
+                margin-top:32px;
+            }
+            .contacts_page-big_person-card{
+                box-shadow:none;
+                border-radius:0;
+                min-width:unset;
+            }
+        }@media(max-width:500px){
+            .contacts_page-big_person-contacts > img{
+                margin-right:6vw;
+                width:12vw;
+                height:12vw;
+            }
+            .contacts_page-big_person-contact a{
+                font-size:6vw;
+            }
+        }
+
+        /* End */
+
+
+        /* Start:/local/templates/kursi/components/bitrix/form.result.new/callback_form/style.css?16905244521956*/
+        .callback-form_field_input > input, .callback-form_field_input > textarea {
+            border: 1px solid #D9D9D9;
+            border-radius: 8px;
+            outline: none;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            resize: vertical;
+            width: 100%;
+            padding: 16px 10px;
+        }
+
+        .callback-form_field_input.input_error > input, .callback-form_field_input.input_error > textarea {
+            /* background: #FFF5F5; */
+            border: 1px solid #E75050;
+        }
+
+        .callback-form_field_input > input:focus, .callback-form_field_input > textarea:focus {
+            background: #F9FCFF;
+            border: 1px solid #469ED7;
+        }
+
+
+        .callback-form_field_input > *.hasError {
+            border: 1px solid #E75050;
+            margin-bottom: 5px;
+        }
+
+        .input_error_cont {
+            color: #E75050;
+            font-size: 12px;
+            line-height: 15px;
+            font-weight: 400;
+        }
+
+        .callback-form_field_title {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .callback-form_field_cont {
+            margin-bottom: 24px;
+        }
+
+        .callback-form_desk{
+            /* display: none; */
+        }
+
+        .callback-form_title h3 {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 46px;
+            color: #101820;
+            margin-bottom: 40px;
+        }
+
+        .callback-cont {
+            margin-top: 120px;
+            max-width: 50%;
+        }
+
+        .callback-form_subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 150%;
+            color: #101820;
+            margin-bottom: 32px;
+            margin-top: 24px;
+        }
+
+        .callback-result_cont_bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.25);
+            z-index: 10000;
+        }
+
+        @media(max-width:860px) {
+            .callback-cont{
+                margin-top: 56px;
+                max-width: unset;
+            }
+
+            .callback-form_title h3 {
+                font-size: 24px;
+                line-height: 32px;
+                margin-bottom: 24px;
+            }
+
+            .callback-form_subtitle {
+                font-size: 18px;
+                line-height: 28px;
+                margin-bottom: 40px;
+            }
+
+            .custom_checkbox .custom_label {
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+            .callback-form_buttons .blue_button_template {
+                width: 100%;
+            }
+        }
+
+        /* End */
+
+
+        /* Start:/local/components/sigodinweb/universalrating/templates/.default/style.css?1690524451757*/
+        .universalrating-title {
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 46px;
+            color: #101820;
+        }
+
+        .universalrating-total {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            color: #A9AAAA;
+            margin-bottom: 100px;
+        }
+
+        .universalrating-total #half-stars-example .rating-group {
+            margin-bottom: 20px;
+        }
+
+        .universalrating {
+            margin-top: 56px;
+        }
+
+        @media(max-width: 860px){
+            .universalrating-title {
+                font-size: 24px;
+                line-height: 32px;
+            }
+
+            .universalrating-total {
+                margin-bottom: 80px;
+                /* font-size: 16px;
+                line-height: 24px; */
+            }
+
+            .html_editor_body_cont .universalrating-total p,
+            .universalrating-total p{
+                /* margin-top: 16px; */
+            }
+        }
+    </style>
 
 @endsection
 
 @section('content')
 
     <div class="content max-width " onclick="contentCloseBlur(this)">
-        <h1>
-            Контакты
-        </h1>
+        <h1>Контакты</h1>
 
         <div class="contacts_page-big_person-cont contacts_page-big_person-line">
             <div class="contacts_page-big_person-card">
-                <img src="/upload/iblock/007/2pxr25s6amljah9zqkeo6l1h8trjyate/DSCF6172-1-_1_.webp" class="contacts_page-pc_picture" alt="Валерия Левина" title="Валерия Левина">
-                <img src="/upload/iblock/470/ufwcfv6l50gq6mo8ho7wst2d7wbov3p5/kruzhochki150_10.png" class="contacts_page-mobile_picture" alt="Валерия Левина" title="Валерия Левина">
+                <img src="/images/contacts/DSCF6172-1-_1_.webp" class="contacts_page-pc_picture" alt="Валерия Левина" title="Валерия Левина">
+                <img src="/images/contacts/kruzhochki150_10.png" class="contacts_page-mobile_picture" alt="Валерия Левина" title="Валерия Левина">
                 <div class="contacts_page-big_person-data">
                     <a class="contacts_page-big_person-name" href="/about/team/valeriya-levina/">
                         Валерия Левина			</a>
@@ -35,11 +576,11 @@
             <div class="contacts_page-big_person-contacts">
                 <div class="contacts_page-big_person-contact">
 
-                    <a href="https://vk.com/kursyru" target="_blank" rel="nofollow"><img src="/local/templates/kursi/img/social_icons/vk_black.svg" alt="VK Курсы.ру" title="VK Курсы.ру"></a>
+                    <a href="https://vk.com/kursyru" target="_blank" rel="nofollow"><img src="/images/contacts/vk_black.svg" alt="VK Курсы.ру" title="VK Курсы.ру"></a>
                 </div>
                 <div class="contacts_page-big_person-contact">
 
-                    <a href="https://t.me/kursy_ru_support_bot" target="_blank" rel="nofollow"><img src="/local/templates/kursi/img/social_icons/tg_black.svg" alt="Telegram Курсы.ру" title="Telegram Курсы.ру"></a>
+                    <a href="https://t.me/kursy_ru_support_bot" target="_blank" rel="nofollow"><img src="/images/contacts/tg_black.svg" alt="Telegram Курсы.ру" title="Telegram Курсы.ру"></a>
                 </div>
             </div>
             <script type="application/ld+json">
@@ -63,8 +604,8 @@
 
         <div class="contacts_page-big_person-cont">
             <div class="contacts_page-big_person-card">
-                <img src="/upload/iblock/408/gw2bju94un04xzpoccatozxs5j7pqip8/Mihail-_1_.webp" class="contacts_page-pc_picture" alt="Михаил Парфенов" title="Михаил Парфенов">
-                <img src="/upload/iblock/a8e/7bwtgjj816mb5sf2xaxxh9kp6jvqlhum/kruzhochki150_Montazhnaya_oblast_1.webp" class="contacts_page-mobile_picture" alt="Михаил Парфенов" title="Михаил Парфенов">
+                <img src="/images/contacts/Mihail-_1_.webp" class="contacts_page-pc_picture" alt="Михаил Парфенов" title="Михаил Парфенов">
+                <img src="/images/contacts/kruzhochki150_Montazhnaya_oblast_1.webp" class="contacts_page-mobile_picture" alt="Михаил Парфенов" title="Михаил Парфенов">
                 <div class="contacts_page-big_person-data">
                     <a class="contacts_page-big_person-name" href="/about/team/mikhail-parfenov">
                         Михаил Парфенов			</a>
@@ -78,8 +619,8 @@
             <p class="contacts_page-big_person-title">Телефон</p>
             <p class="contacts_page-big_person-subtitle">Бесплатный звонок и консультация по горячей линии</p>
             <div class="contacts_page-big_person-contacts">
-                <img src="/local/templates/kursi/img/social_icons/ring_phone_black.svg" class="pc" alt="Телефон Курсы.ру" title="Телефон Курсы.ру">
-                <img src="/local/templates/kursi/img/social_icons/ring_phone_blue.svg" class="mobile" alt="Телефон Курсы.ру" title="Телефон Курсы.ру">
+                <img src="/images/contacts/ring_phone_black.svg" class="pc" alt="Телефон Курсы.ру" title="Телефон Курсы.ру">
+                <img src="/images/contacts/ring_phone_blue.svg" class="mobile" alt="Телефон Курсы.ру" title="Телефон Курсы.ру">
                 <div class="contacts_page-big_person-contact">
                     <a href="tel:+7 (804) 700-20-77">+7 (804) 700-20-77</a>
                     <p>горячая линия</p>
@@ -106,7 +647,8 @@
 
         <div class="callback-result_form-cont" id="callback_form_1cbb8df9d0a703ba07e0">
 
-            <form name="backcall" action="/contacts/" method="POST" enctype="multipart/form-data"><input type="hidden" name="sessid" id="sessid" value="ae0025ed83b4bca96efc4fd6a0026662"><input type="hidden" name="WEB_FORM_ID" value="3">
+            <form name="backcall" action="/contacts/" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="WEB_FORM_ID" value="3">
 
                 <div class="callback-cont">
                     <div class="callback-form_title">
@@ -140,7 +682,7 @@
                                 <div class="callback-agreement_cont custom_checkbox">
                                     <style media="screen">
                                         .custom_checkbox .custom_label:before {
-                                            background-image: url("/local/templates/kursi/img/checkbox_arrow.svg");
+                                            background-image: url("/images/contacts/checkbox_arrow.svg");
                                         }
                                     </style>
                                     <input type="checkbox" checked="" id="28" name="form_checkbox_AGREEMENT[]" value="28"><label for="28"> Я даю согласие на <a href="/rules/" target="_blank">обработку персональных данных</a></label>						<!-- <label class="callback-agreement_text custom_label" for="28">
@@ -162,7 +704,7 @@
 
         <div class="callback-result_form-cont" id="callback_form_ed47af957f23c4881ee3">
 
-            <form name="backquestion" action="/contacts/" method="POST" enctype="multipart/form-data"><input type="hidden" name="sessid" id="sessid_1" value="ae0025ed83b4bca96efc4fd6a0026662"><input type="hidden" name="WEB_FORM_ID" value="4">
+            <form name="backquestion" action="/contacts/" method="POST" enctype="multipart/form-data">
 
                 <div class="callback-cont">
                     <div class="callback-form_title">
@@ -203,7 +745,7 @@
                                 <div class="callback-agreement_cont custom_checkbox">
                                     <style media="screen">
                                         .custom_checkbox .custom_label:before {
-                                            background-image: url("/local/templates/kursi/img/checkbox_arrow.svg");
+                                            background-image: url("/images/contacts/checkbox_arrow.svg");
                                         }
                                     </style>
                                     <input type="checkbox" checked="" id="32" name="form_checkbox_AGREEMENT[]" value="32"><label for="32"> Я даю согласие на <a href="/rules/" target="_blank">обработку персональных данных</a></label>						<!-- <label class="callback-agreement_text custom_label" for="32">
@@ -247,7 +789,10 @@
 
                 <div class="bx-yandex-view-layout">
                     <div class="bx-yandex-view-map">
-                        <div id="BX_YMAP_MAP_zKXRla" class="bx-yandex-map" style="height: 500px; width: 100%;max-width: 100%;"><ymaps class="ymaps-map ymaps-i-ua_js_yes" style="z-index: 0; width: 1116px; height: 500px;"><ymaps class="ymaps-glass-pane ymaps-events-pane" style="z-index: 500; position: absolute; width: 1116px; height: 500px; left: 0px; top: 0px; user-select: none; transform: translate3d(0px, 0px, 0px) scale(1, 1); cursor: url(&quot;https://api-maps.yandex.ru/2.0/./images/ef50ac9e93aaebe3299791c79f277f8e.cur&quot;) 16 16, url(&quot;https://api-maps.yandex.ru/2.0/./images/ef50ac9e93aaebe3299791c79f277f8e.cur&quot;), move;" unselectable="on"></ymaps><ymaps class="ymaps-layers-pane" style="z-index: 100; position: absolute; left: 558px; top: 250px;"><ymaps style="z-index: 150; position: absolute; transform: translate3d(0px, 0px, 0px) scale(1, 1);"><canvas style="position: absolute; width: 1372px; height: 756px; left: -686px; top: -378px;" height="756" width="1372"></canvas></ymaps></ymaps><ymaps class="ymaps-copyrights-pane" style="z-index: 1000; position: absolute;"><ymaps><ymaps class="ymaps-copyrights-logo"><ymaps class="ymaps-logotype-div"><a target="_blank" class="ymaps-logo-link ymaps-logo-link-ru" href="https://yandex.ru/maps/?origin=jsapi&amp;ll=82.920664,55.058997&amp;z=17&amp;l="><ymaps class="ymaps-logo-link-wrap"></ymaps></a></ymaps></ymaps><ymaps class="ymaps-copyrights-legend"><ymaps class="ymaps-copyright-legend-container"><ymaps class="ymaps-copyright-legend"><ymaps class="ymaps-copyright-legend-element ymaps-copyright-legend-element-black"><ymaps style="display: inline;">© Яндекс</ymaps></ymaps></ymaps><ymaps class="ymaps-copyright-agreement ymaps-copyright-agreement-black"><a href="https://yandex.ru/legal/maps_termsofuse/?lang=ru" target="_blank">Условия использования</a></ymaps></ymaps></ymaps></ymaps></ymaps><ymaps style="z-index: 850; height: 0px; width: 0px; bottom: 0px; left: 0px; position: absolute;"><ymaps style="bottom: 5px; left: 140px; position: absolute;"><iframe src="https://api-maps.yandex.ru/services/inception/?lang=ru_RU&amp;iframe_id=id_1695381927539211035&amp;api_version=2.0&amp;url=%2Fmap&amp;data=%7B%22mapState%22%3A%7B%22origin%22%3A%22jsapi_2_0%22%2C%22source%22%3A%22api-maps%22%2C%22from%22%3A%22api-maps%22%2C%22host%22%3A%22kursy.ru%22%7D%7D" width="113" height="24" scrolling="no" frameborder="0" style="overflow: hidden;"></iframe></ymaps></ymaps><ymaps class="ymaps-controls-pane" style="z-index: 800; position: static;"><ymaps class="ymaps-controls-righttop" style="z-index: 800;"><ymaps style="top: 5px; right: 5px; position: absolute;"><ymaps><ymaps class="ymaps-b-select ymaps-b-select_control_listbox" style=""><ymaps class="ymaps-b-form-button ymaps-b-form-button_theme_grey-no-transparent-26 ymaps-b-form-button_height_26 ymaps-i-bem" role="button" unselectable="on" style="user-select: none;"><ymaps class="ymaps-b-form-button__left"></ymaps><ymaps class="ymaps-b-form-button__content"><ymaps class="ymaps-b-form-button__text"><ymaps id="id_169538192753921102_0" unselectable="on" style="user-select: none;"><ymaps><ymaps class="ymaps-b-select__title" style="display: block; width: 62px;">Схема</ymaps><ymaps class="ymaps-b-select__arrow" title="Развернуть"></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps><ymaps class="ymaps-b-popupa ymaps-b-popupa_layout_yes ymaps-b-popupa_theme_white ymaps-i-bem"><ymaps class="ymaps-b-popupa__shadow"></ymaps><ymaps class="ymaps-b-popupa__body ymaps-b-popupa__body_theme_white"><ymaps class="ymaps-b-popupa__ie-gap">&nbsp;</ymaps><ymaps class="ymaps-b-listbox-panel" style=""><ymaps><ymaps class="ymaps-group"><ymaps><ymaps></ymaps><ymaps><ymaps class="ymaps-b-listbox-panel__item ymaps-b-listbox-panel__item_state_current"><ymaps class="ymaps-b-listbox-panel__item-link" unselectable="on" style="user-select: none;">Схема</ymaps><ymaps class="ymaps-b-listbox-panel__item-flag"></ymaps></ymaps></ymaps></ymaps><ymaps><ymaps></ymaps><ymaps><ymaps class="ymaps-b-listbox-panel__item "><ymaps class="ymaps-b-listbox-panel__item-link" unselectable="on" style="user-select: none;">Спутник</ymaps><ymaps class="ymaps-b-listbox-panel__item-flag"></ymaps></ymaps></ymaps></ymaps><ymaps><ymaps></ymaps><ymaps><ymaps class="ymaps-b-listbox-panel__item "><ymaps class="ymaps-b-listbox-panel__item-link" unselectable="on" style="user-select: none;">Гибрид</ymaps><ymaps class="ymaps-b-listbox-panel__item-flag"></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps><ymaps class="ymaps-controls-lefttop" style="z-index: 800;"><ymaps class="ymaps-b-zoom_hints-pos_right" style="top: 75px; left: 5px; position: absolute;"><ymaps><ymaps class="ymaps-b-zoom"><ymaps class="ymaps-b-zoom__button ymaps-b-zoom__button_type_minus" unselectable="on" style="user-select: none;"><ymaps class="ymaps-b-form-button ymaps-b-form-button_size_sm ymaps-b-form-button_theme_grey-sm ymaps-b-form-button_height_26 ymaps-i-bem" role="button"><ymaps class="ymaps-b-form-button__left"></ymaps><ymaps class="ymaps-b-form-button__content"><ymaps class="ymaps-b-form-button__text"><ymaps class="ymaps-b-zoom__sprite"></ymaps></ymaps></ymaps></ymaps></ymaps><ymaps class="ymaps-b-zoom__scale" style="height: 132.667px; user-select: none;" unselectable="on"><ymaps class="ymaps-b-zoom__scale-bg"></ymaps><ymaps class="ymaps-b-zoom__mark" style="top: 122px;"><ymaps class="ymaps-b-zoom__mark-inner"><ymaps class="ymaps-b-zoom__sprite"></ymaps></ymaps></ymaps><ymaps class="ymaps-b-hint-placeholder"><ymaps><ymaps><ymaps class="ymaps-b-zoom__hint" style="top: 17px;"><ymaps class="ymaps-b-zoom__hint-left"><ymaps class="ymaps-b-zoom__sprite"></ymaps></ymaps><ymaps class="ymaps-b-zoom__hint-content"><ymaps class="ymaps-b-zoom__hint-text">мир</ymaps></ymaps><ymaps class="ymaps-b-zoom__hint-right"><ymaps class="ymaps-b-zoom__sprite"></ymaps></ymaps></ymaps></ymaps></ymaps><ymaps><ymaps><ymaps class="ymaps-b-zoom__hint" style="top: 38px;"><ymaps class="ymaps-b-zoom__hint-left"><ymaps class="ymaps-b-zoom__sprite"></ymaps></ymaps><ymaps class="ymaps-b-zoom__hint-content"><ymaps class="ymaps-b-zoom__hint-text">страна</ymaps></ymaps><ymaps class="ymaps-b-zoom__hint-right"><ymaps class="ymaps-b-zoom__sprite"></ymaps></ymaps></ymaps></ymaps></ymaps><ymaps><ymaps><ymaps class="ymaps-b-zoom__hint" style="top: 66px;"><ymaps class="ymaps-b-zoom__hint-left"><ymaps class="ymaps-b-zoom__sprite"></ymaps></ymaps><ymaps class="ymaps-b-zoom__hint-content"><ymaps class="ymaps-b-zoom__hint-text">город</ymaps></ymaps><ymaps class="ymaps-b-zoom__hint-right"><ymaps class="ymaps-b-zoom__sprite"></ymaps></ymaps></ymaps></ymaps></ymaps><ymaps><ymaps><ymaps class="ymaps-b-zoom__hint" style="top: 94px;"><ymaps class="ymaps-b-zoom__hint-left"><ymaps class="ymaps-b-zoom__sprite"></ymaps></ymaps><ymaps class="ymaps-b-zoom__hint-content"><ymaps class="ymaps-b-zoom__hint-text">улица</ymaps></ymaps><ymaps class="ymaps-b-zoom__hint-right"><ymaps class="ymaps-b-zoom__sprite"></ymaps></ymaps></ymaps></ymaps></ymaps><ymaps><ymaps><ymaps class="ymaps-b-zoom__hint" style="top: 115px;"><ymaps class="ymaps-b-zoom__hint-left"><ymaps class="ymaps-b-zoom__sprite"></ymaps></ymaps><ymaps class="ymaps-b-zoom__hint-content"><ymaps class="ymaps-b-zoom__hint-text">дом</ymaps></ymaps><ymaps class="ymaps-b-zoom__hint-right"><ymaps class="ymaps-b-zoom__sprite"></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps><ymaps class="ymaps-b-zoom__button ymaps-b-zoom__button_type_plus" unselectable="on" style="user-select: none;"><ymaps class="ymaps-b-form-button ymaps-b-form-button_size_sm ymaps-b-form-button_theme_grey-sm ymaps-b-form-button_height_26 ymaps-i-bem" role="button"><ymaps class="ymaps-b-form-button__left"></ymaps><ymaps class="ymaps-b-form-button__content"><ymaps class="ymaps-b-form-button__text"><ymaps class="ymaps-b-zoom__sprite"></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps><ymaps class="ymaps-controls-leftbottom" style="z-index: 800;"><ymaps class="ymaps-mini-map ymaps-mini-map_state_expanded" style="bottom: 5px; left: 5px; position: absolute;"><ymaps class="ymaps-map" style="z-index: 0; position: relative; display: block; width: 128px; height: 90px; cursor: url(&quot;https://api-maps.yandex.ru/2.0/./images/ef50ac9e93aaebe3299791c79f277f8e.cur&quot;) 16 16, url(&quot;https://api-maps.yandex.ru/2.0/./images/ef50ac9e93aaebe3299791c79f277f8e.cur&quot;), move;"><ymaps style="z-index: 0; position: absolute; left: 64px; top: 45px;"><ymaps style="z-index: 200; position: absolute; transform: translate3d(0px, 0px, 0px) scale(1, 1);"><canvas style="position: absolute; width: 128px; height: 90px; left: -64px; top: -45px;" height="90" width="128"></canvas></ymaps></ymaps><ymaps class="ymaps-mini-map-frame" style="z-index: 1; position: absolute; left: 47px; top: 37px; width: 37px; height: 18px; display: block;"><ymaps class="ymaps-mini-map-frame-background"></ymaps></ymaps></ymaps><ymaps class="ymaps-mini-map__switcher" title="Скрыть обзорную карту"></ymaps></ymaps></ymaps><ymaps class="ymaps-controls-rightbottom" style="z-index: 800;"><ymaps style="bottom: 50px; right: 7px; position: absolute;"><ymaps><ymaps id="id_169538192753921102_1"><ymaps><ymaps class="ymaps-scaleline-control" style="width:73px"><ymaps class="ymaps-scaleline-label">50&nbsp;м</ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps><ymaps class="ymaps-overlay-stepwise-pane" style="z-index: 600; position: absolute; left: 558px; top: 250px;"><ymaps class="ymaps-point-overlay" unselectable="on" style="position: absolute; height: 0px; width: 0px; user-select: none; left: 0px; top: 0px; z-index: 650;"><ymaps><ymaps class="ymaps-image-with-content" style="position: absolute; left: -10px; top: -40px; width: 37px; height: 42px; background-position: 0px 0px; background-size: 37px 42px; background-image: url(&quot;https://api-maps.yandex.ru/2.0/./images/2c3d90d4e522c1f62b6cf3e59f7a877d.png&quot;);"><ymaps class="ymaps-image-with-content-content" style="font: 13px Arial,sans-serif;position: absolute;text-align: center;left: 6px;top: 6px;width: 16px;height: 16px;"><ymaps id="id_169538192753921102_2"><ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></ymaps></div>	</div>
+                        <div id="BX_YMAP_MAP_zKXRla" class="bx-yandex-map" style="height: 500px; width: 100%;max-width: 100%;">
+                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab4f0a709ab159787fe3e84745d8674caef1ae301291c5ec1ad08f749ccc09398&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -260,22 +805,22 @@
         <div class="contacts_page-slider_block swiper_styles-slider swiper-initialized swiper-horizontal swiper-backface-hidden">
             <div class="swiper_styles-wraper swiper-wrapper" id="swiper-wrapper-3fbc69332053100c5" aria-live="polite">
                 <div class="contacts_page-slider_item swiper-slide swiper-slide-active" role="group" aria-label="1 / 6">
-                    <img src="/upload/iblock/38d/uoxkx40hzrt2weiuib2wxxjx19prlkbm/DSCF2801-1.png" alt="">
+                    <img src="/images/contacts/DSCF2801-1.png" alt="">
                 </div>
                 <div class="contacts_page-slider_item swiper-slide swiper-slide-next" role="group" aria-label="2 / 6">
-                    <img src="/upload/iblock/fe0/9264wvt7mcm9nlx6w5dqali0xliv15z0/DSCF70832.jpg" alt="">
+                    <img src="/images/contacts/DSCF70832.jpg" alt="">
                 </div>
                 <div class="contacts_page-slider_item swiper-slide" role="group" aria-label="3 / 6">
-                    <img src="/upload/iblock/880/nsdlo3tsp427gefvtoe5ysw4kz928zp5/DSCF7135-_1_.jpg" alt="">
+                    <img src="/images/contacts/DSCF7135-_1_.jpg" alt="">
                 </div>
                 <div class="contacts_page-slider_item swiper-slide" role="group" aria-label="4 / 6">
-                    <img src="/upload/iblock/140/xxsbh2mjhia0ym776c2kxulfc59k37tf/DSCF7088-_2_.jpg" alt="">
+                    <img src="/images/contacts/DSCF7088-_2_.jpg" alt="">
                 </div>
                 <div class="contacts_page-slider_item swiper-slide" role="group" aria-label="5 / 6">
-                    <img src="/upload/iblock/da3/fqr65rcx6y5agkcbx7dqafvqn1vc53dm/DSCF7127-_2_.jpg" alt="">
+                    <img src="/images/contacts/DSCF7127-_2_.jpg" alt="">
                 </div>
                 <div class="contacts_page-slider_item swiper-slide" role="group" aria-label="6 / 6">
-                    <img src="/upload/iblock/0a4/kgwq41qi3rzv8u433olmv79hof59125t/DSCF7081-_3_.jpg" alt="">
+                    <img src="/images/contacts/DSCF7081-_3_.jpg" alt="">
                 </div>
             </div>
 
@@ -285,13 +830,15 @@
                 <div class="contacts_page-slider_block-button-next swiper_styles-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-3fbc69332053100c5" aria-disabled="false"></div>
             </div>
             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+
+        @include('site.v3.modules.5-rating.rating', ['entityType' => 'static-page', 'page' => $page])
+        <?php /*
         <div class="universalrating" id="urating_961d4cda96153311ef8a">
-            <div class="universalrating-title">
-                Информация была полезна?  </div>
+            <div class="universalrating-title">Информация была полезна?</div>
             <div class="universalrating-form">
 
 
-                <form class="" action="/local/components/sigodinweb/universalrating/ajax.php" method="post" onchange="onSubmit(event);" onsubmit="return onSubmit(event);">
+                <form id="ratingForm" action="" method="post">
 
                     <style media="screen">
 
@@ -315,42 +862,42 @@
                         }
 
                         #half-stars-example .star-right{
-                            background-image: url(/local/templates/kursi/img/rating/RightBlue.svg);
+                            background-image: url(/images/contacts/RightBlue.svg);
                             color: orange;
                         }
 
                         #half-stars-example .rating__input:checked ~ .rating__label .star-right {
-                            background-image: url(/local/templates/kursi/img/rating/RightGray.svg);
+                            background-image: url(/images/contacts/RightGray.svg);
                             color: #ddd;
                         }
 
                         #half-stars-example.hovered .rating-group:hover .rating__label .star-right{
-                            background-image: url(/local/templates/kursi/img/rating/RightBlue.svg);
+                            background-image: url(/images/contacts/RightBlue.svg);
                             color: orange;
                         }
 
                         #half-stars-example.hovered .rating__input:hover ~ .rating__label .star-right{
-                            background-image: url(/local/templates/kursi/img/rating/RightGray.svg);
+                            background-image: url(/images/contacts/RightGray.svg);
                             color: #ddd;
                         }
 
                         #half-stars-example .star-left{
-                            background-image: url(/local/templates/kursi/img/rating/LeftBlue.svg);
+                            background-image: url(/images/contacts/LeftBlue.svg);
                             color: orange;
                         }
 
                         #half-stars-example .rating__input:checked ~ .rating__label .star-left {
-                            background-image: url(/local/templates/kursi/img/rating/LeftGray.svg);
+                            background-image: url(/images/contacts/LeftGray.svg);
                             color: #ddd;
                         }
 
                         #half-stars-example.hovered .rating-group:hover .rating__label .star-left{
-                            background-image: url(/local/templates/kursi/img/rating/LeftBlue.svg);
+                            background-image: url(/images/contacts/LeftBlue.svg);
                             color: orange;
                         }
 
                         #half-stars-example.hovered .rating__input:hover ~ .rating__label .star-left{
-                            background-image: url(/local/templates/kursi/img/rating/LeftGray.svg);
+                            background-image: url(/images/contacts/LeftGray.svg);
                             color: #ddd;
                         }
 
@@ -372,12 +919,12 @@
                             background-repeat: no-repeat;
                         }
                         .star-left {
-                            background-image: url(/local/templates/kursi/img/rating/LeftGray.svg);
+                            background-image: url(/images/contacts/LeftGray.svg);
                             background-position: right;
                         }
 
                         .star-right {
-                            background-image: url(/local/templates/kursi/img/rating/RightGray.svg);
+                            background-image: url(/images/contacts/RightGray.svg);
                             background-position: left;
                             margin-right: 24px;
                         }
@@ -460,13 +1007,43 @@
                 </p>
             </div>
         </div>
-
+*/ ?>
     </div>
 @endsection
 
 
 @section('additional-scripts')
     @parent
+
+    <script>
+        function contentCloseBlur(elem) {
+            //if (elem.classList.contains("blur_bg")) {
+
+                Object.values(window.openedFormsCallbacks).forEach((e) => {
+                    e();
+                });
+            //}
+        }
+    </script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        addEventListener("load", () => {
+            const swiper_contacts_slider = new Swiper('.contacts_page-slider_block', {
+                speed: 400,
+                slidesPerView: "auto",
+                navigation: {
+                    nextEl: '.contacts_page-slider_block-button-next',
+                    prevEl: '.contacts_page-slider_block-button-prev',
+                },
+                pagination: {
+                    el: ".contacts_page-slider_block-pagination",
+                    type: "fraction",
+                },
+            });
+        });
+    </script>
 @endsection
 
 @section('custom-structured-data')
