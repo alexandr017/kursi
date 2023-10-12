@@ -831,7 +831,7 @@
             </div>
             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
 
-        @include('site.v3.modules.5-rating.rating', ['entityType' => 'static-page', 'page' => $page])
+        @include('site.v3.modules.5-rating.rating', ['entityId' => $page->id, 'entityType' => 'contacts', 'ratingCount' => $page->getRatingsCount(),'ratingValue' => $page->getRatingsValue()])
         <?php /*
         <div class="universalrating" id="urating_961d4cda96153311ef8a">
             <div class="universalrating-title">Информация была полезна?</div>

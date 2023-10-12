@@ -207,7 +207,7 @@
                 </div>
             </div>
 
-            @include('site.v3.templates.employee.employee_rating_stars', ['employee' => $employee])
+            @include('site.v3.modules.5-rating.rating', ['entityId' => $employee->id, 'entityType' => 'employee', 'ratingCount' => $employee->getRatingsCount(),'ratingValue' => $employee->getRatingsValue()])
 
         </div>
 

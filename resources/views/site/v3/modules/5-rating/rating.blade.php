@@ -1,9 +1,9 @@
-@if(isset($entityType))
+@if(isset($entityType) && isset($entityId))
     @push('styles')
         <link href="{{ Vite::asset('resources/css/listing/rating_stars.css') }}" rel="stylesheet">
     @endpush
 
-    <div class="universalrating" id="ratingForm" data-entity-type="{{$entityType}}" data-entity-id="{{$page->id}}">
+    <div class="universalrating" id="ratingForm" data-entity-type="{{$entityType}}" data-entity-id="{{$entityId}}">
         <div class="universalrating-title">Информация была полезна?</div>
 
         <div class="universalrating-form">
@@ -80,7 +80,7 @@
         </div>
         <div class="universalrating-total">
             <p>
-                <span class="quantity">{{$page->rating_count}}</span> оценок, среднее <span class="rating">{{$page->rating_value}}</span> из 5
+                <span class="quantity">{{$ratingCount}}</span> оценок, среднее <span class="rating">{{$ratingValue}}</span> из 5
             </p>
         </div>
     </div>
@@ -89,6 +89,9 @@
 @section('additional-scripts')
 
 <script>
+    let entityId = @json($entityId);
+    let entityType = @json($entityType);
+
     const ratingGroup = document.querySelector('#half-stars-example .rating-group');
     const ratingLabels = ratingGroup.querySelectorAll('.rating__label');
 
@@ -119,12 +122,14 @@
                 'X-CSRF-TOKEN': csrfToken,
             },
             body: JSON.stringify({
-                rating_value: rate
+                rating_value: rate,
+                entity_id: entityId,
+                entity_type: entityType,
             }),
         })
             .then(response => response.text())
             .then(data => {
-                let block = document.getElementById(`rating_${listingId}`)
+                let block = document.getElementById('ratingForm')
                 block.innerHTML = data;
 
                 const labels = document.querySelectorAll('.rating__label')

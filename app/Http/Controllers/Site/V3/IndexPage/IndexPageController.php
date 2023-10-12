@@ -22,7 +22,8 @@ class IndexPageController extends Controller
             'withPromotionCourses' => $data->withPromotionCourses,
             'reviews' => $data->reviews,
             'posts' => $data->posts,
-            'editLink' => $editLink
+            'editLink' => $editLink,
+            'page' => $data->page
             ]);
     }
 }
