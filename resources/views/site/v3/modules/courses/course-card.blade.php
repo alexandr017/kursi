@@ -11,7 +11,7 @@
                 Длительность:
             </p>
             <p class="kurse_card-length_value">
-                 {{ $course->duration}} {{__('courses_duration_types.' . $course->duration_type)}}
+                 {{ $course->duration}} {{durationWord($course->duration_type, $course->duration) }}
             </p>
         </div>
         <div class="kurse_card-school">

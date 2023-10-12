@@ -58,3 +58,53 @@ function getCanonicalPrev(){
     }
     return null;
 }
+
+if (! function_exists('wordByCount')) {
+    /**
+     * @param  int num
+     * @param  array words
+     * @return string
+     */
+    function wordByCount($num, $words)
+    {
+        $num = $num % 100;
+
+        if ($num > 19) {
+            $num = $num % 10;
+        }
+
+        switch ($num) {
+            case 1: {
+                return($words[0]);
+            }
+            case 2: case 3: case 4: {
+            return($words[1]);
+        }
+            default: {
+                return($words[2]);
+            }
+        }
+    }
+}
+
+
+if (! function_exists('durationWord')) {
+    /**
+     * @param  string durationType
+     * @param  array words
+     * @return string
+     */
+    function durationWord(string $durationType, int $value) : string
+    {
+         return match($durationType) {
+             'year' => wordByCount($value, ['год', 'года', 'лет']),
+             'mounth' => wordByCount($value, ['месяц', 'месяца', 'месяцев']),
+             'week' => wordByCount($value, ['неделя', 'недели', 'недель']),
+             'day' => wordByCount($value, ['день', 'дня', 'дней']),
+             'clock' => wordByCount($value, ['час', 'часа', 'часов']),
+             'short_lesson', 'lesson' => wordByCount($value, ['урок', 'урока', 'уроков']),
+             default => ''
+         };
+
+    }
+}
