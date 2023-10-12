@@ -101,6 +101,15 @@ img.review_card-pc_close-hover {
     position: relative;
     margin-top: 8px;
 }
+.review_card-data:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(0, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    height: 50%;
+}
 .review_card-sect {
     margin-top: 16px;
 }

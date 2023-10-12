@@ -6,7 +6,7 @@
                     <img src="{{$company->logo}}" alt="Учебный Центр «Специалист»" title="Отзыв от: Женя Проскурин">
                 </div>
                 <div class="review_card-school_info">
-                    <a class="review_card-school_name" href="/schools/uchebnyy-tsentr-spetsialist/">
+                    <a class="review_card-school_name" href="/{{$company->url?->url}}">
                         {{$company->h1}}
                     </a>
                     <div class="review_card-school_rating">
@@ -35,7 +35,7 @@
             </div>
             <div class="review_card-right_cont">
                 <div class="review_card-date">
-                    {{$review->created_at->formatLocalized('%e %B %Y')}}
+                    {{$review->created_at?->locale('ru')->isoFormat('D MMMM Y')}}
                 </div>
                 <div class="review_card-author">
                     {{$review->author_name}}

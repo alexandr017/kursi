@@ -149,6 +149,24 @@
         color: unset;
     }
 
+    #catalog_body_wrapper {
+        padding: 0 calc((100% - 1120px) / 2);
+        max-width: unset
+    }
+
+    @media screen and (max-width: 1440px) {
+        #catalog_body_wrapper {
+            padding: 0 160px;
+            max-width: 1440px
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        #catalog_body_wrapper {
+            padding: 0 80px;
+        }
+    }
+
     @media (min-width: 861px){
         .kursy-top_menu-body {
             border-top: 1px solid #F5F5F5;
@@ -176,7 +194,7 @@
         width: 100%;
         flex-flow: wrap;
         max-width: 1440px;
-        padding: 0 0 0 160px;
+        padding: 0 160px;
     }
 
     .menu {
@@ -377,6 +395,7 @@
 
     .kursy-top_menu-tab_label {
         font-weight: 500;
+        font-family: Inter, Montserrat, sans-serif;
     }
 </style>
 

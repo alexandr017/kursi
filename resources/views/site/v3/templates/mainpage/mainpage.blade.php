@@ -14,6 +14,9 @@
         <h2 class="index_subtitle popular">Популярные курсы</h2>
         @include('site.v3.modules.courses.courses-cards', ['courses' => $popularCourses, 'fromMainPage' => true])
 
+        <h2 class="index_subtitle rewiews">Последние отзывы</h2>
+        @include('site.v3.modules.mainpage.mainpage-reviews', ['reviews' => $reviews ])
+
         <h2 class="index_subtitle popular">Акции</h2>
         @include('site.v3.modules.courses.courses-cards', ['courses' => $withPromotionCourses  ])
 
