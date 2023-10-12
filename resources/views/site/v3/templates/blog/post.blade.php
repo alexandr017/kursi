@@ -27,6 +27,8 @@
             </div>
         </div>
 
+        @include('site.v3.modules.5-rating.rating', ['entityId' => $post->id, 'entityType' => 'post', 'ratingCount' => $post->getRatingsCount(),'ratingValue' => $post->getRatingsValue()])
+
         <div class="comment_cont kursi_blog">
             @include('site.v3.templates.blog.comments.comment')
         </div>

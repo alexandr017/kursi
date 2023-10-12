@@ -30,7 +30,7 @@ Route::fallback(function(){
     return (new App\Http\Controllers\Site\V3\DynamicSiteController())->render();
 });
 
-Route::post('fetch/rating/add-vote', [RatingPagesController::class, 'create']);
+Route::post('fetch/rating/add-vote', [RatingPagesController::class, 'rate']);
 
 Route::post('/{post_id}/comments', [CommentsController::class, 'create']);
 Route::get('/listings/{listing_id}/courses', [CoursesController::class, 'index']); // todo отключил так как конфликтует с роутом админки /admin/courses

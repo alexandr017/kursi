@@ -39,7 +39,7 @@
         </div>
 
         <div>
-            @include('site.v3.templates.listing.rating_stars', ['listing' => $listing])
+            @include('site.v3.modules.5-rating.rating', ['entityId' => $listing->id, 'entityType' => 'listing', 'ratingCount' => $listing->getRatingsCount(),'ratingValue' => $listing->getRatingsValue()])
         </div>
 
         <div class="linker_cont">

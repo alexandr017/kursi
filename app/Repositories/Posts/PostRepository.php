@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Posts;
 
+use App\Exceptions\SavingErrorException;
 use App\Models\Posts\Post;
 use App\Services\PostCategory\Dto\IndexPostCategoryDto;
 use Illuminate\Database\Eloquent\Builder;
@@ -57,5 +58,21 @@ class PostRepository implements PostRepositoryInterface
                 'page',
                 $page
             );
+    }
+
+    public function getById(int $id): Post
+    {
+        return $this->query()
+            ->where('id', $id)
+            ->first();
+    }
+
+    public function save(Post $post): bool
+    {
+        if (!$post->save()) {
+            throw new SavingErrorException();
+        }
+
+        return true;
     }
 }

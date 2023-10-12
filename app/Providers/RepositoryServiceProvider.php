@@ -16,6 +16,8 @@ use App\Repositories\PostCategory\PostCategoryRepository;
 use App\Repositories\PostCategory\PostCategoryRepositoryInterface;
 use App\Repositories\Posts\PostRepository;
 use App\Repositories\Posts\PostRepositoryInterface;
+use App\Repositories\StaticPage\StaticPageRepository;
+use App\Repositories\StaticPage\StaticPageRepositoryInterface;
 use App\Repositories\Tags\TagRepository;
 use App\Repositories\Tags\TagRepositoryInterface;
 use App\Repositories\Url\UrlRepository;
@@ -64,6 +66,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             EmployeeRepositoryInterface::class,
             EmployeeRepository::class
+        );
+        $this->app->bind(
+            StaticPageRepositoryInterface::class,
+            StaticPageRepository::class
         );
     }
 

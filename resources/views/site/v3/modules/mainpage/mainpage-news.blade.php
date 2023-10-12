@@ -280,7 +280,6 @@
             </div>
         </div>
 
-        @include('site.v3.modules.ratings.rating_stars_simple')
     </div>
 </div>
 

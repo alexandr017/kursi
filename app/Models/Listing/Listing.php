@@ -91,6 +91,11 @@ class Listing extends Model
         return $this->rating_sum;
     }
 
+    public function getRatingsValue(): float
+    {
+        return $this->rating_value;
+    }
+
     public function incrementRatingCount(): void
     {
         $this->rating_count ++;
