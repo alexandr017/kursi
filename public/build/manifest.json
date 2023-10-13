@@ -77,7 +77,7 @@
     "src": "resources/css/company/company-review-add.css"
   },
   "resources/css/company/company-review.css": {
-    "file": "assets/company-review-a3b8e678.css",
+    "file": "assets/company-review-2b9c0680.css",
     "isEntry": true,
     "src": "resources/css/company/company-review.css"
   },
@@ -97,7 +97,7 @@
     "src": "resources/css/company/company.css"
   },
   "resources/css/courses/course-card.css": {
-    "file": "assets/course-card-c9b2a5c8.css",
+    "file": "assets/course-card-52ef5a05.css",
     "isEntry": true,
     "src": "resources/css/courses/course-card.css"
   },
