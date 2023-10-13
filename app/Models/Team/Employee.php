@@ -35,6 +35,11 @@ class Employee extends Model
         return $this->rating_count;
     }
 
+    public function getRatingsValue(): float
+    {
+        return $this->rating_value;
+    }
+
     public function getRatingsSum(): int
     {
         return $this->rating_sum;

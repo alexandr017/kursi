@@ -24,6 +24,9 @@
         @include('site.v3.modules.mainpage.mainpage-posts', ['posts' => $posts])
 
         @include('site.v3.modules.mainpage.mainpage-news')
+
+        @include('site.v3.modules.5-rating.rating', ['entityId' => $page->id, 'entityType' => 'main_page', 'ratingCount' => $page->getRatingsCount(),'ratingValue' => $page->getRatingsValue()])
+
     </div>
 
     @push('styles')

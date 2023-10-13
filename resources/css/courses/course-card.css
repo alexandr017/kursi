@@ -395,3 +395,16 @@ p.kurse_card-length_value {
 .kurse_card.card_white .school_minicard-rating_value {
     color: #469ED7;
 }
+.kurse_card-price_installment_pay {
+    font-size: 14px;
+    margin-left: 13px;
+    line-height: 14px;
+}
+
+.kurse_card-price_sum {
+    font-size: 35px;
+}
+.kurse_card-price_installment_pay p {
+    margin-bottom: 0;
+    margin-top: 0;
+}

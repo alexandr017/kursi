@@ -2,10 +2,12 @@
 
 namespace App\Services\MainPage\Action;
 
+use App\Models\StaticPages\StaticPage;
 use App\Repositories\Company\CompanyRepositoryInterface;
 use App\Repositories\Courses\CoursesRepositoryInterface;
 use App\Repositories\Listing\ListingRepositoryInterface;
 use App\Repositories\Posts\PostRepositoryInterface;
+use App\Repositories\StaticPage\StaticPageRepositoryInterface;
 use App\Services\MainPage\Dto\IndexMainPageDataDto;
 
 class IndexMainPageAction
@@ -14,7 +16,8 @@ class IndexMainPageAction
         protected ListingRepositoryInterface $listingRepository,
         protected CoursesRepositoryInterface $coursesRepository,
         protected CompanyRepositoryInterface $companyRepository,
-        protected PostRepositoryInterface $postRepository
+        protected PostRepositoryInterface $postRepository,
+        protected StaticPageRepositoryInterface $staticPageRepository
     )
     {}
 
@@ -25,13 +28,15 @@ class IndexMainPageAction
         $withPromotionCourses = $this->coursesRepository->getPromotions();
         $reviews  = $this->companyRepository->getPopularReviews();
         $posts = $this->postRepository->getPopulars();
+        $page = $this->staticPageRepository->getByBreadcrumbs(StaticPage::MAIN_PAGE);
 
         return new IndexMainPageDataDto(
             listings: $listings,
             popularCourses: $popularCourses,
             withPromotionCourses: $withPromotionCourses,
             reviews: $reviews,
-            posts: $posts
+            posts: $posts,
+            page: $page
         );
     }
 }

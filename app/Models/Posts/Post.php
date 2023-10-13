@@ -48,4 +48,24 @@ class Post extends Model
     {
         return $this->belongsTo(Employee::class, 'author_id');
     }
+
+    public function getRatingsCount(): int
+    {
+        return $this->rating_count;
+    }
+
+    public function getRatingsValue(): float
+    {
+        return $this->rating_value;
+    }
+
+    public function incrementRatingCount(): void
+    {
+        $this->rating_count ++;
+    }
+
+    public function setRatingsValue(float $ratingValue): void
+    {
+        $this->rating_value = $ratingValue;
+    }
 }
