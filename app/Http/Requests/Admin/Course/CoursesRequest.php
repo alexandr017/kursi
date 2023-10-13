@@ -15,7 +15,7 @@ class CoursesRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -26,7 +26,59 @@ class CoursesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => [],
+            'company_id' => [],
+            'external_id' => [],
+            'statistics_link' => [],
+            'affiliate_link' => [],
+            'direct_link' => [],
+            'duration' => [],
+            'duration_type' => [],
+            'cost' => [],
+            'sale_cost' => [],
+            'sale_value' => [],
+            'payment_value' => [],
+            'currency' => [],
+            'payment_type' => [],
+            'is_cost_by_query' => [],
+            'reviews_count' => [],
+            'installment_period' => [],
+            'installment_payment' => [],
+            'duration_in_hours' => [],
+            'status' => []
+        ];
+    }
+
+    /**
+     * Get the validation attributes that apply to the request.
+     *
+     * @return array
+     */
+    public function attributes(): array
+    {
+        return [
+            'name' => 'Название',
+
+            'title',
+            'company_id',
+            'external_id',
+            'statistics_link',
+            'affiliate_link',
+            'direct_link',
+            'duration',
+            'duration_type',
+            'cost',
+            'sale_cost',
+            'sale_value',
+            'payment_value',
+            'currency',
+            'payment_type',
+            'is_cost_by_query',
+            'reviews_count',
+            'installment_period',
+            'installment_payment',
+            'duration_in_hours',
+            'status'
         ];
     }
 }
