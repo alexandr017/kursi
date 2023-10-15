@@ -21,7 +21,7 @@ class IndexPostCategoryAction
             $postCategory = $this->postCategoryRepository->getById($dto->sectionId, ['urls']);
         }
 
-        $categories = $this->postCategoryRepository->getAll(['urls']);
+        $categories = $this->postCategoryRepository->getAllWhichHavePost(['urls']);
 
         $relations = ['category.urls', 'urls'];
 

@@ -48,9 +48,9 @@
             </div>
 
             {{--            <input type="checkbox" id="linker_show_input" name="" value="">--}}
-            <ul class="linker_list linker_list_courses">
-                @foreach($listing->parent->childes as $child)
-                    <li id="bx_{{$child->id}}">
+            <ul class="linker_list linker_list_courses" id="listing-linker-show-more">
+                @foreach($listing->parent->childes as $key => $child)
+                    <li id="bx_{{$child->id}}" class="@if($key > 17)  for-hide-linker-items @endif">
                         <p class="linker_item">
                             <a href="/{{$child->url->url}}">
                                 {{$child->name}}
@@ -59,6 +59,11 @@
                     </li>
                 @endforeach
             </ul>
+
+            @if($listing->parent->childes->count() > 18)
+                <label id="show-more-linker-items" for="linker_show_input" class="linker_open_btn show_more_btn_color" onclick="showMoreChildes()">Показать ещё</label>
+            @endif
+
             <div style="clear: both;"></div>
         </div>
 
@@ -267,6 +272,15 @@
                 if (videoContent) {
                     videoContent.remove();
                 }
+            }
+
+            function showMoreChildes() {
+                let elementsChildes = document.getElementsByClassName('for-hide-linker-items');
+                Array.from(elementsChildes).forEach(function (item) {
+                    item.classList.remove('for-hide-linker-items')
+                })
+
+                document.getElementById('show-more-linker-items').style.display = 'none'
             }
 
         </script>
