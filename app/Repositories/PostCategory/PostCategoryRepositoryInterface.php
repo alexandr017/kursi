@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Collection;
 interface PostCategoryRepositoryInterface
 {
     public function getById(int $id, array $relations = []): PostCategory;
-    public function getAll(array $relations = []): Collection;
+    public function getAllWhichHavePost(array $relations = []): Collection;
 }

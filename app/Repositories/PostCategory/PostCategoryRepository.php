@@ -28,9 +28,10 @@ class PostCategoryRepository implements PostCategoryRepositoryInterface
         return $postCategory;
     }
 
-    public function getAll(array $relations = []): Collection
+    public function getAllWhichHavePost(array $relations = []): Collection
     {
         return $this->query()
+            ->whereHas('posts')
             ->with($relations)
             ->get();
     }
