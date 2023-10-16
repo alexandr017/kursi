@@ -229,6 +229,7 @@
 
 @section('additional-scripts')
     @parent
+@endsection
 
 
 <script>
@@ -296,4 +297,3 @@
     }
 </script>
 
-@endsection
