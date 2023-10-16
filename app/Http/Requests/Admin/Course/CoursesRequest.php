@@ -26,26 +26,29 @@ class CoursesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => [],
-            'company_id' => [],
-            'external_id' => [],
-            'statistics_link' => [],
-            'affiliate_link' => [],
-            'direct_link' => [],
-            'duration' => [],
-            'duration_type' => [],
-            'cost' => [],
-            'sale_cost' => [],
-            'sale_value' => [],
-            'payment_value' => [],
-            'currency' => [],
-            'payment_type' => [],
-            'is_cost_by_query' => [],
-            'reviews_count' => [],
-            'installment_period' => [],
-            'installment_payment' => [],
-            'duration_in_hours' => [],
-            'status' => []
+            'title' => ['required', 'max:255'],
+            'category_id' => ['required', 'numeric'], // todo может это поле переименовать в company_id ?
+            'external_id' => ['nullable', 'numeric'], // todo это поле вообще используется?
+            'statistics_link' => ['required', 'max:255'],
+            'affiliate_link' => ['required', 'max:255'],
+            'direct_link' => ['required', 'max:255'],
+            'duration' => ['required', 'numeric'],
+            'duration_type' => ['required', 'max:255'],
+            'cost' => ['required', 'numeric'],
+            'sale_cost' => ['required', 'numeric'],
+            'sale_value' => ['required', 'numeric'],
+            'payment_value' => ['nullable', 'numeric'], // todo required?
+            'currency' => ['required', 'max:255'],
+            'payment_type' => ['required', 'max:255'],
+            'is_cost_by_query' => ['required', 'boolean'],
+            'reviews_count' => ['required', 'numeric'],
+            'installment_period' => ['required', 'numeric'],
+            'installment_payment' => ['required', 'numeric'],
+            'duration_in_hours' => ['required', 'numeric'],
+            'is_popular' => ['required', 'boolean'],
+            'is_best' => ['required', 'boolean'],
+            'has_promotion' => ['required', 'boolean'],
+            'status' => ['required', 'numeric']
         ];
     }
 
@@ -57,28 +60,29 @@ class CoursesRequest extends FormRequest
     public function attributes(): array
     {
         return [
-            'name' => 'Название',
-
-            'title',
-            'company_id',
-            'external_id',
-            'statistics_link',
-            'affiliate_link',
-            'direct_link',
-            'duration',
-            'duration_type',
-            'cost',
-            'sale_cost',
-            'sale_value',
-            'payment_value',
-            'currency',
-            'payment_type',
-            'is_cost_by_query',
-            'reviews_count',
-            'installment_period',
-            'installment_payment',
-            'duration_in_hours',
-            'status'
+            'title' => 'Название',
+            'category_id' => 'Школа', // todo может это поле переименовать в company_id ?
+            'external_id' => 'external_id',
+            'statistics_link' => 'statistics_link',
+            'affiliate_link' => 'affiliate_link',
+            'direct_link' => 'direct_link',
+            'duration' => 'Продолжительность',
+            'duration_type' => 'Продолжительность (еденицы измерения)',
+            'cost' => 'Стоимость',
+            'sale_cost' => 'Скидка',
+            'sale_value' => 'Значение со скидки',
+            'payment_value' => 'Стоимость платежа',
+            'currency' => 'Валюта',
+            'payment_type' => 'Тип оплаты',
+            'is_cost_by_query' => 'Стоимость по запросу',
+            'reviews_count' => 'Количество отзывов',
+            'installment_period' => 'Период рассрочки',
+            'installment_payment' => 'Платеж по рассрочке',
+            'duration_in_hours' => 'Продолжительность в часах',
+            'is_popular' => 'Популярный',
+            'is_best' => 'Лучший',
+            'has_promotion' => 'Имеет продвижение',
+            'status' => 'Статус'
         ];
     }
 }

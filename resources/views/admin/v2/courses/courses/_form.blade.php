@@ -16,17 +16,19 @@
 <div class="form-group">
     <label for="category_id"><i class="red"></i> Школа</label>
     <select name="category_id" id="category_id" class="form-control">
-        @foreach($schools as $id => $h1)
+        @foreach($companies as $id => $h1)
             <option value="{{$id}}" @if(isset($item) && $item->category_id == $id) selected @endif>{{$h1}}</option>
         @endforeach
     </select>
 </div>
 
+<div class="form-group">
 external_id ?
+</div>
 
 <div class="form-group">
     <label for="statistics_link"><i class="red">*</i> statistics_link</label>
-    <input type="url" class="form-control" name="statistics_link" id="statistics_link" required
+    <input type="text" class="form-control" name="statistics_link" id="statistics_link" required
            @if(old('statistics_link'))
                value="{{old('statistics_link')}}"
            @else
@@ -39,7 +41,7 @@ external_id ?
 
 <div class="form-group">
     <label for="affiliate_link"><i class="red">*</i> affiliate_link</label>
-    <input type="url" class="form-control" name="affiliate_link" id="affiliate_link" required
+    <input type="text" class="form-control" name="affiliate_link" id="affiliate_link" required
            @if(old('affiliate_link'))
                value="{{old('affiliate_link')}}"
            @else
@@ -52,7 +54,7 @@ external_id ?
 
 <div class="form-group">
     <label for="direct_link"><i class="red">*</i> direct_link</label>
-    <input type="url" class="form-control" name="direct_link" id="direct_link" required
+    <input type="text" class="form-control" name="direct_link" id="direct_link" required
            @if(old('direct_link'))
                value="{{old('direct_link')}}"
            @else
@@ -129,8 +131,8 @@ external_id ?
 </div>
 
 <div class="form-group">
-    <label for="payment_value"><i class="red">*</i> Стоимость платежа</label>
-    <input type="text" class="form-control" name="payment_value" id="payment_value" required
+    <label for="payment_value">Стоимость платежа</label>
+    <input type="text" class="form-control" name="payment_value" id="payment_value"
            @if(old('payment_value'))
                value="{{old('payment_value')}}"
            @else
@@ -224,6 +226,32 @@ external_id ?
         @endif
     >
 </div>
+
+<div class="form-group">
+    <label for="is_popular"><i class="red ">*</i> Популярный</label>
+    <select name="is_popular" id="is_popular" class="form-control" required>
+        <option value="0" @if(isset($item) && $item->is_popular == 0) selected @endif>Нет</option>
+        <option value="1" @if(isset($item) && $item->is_popular == 1) selected @endif>Да</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="is_best"><i class="red ">*</i> Лучший</label>
+    <select name="is_best" id="is_best" class="form-control" required>
+        <option value="0" @if(isset($item) && $item->is_best == 0) selected @endif>Нет</option>
+        <option value="1" @if(isset($item) && $item->is_best == 1) selected @endif>Да</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="has_promotion"><i class="red ">*</i> Имеет продвижение</label>
+    <select name="has_promotion" id="has_promotion" class="form-control" required>
+        <option value="0" @if(isset($item) && $item->has_promotion == 0) selected @endif>Нет</option>
+        <option value="1" @if(isset($item) && $item->has_promotion == 1) selected @endif>Да</option>
+    </select>
+</div>
+
+
 
 <div class="form-group">
     <label for="status"><i class="red ">*</i> Статус</label>

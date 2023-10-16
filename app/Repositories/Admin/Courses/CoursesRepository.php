@@ -16,35 +16,34 @@ class CoursesRepository
             ->toArray();
     }
 
-//    public function find(int $id) : null|object
-//    {
-//        return Tag::find($id);
-//    }
-//
-//    public function createTag(array $data) : null|object // todo ?
-//    {
-//        $data['old_id'] = 0; // todo: General error: 1364 Field 'old_id' doesn't have a default value
-//        $tag = new Tag($data);
-//        $tag->save();
-//
-//        return $tag;
-//    }
-//
-//
-//    public function updateTag(int $id, array $data) : null|object
-//    {
-//        $tag = Tag::find($id);
-//        $tag->update($data);
-//
-//        return $tag;
-//    }
-//
-//    public function deleteTag(int $id)
-//    {
-//        $tag = Tag::find($id);
-//        $tag->delete();
-//
-//        return $tag;
-//    }
+    public function find(int $id) : null|object
+    {
+        return Course::find($id);
+    }
+
+    public function createCourse(array $data) : null|object // todo ?
+    {
+        $data['old_id'] = 0; // todo: General error: 1364 Field 'old_id' doesn't have a default value
+        $course = new Course($data);
+        $course->save();
+
+        return $course;
+    }
+
+    public function updateCourse(int $id, array $data) : null|object
+    {
+        $course = Course::find($id);
+        $course->update($data);
+
+        return $course;
+    }
+
+    public function deleteCourse(int $id)
+    {
+        $course = Course::find($id);
+        $course->delete();
+
+        return $course;
+    }
 
 }
