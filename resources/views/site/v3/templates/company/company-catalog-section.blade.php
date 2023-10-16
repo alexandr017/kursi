@@ -4,7 +4,7 @@
                 @include('site.v3.templates.company.company-catalog-item', ['company' => $company, 'index' => ++$key])
             @endforeach
     </div>
-    <div class="product-items-more-btn show_more_btn_color" data-use="show-more-1" onclick="showMore()">
+    <div class="product-items-more-btn show_more_btn_color" id="companies-show-more" data-use="show-more-1" onclick="showMore()">
         Показать ещё
     </div>
 </div>

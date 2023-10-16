@@ -5,6 +5,7 @@ namespace App\Models\Posts;
 use App\Models\Urls\Url;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Eloquent;
 
@@ -26,7 +27,12 @@ class PostCategory extends Model
 
     public function urls()
     {
-        return $this->hasOne(Url::class, 'section_id','id')
+        return $this->hasOne(Url::class, 'section_id', 'id')
             ->where('section_type', PostCategory::SECTION_TYPE);
+    }
+
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class, 'category_id');
     }
 }

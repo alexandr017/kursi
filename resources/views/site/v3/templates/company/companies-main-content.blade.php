@@ -111,6 +111,10 @@
                     let items = fragment.getElementsByClassName('company-item');
                     const itemsArray = Array.from(items);
 
+                    if (itemsArray.length === 0) {
+                        document.getElementById('companies-show-more').style.display = 'none';
+                    }
+
                     itemsArray.forEach(function (item, index) {
                         const el = item.getElementsByClassName('product-item-num')
                         const elItems= Array.from(el);

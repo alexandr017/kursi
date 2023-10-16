@@ -27,15 +27,14 @@ class PostRepository implements PostRepositoryInterface
 
     public function index(IndexPostCategoryDto $dto, array $relations = []): LengthAwarePaginator
     {
-        $query = $this->query()->where('status', 1);
+        $query = $this->query()
+            ->where('status', 1)
+            ->orderByDesc('created_at')
+            ->with($relations);
 
         if ($dto->sectionId) {
             $query->where('category_id', $dto->sectionId);
         }
-
-        //ToDo: Add sort order
-
-        $query->with($relations);
 
         return $query->paginate(
             $dto->perPage,
