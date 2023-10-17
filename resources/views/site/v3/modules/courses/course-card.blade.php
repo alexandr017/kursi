@@ -17,7 +17,7 @@
         <div class="kurse_card-school">
             <div class="school_minicard-cont">
                 <a class="school_minicard-logo" href="/{{$course->school?->url?->url}}">
-                    <img src="{{$course->school->logo}}" alt="{{$course->school?->h1}}" title="{{$course->school?->h1}}">
+                    <img src="{{$course->school?->logo}}" alt="{{$course->school?->h1}}" title="{{$course->school?->h1}}">
                 </a>
                 <div class="school_minicard-text">
                     <div class="school_minicard-title">

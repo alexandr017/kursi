@@ -169,7 +169,7 @@
                             foldGutter: true,
                             gutters: ["CodeMirror-linenumbbers", "CodeMirror-foldgutter"]
                         });
-       
+
 
                         var holderHeight = height + "px";
                         var holderWidth = width + "px";
@@ -273,7 +273,7 @@
                                     var parts = event.sender.parts;
                                     var title = parts.title;
                                     var footer = parts.footer;
-                                    
+
                                     var holderHeight = (event.data.height - title.$.offsetHeight - footer.$.offsetHeight) + "px";
                                     var holderWidth = event.data.width + "px";
 
@@ -483,7 +483,6 @@
                     source: 1
                 };
 
-                // TODO
             }
 
             // Override Paste Button
@@ -492,7 +491,6 @@
                     wysiwyg: 1,
                     source: 1
                 };
-                // TODO
 
             }
 
@@ -503,7 +501,6 @@
                     source: 1
                 };
 
-                // TODO
             }*/
 
             // Override Find Button

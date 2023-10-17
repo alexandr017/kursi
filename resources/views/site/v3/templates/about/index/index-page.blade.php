@@ -36,24 +36,8 @@
 
 @section('custom-structured-data')
     @parent
-    @foreach($team as $employee)
-        <script type="application/ld+json">
-			{
-				"@context": "http://schema.org/",
-				"@type": "Person",
-				"name": "{{$employee->name}}",
-				"image": "-",
-				"url": "",
-				"jobTitle": "",
-				"worksFor": {
-					"@type": "Organization",
-					"name": "Курсы.ру"
-				},
-				"sameAs": [
-					""
-                ]
-			}
-		</script>
+    @foreach($team as $person)
+        @include('site.structured-data.Person')
     @endforeach
 @endsection
 

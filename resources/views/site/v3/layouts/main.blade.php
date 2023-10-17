@@ -51,7 +51,9 @@
 @include('site.admin-nav')
 @include('site.analytics-scripts')
 
-@include('site.structured-data')
+@include('site.structured-data.SearchAction')
+@include('site.structured-data.Organization')
+@include('site.structured-data.BreadcrumbList')
 @yield('custom-structured-data')
 
 

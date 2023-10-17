@@ -33,7 +33,7 @@ Route::fallback(function(){
 Route::post('fetch/rating/add-vote', [RatingPagesController::class, 'rate']);
 
 Route::post('/{post_id}/comments', [CommentsController::class, 'create']);
-Route::get('/listings/{listing_id}/courses', [CoursesController::class, 'index']); // todo отключил так как конфликтует с роутом админки /admin/courses
+Route::get('/listings/{listing_id}/courses', [CoursesController::class, 'index']);
 Route::post('/listings/{listing_id}/review', [ListingRatingController::class, 'create']);
 Route::get('/catalog/listings/{path}', [CatalogController::class, 'getChildes']);
 

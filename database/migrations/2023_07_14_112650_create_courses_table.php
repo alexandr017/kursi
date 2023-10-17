@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('statistics_link'); // кейтаро
             $table->string('affiliate_link'); // партнерка
             $table->string('direct_link'); // прямая
-            // todo
             //duration	duration_type	old_cost	sale_cost	sale_value (%)	payment_value	payment_type	is_cost_by_query
             $table->unsignedTinyInteger('status');
             $table->timestamps();

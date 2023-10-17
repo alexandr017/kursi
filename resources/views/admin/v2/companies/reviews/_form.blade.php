@@ -21,15 +21,6 @@
     >
 </div>
 
-
-<?php //todo скорее всего неиспользуемые ?>
-character_code
-sort
-code
-
-
-
-
 <div class="form-group">
     <label for="pluses">Плюсы</label>
     <?php

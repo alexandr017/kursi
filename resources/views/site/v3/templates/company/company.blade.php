@@ -98,9 +98,7 @@
                 @endif
 
                 <div class="school_kurses">
-                    <h2 class="school_kurses_title subblock_title">
-                        Лучшие курсы школы
-                    </h2>
+                    <h2 class="school_kurses_title subblock_title">Лучшие курсы школы</h2>
 
                     <div class="school_kurses_cont">
                         @include('site.v3.modules.courses.courses-cards', ['courses' => $company->courses])
@@ -129,67 +127,7 @@
 
 @endsection
 
-{{--@dd($company->reviews)--}}
-@section('custom-structured-data')
-    <script type="application/ld+json">
-        {
-  "@context": "https://www.schema.org",
-  "@type": "Product",
-  "brand": "SkillFactory",
-  "logo": "https://kursy.ru{{str_replace('https://kursy.ru', '', $company->logo)}}",
-  "name": "SkillFactory",
-  "category": "{{$company->name}}",
-  "description": "{{$company->lead}}",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "bestRating": "5",
-    "ratingValue": {{$company->rating_value}},
-    "reviewCount": {{$company->rating_count}}
-  },
-  "offers": {
-    "@type": "AggregateOffer",
-    "offerCount": {{$company->courses_count}},
-    "highPrice": "480000",
-    "lowPrice": "43560",
-    "priceCurrency": "Rub",
-    "offers": [
-    @foreach($company->courses as $course)
-    {
-        "@type": "Offer",
-        "name": "{{$course->title}}",
-      "url": "{{$course->affiliate_link}}",
-      "price": "{{$course->cost}}",
-      "offeredBy": {
-        "@type": "EducationalOrganization",
-        "name": "{{$company->name}}",
-        "image": {
-          "@type": "ImageObject",
-          "url": "https://kursy.ru{{str_replace('https://kursy.ru', '', $company->logo)}}"
-        }
-      }
-    }
-    @if($course != $company->courses->last())
-    ,
-    @endif
-        @endforeach
-  ]
-  },
-        "review": [
-@foreach($company->reviews as $review)
-            {
-          "@type": "Review",
-          "name": "{{$review->title}}",
-      "reviewBody": "{{$review->content}} @if($review->pluses) | {{$review->pluses}} @endif  @if($review->minuses)  | {{$review->minuses}} @endif ",
-      "datePublished": "{{date('Y-m-d', strtotime($company->reviews->first()->created_at))}}",
-      "reviewRating": { "@type": "Rating", "ratingValue": {{(int) $review->rating}} },
-      "author": { "@type": "Person", "name": "{{$review->author_name}}" }
-    }
-    @if($review != $company->reviews->last())
-                ,
-@endif
-        @endforeach
-        ]
 
-  }
-</script>
+@section('custom-structured-data')
+    @include('site.structured-data.ProductCompany')
 @endsection

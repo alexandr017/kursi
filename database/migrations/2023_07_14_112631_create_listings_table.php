@@ -26,8 +26,6 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
             $table->unsignedInteger('old_id')->nullable();
-            // Вложенность todo parent_id ?
-            // todo best_courses
         });
     }
 

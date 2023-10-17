@@ -22,15 +22,13 @@ if (! function_exists('emptyDataToNull')) {
 }
 
 
-function getCanonical() {
-    $url = URL::current();
-    $canonical = preg_replace("/\/page\/\d/", '', $url);
-    if(strstr($url,'page'))
-        $canonical = preg_replace("/\d\d?\d?$/", '', $canonical);
-    return $canonical;
+function getCanonical() : string
+{
+    return URL::current();
 }
 
-function getCanonicalNext($pages) {
+function getCanonicalNext(int $pages) : int|string
+{
     if ($pages == 1) return 1;
     $url = URL::current();
     $url = preg_replace('/\/$/', '', $url);
@@ -46,7 +44,8 @@ function getCanonicalNext($pages) {
     return 1;
 }
 
-function getCanonicalPrev(){
+function getCanonicalPrev() : null|int|string
+{
     $url = URL::current();
     $url = preg_replace('/\/$/', '', $url);
     $urlArr = explode('/', $url);
@@ -61,11 +60,11 @@ function getCanonicalPrev(){
 
 if (! function_exists('wordByCount')) {
     /**
-     * @param  int num
-     * @param  array words
+     * @param  int $num
+     * @param  array $words
      * @return string
      */
-    function wordByCount($num, $words)
+    function wordByCount(int $num, array $words) : string
     {
         $num = $num % 100;
 
@@ -90,8 +89,8 @@ if (! function_exists('wordByCount')) {
 
 if (! function_exists('durationWord')) {
     /**
-     * @param  string durationType
-     * @param  array words
+     * @param string $durationType
+     * @param int $value
      * @return string
      */
     function durationWord(string $durationType, int $value) : string
@@ -107,4 +106,21 @@ if (! function_exists('durationWord')) {
          };
 
     }
+}
+
+
+function productStructuredDataCalculate(object $courses) : array
+{
+    $highPrice = 0;
+    $lowPrice = 1000000;
+    foreach ($courses as $course) {
+        if ($course->price < $lowPrice) {
+            $lowPrice = $course->price;
+        }
+        if ($course->price > $highPrice) {
+            $highPrice = $course->price;
+        }
+    }
+
+    return [$lowPrice, $highPrice];
 }
