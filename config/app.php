@@ -173,6 +173,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         Webwizo\Shortcodes\ShortcodesServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
 
     ])->toArray(),
 
