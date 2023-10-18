@@ -4,6 +4,7 @@ namespace App\Services\Auth\Action;
 
 use App\Exceptions\User\UserNotFoundException;
 use App\Http\Resources\Auth\TokensResource;
+use App\Models\Users\UserRole;
 use App\Repositories\User\UserRepositoryInterface;
 use App\Services\Auth\Dto\LoginDto;
 use Http;
@@ -44,6 +45,12 @@ class LoginAction
         }
 
         $data->user = $user;
+
+        if ($user->role->role == UserRole::ROLE_ADMIN) {
+            $data->url = '/admin/index';
+        } else {
+            $data->url = '/';
+        }
 
         return new TokensResource($data);
     }

@@ -27,13 +27,13 @@
             <!-- Confirm -->
             <button
                 class="sign-in-button"
-                onclick="handleSignIn"
+                onclick="handleSignIn()"
             >
                 Войти
             </button>
 
             {{-- Or registration --}}
-            <a href="auth/register">
+            <a href="/auth/register">
                 <span class="orr-registration">Или регистрация</span>
             </a>
         </div>
@@ -135,24 +135,31 @@
 
 <script>
     function handleSignIn() {
-        const email = document.getElementById('email');
-        const password = document.getElementById('password');
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
 
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-        fetch(``, {
+        fetch(`/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'X-CSRF-TOKEN': csrfToken,
             },
-            body: {email, password}
-        })
+            body: JSON.stringify({email, password})
+        }).then(response => response.json())
             .then(response => {
-                location.reload()
+                if (response.errors) {
+                    alert('Проверьте данные и попробуйте еще раз ')
+                }
+
+                if (response.url && response.url !== 'undefined') {
+                    location.href = response.url;
+                }
+
             }).catch(error => {
-            alert('Something went wrong')
-            console.error('Error:', error);
+            alert('Проверьте данные и попробуйте еще раз ')
+            console.log('Error:', error);
         });
     }
 </script>

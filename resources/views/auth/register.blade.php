@@ -51,7 +51,7 @@
                 type="password"
                 class="passwords-input"
                 placeholder="Пароль"
-                maxlength="8"
+                maxlength="28"
             />
 
             <!-- Confirm password input -->
@@ -60,7 +60,8 @@
                 type="password"
                 class="passwords-input"
                 placeholder="Подтвердите пароль"
-                maxlength="8"
+                maxlength="28"
+                minlength="5"
             />
 
             <!-- Confirm -->
@@ -176,9 +177,10 @@
 
             field.parentNode.insertBefore(errorText, field);
             field.style.border = '1px solid red';
+
+            isNoValidData = true;
         }
 
-        isNoValidData = true;
     }
 
     function handleSignIn() {
@@ -190,20 +192,30 @@
 
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-        fetch(``, {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const first_name = document.getElementById('name').value;
+        const last_name = document.getElementById('surname').value;
+        const middle_name = document.getElementById('nickname').value;
+
+        fetch(`/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'X-CSRF-TOKEN': csrfToken,
             },
-            body: {
-
-            }
-        })
+            body: JSON.stringify(
+                {email, password, first_name, last_name, middle_name}
+            )
+        }).then(response => response.json())
             .then(response => {
-                location.reload()
+                if (response.errors) {
+                    alert('Проверьте данные и попробуйте еще раз ')
+                }
+
+                location.href = '/auth'
             }).catch(error => {
-            alert('Something went wrong')
+            alert('Проверьте данные и попробуйте еще раз ')
             console.error('Error:', error);
         });
     }

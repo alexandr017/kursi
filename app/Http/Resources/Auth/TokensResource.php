@@ -14,6 +14,7 @@ class TokensResource extends JsonResource
             'token_type'   => $this->resource->token_type,
             'expires_in'   => $this->resource->expires_in,
             'user'         => $this->resource->user ?? null,
+            'url' => $this->resource->url
         ];
     }
 }

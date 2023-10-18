@@ -18,6 +18,7 @@ class UserRepository implements UserRepositoryInterface
     {
         $user = $this->query()
             ->where('email', $email)
+            ->with(['role'])
             ->first();
 
         if (is_null($user)) {
