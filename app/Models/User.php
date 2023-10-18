@@ -3,8 +3,10 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Users\UserRole;
 use App\Services\Auth\Dto\RegisterDto;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -98,5 +100,9 @@ class User extends Authenticatable
         $this->password = bcrypt($password);
     }
 
+    public function role(): HasOne
+    {
+        return $this->hasOne(UserRole::class, 'id', 'role_id');
+    }
 
 }

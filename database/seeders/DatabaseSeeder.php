@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
             CoursesSeeder::class,
             SchoolsReviewsSeeder::class,
             PageSeeder::class,
-            AboutHistorySeeder::class
+            AboutHistorySeeder::class,
+            UserRolesSeeder::class
         ]);
     }
 }

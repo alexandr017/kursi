@@ -20,4 +20,7 @@ class UserRole extends Model
     protected $fillable = ['role'];
 
     public $timestamps = false;
+
+    const ROLE_USER = 'user';
+    const ROLE_ADMIN = 'admin';
 }
