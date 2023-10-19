@@ -53,8 +53,8 @@
                     type="password"
                     class="passwords-input"
                     placeholder="Пароль"
-                    maxlength="8"
-                    minlength="8"
+                    maxlength="30"
+                    minlength=""
                     required
                     onchange="validatePassword()"
                 />
@@ -64,7 +64,7 @@
                     type="password"
                     class="passwords-input"
                     placeholder="Подтвердите пароль"
-                    maxlength="8"
+                    maxlength="30"
                     minlength="8"
                     required
                     onchange="validatePassword()"

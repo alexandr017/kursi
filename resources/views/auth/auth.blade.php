@@ -24,7 +24,7 @@
                     type="password"
                     class="passwords-input"
                     placeholder="Пароль"
-                    maxlength="8"
+                    maxlength="30"
                     minlength="8"
                     required
                     name="password"
