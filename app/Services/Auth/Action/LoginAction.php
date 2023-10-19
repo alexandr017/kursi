@@ -40,7 +40,7 @@ class LoginAction
 
         $data = json_decode($response->getBody()->getContents());
 
-        if (is_null($data) || property_exists($data, 'errors')) {
+        if (is_null($data) || property_exists($data, 'error')|| property_exists($data, 'errors')) {
             throw new AuthorizationException();
         }
 

@@ -29,7 +29,7 @@ Route::prefix('auth')->group(function () {
         return view('auth.auth');
     });
     Route::get('/login', function () {
-        return view('auth.login');
+        return view('auth.auth');
     });
     Route::get('/register', function () {
         return view('auth.register');

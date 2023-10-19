@@ -5,77 +5,92 @@
         <div class="main-block">
             <h1 class="title">Регистрация</h1>
 
-            <!-- Name -->
-            <input
-                id="name"
-                type="text"
-                class="mail-input"
-                placeholder="Имя"
-                maxlength="28"
-                value=""
-            />
-
-            <!-- Surname -->
-            <input
-                id="surname"
-                type="text"
-                class="mail-input"
-                placeholder="Фамилия"
-                maxlength="28"
-                value=""
-            />
-
-            <!-- Nickname -->
-            <input
-                id="nickname"
-                type="text"
-                class="mail-input"
-                placeholder="Псевдоним"
-                maxlength="28"
-                value=""
-            />
-
-            <!-- E-mail input -->
-            <input
-                id="email"
-                type="text"
-                class="mail-input"
-                placeholder="Эл. почта"
-                maxlength="28"
-                value=""
-            />
-
-            <!-- Password input -->
-            <input
-                id="password"
-                type="password"
-                class="passwords-input"
-                placeholder="Пароль"
-                maxlength="28"
-            />
-
-            <!-- Confirm password input -->
-            <input
-                id="confirmPassword"
-                type="password"
-                class="passwords-input"
-                placeholder="Подтвердите пароль"
-                maxlength="28"
-                minlength="5"
-            />
-
-            <!-- Confirm -->
-            <button
-                onclick="handleSignIn()"
-                class="register-button"
+            <form
+                class="form-containier"
+                onsubmit="handleRegister(event)"
             >
-                Регистрироваться
-            </button>
+                <input
+                    id="name"
+                    type="text"
+                    class="mail-input"
+                    placeholder="Имя"
+                    maxlength="28"
+                    value=""
+                    required
+                />
+
+                <input
+                    id="surname"
+                    type="text"
+                    class="mail-input"
+                    placeholder="Фамилия"
+                    maxlength="28"
+                    value=""
+                    required
+                />
+
+                <input
+                    id="nickname"
+                    type="text"
+                    class="mail-input"
+                    placeholder="Псевдоним"
+                    maxlength="28"
+                    value=""
+                />
+
+                <input
+                    id="email"
+                    type="email"
+                    class="mail-input"
+                    placeholder="Эл. почта"
+                    maxlength="28"
+                    value=""
+                    required
+                />
+
+                <input
+                    id="password"
+                    type="password"
+                    class="passwords-input"
+                    placeholder="Пароль"
+                    maxlength="8"
+                    minlength="8"
+                    required
+                    onchange="validatePassword()"
+                />
+
+                <input
+                    id="confirmPassword"
+                    type="password"
+                    class="passwords-input"
+                    placeholder="Подтвердите пароль"
+                    maxlength="8"
+                    minlength="8"
+                    required
+                    onchange="validatePassword()"
+                />
+
+                <div id="errorText"></div>
+
+                <button
+                    class="register-button"
+                    type="submit"
+                >
+                    Регистрироваться
+                </button>
+            </form>
         </div>
     </div>
 @endsection
 
 <style>
+    #errorText {
+        color: red;
+        line-height: 1.4375em;
+        font: inherit;
+        letter-spacing: inherit;
+    }
+
     .container {
         width: 100%;
         margin-left: auto;
@@ -129,8 +144,6 @@
         letter-spacing: inherit;
         color: currentColor;
         border: 0;
-        box-sizing: content-box;
-        height: 1.4375em;
         -webkit-tap-highlight-color: transparent;
         display: block;
         width: 100%;
@@ -139,6 +152,8 @@
         -webkit-animation-duration: 10ms;
         animation-duration: 10ms;
         padding: 16.5px 14px;
+        box-sizing: border-box;
+        height: 56px;
     }
 
     .register-button {
@@ -158,39 +173,31 @@
         text-align: center;
         color: #FFFFFF;
     }
+
+    .register-button:hover {
+        cursor: pointer;
+        opacity: 90%;
+    }
+
+    .form-containier {
+        width: 100%;
+    }
 </style>
 
 <script>
-    let isNoValidData = false;
+    function validatePassword() {
+        const password = document.getElementById('password').value;
+        const confirm_password = document.getElementById('confirmPassword').value;
 
-    function validateAndStyleField(fieldId) {
-        const field = document.getElementById(fieldId);
-
-        if (!field.value) {
-            const errorText = document.createElement('div');
-            errorText.innerText = 'Это поле обязательно к заполнению';
-            errorText.style.color = 'red';
-            errorText.style.fontSize = '12px';
-            errorText.style.alignItems = 'start';
-            errorText.style.width = '100%';
-            errorText.style.marginBottom = '-16px';
-
-            field.parentNode.insertBefore(errorText, field);
-            field.style.border = '1px solid red';
-
-            isNoValidData = true;
+        if (password !== confirm_password) {
+            document.getElementById('confirmPassword').setCustomValidity("Passwords Don't Match");
+        } else {
+            document.getElementById('confirmPassword').setCustomValidity('');
         }
-
     }
 
-    function handleSignIn() {
-        const fieldIds = ['name', 'surname', 'nickname', 'email', 'confirmPassword', 'password'];
-
-        fieldIds.forEach(validateAndStyleField);
-
-        if (isNoValidData) return;
-
-        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    function handleRegister(evt) {
+        evt.preventDefault();
 
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
@@ -198,25 +205,34 @@
         const last_name = document.getElementById('surname').value;
         const middle_name = document.getElementById('nickname').value;
 
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
         fetch(`/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'X-CSRF-TOKEN': csrfToken,
             },
-            body: JSON.stringify(
-                {email, password, first_name, last_name, middle_name}
-            )
-        }).then(response => response.json())
+            body: JSON.stringify({
+                email,
+                password,
+                first_name,
+                last_name,
+                middle_name
+            })
+        })
+            .then(response => response.json())
             .then(response => {
                 if (response.errors) {
-                    alert('Проверьте данные и попробуйте еще раз ')
+                    document.getElementById('errorText').innerHTML = 'Проверьте данные и попробуйте еще раз'
+                } else {
+                    location.href = '/auth';
                 }
+            })
+            .catch(error => {
+                document.getElementById('errorText').innerHTML = 'Проверьте данные и попробуйте еще раз'
+                console.error('Error:', error);
+            });
 
-                location.href = '/auth'
-            }).catch(error => {
-            alert('Проверьте данные и попробуйте еще раз ')
-            console.error('Error:', error);
-        });
     }
 </script>

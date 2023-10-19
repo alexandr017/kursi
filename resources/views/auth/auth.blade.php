@@ -5,35 +5,44 @@
         <div class="main-block">
             <h1 class="title">Авторизоваться</h1>
 
-            <!-- E-mail input -->
-            <input
-                id="email"
-                type="text"
-                class="mail-input"
-                placeholder="Эл. почта"
-                maxlength="28"
-                value=""
-            />
-
-            <!-- Password input -->
-            <input
-                id="password"
-                type="password"
-                class="passwords-input"
-                placeholder="Пароль"
-                maxlength="8"
-            />
-
-            <!-- Confirm -->
-            <button
-                class="sign-in-button"
-                onclick="handleSignIn()"
+            <form
+                class="form-containier"
+                onsubmit="handleSignIn(event)"
             >
-                Войти
-            </button>
+                <input
+                    id="email"
+                    type="email"
+                    class="mail-input"
+                    placeholder="Эл. почта"
+                    value=""
+                    required
+                    name="email"
+                />
+
+                <input
+                    id="password"
+                    type="password"
+                    class="passwords-input"
+                    placeholder="Пароль"
+                    maxlength="8"
+                    minlength="8"
+                    required
+                    name="password"
+                />
+
+                <div id="errorText"></div>
+
+                <!-- Confirm -->
+                <button
+                    type="submit"
+                    class="sign-in-button"
+                >
+                    Войти
+                </button>
+            </form>
 
             {{-- Or registration --}}
-            <a href="/auth/register">
+            <a href="auth/register">
                 <span class="orr-registration">Или регистрация</span>
             </a>
         </div>
@@ -41,6 +50,13 @@
 @endsection
 
 <style>
+    #errorText {
+        color: red;
+        line-height: 1.4375em;
+        font: inherit;
+        letter-spacing: inherit;
+    }
+
   .container {
       width: 100%;
       margin-left: auto;
@@ -94,8 +110,6 @@
       letter-spacing: inherit;
       color: currentColor;
       border: 0;
-      box-sizing: content-box;
-      height: 1.4375em;
       -webkit-tap-highlight-color: transparent;
       display: block;
       width: 100%;
@@ -104,6 +118,8 @@
       -webkit-animation-duration: 10ms;
       animation-duration: 10ms;
       padding: 16.5px 14px;
+      box-sizing: border-box;
+      height: 56px;
   }
 
   .sign-in-button {
@@ -124,6 +140,15 @@
       color: #FFFFFF;
   }
 
+  .form-containier {
+      width: 100%;
+  }
+
+    .sign-in-button:hover {
+        cursor: pointer;
+        opacity: 90%;
+    }
+
   .orr-registration {
       text-decoration: underline;
   }
@@ -134,7 +159,9 @@
 </style>
 
 <script>
-    function handleSignIn() {
+    function handleSignIn(evt) {
+        evt.preventDefault();
+
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
@@ -150,16 +177,15 @@
         }).then(response => response.json())
             .then(response => {
                 if (response.errors) {
-                    alert('Проверьте данные и попробуйте еще раз ')
+                    document.getElementById('errorText').innerHTML = 'Проверьте данные и попробуйте еще раз'
                 }
 
                 if (response.url && response.url !== 'undefined') {
                     location.href = response.url;
                 }
-
             }).catch(error => {
-            alert('Проверьте данные и попробуйте еще раз ')
-            console.log('Error:', error);
-        });
+                document.getElementById('errorText').innerHTML = 'Проверьте данные и попробуйте еще раз'
+                console.log('Error:', error);
+            });
     }
 </script>
