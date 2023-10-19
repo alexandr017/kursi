@@ -10,6 +10,8 @@ interface CoursesRepositoryInterface
 {
     public function index(IndexCoursesDto $dto): LengthAwarePaginator;
     public function getPopulars(): Collection;
+    public function getPopularsForStructuredData(): Collection;
     public function getPromotions(): Collection;
+    public function getPromotionsForStructuredData(): Collection;
     public function getBySearch(string $search, int $page = 1): LengthAwarePaginator;
 }

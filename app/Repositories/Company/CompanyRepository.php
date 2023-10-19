@@ -36,8 +36,16 @@ class CompanyRepository implements CompanyRepositoryInterface
                     $query->orderBy('sort', 'desc')
                         ->limit(2);
                     },
+                'reviewsStructuredData' => function($query) {
+                    $query->orderBy('sort', 'desc')
+                        ->limit(100);
+                    },
                 'courses' => function($query) {
                  $query->limit(10); //ToDo: Need to get parameter in sync and make filter via that parameter;
+                 $query->with(['tags', 'school.url']);
+               },
+                'coursesStructuredData' => function($query) {
+                 $query->limit(100); //ToDo: Need to get parameter in sync and make filter via that parameter;
                  $query->with(['tags', 'school.url']);
                }
             ])->whereNull('deleted_at')
@@ -97,12 +105,38 @@ class CompanyRepository implements CompanyRepositoryInterface
         );
     }
 
+    public function getForStructuredData(IndexCompaniesDto $dto): Collection
+    {
+        $query = $this->query();
+
+        $query->withCount('courses')
+            ->with(['url']);
+
+        if ($dto->sortKey) {
+            $query->orderBy($dto->sortKey, $dto->sortValue);
+        } else {
+            $query->orderBy('sort_order', 'desc');
+        }
+
+        return $query->limit(100)
+            ->get();
+    }
+
     public function getPopularReviews(): Collection
     {
         return $this->reviewsQuery()
             ->with(['company'])
             ->orderByDesc('rating')
             ->limit(15)
+            ->get();
+    }
+
+    public function getPopularReviewsForStructuredData(): Collection
+    {
+        return $this->reviewsQuery()
+            ->with(['company'])
+            ->orderByDesc('rating')
+            ->limit(100)
             ->get();
     }
 

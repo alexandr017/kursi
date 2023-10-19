@@ -12,6 +12,9 @@ class IndexCompaniesAction
 
     public function run(IndexCompaniesDto $dto)
     {
-        return $this->companyRepository->index($dto);
+        return [
+            'companies' => $this->companyRepository->index($dto),
+            'companiesForStructuredData' => $this->companyRepository->getForStructuredData($dto),
+        ];
     }
 }

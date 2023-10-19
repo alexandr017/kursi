@@ -54,6 +54,16 @@ class Listing extends Model
         )->withPivot(['sort']);
     }
 
+    public function coursesStructuredData(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Course::class,
+            'listing_courses',
+            'listing_id',
+            'course_id'
+        )->withPivot(['sort']);
+    }
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(Employee::class, 'author_id');

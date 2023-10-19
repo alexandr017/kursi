@@ -26,6 +26,10 @@ class ListingRepository implements ListingRepositoryInterface
                     ->withCount('schoolReviews as reviews_count')
                     ->with(['tags', 'school.url'])->orderBy('listing_courses.sort', 'desc')
                     ->limit(5);
+                },'coursesStructuredData' => function ($q) {
+                $q->whereNotNull('company_id')
+                    ->with(['school'])->orderBy('listing_courses.sort', 'desc')
+                    ->limit(100);
                 },
                 'author',
                 'parent.childes.url',

@@ -32,7 +32,17 @@ class Company extends Model
     {
         return $this->hasMany(SchoolReview::class, 'school_id', 'id');
     }
+
+    public function reviewsStructuredData(): HasMany
+    {
+        return $this->hasMany(SchoolReview::class, 'school_id', 'id');
+    }
     public function courses(): HasMany
+    {
+        return $this->hasMany(Course::class, 'company_id', 'id');
+    }
+
+    public function coursesStructuredData(): HasMany
     {
         return $this->hasMany(Course::class, 'company_id', 'id');
     }
