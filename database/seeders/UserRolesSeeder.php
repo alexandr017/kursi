@@ -14,7 +14,10 @@ class UserRolesSeeder extends Seeder
                 'role' =>  UserRole::ROLE_USER,
             ],
             [
-                'role' =>  UserRole::ROLE_ADMIN,
+                'role' =>  UserRole::ROLE_SUPER_ADMIN,
+            ],
+            [
+                'role' =>  UserRole::ROLE_CONTENT_MANAGER,
             ]
         ];
 

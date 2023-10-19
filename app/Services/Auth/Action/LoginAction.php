@@ -46,7 +46,7 @@ class LoginAction
 
         $data->user = $user;
 
-        if ($user->role->role == UserRole::ROLE_ADMIN) {
+        if ($user->role->role == UserRole::ROLE_SUPER_ADMIN) {
             $data->url = '/admin/index';
         } else {
             $data->url = '/';

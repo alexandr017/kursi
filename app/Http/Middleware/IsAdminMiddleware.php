@@ -17,7 +17,11 @@ class IsAdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (is_null($request->user()) || $request->user()->role->role != UserRole::ROLE_ADMIN) {
+        if (
+            is_null($request->user())
+            || ($request->user()->role->role != UserRole::ROLE_SUPER_ADMIN
+            && $request->user()->role->role != UserRole::ROLE_CONTENT_MANAGER)
+        ) {
             throw new AuthorizationException();
         }
 

@@ -46,6 +46,16 @@
     "isEntry": true,
     "src": "resources/css/app.css"
   },
+  "resources/css/auth/auth.css": {
+    "file": "assets/auth-c192bd85.css",
+    "isEntry": true,
+    "src": "resources/css/auth/auth.css"
+  },
+  "resources/css/auth/register.css": {
+    "file": "assets/register-c4c84e27.css",
+    "isEntry": true,
+    "src": "resources/css/auth/register.css"
+  },
   "resources/css/blog/category.css": {
     "file": "assets/category-91207f54.css",
     "isEntry": true,

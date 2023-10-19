@@ -23,4 +23,6 @@ class UserRole extends Model
 
     const ROLE_USER = 'user';
     const ROLE_ADMIN = 'admin';
+    const ROLE_SUPER_ADMIN = 'super_admin';
+    const ROLE_CONTENT_MANAGER = 'content_manager';
 }
