@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\Site\V3\BackCall\BackCallController;
 use App\Http\Controllers\Site\V3\Catalog\CatalogController;
 use App\Http\Controllers\Site\V3\Comments\CommentsController;
 use App\Http\Controllers\Site\V3\CompanyReviews\CompanyReviewController;
 use App\Http\Controllers\Site\V3\Courses\CoursesController;
 use App\Http\Controllers\Site\V3\EmployeeRating\EmployeeRatingController;
 use App\Http\Controllers\Site\V3\ListingRating\ListingRatingController;
+use App\Http\Controllers\Site\V3\Question\QuestionController;
+use App\Http\Controllers\Site\V3\Subscribe\SubscribeController;
 use App\Http\Controllers\Site\V3\Tags\TagController;
 use App\Http\Controllers\Site\V3\RatingPages\RatingPagesController;
 
@@ -40,6 +43,9 @@ Route::get('/catalog/listings/{path}', [CatalogController::class, 'getChildes'])
 Route::get('companies/{company_id}/reviews', [CompanyReviewController::class, 'index']);
 Route::post('companies/{company_id}/reviews', [CompanyReviewController::class, 'create']);
 Route::post('employee/{employee_id}/rate', [EmployeeRatingController::class, 'rate']);
+Route::post('/subscribe', [SubscribeController::class, 'subscribe']);
+Route::post('/question', [QuestionController::class, 'create']);
+Route::post('/back-call', [BackCallController::class, 'create']);
 
 
 include "site-sitemap.php";

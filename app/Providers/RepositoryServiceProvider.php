@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\BackCall\BackCallRepository;
+use App\Repositories\BackCall\BackCallRepositoryInterface;
 use App\Repositories\Comments\CommentRepository;
 use App\Repositories\Comments\CommentRepositoryInterface;
 use App\Repositories\Company\CompanyRepository;
@@ -16,8 +18,12 @@ use App\Repositories\PostCategory\PostCategoryRepository;
 use App\Repositories\PostCategory\PostCategoryRepositoryInterface;
 use App\Repositories\Posts\PostRepository;
 use App\Repositories\Posts\PostRepositoryInterface;
+use App\Repositories\Question\QuestionRepository;
+use App\Repositories\Question\QuestionRepositoryInterface;
 use App\Repositories\StaticPage\StaticPageRepository;
 use App\Repositories\StaticPage\StaticPageRepositoryInterface;
+use App\Repositories\Subscriber\SubscriberRepository;
+use App\Repositories\Subscriber\SubscriberRepositoryInterface;
 use App\Repositories\Tags\TagRepository;
 use App\Repositories\Tags\TagRepositoryInterface;
 use App\Repositories\Url\UrlRepository;
@@ -75,7 +81,19 @@ class RepositoryServiceProvider extends ServiceProvider
         );
         $this->app->bind(
             UserRepositoryInterface::class,
-            UserRepository  ::class
+            UserRepository  ::class,
+        );
+        $this->app->bind(
+            SubscriberRepositoryInterface::class,
+            SubscriberRepository::class
+        );
+        $this->app->bind(
+            BackCallRepositoryInterface::class,
+            BackCallRepository::class
+        );
+        $this->app->bind(
+            QuestionRepositoryInterface::class,
+            QuestionRepository::class
         );
     }
 

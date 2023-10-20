@@ -55,9 +55,9 @@
             <div id="comp_77b9fff28090b5610649ee31183d5a1a">
                 <div class="subscribe-form" id="sender-subscribe">
                     <p class="subscribe_form-title">Подпишись на рассылку новостей</p>
-                    <form id="bx_subscribe_subform_sljzMT" role="form" method="post" action="/about/team/daniil-fam/?CODE=daniil-fam&amp;%3Flogout=yes&amp;%3FCODE=daniil-fam"><input type="hidden" name="bxajaxid" id="bxajaxid_77b9fff28090b5610649ee31183d5a1a_8BACKi" value="77b9fff28090b5610649ee31183d5a1a"><input type="hidden" name="AJAX_CALL" value="Y">		<input type="hidden" name="sessid" id="sessid" value="170f46ae7c7ce937ca01f7886e0871e8">		<input type="hidden" name="sender_subscription" value="add">
+                    <form id="bx_subscribe_subform_sljzMT">
                         <div class="bx-input-group">
-                            <input class="bx-form-control " type="email" name="SENDER_SUBSCRIBE_EMAIL" value="" title="Введите ваш e-mail" placeholder="Ваш E-mail">
+                            <input class="bx-form-control " type="email" name="email" value="" title="Введите ваш e-mail" placeholder="Ваш E-mail">
                         </div>
                         <div style="display: none;">
                             <div class="bx-subscribe-desc">Выберите рассылку</div>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="bx_subscribe_submit_container">
-                            <button class="sender-btn btn-subscribe" id="bx_subscribe_btn_sljzMT"></button>
+                            <button class="sender-btn btn-subscribe" id="bx_subscribe_btn_sljzMT" onclick="subscribe()"></button>
                         </div>
                     </form>
                 </div>
@@ -113,3 +113,8 @@
         </div>
     </div>
 </footer>
+
+<script>
+    function subscribe() {
+    }
+</script>
