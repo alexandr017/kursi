@@ -37,7 +37,7 @@
 @section('custom-structured-data')
 
 <script type="application/ld+json">
-@php [$lowPrice, $highPrice] = productStructuredDataCalculate($popularCourses); @endphp
+@php [$lowPrice, $highPrice] = productStructuredDataCalculate($popularCoursesForStructuredData); @endphp
 {
     "@context": "https://www.schema.org",
     "@type": "Product",
@@ -51,12 +51,12 @@
     "description": "Популярные курсы",
     "offers": {
         "@type": "AggregateOffer",
-        "offerCount": {{$popularCourses->count()}},
+        "offerCount": {{$popularCoursesForStructuredData->count()}},
         "highPrice": "{{$highPrice}}",
         "lowPrice": "{{$lowPrice}}",
         "priceCurrency": "Rub",
         "offers": [
-            @foreach($popularCourses as $course)
+            @foreach($popularCoursesForStructuredData as $course)
             {
                 "@type": "Offer",
                 "name": "{{$course->title}}",
@@ -70,7 +70,7 @@
                         "url": "{{$course->school?->logo}}"
                     }
                 }
-            } @if($course != $popularCourses->last()) , @endif
+            } @if($course != $popularCoursesForStructuredData->last()) , @endif
             @endforeach
         ]
     }
@@ -82,10 +82,10 @@
     "@context": "http://schema.org",
     "@type": "ItemList",
     "name": "Последние отзывы",
-    "numberOfItems": {{$reviews->count()}},
+    "numberOfItems": {{$reviewsForStructuredData->count()}},
     "itemListElement": [
     @php $position = 1 @endphp
-    @foreach($reviews as $review)
+    @foreach($reviewsForStructuredData as $review)
         {
             "@type": "ListItem",
             "position": {{$position}},
@@ -102,7 +102,7 @@
                 "author": { "@type": "Person", "name": "{{$review->author_name}}" },
                 "publisher": { "@type": "Organization", "name": "Курсы.ру" }
             }
-        } @if($review != $reviews->last()) , @endif
+        } @if($review != $reviewsForStructuredData->last()) , @endif
         @php $position++ @endphp
         @endforeach
     ]
@@ -111,7 +111,7 @@
 
 
 <script type="application/ld+json">
-@php [$lowPrice, $highPrice] = productStructuredDataCalculate($withPromotionCourses); @endphp
+@php [$lowPrice, $highPrice] = productStructuredDataCalculate($withPromotionCoursesForStructuredData); @endphp
 {
     "@context": "https://www.schema.org",
     "@type": "Product",
@@ -125,12 +125,12 @@
     "description": "Акции",
     "offers": {
     "@type": "AggregateOffer",
-        "offerCount": {{$withPromotionCourses->count()}},
+        "offerCount": {{$withPromotionCoursesForStructuredData->count()}},
         "highPrice": "{{$highPrice}}",
         "lowPrice": "{{$lowPrice}}",
         "priceCurrency": "Rub",
         "offers": [
-            @foreach($withPromotionCourses as $course)
+            @foreach($withPromotionCoursesForStructuredData as $course)
             {
                 "@type": "Offer",
                 "name": "{{$course->title}}",
@@ -144,7 +144,7 @@
                         "url": "{{$course->school?->logo}}"
                     }
                 }
-            } @if($course != $withPromotionCourses->last()) , @endif
+            } @if($course != $withPromotionCoursesForStructuredData->last()) , @endif
             @endforeach
         ]
     }
@@ -152,7 +152,7 @@
 
 </script>
 
-@foreach($posts as $post)
+@foreach($postsForStructuredData as $post)
 <script type="application/ld+json">
 {
   	"@context": "http://schema.org/",

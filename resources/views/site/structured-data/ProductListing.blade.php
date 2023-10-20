@@ -1,5 +1,5 @@
 @if(isset($listing))
-@php [$lowPrice, $highPrice] = productStructuredDataCalculate($listing->courses); @endphp
+@php [$lowPrice, $highPrice] = productStructuredDataCalculate($listing->coursesStructuredData); @endphp
 <script type="application/ld+json">
     {
         "@context": "https://www.schema.org",
@@ -14,12 +14,12 @@
     "description": "{{$listing->meta_description}}",
     "offers": {
     "@type": "AggregateOffer",
-        "offerCount": {{$listing->courses->count()}},
+        "offerCount": {{$listing->coursesStructuredData->count()}},
         "highPrice": "{{$highPrice}}",
         "lowPrice": "{{$lowPrice}}",
         "priceCurrency": "Rub",
         "offers": [
-        @foreach($listing->courses as $course)
+        @foreach($listing->coursesStructuredData as $course)
             {
                 "@type": "Offer",
                 "name": "{{$course->title}}",
@@ -33,7 +33,7 @@
                             "url": "{{$course->school?->logo}}"
                         }
                     }
-            } @if ($listing->courses->last() != $course) , @endif
+            } @if ($listing->coursesStructuredData->last() != $course) , @endif
         @endforeach
         ]
     },

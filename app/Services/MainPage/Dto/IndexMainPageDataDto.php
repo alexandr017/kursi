@@ -13,5 +13,9 @@ class IndexMainPageDataDto extends DataTransferObject
     public Collection $withPromotionCourses;
     public Collection $reviews;
     public Collection $posts;
+    public Collection $popularCoursesForStructuredData;
+    public Collection $withPromotionCoursesForStructuredData;
+    public Collection $reviewsForStructuredData;
+    public Collection $postsForStructuredData;
     public StaticPage $page;
 }

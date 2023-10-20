@@ -25,9 +25,13 @@ class IndexMainPageAction
     {
         $listings = $this->listingRepository->getParentsWithChildes();
         $popularCourses = $this->coursesRepository->getPopulars();
+        $popularCoursesForStructuredData = $this->coursesRepository->getPopularsForStructuredData();
         $withPromotionCourses = $this->coursesRepository->getPromotions();
+        $withPromotionCoursesForStructuredData = $this->coursesRepository->getPromotionsForStructuredData();
         $reviews  = $this->companyRepository->getPopularReviews();
+        $reviewsForStructuredData = $this->companyRepository->getPopularReviewsForStructuredData();
         $posts = $this->postRepository->getPopulars();
+        $postsForStructuredData = $this->postRepository->getPopularsForStructuredData();
         $page = $this->staticPageRepository->getByBreadcrumbs(StaticPage::MAIN_PAGE);
 
         return new IndexMainPageDataDto(
@@ -36,6 +40,10 @@ class IndexMainPageAction
             withPromotionCourses: $withPromotionCourses,
             reviews: $reviews,
             posts: $posts,
+            popularCoursesForStructuredData: $popularCoursesForStructuredData,
+            withPromotionCoursesForStructuredData: $withPromotionCoursesForStructuredData,
+            reviewsForStructuredData: $reviewsForStructuredData,
+            postsForStructuredData: $postsForStructuredData,
             page: $page
         );
     }

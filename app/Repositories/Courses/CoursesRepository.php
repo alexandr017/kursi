@@ -62,6 +62,15 @@ class CoursesRepository implements CoursesRepositoryInterface
             ->get();
     }
 
+    public function getPopularsForStructuredData(): Collection
+    {
+        return $this->query()
+            ->with(['school'])
+            ->where('is_popular', 1)
+            ->limit(100)
+            ->get();
+    }
+
     public function getPromotions(): Collection
     {
         return $this->query()
@@ -70,6 +79,15 @@ class CoursesRepository implements CoursesRepositoryInterface
             ->with(['tags', 'school'])
             ->where('has_promotion', 1)
             ->limit(15)
+            ->get();
+    }
+
+    public function getPromotionsForStructuredData(): Collection
+    {
+        return $this->query()
+            ->with(['school'])
+            ->where('has_promotion', 1)
+            ->limit(100)
             ->get();
     }
 

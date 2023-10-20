@@ -23,7 +23,12 @@ class IndexCompaniesMainPageController extends Controller
 
         $breadcrumbs = [['h1' => $page->breadcrumbs ?? $page->h1]];
         return  $dto->needToRender() ?
-            view('site.v3.templates.company.companies', compact('companies', 'breadcrumbs', 'page')) :
-            view('site.v3.templates.company.company-catalog-section', compact('companies'));
+            view('site.v3.templates.company.companies', [
+                'companies' =>$companies['companies'],
+                'companiesForStructuredData' => $companies['companiesForStructuredData'],
+                'breadcrumbs' => $breadcrumbs,
+                'page' => $page]
+            ) :
+            view('site.v3.templates.company.company-catalog-section', ['companies' => $companies['companiesForStructuredData']]);
     }
 }

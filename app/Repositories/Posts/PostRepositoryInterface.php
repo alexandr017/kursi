@@ -10,6 +10,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 interface PostRepositoryInterface
 {
     public function getPopulars(): Collection;
+    public function getPopularsForStructuredData(): Collection;
     public function index(IndexPostCategoryDto $dto, array $relations = []): LengthAwarePaginator;
     public function getBySearch(string $q, int $page = 1): LengthAwarePaginator;
     public function getById(int $id): Post;

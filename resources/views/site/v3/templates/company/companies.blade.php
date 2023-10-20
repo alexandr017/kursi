@@ -40,12 +40,12 @@
     "itemListElement": [
     @php $position = 1 @endphp
     <?php // тут выводятся не все компании ?>
-    @foreach($companies as $company)
+    @foreach($companiesForStructuredData as $company)
         {
             "@type":"ListItem",
             "position": {{$position}},
             "url":" /{{$company->url?->url}}/"
-        } @if($companies->last() != $company) , @endif
+        } @if($companiesForStructuredData->last() != $company) , @endif
         @php $position++ @endphp
 	@endforeach
     ]

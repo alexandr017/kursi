@@ -25,6 +25,15 @@ class PostRepository implements PostRepositoryInterface
             ->get();
     }
 
+    public function getPopularsForStructuredData(): Collection
+    {
+        return $this->query()
+            ->orderByDesc('rating_value')
+            ->with(['urls', 'author.urls'])
+            ->limit(100)
+            ->get();
+    }
+
     public function index(IndexPostCategoryDto $dto, array $relations = []): LengthAwarePaginator
     {
         $query = $this->query()

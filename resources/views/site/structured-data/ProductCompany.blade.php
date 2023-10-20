@@ -1,5 +1,5 @@
 @if(isset($company))
-@php [$lowPrice, $highPrice] = productStructuredDataCalculate($company->courses); @endphp
+@php [$lowPrice, $highPrice] = productStructuredDataCalculate($company->coursesStructuredData); @endphp
 <script type="application/ld+json">
 {
     "@context": "https://www.schema.org",
@@ -22,7 +22,7 @@
     "lowPrice": "{{$lowPrice}}",
     "priceCurrency": "Rub",
     "offers": [
-    @foreach($company->courses as $course)
+    @foreach($company->coursesStructuredData as $course)
         {
             "@type": "Offer",
             "name": "{{$course->title}}",
@@ -37,21 +37,21 @@
                 }
             }
         }
-        @if($course != $company->courses->last()) , @endif
+        @if($course != $company->coursesStructuredData->last()) , @endif
     @endforeach
     ]
     },
     "review": [
-    @foreach($company->reviews as $review)
+    @foreach($company->reviewsStructuredData as $review)
         {
             "@type": "Review",
             "name": "{{$review->title}}",
             "reviewBody": "{{$review->content}} @if($review->pluses) | {{$review->pluses}} @endif  @if($review->minuses)  | {{$review->minuses}} @endif ",
-            "datePublished": "{{date('Y-m-d', strtotime($company->reviews->first()->created_at))}}",
+            "datePublished": "{{date('Y-m-d', strtotime($company->reviewsStructuredData->first()->created_at))}}",
             "reviewRating": { "@type": "Rating", "ratingValue": {{(int) $review->rating}} },
             "author": { "@type": "Person", "name": "{{$review->author_name}}" }
         }
-        @if($review != $company->reviews->last()) , @endif
+        @if($review != $company->reviewsStructuredData->last()) , @endif
     @endforeach
     ]
 }

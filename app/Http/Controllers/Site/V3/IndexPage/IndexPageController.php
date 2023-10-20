@@ -22,6 +22,10 @@ class IndexPageController extends Controller
             'withPromotionCourses' => $data->withPromotionCourses,
             'reviews' => $data->reviews,
             'posts' => $data->posts,
+            'postsForStructuredData' => $data->postsForStructuredData,
+            'reviewsForStructuredData' => $data->reviewsForStructuredData,
+            'withPromotionCoursesForStructuredData' => $data->withPromotionCoursesForStructuredData,
+            'popularCoursesForStructuredData' => $data->popularCoursesForStructuredData,
             'editLink' => $editLink,
             'page' => $data->page
             ]);
