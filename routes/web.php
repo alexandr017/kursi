@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,18 @@ Route::get('import/companies', [App\Http\Controllers\ImportController::class, 'r
 Route::get('import/courses', [App\Http\Controllers\ImportController::class, 'runcourses']);
 Route::get('import/set-correct-breadcrumbs', [App\Http\Controllers\ImportController::class, 'setCorrectBreadcrumbs']);
 
+Route::prefix('auth')->group(function () {
+    Route::get('/', function () {
+        return view('auth.auth');
+    });
+    Route::get('/login', function () {
+        return view('auth.auth');
+    });
+    Route::get('/register', function () {
+        return view('auth.register');
+    });
+
+    Route::post('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/register', [AuthController::class, 'register'])->name('register');
+    Route::post('/logout', [AuthController::class, 'logout']);
+});

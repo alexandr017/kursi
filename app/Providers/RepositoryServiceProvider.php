@@ -22,6 +22,8 @@ use App\Repositories\Tags\TagRepository;
 use App\Repositories\Tags\TagRepositoryInterface;
 use App\Repositories\Url\UrlRepository;
 use App\Repositories\Url\UrlRepositoryInterface;
+use App\Repositories\User\UserRepository;
+use App\Repositories\User\UserRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -70,6 +72,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             StaticPageRepositoryInterface::class,
             StaticPageRepository::class
+        );
+        $this->app->bind(
+            UserRepositoryInterface::class,
+            UserRepository  ::class
         );
     }
 

@@ -18,7 +18,7 @@ use App\Http\Controllers\Admin\Users\UsersController;
 use App\Http\Controllers\Admin\ShortCodes\ShortCodesController;
 use App\Http\Controllers\Admin\StaticPages\StaticPagesController;
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::middleware(['admin'])->prefix('admin')->as('admin.')->group(function () {
     Route::get('demo', [IndexPageController::class, 'demo']);
     Route::get('index', [IndexPageController::class, 'index'])->name('index');
 

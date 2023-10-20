@@ -18,13 +18,14 @@ class DatabaseSeeder extends Seeder
             EmployeesSeeder::class,
             PostSeeder::class,
             CompaniesSeeder::class,
-            CommentsSeeder::class,
+//            CommentsSeeder::class,
             SeoForPageSeeder::class,
             TagsSeeder::class,
             CoursesSeeder::class,
             SchoolsReviewsSeeder::class,
             PageSeeder::class,
-            AboutHistorySeeder::class
+            AboutHistorySeeder::class,
+            UserRolesSeeder::class
         ]);
     }
 }
