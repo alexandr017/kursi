@@ -28,7 +28,7 @@ class Question extends Model
         $new = new self();
 
         $new->setName($dto->name);
-        $new->setEmail($dto->emil);
+        $new->setEmail($dto->email);
         $new->setQuestion($dto->question);
         $new->setRulesAccepted($dto->rulesAccepted);
 

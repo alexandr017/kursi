@@ -8,7 +8,7 @@ use Spatie\DataTransferObject\DataTransferObject;
 class CreateQuestionDto extends DataTransferObject
 {
     public string $name;
-    public string $emil;
+    public string $email;
     public string $question;
     public bool $rulesAccepted;
 
