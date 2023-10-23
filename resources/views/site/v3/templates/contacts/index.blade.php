@@ -3,8 +3,6 @@
 @section ('og_title', Shortcode::compile($page->h1))
 @section ('meta_description', Shortcode::compile($page->meta_description))
 
-
-
 @section('style')
     <link href='//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap' rel='stylesheet' type='text/css'>
@@ -549,11 +547,9 @@
             }
         }
     </style>
-
 @endsection
 
 @section('content')
-
     <div class="content max-width " onclick="contentCloseBlur(this)">
         <h1>Контакты</h1>
 
@@ -575,11 +571,9 @@
             <p class="contacts_page-big_person-subtitle">Быстро ответим на ваши вопросы в наших мессенджерах</p>
             <div class="contacts_page-big_person-contacts">
                 <div class="contacts_page-big_person-contact">
-
                     <a href="https://vk.com/kursyru" target="_blank" rel="nofollow"><img src="/images/contacts/vk_black.svg" alt="VK Курсы.ру" title="VK Курсы.ру"></a>
                 </div>
                 <div class="contacts_page-big_person-contact">
-
                     <a href="https://t.me/kursy_ru_support_bot" target="_blank" rel="nofollow"><img src="/images/contacts/tg_black.svg" alt="Telegram Курсы.ру" title="Telegram Курсы.ру"></a>
                 </div>
             </div>
@@ -647,55 +641,67 @@
 
         <div class="callback-result_form-cont" id="callback_form_1cbb8df9d0a703ba07e0">
 
-            <form name="backcall" action="/contacts/" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="WEB_FORM_ID" value="3">
-
+            <form name="backCallForm" onsubmit="handleCallBack(event)">
+                {{--<input type="hidden" value="3">--}}
                 <div class="callback-cont">
                     <div class="callback-form_title">
                         <h3>Заказать обратный звонок</h3>
                     </div>
 
                     <div class="callback-form_subtitle">
-                        <p>Появился вопрос по нешему<br> сайту или онлайн-образованию?<br> Оставьте заявку, и мы перезвоним</p>
+                        <p>
+                            Появился вопрос по нешему
+                            <br>
+                            сайту или онлайн-образованию?
+                            <br>
+                            Оставьте заявку, и мы перезвоним
+                        </p>
                     </div>
 
                     <div class="callback-form">
-
                         <div class="callback-form_cont">
-                            <!--  -->
-                            <!--  -->
                             <div class="callback-form_field_cont">
                                 <div class="callback-form_field_title">
-                                    Имя																	</div>
+                                    Имя
+                                </div>
                                 <div class="callback-form_field_input ">
-                                    <input type="text" data-valid="empty" data-title="Имя" name="form_text_26" value="">					</div>
-                            </div>
-                            <div class="callback-form_field_cont">
-                                <div class="callback-form_field_title">
-                                    Телефон																	</div>
-                                <div class="callback-form_field_input ">
-                                    <input type="text" placeholder="+7___-___-____" id="phone_27" data-valid="phone" data-title="Телефон" name="form_text_27" value="">					</div>
-                            </div>
-                            <div class="callback-form_field_cont">
-
-
-                                <div class="callback-agreement_cont custom_checkbox">
-                                    <style media="screen">
-                                        .custom_checkbox .custom_label:before {
-                                            background-image: url("/images/contacts/checkbox_arrow.svg");
-                                        }
-                                    </style>
-                                    <input type="checkbox" checked="" id="28" name="form_checkbox_AGREEMENT[]" value="28"><label for="28"> Я даю согласие на <a href="/rules/" target="_blank">обработку персональных данных</a></label>						<!-- <label class="callback-agreement_text custom_label" for="28">
-													</label> -->
+                                    <input type="text" data-valid="empty" data-title="Имя" name="name" value="" required>
                                 </div>
                             </div>
-                            <p style="margin-bottom: 24px;">
-                            </p>
-                            <div class="callback-form_buttons">
-                                <input class="blue_button_template" type="submit" name="web_form_submit" value="Заказать">
+                            <div class="callback-form_field_cont">
+                                <div class="callback-form_field_title">
+                                    Телефон
+                                </div>
+                                <div class="callback-form_field_input ">
+                                    <input
+                                        type=""
+                                        placeholder="+7___-___-____"
+                                        id="phone_27"
+                                        data-valid="phone"
+                                        data-title="Телефон"
+                                        name="phone_number"
+                                        value=""
+                                        required
+                                        oninput="phoneMask(event)"
+                                    >
+                                </div>
+                            </div>
+                            <div class="callback-form_field_cont">
+                                <div class="callback-agreement_cont custom_checkbox">
+                                    <input type="checkbox" checked id="28" name="rules_accepted" required>
+                                    <label for="28">
+                                        Я даю согласие на
+                                        <a href="/rules/" target="_blank">
+                                            обработку персональных данных
+                                        </a>
+                                    </label>
+                                </div>
+                                <p style="margin-bottom: 24px;"></p>
+                                <div class="callback-form_buttons">
+                                    <input class="blue_button_template" type="submit" name="web_form_submit" value="Заказать">
+                                </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </form>
@@ -703,66 +709,63 @@
         </div>
 
         <div class="callback-result_form-cont" id="callback_form_ed47af957f23c4881ee3">
-
-            <form name="backquestion" action="/contacts/" method="POST" enctype="multipart/form-data">
-
+            <form id="question_form" name="questionForm" onsubmit="handleSendQuestion(event)">
                 <div class="callback-cont">
                     <div class="callback-form_title">
                         <h3>Задайте нам вопрос</h3>
                     </div>
 
                     <div class="callback-form_subtitle">
-                        <p>Напишите свой вопрос, и мы ответим<br>
-                            вам в кратчайшие сроки!</p>
+                        <p>
+                            Напишите свой вопрос, и мы ответим
+                            <br>
+                            вам в кратчайшие сроки!
+                        </p>
                     </div>
 
                     <div class="callback-form">
-
                         <div class="callback-form_cont">
-                            <!--  -->
-                            <!--  -->
                             <div class="callback-form_field_cont">
                                 <div class="callback-form_field_title">
-                                    Имя																	</div>
+                                    Имя
+                                </div>
                                 <div class="callback-form_field_input ">
-                                    <input type="text" data-title="Имя" name="form_text_29" value="">					</div>
-                            </div>
-                            <div class="callback-form_field_cont">
-                                <div class="callback-form_field_title">
-                                    Почта																	</div>
-                                <div class="callback-form_field_input ">
-                                    <input type="text" data-title="e-mail" name="form_email_30" value="" size="0">					</div>
-                            </div>
-                            <div class="callback-form_field_cont">
-                                <div class="callback-form_field_title">
-                                    Вопрос																	</div>
-                                <div class="callback-form_field_input ">
-                                    <textarea name="form_textarea_31" cols="40" rows="5" placeholder="Напишите свой вопрос" data-title="Вопрос"></textarea>					</div>
-                            </div>
-                            <div class="callback-form_field_cont">
-
-
-                                <div class="callback-agreement_cont custom_checkbox">
-                                    <style media="screen">
-                                        .custom_checkbox .custom_label:before {
-                                            background-image: url("/images/contacts/checkbox_arrow.svg");
-                                        }
-                                    </style>
-                                    <input type="checkbox" checked="" id="32" name="form_checkbox_AGREEMENT[]" value="32"><label for="32"> Я даю согласие на <a href="/rules/" target="_blank">обработку персональных данных</a></label>						<!-- <label class="callback-agreement_text custom_label" for="32">
-													</label> -->
+                                    <input type="text" data-title="Имя" name="name" value="" required>
                                 </div>
                             </div>
-                            <p style="margin-bottom: 24px;">
-                            </p>
+                            <div class="callback-form_field_cont">
+                                <div class="callback-form_field_title">
+                                    Почта
+                                </div>
+                                <div class="callback-form_field_input ">
+                                    <input type="email" data-title="e-mail" name="email" value="" size="0" required>
+                                </div>
+                            </div>
+                            <div class="callback-form_field_cont">
+                                <div class="callback-form_field_title">
+                                    Вопрос
+                                </div>
+                                <div class="callback-form_field_input ">
+                                    <textarea name="question" cols="40" rows="5" placeholder="Напишите свой вопрос" data-title="Вопрос" required></textarea>
+                                </div>
+                            </div>
+                            <div class="callback-form_field_cont">
+                                <div class="callback-agreement_cont custom_checkbox">
+                                    <input type="checkbox" checked id="32" name="rules_accepted" required>
+                                    <label for="32">
+                                        Я даю согласие на
+                                        <a href="/rules/" target="_blank">обработку персональных данных</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <p style="margin-bottom: 24px;"></p>
                             <div class="callback-form_buttons">
-                                <input class="blue_button_template" type="submit" name="web_form_submit" value="Отправить">
+                                <input class="blue_button_template" type="submit">
                             </div>
                         </div>
-
                     </div>
                 </div>
             </form>
-
         </div>
 
         <div class="contacts_page-text_block">
@@ -1011,21 +1014,108 @@
     </div>
 @endsection
 
+<script>
+    function phoneMask(evt) {
+        const inputEl = evt.target;
+        let patStringArr = "+7-___-___-____".split('');
+        let arrPush = [3, 4, 5, 7, 8, 9, 11, 12, 13, 14];
+        let val = inputEl.value;
+        let arr = val.replace(/\D+/g, "").split('').splice(1);
+
+        arr.forEach((str, index) => {
+            const number = arrPush[index];
+            patStringArr[number] = str;
+        });
+
+        if(arr.length < 10) {
+            inputEl.style.color = 'red'
+            inputEl.setCustomValidity("Phone number is not valid!");
+        } else {
+            inputEl.setCustomValidity("");
+            inputEl.style.color = 'green'
+        }
+
+        inputEl.value = patStringArr.join('');
+    }
+
+    function contentCloseBlur(elem) {
+        //if (elem.classList.contains("blur_bg")) {
+
+        Object.values(window.openedFormsCallbacks).forEach((e) => {
+            e();
+        });
+        //}
+    }
+
+    function createPopup(message, isError = false) {
+        const popupHTML = `
+            <div id="sender_subscribe_component_wrapper">
+                <div id="sender_subscribe_component" class="${isError ? 'errWindow' : ''}">
+                    <div id="popup-window-content-sender_subscribe_component" class="popup-window-content">
+                        <div id="sender-subscribe-response-cont" style="display: block;">
+                            <div class="bx_subscribe_response_container">
+                                <p>${message}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="popup-window-buttons">
+                        <span
+                            class="popup-window-button subscribe-popup_close"
+                            id="close-btn"
+                        >Ок</span>
+                    </div>
+                </div>
+            </div>`;
+
+        document.body.innerHTML += popupHTML;
+    }
+
+    function handleSubmitForm(evt, route, formName, successMessage) {
+        evt.preventDefault();
+
+        const form = document.forms[formName];
+        const formData = new FormData(form);
+
+        const requestData = {
+            ...Object.fromEntries(formData),
+            rules_accepted: formData.get('rules_accepted') === 'on' ? 1 : 0
+        };
+
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+        fetch(`/${route}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': csrfToken,
+            },
+            body: JSON.stringify(requestData)
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response;
+            })
+            .then(response => {
+                createPopup(successMessage);
+            })
+            .catch(err => {
+                createPopup('Не удалось сохранить', true);
+            });
+    }
+
+    function handleSendQuestion(evt) {
+        handleSubmitForm(evt, 'question', 'questionForm', 'Спасибо, Ваш вопрос успешно сохранено.');
+    }
+
+    function handleCallBack(evt) {
+        handleSubmitForm(evt, 'back-call', 'backCallForm', 'Спасибо, Обратный звонок сохранен.');
+    }
+</script>
 
 @section('additional-scripts')
     @parent
-
-    <script>
-        function contentCloseBlur(elem) {
-            //if (elem.classList.contains("blur_bg")) {
-
-                Object.values(window.openedFormsCallbacks).forEach((e) => {
-                    e();
-                });
-            //}
-        }
-    </script>
-
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
@@ -1048,9 +1138,52 @@
 
 @section('custom-structured-data')
     @parent
-
 @endsection
 
+<style>
+    #close-btn {
+        cursor: pointer;
+    }
 
+    .errWindow #close-btn {
+        box-shadow: 4px 4px  12px rgb(150 0 0 / 25%);
+        background-color: white;
+        color: black;
+        font-size: 20px;
+    }
+
+    .errWindow .bx_subscribe_response_container {
+       color: #ff0000;
+        font-size: 20px;
+        margin: 0 20px;
+    }
+
+    label.bx-input_error {
+        font-size: 12px;
+        line-height: 15px;
+        color: #E75050;
+    }
+
+    .subscribe-form input[type="email"].input_error {
+        border: 1px solid #E75050;
+    }
+
+    #sender_subscribe_component_wrapper {
+        background-color: rgba(30, 28, 28, 0.53);
+        position: fixed;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #sender_subscribe_component {
+        background-color: #ffffff;
+    }
+</style>
 
 
