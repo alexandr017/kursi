@@ -55,9 +55,18 @@
             <div id="comp_77b9fff28090b5610649ee31183d5a1a">
                 <div class="subscribe-form" id="sender-subscribe">
                     <p class="subscribe_form-title">Подпишись на рассылку новостей</p>
-                    <form id="bx_subscribe_subform_sljzMT" role="form" method="post" action="/about/team/daniil-fam/?CODE=daniil-fam&amp;%3Flogout=yes&amp;%3FCODE=daniil-fam"><input type="hidden" name="bxajaxid" id="bxajaxid_77b9fff28090b5610649ee31183d5a1a_8BACKi" value="77b9fff28090b5610649ee31183d5a1a"><input type="hidden" name="AJAX_CALL" value="Y">		<input type="hidden" name="sessid" id="sessid" value="170f46ae7c7ce937ca01f7886e0871e8">		<input type="hidden" name="sender_subscription" value="add">
+                    <form name="subscribe_form" id="bx_subscribe_subform_sljzMT" onsubmit="subscribe(event)">
                         <div class="bx-input-group">
-                            <input class="bx-form-control " type="email" name="SENDER_SUBSCRIBE_EMAIL" value="" title="Введите ваш e-mail" placeholder="Ваш E-mail">
+                            <input
+                                id="subscribe_email"
+                                class="bx-form-control"
+                                type="email"
+                                name="email"
+                                value=""
+                                title="Введите ваш e-mail"
+                                placeholder="Ваш E-mail"
+                                required
+                            >
                         </div>
                         <div style="display: none;">
                             <div class="bx-subscribe-desc">Выберите рассылку</div>
@@ -113,3 +122,103 @@
         </div>
     </div>
 </footer>
+
+<script>
+    document.body.addEventListener('click', function (e) {
+        if (e.target.id === 'close-btn') {
+            closeSenderSubscribe();
+        }
+    });
+
+    function closeSenderSubscribe() {
+        const popupWrapper = document.getElementById('sender_subscribe_component_wrapper');
+
+        if (popupWrapper) {
+            popupWrapper.remove();
+        }
+    }
+
+    function subscribe(evt) {
+        evt.preventDefault();
+
+        const form = document.forms['subscribe_form'];
+        const formData = new FormData(form);
+        const emailData = Object.fromEntries(formData).email;
+        const emailInput = document.getElementById('email');
+
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+        fetch('/subscribe', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': csrfToken,
+            },
+            body: JSON.stringify({
+                email: emailData
+            })
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response;
+            })
+            .then(() => {
+                const popupHTML = `
+                    <div id="sender_subscribe_component_wrapper">
+                        <div id="sender_subscribe_component">
+                            <div id="popup-window-content-sender_subscribe_component" class="popup-window-content">
+                                <div id="sender-subscribe-response-cont" style="display: block;">
+                                    <div class="bx_subscribe_response_container">
+                                        <p>Спасибо, что подписались на нашу рассылку!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="popup-window-buttons">
+                                <span class="popup-window-button subscribe-popup_close" id="close-btn">Ок</span>
+                            </div>
+                        </div>
+                    </div>`;
+
+                document.body.innerHTML += popupHTML;
+            })
+            .catch(err => {
+                emailInput.classList.add('input_error');
+
+                const errorLabel = document.createElement('label');
+                errorLabel.className = 'bx-input_error';
+                errorLabel.innerHTML = err.message;
+                evt.target.appendChild(errorLabel);
+            })
+    }
+</script>
+
+<style>
+    label.bx-input_error {
+        font-size: 12px;
+        line-height: 15px;
+        color: #E75050;
+    }
+
+    .subscribe-form input[type="email"].input_error {
+        border: 1px solid #E75050;
+    }
+
+    #sender_subscribe_component_wrapper {
+        background-color: rgba(30, 28, 28, 0.53);
+        position: fixed;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #sender_subscribe_component {
+        background-color: #ffffff;
+    }
+</style>
