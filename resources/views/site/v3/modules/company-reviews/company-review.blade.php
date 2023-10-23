@@ -6,7 +6,7 @@
                     <img src="{{$company->logo}}" alt="Учебный Центр «Специалист»" title="Отзыв от: Женя Проскурин">
                 </div>
                 <div class="review_card-school_info">
-                    <a class="review_card-school_name" href="/{{$company->url?->url}}">
+                    <a class="review_card-school_name" href="{{linkWithSlash($company->url?->url)}}">
                         {{$company->h1}}
                     </a>
                     <div class="review_card-school_rating">

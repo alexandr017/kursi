@@ -11,7 +11,7 @@
                 @if ($key != (count($breadcrumbs)-1))
                     <span class="bx-breadcrumb-item">
                     <span class="separator">/</span>
-                        <a href="{{$breadcrumb['link']}}" title="{{$breadcrumb['h1']}}">
+                        <a href="{{linkWithSlash($breadcrumb['link'])}}" title="{{$breadcrumb['h1']}}">
                             <span>{{$breadcrumb['h1']}}</span>
                         </a>
                     </span>

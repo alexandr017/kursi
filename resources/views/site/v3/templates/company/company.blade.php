@@ -51,7 +51,7 @@
                                 </span>
                             </div>
                             <div class="school_short_card-footer_school_link">
-                                <a href="{{$company->link}}" rel="sponsored">
+                                <a href="{{linkWithSlash($company->link)}}" rel="sponsored">
                                     <img src="/images/system/Arrow.svg" alt="На сайт">
                                     На сайт школы
                                 </a>

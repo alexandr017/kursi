@@ -124,3 +124,23 @@ function productStructuredDataCalculate(object $courses) : array
 
     return [$lowPrice, $highPrice];
 }
+
+
+function linkWithSlash(string|null $link) : string
+{
+
+    // убираем "/" на на конце если он уже есть
+    $link = preg_replace('/\/$/', '', $link);
+
+    // убираем домен из ссылки если это внутренняя ссылка (если встречается в строке наш же домен)
+    $link = str_replace(\Request::root(), '', $link);
+
+    // если ссылка очистилась от домена убираем "/" впереди (если он есть) чтобы наверянка добавить его впереди
+    // чтобы исключить ситауции в относительных ссылках начинающихся с "//"
+    if (! str_contains($link, '://')) {
+        $link = preg_replace('/^\//', '', $link);
+        $link = '/' . $link;
+    }
+
+    return $link . '/';
+}

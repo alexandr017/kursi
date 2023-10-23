@@ -52,7 +52,7 @@
                 @foreach($listing->parent->childes as $key => $child)
                     <li id="bx_{{$child->id}}" class="@if($key > 17)  for-hide-linker-items @endif">
                         <p class="linker_item">
-                            <a href="/{{$child->url->url}}">
+                            <a href="{{linkWithSlash($child->url->url)}}">
                                 {{$child->name}}
                             </a>
                         </p>

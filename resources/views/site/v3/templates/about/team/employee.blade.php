@@ -153,7 +153,7 @@
                                 <div class="person_detail-short_contacts">
 
                                     <div class="person_detail-short_contact_item">
-                                        <a href="{{$employee->vk_link}}"><img src="/images/employees/others/vk_black.svg" alt=""></a>
+                                        <a href="{{linkWithSlash($employee->vk_link)}}"><img src="/images/employees/others/vk_black.svg" alt=""></a>
                                     </div>
                                 </div>
                             @endif
@@ -222,7 +222,7 @@
 
     </div>
 
-    
+
 
 @endsection
 

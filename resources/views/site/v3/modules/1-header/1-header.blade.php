@@ -34,9 +34,7 @@
                                     class="kursy-open_btn-close-img"
                                     id="closeCatalog"
                                 >
-                                <a class="catalog">
-                                    Каталог
-                                </a>
+                                <a class="catalog/">Каталог</a>
                             </div>
 
                             <div class="ul_cont" id="catalog_body_wrapper">

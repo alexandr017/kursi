@@ -13,7 +13,7 @@
                         <div class="person_name"><?php echo e($employee->name); ?></div>
                         <div class="person_post"><?php echo e($employee->job); ?></div>
                         <div class="person_link">
-                            <a class="white_button_template" href="/<?php echo e($employee->url); ?>">Подробнее</a>
+                            <a class="white_button_template" href="/<?php echo e($employee->url); ?>/">Подробнее</a>
                         </div>
                     </div>
                 </div>

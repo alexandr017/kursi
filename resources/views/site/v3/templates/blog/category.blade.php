@@ -29,7 +29,7 @@
         <div class="blog_sections-cont">
             @foreach($categories as $category)
                 <div id="bx_{{$category->id}}" class="blog_sections-item @if(request()->is($category->urls?->url)) blog_sections-item_active @endif">
-                    <a href="/{{$category->urls?->url}}">
+                    <a href="{{linkWithSlash($category->urls?->url)}}">
                         {{$category->h1}}
                     </a>
                 </div>

@@ -14,13 +14,13 @@
 
         <div class="kurse_card-school">
             <div class="school_minicard-cont">
-                <a class="school_minicard-logo" href="/{{$course->school?->url?->url}}">
+                <a class="school_minicard-logo" href="{{linkWithSlash($course->school?->url?->url)}}">
                     <img src="{{$course->school->logo}}" alt="{{$course->school?->h1}}" title="{{$course->school?->h1}}">
                 </a>
 
                 <div class="school_minicard-text">
                     <div class="school_minicard-title">
-                        <a href="/{{$course->school?->url?->url}}">
+                        <a href="{{linkWithSlash($course->school?->url?->url)}}">
                             {{$course->school?->name}}
                         </a>
                     </div>
@@ -85,7 +85,7 @@
             </div>
         </div>
         <!-- <div class="kurse_card-link"> -->
-        <a class="kurse_card-link" rel="sponsored" href="{{$course->affiliate_link}}" onclick="ym(91433233,'reachGoal','CourseAggregator'); return true;" target="_blank">Подробнее</a>
+        <a class="kurse_card-link" rel="sponsored" href="{{linkWithSlash($course->affiliate_link)}}" onclick="ym(91433233,'reachGoal','CourseAggregator'); return true;" target="_blank">Подробнее</a>
         <!-- </div> -->
     </div>
 </div>

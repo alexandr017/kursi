@@ -1,6 +1,6 @@
 <li class="categories_slider-cont swiper_styles-item swiper-slide swiper-slide-active" id="bx_1847241719_45" role="group" aria-label="1 / 17">
     <div>
-        <a href="{{$listing->url?->url}}" class="listing-link">
+        <a href="{{linkWithSlash($listing->url?->url)}}" class="listing-link">
             <img class="section_slider-black_img" src="/images/listing-icons/{{__('listing-icons.' . $listing->name)}}_01.svg" alt="{{$listing->name}}" title="{{$listing->name}}">
             <img class="section_slider-grey_img" src="/images/listing-icons/{{__('listing-icons.' . $listing->name)}}_03.svg" alt="{{$listing->name}}" title="{{$listing->name}}">
             <img class="section_slider-blue_img" src="/images/listing-icons/{{__('listing-icons.' . $listing->name)}}_02.svg" alt="{{$listing->name}}" title="{{$listing->name}}">
@@ -18,7 +18,7 @@
                 @if ( $key < 5 )
                     <li class="" id="bx_1847241719_450">
                         <div>
-                            <a href="{{$child->url?->url}}">
+                            <a href="{{linkWithSlash($child->url?->url)}}">
                                 <span>
                                     {{$child->name}}
                                 </span>
@@ -34,7 +34,7 @@
                 @if($key > 4)
                     <li class="" id="bx_1847241719_450">
                         <div>
-                            <a href="{{$child->url?->url}}">
+                            <a href="{{linkWithSlash($child->url?->url)}}">
                         <span>
                             {{$child->name}}
                         </span>

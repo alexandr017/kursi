@@ -121,7 +121,7 @@
                     <ul class="second_lvl">
                         @foreach($postCategories as $postCategory)
                             <li>
-                                <a class="bx_sitemap_li_title" href="/{{$postCategory->url}}">{{$postCategory->h1}}</a>
+                                <a class="bx_sitemap_li_title" href="{{linkWithSlash($postCategory->url)}}">{{$postCategory->h1}}</a>
                             </li>
                         @endforeach
                     </ul>

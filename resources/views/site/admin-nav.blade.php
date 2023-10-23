@@ -2,7 +2,7 @@
 <nav @if($adminPanel==0)  id="line-top" @elseif($adminPanel==1)  id="line-left"  @else id="line-right" @endif>
     <ul>
         <li title="Панель управления" class="first">
-            <a href="/admin/index">
+            <a href="/admin/index/">
                 <svg class="admin-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32" height="32" viewBox="0 0 512 512">
                     <g><g><path d="M437.02,74.98C388.667,26.628,324.38,0,256,0S123.333,26.628,74.98,74.98C26.628,123.333,0,187.62,0,256
 							s26.628,132.667,74.98,181.02C123.333,485.372,187.62,512,256,512s132.667-26.628,181.02-74.98
@@ -24,7 +24,7 @@
         </li>
         @if(isset($editLink))
             <li title="Изменить текущий элемент" class="last">
-                <a href="{{$editLink}}">
+                <a href="{{$editLink}}/">
                     <svg class="admin-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          width="32" height="32" viewBox="0 0 494.936 494.936" xml:space="preserve">
 					<g>
