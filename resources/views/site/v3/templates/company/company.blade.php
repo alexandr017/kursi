@@ -110,7 +110,10 @@
                     </div>
                 </div>
 
-                @include('site.v3.modules.company-reviews.company-reviews-main')
+                @if($company->reviews_count)
+                    @include('site.v3.modules.company-reviews.company-reviews-main')
+                @endif
+
                 @include('site.v3.modules.company-reviews.company-review-add', ['companyId' => $company->id])
 
             </div>
