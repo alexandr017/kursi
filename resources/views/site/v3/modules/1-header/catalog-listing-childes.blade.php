@@ -21,7 +21,7 @@
 
             <div class="li childes" style="grid-row: {{$index + 1}}">
                 <div class="header_top_menu-text childes">
-                    <a href="/{{$childFirst->url->url}}">
+                    <a href="{{linkWithSlash($childFirst->url->url)}}">
                         {{$childFirst->name}}
                     </a>
 
