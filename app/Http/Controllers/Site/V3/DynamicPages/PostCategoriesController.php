@@ -12,6 +12,7 @@ class PostCategoriesController extends Controller implements DynamicPagesInterfa
 {
     private const POST_CATEGORY_SECTION_TYPE_ID = 2;
     private const POST_SECTION_TYPE_ID = 3;
+    private const SEO_PAGE_ID = 4;
 
     public function render($sectionID, $isAmp = false, $paginatePage = 1)
     {
@@ -20,6 +21,7 @@ class PostCategoriesController extends Controller implements DynamicPagesInterfa
         $result = $action->run($dto);
 
         $breadcrumbs = BreadcrumbsRender::get($result->category->breadcrumbs, $result->category->h1);
+        $page = \DB::table('seo_for_pages')->where(['id' => self::SEO_PAGE_ID])->first();
 
         $editLink = "/admin/post-categories/{$result->category->id}/edit";
 
@@ -31,7 +33,8 @@ class PostCategoriesController extends Controller implements DynamicPagesInterfa
             'pagesCount' => $result->posts->lastPage(),
             'pageAlias' => $result->category->urls->url,
             'breadcrumbs' => $breadcrumbs,
-            'editLink' => $editLink
+            'editLink' => $editLink,
+            'page' => $page,
             ]);
     }
 }
