@@ -9,6 +9,10 @@
 
 */ ?>
 
+@section ('title', Shortcode::compile($page->title))
+@section ('og_title', Shortcode::compile($page->h1))
+@section ('meta_description', Shortcode::compile($page->meta_description))
+
 @section('content')
 
     <div class="content max-width">
