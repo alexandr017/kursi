@@ -52,3 +52,9 @@
     transition-property: transform;
     display: block;
 }
+
+@media (max-width: 860px) {
+    .review_slider-item.swiper-slide {
+        width: 90vw;
+    }
+}

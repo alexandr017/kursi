@@ -102,3 +102,26 @@
 .about_hystory-cont .slider_button {
     background-image: url(/local/templates/kursi/components/sigodinweb/highloadblock.list/about_history/img/arrow.svg);
 }
+
+@media(max-width: 860px){
+    .about_hystory-cont{
+        margin: 0;
+        padding: 0;
+    }
+
+    .about_hystory-main_img_cont {
+        display: flex;
+        justify-content: center;
+    }
+
+    .about_hystory-cont-button-prev {
+        margin-right: 24px;
+    }
+
+    .about_hystory-item_cont.swiper-slide {
+        grid-template-columns: 1fr;
+        word-break: break-word;
+        user-select: none;
+    }
+}
+

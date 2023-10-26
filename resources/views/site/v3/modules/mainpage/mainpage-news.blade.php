@@ -309,6 +309,30 @@
           grid: {
               rows: 2,
           },
+          breakpoints: {
+              300: {
+                  slidesPerView: 1,
+              }
+          }
       });
   });
 </script>
+
+<style>
+    .timeline_items .news-cont {
+        height: unset!important;
+    }
+
+    @media screen and (max-width: 860px) {
+        .content_timeline_block {
+            position: relative;
+            left: -17px;
+        }
+
+        .timeline_element-title_filler {
+            height: unset!important;
+            min-width: 20px;
+            width: 20px;
+        }
+    }
+</style>

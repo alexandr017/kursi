@@ -427,6 +427,10 @@ img {
 }
 
 p.kurse_card-length_title {
-    margin-right: 5px;
+    margin: 0 5px 0 0;
     display: block;
+}
+
+p.kurse_card-length_value {
+    margin: 0;
 }
