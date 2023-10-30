@@ -39,3 +39,6 @@ Route::prefix('auth')->group(function () {
     Route::post('/register', [AuthController::class, 'register'])->name('register');
     Route::post('/logout', [AuthController::class, 'logout']);
 });
+
+
+Route::get('design-system', [App\Http\Controllers\DesignSystem::class, 'index']);

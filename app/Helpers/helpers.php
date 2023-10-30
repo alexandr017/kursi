@@ -144,3 +144,168 @@ function linkWithSlash(string|null $link) : string
 
     return $link . '/';
 }
+
+
+
+// функция для подключения верстки
+if (! function_exists('includeComponent')) {
+    /**
+     * @param string $component
+     * @param string $mode
+     * @return null
+     */
+    function includeComponent($component, $mode = null)
+    {
+        $component = resource_path('view/design-system/v4/components') . $component;
+        return includeDesignSystemItem($component, $mode);
+    }
+}
+
+
+// функция для подключения натяжки
+if (! function_exists('includeModule')) {
+    /**
+     * @param string $component
+     * @param string $mode
+     * @return null
+     */
+    function includeModule($component, $mode = null)
+    {
+        $component = resource_path('view/site/v3/modules') . $component;
+        return includeDesignSystemItem($component, $mode);
+    }
+
+}
+
+
+// функция для подключения натяжки
+if (! function_exists('includeDesignSystemItem')) {
+    /**
+     * @param string $component
+     * @param string $mode
+     * @return null
+     */
+    function includeDesignSystemItem($component, $mode = null)
+    {
+        if (!isset($GLOBALS ['m'])) {
+            $GLOBALS ['m'] = [];
+        }
+
+        $priorityArr = ['amp', 'turbo', 'mob', 'pc'];
+
+        // site.v3.modules.
+        $template = $component ;
+
+        // определяем режим, если он не задан явно
+        if ($mode == null) {
+            if (isAmpPage()) {
+                $mode = 'amp';
+            } elseif (isTurboPage()) {
+                $mode = 'turbo';
+            } elseif (isMobileDevice()) {
+                $mode = 'mob';
+            } else {
+                $mode = 'pc';
+            }
+        }
+
+
+        // согласно приоритету грузим скрипты и стили модуля (если существует файл css)
+        foreach ($priorityArr as $priority) {
+
+            if ($mode == $priority) {
+
+                $jsFile = $template . '/' . $mode . '.js';
+                if (file_exists($jsFile)) {
+                    if (!in_array($component, $GLOBALS ['m'])) {
+                        $GLOBALS ['m'][] = $component;
+                    }
+                }
+
+                $cssFile = $template . '/' . $mode . '.css';
+
+                if (\Cache::has($cssFile)) {
+                    echo \Cache::get($cssFile);
+                    //echo 'body{load: from_cache}';
+                    return null;
+                }
+
+                if (file_exists($cssFile)) {
+                    $code = file_get_contents($cssFile);
+                    echo $code;
+                    \Cache::put($cssFile, $code, \Carbon\Carbon::now()->addMinutes(1));
+                    return null;
+                } else {
+                    if ($mode == 'amp') {
+                        $mode = 'turbo';
+                    } elseif ($mode == 'turbo') {
+                        $mode = 'mob';
+                    } elseif($mode == 'mob') {
+                        $mode = 'pc';
+                    }
+                }
+            }
+        }
+
+        return null;
+
+    }
+}
+
+
+if (! function_exists('isAmpPage')) {
+    /**
+     *
+     * @return boolean
+     */
+    function isAmpPage() : bool
+    {
+        $current_url = strtok($_SERVER['REQUEST_URI'], '?');
+
+        if (preg_match('/\/amp\/page$/',$current_url) || preg_match('/\/amp$/',$current_url)) {
+            return true;
+        }
+
+        return false;
+    }
+}
+
+if (! function_exists('isTurboPage')) {
+    /**
+     *
+     * @return boolean
+     */
+    function isTurboPage() : bool
+    {
+        $current_url = $_SERVER['REQUEST_URI'];
+
+        if (preg_match('/\/yandex\/turbo\//',$current_url)) {
+            return true;
+        }
+
+        return false;
+    }
+}
+
+
+if (! function_exists('isMobileDevice')) {
+    /**
+     *
+     * @return boolean
+     */
+    function isMobileDevice()
+    {
+        return false;
+
+        if (!isset($_SERVER['HTTP_USER_AGENT'])) {
+            return false;
+        }
+        $mobile_agent_array = array('ipad', 'iphone', 'android', 'pocket', 'palm', 'windows ce', 'windowsce', 'cellphone', 'opera mobi', 'ipod', 'small', 'sharp', 'sonyericsson', 'symbian', 'opera mini', 'nokia', 'htc_', 'samsung', 'motorola', 'smartphone', 'blackberry', 'playstation portable', 'tablet browser');
+        $agent = strtolower($_SERVER['HTTP_USER_AGENT']);
+
+        foreach ($mobile_agent_array as $value) {
+            if (strpos($agent, $value) !== false) return true;
+        }
+        return false;
+    }
+}
