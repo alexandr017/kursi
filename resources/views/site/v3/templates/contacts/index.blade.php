@@ -829,7 +829,12 @@
 
             <div class="swiper_styles-pagination_cont">
                 <div class="contacts_page-slider_block-button-prev swiper_styles-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-3fbc69332053100c5" aria-disabled="true"></div>
-                <div class="contacts_page-slider_block-pagination swiper_styles-pagination swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal"><span class="swiper-pagination-current">1</span> / <span class="swiper-pagination-total">6</span></div>
+                <div class="contacts_page-slider_block-pagination swiper_styles-pagination swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal">
+                    <span class="swiper-pagination-current">
+                        1</span> /
+                    <span class="swiper-pagination-total">
+                        6</span>
+                </div>
                 <div class="contacts_page-slider_block-button-next swiper_styles-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-3fbc69332053100c5" aria-disabled="false"></div>
             </div>
             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
@@ -1112,17 +1117,11 @@
     function handleCallBack(evt) {
         handleSubmitForm(evt, 'back-call', 'backCallForm', 'Спасибо, Обратный звонок сохранен.');
     }
-</script>
 
-@section('additional-scripts')
-    @parent
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <script>
         addEventListener("load", () => {
-            const swiper_contacts_slider = new Swiper('.contacts_page-slider_block', {
+            const swiper_person_list = new Swiper('.contacts_page-slider_block', {
                 speed: 400,
-                slidesPerView: "auto",
+                slidesPerView: 'auto',
                 navigation: {
                     nextEl: '.contacts_page-slider_block-button-next',
                     prevEl: '.contacts_page-slider_block-button-prev',
@@ -1132,8 +1131,12 @@
                     type: "fraction",
                 },
             });
-        });
-    </script>
+    });
+</script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+@section('additional-scripts')
+    @parent
 @endsection
 
 @section('custom-structured-data')
