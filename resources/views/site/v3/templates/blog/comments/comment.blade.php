@@ -258,4 +258,11 @@
         width: 50%;
         min-width: 350px;
     }
+
+    @media screen and (max-width: 400px) {
+        .kursi_blog #add_comment_block {
+            width: 100%;
+            min-width: unset;
+        }
+    }
 </style>

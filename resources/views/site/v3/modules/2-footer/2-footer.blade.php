@@ -221,4 +221,79 @@
     #sender_subscribe_component {
         background-color: #ffffff;
     }
+
+    @media screen and (max-width: 900px){
+        .footer-bottom_copy_block > p {
+            margin: 0;
+        }
+
+        .footer_content {
+            grid-template-columns: 1fr;
+            padding: 16px;
+            padding-top: 60px;
+            padding-bottom: 27px;
+        }
+
+        .footer-info_menu_block, .footer-company_info_block {
+            margin-bottom: 40px;
+            margin-left: 0;
+        }
+
+        .footer-projects_menu_block {
+            margin-bottom: 27px;
+        }
+
+        .footer-bottom_copy_block {
+            grid-row-start: 6;
+            margin-top: 0;
+            border: none;
+            padding: 0;
+            font-size: 11px;
+            line-height: 13px;
+            font-weight: 400;
+        }
+
+        .footer-bottom_menu_block {
+            grid-column-start: unset;
+            grid-column-end: unset;
+            margin-top: 40px;
+            padding: 0;
+            padding-top: 16px;
+        }
+
+        .footer-bottom_copy_block {
+            grid-row-start: 6;
+            margin-top: 0;
+            border: none;
+            padding: 0;
+            font-size: 11px;
+            line-height: 13px;
+            font-weight: 400;
+        }
+
+        .footer-bottom_menu_block {
+            grid-column-start: unset;
+            grid-column-end: unset;
+            margin-top: 40px;
+            padding: 0;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 700px) {
+            .footer_bottom_menu li {
+                margin-right: 10px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .footer_bottom_menu ul {
+                flex-direction: column;
+            }
+
+            .footer_bottom_menu a {
+                padding-bottom: 8px;
+                display: block;
+            }
+        }
+    }
 </style>
