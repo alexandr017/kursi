@@ -38,9 +38,12 @@ class CoursesRepository implements CoursesRepositoryInterface
         }
 
         $query->when($dto->tags, function ($query) use ($dto) {
-            $query->whereHas('tags', function ($q) use ($dto) {
-                $q->whereIn('tags.id', $dto->tags);
-            });
+            foreach ($dto->tags as $tag) {
+                $query->whereHas('tags', function ($q) use ($tag) {
+                    $q->where('tags.id', $tag);
+                });
+            }
+
         });
 
         return $query->paginate(
