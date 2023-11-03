@@ -1,5 +1,5 @@
 <div class="ul second_lvl" id="catalog_all">
-    <div class="header_top_menu-mobile_back_btn">
+    <div class="header_top_menu-mobile_back_btn" onclick="closeCatalog()">
         <img
             src="/v3/images/arrow.svg"
             alt="Назад"
@@ -2093,7 +2093,7 @@
                     <div class="li">
                         <div class="header_top_menu-text ">
                             <a href="/samorazvitie/oratorskoe-masterstvo/">Ораторское мастерство</a>
-                        </div>
+                        </div>;
                     </div>
                     <div class="li">
                         <div class="header_top_menu-text ">
@@ -2689,3 +2689,9 @@
     /*    color: #000000;*/
     /*}*/
 </style>
+
+<script>
+    function closeCatalog() {
+        document.getElementById('catalog_all').style.display = 'none';
+    }
+</script>

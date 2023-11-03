@@ -777,9 +777,9 @@ input.kursy-top_menu_cb:checked ~ .kursy-top_menu .kursy-open_btn-open-img {
         height: calc(100% - 88px);
     }
 
-    .kursy-top_menu-tab.hideItems > .kursy-top_menu-left_label {
-        display: none;
-    }
+    /*.kursy-top_menu-tab.hideItems > .kursy-top_menu-left_label {*/
+    /*    display: none;*/
+    /*}*/
 
     .kursy-top_menu-left_label.mobileClickedItem + .kursy-top_menu-left_subitems {
         display: inline-flex;
@@ -809,11 +809,11 @@ input.kursy-top_menu_cb:checked ~ .kursy-top_menu .kursy-open_btn-open-img {
         border-bottom: 1px solid #F5F5F5;
     }
 
-    .kursy-top_menu-tab.hideItems > .kursy-top_menu-left_label.mobileClickedItem {
-        display: inline-flex;
-        min-height: 30px;
-        box-sizing: content-box;
-    }
+    /*.kursy-top_menu-tab.hideItems > .kursy-top_menu-left_label.mobileClickedItem {*/
+    /*    display: inline-flex;*/
+    /*    min-height: 30px;*/
+    /*    box-sizing: content-box;*/
+    /*}*/
 
     .kursy-top_menu-left_label.mobileClickedItem ~ label {
         display: none;
@@ -865,10 +865,10 @@ input.kursy-top_menu_cb:checked ~ .kursy-top_menu .kursy-open_btn-open-img {
         height: 24px;
     }
 
-    .kursy-top_menu-tab.hideItems > .kursy-top_menu-left_label.mobileClickedItem.openedChildHide,
-    .kursy-top_menu-right_label.openedChildHide{
-        display: none;
-    }
+    /*.kursy-top_menu-tab.hideItems > .kursy-top_menu-left_label.mobileClickedItem.openedChildHide,*/
+    /*.kursy-top_menu-right_label.openedChildHide{*/
+    /*    display: none;*/
+    /*}*/
 
     .kursy-top_menu-left_label.mobileClickedItem.openedChildHide + .kursy-top_menu-left_subitems{
         padding-left: 0;

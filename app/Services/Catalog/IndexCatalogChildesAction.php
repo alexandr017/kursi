@@ -43,7 +43,7 @@ class IndexCatalogChildesAction
         } elseif ($path === Url::BESPLATNYE) {
             $listings = $this->listingRepository->getListingsForFreeCourses($url->section_id);
         } else {
-            $listings = $this->listingRepository->getChildes($url->section_id);
+            $listings = $this->listingRepository->getListingsForAll();
         }
 
         return $listings;

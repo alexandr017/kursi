@@ -12,15 +12,15 @@
     @endphp
 
     @if(!$allChildesHaveNoChildren)
-        <div class="block">
+        <div class="block sub-catalog">
     @endif
         @foreach($listing->childes as $index => $childFirst)
             @if($index % 5 == 0 && $allChildesHaveNoChildren)
-                <div class="block">
+                <div class="block sub-catalog">
             @endif
 
-            <div class="li childes" style="grid-row: {{$index + 1}}">
-                <div class="header_top_menu-text childes">
+            <div class="li childes sub-catalog-child" style="grid-row: {{$index + 1}}">
+                <div class="header_top_menu-text childes {{ count($childFirst->childes) > 0 ? 'has-childs' : '' }}">
                     <a href="{{linkWithSlash($childFirst->url->url)}}">
                         {{$childFirst->name}}
                     </a>
@@ -39,6 +39,9 @@
 
             @if(!$allChildesHaveNoChildren)
                 <div class="childes_list" style="grid-row: 1/37">
+                    <a href="{{'/'. $childFirst->url->url}}" class="show-allow-text" >
+                        Посмотреть всё
+                    </a>
                     <div>
                         @include('site.v3.modules.1-header.catalog-listing-childes', ["listing" => $childFirst])
                     </div>
@@ -87,5 +90,31 @@
     .ul.third_lvl a {
         width: 100%;
         color: #000000;
+    }
+
+    @media screen and (max-width: 860px) {
+        .li:hover + .childes_list,
+        .childes_list:hover {
+            display: none;
+        }
+
+        .block.sub-catalog {
+            display: inline-flex;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .childes_list.hide,
+        .childes.hide {
+            display: none;
+        }
+
+        .childes.selectedSubCatalog + .childes_list {
+            display: grid!important;
+        }
+
+        .childes.selectedSubCatalog + .childes_list > a {
+            display: inline-flex!important;
+        }
     }
 </style>
