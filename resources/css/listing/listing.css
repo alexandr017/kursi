@@ -286,6 +286,10 @@ ul {
     padding-inline-start: 40px;
 }
 
+.footer_content ul {
+    padding: 0;
+}
+
 ul.linker_list > li {
     margin-right: 10px;
     word-break: break-word;
