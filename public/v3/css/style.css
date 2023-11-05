@@ -1471,9 +1471,9 @@ header {
     align-items: center;
 }
 
-.menu {
-    height: 100%;
-}
+/*.menu {*/
+/*    height: 100%;*/
+/*}*/
 
 .header_top_menu {
     height: 100%;
@@ -1540,15 +1540,15 @@ header {
         padding: 32px 20px;
     }
 
-    .menu {
-        grid-area: menu;
-        /* margin-top: 26px; */
-        /* height: calc(100% - 27px); */
+    /*.menu {*/
+    /*    grid-area: menu;*/
+    /*    !* margin-top: 26px; *!*/
+    /*    !* height: calc(100% - 27px); *!*/
 
-        padding-top: 26px;
-        height: 100%;
-        position: relative;
-    }
+    /*    padding-top: 26px;*/
+    /*    height: 100%;*/
+    /*    position: relative;*/
+    /*}*/
 
     .open_search {
         grid-area: search;
@@ -2722,14 +2722,14 @@ ul.c_styled li:before {
         padding: 32px 20px;
     }
 
-    .menu {
-        grid-area: menu;
-        /* margin-top: 26px; */
-        /* height: calc(100% - 27px); */
-        padding-top: 0;
-        height: 100%;
-        position: relative;
-    }
+    /*.menu {*/
+    /*    grid-area: menu;*/
+    /*    !* margin-top: 26px; *!*/
+    /*    !* height: calc(100% - 27px); *!*/
+    /*    padding-top: 0;*/
+    /*    height: 100%;*/
+    /*    position: relative;*/
+    /*}*/
 
     .open_search {
         grid-area: search;
@@ -2749,10 +2749,10 @@ ul.c_styled li:before {
         display: none!important;
     }
 
-    .menu {
-        width: 100%;
-        margin-left: 0!important;
-    }
+    /*.menu {*/
+    /*    width: 100%;*/
+    /*    margin-left: 0!important;*/
+    /*}*/
 
     .header_top_menu {
         width: 100%;
@@ -2778,16 +2778,16 @@ ul.c_styled li:before {
         display: block;
     }
 
-    .header_top_menu > .ul > .li {
-        width: 100%;
-        margin: 0!important;
-        padding: 0!important;
-        font-size: 32px!important;
-        line-height: 46px!important;
-        font-weight: 600!important;
-        color: #101820!important;
-        background: none!important;
-    }
+    /*.header_top_menu > .ul > .li {*/
+    /*    width: 100%;*/
+    /*    margin: 0!important;*/
+    /*    padding: 0!important;*/
+    /*    font-size: 32px!important;*/
+    /*    line-height: 46px!important;*/
+    /*    font-weight: 600!important;*/
+    /*    color: #101820!important;*/
+    /*    background: none!important;*/
+    /*}*/
 
     .catalog-name {
         margin-bottom: 16px;
