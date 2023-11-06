@@ -45,7 +45,7 @@
                 @if($index % 5 == 0 && $allChildesHaveNoChildren)
                     <div class="kursy-top_menu-block">
                         @endif
-                        <div class="kursy-top_menu-body_item ">
+                        <div class="kursy-top_menu-body_item check-active-child">
                             <a href="{{linkWithSlash($childFirst->url->url)}}">
                                 {{$childFirst->name}}
                             </a>
@@ -103,7 +103,7 @@
                     </div>
                 </div>
                 @foreach($listing->childes as $index => $childFirst)
-                    <div class="kursy-top_menu-right_label no_link has_child_label {{($index > 18 && $isFirstLevel) ? 'hide-item items-for-hide' : ''}}">
+                    <div class="kursy-top_menu-right_label no_link has_child_label check-active-child {{($index > 18 && $isFirstLevel) ? 'hide-item items-for-hide' : ''}}">
                         <a href="{{linkWithSlash($childFirst->url->url)}}">
                             {{$childFirst->name}}
                         </a>

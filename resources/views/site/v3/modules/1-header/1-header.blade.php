@@ -4684,8 +4684,28 @@
               element.addEventListener('click', mobileRightOpen);
             });
           })
+
+            setActiveElementsByPathName();
             // handleCatalogEvents(catalogContent);
         }
+    }
+
+    function setActiveElementsByPathName() {
+        // Array.from(document.querySelectorAll('.check-active')).forEach(el => {
+        //     const elRef = el.querySelectorAll('a')[0].href;
+        //
+        //     if (window.location.href.includes(elRef)) {
+        //         el.classList.add('selected');
+        //     }
+        // })
+        //
+        // Array.from(document.querySelectorAll('.check-active-child')).forEach(el => {
+        //     const elRef = el.querySelectorAll('a')[0].href;
+        //
+        //     if (window.location.href.includes(elRef)) {
+        //         el.classList.add('selected');
+        //     }
+        // })
     }
 
     document.addEventListener('DOMContentLoaded', function(){
