@@ -1420,11 +1420,10 @@ a{
     padding: 0 160px;
 }
 
-@media (max-width: 860px){
+@media (max-width: 1200px){
     .max-width {
-        padding: 0 16px;
+        padding: 0 80px;
     }
-
 }
 
 @media (max-width: 1000px){
@@ -1434,12 +1433,12 @@ a{
 
 }
 
-@media (max-width: 1200px){
+@media (max-width: 860px){
     .max-width {
-        padding: 0 80px;
+        padding: 0 16px;
     }
-}
 
+}
 
 pre {
     display: block;
