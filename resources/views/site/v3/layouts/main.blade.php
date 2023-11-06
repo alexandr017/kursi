@@ -24,7 +24,7 @@
     <meta name="yandex-verification" content="6ca1d53bafb9a79f" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat&display=swap" rel="stylesheet">
     @if(str_contains(Request::url(), '/page/'))
         <link rel="prev" href="{{getCanonicalPrev()}}">
     @endif
