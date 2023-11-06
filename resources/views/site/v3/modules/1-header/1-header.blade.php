@@ -211,6 +211,10 @@
         display: none;
     }
 
+    .kursy-top_menu-right_label.has_child_label.hide-item {
+        display: none;
+    }
+
     /* Start:/local/templates/kursi/admin_styles.css?16905244512714*/
     .shortcode_btn i {
         background-position: center !important;
@@ -1001,6 +1005,7 @@
 
 
         .kursy-top_menu-left_label.mobileClickedItem + .kursy-top_menu-left_subitems {
+            grid-row: unset!important;
             flex-direction: column;
             padding-left: 40px;
         }
@@ -1095,6 +1100,7 @@
         }
 
         .kursy-top_menu-right_label.mobileClickedItem {
+            width: max-content;
             flex-direction: row-reverse;
             align-self: flex-start;
             padding: 12px 16px;
@@ -4797,7 +4803,12 @@
       const elem = evt.target.tagName === 'div' ? evt.target : evt.target.parentElement;
 
       elem.parentElement.classList.toggle("openDropdown");
-      debugger
+
+        elem.parentElement.querySelectorAll('.items-for-hide').forEach(el => {
+            el.classList.toggle('hide-item');
+        })
+
+
       if(elem.parentElement.classList.contains("openDropdown")){
         elem.querySelector("span").innerText = "Свернуть";
       }
@@ -4884,7 +4895,6 @@
     }
 
     function mobileRightOpen(e){
-      debugger
       if(window.innerWidth < 860){
         e.stopPropagation();
         e.preventDefault();

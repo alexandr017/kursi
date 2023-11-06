@@ -12,7 +12,7 @@
     @endphp
 
     @if($allChildesHaveNoChildren && $isFirstLevel)
-        <div class="kursy-top_menu-left_subitems first" style="grid-row: 1/17">
+        <div class="kursy-top_menu-left_subitems first" style="grid-row: 1/50">
             <div class="kursy-top_menu-right_label has_child_label only_mobile">
                 <a href="{{'/'. $listing->url->url}}">
                     Посмотреть всё
@@ -72,8 +72,8 @@
             @endforeach
         </div>
     @else
-        <div class="kursy-top_menu-left_subitems second" style="grid-row: 1/17">
-            <div class="kursy-top_menu-right_cont has_child" style="grid-row:1/18; grid-template-rows: repeat(22, auto) 1fr;">
+        <div class="kursy-top_menu-left_subitems second" style="grid-row: 1/50">
+            <div class="kursy-top_menu-right_cont has_child" style="grid-row:1/50; grid-template-rows: repeat(22, auto) 1fr;">
                 <div class="kursy-top_menu-right_label has_child_label only_mobile">
                     <a href="{{'/'. $listing->url->url}}">
                         Посмотреть всё
@@ -103,7 +103,7 @@
                     </div>
                 </div>
                 @foreach($listing->childes as $index => $childFirst)
-                    <div class="kursy-top_menu-right_label no_link has_child_label {{($index > 18 && $isFirstLevel) ? 'hide-item' : ''}}">
+                    <div class="kursy-top_menu-right_label no_link has_child_label {{($index > 18 && $isFirstLevel) ? 'hide-item items-for-hide' : ''}}">
                         <a href="{{linkWithSlash($childFirst->url->url)}}">
                             {{$childFirst->name}}
                         </a>
