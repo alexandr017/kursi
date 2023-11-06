@@ -22,19 +22,20 @@
     <meta name="twitter:image" content="https://kursy.ru">
     <meta name="google-site-verification" content="WYU9mgND_HRtNkkoBGe8Mt_kRGzV4wwsCo4_QxyAWco" />
     <meta name="yandex-verification" content="6ca1d53bafb9a79f" />
+    <link href="//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" type="text/css">
     @if(str_contains(Request::url(), '/page/'))
-<link rel="prev" href="{{getCanonicalPrev()}}">
+        <link rel="prev" href="{{getCanonicalPrev()}}">
     @endif
-<link rel="canonical" href="{{getCanonical()}}">
+    <link rel="canonical" href="{{getCanonical()}}">
     @if(isset($pagesCount))
-<link rel="next" href="{{getCanonicalNext($pagesCount)}}">
+        <link rel="next" href="{{getCanonicalNext($pagesCount)}}">
     @endif
 
     @yield('style')
 
     @stack('styles')
     <link rel="stylesheet" href="/v3/css/style.css">
-
     <link rel="shortcut icon" href="/v3/images/favicon.svg">
     <style> .nca-cookiesaccept-line { box-sizing: border-box !important; margin: 0 !important; border: none !important; width: 100% !important; min-height: 10px !important; max-height: 250px !important; display: block; clear: both !important; padding: 12px !important; /* position: absolute; */ position: fixed; bottom: 0px !important; opacity: 1; transform: translateY(0%); z-index: 99999; } .nca-cookiesaccept-line > div { display: flex; align-items: center; } .nca-cookiesaccept-line > div > div { padding-left: 5%; padding-right: 5%; } .nca-cookiesaccept-line a { color: inherit; text-decoration:underline; } @media screen and (max-width:767px) { .nca-cookiesaccept-line > div > div { padding-left: 1%; padding-right: 1%; } } </style>
 </head>
