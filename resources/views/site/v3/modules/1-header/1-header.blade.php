@@ -4536,6 +4536,7 @@
 
             if (window.location.href.includes(elRef)) {
                 el.classList.add('selected');
+                el.classList.remove('default_selected');
 
                 if (!el.classList.contains('kursy-top_menu-left_label')) {
                     el.parentElement.parentElement.classList.add('has_selected_childs');
@@ -4548,8 +4549,6 @@
 
             if (!isSelectedElem) {
                 el.classList.add('selected');
-            } else {
-                el.classList.remove('default_selected');
             }
         })
     }
