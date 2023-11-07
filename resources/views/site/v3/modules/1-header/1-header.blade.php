@@ -25,47 +25,47 @@
                     </div>
                     <div class="kursy-top_menu-body">
                         <div class="kursy-top_menu-tabs_cont" onclick="closeOpenedMenu(event);">
-                            <input type="radio" id="menu-tabs_label-0-7c6f4d5a4834d2cee479" class="menu-tabs_label" checked="" name="menu-tabs_label-cb2bac0c8f2b08cf45ec">
-                            <label for="menu-tabs_label-0-7c6f4d5a4834d2cee479" class="kursy-top_menu-tab_label selected">
+                            <input type="radio" id="menu-all" class="menu-tabs_label" checked="" name="menu-tabs_label-cb2bac0c8f2b08cf45ec">
+                            <label for="menu-all" class="kursy-top_menu-tab_label selected">
                                 Все
                             </label>
                             <style>
-                                #menu-tabs_label-0-7c6f4d5a4834d2cee479:checked ~ .kursy-top_menu-tab_list > #all{
+                                #menu-all:checked ~ .kursy-top_menu-tab_list > #all{
                                     display: grid;
                                 }
 
                                 @media(max-width: 860px){
-                                    #menu-tabs_label-0-7c6f4d5a4834d2cee479:checked ~ .kursy-top_menu-tab_list > #all{
+                                    #menu-all:checked ~ .kursy-top_menu-tab_list > #all{
                                         display: inline-flex;
                                     }
                                 }
                             </style>
-                            <input type="radio" id="menu-tabs_label-796-7c6f4d5a4834d2cee479" class="menu-tabs_label" name="menu-tabs_label-cb2bac0c8f2b08cf45ec">
-                            <label for="menu-tabs_label-796-7c6f4d5a4834d2cee479" class="kursy-top_menu-tab_label ">
+                            <input type="radio" id="menu-free" class="menu-tabs_label" name="menu-tabs_label-cb2bac0c8f2b08cf45ec">
+                            <label for="menu-free" class="kursy-top_menu-tab_label ">
                                 Бесплатные
                             </label>
                             <style>
-                                #menu-tabs_label-796-7c6f4d5a4834d2cee479:checked ~ .kursy-top_menu-tab_list > #besplatnye{
+                                #menu-free:checked ~ .kursy-top_menu-tab_list > #besplatnye{
                                     display: grid;
                                 }
 
                                 @media(max-width: 860px){
-                                    #menu-tabs_label-796-7c6f4d5a4834d2cee479:checked ~ .kursy-top_menu-tab_list > #besplatnye{
+                                    #menu-free:checked ~ .kursy-top_menu-tab_list > #besplatnye{
                                         display: inline-flex;
                                     }
                                 }
                             </style>
-                            <input type="radio" id="menu-tabs_label-460-7c6f4d5a4834d2cee479" class="menu-tabs_label" name="menu-tabs_label-cb2bac0c8f2b08cf45ec">
-                            <label for="menu-tabs_label-460-7c6f4d5a4834d2cee479" class="kursy-top_menu-tab_label ">
+                            <input type="radio" id="menu-kids" class="menu-tabs_label" name="menu-tabs_label-cb2bac0c8f2b08cf45ec">
+                            <label for="menu-kids" class="kursy-top_menu-tab_label ">
                                 Для детей
                             </label>
                             <style>
-                                #menu-tabs_label-460-7c6f4d5a4834d2cee479:checked ~ .kursy-top_menu-tab_list > #dlya-detej{
+                                #menu-kids:checked ~ .kursy-top_menu-tab_list > #dlya-detej{
                                     display: grid;
                                 }
 
                                 @media(max-width: 860px){
-                                    #menu-tabs_label-460-7c6f4d5a4834d2cee479:checked ~ .kursy-top_menu-tab_list > #dlya-detej{
+                                    #menu-kids:checked ~ .kursy-top_menu-tab_list > #dlya-detej{
                                         display: inline-flex;
                                     }
                                 }
@@ -167,42 +167,6 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="breadchumb" id="navigation">
-        <div class="bx-breadcrumb max-width">
-			<span class="bx-breadcrumb-item" id="bx_breadcrumb_0">
-				<a href="/" title="Главная">
-					<span>Главная</span>
-				</a>
-			</span>
-            <span class="bx-breadcrumb-item last-element">
-				<span class="separator">/</span>
-				<span>Контакты</span>
-			</span>
-            <span style="clear:both"></span>
-        </div>
-        <script type="application/ld+json">
-            {"@context": "https://schema.org","@type": "BreadcrumbList","itemListElement": [
-                 {
-                     "@type": "ListItem",
-                     "position": 1,
-                     "item":{
-                        "name": "Главная",
-                        "url": "https://kursy.ru/",
-                        "@id": "https://kursy.ru/"
-                     }
-
-                 },
-                 {
-                     "@type": "ListItem",
-                     "position": 2,
-                     "item":{
-                        "name": "Контакты",
-                        "url": "https://kursy.ru/contacts/",
-                        "@id": "https://kursy.ru/contacts/"
-                 }
-		     }]}
-        </script>
     </div>
 </header>
 
@@ -613,6 +577,15 @@
     }
 
     @media(min-width: 861px){
+        .kursy-top_menu-tab > .kursy-top_menu-left_label.selected + .kursy-top_menu-left_subitems,
+        .kursy-top_menu-tab:not(.hoveredChild) > .kursy-top_menu-left_label.selected + .kursy-top_menu-left_subitems{
+            display: block;
+            grid-column: 2;
+            z-index: 10;
+            padding-left: 32px;
+            background: white;
+        }
+
         .kursy-top_menu-tab.hovered .kursy-top_menu-left_label.default_selected:not(.hoveredItem) {
             background: none;
         }
@@ -843,7 +816,6 @@
     }
 
     @media (max-width: 860px){
-
         .kursy-top_menu-left_label a {
             word-break: break-word;
             white-space: normal;
@@ -1145,127 +1117,7 @@
         }
     }
 
-    /*
-.kursy-top_menu-right_label.selected a,
-.kursy-top_menu-right_label.hoveredItem a{
-    color: #101820 !important;
-} */
-
-
-    /* .kursy-top_menu-left_label.selected + .kursy-top_menu-left_subitems.second{
-    display: grid;
-    grid-column: 2;
-
-    width: 100%;
-    overflow: auto;
-} */
-
-     .kursy-top_menu-tab > .kursy-top_menu-left_label.selected + .kursy-top_menu-left_subitems,
-     .kursy-top_menu-tab:not(.hoveredChild) > .kursy-top_menu-left_label.selected + .kursy-top_menu-left_subitems{
-    display: block;
-    grid-column: 2;
-    z-index: 10;
-    padding-left: 32px;
-    background: white;
-}
-
-
-    /* .kursy-top_menu-left_label.selected  .kursy-top_menu-left_img_blue{
-    display: block;
-}
-
-.kursy-top_menu-left_label.selected  .kursy-top_menu-left_img_black{
-    display: none;
-} */
-
-    /* .kursy-top_menu-left_label.selected{
-    background: #469ED714;
-    border-radius: 2px;
-} */
-
-
-
-    /* .kursy-top_menu-left_subitems {
-    padding-left: 32px;
-} */
-
-
-
-    /* .kursy-top_menu-body_item:hover a {
-    color: #101820;
-} */
-
-
-
-    /* .kursy-top_menu-left_label.selected:after, */
-    /* .kursy-top_menu-left_label:hover:after {
-    background: #469ED7;
-    border-radius: 2px;
-    content: "";
-    width: 7px;
-    height: 24px;
-    right: -1px;
-    position: absolute;
-} */
-
-    /* .kursy-top_menu-left_subitems.second {
-    grid-template-columns: 1fr 1fr;
-} */
-
-
-
-    /* .kursy-top_menu-right_label:hover + .kursy-top_menu-right_cont > .kursy-top_menu-left_subitems.second {
-    display: grid
-} */
-
-    /* .kursy-top_menu-right_label.has_child_label {
-    color: darkorange;
-} */
-
-
-
-
-    /* .kursy-top_menu-right_cont > .kursy-top_menu-right_label.selected + .kursy-top_menu-left_subitems, */
-    /* .kursy-top_menu-right_cont:not(.hoveredChild) > .kursy-top_menu-right_label.selected + .kursy-top_menu-left_subitems{
-    display: grid;
-} */
-
-    /* .kursy-top_menu-left_subitems.second:hover{
-    grid-column: 2;
-    display: grid;
-    padding-left: 0;
-} */
-
-
-
-
-
-    /* .kursy-top_menu-left_subitems:hover a {
-    color: #A9AAAA;
-}
-
-.kursy-top_menu-left_subitems:hover a:hover {
-    color: #000;
-} */
-    /*
-
-
-.kursy-top_menu-left_label.selected + .kursy-top_menu-left_subitems.second {
-    z-index: 1;
-}
-
-
-
-
-.hoveredChild{
-    background: #469ED7;
-} */
-
-
-
     /* End */
-
-
     /* Start:/local/components/sigodinweb/search/templates/.default/style.css?16905244514445*/
     .open_search.close .search_page-content{
         display: none;
@@ -1878,12 +1730,6 @@
             padding-right: 16px;
         }
 
-        /* .header_top_menu .ul.second_lvl,
-  .ul.first_lvl > .li > .ul_cont{
-    display: block;
-  } */
-
-
         .ul.second_lvl > .li > .ul_cont {
             z-index: 1000000000;
             top: 57px;
@@ -2090,11 +1936,7 @@
     .footer_left_menu-text{
         display: flex;
     }
-
-
-
     /* End */
-
 
     /* Start:/local/templates/kursi/components/bitrix/sender.subscribe/kursy_subscribe/style.css?16843010502805*/
     label.sub_section_id {
@@ -3333,31 +3175,6 @@
     .swiper_styles-pagination.swiper-pagination.swiper-pagination-lock{
         display: none;
     }
-
-
-    /*
-
-.slider_buttons_cont {
-    display: inline-flex;
-    justify-content: center;
-    width: 100%;
-    align-items: center;
-    margin: 60px 0;
-} */
-
-
-
-
-
-
-    /* p.slider_active_filler {
-    margin: 0 2px;
-}
-
-
-.kurse_card.last_element_label{
-  display: none;
-} */
 
     /*---- UL_LI_STYLES ----*/
 
@@ -4620,18 +4437,13 @@
 </style>
 
 <script>
-    document.addEventListener('DOMContentLoaded', handleMenuCatalogs);
+    document.addEventListener('DOMContentLoaded', getCatalogs);
 
     const menuCatalogs = {
         'menu-all': 'all',
         'menu-free': 'besplatnye',
         'menu-kids': 'dlya-detej'
     };
-
-    function handleMenuCatalogs() {
-        getCatalogs();
-        // setListenersForCatalogsChange();
-    }
 
     function getCatalogs() {
         const catalogRoutes = ['/catalog/listings/all', '/catalog/listings/besplatnye', '/catalog/listings/dlya-detej'];
@@ -4650,7 +4462,7 @@
             .then(response => response.text())
             .then(data => {
                 addCatalogToMenu(catalogName, data);
-                // setActiveCatalogByLocationPath(catalogName);
+                setActiveCatalogByLocationPath(catalogName);
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -4665,47 +4477,81 @@
 
         if (catalogContent) {
           document.getElementById('catalog_body_wrapper').appendChild(catalogContent);
-
-          const elems = document.querySelectorAll(".kursy-top_menu-left_subitems, .kursy-top_menu-left_label, .kursy-top_menu-right_label, .kursy-top_menu-right_cont, .kursy-top_menu-tab");
-          Array.from(elems).forEach(elem => {
-            if (window.innerWidth > 860) {
-              elem.addEventListener("mouseover", onMouseOver);
-              elem.addEventListener("mouseleave", onMouseOut);
-
-              return
-            }
-
-            /* Mobile menu*/
-            document.querySelectorAll("div.kursy-top_menu-left_label").forEach(element => {
-              element.addEventListener('click', mobileLeftOpen);
-            });
-
-            document.querySelectorAll("div.kursy-top_menu-right_label.has_child_label.no_link").forEach(element => {
-              element.addEventListener('click', mobileRightOpen);
-            });
-          })
-
-            setActiveElementsByPathName();
-            // handleCatalogEvents(catalogContent);
+          setActiveCatalogByLocationPath();
+          setActiveElementsByPathName();
+          handleCatalogEvents();
+          handleCatalogClose();
         }
     }
 
+    function handleCatalogClose() {
+        Array.from(document.querySelectorAll('.close-catalog')).forEach(el => {
+            el.addEventListener('click', () => closeCatalog(el.parentElement.id))
+        })
+    }
+
+    function closeCatalog(catalogName) {
+        for (let catalog in menuCatalogs) {
+            if (menuCatalogs[catalog] === catalogName) {
+                console.log(document.getElementById(catalog))
+                document.getElementById(catalog).checked = false;
+                console.log(document.getElementById(catalog))
+            }
+        }
+    };
+
+    function setActiveCatalogByLocationPath() {
+        for (let catalog in menuCatalogs) {
+            if (window.location.href.includes(menuCatalogs[catalog])) {
+                document.getElementById(catalog).checked = true;
+            }
+        }
+    }
+
+    function handleCatalogEvents() {
+        const elems = document.querySelectorAll(".kursy-top_menu-left_subitems, .kursy-top_menu-left_label, .kursy-top_menu-right_label, .kursy-top_menu-right_cont, .kursy-top_menu-tab");
+        Array.from(elems).forEach(elem => {
+            if (window.innerWidth > 860) {
+                elem.addEventListener("mouseover", onMouseOver);
+                elem.addEventListener("mouseleave", onMouseOut);
+
+                return;
+            }
+
+            /* Mobile menu */
+            document.querySelectorAll("div.kursy-top_menu-left_label").forEach(element => {
+                element.addEventListener('click', mobileLeftOpen);
+            });
+
+            document.querySelectorAll("div.kursy-top_menu-right_label.has_child_label.no_link").forEach(element => {
+                if (Array.from(element.querySelectorAll('.no-childs')).length || element.classList.contains('no-childs')) return;
+                element.addEventListener('click', mobileRightOpen);
+            });
+        })
+    }
+
     function setActiveElementsByPathName() {
-        // Array.from(document.querySelectorAll('.check-active')).forEach(el => {
-        //     const elRef = el.querySelectorAll('a')[0].href;
-        //
-        //     if (window.location.href.includes(elRef)) {
-        //         el.classList.add('selected');
-        //     }
-        // })
-        //
-        // Array.from(document.querySelectorAll('.check-active-child')).forEach(el => {
-        //     const elRef = el.querySelectorAll('a')[0].href;
-        //
-        //     if (window.location.href.includes(elRef)) {
-        //         el.classList.add('selected');
-        //     }
-        // })
+        Array.from(document.querySelectorAll('.check-active')).forEach(el => {
+            const elRef = el.querySelectorAll('a')[0].href;
+
+            if (window.location.href.includes(elRef)) {
+                el.classList.add('selected');
+
+                if (!el.classList.contains('kursy-top_menu-left_label')) {
+                    el.parentElement.parentElement.classList.add('has_selected_childs');
+                }
+            }
+        })
+
+        Array.from(document.querySelectorAll('.default_selected')).forEach(el => {
+            const isSelectedElem = Array.from(el.parentElement.querySelectorAll('.kursy-top_menu-left_label')).find(el => el.classList.contains('selected'));
+
+            if (!isSelectedElem) {
+                el.classList.add('selected');
+            } else {
+                el.classList.remove('default_selected');
+            }
+        })
     }
 
     document.addEventListener('DOMContentLoaded', function(){
@@ -4868,14 +4714,14 @@
         if(document.documentElement.clientWidth < 861){
             e.preventDefault();
 
-            if (!this.parentElement.classList.contains('showed_submenu')) {
-                this.parentElement.classList.add("showed_submenu");
-                this.parentElement.parentElement.classList.add("open_submenu");
+            if (!e.target.parentElement.classList.contains('showed_submenu')) {
+                e.target.parentElement.classList.add("showed_submenu");
+                e.target.parentElement.parentElement.classList.add("open_submenu");
 
             }
             else{
-                this.parentElement.classList.remove("showed_submenu");
-                this.parentElement.parentElement.classList.remove("open_submenu");
+                e.target.parentElement.classList.remove("showed_submenu");
+                e.target.parentElement.parentElement.classList.remove("open_submenu");
             }
 
             return false;

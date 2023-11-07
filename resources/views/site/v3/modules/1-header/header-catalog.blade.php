@@ -1,5 +1,5 @@
 <div class="kursy-top_menu-tab" id="{{$path}}">
-    <label class="kursy-top_menu-left_label only_mobile">
+    <label class="kursy-top_menu-left_label only_mobile close-catalog">
         <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 fill-rule="evenodd"
@@ -12,7 +12,7 @@
     </label>
 
     @foreach($listings as $index => $listing)
-        <div class="kursy-top_menu-left_label default_selected check-active check-active-child">
+        <div class="kursy-top_menu-left_label {{$index === 0 ? 'default_selected' : ''}} check-active">
             <div class="only_mobile section_back_btn">
                 <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
