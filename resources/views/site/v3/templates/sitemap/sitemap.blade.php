@@ -2,10 +2,12 @@
 //$ampLink = linkToAMP();
 ?>
 
-<?php $__env->startSection('title', Shortcode::compile($page->title)); ?>
-<?php $__env->startSection('og_title', Shortcode::compile($page->h1)); ?>
-<?php $__env->startSection('meta_description', Shortcode::compile($page->meta_description)); ?>
-<?php $__env->startSection('content'); ?>
+@extends('site.v3.layouts.main')
+@section ('title', Shortcode::compile($page->title))
+@section ('og_title', Shortcode::compile($page->h1))
+@section ('meta_description', Shortcode::compile($page->meta_description))
+
+@section('content')
 
 <link rel="stylesheet" href="/v3/css/html-sitemap.css"> <?php // todo подключение стилей не должно быть в body ?>
 
@@ -196,21 +198,23 @@
                 </div>
 
                 <ul class="second_lvl">
-                    <?php $__currentLoopData = $postCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $postCategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <li>
-                        <h2 class="bx_sitemap_li_title">
-                            <a class="bx_sitemap_li_title" href="<?php echo e(linkWithSlash($postCategory->url)); ?>"><?php echo e($postCategory->h1); ?></a>
-                        </h2>
-                    </li>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    @foreach($postCategories as $postCategory)
+                        <li>
+                            <h2 class="bx_sitemap_li_title">
+                                <a class="bx_sitemap_li_title" href="{{linkWithSlash($postCategory->url)}}">{{$postCategory->h1}}</a>
+                            </h2>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
     </div>
 </div>
 
-<?php $__env->stopSection(); ?>
-<?php $__env->startSection('additional-scripts'); ?>
-<?php echo \Illuminate\View\Factory::parentPlaceholder('additional-scripts'); ?>
-<?php $__env->stopSection(); ?>
-<?php echo $__env->make('site.v3.layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/kursi/kursi/resources/views/site/v3/templates/sitemap/sitemap.blade.php ENDPATH**/ ?>
+@endsection
+
+
+@section('additional-scripts')
+    @parent
+
+@endsection
