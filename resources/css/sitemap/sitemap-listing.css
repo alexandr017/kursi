@@ -1,0 +1,127 @@
+.content {
+    flex-grow: 1;
+}
+
+@media (max-width: 1200px) {
+    .max-width {
+        padding: 0 80px;
+    }
+}
+
+.max-width {
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 160px;
+}
+
+h1.sitemap_block-section_title {
+    font-weight: 700;
+    font-size: 53px;
+    line-height: 63px;
+    color: #101820;
+    margin-bottom: 56px;
+    margin-top: 80px;
+}
+
+
+.sitemap_block-section_nav {
+    display: inline-flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.sitemap_block-sections_cont a, .sitemap_block-sections_cont h2 {
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+ul.first_lvl {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sitemap_block-sections_cont ul, .sitemap_block-sections_cont li {
+    list-style: none;
+}
+
+ul.first_lvl > li {
+    width: 33%;
+    min-width: 350px;
+    padding-right: 20px;
+    float: left;
+}
+
+.sitemap_block-sections_cont ul, .sitemap_block-sections_cont li {
+    list-style: none;
+}
+
+.sitemap_block-sections_cont a, .sitemap_block-sections_cont h2 {
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.first_lvl > li > h2 > a, .sitemap_block-sections_cont .sitemap_block-section_sub_title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 42px;
+    color: #101820;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.sitemap_block-sections_cont a, .sitemap_block-sections_cont h2 {
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.sitemap_block-sections_cont ul, .sitemap_block-sections_cont li {
+    list-style: none;
+}
+
+ul.second_lvl {
+    /* padding-top: 20px; */
+    margin-bottom: 48px;
+}
+
+.sitemap_block-sections_cont ul, .sitemap_block-sections_cont li {
+    list-style: none;
+}
+
+.sitemap_block-sections_cont a, .sitemap_block-sections_cont h2 {
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 16px;
+    margin-top: 8px;
+}
+.sitemap_block-section_nav {
+    display: inline-flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.sitemap_block-sections_cont a, .sitemap_block-sections_cont h2 {
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.sitemap_block-sections_cont a, .sitemap_block-sections_cont h2 {
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.sitemap_block-sections_cont a, .sitemap_block-sections_cont h2 {
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 16px;
+    margin-top: 8px;
+}

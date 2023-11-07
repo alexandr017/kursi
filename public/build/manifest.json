@@ -227,6 +227,11 @@
     "isEntry": true,
     "src": "resources/css/search/search-courses.css"
   },
+  "resources/css/sitemap/sitemap-listing.css": {
+    "file": "assets/sitemap-listing-d0511155.css",
+    "isEntry": true,
+    "src": "resources/css/sitemap/sitemap-listing.css"
+  },
   "resources/js/company/companies.js": {
     "file": "assets/companies-4ed993c7.js",
     "isEntry": true,

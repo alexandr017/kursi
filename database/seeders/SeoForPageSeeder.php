@@ -64,6 +64,16 @@ class SeoForPageSeeder extends Seeder
                 'rating_value' => 4.86,
                 'rating_count' => 15
             ],
+            [ // sitemap
+                'title' => 'Карта сайта Курсы.ру',
+                'meta_description'  => 'Карта сайта для удобной навигации пользователей.',
+                'h1'  => 'Карта сайта Курсы.ру',
+                'breadcrumbs' => 'Карта сайта',
+                'lead' => 'Карта сайта для удобной навигации пользователей.',
+                'content' => null,
+                'rating_value' => null,
+                'rating_count' => null
+            ],
 
         ]);
     }

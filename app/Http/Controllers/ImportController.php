@@ -793,6 +793,7 @@ $company->h1";
         foreach ($listings as $_listing) {
             //if ('dlya-detej/shkola/olimpiady/programmirovanie/11-klass' == $_listing->url) {
             $breadcrumbs = '';
+            $breadcrumbsSitemap = "Карта сайта@sitemap" . PHP_EOL . 'Все категории@sitemap' . PHP_EOL;
             $partsAlias = explode('/', $_listing->url);
             $tmpUrl = '';
             $lastElement = end($partsAlias);
@@ -813,8 +814,10 @@ $company->h1";
                 }
                 if ($part != $lastElement) {
                     $breadcrumbs .= $listingTmp->name . '@' . $tmpUrl . PHP_EOL;
+                    $breadcrumbsSitemap .= $listingTmp->name . '@' . 'sitemap/kursy/' . $tmpUrl . PHP_EOL;
                 } else {
                     $breadcrumbs .= $listingTmp->name;
+                    $breadcrumbsSitemap .= $listingTmp->name;
                 }
 
 
@@ -823,6 +826,7 @@ $company->h1";
 
             $listing = \App\Models\Listing\Listing::find($_listing->id);
             $listing->breadcrumbs = $breadcrumbs;
+            $listing->breadcrumbs_sitemap = $breadcrumbsSitemap;
             $listing->save();
             //}
             //$_listing =
