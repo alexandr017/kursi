@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('listings', function (Blueprint $table) {
-            $table->string('breadcrumbs_sitemap')->after('breadcrumbs')->nullable();
+            $table->text('breadcrumbs_sitemap')->after('breadcrumbs')->nullable();
         });
     }
 
