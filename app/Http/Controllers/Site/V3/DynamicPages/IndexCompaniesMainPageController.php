@@ -9,7 +9,7 @@ use App\Services\Company\Dto\IndexCompaniesDto;
 
 class IndexCompaniesMainPageController extends Controller
 {
-    private const SEO_PAGE_ID = 3;
+    private const SEO_PAGE_ID = 5;
 
     public function index(
         IndexCompaniesRequest $request,

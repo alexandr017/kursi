@@ -321,7 +321,7 @@ class ImportController extends Controller
         $new = [
             'name' => (string)$value->Наименование[0],
             'photo' => '/images/listings/' . Str::slug((string)$value->ЗначенияСвойств->ЗначенияСвойства[3]->Значение) . '.webp',
-            'title' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[2]->Значение,
+            'title' => (string)$value->НаследуемыеШаблоны->Шаблон[2]->Значение,
             'description' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
             'author_id' => $this->employes->where('old_id', (int)$value->ЗначенияСвойств->ЗначенияСвойства[4]->Значение)->first()?->id,
             'content' => $content,
@@ -332,7 +332,7 @@ class ImportController extends Controller
             'rating_value' => (float)$value->ЗначенияСвойств->ЗначенияСвойства[9]->Значение,
             'meta_title' => (string)$value->НаследуемыеШаблоны->Шаблон[0]->Значение,
             'meta_description' => (string)($value->НаследуемыеШаблоны->Шаблон[3]->Значение ?? $value->НаследуемыеШаблоны->Шаблон[1]->Значение),
-            'h1' => (string)$value->НаследуемыеШаблоны->Шаблон[3]->Значение,
+            'h1' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[3]->Значение,
             'breadcrumbs' => '', //ToDo: need to implement,
             'old_id' => (string)$value->Ид,
             'parent_id' => $parentId,
@@ -793,6 +793,7 @@ $company->h1";
         foreach ($listings as $_listing) {
             //if ('dlya-detej/shkola/olimpiady/programmirovanie/11-klass' == $_listing->url) {
             $breadcrumbs = '';
+            $breadcrumbsSitemap = "Карта сайта@sitemap" . PHP_EOL . 'Все категории@sitemap' . PHP_EOL;
             $partsAlias = explode('/', $_listing->url);
             $tmpUrl = '';
             $lastElement = end($partsAlias);
@@ -813,8 +814,10 @@ $company->h1";
                 }
                 if ($part != $lastElement) {
                     $breadcrumbs .= $listingTmp->name . '@' . $tmpUrl . PHP_EOL;
+                    $breadcrumbsSitemap .= $listingTmp->name . '@' . 'sitemap/kursy/' . $tmpUrl . PHP_EOL;
                 } else {
                     $breadcrumbs .= $listingTmp->name;
+                    $breadcrumbsSitemap .= $listingTmp->name;
                 }
 
 
@@ -823,6 +826,7 @@ $company->h1";
 
             $listing = \App\Models\Listing\Listing::find($_listing->id);
             $listing->breadcrumbs = $breadcrumbs;
+            $listing->breadcrumbs_sitemap = $breadcrumbsSitemap;
             $listing->save();
             //}
             //$_listing =

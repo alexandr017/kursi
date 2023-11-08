@@ -1,0 +1,127 @@
+:root {
+  /* Variables - токены вариантов, все доступные переменные цветов
+   Palette - палитра (neutral, transparent, main)
+   Name - название цвета (black, gray-2, white, ...)
+   --palette_name: value; */
+
+    --neutral_black: #141414;
+    --neutral_gray: #2C2D2E;
+    --neutral_gray-2: #616263;
+    --neutral_gray-3: #A4A5A6;
+    --neutral_gray-4: #D5D6D7;
+    --neutral_gray-5: #EAECEE;
+    --neutral_gray-6: #F5F6F7;
+    --neutral_white: #FFFFFF;
+    
+    --transparent_black: rgba(0, 0, 0, 0.85);
+    --transparent_black-2: rgba(0, 0, 0, 0.60);
+    --transparent_black-3: rgba(0, 0, 0, 0.45);
+    --transparent_black-4: rgba(0, 0, 0, 0.20);
+    --transparent_white: rgba(255, 255, 255, 0.85);
+    --transparent_white-2: rgba(255, 255, 255, 0.60);
+    --transparent_white-3: rgba(255, 255, 255, 0.45);
+    --transparent_white-4: rgba(255, 255, 255, 0.20);
+    --transparent_gray: rgba(245, 246, 247, 0.85);
+    
+    --main_primary: #6349FF;
+    --main_secondary: #492FE4;
+
+/* Aliases - токены решений, называют контекст, в котором используется стиль,
+  ссылаются на токен вариантов
+     1) Mode - тема интерфейса (light, dark)
+     2) Type – тип токена (text, fill, btn)
+     3) Background – цвет бэкграунда страницы (light-bg, dark-bg)
+     4) Item – тип элемента (primary, secondary)
+     5) State – состояние элемента (normal, hovered)
+    --mode_type_background_item_state: value;
+    
+    Если у токена не указан один из шагов семантики, его можно пропустить
+    Например, если токен относится к страницам с любым бэкграундом. */
+
+    /* backgrounds light mode */
+
+    --light_bg_primary: var(--neutral_gray-6);
+    --light_bg_secondary: var(--neutral_white);
+
+    /* text light mode light background */
+
+    --light_text_light-bg_primary: var(--neutral_black);
+    --light_text_light-bg_secondary: var(--transparent_black-2);
+    --light_text_light-bg_tertiary: var(--transparent_black-3);
+    --light_text_light-bg_quarternary: var(--transparent_black-4);
+
+    /* text light mode dark background */
+
+    --light_text_dark-bg_primary: var(--neutral_white);
+    --light_text_dark-bg_secondary: var(--transparent_white-2);
+    --light_text_dark-bg_tertiary: var(--transparent_white-3);
+    --light_text_dark-bg_quarternary: var(--transparent_white-4);
+
+    /* fill */
+
+    --light_fill_primary: var(--neutral_black);
+    --light_fill_light-bg_secondary: var(--neutral_gray-6);
+    --light_fill_light-bg_blur: var(--transparent_white);
+    --light_fill_dark-bg_secondary: var(--neutral_white);
+    --light_fill_dark-bg_blur: var(--transparent_gray);
+
+    /* btn primary all backgrounds */
+
+    --light_btn_primary_normal: var(--neutral_black);
+    --light_btn_primary_hovered: var(--neutral_gray);
+    --light_btn_primary_disabled: var(--neutral_gray);
+    --light_btn_primary_focused: var(--neutral_gray);
+
+    /* btn light mode light background */
+
+    --light_btn_light-bg_secondary_normal: var(--neutral_gray-6);
+    --light_btn_light-bg_secondary_hovered: var(--neutral_gray-6);
+    --light_btn_light-bg_secondary_focused: var(--neutral_gray-6);
+    --light_btn_light-bg_secondary_disabled: var(--neutral_gray-6);
+
+    /* btn light mode dark background */
+
+    --light_btn_dark-bg_secondary_normal: var(--neutral_white);
+    --light_btn_dark-bg_secondary_hovered: var(--neutral_white);
+    --light_btn_dark-bg_secondary_focused: var(--neutral_white);
+    --light_btn_dark-bg_secondary_disabled: var(--neutral_white);
+
+    /* Spacing Variables - токены отступов,
+    spacing-base - базовый блок 4 px
+    все размеры кратны 4
+    нэйминг отступа - spacing-x(множитель базового блока)
+    --spacing-x2: var(calc(var(--spacing-base) * 2)); */
+
+    --spacing-base: 4px;
+    --spacing-x1: var(calc(var(--spacing-base) * 1)); /* 4 */
+    --spacing-x2: var(calc(var(--spacing-base) * 2)); /* 8 */
+    --spacing-x3: var(calc(var(--spacing-base) * 3)); /* 12 */
+    --spacing-x4: var(calc(var(--spacing-base) * 4)); /* 16 */
+    --spacing-x5: var(calc(var(--spacing-base) * 5)); /* 20 */
+    --spacing-x6: var(calc(var(--spacing-base) * 6)); /* 24 */
+    --spacing-x7: var(calc(var(--spacing-base) * 7)); /* 28 */
+    --spacing-x8: var(calc(var(--spacing-base) * 8)); /* 32 */
+    --spacing-x9: var(calc(var(--spacing-base) * 9)); /* 36 */
+    --spacing-x10: var(calc(var(--spacing-base) * 10)); /* 40 */
+}
+
+/* Effect Styles  */
+.shadow-size-s {
+    box-shadow: 0px 0px 15px 0px rgba(20, 20, 20, 0.05);
+}
+
+.shadow-size-m {
+    box-shadow: 0px 10px 20px 0px rgba(20, 20, 20, 0.10);
+}
+
+.blur-size-l {
+    background: rgba(245, 246, 247, 0.85);
+    backdrop-filter: blur(25px);
+}
+
+.blur-size-m {
+    background: rgba(245, 246, 247, 0.85);
+    backdrop-filter: blur(15px);
+}
+
+

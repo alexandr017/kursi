@@ -1,0 +1,51 @@
+@font-face {
+    font-display: swap;
+    font-family: 'Suisse Intl';
+    src:url('../suisse-intl/SuisseIntl-Bold.eot');
+    src: local('Suisse Intl Bold'), local('SuisseIntl-Bold'),
+    url('../suisse-intl/SuisseIntl-Bold.eot') format('embedded-opentype'),
+    url('../suisse-intl/SuisseIntl-Bold.woff2') format('woff2'),
+    url('../suisse-intl/SuisseIntl-Bold.woff') format('woff'),
+    url('../suisse-intl/SuisseIntl-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Suisse Intl';
+    src:url('../suisse-intl/SuisseIntl-Regular.eot');
+    src: local('Suisse Intl Regular'), local('SuisseIntl-Regular'),
+    url('../suisse-intl/SuisseIntl-Regular.eot') format('embedded-opentype'),
+    url('../suisse-intl/SuisseIntl-Regular.woff2') format('woff2'),
+    url('../suisse-intl/SuisseIntl-Regular.woff') format('woff'),
+    url('../suisse-intl/SuisseIntl-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Suisse Intl';
+    src:url('../suisse-intl/SuisseIntl-Light.eot');
+    src: local('Suisse Intl Light'), local('SuisseIntl-Light'),
+    url('../suisse-intl/SuisseIntl-Light.eot') format('embedded-opentype'),
+    url('../suisse-intl/SuisseIntl-Light.woff2') format('woff2'),
+    url('../suisse-intl/SuisseIntl-Light.woff') format('woff'),
+    url('../suisse-intl/SuisseIntl-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Suisse Intl';
+    src:url('../suisse-intl/SuisseIntl-Thin.eot');
+    src: local('Suisse Intl Thin'), local('SuisseIntl-Thin'),
+    url('../suisse-intl/SuisseIntl-Thin.eot') format('embedded-opentype'),
+    url('../suisse-intl/SuisseIntl-Thin.woff2') format('woff2'),
+    url('../suisse-intl/SuisseIntl-Thin.woff') format('woff'),
+    url('../suisse-intl/SuisseIntl-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
