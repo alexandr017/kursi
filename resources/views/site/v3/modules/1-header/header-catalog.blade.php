@@ -42,7 +42,7 @@
                 >
             </div>
 
-            <a href="/{{$listing->url->url}}">{{ $listing->name }}</a>
+            <a href="{{linkWithSlash($listing->url->url)}}">{{ $listing->name }}</a>
         </div>
 
         @include('site.v3.modules.1-header.catalog-listing-childes', ["listing" => $listing, "isFirstLevel" => true])

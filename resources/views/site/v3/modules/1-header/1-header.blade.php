@@ -4440,9 +4440,9 @@
     document.addEventListener('DOMContentLoaded', getCatalogs);
 
     let searchItem = document.getElementById('search_page_submit');
-    searchItem.addEventListener('click', vaxo);
+    searchItem.addEventListener('click', handleSearchInput);
 
-    document.addEventListener('keypress', eprem);
+    document.addEventListener('keypress', validateSearchSubmit);
 
     const menuCatalogs = {
         'menu-all': 'all',
@@ -4450,13 +4450,13 @@
         'menu-kids': 'dlya-detej'
     };
 
-    function eprem(event) {
+    function validateSearchSubmit(event) {
         if (event.keyCode === 13) {
-            vaxo()
+            handleSearchInput()
         }
     }
 
-    function vaxo() {
+    function handleSearchInput() {
         let searchItem = document.getElementById('qplSKIW');
         let searchValue = searchItem.value;
 
