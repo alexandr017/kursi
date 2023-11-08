@@ -14,7 +14,7 @@
     @if($allChildesHaveNoChildren && $isFirstLevel)
         <div class="kursy-top_menu-left_subitems first" style="grid-row: 1/50">
             <div class="kursy-top_menu-right_label has_child_label only_mobile">
-                <a href="{{'/'. $listing->url->url}}">
+                <a href="{{linkWithSlash($listing->url->url)}}">
                     Посмотреть всё
                 </a>
                 <div class="kursy-top_menu-right_label-grey_chevron">
@@ -75,7 +75,7 @@
         <div class="kursy-top_menu-left_subitems second" style="grid-row: 1/50">
             <div class="kursy-top_menu-right_cont has_child" style="grid-row:1/50; grid-template-rows: repeat(22, auto) 1fr;">
                 <div class="kursy-top_menu-right_label has_child_label only_mobile">
-                    <a href="{{'/'. $listing->url->url}}">
+                    <a href="{{linkWithSlash($listing->url->url)}}">
                         Посмотреть всё
                     </a>
                     <div class="kursy-top_menu-right_label-grey_chevron">

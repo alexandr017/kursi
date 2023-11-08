@@ -102,18 +102,17 @@
                 <div class="open_search close">
                     <div class="search_page-main_cont" id="search-popup-cont">
                         <div class="search_page-header">
-                            <form action="/search" method="get" onsubmit="return validateSearch()">
+                            <div class="search-form">
                                 <label for="search_page_submit" class="search_page-submit_label">
                                     <img src="/v3/images/search.svg" alt="Поиск" title="Поиск">
                                 </label>
                                 <input type="submit" value="Искать" id="search_page_submit">
-                                <iframe style="width:0px; height:0px; border: 0px;" src="javascript:''" name="qplSKIW_div_frame" id="qplSKIW_div_frame"></iframe>
                                 <input size="40" name="q" id="qplSKIW" value="" placeholder="Поиск" class="search-suggest" type="text" autocomplete="off">
                                 <label for="search_page_reset">
                                     <img src="/v3/images/close.svg" class="search_page_reset_img" style="" alt="Сбросить поиск" title="Сбросить поиск">
                                 </label>
                                 <input type="reset" id="search_page_reset" value="Очистить" onclick="clearSearch()">
-                            </form>
+                            </div>
 
                             <div class="search_page-close_btn mobile" onclick="hideSearchPopup()">
                                 <img src="/v3/images/closepage.svg" alt="Закрыть поиск" title="Закрыть поиск">
@@ -1124,7 +1123,7 @@
     }
 
 
-    .search_page-content form {
+    .search_page-content .search-form {
         padding-bottom: 30px;
     }
 
@@ -1149,7 +1148,7 @@
         display: none;
     }
 
-    .search_page-header form {
+    .search_page-header .search-form {
         width: 100%;
         position: relative;
         margin-right: 40px;
@@ -1158,11 +1157,11 @@
         align-items: center;
     }
 
-    .search_page-header form input[type="reset"], .search_page-header form input[type="submit"] {
+    .search_page-header .search-form input[type="reset"], .search_page-header .search-form input[type="submit"] {
         display: none;
     }
 
-    .search_page-header form input[type="text"] {
+    .search_page-header .search-form input[type="text"] {
         width: 100%;
         font-weight: 400;
         font-size: 18px;
@@ -1173,7 +1172,7 @@
     }
 
 
-    .search_page-header form input[type="text"] {
+    .search_page-header .search-form input[type="text"] {
         border: 1px solid #D9D9D9;
         border-radius: 100px;
         padding: 8px  56px;
@@ -1183,7 +1182,7 @@
         align-items: center;
     }
 
-    .search_page-header form input[type="text"]:focus {
+    .search_page-header .search-form input[type="text"]:focus {
         border: 1px solid #469ED7;
     }
 
@@ -1333,7 +1332,7 @@
             overflow: auto;
         }
 
-        .search_page-header form input[type="text"]{
+        .search_page-header .search-form input[type="text"]{
             font-weight: 400;
             font-size: 14px;
             line-height: 20px;
@@ -1364,7 +1363,7 @@
             align-items: center;
         }
 
-        .search_page-header form {
+        .search_page-header .search-form {
             margin-right: 12px;
         }
     }
@@ -4440,11 +4439,33 @@
 <script>
     document.addEventListener('DOMContentLoaded', getCatalogs);
 
+    let searchItem = document.getElementById('search_page_submit');
+    searchItem.addEventListener('click', vaxo);
+
+    document.addEventListener('keypress', eprem);
+
     const menuCatalogs = {
         'menu-all': 'all',
         'menu-free': 'besplatnye',
         'menu-kids': 'dlya-detej'
     };
+
+    function eprem(event) {
+        if (event.keyCode === 13) {
+            vaxo()
+        }
+    }
+
+    function vaxo() {
+        let searchItem = document.getElementById('qplSKIW');
+        let searchValue = searchItem.value;
+
+        if (!searchValue) {
+            return;
+        }
+
+        window.location.href =  window.location.origin + `/search?q=${searchValue}/`
+    }
 
     function getCatalogs() {
         const catalogRoutes = ['/catalog/listings/all', '/catalog/listings/besplatnye', '/catalog/listings/dlya-detej'];
