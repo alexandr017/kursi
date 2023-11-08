@@ -3048,6 +3048,7 @@
         line-height: 63px;
         font-weight: 700;
         hyphens: auto;
+        margin: 0;
     }
 
     .page_head-desk {
@@ -4790,11 +4791,6 @@
       if(search){
         search.classList.remove("close");
       }
-      else{
-        console.log("load search");
-
-      }
-
       // document.getElementsByTagName('body')[0].classList.add("menu_no_scroll");
       console.log("showSearch");
     }

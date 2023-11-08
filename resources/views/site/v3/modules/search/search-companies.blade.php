@@ -4,7 +4,7 @@
             Онлайн-школы
         </div>
 
-        <div class="catalog-section  kurses_search_sections ">
+        <div class="catalog-section  schools_search_sections ">
             <div class="row product-item-list-col-3" id="companiesBlockSearch">
                 @foreach($companies as $company)
                     @include('site.v3.templates.company.company-catalog-item', ['company' => $company])

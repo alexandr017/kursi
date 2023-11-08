@@ -665,58 +665,10 @@ p.search_page-empty_filler{
 }
 
 @media (max-width: 860px) {
-    .search_page-close_btn p{
-        display: block;
-    }
-
-    .search_page-close_btn img{
-        display: none;
-    }
-
-    .search_page-main_cont{
-        bottom: 0;
-    }
-
-    p.search_page-empty_filler{
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 32px;
-        color: #101820;
-        margin-top: 20px;
-    }
-
-    .search_page-content.max-width {
-        overflow: auto;
-    }
-
-    .search_page-header form{
-        padding: 8px 16px;
-        margin-right: 16px;
-    }
-
-    .search_page-header form input[type="text"]{
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-        color: #101820;
-    }
-
-    label.search_page-submit_label {
-        display: none;
-    }
-
-    .schools_search_sections .row,
-    .blog_search_sections .row {
-        grid-template-columns: 1fr;
-    }
-
-
     .catalog-section.kurses_search_sections .kurse_card.card_pc {
         width: 100%;
         max-width: unset;
     }
-
-
 }
 
 /* End */
@@ -1924,6 +1876,7 @@ footer a:hover {
     line-height: 63px;
     font-weight: 700;
     hyphens: auto;
+    margin: 0;
 }
 
 .page_head-desk {

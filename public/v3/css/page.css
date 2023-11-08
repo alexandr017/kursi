@@ -2981,6 +2981,7 @@ footer a:hover {
     line-height: 63px;
     font-weight: 700;
     hyphens: auto;
+    margin: 0;
 }
 
 .page_head-desk {
