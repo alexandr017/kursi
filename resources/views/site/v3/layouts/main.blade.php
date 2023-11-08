@@ -61,9 +61,9 @@
 
 
 <script type="text/javascript">
-    if (window.location.pathname.slice(-1) !== '/') {
-        window.location.pathname = window.location.pathname + '/';
-    }
+    // if (window.location.pathname.slice(-1) !== '/') {
+    //     window.location.pathname = window.location.pathname + '/';
+    // }
 
     if (window == window.top) {
         document.addEventListener("DOMContentLoaded", function() {
