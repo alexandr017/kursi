@@ -36,6 +36,7 @@ a:-webkit-any-link {
     line-height: 63px;
     font-weight: 700;
     hyphens: auto;
+    margin: 0;
 }
 
 .page_head-desk {
@@ -151,6 +152,18 @@ li.bx-pag-next img {
 .news-list .news_item-title a {
     font-size: 20px;
     line-height: 24px;
+}
+
+.news-list .news_item-pic {
+    min-height: 175px;
+}
+
+.news-list .news_item-section_tag {
+    margin: 24px;
+    padding: 8px 12px;
+    border-radius: 30px;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 @media (max-width: 1200px) {
