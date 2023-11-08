@@ -29,6 +29,6 @@ class IndexCompaniesMainPageController extends Controller
                 'breadcrumbs' => $breadcrumbs,
                 'page' => $page]
             ) :
-            view('site.v3.templates.company.company-catalog-section', ['companies' => $companies['companiesForStructuredData']]);
+            view('site.v3.templates.company.company-catalog-section', ['companies' => $companies['companies']]);
     }
 }

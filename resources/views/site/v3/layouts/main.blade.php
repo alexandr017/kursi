@@ -22,6 +22,8 @@
     <meta name="twitter:image" content="https://kursy.ru">
     <meta name="google-site-verification" content="WYU9mgND_HRtNkkoBGe8Mt_kRGzV4wwsCo4_QxyAWco" />
     <meta name="yandex-verification" content="6ca1d53bafb9a79f" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" type="text/css">
     @if(str_contains(Request::url(), '/page/'))
