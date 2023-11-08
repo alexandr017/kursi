@@ -3093,17 +3093,17 @@
 
     .swiper_styles-button-prev,
     .swiper_styles-button-next {
-        background-image: url(/local/templates/kursi/img/slider_right_btn.svg);
+        background-image: url(../../../../../../public/images/system/slider_right_btn.svg);
     }
 
     .swiper_styles-button-prev.disable,
     .swiper_styles-button-next.disable {
-        background-image: url(/local/templates/kursi/img/slider_disable_right_btn.svg);
+        background-image: url(../../../../../../public/images/system/slider_disable_right_btn.svg);
     }
 
     .swiper_styles-button-prev:hover,
     .swiper_styles-button-next:hover {
-        background-image: url(/local/templates/kursi/img/slider_hover_right_btn.svg);
+        background-image: url(../../../../../../public/images/system/slider_hover_right_btn.svg);
     }
 
 
@@ -3170,7 +3170,7 @@
     .swiper_styles-button-prev.swiper-button-disabled:hover,
     .swiper_styles-button-next.swiper-button-disabled,
     .swiper_styles-button-prev.swiper-button-disabled {
-        background-image: url(/local/templates/kursi/img/slider_disable_right_btn.svg);
+        background-image: url(../../../../../../public/images/system/slider_disable_right_btn.svg);
     }
 
     .swiper_styles-pagination.swiper-pagination.swiper-pagination-lock{
@@ -3774,7 +3774,7 @@
     .content_accordion_block .arrow {
         width: 24px;
         height: 24px;
-        background-image: url(/local/templates/kursi/img/faq_arrows/hideArrow.svg);
+        background-image: url(../../../../../../public/images/system/hideArrow.svg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
