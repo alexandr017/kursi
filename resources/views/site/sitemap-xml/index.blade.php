@@ -2,22 +2,22 @@
 <?php echo '<?xml-stylesheet type="text/xsl" href="/xml-style.xsl"?>'."\n"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <sitemap>
-        <loc>https://kursy.ru/pages.xml</loc>
+        <loc>{{\Request::getSchemeAndHttpHost()}}/pages.xml/</loc>
     </sitemap>
     <sitemap>
-        <loc>https://kursy.ru/posts-categories.xml</loc>
+        <loc>{{\Request::getSchemeAndHttpHost()}}/posts-categories.xml/</loc>
     </sitemap>
     <sitemap>
-        <loc>https://kursy.ru/posts.xml</loc>
+        <loc>{{\Request::getSchemeAndHttpHost()}}/posts.xml/</loc>
     </sitemap>
     <sitemap>
-        <loc>https://kursy.ru/employees.xml</loc>
+        <loc>{{\Request::getSchemeAndHttpHost()}}/employees.xml/</loc>
     </sitemap>
     <sitemap>
-        <loc>https://kursy.ru/companies.xml</loc>
+        <loc>{{\Request::getSchemeAndHttpHost()}}/companies.xml/</loc>
     </sitemap>
     <sitemap>
-        <loc>https://kursy.ru/listings.xml</loc>
+        <loc>{{\Request::getSchemeAndHttpHost()}}/listings.xml/</loc>
     </sitemap>
 </sitemapindex>
 <!-- XML Sitemap -->
