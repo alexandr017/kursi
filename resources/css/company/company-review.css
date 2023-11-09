@@ -194,6 +194,32 @@ img.rating-right_star {
     transform: translate(-50%, -50%);
 }
 
+.review_card-cont.open .review_card-pc_close {
+    display: block;
+    position: absolute;
+    top: 15px;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    right: 40px;
+}
+
+.review_card-cont.dop_open label {
+    display: none;
+}
+
+.review_card-pc_close:hover > .review_card-pc_close-hover {
+    display: block;
+}
+
+.review_card-pc_close:hover > .review_card-pc_close-default {
+    display: none;
+}
+
+.review_card-pc_close:not(:hover) > .review_card-pc_close-hover {
+    display: none;
+}
+
 .review_card-cont.open {
     position: relative;
 }
