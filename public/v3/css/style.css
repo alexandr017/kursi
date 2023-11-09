@@ -383,16 +383,10 @@ img.section_img {
         font-weight: 500;
     }
 
-    .header_top_menu > .ul > .li {
-        margin-bottom: 16px;
-        width: 100%;
-    }
-
     .header_top_menu > .ul {
         flex-direction: column;
         width:  calc(100% - 16px);
         align-items: flex-start;
-        margin-left: 16px;
         font-size: 32px;
         height: auto;
         /* position: relative; */
@@ -406,49 +400,25 @@ img.section_img {
         font-weight: 500;
     }
 
-    .header_top_menu > .ul > .li {
-        margin-bottom: 16px;
-    }
-
-    .header_top_menu {
-        height: 100%;
-    }
-
     .header_top_menu .li > .ul_cont > .second_lvl {
         grid-template-columns: 1fr;
         width: 100%;
-        position: relative;
-        height: unset;
+        position: fixed;
+        background: #ffffff;
+        top: 88px;
+        height: calc(100% - 88px);
+        right: 0;
+        left: 0;
+        overflow: hidden;
     }
 
     .ul.first_lvl > .li > .ul_cont > .ul > .li > * {
         left: 16px;
     }
 
-    .ul.first_lvl > .li > .ul_cont {
-        top: 0;
-        left: 0;
-        overflow: auto;
-        right: 0;
-        bottom: 0;
-        padding-bottom: 20px;
-        height: auto;
-    }
-
 
     .ul.second_lvl {
         flex-direction: column;
-    }
-
-
-    .ul.second_lvl > .li > .header_top_menu-text > a, .ul.second_lvl > .li > .header_top_menu-text > p {
-        padding: 14px 28px;
-        width: 100%;
-        border-bottom: 1px solid #f5f5f5;
-        padding-left: 0;
-        font-size: 16px;
-        line-height: 28px;
-        font-weight: 400;
     }
 
     .first_lvl > .li > .ul_cont:before{
@@ -529,6 +499,7 @@ img.section_img {
         width: 100%;
         justify-content: space-between;
         align-items: center;
+        font-weight: 600!important;
     }
 
     .li.showed_submenu > div > a > .mobile_next_btn {
@@ -694,58 +665,10 @@ p.search_page-empty_filler{
 }
 
 @media (max-width: 860px) {
-    .search_page-close_btn p{
-        display: block;
-    }
-
-    .search_page-close_btn img{
-        display: none;
-    }
-
-    .search_page-main_cont{
-        bottom: 0;
-    }
-
-    p.search_page-empty_filler{
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 32px;
-        color: #101820;
-        margin-top: 20px;
-    }
-
-    .search_page-content.max-width {
-        overflow: auto;
-    }
-
-    .search_page-header form{
-        padding: 8px 16px;
-        margin-right: 16px;
-    }
-
-    .search_page-header form input[type="text"]{
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-        color: #101820;
-    }
-
-    label.search_page-submit_label {
-        display: none;
-    }
-
-    .schools_search_sections .row,
-    .blog_search_sections .row {
-        grid-template-columns: 1fr;
-    }
-
-
     .catalog-section.kurses_search_sections .kurse_card.card_pc {
         width: 100%;
         max-width: unset;
     }
-
-
 }
 
 /* End */
@@ -884,6 +807,7 @@ label.bx-input_error {
 
 p.subscribe_form-title {
     margin-bottom: 24px;
+    margin-top: 0;
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
@@ -1420,11 +1344,10 @@ a{
     padding: 0 160px;
 }
 
-@media (max-width: 860px){
+@media (max-width: 1200px){
     .max-width {
-        padding: 0 16px;
+        padding: 0 80px;
     }
-
 }
 
 @media (max-width: 1000px){
@@ -1434,12 +1357,12 @@ a{
 
 }
 
-@media (max-width: 1200px){
+@media (max-width: 860px){
     .max-width {
-        padding: 0 80px;
+        padding: 0 16px;
     }
-}
 
+}
 
 pre {
     display: block;
@@ -1488,9 +1411,9 @@ header {
     align-items: center;
 }
 
-.menu {
-    height: 100%;
-}
+/*.menu {*/
+/*    height: 100%;*/
+/*}*/
 
 .header_top_menu {
     height: 100%;
@@ -1557,15 +1480,15 @@ header {
         padding: 32px 20px;
     }
 
-    .menu {
-        grid-area: menu;
-        /* margin-top: 26px; */
-        /* height: calc(100% - 27px); */
+    /*.menu {*/
+    /*    grid-area: menu;*/
+    /*    !* margin-top: 26px; *!*/
+    /*    !* height: calc(100% - 27px); *!*/
 
-        padding-top: 26px;
-        height: 100%;
-        position: relative;
-    }
+    /*    padding-top: 26px;*/
+    /*    height: 100%;*/
+    /*    position: relative;*/
+    /*}*/
 
     .open_search {
         grid-area: search;
@@ -1621,6 +1544,7 @@ footer{
 
 p.footer_block_title {
     margin-bottom: 24px;
+    margin-top: 0;
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
@@ -1789,6 +1713,7 @@ footer a:hover {
 }
 
 .html_editor_body_cont ul {
+    padding: 0;
     list-style-type: none;
     margin: 25px;
     /* margin-top: -16px; */
@@ -1951,6 +1876,7 @@ footer a:hover {
     line-height: 63px;
     font-weight: 700;
     hyphens: auto;
+    margin: 0;
 }
 
 .page_head-desk {
@@ -1974,6 +1900,7 @@ footer a:hover {
 
 @media(max-width: 860px){
     .page_head-title{
+        margin: 0;
         font-size: 40px;
         line-height: 52px;
     }
@@ -2617,11 +2544,11 @@ ul.c_styled li:before {
 }
 
 @media(max-width: 860px){
-
     .timeline_items > .timeline_element-title, .timeline_items > .timeline_element-text {
         max-width: 90vw;
         width: 100%;
         min-width: unset;
+        height: unset!important;
     }
 
     .timeline_element-title_filler {
@@ -2638,9 +2565,40 @@ ul.c_styled li:before {
         position: relative;
         left: -17px;
     }
+
+    .c_styled li {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: 0.16px;
+    }
+
+    ul.c_styled:not(.ltp_arrow) li:before {
+        width: 8px;
+        height: 8px;
+        left: -16px;
+    }
+
+    .social_links-list a, .social_links-list p {
+        margin: 0;
+    }
+
+    .social_links-list a, .social_links-list p > a {
+        margin-right: 12px;
+    }
+
+    .html_editor_body_cont ol li {
+       margin: 16px 0;
+    }
+
+    ol.c_styled:not(.ltp_arrow) li:before {
+        width: 16px;
+        height: 16px;
+        left: -24px;
+        font-size: 10px;
+    }
 }
-
-
 
 .tagpage-ajax_container {
     position: relative;
@@ -2711,7 +2669,7 @@ ul.c_styled li:before {
 .custom_checkbox input + label {
     padding-left: 24px;
     position: relative;
-    cursor: pointer;
+    cursor: pointer;;
 }
 
 .custom_checkbox input + label:before {
@@ -2729,7 +2687,7 @@ ul.c_styled li:before {
 .custom_checkbox input:checked+ label:after {
     content: "";
     width: 18px;
-    height: 18px;
+    height: 18px;;
     position: absolute;
     left: 0;
     top: 1px;

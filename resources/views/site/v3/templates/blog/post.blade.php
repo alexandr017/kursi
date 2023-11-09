@@ -105,45 +105,6 @@
     </script>
 
     <style>
-        @media (max-width: 860px) {
-            .video_optional-width {
-                padding: 0 20px;
-            }
-
-            .wrapper_svg {
-                align-self: flex-end;
-            }
-
-            .video-wrapper_position {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 0px;
-            }
-
-            .border-radius {
-                border-radius: 8px;
-            }
-        }
-
-        @media (max-width: 1000px) {
-            .video_optional-width {
-                padding: 0 28px;
-            }
-
-            .wrapper_svg {
-                right: 1px;
-                top: -41px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .video_optional-width {
-                padding: 0px 80px;
-            }
-        }
-
         .video_optional-width {
             padding: 0 160px;
             width: 100%;
@@ -214,6 +175,45 @@
         .border-radius {
             border: none;
             border-radius: 16px;
+        }
+
+        @media (max-width: 1200px) {
+            .video_optional-width {
+                padding: 0px 80px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .video_optional-width {
+                padding: 0 28px;
+            }
+
+            .wrapper_svg {
+                right: 1px;
+                top: -41px;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .video_optional-width {
+                padding: 0 20px;
+            }
+
+            .wrapper_svg {
+                align-self: flex-end;
+            }
+
+            .video-wrapper_position {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 0px;
+            }
+
+            .border-radius {
+                border-radius: 8px;
+            }
         }
     </style>
 

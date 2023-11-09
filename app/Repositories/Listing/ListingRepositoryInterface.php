@@ -16,4 +16,5 @@ interface ListingRepositoryInterface
     public function getChildes(string $parentId, array $relations = []): Collection;
     public function getListingsForChildes(string $parentId): Collection;
     public function getListingsForFreeCourses(string $parentId): Collection;
+    public function getListingsForAll(): Collection;
 }

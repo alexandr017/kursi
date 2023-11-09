@@ -75,6 +75,27 @@ ul.first_lvl {
 }
 
 @media screen and (max-width: 860px) {
+    .catalog_section_list-title_cont {
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+    .catalog_section_list-title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 32px;
+        color: #101820;
+        margin-bottom: 16px;
+    }
+
+    .catalog_section_list-subtitle {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        margin-bottom: 14px;
+        color: #101820;
+    }
+
     ul.first_lvl > li > div > a {
         border: none;
         flex-direction: column;
@@ -90,5 +111,9 @@ ul.first_lvl {
         align-items: center;
         border-radius: 30px;
         padding: 40px 24px;
+    }
+
+    .catalog-section-list {
+        margin: auto;
     }
 }

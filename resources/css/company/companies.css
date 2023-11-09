@@ -5,7 +5,7 @@
         "desk img";
     grid-template-columns: 7fr 3fr;
     grid-gap: 30px;
-    margin: 40px 0;
+    margin: 24px 0 40px 0;
     align-items: center;
 }
 
@@ -62,3 +62,28 @@
         padding: 0 28px;
     }
 }
+@media screen and (max-width: 860px) {
+    .schools_head {
+        grid-template-columns: 1fr;
+        margin-top: 24px;
+        grid-gap: 24px;
+    }
+
+    .schools_head-title {
+        font-size: 40px;
+        line-height: 52px;
+        margin-top: 34px;
+        margin-bottom: 22px;
+    }
+
+    .schools_head-desk_test {
+        font-size: 20px;
+        line-height: 150%;
+    }
+
+    .schools-ajax_cont .product-sort-cont {
+        margin-top: -8px;
+        margin-bottom: 24px;
+    }
+}
+

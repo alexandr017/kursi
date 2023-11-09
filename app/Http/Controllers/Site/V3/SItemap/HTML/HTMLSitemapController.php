@@ -3,12 +3,20 @@
 namespace App\Http\Controllers\Site\V3\SItemap\HTML;
 
 use App\Http\Controllers\Controller;
+use App\Models\Companies\Company;
+use App\Models\Listing\Listing;
+use App\Models\Pages\Page;
+use App\Models\StaticPages\StaticPage;
+use App\Models\Urls\Url;
+use App\Services\Breadcrumbs\BreadcrumbsRender;
 use Illuminate\Http\Request;
 use \Illuminate\Contracts\View;
 
 class HTMLSitemapController extends Controller
 {
     const SECTION_POST_CATEGORY_TYPE_ID =  2;
+    const SECTION_LISTING_TYPE_ID =  6;
+    const SEO_FOR_PAGE_ID = 6;
 
     public function index()
     {
@@ -19,12 +27,41 @@ class HTMLSitemapController extends Controller
             ->whereNull('post_categories.deleted_at')
             ->get();
 
-        return view('site.v3.templates.sitemap.sitemap', compact('postCategories'));
+        $page = StaticPage::query()->where('id', self::SEO_FOR_PAGE_ID)->first();
+
+        return view('site.v3.templates.sitemap.sitemap', compact('postCategories', 'page'));
     }
 
     public function coursesCategories($alias)
     {
-        //todo $alias защитить н всякий случай от интекций, то есть очистить
-        dd(1);
+        $url = Url::query()
+            ->where('url', $alias)
+            ->where('section_type', self::SECTION_LISTING_TYPE_ID)
+            ->first();
+
+        $listing = Listing::query()->where('id', $url->section_id)
+            ->with(['url','childes' => function($q) {
+                $q->with(['url','childes']);
+            }])->first();
+
+        $page = new StaticPage([
+            'h1' => "Карта сайта Курсы.ру раздела «$listing->name" . '»',
+            'title' => "Карта сайта Курсы.ру раздела «$listing->name" . '»',
+            'meta_description' => "Карта сайта Курсы.ру раздела «$listing->name" . "» для навигации пользователей.",
+        ]);
+
+        $breadcrumbs = BreadcrumbsRender::get($listing->breadcrumbs_sitemap, $listing->h1);
+
+        return view('site.v3.templates.sitemap.sitemap-listing', compact('listing', 'breadcrumbs', 'page'));
+    }
+
+    public function schools()
+    {
+        $companies = Company::query()->whereNull('deleted_at')->get();
+        $breadcrumbs = BreadcrumbsRender::get('', 'Карта сайта');
+
+
+        return view('site.v3.templates.sitemap.sitemap-companies', compact('companies', 'breadcrumbs'));
+
     }
 }

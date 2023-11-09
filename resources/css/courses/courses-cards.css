@@ -74,7 +74,8 @@
 @media (max-width: 860px) {
     .kurse_card.card_mobile {
         padding: 32px 24px;
-        width: 300px;
+        /*width: 300px;*/
+        width: 100%;
     }
 }
 

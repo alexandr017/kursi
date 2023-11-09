@@ -3,7 +3,9 @@
 
 // sitemap (html)
 Route::get('sitemap', [App\Http\Controllers\Site\V3\SItemap\HTML\HTMLSitemapController::class, 'index']);
-Route::get('sitemap/kursy/{alias}', [App\Http\Controllers\Site\V3\SItemap\HTML\HTMLSitemapController::class, 'coursesCategories']);
+Route::get('sitemap/kursy/{alias}', [App\Http\Controllers\Site\V3\SItemap\HTML\HTMLSitemapController::class, 'coursesCategories'])
+    ->where('alias', '(.+)');
+Route::get('sitemap/schools', [App\Http\Controllers\Site\V3\SItemap\HTML\HTMLSitemapController::class, 'schools']);
 
 
 // schools

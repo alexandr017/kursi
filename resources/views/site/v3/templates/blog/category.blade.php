@@ -18,11 +18,19 @@
     <div class="content max-width">
         <div class="blog_head page_head">
             <h1 class="blog_head-title page_head-title">
-                Полезные статьи по разным профессиям
+                @if(isset($category))
+                    {{$category->h1}}
+                @else
+                    {{$page->h1}}
+                @endif
             </h1>
             <div class="blog_head-desk page_head-desk">
                 <div class="blog_head-desk_test page_head-desk_text">
-                    Наша команда ежедневно выкладывает полезные материалы по самым разным профессиям для вашего профессионального роста.
+                    @if(isset($category))
+                        {{$category->content}}
+                    @else
+                        {{$page->lead}}
+                    @endif
                 </div>
             </div>
             <div class="blog_head-img page_head-img">

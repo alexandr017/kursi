@@ -23,6 +23,12 @@ class PostCategoriesController extends Controller implements DynamicPagesInterfa
         $breadcrumbs = BreadcrumbsRender::get($result->category->breadcrumbs, $result->category->h1);
         $page = \DB::table('seo_for_pages')->where(['id' => self::SEO_PAGE_ID])->first();
 
+        if ($result->category) {
+            $page->h1 = 'Статьи по ' . $result->category->h1 . ' - страница ' . $dto->page;
+            $page->title = $result->category->title . ' - страница ' . $dto->page;
+            $page->meta_description = $result->category->meta_description . ' - страница ' . $dto->page;
+        }
+
         $editLink = "/admin/post-categories/{$result->category->id}/edit";
 
         return view('site.v3.templates.blog.category', [

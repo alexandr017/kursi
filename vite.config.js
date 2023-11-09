@@ -41,6 +41,7 @@ export default defineConfig({
                 'resources/css/mainpage/mainpage-reviews.css',
                 'resources/css/auth/auth.css',
                 'resources/css/auth/register.css',
+                'resources/css/sitemap/sitemap-listing.css',
                 'resources/js/company/companies.js',
                 'resources/js/company/company-review.js',
                 'resources/js/company/company-review-add.js',

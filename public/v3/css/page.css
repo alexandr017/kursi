@@ -777,9 +777,9 @@ input.kursy-top_menu_cb:checked ~ .kursy-top_menu .kursy-open_btn-open-img {
         height: calc(100% - 88px);
     }
 
-    .kursy-top_menu-tab.hideItems > .kursy-top_menu-left_label {
-        display: none;
-    }
+    /*.kursy-top_menu-tab.hideItems > .kursy-top_menu-left_label {*/
+    /*    display: none;*/
+    /*}*/
 
     .kursy-top_menu-left_label.mobileClickedItem + .kursy-top_menu-left_subitems {
         display: inline-flex;
@@ -809,11 +809,11 @@ input.kursy-top_menu_cb:checked ~ .kursy-top_menu .kursy-open_btn-open-img {
         border-bottom: 1px solid #F5F5F5;
     }
 
-    .kursy-top_menu-tab.hideItems > .kursy-top_menu-left_label.mobileClickedItem {
-        display: inline-flex;
-        min-height: 30px;
-        box-sizing: content-box;
-    }
+    /*.kursy-top_menu-tab.hideItems > .kursy-top_menu-left_label.mobileClickedItem {*/
+    /*    display: inline-flex;*/
+    /*    min-height: 30px;*/
+    /*    box-sizing: content-box;*/
+    /*}*/
 
     .kursy-top_menu-left_label.mobileClickedItem ~ label {
         display: none;
@@ -865,10 +865,10 @@ input.kursy-top_menu_cb:checked ~ .kursy-top_menu .kursy-open_btn-open-img {
         height: 24px;
     }
 
-    .kursy-top_menu-tab.hideItems > .kursy-top_menu-left_label.mobileClickedItem.openedChildHide,
-    .kursy-top_menu-right_label.openedChildHide{
-        display: none;
-    }
+    /*.kursy-top_menu-tab.hideItems > .kursy-top_menu-left_label.mobileClickedItem.openedChildHide,*/
+    /*.kursy-top_menu-right_label.openedChildHide{*/
+    /*    display: none;*/
+    /*}*/
 
     .kursy-top_menu-left_label.mobileClickedItem.openedChildHide + .kursy-top_menu-left_subitems{
         padding-left: 0;
@@ -1916,6 +1916,7 @@ label.bx-input_error {
 
 p.subscribe_form-title {
     margin-bottom: 24px;
+    margin-top: 0;
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
@@ -2818,6 +2819,7 @@ footer a:hover {
 }
 
 .html_editor_body_cont ul {
+    padding: 0;
     list-style-type: none;
     margin: 25px;
     /* margin-top: -16px; */
@@ -2979,6 +2981,7 @@ footer a:hover {
     line-height: 63px;
     font-weight: 700;
     hyphens: auto;
+    margin: 0;
 }
 
 .page_head-desk {
@@ -3023,17 +3026,17 @@ footer a:hover {
 
 .swiper_styles-button-prev,
 .swiper_styles-button-next {
-    background-image: url(/local/templates/kursi/img/slider_right_btn.svg);
+    background-image: url(../../images/system/slider_right_btn.svg);
 }
 
 .swiper_styles-button-prev.disable,
 .swiper_styles-button-next.disable {
-    background-image: url(/local/templates/kursi/img/slider_disable_right_btn.svg);
+    background-image: url(../../images/system/slider_disable_right_btn.svg);
 }
 
 .swiper_styles-button-prev:hover,
 .swiper_styles-button-next:hover {
-    background-image: url(/local/templates/kursi/img/slider_hover_right_btn.svg);
+    background-image: url(../../images/system/slider_hover_right_btn.svg);
 }
 
 
@@ -3100,7 +3103,7 @@ footer a:hover {
 .swiper_styles-button-prev.swiper-button-disabled:hover,
 .swiper_styles-button-next.swiper-button-disabled,
 .swiper_styles-button-prev.swiper-button-disabled {
-    background-image: url(/local/templates/kursi/img/slider_disable_right_btn.svg);
+    background-image: url(../../images/system/slider_disable_right_btn.svg);
 }
 
 .swiper_styles-pagination.swiper-pagination.swiper-pagination-lock{
@@ -3729,7 +3732,7 @@ ul.c_styled.ltp_arrow li:before,ol.c_styled.ltp_arrow li:before{
 .content_accordion_block .arrow {
     width: 24px;
     height: 24px;
-    background-image: url(/local/templates/kursi/img/faq_arrows/hideArrow.svg);
+    background-image: url(../../images/system/hideArrow.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;

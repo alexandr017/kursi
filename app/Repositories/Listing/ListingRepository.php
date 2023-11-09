@@ -119,4 +119,17 @@ class ListingRepository implements ListingRepositoryInterface
             }])
             ->get();
     }
+
+    public function getListingsForAll(): Collection
+    {
+        return $this->query()
+            ->whereNull('parent_id')
+            ->whereNotIn('name', ['Для детей', 'Бесплатные'])
+            ->with(['url','childes' => function($q) {
+                $q->with(['url','childes' => function($q) {
+                    $q->with(['url','childes']);
+                }]);
+            }])
+            ->get();
+    }
 }
