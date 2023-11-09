@@ -7,7 +7,7 @@
     "brand": "{{$company->name}}",
     "logo": "https://kursy.ru{{str_replace('https://kursy.ru', '', $company->logo)}}",
     "name": "{{$company->name}}",
-    "category": "{{$company->name}}",
+    "category": "Schools",
     "description": "{{$company->lead}}",
     "aggregateRating": {
     "@type": "AggregateRating",
@@ -18,9 +18,9 @@
     "offers": {
         "@type": "AggregateOffer",
         "offerCount": {{$company->courses_count}},
-    "highPrice": "{{$highPrice}}",
-    "lowPrice": "{{$lowPrice}}",
-    "priceCurrency": "Rub",
+        "highPrice": "{{$highPrice}}",
+        "lowPrice": "{{$lowPrice}}",
+        "priceCurrency": "Rub",
     "offers": [
     @foreach($company->coursesStructuredData as $course)
         {
