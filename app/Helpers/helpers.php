@@ -24,7 +24,15 @@ if (! function_exists('emptyDataToNull')) {
 
 function getCanonical() : string
 {
-    return URL::current();
+    $url = URL::current();
+
+    $pos = strpos($url, 'page');
+
+    if ($pos) {
+        $url = substr($url, 0, $pos);
+    }
+
+    return $url;
 }
 
 function getCanonicalNext(int $pages) : int|string

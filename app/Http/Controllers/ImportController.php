@@ -103,9 +103,9 @@ class ImportController extends Controller
 
             $data = [
                 'category_id' => $oldCategoryIdToNewID[(int) $item->Группы->Ид]['id'],
-                'title' => (string) $item->НаследуемыеШаблоны->Шаблон[0]->Значение,
+                'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[0]->Значение,
                 'meta_description' => (string) $item->НаследуемыеШаблоны->Шаблон[1]->Значение,
-                'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
+                'title' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
                 'breadcrumbs' => '', // todo
                 'preview' => '/images/posts/previews/' . Str::slug((string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение) . '.webp',
                 'lead' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,

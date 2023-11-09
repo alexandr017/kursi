@@ -1,5 +1,9 @@
 @extends('site.v3.layouts.main')
 
+@section ('title', Shortcode::compile($post->title))
+@section ('og_title', Shortcode::compile($post->h1))
+@section ('meta_description', Shortcode::compile($post->meta_description))
+
 @section('content')
     <div class="content max-width ">
 
