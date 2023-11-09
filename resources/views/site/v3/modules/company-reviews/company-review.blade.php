@@ -46,8 +46,16 @@
         <input type="checkbox" id="read_more_{{ $review->id }}" name="" value="" onchange="openReview(this)">
 
         <label class="review_card-pc_close" for="read_more_{{ $review->id }}">
-            {{--            <img src="/local/templates/kursi/components/bitrix/catalog.item/review_card/img/close.svg" class="review_card-pc_close-default" alt="Закрыть">--}}
-            {{--            <img src="/local/templates/kursi/components/bitrix/catalog.item/review_card/img/rCloseHover.svg" class="review_card-pc_close-hover" alt="Закрыть">--}}
+            <img
+                src="/v3/images/close.svg"
+                class="review_card-pc_close-default"
+                alt="Закрыть"
+            >
+            <img
+                src="/v3/images/rCloseHover.svg"
+                class="review_card-pc_close-hover"
+                alt="Закрыть"
+            >
         </label>
 
         <div class="review_card-data">
@@ -91,7 +99,6 @@
 {{--@endpush--}}
 
 <script>
-
     function openReview(e) {
         if (e.id === "read_more_open") {
             let id = e.parentNode.querySelector("input[type='checkbox']").dataset.parent_id;
