@@ -107,7 +107,9 @@
                                     <img src="/v3/images/search.svg" alt="Поиск" title="Поиск">
                                 </label>
                                 <input type="submit" value="Искать" id="search_page_submit">
+
                                 <input size="40" name="q" id="qplSKIW" value="" placeholder="Поиск" class="search-suggest" type="text" autocomplete="off">
+
                                 <label for="search_page_reset">
                                     <img src="/v3/images/close.svg" class="search_page_reset_img" style="" alt="Сбросить поиск" title="Сбросить поиск">
                                 </label>
@@ -4437,12 +4439,10 @@
 </style>
 
 <script>
-    document.addEventListener('DOMContentLoaded', getCatalogs);
-
-    let searchItem = document.getElementById('search_page_submit');
-    searchItem.addEventListener('click', handleSearchInput);
-
-    document.addEventListener('keypress', validateSearchSubmit);
+    document.addEventListener('DOMContentLoaded', () => {
+        getCatalogs();
+        handleSearch();
+    });
 
     const menuCatalogs = {
         'menu-all': 'all',
@@ -4450,21 +4450,19 @@
         'menu-kids': 'dlya-detej'
     };
 
-    function validateSearchSubmit(event) {
-        if (event.keyCode === 13) {
-            handleSearchInput()
-        }
-    }
+    function handleSearch() {
+        const searchItem = document.getElementById('search_page_submit');
+        const searchValueInput = document.getElementById('qplSKIW');
 
-    function handleSearchInput() {
-        let searchItem = document.getElementById('qplSKIW');
-        let searchValue = searchItem.value;
-
-        if (!searchValue) {
-            return;
-        }
-
-        window.location.href =  window.location.origin + `/search?q=${searchValue}/`
+        setSearchValue(searchValueInput);
+        handleShowRestSearchBtn(searchValueInput)
+        searchValueInput.addEventListener('input', () => handleShowRestSearchBtn(searchValueInput));
+        searchItem.addEventListener('click', handleSearchInput);
+        document.addEventListener('keypress', () => {
+            if (event.keyCode === 13) {
+                handleSearchInput();
+            }
+        });
     }
 
     function getCatalogs() {
@@ -4515,9 +4513,7 @@
     function closeCatalog(catalogName) {
         for (let catalog in menuCatalogs) {
             if (menuCatalogs[catalog] === catalogName) {
-                console.log(document.getElementById(catalog))
                 document.getElementById(catalog).checked = false;
-                console.log(document.getElementById(catalog))
             }
         }
     };
@@ -4655,7 +4651,6 @@
             elem.classList.remove("hoveredChild");
             elem.previousElementSibling.classList.remove("hoveredItem");
             elem.previousElementSibling.classList.remove("onHoveredChild");
-            // console.log(elem.querySelectorAll(".hoveredItem, .hoveredChild"));
             elem.querySelectorAll(".hoveredItem, .hoveredChild").forEach(element => {
               element.classList.remove("hoveredItem");
               element.classList.remove("hoveredChild");
@@ -4678,11 +4673,11 @@
       }
     }
 
-    function openMenuBackground(e){
+    function openMenuBackground(){
       document.querySelector(".content").classList.add("opened_menu");
     }
 
-    function closeMenuBackground(e){
+    function closeMenuBackground(){
       document.querySelector(".content").classList.remove("opened_menu");
     }
 
@@ -4797,6 +4792,41 @@
     }
 
     /* Search */
+    function setSearchValue(searchValueInput) {
+        const url = new URL(window.location.href);
+        let searchText = url.searchParams.get('q');
+
+        if (searchText) {
+            searchText = searchText.endsWith('/') ? searchText.slice(0, -1) : searchText;
+            searchValueInput.value = searchText;
+        }
+    }
+
+    function handleSearchInput() {
+        let searchItem = document.getElementById('qplSKIW');
+        let searchValue = searchItem.value;
+
+        if (!searchValue) return;
+
+        window.location.href =  window.location.origin + `/search?q=${searchValue}/`
+    }
+
+    function handleShowRestSearchBtn(elem) {
+        const resetButton = Array.from(document.querySelectorAll('img.search_page_reset_img'))[0];
+
+        if (elem.value && !(+resetButton.style.opacity)) {
+            resetButton.style.opacity = 1;
+            resetButton.style.width = 'auto';
+
+            return;
+        }
+
+        if (!elem.value && resetButton.style.opacity) {
+            resetButton.style.opacity = 0;
+            resetButton.style.width = 0;
+        }
+    }
+
     function validateSearch() {
         const inputValue = document.getElementById('qplSKIW').value.trim();
 
@@ -4812,13 +4842,13 @@
       if(search){
         search.classList.remove("close");
       }
-      // document.getElementsByTagName('body')[0].classList.add("menu_no_scroll");
-      console.log("showSearch");
     }
 
     function clearSearch() {
       let search = document.querySelector('input[name="q"]');
       search.value = "";
+
+      window.location.href = new URL(window.location.href).origin;
 
       let form = document.querySelector('#search-popup-cont form');
       form.submit();
