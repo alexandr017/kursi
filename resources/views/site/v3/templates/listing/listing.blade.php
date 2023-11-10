@@ -4,7 +4,6 @@
 @section ('meta_description', Shortcode::compile($listing->meta_description))
 
 @section('content')
-
     <div class="content max-width">
         <div class="tagpage_head">
             <h1 class="tagpage_head-title">{{$listing->h1}}</h1>
@@ -20,7 +19,15 @@
             </div>
         </div>
 
-        @include('site.v3.modules.courses.courses-main', ['courses' => $listing->courses, 'tags' => $listing->tags, 'listingId' => $listing->id])
+        @include(
+            'site.v3.modules.courses.courses-main',
+            [
+             'courses' => $listing->courses,
+             'tags' => $listing->tags,
+             'listingId' => $listing->id,
+             'listingPhoto' => $listing->photo
+            ]
+        )
 
         {{--        <div class="mobile_mascot">--}}
         {{--            <img src="{{$listing->photo}}" alt="">--}}
@@ -69,16 +76,7 @@
 
     </div>
 
-
-        @push('styles')
-            <link href="{{ Vite::asset('resources/css/listing/listing.css') }}" rel="stylesheet">
-        @endpush
-
-{{--        @push('scripts')--}}
-{{--            <script type="text/javascript" src="{{ Vite::asset('resources/js/listing/listing.js') }}"></script>--}}
-{{--    @endpush--}}
-
-        <script>
+    <script>
 
 
             let sortOrder;
@@ -284,6 +282,10 @@
             }
 
         </script>
+
+    @push('styles')
+        <link href="{{ Vite::asset('resources/css/listing/listing.css') }}" rel="stylesheet">
+    @endpush
 
     <style>
         .video_optional-width {
