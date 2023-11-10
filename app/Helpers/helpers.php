@@ -32,6 +32,10 @@ function getCanonical() : string
         $url = substr($url, 0, $pos);
     }
 
+    if (!str_ends_with($url, '/')) {
+        $url .= '/';
+    }
+
     return $url;
 }
 
