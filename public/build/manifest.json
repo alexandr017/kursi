@@ -207,6 +207,11 @@
     "isEntry": true,
     "src": "resources/css/mainpage/mainpage.css"
   },
+  "resources/css/not-found/not-found.css": {
+    "file": "assets/not-found-df3dbff6.css",
+    "isEntry": true,
+    "src": "resources/css/not-found/not-found.css"
+  },
   "resources/css/pagination/pagination.css": {
     "file": "assets/pagination-9578271d.css",
     "isEntry": true,
