@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Site\V3;
 
 use App\Http\Controllers\Controller;
 
+use function Termwind\render;
+
 class DynamicSiteController extends Controller
 {
     public function render()
@@ -69,10 +71,11 @@ class DynamicSiteController extends Controller
             }
         }
 
-        abort(404);
+        $class = $this->getClassName();
+        return (new $class())->render();
     }
 
-    private function getClassName(int $sectionType) : string|null
+    private function getClassName(?int $sectionType = null) : string|null
     {
         return match($sectionType) {
             1 => '\App\Http\Controllers\Site\V3\DynamicPages\PagesController',
@@ -81,7 +84,7 @@ class DynamicSiteController extends Controller
             4 => '\App\Http\Controllers\Site\V3\DynamicPages\EmployeeController',
             5 => '\App\Http\Controllers\Site\V3\DynamicPages\CompanyController',
             6 => '\App\Http\Controllers\Site\V3\DynamicPages\ListingController',
-            default => null
+            default => '\App\Http\Controllers\Site\V3\DynamicPages\PageNotFoundController'
         };
     }
 

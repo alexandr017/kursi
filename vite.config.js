@@ -43,6 +43,7 @@ export default defineConfig({
                 'resources/css/auth/register.css',
                 'resources/css/sitemap/sitemap-listing.css',
                 'resources/css/sitemap/sitemap-companies.css',
+                'resources/css/not-found/not-found.css',
                 'resources/js/company/companies.js',
                 'resources/js/company/company-review.js',
                 'resources/js/company/company-review-add.js',

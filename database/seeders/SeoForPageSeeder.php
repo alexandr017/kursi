@@ -74,6 +74,16 @@ class SeoForPageSeeder extends Seeder
                 'rating_value' => null,
                 'rating_count' => null
             ],
+            [ // not-found
+                'title' => 'Курсы.ру - 404 Страница не найдена',
+                'meta_description'  => 'Курсы.ру - 404 Страница не найдена',
+                'h1'  => 'Курсы.ру - 404 Страница не найдена',
+                'breadcrumbs' => null,
+                'lead' => 'Курсы.ру - 404 Страница не найдена',
+                'content' => null,
+                'rating_value' => null,
+                'rating_count' => null
+            ],
 
         ]);
     }
