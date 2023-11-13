@@ -4,13 +4,13 @@
             {{$title ?? 'Автор'}}
         </div>
         <div class="author_card-img">
-            <img src="{{str_replace('webp', 'png', $employee->photo)}}" alt="{{$employee->name}}" title="{{$employee->name}}">
+            <img src="{{str_replace('webp', 'png', $employee->photo ?? null)}}" alt="{{$employee->name ?? null}}" title="{{$employee->name ?? null}}">
         </div>
         <div class="author_card-name">
-            {{$employee->name}}
+            {{$employee->name ?? null}}
         </div>
         <div class="author_card-post">
-            {{$employee->job}}
+            {{$employee->job ?? null}}
         </div>
         <div class="author_card-date">
             {{$date->locale('ru')->isoFormat('D MMMM Y')}}

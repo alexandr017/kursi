@@ -41,19 +41,22 @@ function getCanonical() : string
 
 function getCanonicalNext(int $pages) : int|string
 {
-    if ($pages == 1) return 1;
     $url = URL::current();
+    if ($pages == 1) {
+        return $url . '/page/1/';
+    }
+
     $url = preg_replace('/\/$/', '', $url);
     $urlArr = explode('/', $url);
     $page = (int) $urlArr[count($urlArr)-1];
     if ($page < $pages) {
         if($page == 0) {
-            return $url . '/page/2';
+            return $url . '/page/2/';
         } else {
-            return str_replace('/page/'.$page, '/page/'.($page+1), $url);
+            return str_replace('/page/'.$page, '/page/'.($page+1) . '/', $url);
         }
     }
-    return 1;
+    return $url . '/page/1/';
 }
 
 function getCanonicalPrev() : null|int|string
@@ -63,7 +66,7 @@ function getCanonicalPrev() : null|int|string
     $urlArr = explode('/', $url);
     $page = (int) $urlArr[count($urlArr)-1];
     if ($page > 2) {
-        return str_replace('/page/'.$page, '/page/'.($page-1), $url);
+        return str_replace('/page/'.$page, '/page/'.($page-1) . '/', $url);
     } elseif($page == 2){
         return str_replace('/page/'.$page, '', $url);
     }

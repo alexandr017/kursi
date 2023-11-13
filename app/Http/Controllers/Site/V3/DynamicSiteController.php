@@ -71,8 +71,7 @@ class DynamicSiteController extends Controller
             }
         }
 
-        $class = $this->getClassName();
-        return (new $class())->render();
+        abort(404);
     }
 
     private function getClassName(?int $sectionType = null) : string|null
@@ -84,7 +83,7 @@ class DynamicSiteController extends Controller
             4 => '\App\Http\Controllers\Site\V3\DynamicPages\EmployeeController',
             5 => '\App\Http\Controllers\Site\V3\DynamicPages\CompanyController',
             6 => '\App\Http\Controllers\Site\V3\DynamicPages\ListingController',
-            default => '\App\Http\Controllers\Site\V3\DynamicPages\PageNotFoundController'
+            default => null
         };
     }
 
