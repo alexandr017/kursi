@@ -31,6 +31,9 @@
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
+    # Exclude specific route from trailing slash redirect
+    RewriteCond %{REQUEST_URI} !^/fetch/rating/add-vote [NC]
+
     # Redirect URLs to include a trailing slash if it's missing
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
