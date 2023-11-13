@@ -126,11 +126,11 @@ function productStructuredDataCalculate(object $courses) : array
     $highPrice = 0;
     $lowPrice = 1000000;
     foreach ($courses as $course) {
-        if ($course->price < $lowPrice) {
-            $lowPrice = $course->price;
+        if ($course->cost < $lowPrice) {
+            $lowPrice = $course->cost;
         }
-        if ($course->price > $highPrice) {
-            $highPrice = $course->price;
+        if ($course->cost > $highPrice) {
+            $highPrice = $course->cost;
         }
     }
 
