@@ -7,6 +7,13 @@
             @include('site.v3.modules.search.search-companies')
             @include('site.v3.modules.search.search-posts')
         </div>
+
+        @if($courses->isEmpty() && $companies->isEmpty() && $posts->isEmpty() )
+            <p class="search_page-empty_filler">
+                По вашему запросу ничего не найдено.<br>Попробуете изменить запрос
+            </p>
+        @endif
+
     </div>
 @endsection
 

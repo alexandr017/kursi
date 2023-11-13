@@ -163,7 +163,7 @@
     "src": "resources/css/history/history.css"
   },
   "resources/css/listing/listing.css": {
-    "file": "assets/listing-d5a47060.css",
+    "file": "assets/listing-88c0546c.css",
     "isEntry": true,
     "src": "resources/css/listing/listing.css"
   },
@@ -208,7 +208,7 @@
     "src": "resources/css/mainpage/mainpage.css"
   },
   "resources/css/not-found/not-found.css": {
-    "file": "assets/not-found-df3dbff6.css",
+    "file": "assets/not-found-80ff7878.css",
     "isEntry": true,
     "src": "resources/css/not-found/not-found.css"
   },

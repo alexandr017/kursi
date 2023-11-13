@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use App\Http\Controllers\Site\V3\DynamicPages\PageNotFoundController;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
@@ -33,6 +34,12 @@ class Handler extends ExceptionHandler
 
     public function render($request, Throwable $e)
     {
+        if ($this->isHttpException($e)) {
+            if ($e->getStatusCode() == 404) {
+                return resolve(PageNotFoundController::class)->render();
+            }
+        }
+
         if ($e instanceof ValidationException) {
             $httpCode = Response::HTTP_UNPROCESSABLE_ENTITY;
             $statusCode = BusinessLogicException::VALIDATION_FAILED;
@@ -48,6 +55,8 @@ class Handler extends ExceptionHandler
 
             return response()->json($data, $httpCode);
         }
+
+
 
         return parent::render($request, $e);
 

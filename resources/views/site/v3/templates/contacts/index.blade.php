@@ -601,11 +601,11 @@
                 <img src="/images/contacts/Mihail-_1_.webp" class="contacts_page-pc_picture" alt="Михаил Парфенов" title="Михаил Парфенов">
                 <img src="/images/contacts/kruzhochki150_Montazhnaya_oblast_1.webp" class="contacts_page-mobile_picture" alt="Михаил Парфенов" title="Михаил Парфенов">
                 <div class="contacts_page-big_person-data">
-                    <a class="contacts_page-big_person-name" href="/about/team/mikhail-parfenov">
+                    <a class="contacts_page-big_person-name" href="/about/team/mikhail-parfenov/">
                         Михаил Парфенов			</a>
                     <p class="contacts_page-big_person-department">Менеджер по продажам</p>
                     <div class="contacts_page-big_person-link">
-                        <a class="white_button_template" href="/about/team/mikhail-parfenov">Подробнее</a>
+                        <a class="white_button_template" href="/about/team/mikhail-parfenov/">Подробнее</a>
                     </div>
                 </div>
             </div>
