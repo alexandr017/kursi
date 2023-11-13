@@ -68,7 +68,7 @@ function getCanonicalPrev() : null|int|string
     if ($page > 2) {
         return str_replace('/page/'.$page, '/page/'.($page-1) . '/', $url);
     } elseif($page == 2){
-        return str_replace('/page/'.$page, '', $url);
+        return str_replace('/page/'.$page, '/', $url);
     }
     return null;
 }
