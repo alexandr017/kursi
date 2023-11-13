@@ -619,14 +619,13 @@ label.linker_open_btn {
         width: unset;
         height: auto;
     }
+}
 
-    @media (max-width: 800px) {
-        .card_pc.card_mobile {
-            padding: 25px;
-            min-width: 280px;
-        }
+@media (max-width: 800px) {
+    .card_pc.card_mobile {
+        padding: 25px;
+        min-width: 280px;
     }
-
 }
 
 @media (max-width: 745px) {

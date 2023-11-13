@@ -32,11 +32,18 @@
                     <img src="/v3/images/filter.svg" alt="" title="Фильтр">
                     <p>Фильтр</p>
                 </label>
-                <input type="checkbox" style="display: none" id="opener_40" name="opener[]" value="40" checked="" data-gtm-form-interact-field-id="5">
+                <input type="checkbox" style="display: none" id="opener_40" name="opener[]" value="40" data-gtm-form-interact-field-id="5">
 
-                <div class="short_filter-property_values" style="position: absolute; top: 40px; ">
+                <div class="short_filter-property_values"{{-- style="position: absolute; top: 40px; "--}}>
+                    <label class="" for="opener_40">
+                        <div class="mobile_background"></div>
+                    </label>
+
+                    <label class="short_filter-mobile_open_title" for="opener_40">
+                        <p>Фильтр</p>
+                    </label>
+
                     <div class="short_filter-property_items" style="display: none" id="filtersList">
-
                         @foreach($tags as $tag)
                             <div class="short_filter-property_value">
                                 <input
@@ -72,8 +79,7 @@
 
 
     <div class="mobile_mascot">
-
-        {{--                <img src="/upload/iblock/ee7/2xmtipetlh10bsmeos236hl1jtnvmo1o/mfso.webp" alt="">--}}
+        <img src="{{$listingPhoto}}" alt="">
     </div>
 </div>
 
