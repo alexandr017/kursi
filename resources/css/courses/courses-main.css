@@ -425,6 +425,10 @@ p.kurse_card-length_value {
     .short_filter-property_cont {
         width: 100%;
     }
+
+    .mobile_mascot {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 860px) {
