@@ -35,3 +35,20 @@
 
     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
 </div>
+
+<script>
+    addEventListener("load", (event) => {
+        const swiper_smi_hystory = new Swiper('.about_smi-cont', {
+            speed: 400,
+            slidesPerView: "auto",
+            navigation: {
+                nextEl: '.about_smi-cont-button-next',
+                prevEl: '.about_smi-cont-button-prev',
+            },
+            pagination: {
+                el: ".about_smi-cont-pagination",
+                type: "fraction",
+            },
+        });
+    });
+</script>

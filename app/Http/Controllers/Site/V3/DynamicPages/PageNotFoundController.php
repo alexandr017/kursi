@@ -15,6 +15,6 @@ class PageNotFoundController extends Controller implements DynamicPagesInterface
         $listings = $action->run();
         $page = \DB::table('seo_for_pages')->where(['id' => self::SEO_PAGE_ID])->first();
 
-        return view('site.v3.templates.not-found.not-found', compact('listings', 'page'));
+        return response()->view('site.v3.templates.not-found.not-found', compact('listings', 'page'), 404);
     }
 }
