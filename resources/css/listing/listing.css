@@ -355,6 +355,10 @@ label.linker_open_btn {
     display: none;
 }
 
+label.short_filter-mobile_open_title {
+    display: none;
+}
+
 @media screen and (min-width: 860px) {
     .tagpage-filter_sort .product-sort-cont {
         margin-right: 30px;
