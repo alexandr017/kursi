@@ -32,7 +32,7 @@ class ImportController extends Controller
     public function runBlog()
     {
         //$file = $_SERVER['DOCUMENT_ROOT'] . '/../storage/import/blog.xml';
-        $file = storage_path('/import-16-10/posts.xml');
+        $file = storage_path('/import-14-11/posts.xml');
         $xmlStr = file_get_contents($file);
         $xmlObj = simplexml_load_string($xmlStr);
 
@@ -103,9 +103,9 @@ class ImportController extends Controller
 
             $data = [
                 'category_id' => $oldCategoryIdToNewID[(int) $item->Группы->Ид]['id'],
-                'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[0]->Значение,
+                'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
                 'meta_description' => (string) $item->НаследуемыеШаблоны->Шаблон[1]->Значение,
-                'title' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
+                'title' => (string) $item->НаследуемыеШаблоны->Шаблон[0]->Значение,
                 'breadcrumbs' => '', // todo
                 'preview' => '/images/posts/previews/' . Str::slug((string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение) . '.webp',
                 'lead' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
@@ -150,7 +150,7 @@ class ImportController extends Controller
 
     public function runEmployee()
     {
-        $file = storage_path('/import-16-10/employees.xml');
+        $file = storage_path('/import-14-11/employees.xml');
         $xmlStr = file_get_contents($file);
         $xmlObj = simplexml_load_string($xmlStr);
 
@@ -197,7 +197,7 @@ class ImportController extends Controller
                 'lead' => str_replace('&nbsp;', ' ',(string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение),
                 'content' => $content,
                 'old_id' => (int) $item->Ид,
-                'status' => 1,
+                'status' => (string)$item->ЗначенияСвойств->ЗначенияСвойства[0]->Значение == 'true' ? 1: 0,
                 'rating_value' => (float) $item->ЗначенияСвойств->ЗначенияСвойства[12]->Значение,
                 'rating_count' => (int) $item->ЗначенияСвойств->ЗначенияСвойства[14]->Значение,
                 'rating_sum' => (float) $item->ЗначенияСвойств->ЗначенияСвойства[13]->Значение,
@@ -228,7 +228,7 @@ class ImportController extends Controller
 
     public function runCompanies()
     {
-        $file = storage_path('/import-16-10/companies.xml');
+        $file = storage_path('/import-14-11/companies.xml');
         $xmlStr = file_get_contents($file);
         $xmlObj = simplexml_load_string($xmlStr);
 
@@ -260,7 +260,7 @@ class ImportController extends Controller
                 'email' => $email,
                 'hotline' => $phone,
                 'old_id' => (int) $item->Ид,
-                'status' => 1,
+                'status' => (string)$item->ЗначенияСвойств->ЗначенияСвойства[0]->Значение == 'true' ? 1: 0,
                 'rating_value' => (float) $item->ЗначенияСвойств->ЗначенияСвойства[10]->Значение,
                 'rating_count' => (int) $item->ЗначенияСвойств->ЗначенияСвойства[8]->Значение,
 
@@ -275,7 +275,7 @@ class ImportController extends Controller
 //                $newPath =  $data['logo'];
 //                copy($oldPath, 'public' . $newPath);
 //            } catch (Throwable $exception) {
-//                $data['photo'] = null;
+//                $data['logo'] = null;
 //            }
 
 
@@ -331,7 +331,7 @@ class ImportController extends Controller
             'rating_sum' => (float)$value->ЗначенияСвойств->ЗначенияСвойства[8]->Значение,
             'rating_value' => (float)$value->ЗначенияСвойств->ЗначенияСвойства[9]->Значение,
             'meta_title' => (string)$value->НаследуемыеШаблоны->Шаблон[0]->Значение,
-            'meta_description' => (string)($value->НаследуемыеШаблоны->Шаблон[3]->Значение ?? $value->НаследуемыеШаблоны->Шаблон[1]->Значение),
+            'meta_description' => (string)($value->НаследуемыеШаблоны->Шаблон[1]->Значение ?? $value->НаследуемыеШаблоны->Шаблон[3]->Значение),
             'h1' => (string)$value->ЗначенияСвойств->ЗначенияСвойства[3]->Значение,
             'breadcrumbs' => '', //ToDo: need to implement,
             'old_id' => (string)$value->Ид,
@@ -382,7 +382,7 @@ class ImportController extends Controller
     }
     public function runCourses()
     {
-        $file = storage_path('/import-16-10/courses.xml');
+        $file = storage_path('/import-14-11/courses.xml');
         $xmlStr = file_get_contents($file);
         $xmlObj = simplexml_load_string($xmlStr);
 
@@ -595,7 +595,7 @@ class ImportController extends Controller
 
     public function runSchoolsReviews()
     {
-        $csvFilePath = storage_path('/import-16-10/company-reviews.csv');
+        $csvFilePath = storage_path('/import-14-11/company-reviews.csv');
         $csvData = file_get_contents($csvFilePath);
         $rows = explode("\n", $csvData);
         $reviewSchools = collect();
@@ -612,7 +612,7 @@ class ImportController extends Controller
             ]);
         }
 
-        $file = storage_path('/import-16-10/company-reviews.xml');
+        $file = storage_path('/import-14-11/company-reviews.xml');
         $xmlStr = file_get_contents($file);
         $xmlObj = simplexml_load_string($xmlStr);
 

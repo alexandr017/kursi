@@ -94,10 +94,13 @@ class ListingRepository implements ListingRepositoryInterface
     public function getListingsForChildes(string $parentId): Collection
     {
         return $this->query()
+            ->where('status', 1)
             ->where('parent_id', $parentId)
             ->with(['url','childes' => function($q) {
-                $q->with(['url','childes' => function($q) {
-                    $q->with(['url','childes']);
+                $q->where('status', 1)->with(['url','childes' => function($q) {
+                    $q->where('status', 1)->with(['url','childes' => function($q) {
+                        $q->where('status', 1);
+                    }]);
                 }]);
             }])
             ->get();
@@ -106,12 +109,14 @@ class ListingRepository implements ListingRepositoryInterface
     public function getListingsForFreeCourses(string $parentId): Collection
     {
         return $this->query()
+            ->where('status', 1)
             ->where('parent_id', $parentId)
             ->whereHas('courses', function ($query) {
                 $query->where('sale_cost', 0);
             })
             ->with(['childes' => function($query) {
-                $query->whereHas('courses', function ($q) {
+                $query->where('status', 1)
+                    ->whereHas('courses', function ($q) {
                     $q->where('sale_cost', 0);
                 });
 
@@ -123,11 +128,14 @@ class ListingRepository implements ListingRepositoryInterface
     public function getListingsForAll(): Collection
     {
         return $this->query()
+            ->where('status', 1)
             ->whereNull('parent_id')
             ->whereNotIn('name', ['Для детей', 'Бесплатные'])
             ->with(['url','childes' => function($q) {
-                $q->with(['url','childes' => function($q) {
-                    $q->with(['url','childes']);
+                $q->where('status', 1)->with(['url','childes' => function($q) {
+                    $q->where('status', 1)->with(['url','childes' => function($q) {
+                        $q->where('status', 1);
+                    }]);
                 }]);
             }])
             ->get();

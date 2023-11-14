@@ -61,6 +61,7 @@ class CompanyRepository implements CompanyRepositoryInterface
     public function getCompanyReviews(IndexCompanyReviewsDto $dto): LengthAwarePaginator
     {
         $query = $this->reviewsQuery()
+            ->where('status', 1)
             ->where('school_id', $dto->companyId)->with(['company']);
 
         if ($dto->sortKey) {
@@ -88,7 +89,8 @@ class CompanyRepository implements CompanyRepositoryInterface
     {
         $query = $this->query();
 
-        $query->withCount('courses')
+        $query->where('status', 1)
+            ->withCount('courses')
             ->with(['url']);
 
         if ($dto->sortKey) {
@@ -109,7 +111,8 @@ class CompanyRepository implements CompanyRepositoryInterface
     {
         $query = $this->query();
 
-        $query->withCount('courses')
+        $query->where('status', 1)
+            ->withCount('courses')
             ->with(['url']);
 
         if ($dto->sortKey) {

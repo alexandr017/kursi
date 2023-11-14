@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site\V3\DynamicPages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Users\UserRole;
 use App\Services\Breadcrumbs\BreadcrumbsRender;
 use App\Services\PostCategory\Action\IndexPostCategoryAction;
 use App\Services\PostCategory\Dto\IndexPostCategoryDto;
@@ -29,7 +30,12 @@ class PostCategoriesController extends Controller implements DynamicPagesInterfa
             $page->meta_description = $result->category->meta_description . ' - страница ' . $dto->page;
         }
 
-        $editLink = "/admin/post-categories/{$result->category->id}/edit";
+        $editLink = null;
+        $user = \Request::user();
+
+        if ($user && $user->role->role != UserRole::ROLE_USER) {
+            $editLink = "/admin/post-categories/{$result->category->id}/edit";
+        }
 
         return view('site.v3.templates.blog.category', [
             'posts' => $result->posts,

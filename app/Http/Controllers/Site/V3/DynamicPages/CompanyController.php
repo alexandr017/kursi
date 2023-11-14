@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site\V3\DynamicPages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Users\UserRole;
 use App\Services\Breadcrumbs\BreadcrumbsRender;
 use App\Services\Company\Action\GetCompanyAction;
 use App\Models\Companies\Company;
@@ -16,8 +17,12 @@ class CompanyController extends Controller implements DynamicPagesInterface
         $company = $action->run($sectionID);
 
         $breadcrumbs = BreadcrumbsRender::get($company->breadcrumbs, $company->h1);
+        $editLink = null;
+        $user = \Request::user();
 
-        $editLink = "/admin/companies/{$company->id}/edit";
+        if ($user && $user->role->role != UserRole::ROLE_USER) {
+            $editLink = "/admin/listings/{$company->id}/edit";
+        }
 
         return view('site.v3.templates.company.company', compact('company', 'breadcrumbs', 'editLink'));
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Site\V3\DynamicPages;
 use App\Http\Controllers\Controller;
 use App\Models\Posts\PostCategory;
 use App\Models\Posts\Post;
+use App\Models\Users\UserRole;
 use App\Services\Breadcrumbs\BreadcrumbsRender;
 
 // Dynamic type 3
@@ -34,8 +35,12 @@ class PostsController extends Controller implements DynamicPagesInterface
         $breadcrumbs = BreadcrumbsRender::get($post->breadcrumbs, $post->h1);
 
         // todo comments
+        $editLink = null;
+        $user = \Request::user();
 
-        $editLink = "/admin/posts/{$post->id}/edit";
+        if ($user && $user->role->role != UserRole::ROLE_USER) {
+            $editLink = "/admin/posts/{$post->id}/edit";
+        }
 
         return view('site.v3.templates.blog.post', compact('post', 'breadcrumbs', 'editLink'));
     }

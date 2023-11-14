@@ -18,6 +18,7 @@ class CoursesRepository implements CoursesRepositoryInterface
     public function index(IndexCoursesDto $dto): LengthAwarePaginator
     {
         $query = $this->query()
+            ->where('status', 1)
             ->whereHas('listings', function ($query) use ($dto) {
                 $query->where('listings.id', $dto->listingId);
             });
@@ -101,6 +102,7 @@ class CoursesRepository implements CoursesRepositoryInterface
             ->withCount('schoolReviews as reviews_count')
             ->with(['tags', 'school'])
             ->where('title', 'like', "%$search%")
+            ->where('status', 1)
             ->paginate(
                 3,
                 ['*'],
