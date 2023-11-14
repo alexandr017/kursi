@@ -37,7 +37,7 @@
         let currentUrl = window.location.href;
         const urlParams = new URLSearchParams(new URL(currentUrl).search);
         const qValue = urlParams.get("q");
-        let url = `search/courses?q=${qValue}&page=${currentPageCourses}`;
+        let url = `/search/courses?q=${qValue}&page=${currentPageCourses}`;
 
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
