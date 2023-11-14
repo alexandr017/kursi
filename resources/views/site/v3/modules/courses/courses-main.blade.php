@@ -34,8 +34,8 @@
                 </label>
                 <input type="checkbox" style="display: none" id="opener_40" name="opener[]" value="40" data-gtm-form-interact-field-id="5">
 
-                <div class="short_filter-property_values"{{-- style="position: absolute; top: 40px; "--}}>
-                    <label class="" for="opener_40">
+                <div class="short_filter-property_values"{{-- style="position: absolute; top: 40px; "--}} style="display: none" id="filtersList">
+                    <label class="" for="opener_40" onclick="handleShowFilters()">
                         <div class="mobile_background"></div>
                     </label>
 
@@ -43,7 +43,7 @@
                         <p>Фильтр</p>
                     </label>
 
-                    <div class="short_filter-property_items" style="display: none" id="filtersList">
+                    <div class="short_filter-property_items">
                         @foreach($tags as $tag)
                             <div class="short_filter-property_value">
                                 <input

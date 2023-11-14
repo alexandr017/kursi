@@ -633,12 +633,12 @@ label.short_filter-mobile_open_title {
 }
 
 @media (max-width: 745px) {
-    .catalog-section > * {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        min-width: 320px;
-    }
+    /*.catalog-section > * {*/
+    /*    width: 100%;*/
+    /*    display: flex;*/
+    /*    justify-content: center;*/
+    /*    min-width: 320px;*/
+    /*}*/
 
     .tagpage-ajax_container .kurse_card.card_pc{
         width: 100%;
