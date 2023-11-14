@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site\V3\DynamicPages;
 
 use App\Http\Controllers\Controller;
+use App\Models\Users\UserRole;
 use Illuminate\Http\Request;
 use App\Services\Breadcrumbs\BreadcrumbsRender;
 
@@ -18,8 +19,12 @@ class PagesController extends Controller implements DynamicPagesInterface
         }
 
         $breadcrumbs = BreadcrumbsRender::get($page->breadcrumbs, $page->h1);
+        $editLink = null;
+        $user = \Request::user();
 
-        $editLink = "/admin/pages/$page->id/edit";
+        if ($user && $user->role->role != UserRole::ROLE_USER) {
+            $editLink = "/admin/pages/$page->id/edit";
+        }
 
         return view('site.v3.templates.pages.page', compact('page', 'breadcrumbs', 'editLink'));
     }

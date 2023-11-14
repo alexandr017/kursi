@@ -10,7 +10,7 @@
             "ratingValue": {{$listing->rating_value}},
             "reviewCount": {{$listing->rating_count}}
     },
-    "name": "{{$listing->h1}}",
+    "name": "{{$listing->name ?? $listing->h1}}",
     "description": "{{$listing->meta_description}}",
     "offers": {
     "@type": "AggregateOffer",

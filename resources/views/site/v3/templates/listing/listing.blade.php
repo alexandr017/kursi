@@ -1,5 +1,5 @@
 @extends('site.v3.layouts.main')
-@section ('title', Shortcode::compile($listing->title))
+@section ('title', Shortcode::compile($listing->meta_title))
 @section ('og_title', Shortcode::compile($listing->h1))
 @section ('meta_description', Shortcode::compile($listing->meta_description))
 

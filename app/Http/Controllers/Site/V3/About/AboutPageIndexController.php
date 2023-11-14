@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Site\V3\About;
 
 use App\Http\Controllers\Controller;
 use App\Models\History\History;
+use App\Models\Users\UserRole;
 use App\Services\Breadcrumbs\BreadcrumbsRender;
 use Illuminate\Http\Request;
 
@@ -56,8 +57,12 @@ class AboutPageIndexController extends Controller
             ->get();
 
         $breadcrumbs = BreadcrumbsRender::get($page->breadcrumbs, $page->h1);
+        $editLink = null;
+        $user = \Request::user();
 
-        $editLink = "/admin/static-pages/".self::SEO_PAGE_ID."/edit";
+        if ($user && $user->role->role != UserRole::ROLE_USER) {
+            $editLink = "/admin/static-pages/".self::SEO_PAGE_ID."/edit";
+        }
 
         return view('site.v3.templates.about.index.index-page', compact('page', 'countSchools', 'coursesCount', 'employeesCount', 'reviewsCount', 'team', 'histories', 'breadcrumbs', 'editLink'));
     }

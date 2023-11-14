@@ -43,6 +43,12 @@ function getCanonicalNext(int $pages) : int|string
 {
     $url = URL::current();
     if ($pages == 1) {
+        if (str_contains($url, 'page/1')) {
+            if (str_ends_with($url, '/')) {
+                return $url;
+            }
+            return $url . '/';
+        }
         return $url . '/page/1/';
     }
 
@@ -56,6 +62,14 @@ function getCanonicalNext(int $pages) : int|string
             return str_replace('/page/'.$page, '/page/'.($page+1) . '/', $url);
         }
     }
+
+    if (str_contains($url, 'page')) {
+        if (str_ends_with($url, '/')) {
+            return $url;
+        }
+        return $url . '/';
+    }
+
     return $url . '/page/1/';
 }
 
