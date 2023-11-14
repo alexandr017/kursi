@@ -43,6 +43,12 @@ function getCanonicalNext(int $pages) : int|string
 {
     $url = URL::current();
     if ($pages == 1) {
+        if (str_contains($url, 'page/1')) {
+            if (str_ends_with($url, '/')) {
+                return $url;
+            }
+            return $url . '/';
+        }
         return $url . '/page/1/';
     }
 
