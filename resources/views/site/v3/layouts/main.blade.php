@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="//fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" type="text/css">
-    @if(str_contains(Request::url(), '/page/'))
+    @if(isset($pagesCount) && $pagesCount != 1 && str_contains(Request::url(), '/page/'))
         <link rel="prev" href="{{getCanonicalPrev()}}">
     @endif
     <link rel="canonical" href="{{getCanonical()}}">
