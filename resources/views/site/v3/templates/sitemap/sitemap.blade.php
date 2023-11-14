@@ -21,123 +21,123 @@
             <div class="sitemap_block-sections_cont ">
                 <ul class="second_lvl">
                     <li id="bx_1847241719_45">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/administrirovanie/">
                                 Администрирование
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_106">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/analitika/">
                                 Аналитика
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_796">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/besplatnye/">
                                 Бесплатные
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_44">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/dizajn/">
                                 Дизайн
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_460">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/dlya-detej/">
                                 Для детей
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_46">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/inostrannye-yazyki/">
                                 Иностранные языки
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_108">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/krasota-i-zdorove/">
                                 Красота и здоровье
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_15">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/marketing/">
                                 Маркетинг
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_4">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/menedzhment/">
                                 Менеджмент
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_109">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/prikladnye-programmy/">
                                 Прикладные программы
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_1">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/programmirovanie/">
                                 Программирование
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_110">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/rukodelie/">
                                 Рукоделие
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_119">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/samorazvitie/">
                                 Саморазвитие
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_122">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/sport/">
                                 Спорт
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_127">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/tvorchestvo-i-kontent/">
                                 Творчество и контент
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_125">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/finansy/">
                                 Финансы
                             </a>
-                        </h2>
+                        </p>
                     </li>
                     <li id="bx_1847241719_107">
-                        <h2 class="bx_sitemap_li_title">
+                        <p class="bx_sitemap_li_title">
                             <a href="/sitemap/kursy/drugoe/">
                                 Другое
                             </a>
-                        </h2>
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -200,9 +200,9 @@
                 <ul class="second_lvl">
                     @foreach($postCategories as $postCategory)
                         <li>
-                            <h2 class="bx_sitemap_li_title">
+                            <p class="bx_sitemap_li_title">
                                 <a class="bx_sitemap_li_title" href="{{linkWithSlash($postCategory->url)}}">{{$postCategory->h1}}</a>
-                            </h2>
+                            </p>
                         </li>
                     @endforeach
                 </ul>

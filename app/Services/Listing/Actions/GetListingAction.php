@@ -2,6 +2,7 @@
 
 namespace App\Services\Listing\Actions;
 
+use App\Exceptions\Listing\ListingNotFoundException;
 use App\Models\Listing\Listing;
 use App\Repositories\Listing\ListingRepositoryInterface;
 use App\Repositories\Tags\TagRepositoryInterface;
@@ -15,7 +16,11 @@ class GetListingAction
 
     public function run(int $sectionId)
     {
-       $listing = $this->listingRepository->getListing($sectionId);
+        try {
+            $listing = $this->listingRepository->getListing($sectionId);
+        } catch (ListingNotFoundException) {
+            abort(404);
+        }
 
        $listing->parent = $this->getParent($listing);
        $listing->tags = $this->tagRepository->getAll();

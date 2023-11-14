@@ -62,7 +62,7 @@ ul.second_lvl {
     margin-bottom: 20px;
 }
 
-.first_lvl > li > h2 > a,
+.first_lvl > li > p > a,
 .sitemap_block-sections_cont .sitemap_block-section_sub_title {
     font-weight: 600;
     font-size: 32px;
@@ -111,7 +111,7 @@ ul.first_lvl > li {
         width: 100%;
     }
 
-    .first_lvl > li > h2 > a, .sitemap_block-sections_cont .sitemap_block-section_sub_title {
+    .first_lvl > li > p > a, .sitemap_block-sections_cont .sitemap_block-section_sub_title {
         font-size: 24px;
         line-height: 31px;
         margin-bottom: 24px;

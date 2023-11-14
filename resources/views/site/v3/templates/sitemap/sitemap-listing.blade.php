@@ -28,7 +28,7 @@
                     @foreach($listing->childes as $child)
 
                         <li id="{{$child->id}}">
-                            <h2 class="bx_sitemap_li_title">
+                            <p class="bx_sitemap_li_title">
                                 @if($child->childes->isNotEmpty())
                                     <a href="{{"/sitemap/kursy" .  linkWithSlash($child->url->url)}}">
                                         {{$child->name}}
@@ -39,7 +39,7 @@
                                     </a>
                                 @endif
 
-                            </h2>
+                            </p>
 
                             @if($child->childes->isNotEmpty())
                                 <a href="{{linkWithSlash($child->url->url)}}">Страница раздела</a>
@@ -48,7 +48,7 @@
 
                                     @foreach($child->childes as $childItem)
                                         <li id="{{$childItem->id}}">
-                                            <h2 class="bx_sitemap_li_title">
+                                            <p class="bx_sitemap_li_title">
                                                 @if($childItem->childes->isNotEmpty())
                                                     <a href="{{"/sitemap/kursy" .  linkWithSlash($childItem->url->url)}}">
                                                         {{$childItem->name}}
@@ -59,7 +59,7 @@
                                                     </a>
                                                 @endif
 
-                                            </h2>
+                                            </p>
                                         </li>
                                     @endforeach
 

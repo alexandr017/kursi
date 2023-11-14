@@ -20,6 +20,7 @@ class ListingRepository implements ListingRepositoryInterface
     {
         $query = $this->query()
             ->where('id', $id)
+            ->where('status', 1)
             ->with(['courses' => function ($q) {
                 $q->whereNotNull('company_id')
                     ->withAvg('schoolReviews', 'rating')

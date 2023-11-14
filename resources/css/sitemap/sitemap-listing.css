@@ -64,7 +64,7 @@ ul.first_lvl > li {
     margin-top: 8px;
 }
 
-.first_lvl > li > h2 > a, .sitemap_block-sections_cont .sitemap_block-section_sub_title {
+.first_lvl > li > p > a, .sitemap_block-sections_cont .sitemap_block-section_sub_title {
     font-weight: 600;
     font-size: 32px;
     line-height: 42px;
