@@ -101,11 +101,27 @@ class ImportController extends Controller
 
             $content = str_replace('/local/templates/kursi/img/video_play.svg', '/images/system/video_play.svg', $content);
 
+            if ((string)$item->НаследуемыеШаблоны->Шаблон[2]->Ид  == 'ELEMENT_META_DESCRIPTION') {
+                $description = (string)$item->НаследуемыеШаблоны->Шаблон[2]->Значение;
+            } elseif (isset($item->НаследуемыеШаблоны->Шаблон[3]->Ид) && (string)$item->НаследуемыеШаблоны->Шаблон[3]->Ид  == 'ELEMENT_META_DESCRIPTION') {
+                $description = (string)$item->НаследуемыеШаблоны->Шаблон[3]->Значение;
+            } else {
+                $description = (string) $item->НаследуемыеШаблоны->Шаблон[1]->Значение;
+            }
+
+            if ((string)$item->НаследуемыеШаблоны->Шаблон[2]->Ид  == 'ELEMENT_META_TITLE') {
+                $title = (string)$item->НаследуемыеШаблоны->Шаблон[2]->Значение;
+            } elseif (isset($item->НаследуемыеШаблоны->Шаблон[3]->Ид) && (string)$item->НаследуемыеШаблоны->Шаблон[3]->Ид  == 'ELEMENT_META_TITLE') {
+                $title = (string)$item->НаследуемыеШаблоны->Шаблон[3]->Значение;
+            } else {
+                $title = (string) $item->НаследуемыеШаблоны->Шаблон[0]->Значение;
+            }
+
             $data = [
                 'category_id' => $oldCategoryIdToNewID[(int) $item->Группы->Ид]['id'],
-                'h1' => (string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение,
-                'meta_description' => (string) $item->НаследуемыеШаблоны->Шаблон[1]->Значение,
-                'title' => (string) $item->НаследуемыеШаблоны->Шаблон[0]->Значение,
+                'h1' => (string) $item->Наименование,
+                'meta_description' => $description,
+                'title' => $title,
                 'breadcrumbs' => '', // todo
                 'preview' => '/images/posts/previews/' . Str::slug((string) $item->НаследуемыеШаблоны->Шаблон[2]->Значение) . '.webp',
                 'lead' => (string) $item->ЗначенияСвойств->ЗначенияСвойства[5]->Значение,
