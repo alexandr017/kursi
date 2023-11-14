@@ -72,9 +72,12 @@
 
     @include('site.v3.modules.courses.courses', ['courses' => $courses])
 
-    <div class="product-items-more-btn show_more_btn_color" data-use="show-more-3" id="88" onclick="showMore()">
-        Показать ещё
-    </div>
+    @if($courses->count() >= 5)
+        <div class="product-items-more-btn show_more_btn_color" data-use="show-more-3" id="88" onclick="showMore()">
+            Показать ещё
+        </div>
+    @endif
+
     <!-- component-end -->
 
 
