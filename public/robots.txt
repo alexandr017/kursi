@@ -1,2 +1,43 @@
-User-agent: *
-Disallow:
+User-Agent: *
+
+Disallow: /admin/*
+Disallow: */?*
+Disallow: *?utm*
+Disallow: */?type*
+Disallow: */?etext*
+Disallow: */?back*
+Disallow: */?clear*
+Disallow: */?stat*
+Disallow: */?erid*
+Disallow: */?CODE*
+Disallow: */?o*
+Disallow: */?show*
+Disallow: */test*
+Disallow: */stat*
+Disallow: */?from*
+Disallow: */eng-check*
+Disallow: */?back_url_admin*
+Disallow: */?WEB_FORM_ID*
+
+User-Agent: Yandex
+
+Disallow: */amp
+Disallow: */?*
+Disallow: *?utm*
+Disallow: */?type*
+Disallow: */?etext*
+Disallow: */?back*
+Disallow: */?clear*
+Disallow: */?stat*
+Disallow: */?erid*
+Disallow: */?CODE*
+Disallow: */?o*
+Disallow: */?show*
+Disallow: */test*
+Disallow: */stat*
+Disallow: */?from*
+Disallow: */eng-check*
+Disallow: */?back_url_admin*
+Disallow: */?WEB_FORM_ID*
+
+Sitemap: https://kursy.ru/sitemap.xml
