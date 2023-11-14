@@ -24,7 +24,7 @@
                         </label>
                     </div>
                     <div class="kursy-top_menu-body">
-                        <div class="kursy-top_menu-tabs_cont" onclick="closeOpenedMenu(event);">
+                        <div class="kursy-top_menu-tabs_cont" id="top_menu" onclick="closeOpenedMenu(event);">
                             <input type="radio" id="menu-all" class="menu-tabs_label" checked="" name="menu-tabs_label-cb2bac0c8f2b08cf45ec">
                             <label for="menu-all" class="kursy-top_menu-tab_label selected">
                                 Все
@@ -77,7 +77,14 @@
                 <script data-skip-moving="true">
                     function toggleContentBlurMenu(e){
                         if( document.getElementById("kursy-top_menu_cb-7c6f4d5a4834d2cee479").checked){
-                            document.querySelector(".content").classList.add("blur_bg");
+                            const content = document.querySelector(".content");
+
+                            content.classList.add("blur_bg");
+                            content.addEventListener('click', () => {
+                                document.getElementById("kursy-top_menu_cb-7c6f4d5a4834d2cee479").checked = false;
+                                document.querySelector(".content").classList.remove("blur_bg");
+                            });
+
                             hideSearchPopup();
                         }
                         else{

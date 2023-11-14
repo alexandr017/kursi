@@ -174,9 +174,12 @@ ul.second_lvl > label:after {
 }
 
 label.close_section_btn:after {
-    background: url(/v3/images/chevron-up.svg);
+    background: url(/public/v3/images/chevron-up.svg);
 }
 
+label.open_section_btn:after {
+    background: url(/public/v3/images/chevron-down.svg);
+}
 .swiper-slide-pasive {
     display: none;
 }

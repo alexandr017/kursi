@@ -57,6 +57,14 @@
     "isEntry": true,
     "src": "public/v3/css/style.css"
   },
+  "public/v3/images/chevron-down.svg": {
+    "file": "assets/chevron-down-b4a63e5c.svg",
+    "src": "public/v3/images/chevron-down.svg"
+  },
+  "public/v3/images/chevron-up.svg": {
+    "file": "assets/chevron-up-a44658b6.svg",
+    "src": "public/v3/images/chevron-up.svg"
+  },
   "resources/css/app.css": {
     "file": "assets/app-4ed993c7.js",
     "isEntry": true,
@@ -163,7 +171,7 @@
     "src": "resources/css/history/history.css"
   },
   "resources/css/listing/listing.css": {
-    "file": "assets/listing-88c0546c.css",
+    "file": "assets/listing-d99a4962.css",
     "isEntry": true,
     "src": "resources/css/listing/listing.css"
   },
@@ -173,12 +181,12 @@
     "src": "resources/css/listing/rating_stars.css"
   },
   "resources/css/mainpage/mainpage-categories.css": {
-    "file": "assets/mainpage-categories-e4a7596f.css",
+    "file": "assets/mainpage-categories-279d6dc8.css",
     "isEntry": true,
     "src": "resources/css/mainpage/mainpage-categories.css"
   },
   "resources/css/mainpage/mainpage-category-item.css": {
-    "file": "assets/mainpage-category-item-86837fa8.css",
+    "file": "assets/mainpage-category-item-9d11f6ad.css",
     "isEntry": true,
     "src": "resources/css/mainpage/mainpage-category-item.css"
   },

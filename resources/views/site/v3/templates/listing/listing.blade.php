@@ -77,8 +77,6 @@
     </div>
 
     <script>
-
-
             let sortOrder;
             let sortValue;
             let tagsFilters = [];
