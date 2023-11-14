@@ -29,7 +29,7 @@ class LoginAction
         $oClientId = config('passport.passport_grant_client.id');
         $oClient = Client::where('id', $oClientId)->first();
 
-        $response =  Http::asForm()->post(env('APP_URL') . '/oauth/token', [
+        $response =  Http::asForm()->post(env('APP_URL') . 'oauth/token/', [
             'grant_type' => 'password',
             'client_id' => $oClient->id,
             'client_secret' => $oClient->secret,
