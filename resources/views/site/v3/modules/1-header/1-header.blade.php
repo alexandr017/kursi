@@ -4817,7 +4817,7 @@
 
         if (!searchValue) return;
 
-        window.location.href =  window.location.origin + `/search?q=${searchValue}/`
+        window.location.href =  window.location.origin + `/search?q=${searchValue}`
     }
 
     function handleShowRestSearchBtn(elem) {
