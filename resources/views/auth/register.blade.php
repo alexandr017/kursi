@@ -110,7 +110,7 @@
 
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-        fetch(`/auth/register`, {
+        fetch(`/auth/register/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

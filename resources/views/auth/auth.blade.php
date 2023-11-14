@@ -42,7 +42,7 @@
             </form>
 
             {{-- Or registration --}}
-            <a href="auth/register">
+            <a href="/auth/register">
                 <span class="orr-registration">Или регистрация</span>
             </a>
         </div>
@@ -63,7 +63,7 @@
 
         const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-        fetch(`/auth/login`, {
+        fetch(`/auth/login/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
