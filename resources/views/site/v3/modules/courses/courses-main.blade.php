@@ -39,7 +39,7 @@
                         <div class="mobile_background"></div>
                     </label>
 
-                    <label class="short_filter-mobile_open_title" for="opener_40">
+                    <label class="short_filter-mobile_open_title" for="opener_40" onclick="handleShowFilters()">
                         <p>Фильтр</p>
                     </label>
 
