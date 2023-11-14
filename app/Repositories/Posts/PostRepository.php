@@ -56,6 +56,7 @@ class PostRepository implements PostRepositoryInterface
     public function getBySearch(string $q, int $page = 1): LengthAwarePaginator
     {
         return $this->query()
+            ->where('status', 1)
             ->where('title', 'like', "%$q%")
             ->orWhere('content', 'like', "%$q%")
             ->orderByDesc('rating_value')

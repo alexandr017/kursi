@@ -32,6 +32,7 @@ class PostCategoryRepository implements PostCategoryRepositoryInterface
     {
         return $this->query()
             ->whereHas('posts')
+            ->where('status', 1)
             ->with($relations)
             ->get();
     }

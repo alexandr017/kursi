@@ -28,8 +28,9 @@ class HTMLSitemapController extends Controller
             ->get();
 
         $page = StaticPage::query()->where('id', self::SEO_FOR_PAGE_ID)->first();
+        $breadcrumbs = BreadcrumbsRender::get($page->breadcrumbs, $page->h1);
 
-        return view('site.v3.templates.sitemap.sitemap', compact('postCategories', 'page'));
+        return view('site.v3.templates.sitemap.sitemap', compact('postCategories', 'page', 'breadcrumbs'));
     }
 
     public function coursesCategories($alias)
@@ -58,8 +59,8 @@ class HTMLSitemapController extends Controller
     public function schools()
     {
         $companies = Company::query()->whereNull('deleted_at')->get();
-        $breadcrumbs = BreadcrumbsRender::get('', 'Карта сайта');
-
+        $breadcrumbs = 'Карта сайта@sitemap' . PHP_EOL . 'Список онлайн-школ';
+        $breadcrumbs = BreadcrumbsRender::get($breadcrumbs, 'Список онлайн-школ');
 
         return view('site.v3.templates.sitemap.sitemap-companies', compact('companies', 'breadcrumbs'));
 
