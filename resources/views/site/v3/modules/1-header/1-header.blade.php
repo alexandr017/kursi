@@ -169,6 +169,8 @@
             </div>
         </div>
     </div>
+    @include('site.v3.modules.3-breadcrumbs.3-breadcrumbs')
+
 </header>
 
 <style>
