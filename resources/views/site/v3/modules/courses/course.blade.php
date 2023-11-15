@@ -82,6 +82,17 @@
                 <div class="kurse_card-price_sum">
                     {{ substr(number_format($course->sale_cost, 0, '', ' '), 0, -3) . ' ' . substr($course->sale_cost, -3) }} ₽
                 </div>
+
+                @if($course->installment_payment )
+                    <div class="kurse_card-price_installment_pay">
+                        <p class="kurse_card-price_installment_val">
+                            {{ substr(number_format($course->installment_payment, 0, '', ' '), 0, -3) . ' ' . substr($course->installment_payment, -3) }} ₽
+                        </p>
+                        <p class="kurse_card-price_installment_desc">
+                            в месяц
+                        </p>
+                    </div>
+                @endif
             </div>
         </div>
         <!-- <div class="kurse_card-link"> -->

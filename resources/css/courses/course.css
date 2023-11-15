@@ -305,3 +305,14 @@ form {
 .product-sort-btn.active a {
     color: #469ED7;
 }
+
+.kurse_card-price_installment_pay {
+    font-size: 14px;
+    margin-left: 13px;
+    line-height: 14px;
+}
+
+.kurse_card-price_installment_pay p {
+    margin-bottom: 0;
+    margin-top: 0;
+}
