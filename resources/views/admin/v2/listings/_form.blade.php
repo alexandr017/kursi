@@ -58,11 +58,11 @@
 <div class="form-group">
     <label for="preview"><i class="red">*</i> Превью</label>
     <input type="text" class="form-control" name="preview" id="preview" required
-           @if(old('preview'))
-               value="{{old('preview')}}"
+           @if(old('photo'))
+               value="{{old('photo')}}"
            @else
                @if(isset($item))
-                   value="{{$item->preview}}"
+                   value="{{$item->photo}}"
         @endif
         @endif
     >

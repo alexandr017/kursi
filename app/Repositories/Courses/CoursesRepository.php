@@ -32,10 +32,9 @@ class CoursesRepository implements CoursesRepositoryInterface
         if ($dto->sortKey) {
             $query->orderBy($dto->sortKey, $dto->sortValue);
         } else {
-            $query->with(['listings' => function($q) use ($dto) {
-                $q->where('listings.id', $dto->listingId)
-                    ->orderBy('listing_courses.sort', 'desc');
-            }]);
+            $query->join('listing_courses', 'courses.id', 'course_id')
+                ->where('listing_courses.listing_id', $dto->listingId);
+            $query->orderBy('listing_courses.sort');
         }
 
         $query->when($dto->tags, function ($query) use ($dto) {
