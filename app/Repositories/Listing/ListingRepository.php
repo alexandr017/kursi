@@ -25,11 +25,11 @@ class ListingRepository implements ListingRepositoryInterface
                 $q->whereNotNull('company_id')
                     ->withAvg('schoolReviews', 'rating')
                     ->withCount('schoolReviews as reviews_count')
-                    ->with(['tags', 'school.url'])->orderBy('listing_courses.sort', 'desc')
+                    ->with(['tags', 'school.url'])->orderBy('listing_courses.sort')
                     ->limit(5);
                 },'coursesStructuredData' => function ($q) {
                 $q->whereNotNull('company_id')
-                    ->with(['school'])->orderBy('listing_courses.sort', 'desc')
+                    ->with(['school'])->orderBy('listing_courses.sort')
                     ->limit(100);
                 },
                 'author',
