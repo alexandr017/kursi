@@ -40,10 +40,19 @@ class HTMLSitemapController extends Controller
             ->where('section_type', self::SECTION_LISTING_TYPE_ID)
             ->first();
 
-        $listing = Listing::query()->where('id', $url->section_id)
+        $listing = Listing::query()
+            ->where('id', $url->section_id)
+            ->where('status', 1)
             ->with(['url','childes' => function($q) {
-                $q->with(['url','childes']);
+                $q->where('status', 1);
+                $q->with(['url','childes' => function($q) {
+                    $q->where('status', 1);
+                }]);
             }])->first();
+
+        if (is_null($listing)) {
+            abort(404);
+        }
 
         $page = new StaticPage([
             'h1' => "Карта сайта Курсы.ру раздела «$listing->name" . '»',
@@ -58,7 +67,7 @@ class HTMLSitemapController extends Controller
 
     public function schools()
     {
-        $companies = Company::query()->whereNull('deleted_at')->get();
+        $companies = Company::query()->where('status',1)->whereNull('deleted_at')->get();
         $breadcrumbs = 'Карта сайта@sitemap' . PHP_EOL . 'Список онлайн-школ';
         $breadcrumbs = BreadcrumbsRender::get($breadcrumbs, 'Список онлайн-школ');
 
