@@ -30,7 +30,7 @@
         <link rel="prev" href="{{getCanonicalPrev()}}">
     @endif
     <link rel="canonical" href="{{getCanonical()}}">
-    @if(isset($pagesCount))
+    @if(isset($pagesCount) && $pagesCount != 1)
         <link rel="next" href="{{getCanonicalNext($pagesCount)}}">
     @endif
 

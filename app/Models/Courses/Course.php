@@ -55,7 +55,8 @@ class Course extends Model
             'listing_courses',
             'course_id',
             'listing_id'
-        )->withPivot(['sort']);
+        )->withPivot(['sort'])
+            ->orderBy('sort');
     }
 
     public function schoolReviews(): HasManyThrough
