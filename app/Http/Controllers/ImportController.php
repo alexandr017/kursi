@@ -25,7 +25,7 @@ class ImportController extends Controller
 {
     private Collection $employes;
     private Collection $listings;
-    private Collection $oldLisingCourses;
+    private array $oldLisingCourses;
 
     const SECTION_LISTING_TYPE_ID = 6;
 
@@ -382,12 +382,11 @@ class ImportController extends Controller
 
         foreach ($value->ЗначенияСвойств->ЗначенияСвойства[10]->Значение as $listingCourse) {
             $newListingCourse = [
-                'course_old_id' => (int)$listingCourse->ID,
-                'course_new_id' => $listing->id,
+                'new_listing_id' => $listing->id,
                 'sort' => (int)$listingCourse->SORT
             ];
 
-            $this->oldLisingCourses[(string)$value->Ид] = $newListingCourse;
+            $this->oldLisingCourses[(int)$listingCourse->ID][] = $newListingCourse;
         }
 
         if (isset($value->Группы->Группа)) {
@@ -405,7 +404,7 @@ class ImportController extends Controller
         $now = Carbon::now();
 
         $this->listings = collect();
-        $this->oldLisingCourses = collect();
+        $this->oldLisingCourses = [];
         $this->employes = Employee::query()->get();
 
         foreach ($xmlObj->Классификатор->Группы->Группа as $value) {
@@ -458,11 +457,13 @@ class ImportController extends Controller
                 ]);
             }
 
-            foreach ((array)$cource->Группы->Ид as $listingOldId) {
+            $listingCoursesForSort = $this->oldLisingCourses[$course->old_id] ?? [];
+
+            foreach ($listingCoursesForSort as $listingCourseForSort) {
                 $listingsCourses->push([
                     'course_id' => $course->id,
-                    'listing_id' => $this->oldLisingCourses[$listingOldId]['course_new_id'],
-                    'sort' => $this->oldLisingCourses[$listingOldId]['sort'],
+                    'listing_id' => $listingCourseForSort['new_listing_id'],
+                    'sort' => $listingCourseForSort['sort'],
                 ]);
             }
         }
