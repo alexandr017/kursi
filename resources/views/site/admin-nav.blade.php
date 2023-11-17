@@ -1,6 +1,7 @@
 <?php $adminPanel = 1; ?>
 <nav @if($adminPanel==0)  id="line-top" @elseif($adminPanel==1)  id="line-left"  @else id="line-right" @endif>
-    <ul>
+    @if(@auth()->user() && @auth()->user()->role &&  @auth()->user()->role->role != 'user')
+        <ul>
         <li title="Панель управления" class="first">
             <a href="/admin/index/">
                 <svg class="admin-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32" height="32" viewBox="0 0 512 512">
@@ -45,6 +46,8 @@
                 </a></li>
         @endif
     </ul>
+    @endif
+
 </nav>
 <style>
     @if($adminPanel!=0)
