@@ -161,6 +161,7 @@
                     .then(response => response.text())
                     .then(data => {
                         let block = document.getElementById('courses_block')
+                        let itemsArray;
                         if (showMoreItems) {
                             const parser = new DOMParser();
                             const parsedHTML = parser.parseFromString(data, 'text/html');
@@ -168,7 +169,7 @@
                             const fragment = parsedHTML.documentElement;
 
                             let items = fragment.getElementsByClassName('course-element');
-                            const itemsArray = Array.from(items);
+                            itemsArray = Array.from(items);
 
                             itemsArray.forEach(function (item) {
                                 block.appendChild(item)
@@ -176,6 +177,18 @@
                             showMoreItems = false;
                         } else {
                             block.innerHTML = data
+
+                            const parser = new DOMParser();
+                            const parsedHTML = parser.parseFromString(data, 'text/html');
+
+                            const fragment = parsedHTML.documentElement;
+
+                            let items = fragment.getElementsByClassName('course-element');
+                            itemsArray = Array.from(items);
+                        }
+
+                        if (itemsArray.length < 5) {
+                            document.getElementById('courses-show-more').style.display = 'none'
                         }
                     })
                     .catch(error => {
