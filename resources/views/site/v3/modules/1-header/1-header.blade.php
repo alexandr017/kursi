@@ -1319,6 +1319,11 @@
             display: block;
         }
 
+        .search_page-close_btn.mobile p{
+            margin: 0;
+            padding: 0;
+        }
+
         .search_page-content .max-width {
             overflow: auto;
         }
