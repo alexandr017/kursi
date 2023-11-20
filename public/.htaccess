@@ -34,9 +34,10 @@
     # Exclude specific route from trailing slash redirect
     RewriteCond %{REQUEST_URI} !^/fetch/rating/add-vote [NC]
 
-    # Redirect URLs to include a trailing slash if it's missing
+    # Redirect URLs to include a trailing slash if it's missing, excluding specific files
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !\.(xml|xsl)$ [NC]
     RewriteCond %{REQUEST_URI} !(.*)/$
     RewriteRule ^(.*)$ /$1/ [L,R=301]
 
@@ -44,4 +45,9 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    # Allow cross-origin requests for xml-style.xsl
+    <Files "xml-style.xsl">
+        Header set Access-Control-Allow-Origin "https://kursy.ru"
+    </Files>
 </IfModule>
