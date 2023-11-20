@@ -33,7 +33,14 @@ class ListingRepository implements ListingRepositoryInterface
                     ->limit(100);
                 },
                 'author',
-                'parent.childes.url',
+                'parent.childes' => function($q) {
+                    $q->where('status', 1);
+                    $q->with(['url']);
+                },
+                'childes' => function($q) {
+                    $q->where('status', 1);
+                    $q->with(['url']);
+                },
             ]);
 
         $listing = $query->first();

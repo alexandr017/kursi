@@ -12,7 +12,6 @@ Disallow: */?erid*
 Disallow: */?CODE*
 Disallow: */?o*
 Disallow: */?show*
-Disallow: */test*
 Disallow: */stat*
 Disallow: */?from*
 Disallow: */eng-check*
