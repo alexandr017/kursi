@@ -192,7 +192,6 @@
                         }
                     })
                     .catch(error => {
-                        alert('Something went wrong');
                         console.error('Error:', error);
                     });
             }
