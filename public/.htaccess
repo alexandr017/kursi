@@ -34,6 +34,10 @@
     # Exclude specific route from trailing slash redirect
     RewriteCond %{REQUEST_URI} !^/fetch/rating/add-vote [NC]
 
+    # Disable trailing slash redirect for POST requests under /admin/
+    RewriteCond %{REQUEST_METHOD} !^POST$ [NC]
+    RewriteCond %{REQUEST_URI} ^/admin/ [NC]
+
     # Redirect URLs to include a trailing slash if it's missing, excluding specific files
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
