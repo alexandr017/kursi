@@ -63,7 +63,7 @@ ol {
 .content_accordion_block .arrow {
     width: 24px;
     height: 24px;
-    background-image: url(../../../public/images/system/hideArrow.svg);
+    background-image: url(/images/system/hideArrow.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -91,5 +91,5 @@ ol {
 }
 
 .content_accordion_block .accordion_item input[type="checkbox"]:checked ~ .accordion_item-title .arrow {
-    background-image: url(../../../public/images/system/checkedArrow.svg);
+    background-image: url(/images/system/checkedArrow.svg);
 }
