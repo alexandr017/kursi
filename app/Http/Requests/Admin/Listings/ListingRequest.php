@@ -29,11 +29,11 @@ class ListingRequest extends FormRequest
         return [
             'parent_id' => [],
             'name' => ['required', 'max:255'],
-            'title' => ['required', 'max:255'],
+            'meta_title' => ['required', 'max:255'],
             'description' => [],
             'slug' => [],
             'meta_description' => ['required', 'max:255'],
-            'meta_title' => [],
+//            'meta_title' => [],
             'h1' => ['required', 'max:255'],
             'breadcrumbs' => ['required', 'max:255'],
             'lead' => ['nullable'],
@@ -58,12 +58,11 @@ class ListingRequest extends FormRequest
         return [
             'parent_id' => 'Родительский листинг',
             'name' => 'Название',
-            'title' => 'Заголовок',
+            'meta_title' => 'Заголовок',
             'meta_description' => 'Мета описание',
 
             'description' => '?',
             'slug' => '?',
-            'meta_title' => '?',
 
             'h1' => 'h1',
             'breadcrumbs' => 'Хлебные крошки',
