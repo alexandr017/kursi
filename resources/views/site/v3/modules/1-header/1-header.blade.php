@@ -1966,7 +1966,7 @@
     .subscribe-form button {
         width: 48px;
         height: 48px;
-        background: url(/local/templates/kursi/components/bitrix/sender.subscribe/kursy_subscribe/images/send.svg);
+        background: url(/images/system/send.svg);
         border: none;
         background-size: contain;
         cursor: pointer;
@@ -2015,13 +2015,13 @@
     }
 
     .subscribe-form button:hover {
-        background: url(/local/templates/kursi/components/bitrix/sender.subscribe/kursy_subscribe/images/send_hover.svg);
+        background: url(/images/system/send_hover.svg);
         border-radius: 8px;
         background-color: #2E8FCE;
     }
 
     .subscribe-form button:active {
-        background: url(/local/templates/kursi/components/bitrix/sender.subscribe/kursy_subscribe/images/send_hover.svg);
+        background: url(/images/system/send_hover.svg);
         border-radius: 8px;
         background-color: #2185C6;
     }
@@ -3767,23 +3767,23 @@
     /*---- Accordion Block ----*/
 
     .content_accordion_block .accordion_item input[type="checkbox"]:checked ~ .accordion_item-title:active .arrow {
-        background-image: url(/local/templates/kursi/img/faq_arrows/checkedClick.svg);
+        background-image: url(/images/system/checkedClick.svg);
     }
 
     .content_accordion_block .accordion_item input[type="checkbox"]:checked ~ .accordion_item-title:hover .arrow {
-        background-image: url(/local/templates/kursi/img/faq_arrows/checkedHover.svg);
+        background-image: url(/images/system/checkedHover.svg);
     }
 
     .content_accordion_block .accordion_item input[type="checkbox"]:checked ~ .accordion_item-title .arrow {
-        background-image: url(/local/templates/kursi/img/faq_arrows/checkedArrow.svg);
+        background-image: url(/images/system/checkedArrow.svg);
     }
 
     .content_accordion_block .accordion_item-title:active .arrow {
-        background-image: url(/local/templates/kursi/img/faq_arrows/hideClick.svg);
+        background-image: url(/images/system/hideClick.svg);
     }
 
     .content_accordion_block .accordion_item-title:hover .arrow {
-        background-image: url(/local/templates/kursi/img/faq_arrows/hideHover.svg);
+        background-image: url(/images/system/hideHover.svg);
     }
 
     .content_accordion_block .arrow {
