@@ -35,8 +35,8 @@ class CoursesRequest extends FormRequest
             'duration' => ['required', 'numeric'],
             'duration_type' => ['required', 'max:255'],
             'cost' => ['required', 'numeric'],
-            'sale_cost' => ['required', 'numeric'],
-            'sale_value' => ['required', 'numeric'],
+            'sale_cost' => ['numeric'],
+            'sale_value' => ['numeric'],
             'payment_value' => ['nullable', 'numeric'], // todo required?
             'currency' => ['required', 'max:255'],
             'payment_type' => ['max:255'],

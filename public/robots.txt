@@ -17,6 +17,7 @@ Disallow: */?from*
 Disallow: */eng-check*
 Disallow: */?back_url_admin*
 Disallow: */?WEB_FORM_ID*
+Disallow: /search?q=*
 
 User-Agent: Yandex
 
@@ -37,5 +38,6 @@ Disallow: */?from*
 Disallow: */eng-check*
 Disallow: */?back_url_admin*
 Disallow: */?WEB_FORM_ID*
+Disallow: /search?q=*
 
 Sitemap: https://kursy.ru/sitemap.xml

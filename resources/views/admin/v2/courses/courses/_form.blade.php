@@ -139,28 +139,32 @@ external_id ?
 </div>
 
 <div class="form-group">
-    <label for="sale_cost"><i class="red">*</i> Скидка</label>
-    <input type="text" class="form-control" name="sale_cost" id="sale_cost" required
+    <label for="sale_cost">Скидка</label>
+    <input type="number" class="form-control" name="sale_cost" id="sale_cost"
            @if(old('sale_cost'))
                value="{{old('sale_cost')}}"
            @else
                @if(isset($item))
                    value="{{$item->sale_cost}}"
-        @endif
-        @endif
+           @else value="0"
+
+            @endif
+            @endif
     >
 </div>
 
 <div class="form-group">
-    <label for="sale_value"><i class="red">*</i> Значение со скидки</label> <?php // todo разобраться с полями скидок ?>
-    <input type="text" class="form-control" name="sale_value" id="sale_value" required
+    <label for="sale_value"> Значение со скидки</label> <?php // todo разобраться с полями скидок ?>
+    <input type="number" class="form-control" name="sale_value" id="sale_value"
            @if(old('sale_value'))
                value="{{old('sale_value')}}"
            @else
                @if(isset($item))
                    value="{{$item->sale_value}}"
-        @endif
-        @endif
+           @else value="0"
+
+            @endif
+            @endif
     >
 </div>
 
