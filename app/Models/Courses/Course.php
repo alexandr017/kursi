@@ -27,8 +27,8 @@ class Course extends Model
 
     protected $table = 'courses';
 
-    protected $fillable = ['title', 'company_id', 'external_id', 'statistics_link', 'affiliate_link', 'direct_link',
-        'duration', 'duration_type', 'cost', 'sale_cost', 'sale_value', 'payment_value', 'currency', 'payment_type',
+    protected $fillable = ['title', 'company_id', 'external_id', 'statistics_link', 'affiliate_link', 'link', 'link_type',
+        'direct_link', 'duration', 'duration_type', 'cost', 'sale_cost', 'sale_value', 'payment_value', 'currency', 'payment_type',
         'is_cost_by_query', 'reviews_count', 'installment_period', 'installment_payment', 'duration_in_hours',
         'is_popular', 'is_best', 'has_promotion', 'status', 'old_id'
     ];

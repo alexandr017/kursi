@@ -29,8 +29,10 @@ class CoursesRequest extends FormRequest
             'title' => ['required', 'max:255'],
             'company_id' => ['required', 'numeric'], // todo может это поле переименовать в company_id ?
             'external_id' => ['nullable', 'numeric'], // todo это поле вообще используется?
-            'statistics_link' => ['required', 'max:255'],
-            'affiliate_link' => ['required', 'max:255'],
+            'statistics_link' => ['max:255'],
+            'affiliate_link' => ['max:255'],
+            'link' => ['max:255'],
+            'link_type' => ['required', 'in:statistics_link,affiliate_link,link'],
             'direct_link' => ['required', 'max:255'],
             'duration' => ['required', 'numeric'],
             'duration_type' => ['required', 'max:255'],
@@ -63,8 +65,9 @@ class CoursesRequest extends FormRequest
             'title' => 'Название',
             'company_id' => 'Школа', // todo может это поле переименовать в company_id ?
             'external_id' => 'external_id',
-            'statistics_link' => 'statistics_link',
-            'affiliate_link' => 'affiliate_link',
+            'statistics_link' => 'Ссылка Keitaro',
+            'affiliate_link' => 'Партнерская ссылка',
+            'link' => 'Ссылка',
             'direct_link' => 'direct_link',
             'duration' => 'Продолжительность',
             'duration_type' => 'Продолжительность (еденицы измерения)',

@@ -61,8 +61,8 @@ external_id ?
 </div>
 
 <div class="form-group">
-    <label for="statistics_link"><i class="red">*</i> statistics_link</label>
-    <input type="text" class="form-control" name="statistics_link" id="statistics_link" required
+    <label for="statistics_link"> Ссылка Keitaro </label>
+    <input type="text" class="form-control" name="statistics_link" id="statistics_link"
            @if(old('statistics_link'))
                value="{{old('statistics_link')}}"
            @else
@@ -74,8 +74,8 @@ external_id ?
 </div>
 
 <div class="form-group">
-    <label for="affiliate_link"><i class="red">*</i> affiliate_link</label>
-    <input type="text" class="form-control" name="affiliate_link" id="affiliate_link" required
+    <label for="affiliate_link"> Партнерская ссылка </label>
+    <input type="text" class="form-control" name="affiliate_link" id="affiliate_link"
            @if(old('affiliate_link'))
                value="{{old('affiliate_link')}}"
            @else
@@ -84,6 +84,28 @@ external_id ?
         @endif
         @endif
     >
+</div>
+
+<div class="form-group">
+    <label for="link"> Ссылка </label>
+    <input type="text" class="form-control" name="link" id="link"
+           @if(old('link'))
+               value="{{old('link')}}"
+           @else
+               @if(isset($item))
+                   value="{{$item->link}}"
+            @endif
+            @endif
+    >
+</div>
+
+<div class="form-group">
+    <label for="link_type"><i class="red ">*</i> Тип ссылки </label>
+    <select name="link_type" id="link_type" class="form-control" required>
+        <option value="affiliate_link" @if((isset($item) && $item->link_type == 'affiliate_link') || !isset($item)) selected @endif>Партнерская ссылка</option>
+        <option value="statistics_link" @if(isset($item) && $item->link_type == 'statistics_link') selected @endif>Ссылка Keitaro</option>
+        <option value="link" @if(isset($item) && $item->link_type == 'link') selected @endif>Ссылка</option>
+    </select>
 </div>
 
 <div class="form-group">
@@ -117,10 +139,11 @@ external_id ?
 <div class="form-group">
     <label for="duration_type"><i class="red ">*</i> Продолжительность (еденицы измерения)</label>
     <select name="duration_type" id="duration_type" class="form-control" required>
-        <option value="1" @if(isset($item) && $item->duration_type == 0) selected @endif>Кол-во уроков</option>
-        <option value="0" @if(isset($item) && $item->duration_type == 1) selected @endif>Кол-во часов</option>
-        <option value="0" @if(isset($item) && $item->duration_type == 2) selected @endif>Кол-во дней</option>
-        <option value="0" @if(isset($item) && $item->duration_type == 3) selected @endif>Кол-во месяцев</option>
+        <option value="lesson" @if(isset($item) && $item->duration_type == 'lesson') selected @endif>Кол-во уроков</option>
+        <option value="clock" @if(isset($item) && $item->duration_type == 'clock') selected @endif>Кол-во часов</option>
+        <option value="day" @if(isset($item) && $item->duration_type == 'day') selected @endif>Кол-во дней</option>
+        <option value="mounth" @if(isset($item) && $item->duration_type == 'mounth') selected @endif>Кол-во месяцев</option>
+        <option value="year" @if(isset($item) && $item->duration_type == 'year') selected @endif>Кол-во годов</option>
     </select>
 </div>
 
@@ -139,13 +162,13 @@ external_id ?
 </div>
 
 <div class="form-group">
-    <label for="sale_cost">Скидка</label>
-    <input type="number" class="form-control" name="sale_cost" id="sale_cost"
-           @if(old('sale_cost'))
-               value="{{old('sale_cost')}}"
+    <label for="sale_value">Скидка</label>
+    <input type="number" class="form-control" name="sale_value" id="sale_value"
+           @if(old('sale_value'))
+               value="{{old('sale_value')}}"
            @else
                @if(isset($item))
-                   value="{{$item->sale_cost}}"
+                   value="{{$item->sale_value}}"
            @else value="0"
 
             @endif
@@ -154,13 +177,13 @@ external_id ?
 </div>
 
 <div class="form-group">
-    <label for="sale_value"> Значение со скидки</label> <?php // todo разобраться с полями скидок ?>
-    <input type="number" class="form-control" name="sale_value" id="sale_value"
-           @if(old('sale_value'))
-               value="{{old('sale_value')}}"
+    <label for="sale_cost"> Значение со скидки</label> <?php // todo разобраться с полями скидок ?>
+    <input type="number" class="form-control" name="sale_cost" id="sale_cost"
+           @if(old('sale_cost'))
+               value="{{old('sale_cost')}}"
            @else
                @if(isset($item))
-                   value="{{$item->sale_value}}"
+                   value="{{$item->sale_cost}}"
            @else value="0"
 
             @endif
