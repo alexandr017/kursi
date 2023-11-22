@@ -197,12 +197,12 @@ class ListingsController extends AdminController
 
         if ($result) {
             return redirect()
-                ->route('admin.listings.index')
-                ->with('flash_success', 'Листинг обнавлен!');
+                ->route('admin.listings.edit',$id)
+                ->with('flash_success', 'Ранжирование обнавлен!');
         } else {
             return redirect()
-                ->route('admin.listings.index')
-                ->with('flash_errors', 'Ошибка обновления!');
+                ->route('admin.listings.edit',$id)
+                ->with('flash_errors', 'Ошибка Ранжирования!');
         }
     }
 
