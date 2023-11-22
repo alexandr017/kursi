@@ -2,8 +2,10 @@
 
 namespace App\Repositories\Admin\Courses;
 
+use App\Models\Listing\ListingCourse;
 use DB;
 use App\Models\Courses\Course;
+use Illuminate\Database\Eloquent\Collection;
 
 class CoursesRepository
 {
@@ -16,9 +18,23 @@ class CoursesRepository
             ->toArray();
     }
 
+    public function getAllCoursesForListing(int $listingId): Collection
+    {
+        return Course::query()
+            ->join('listing_courses', 'courses.id', 'course_id')
+            ->where('listing_courses.listing_id', $listingId)
+            ->orderBy('listing_courses.sort')
+            ->with('listings', function ($q) use ($listingId) {
+                $q->where('listing_id', $listingId);
+            })
+            ->select(['courses.id', 'courses.title', 'courses.status'])
+            ->whereNull('deleted_at')
+            ->get();
+    }
+
     public function find(int $id) : null|object
     {
-        return Course::find($id);
+        return Course::with(['listings'])->find($id);
     }
 
     public function createCourse(array $data) : null|object // todo ?
@@ -32,7 +48,7 @@ class CoursesRepository
 
     public function updateCourse(int $id, array $data) : null|object
     {
-        $course = Course::find($id);
+        $course = Course::with(['listings'])->find($id);
         $course->update($data);
 
         return $course;
@@ -44,6 +60,15 @@ class CoursesRepository
         $course->delete();
 
         return $course;
+    }
+
+    public function syncListings(int $courseId, array $data): bool
+    {
+        ListingCourse::query()->where('course_id', $courseId)->delete();
+
+        ListingCourse::query()->insert($data);
+
+        return true;
     }
 
 }

@@ -52,6 +52,18 @@
     <textarea class="form-control" name="content" id="content">{{$content}}</textarea>
 </div>
 
+<div class="form-group">
+    <label for="author_name">Имя автора</label>
+    <input class="form-control" name="author_name" id="author_name" step="0.1" min="3" max="5"
+           @if(old('author_name'))
+               value="{{old('author_name')}}"
+           @else
+               @if(isset($item))
+                   value="{{$item->author_name}}"
+            @endif
+            @endif
+    >
+</div>
 
 <div class="form-group">
     <label for="rating">Рейтинг</label>
@@ -61,20 +73,6 @@
            @else
                @if(isset($item))
                    value="{{$item->rating}}"
-        @endif
-        @endif
-    >
-</div>
-
-
-<div class="form-group">
-    <label for="author_name">Имя автора</label>
-    <input type="number" class="form-control" name="author_name" id="author_name" step="0.1" min="3" max="5"
-           @if(old('author_name'))
-               value="{{old('author_name')}}"
-           @else
-               @if(isset($item))
-                   value="{{$item->author_name}}"
         @endif
         @endif
     >

@@ -2,6 +2,8 @@
 
 namespace App\Repositories\Admin\Listings;
 
+use App\Models\Courses\Course;
+use App\Models\Listing\ListingCourse;
 use DB;
 use App\Models\Listing\Listing;
 use App\Services\FakeRating\FakeRating;
@@ -20,6 +22,16 @@ class ListingsRepository
             ->where(['urls.section_type' => ListingsRepository::SECTION_TYPE])
             ->whereNull('listings.deleted_at')
             ->get()
+            ->toArray();
+    }
+
+    public function getAllListingsForCourses() : array
+    {
+        return DB::table('listings')
+            ->where('status', 1)
+            ->whereNull('listings.deleted_at')
+            ->select(['listings.id', 'listings.name'])
+            ->pluck('name', 'id')
             ->toArray();
     }
 
@@ -107,6 +119,15 @@ class ListingsRepository
 
             return $listing;
         });
+    }
+
+    public function syncCourses(int $listingId, array $data): bool
+    {
+        ListingCourse::query()->where('listing_id', $listingId)->delete();
+
+        ListingCourse::query()->insert($data);
+
+        return true;
     }
 
 }

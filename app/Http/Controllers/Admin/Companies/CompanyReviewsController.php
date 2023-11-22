@@ -97,12 +97,14 @@ class CompanyReviewsController extends AdminController
             abort(404);
         }
 
+        $schools = $this->companiesRepository->getCompaniesForSelect();
+
         $breadcrumbs = [
             ['h1' => 'Отзывы', 'link' => route('admin.company-reviews.index')],
             ['h1' => 'Редактирование'],
         ];
 
-        return view('admin.v2.companies.reviews.edit', compact('item', 'breadcrumbs'));
+        return view('admin.v2.companies.reviews.edit', compact('item', 'breadcrumbs', 'schools'));
     }
 
     /**
