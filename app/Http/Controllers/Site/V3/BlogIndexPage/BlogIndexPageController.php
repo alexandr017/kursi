@@ -23,6 +23,10 @@ class BlogIndexPageController extends Controller
         // todo: можно написать более красиво через репозиторий
         $page = \DB::table('seo_for_pages')->where(['id' => self::SEO_PAGE_ID])->first();
 
+        $page->h1 .= ' - страница ' . $dto->page;
+        $page->title .= ' - страница ' . $dto->page;
+        $page->meta_description .= ' - страница ' . $dto->page;
+
         $breadcrumbs = BreadcrumbsRender::get($page->breadcrumbs, $page->h1);
 
         return view('site.v3.templates.blog.category', [
