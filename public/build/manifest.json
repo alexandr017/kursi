@@ -27,14 +27,6 @@
     "file": "assets/RightGray-77f0883e.svg",
     "src": "public/images/rating/RightGray.svg"
   },
-  "public/images/system/checkedArrow.svg": {
-    "file": "assets/checkedArrow-358c1a64.svg",
-    "src": "public/images/system/checkedArrow.svg"
-  },
-  "public/images/system/hideArrow.svg": {
-    "file": "assets/hideArrow-80a4a76b.svg",
-    "src": "public/images/system/hideArrow.svg"
-  },
   "public/images/system/slider_disable_right_btn.svg": {
     "file": "assets/slider_disable_right_btn-bb6833d1.svg",
     "src": "public/images/system/slider_disable_right_btn.svg"
@@ -141,7 +133,7 @@
     "src": "resources/css/courses/course.css"
   },
   "resources/css/courses/courses-cards.css": {
-    "file": "assets/courses-cards-3e329b9f.css",
+    "file": "assets/courses-cards-8bafa869.css",
     "isEntry": true,
     "src": "resources/css/courses/courses-cards.css"
   },
@@ -196,7 +188,7 @@
     "src": "resources/css/mainpage/mainpage-head.css"
   },
   "resources/css/mainpage/mainpage-news.css": {
-    "file": "assets/mainpage-news-1dad92fc.css",
+    "file": "assets/mainpage-news-2ff6bc45.css",
     "isEntry": true,
     "src": "resources/css/mainpage/mainpage-news.css"
   },
@@ -286,7 +278,7 @@
     "src": "resources/js/listing/listing.js"
   },
   "resources/js/listing/rating_stars.js": {
-    "file": "assets/rating_stars-d5294b39.js",
+    "file": "assets/rating_stars-8bdad17c.js",
     "isEntry": true,
     "src": "resources/js/listing/rating_stars.js"
   },
