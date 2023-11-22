@@ -3,10 +3,10 @@
 @section('h1', 'Листинги - Редактирование')
 
 @section('content')
-    <a class="btn-preview" href="/{{$item->urls->url}}" target="_blank"><i class="fa fa-eye"></i> {{Request::root()}}/{{$item->urls->url}}</a>
+    <a class="btn-preview" href="{{linkWithSlash($item->urls->url)}}" target="_blank"><i class="fa fa-eye"></i> {{Request::root()}}{{linkWithSlash($item->urls->url)}}</a>
     <br>
 
-    <a href="{{route('admin.listings.courses', [$item->id])}}" class="btn btn-primary"><i class="far fa-address-card"></i> Привязанные курсы</a>
+    <a href="{{route('admin.listings.courses', [$item->id])}}" class="btn btn-primary"><i class="far fa-address-card"></i> Ранжирование курсов</a>
     <br>
     <br>
 

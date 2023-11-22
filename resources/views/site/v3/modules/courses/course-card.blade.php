@@ -101,7 +101,7 @@
         </div>
 
         <!-- <div class="kurse_card-link"> -->
-        <a class="kurse_card-link" rel="sponsored" href="{{linkWithSlash($course->affiliate_link)}}" onclick="ym(91433233,'reachGoal','CourseAggregator'); return true;" target="_blank">Подробнее</a>
+        <a class="kurse_card-link" rel="sponsored" href="@php $type = $course->link_type ?? 'affiliate_link' @endphp {{linkWithSlash($course->$type)}}" onclick="ym(91433233,'reachGoal','CourseAggregator'); return true;" target="_blank">Подробнее</a>
 
         <!-- </div> -->
     </div>
