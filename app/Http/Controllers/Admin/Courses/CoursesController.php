@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin\Courses;
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Models\Courses\Course;
 use App\Repositories\Admin\Courses\CoursesRepository;
 use App\Repositories\Admin\Companies\CompaniesRepository;
 use App\Http\Requests\Admin\Course\CoursesRequest;
+use App\Repositories\Admin\Listings\ListingsRepository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
@@ -13,11 +15,13 @@ class CoursesController extends AdminController
 {
     private mixed $coursesRepository;
     private mixed $companiesRepository;
+    private mixed $listingRepository;
 
     public function __construct()
     {
         $this->coursesRepository = new CoursesRepository;
         $this->companiesRepository = new CompaniesRepository;
+        $this->listingRepository = new ListingsRepository;
     }
 
     public function index() : View
@@ -35,13 +39,14 @@ class CoursesController extends AdminController
     public function create() : View
     {
         $companies = $this->companiesRepository->getCompaniesForSelect();
+        $listings = $this->listingRepository->getAllListingsForCourses();
 
         $breadcrumbs = [
             ['h1' => 'Курсы', 'link' => route('admin.courses.index')],
             ['h1' => 'Создание'],
         ];
 
-        return view('admin.v2.courses.courses.create', compact('breadcrumbs', 'companies'));
+        return view('admin.v2.courses.courses.create', compact('breadcrumbs', 'companies', 'listings'));
     }
 
     /**
@@ -58,7 +63,22 @@ class CoursesController extends AdminController
 
         $data = $request->all();
         $data = emptyDataToNull($data);
+        $listingsIds = $data['listings'] ?? [];
+
         $result = $this->coursesRepository->createCourse($data);
+
+        if ($result) {
+            $listingCourseData = [];
+            foreach ($listingsIds as $listingId) {
+                $listingCourseData[] = [
+                    'listing_id' => $listingId,
+                    'course_id' => $result->id,
+                    'sort' => 100,
+                ];
+            }
+
+            $this->coursesRepository->syncListings($result->id, $listingCourseData);
+        }
 
         if ($result) {
             return redirect()
@@ -86,13 +106,14 @@ class CoursesController extends AdminController
         }
 
         $companies = $this->companiesRepository->getCompaniesForSelect();
+        $listings = $this->listingRepository->getAllListingsForCourses();
 
         $breadcrumbs = [
             ['h1' => 'Курсы', 'link' => route('admin.courses.index')],
             ['h1' => 'Редактирование'],
         ];
 
-        return view('admin.v2.courses.courses.edit', compact('item', 'breadcrumbs', 'companies'));
+        return view('admin.v2.courses.courses.edit', compact('item', 'breadcrumbs', 'companies', 'listings'));
     }
 
     /**
@@ -111,6 +132,21 @@ class CoursesController extends AdminController
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->coursesRepository->updateCourse($id, $data);
+        $listingsIds = $data['listings'] ?? [];
+
+        if ($result) {
+            $listingCourseData = [];
+            foreach ($listingsIds as $listingId) {
+                $courseListing = $result->listings->where('id', $listingId)->first();
+                $listingCourseData[] = [
+                    'listing_id' => (int)$listingId,
+                    'course_id' => $result->id,
+                    'sort' => $courseListing->pivot->sort ?? 100,
+                ];
+            }
+
+            $this->coursesRepository->syncListings($result->id, $listingCourseData);
+        }
 
         if ($result) {
             return redirect()

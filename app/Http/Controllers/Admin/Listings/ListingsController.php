@@ -8,7 +8,9 @@ use App\Repositories\Admin\Listings\ListingsRepository;
 use App\Repositories\Admin\Employees\EmployeesRepository;
 use App\Repositories\Admin\Courses\CoursesRepository;
 use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\RedirectResponse;
+use Request;
 use Throwable;
 use App\Services\Breadcrumbs\BreadcrumbsConverter;
 
@@ -166,7 +168,7 @@ class ListingsController extends AdminController
      */
     public function coursesList(int $id) : View
     {
-        $courses = $this->coursesRepository->getAllCoursesForShow();
+        $courses = $this->coursesRepository->getAllCoursesForListing($id);
         $currentCourses = []; // todo
 
         $breadcrumbs = [
@@ -174,7 +176,34 @@ class ListingsController extends AdminController
             ['h1' => 'Редактирование'],
         ];
 
-        return view('admin.v2.listings.courses', compact('courses', 'currentCourses', 'breadcrumbs'));
+        return view('admin.v2.listings.courses', compact('id', 'courses', 'currentCourses', 'breadcrumbs'));
+    }
+
+    public function updateCoursesSort(FormRequest $request, $id): RedirectResponse
+    {
+        $data = $request->all()['course'] ?? [];
+
+        $dataForSort = [];
+
+        foreach ($data as $key => $value) {
+            $dataForSort[] = [
+                'listing_id' => $id,
+                'course_id' => $key,
+                'sort' => $value
+            ];
+        }
+
+        $result = $this->listingRepository->syncCourses($id, $dataForSort);
+
+        if ($result) {
+            return redirect()
+                ->route('admin.listings.index')
+                ->with('flash_success', 'Листинг обнавлен!');
+        } else {
+            return redirect()
+                ->route('admin.listings.index')
+                ->with('flash_errors', 'Ошибка обновления!');
+        }
     }
 
     public function coursesListUpdate(int $id) : RedirectResponse
