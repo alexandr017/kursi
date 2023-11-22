@@ -24,10 +24,10 @@ class CoursesRepository
             ->join('listing_courses', 'courses.id', 'course_id')
             ->where('listing_courses.listing_id', $listingId)
             ->orderBy('listing_courses.sort')
-            ->with('listings', function ($q) use ($listingId) {
+            ->with(['listings' => function ($q) use ($listingId) {
                 $q->where('listing_id', $listingId);
-            })
-            ->select(['courses.id', 'courses.title', 'courses.status'])
+            }, 'school'])
+            ->select(['courses.id', 'courses.title', 'courses.status', 'company_id'])
             ->whereNull('deleted_at')
             ->get();
     }

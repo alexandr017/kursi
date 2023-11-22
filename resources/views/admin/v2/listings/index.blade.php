@@ -21,7 +21,7 @@
         @foreach($listings as $item)
             <tr>
                 <th scope="row">{{$item->id}}</th>
-                <td>{{$item->name}}</td>
+                <td>{{$item->h1}}</td>
                 <td>
                     @if($item->status)
                         <span class="badge badge-success">Вкл</span>

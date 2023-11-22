@@ -26,11 +26,11 @@
     <label><i class="red"></i> Листинг </label> <br>
     <input type="text" id="searchListings" placeholder="Поиск по листингам ">
     <div class="checkbox-container" style="height: 200px; overflow: auto;">
-        @foreach($listings as $id => $name)
+        @foreach($listings as $id => $h1)
             <div class="checkbox">
                 <label>
                     <input type="checkbox" name="listings[]" value="{{$id}}" @if(isset($item) && $item->listings->pluck('id')->contains($id)) checked @endif>
-                    {{$name}}
+                    {{$h1}}
                 </label>
             </div>
         @endforeach
@@ -41,11 +41,11 @@
     $(document).ready(function() {
         // Add an event listener for the input field
         $('#searchListings').on('input', function() {
-            var searchTerm = $(this).val().toLowerCase();
+            let searchTerm = $(this).val().toLowerCase();
 
             // Loop through checkboxes and hide/show based on the search term
             $('.checkbox-container .checkbox').each(function() {
-                var listingName = $(this).text().toLowerCase();
+                let listingName = $(this).text().toLowerCase();
                 if (listingName.includes(searchTerm)) {
                     $(this).show();
                 } else {

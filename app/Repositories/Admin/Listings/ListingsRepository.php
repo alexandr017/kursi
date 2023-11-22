@@ -18,7 +18,7 @@ class ListingsRepository
     {
         return DB::table('listings')
             ->leftJoin('urls', 'urls.section_id', 'listings.id')
-            ->select(['listings.id', 'listings.name', 'listings.status', 'urls.url'])
+            ->select(['listings.id', 'listings.h1', 'listings.status', 'urls.url'])
             ->where(['urls.section_type' => ListingsRepository::SECTION_TYPE])
             ->whereNull('listings.deleted_at')
             ->get()
@@ -30,8 +30,8 @@ class ListingsRepository
         return DB::table('listings')
             ->where('status', 1)
             ->whereNull('listings.deleted_at')
-            ->select(['listings.id', 'listings.name'])
-            ->pluck('name', 'id')
+            ->select(['listings.id', 'listings.h1'])
+            ->pluck('h1', 'id')
             ->toArray();
     }
 
