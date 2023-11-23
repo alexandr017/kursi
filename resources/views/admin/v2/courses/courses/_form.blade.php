@@ -56,6 +56,19 @@
     });
 </script>
 
+<br>
+<div class="form-group">
+    <label> Теги </label>
+    @foreach($tags as $tag)
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="tags[]" value="{{$tag->id}}" @if(isset($item) && $item->tags->pluck('id')->contains($tag->id)) checked @endif>
+                {{$tag->name}}
+            </label>
+        </div>
+    @endforeach
+</div>
+
 <div class="form-group">
 external_id ?
 </div>
