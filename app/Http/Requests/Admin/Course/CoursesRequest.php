@@ -29,9 +29,9 @@ class CoursesRequest extends FormRequest
             'title' => ['required', 'max:255'],
             'company_id' => ['required', 'numeric'], // todo может это поле переименовать в company_id ?
             'external_id' => ['nullable', 'numeric'], // todo это поле вообще используется?
-            'statistics_link' => ['max:255'],
-            'affiliate_link' => ['max:255'],
-            'link' => ['required', 'max:255'],
+            'statistics_link' => ['string'],
+            'affiliate_link' => ['string'],
+            'link' => ['required', 'string'],
             'link_type' => ['required', 'in:statistics_link,affiliate_link,link'],
             'direct_link' => ['required', 'max:255'],
             'duration' => ['required', 'numeric'],
