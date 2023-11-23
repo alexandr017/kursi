@@ -165,15 +165,15 @@ class CoursesController extends AdminController
             $this->coursesRepository->syncListings($result->id, $listingCourseData);
         }
 
-//        if ($result) {
-//            return redirect()
-//                ->route('admin.courses.index')
-//                ->with('flash_success', 'Курс обнавлен!');
-//        } else {
-//            return redirect()
-//                ->route('admin.courses.index')
-//                ->with('flash_errors', 'Ошибка обновления!');
-//        }
+        if ($result) {
+            return redirect()
+                ->route('admin.courses.index')
+                ->with('flash_success', 'Курс обнавлен!');
+        } else {
+            return redirect()
+                ->route('admin.courses.index')
+                ->with('flash_errors', 'Ошибка обновления!');
+        }
     }
 
     /**
