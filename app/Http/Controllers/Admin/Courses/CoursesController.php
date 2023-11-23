@@ -65,6 +65,14 @@ class CoursesController extends AdminController
         $data = emptyDataToNull($data);
         $listingsIds = $data['listings'] ?? [];
 
+        if ($data['sale_cost'] == 0 && $data['cost'] != 0) {
+            if ($data['sale_value'] != 0) {
+                $data['sale_cost'] = $data['cost'] * $data['sale_value'] / 100;
+            } else {
+                $data['sale_cost'] = $data['cost'];
+            }
+        }
+
         $result = $this->coursesRepository->createCourse($data);
 
         if ($result) {
@@ -131,6 +139,15 @@ class CoursesController extends AdminController
 
         $data = $request->all();
         $data = emptyDataToNull($data);
+
+        if ($data['sale_cost'] == 0 && $data['cost'] != 0) {
+            if ($data['sale_value'] != 0) {
+                $data['sale_cost'] = $data['cost'] * $data['sale_value'] / 100;
+            } else {
+                $data['sale_cost'] = $data['cost'];
+            }
+        }
+
         $result = $this->coursesRepository->updateCourse($id, $data);
         $listingsIds = $data['listings'] ?? [];
 
@@ -148,15 +165,15 @@ class CoursesController extends AdminController
             $this->coursesRepository->syncListings($result->id, $listingCourseData);
         }
 
-        if ($result) {
-            return redirect()
-                ->route('admin.courses.index')
-                ->with('flash_success', 'Курс обнавлен!');
-        } else {
-            return redirect()
-                ->route('admin.courses.index')
-                ->with('flash_errors', 'Ошибка обновления!');
-        }
+//        if ($result) {
+//            return redirect()
+//                ->route('admin.courses.index')
+//                ->with('flash_success', 'Курс обнавлен!');
+//        } else {
+//            return redirect()
+//                ->route('admin.courses.index')
+//                ->with('flash_errors', 'Ошибка обновления!');
+//        }
     }
 
     /**
