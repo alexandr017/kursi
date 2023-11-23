@@ -3,7 +3,7 @@
 @section('h1', 'Компании - Редактирование')
 
 @section('content')
-    <form action="{{ route('admin.companies.update',$item->id) }}" method="post">
+    <form action="{{ route('admin.company-reviews.update',$item->id) }}" method="post">
 
         {{ method_field('PATCH') }}
 

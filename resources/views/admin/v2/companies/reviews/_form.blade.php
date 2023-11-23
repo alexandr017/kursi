@@ -43,18 +43,18 @@
 
 
 <div class="form-group">
-    <label for="content"><i class="red"></i> Контент</label>
+    <label for="content"><i class="red">*</i> Контент</label>
     <?php
     $content = old('content')
         ? old('content')
         : (isset($item) ? $item->content : '');
     ?>
-    <textarea class="form-control" name="content" id="content">{{$content}}</textarea>
+    <textarea class="form-control" name="content" id="content" required>{{$content}}</textarea>
 </div>
 
 <div class="form-group">
-    <label for="author_name">Имя автора</label>
-    <input class="form-control" name="author_name" id="author_name" step="0.1" min="3" max="5"
+    <label for="author_name"><i class="red">*</i> Имя автора</label>
+    <input class="form-control" name="author_name" id="author_name" step="0.1" min="3" max="5" required
            @if(old('author_name'))
                value="{{old('author_name')}}"
            @else
@@ -66,8 +66,8 @@
 </div>
 
 <div class="form-group">
-    <label for="rating">Рейтинг</label>
-    <input type="number" class="form-control" name="rating" id="rating"
+    <label for="rating"><i class="red">*</i> Рейтинг</label>
+    <input type="number" class="form-control" name="rating" id="rating" required
            @if(old('rating'))
                value="{{old('rating')}}"
            @else

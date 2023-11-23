@@ -39,6 +39,11 @@ class SchoolReview extends Model
 {
     use HasFactory;
 
+
+    protected $fillable = ['school_id', 'user_id', 'title', 'status', 'character_code', 'sort', 'pluses',
+        'minuses', 'content', 'rating', 'author_name', 'code', 'old_id',
+    ];
+
     public function company(): BelongsTo
     {
         return $this->belongsTo(Company::class, 'school_id', 'id');
