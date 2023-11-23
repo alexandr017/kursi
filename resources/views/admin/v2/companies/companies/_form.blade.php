@@ -90,8 +90,8 @@
 </div>
 
 <div class="form-group">
-    <label for="hotline">Ссылка на сайт</label>
-    <input type="url" class="form-control" name="link" id="link"
+    <label for="hotline"><i class="red ">*</i> Ссылка на сайт</label>
+    <input type="url" class="form-control" name="link" id="link" required
            @if(old('link'))
                value="{{old('link')}}"
            @else

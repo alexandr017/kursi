@@ -34,7 +34,7 @@ class CoursesRepository
 
     public function find(int $id) : null|object
     {
-        return Course::with(['listings'])->find($id);
+        return Course::with(['listings', 'tags'])->find($id);
     }
 
     public function createCourse(array $data) : null|object // todo ?
@@ -67,6 +67,13 @@ class CoursesRepository
         ListingCourse::query()->where('course_id', $courseId)->delete();
 
         ListingCourse::query()->insert($data);
+
+        return true;
+    }
+
+    public function syncTags(Course $course, array $tags): bool
+    {
+        $course->tags()->sync($tags);
 
         return true;
     }

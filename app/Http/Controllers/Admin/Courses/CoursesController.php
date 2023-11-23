@@ -8,6 +8,7 @@ use App\Repositories\Admin\Courses\CoursesRepository;
 use App\Repositories\Admin\Companies\CompaniesRepository;
 use App\Http\Requests\Admin\Course\CoursesRequest;
 use App\Repositories\Admin\Listings\ListingsRepository;
+use App\Repositories\Tags\TagRepositoryInterface;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
@@ -17,7 +18,9 @@ class CoursesController extends AdminController
     private mixed $companiesRepository;
     private mixed $listingRepository;
 
-    public function __construct()
+    public function __construct(
+        private TagRepositoryInterface $tagRepository
+    )
     {
         $this->coursesRepository = new CoursesRepository;
         $this->companiesRepository = new CompaniesRepository;
@@ -40,13 +43,14 @@ class CoursesController extends AdminController
     {
         $companies = $this->companiesRepository->getCompaniesForSelect();
         $listings = $this->listingRepository->getAllListingsForCourses();
+        $tags = $this->tagRepository->getAll();
 
         $breadcrumbs = [
             ['h1' => 'Курсы', 'link' => route('admin.courses.index')],
             ['h1' => 'Создание'],
         ];
 
-        return view('admin.v2.courses.courses.create', compact('breadcrumbs', 'companies', 'listings'));
+        return view('admin.v2.courses.courses.create', compact('breadcrumbs', 'companies', 'listings', 'tags'));
     }
 
     /**
@@ -74,6 +78,7 @@ class CoursesController extends AdminController
         }
 
         $result = $this->coursesRepository->createCourse($data);
+        $this->coursesRepository->syncTags($result, $data['tags'] ?? []);
 
         if ($result) {
             $listingCourseData = [];
@@ -115,13 +120,14 @@ class CoursesController extends AdminController
 
         $companies = $this->companiesRepository->getCompaniesForSelect();
         $listings = $this->listingRepository->getAllListingsForCourses();
+        $tags = $this->tagRepository->getAll();
 
         $breadcrumbs = [
             ['h1' => 'Курсы', 'link' => route('admin.courses.index')],
             ['h1' => 'Редактирование'],
         ];
 
-        return view('admin.v2.courses.courses.edit', compact('item', 'breadcrumbs', 'companies', 'listings'));
+        return view('admin.v2.courses.courses.edit', compact('item', 'breadcrumbs', 'companies', 'listings', 'tags'));
     }
 
     /**
@@ -149,6 +155,8 @@ class CoursesController extends AdminController
         }
 
         $result = $this->coursesRepository->updateCourse($id, $data);
+        $this->coursesRepository->syncTags($result, $data['tags'] ?? []);
+
         $listingsIds = $data['listings'] ?? [];
 
         if ($result) {
