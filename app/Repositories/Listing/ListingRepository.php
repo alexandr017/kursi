@@ -87,7 +87,11 @@ class ListingRepository implements ListingRepositoryInterface
     {
         return $this->query()
             ->whereNull('parent_id')
-            ->with(['childes.url', 'url'])
+            ->where('status', 1)
+            ->with(['childes' => function($query) {
+                $query->where('status', 1)
+                    ->with('url');
+            }, 'url'])
             ->get();
     }
 
