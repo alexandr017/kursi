@@ -87,8 +87,8 @@ external_id ?
 </div>
 
 <div class="form-group">
-    <label for="link"> Ссылка </label>
-    <input type="text" class="form-control" name="link" id="link"
+    <label for="link"><i class="red ">*</i> Ссылка </label>
+    <input type="text" class="form-control" name="link" id="link" required
            @if(old('link'))
                value="{{old('link')}}"
            @else

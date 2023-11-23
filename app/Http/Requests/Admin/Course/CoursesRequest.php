@@ -31,7 +31,7 @@ class CoursesRequest extends FormRequest
             'external_id' => ['nullable', 'numeric'], // todo это поле вообще используется?
             'statistics_link' => ['max:255'],
             'affiliate_link' => ['max:255'],
-            'link' => ['max:255'],
+            'link' => ['required', 'max:255'],
             'link_type' => ['required', 'in:statistics_link,affiliate_link,link'],
             'direct_link' => ['required', 'max:255'],
             'duration' => ['required', 'numeric'],
