@@ -30,6 +30,11 @@ class CoursesRepository implements CoursesRepositoryInterface
             ->with(['tags', 'school']);
 
         if ($dto->sortKey) {
+            if ($dto->sortKey == 'duration_in_hours') {
+                $query->whereNotNull('duration');
+                $query->where('no_duration', 0);
+            }
+
             $query->orderBy($dto->sortKey, $dto->sortValue);
         } else {
             $query->join('listing_courses', 'courses.id', 'course_id')

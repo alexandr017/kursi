@@ -77,6 +77,12 @@ class CoursesController extends AdminController
             }
         }
 
+        if ($request->has('no_duration')) {
+            $data['no_duration'] = 1;
+        } else {
+            $data['no_duration'] = 0;
+        }
+
         $result = $this->coursesRepository->createCourse($data);
         $this->coursesRepository->syncTags($result, $data['tags'] ?? []);
 
@@ -152,6 +158,12 @@ class CoursesController extends AdminController
             } else {
                 $data['sale_cost'] = $data['cost'];
             }
+        }
+
+        if ($request->has('no_duration')) {
+            $data['no_duration'] = 1;
+        } else {
+            $data['no_duration'] = 0;
         }
 
         $result = $this->coursesRepository->updateCourse($id, $data);

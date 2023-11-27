@@ -135,8 +135,18 @@ external_id ?
 </div>
 
 <div class="form-group">
-    <label for="duration"><i class="red">*</i> Продолжительность</label>
-    <input type="number" class="form-control" name="duration" id="duration" required
+    <label for="no_duration"> Нет длительности </label>
+    <br>
+    <label>
+        <input type="checkbox" id="no_duration" name="no_duration"
+               @if(isset($item) && $item->no_duration) checked @endif
+        >
+    </label>
+</div>
+
+<div class="form-group">
+    <label for="duration"> Продолжительность </label>
+    <input type="number" class="form-control" name="duration" id="duration"
            @if(old('duration'))
                value="{{old('duration')}}"
            @else
@@ -150,13 +160,14 @@ external_id ?
 
 
 <div class="form-group">
-    <label for="duration_type"><i class="red ">*</i> Продолжительность (еденицы измерения)</label>
-    <select name="duration_type" id="duration_type" class="form-control" required>
+    <label for="duration_type"> Продолжительность (еденицы измерения)</label>
+    <select name="duration_type" id="duration_type" class="form-control">
         <option value="lesson" @if(isset($item) && $item->duration_type == 'lesson') selected @endif>Кол-во уроков</option>
         <option value="clock" @if(isset($item) && $item->duration_type == 'clock') selected @endif>Кол-во часов</option>
         <option value="day" @if(isset($item) && $item->duration_type == 'day') selected @endif>Кол-во дней</option>
         <option value="mounth" @if(isset($item) && $item->duration_type == 'mounth') selected @endif>Кол-во месяцев</option>
         <option value="year" @if(isset($item) && $item->duration_type == 'year') selected @endif>Кол-во годов</option>
+        <option value="week" @if(isset($item) && $item->duration_type == 'week') selected @endif>Кол-во в неделях</option>
     </select>
 </div>
 
