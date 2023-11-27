@@ -37,7 +37,7 @@ class Listing extends Model
     protected $table = 'listings';
 
     protected $fillable = [
-        'parent_id', 'name', 'title', 'description', 'slug', 'meta_description', 'meta_title', 'h1',
+        'parent_id', 'name', 'photo', 'title', 'description', 'slug', 'meta_description', 'meta_title', 'h1',
         'breadcrumbs', 'lead', 'content', 'author_id', 'rating_value', 'rating_count', 'rating_sum', 'status'];
 
     const STATUS_ACTIVE = 1;

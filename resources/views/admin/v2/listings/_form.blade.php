@@ -96,8 +96,8 @@
 </div>
 
 <div class="form-group">
-    <label for="preview"><i class="red">*</i> Превью</label>
-    <input type="text" class="form-control" name="preview" id="preview" required
+    <label for="photo"> Превью</label>
+    <input type="text" class="form-control" name="photo" id="photo"
            @if(old('photo'))
                value="{{old('photo')}}"
            @else

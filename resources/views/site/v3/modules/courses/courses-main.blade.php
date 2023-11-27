@@ -81,9 +81,11 @@
     <!-- component-end -->
 
 
-    <div class="mobile_mascot">
-        <img src="{{$listingPhoto}}" alt="">
-    </div>
+    @if(isset($listingPhoto))
+        <div class="mobile_mascot">
+            <img src="{{$listingPhoto}}" alt="">
+        </div>
+    @endif
 </div>
 
 <script>
