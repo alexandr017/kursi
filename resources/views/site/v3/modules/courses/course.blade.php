@@ -3,14 +3,17 @@
         <div class="kurse_card-title">
             {{$course->title}}
         </div>
-        <div class="kurse_card-length">
-            <p class="kurse_card-length_title">
-                Длительность:
-            </p>
-            <p class="kurse_card-length_value">
-                {{ $course->duration}} {{durationWord($course->duration_type, $course->duration) }}
-            </p>
-        </div>
+        @if(!is_null($course->duration))
+            <div class="kurse_card-length">
+                <p class="kurse_card-length_title">
+                    Длительность:
+                </p>
+                <p class="kurse_card-length_value">
+                    {{ $course->duration}} {{durationWord($course->duration_type, $course->duration) }}
+                </p>
+            </div>
+        @endif
+
 
         <div class="kurse_card-school">
             <div class="school_minicard-cont">
