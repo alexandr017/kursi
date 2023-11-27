@@ -14,9 +14,11 @@
                 </div>
             </div>
 
-            <div class="tagpage_head-img">
-                <img src="{{$listing->photo}}" alt="{{$listing->title}}">
-            </div>
+            @if(!is_null($listing->photo))
+                <div class="tagpage_head-img">
+                    <img src="{{$listing->photo}}" alt="{{$listing->title}}">
+                </div>
+            @endif
         </div>
 
         @include(
