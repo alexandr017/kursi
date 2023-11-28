@@ -41,7 +41,7 @@ class SchoolReview extends Model
 
 
     protected $fillable = ['school_id', 'user_id', 'title', 'status', 'character_code', 'sort', 'pluses',
-        'minuses', 'content', 'rating', 'author_name', 'code', 'old_id',
+        'minuses', 'content', 'rating', 'author_name', 'code', 'old_id','created_at',
     ];
 
     public function company(): BelongsTo

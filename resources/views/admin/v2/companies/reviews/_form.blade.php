@@ -78,6 +78,19 @@
     >
 </div>
 
+<div class="form-group">
+    <label for="created_at"><i class="red">*</i> Дата публикации </label>
+    <input type="date" class="form-control" name="created_at" id="created_at" required
+           @if(old('created_at'))
+               value="{{old('created_at')}}"
+           @else
+               @if(isset($item))
+                   value="{{\Carbon\Carbon::parse($item->created_at)->toDateString()}}"
+        @endif
+        @endif
+    >
+</div>
+
 
 <div class="form-group">
     <label for="status"><i class="red ">*</i> Статус</label>
