@@ -121,18 +121,18 @@ external_id ?
     </select>
 </div>
 
-<div class="form-group">
-    <label for="direct_link"><i class="red">*</i> direct_link</label>
-    <input type="text" class="form-control" name="direct_link" id="direct_link" required
-           @if(old('direct_link'))
-               value="{{old('direct_link')}}"
-           @else
-               @if(isset($item))
-                   value="{{$item->direct_link}}"
-        @endif
-        @endif
-    >
-</div>
+{{--<div class="form-group">--}}
+{{--    <label for="direct_link"><i class="red">*</i> direct_link</label>--}}
+{{--    <input type="text" class="form-control" name="direct_link" id="direct_link" required--}}
+{{--           @if(old('direct_link'))--}}
+{{--               value="{{old('direct_link')}}"--}}
+{{--           @else--}}
+{{--               @if(isset($item))--}}
+{{--                   value="{{$item->direct_link}}"--}}
+{{--        @endif--}}
+{{--        @endif--}}
+{{--    >--}}
+{{--</div>--}}
 
 <div class="form-group">
     <label for="no_duration"> Нет длительности </label>

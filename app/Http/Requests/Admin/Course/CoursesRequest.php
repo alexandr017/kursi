@@ -33,7 +33,7 @@ class CoursesRequest extends FormRequest
             'affiliate_link' => ['nullable', 'string'],
             'link' => ['required', 'string'],
             'link_type' => ['required', 'in:statistics_link,affiliate_link,link'],
-            'direct_link' => ['required', 'max:255'],
+            'direct_link' => ['nullable', 'max:255'],
             'duration' => ['nullable', 'numeric'],
             'duration_type' => ['nullable', 'max:255'],
             'cost' => ['required', 'numeric'],
