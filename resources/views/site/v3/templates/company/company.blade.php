@@ -39,7 +39,7 @@
                             </div>
                             <div class="school_short_card-header_reviews">
                                 <a class="school_short_card-header_reviews_value"
-                                   href="#vote">{{$company->reviews_count}}&nbsp;отзыва</a>
+                                   href="#vote">{{$company->rating_count}}&nbsp;отзыва</a>
                             </div>
                         </div>
 

@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="school_minicard-subtitle">
-                        @if($course->school ? $course->school->reviews->count() : 0)
+                        @if($course->school ? $course->school->rating_count : 0)
                             <div class="school_minicard-rating">
                                 <div class="school_minicard-rating_value">
                                     {{round($course->school_reviews_avg_rating ?: 0, 2)}}

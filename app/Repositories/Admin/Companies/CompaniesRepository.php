@@ -28,6 +28,13 @@ class CompaniesRepository
         return Company::find($id);
     }
 
+
+    public function save(Company $company) : bool
+    {
+        $company->save();
+        return true;
+    }
+
     /**
      * @throws Throwable
      */

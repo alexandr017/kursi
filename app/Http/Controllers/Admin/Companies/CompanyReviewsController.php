@@ -73,6 +73,12 @@ class CompanyReviewsController extends AdminController
 
         $result = $this->companyReviewsRepository->createReview($data);
 
+        $company = $this->companiesRepository->find($result['school_id']);
+        $company->rating_value = ($company->rating_value * $company->rating_count + $data['rating']) /
+            ($company->rating_count + 1);
+        $company->rating_count += 1;
+        $this->companiesRepository->save($company);
+
         if ($result) {
             return redirect()
                 ->route('admin.company-reviews.index')
@@ -123,6 +129,12 @@ class CompanyReviewsController extends AdminController
         $data = $request->all();
         $data = emptyDataToNull($data);
         $result = $this->companyReviewsRepository->updateReview($id, $data);
+
+        $company = $this->companiesRepository->find($result['school_id']);
+        $company->rating_value = ($company->rating_value * $company->rating_count + $data['rating']) /
+            ($company->rating_count + 1);
+
+        $this->companiesRepository->save($company);
 
         if ($result) {
             return redirect()

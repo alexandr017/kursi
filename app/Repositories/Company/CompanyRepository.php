@@ -29,7 +29,6 @@ class CompanyRepository implements CompanyRepositoryInterface
         $company = $this->query()
             ->where('id',  $id)
             ->where('status',1)
-            ->withCount('reviews')
             ->withCount('courses')
             ->with([
                 'reviews' => function($query) {
