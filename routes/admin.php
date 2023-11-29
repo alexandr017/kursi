@@ -25,7 +25,9 @@ Route::middleware(['admin'])->prefix('admin')->as('admin.')->group(function () {
     // education section
     Route::resource('listings', ListingsController::class)->except('show');
     Route::get('listings/{id}/edit/courses', [ListingsController::class, 'coursesList'])->name('listings.courses');
+    Route::get('listings/{id}/edit/courses-edit', [ListingsController::class, 'coursesListForEdit'])->name('listings.courses.edit');
     Route::post('listings/{id}/edit/courses', [ListingsController::class, 'updateCoursesSort'])->name('updateCoursesSort');
+    Route::post('listings/{id}/edit/courses-edit', [ListingsController::class, 'updateListingCourses'])->name('updateListingCourses');
     Route::resource('companies', CompaniesController::class)->except('show');
     Route::resource('company-reviews', CompanyReviewsController::class)->except('show');
     Route::resource('courses', CoursesController::class)->except('show');

@@ -7,6 +7,7 @@
     <br>
 
     <a href="{{route('admin.listings.courses', [$item->id])}}" class="btn btn-primary"><i class="far fa-address-card"></i> Ранжирование курсов</a>
+    <a href="{{route('admin.listings.courses.edit', [$item->id])}}" class="btn btn-primary"><i class="far fa-address-card"></i> Привязка курсов </a>
     <br>
     <br>
 

@@ -10,6 +10,7 @@ use App\Repositories\Admin\Courses\CoursesRepository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\DB;
 use Request;
 use Throwable;
 use App\Services\Breadcrumbs\BreadcrumbsConverter;
@@ -179,6 +180,24 @@ class ListingsController extends AdminController
         return view('admin.v2.listings.courses', compact('id', 'courses', 'currentCourses', 'breadcrumbs'));
     }
 
+    /**
+     * Show the form for editing the specified resource.
+     * @param int $id
+     * @return View
+     */
+    public function coursesListForEdit(int $id) : View
+    {
+        $courses = $this->coursesRepository->getAllCoursesForListing($id);
+        $allCourses = $this->coursesRepository->getAll();
+
+        $breadcrumbs = [
+            ['h1' => 'Листиинги', 'link' => route('admin.listings.index')],
+            ['h1' => 'Редактирование'],
+        ];
+
+        return view('admin.v2.listings.courses-edit', compact('id', 'courses', 'allCourses', 'breadcrumbs'));
+    }
+
     public function updateCoursesSort(FormRequest $request, $id): RedirectResponse
     {
         $data = $request->all()['course'] ?? [];
@@ -203,6 +222,40 @@ class ListingsController extends AdminController
             return redirect()
                 ->route('admin.listings.edit',$id)
                 ->with('flash_errors', 'Ошибка Ранжирования!');
+        }
+    }
+
+
+    public function updateListingCourses(FormRequest $request, $id): RedirectResponse
+    {
+        $data = $request->all()['courses'] ?? [];
+
+        $existedCourses = $this->listingRepository->getListingCoursesByListingId($id);
+        $dataForSave = [];
+
+        foreach ($data as $courseId) {
+            $existedData = $existedCourses->where('course_id', $courseId)->first();
+
+            $dataForSave[] = [
+                'listing_id' => $id,
+                'course_id' => $courseId,
+                'sort' => !is_null($existedData) ? $existedData->sort : 100
+            ];
+        }
+
+        $result = DB::transaction(function() use($id, $dataForSave): bool
+        {
+            return $this->listingRepository->syncCourses($id, $dataForSave);
+        });
+
+        if ($result) {
+            return redirect()
+                ->route('admin.listings.edit',$id)
+                ->with('flash_success', 'Список курсов обнавлен!');
+        } else {
+            return redirect()
+                ->route('admin.listings.edit',$id)
+                ->with('flash_errors', 'Ошибка обновления списка !');
         }
     }
 
