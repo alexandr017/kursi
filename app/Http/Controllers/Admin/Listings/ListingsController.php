@@ -190,6 +190,12 @@ class ListingsController extends AdminController
         $courses = $this->coursesRepository->getAllCoursesForListing($id);
         $allCourses = $this->coursesRepository->getAll();
 
+        $existedIds = $courses->pluck('id');
+        foreach ($allCourses as $course) {
+            if ($existedIds->contains($course->id)) {
+                $course->checked = true;
+            }
+        }
         $breadcrumbs = [
             ['h1' => 'Листиинги', 'link' => route('admin.listings.index')],
             ['h1' => 'Редактирование'],

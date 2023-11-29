@@ -26,7 +26,7 @@
                     <td>
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="courses[]" value="{{$item->id}}" @if(isset($item) && $courses->pluck('id')->contains($item->id)) checked @endif >
+                                <input type="checkbox" name="courses[]" value="{{$item->id}}" @if($item->checked) checked @endif >
                                 {{$item->title}}
                             </label>
                         </div>
