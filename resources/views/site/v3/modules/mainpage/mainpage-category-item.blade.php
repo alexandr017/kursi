@@ -10,7 +10,7 @@
         </a>
     </div>
 
-    <ul class="second_lvl" id=`second_lvl_{{$listing->id}}`>
+    <ul class="second_lvl categories_second_lvl" id=`second_lvl_{{$listing->id}}`>
         <input type="checkbox" name="" id=`open_section_{{$listing->id}}` value="" onchange="handleCategoryItems(event)">
 
         <div>

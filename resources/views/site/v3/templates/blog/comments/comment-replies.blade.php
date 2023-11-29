@@ -183,7 +183,6 @@
 <style>
     body {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        padding: 8px 8px 8px 18px;
         box-sizing: border-box;
         margin: 0 auto;
     }
