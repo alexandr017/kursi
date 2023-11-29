@@ -110,7 +110,7 @@
                     </div>
                 </div>
 
-                @if($company->reviews_count)
+                @if($company->rating_count)
                     @include('site.v3.modules.company-reviews.company-reviews-main')
                 @endif
 
