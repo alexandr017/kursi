@@ -8,6 +8,7 @@ use DB;
 use App\Models\Listing\Listing;
 use App\Services\FakeRating\FakeRating;
 use App\Models\Urls\Url;
+use Illuminate\Database\Eloquent\Collection;
 use Throwable;
 
 class ListingsRepository
@@ -121,6 +122,11 @@ class ListingsRepository
         ListingCourse::query()->insert($data);
 
         return true;
+    }
+
+    public function getListingCoursesByListingId(int $id): Collection
+    {
+        return ListingCourse::query()->where('listing_id', $id)->get();
     }
 
 }

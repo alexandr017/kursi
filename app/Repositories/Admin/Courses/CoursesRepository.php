@@ -78,4 +78,14 @@ class CoursesRepository
         return true;
     }
 
+
+    public function getAll(): Collection
+    {
+        return Course::query()
+            ->whereNull('deleted_at')
+            ->select(['id', 'title'])
+            ->where('status', 1)
+            ->get();
+    }
+
 }
