@@ -32,7 +32,7 @@
                         </div>
                     </td>
                     <td>
-                        <label for="course_{{$item->id}}"><i class="red"></i>{{$item->title}}</label>
+                        <label for="course_{{$item->id}}"><i class="red"></i>{{$item->school?->name}}</label>
                     </td>
                 </tr>
                 @endforeach

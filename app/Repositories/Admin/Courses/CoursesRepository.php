@@ -83,8 +83,9 @@ class CoursesRepository
     {
         return Course::query()
             ->whereNull('deleted_at')
-            ->select(['id', 'title'])
+            ->select(['id', 'title', 'company_id'])
             ->where('status', 1)
+            ->with(['school'])
             ->get();
     }
 
