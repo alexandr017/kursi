@@ -7,6 +7,11 @@ class BreadcrumbsConverter
     public static function put(string $url, string $h1) : string
     {
         $breadcrumbs = '';
+
+        if (str_starts_with( $url,'/')) {
+            $url = substr($url,1);
+        }
+
         $partsAlias = explode('/', $url);
 
         if (count($partsAlias) == 1) {
