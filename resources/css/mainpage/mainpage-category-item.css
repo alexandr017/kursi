@@ -193,6 +193,12 @@ label.open_section_btn:after {
     display: none;
 }
 
+@media screen and (min-width: 860px){
+   .categories_second_lvl {
+       margin: 0;
+   }
+}
+
 @media screen and (max-width: 860px) {
     .section_slider-grey_img {
         display: block;
