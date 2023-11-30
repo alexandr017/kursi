@@ -1,6 +1,7 @@
 @extends('admin.v2.layout')
 @section('title', 'Листинги - Ранжирование курса')
 @section('h1', 'Листинги - Ранжирование курса')
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 @section('content')
 
@@ -9,6 +10,7 @@
         {{ method_field('POST') }}
 
         <input type="hidden" name="_token" id="key" value="{{ csrf_token() }}">
+        <input type="text" id="searchByCourses" placeholder="Поиск по курсам и школам ">
 
         <table class="table table-hover" id="coolTable">
             <tr>
@@ -35,5 +37,23 @@
 
     </form>
 
+    <script>
+        $(document).ready(function() {
+            // Add an event listener for the input field
+            $('#searchByCourses').on('input', function() {
+                let searchTerm = $(this).val().toLowerCase();
+
+                // Loop through rows and hide/show based on the search term
+                $('table#coolTable tbody tr').each(function() {
+                    let courseName = $(this).find(' label').text().toLowerCase();
+                    if (courseName.includes(searchTerm)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
+    </script>
 
 @endsection

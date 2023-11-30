@@ -30,10 +30,6 @@ class XMLSitemapController extends Controller
             ->get();
 
         $items [] = (object) [
-            'url' => 'object',
-        ];
-
-        $items [] = (object) [
             'url' => 'contacts',
         ];
 
