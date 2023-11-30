@@ -11,8 +11,16 @@ class DynamicSiteController extends Controller
     public function render()
     {
         $currentPath = \Request::path();
-        $resource = \DB::table('urls')->where(['url' => $currentPath])->first();
+        $resource = \DB::table('urls')->whereRaw('BINARY url = "' . $currentPath . '"')->first();
         $page = \Request::get('page') ?? 1;
+
+        if ($resource == null) {
+            $resource = \DB::table('urls')->where(['url' => $currentPath])->first();
+
+            if (!is_null($resource)) {
+                return redirect(strtolower($currentPath));
+            }
+        }
 
         if ($resource != null) {
             $class = $this->getClassName($resource->section_type);
