@@ -25,6 +25,10 @@ class BreadcrumbsConverter
         $needUrl = implode('/', $partsAlias);
 
 
+        if ($needUrl == 'schools') {
+            return 'Школы@schools' . PHP_EOL . $h1;
+        }
+
         $urlModel = \DB::table('urls')->where(['url' => $needUrl])->first();
 
         $class = match($urlModel->section_type) {
