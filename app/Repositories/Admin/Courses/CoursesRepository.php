@@ -9,13 +9,13 @@ use Illuminate\Database\Eloquent\Collection;
 
 class CoursesRepository
 {
-    public function getAllCoursesForShow() : array
+    public function getAllCoursesForShow()
     {
-        return DB::table('courses')
-            ->select(['id', 'title', 'status'])
+        return Course::query()
+            ->select(['id', 'title', 'status', 'company_id'])
+            ->with(['school'])
             ->whereNull('deleted_at')
-            ->get()
-            ->toArray();
+            ->get();
     }
 
     public function getAllCoursesForListing(int $listingId): Collection
