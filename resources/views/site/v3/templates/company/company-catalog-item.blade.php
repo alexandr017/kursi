@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="product-item-vote_count-value">
-            <a href="{{linkWithSlash($company->url?->url)}}#vote">({{$company->rating_count}}<span> отзывов</span>)</a>
+            <a href="{{linkWithSlash($company->url?->url)}}#vote">({{$company->rating_count}}<span> {{reviewWord($company->rating_count) }} </span>)</a>
         </div>
         <div class="product-item-kurses">
             <div class="product-item-kurses-book">

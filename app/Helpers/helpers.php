@@ -137,6 +137,18 @@ if (! function_exists('durationWord')) {
     }
 }
 
+if (! function_exists('reviewWord')) {
+    /**
+     * @param string $durationType
+     * @param int $value
+     * @return string
+     */
+    function reviewWord(int $value) : string
+    {
+        return wordByCount($value, ['отзыв', 'отзыва ', 'отзывов']);
+    }
+}
+
 
 function productStructuredDataCalculate(object $courses) : array
 {
