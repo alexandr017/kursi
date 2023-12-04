@@ -61,6 +61,11 @@ class CompaniesController extends AdminController
 
         $data = $request->all();
         $data = emptyDataToNull($data);
+
+        if (!isset($data['rating_count'])) {
+            $data['rating_count'] = 0;
+        }
+
         $data['breadcrumbs'] = BreadcrumbsConverter::put($data['url'], $data['h1']);
         $result = $this->companyRepository->createCompany($data);
 
@@ -112,6 +117,9 @@ class CompaniesController extends AdminController
 
         $data = $request->all();
         $data = emptyDataToNull($data);
+        if (!isset($data['rating_count'])) {
+            $data['rating_count'] = 0;
+        }
         $result = $this->companyRepository->updateCompany($id, $data);
 
         if ($result) {
