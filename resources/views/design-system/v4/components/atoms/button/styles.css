@@ -4,6 +4,17 @@ button:not(:disabled),
 [type="submit"]:not(:disabled) {
     cursor: pointer;
 }
+/* hidden focus for link button */
+a.btn.disabled,
+a.btn.disabled:focus span,
+a.btn.disabled:focus-visible span,
+a.btn.disabled.btn-md,
+a.btn.disabled.btn-lg {
+    cursor: auto;
+    outline: none;
+    box-shadow: unset;
+    border: unset;
+}
 
 button, select {
     text-transform: none;
@@ -17,144 +28,288 @@ button,
 }
 
 .btn {
-    --_btn-color: var(--btn-color, --light_btn_primary_normal);
-    --_btn-bg: var( --btn-bg, transparent);
-    --_btn-border-color: var(--btn-border-color, transparent);
-    display: inline-block;
+    display: flex;
     margin: 0;
     padding: 0;
     position: relative;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    vertical-align: middle;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-    border: 1px solid var(--_btn-border-color);
-    color: var(--_btn-color);
-    background-color: var(--_btn-bg);
+    border: none;
+    background-color: transparent;
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
     transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
 }
 
+.btn-primary,
+.btn-secondary-light,
+.btn-secondary-dark,
+.btn-primary.btn-lg,
+.btn-secondary-light.btn-lg,
+.btn-secondary-dark.btn-lg {
+    padding: 16px 40px;
+    height: 52px;
+}
+
+/* Light mode button all backgrounds primary  */
+.btn-primary {
+    color: var(--light_text_dark-bg_primary, #FFFFFF);
+    background-color: var(--light_btn_primary_normal, #141414);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn-primary:focus-visible {
+    outline: 3px solid var(--main_primary, #6349FF);
+    background-color: var(--light_btn_primary_focused, #2C2D2E);
+}
+
 @media (hover: hover) {
-    .btn:hover {
-        --btn-color: var(--main_primary);
-    }
-
-    .btn.btn-dark-bg:hover {
-        --btn-color: var(--light_text_dark-bg_secondary);
-    }
-
-    .btn.btn-flex:hover {
-        --btn-color: var(--light_text_dark-bg_secondary);
+    .btn-primary:hover {
+        background-color: var(--light_btn_primary_hovered, #2C2D2E);
     }
 }
 
 @media (hover: none) {
-    .btn:active {
-        color: var(--main_primary);
+    .btn-primary:active {
+        background-color: var(--light_btn_primary_hovered, #2C2D2E);
     }
 }
 
-.btn__icon-right {
-    transform: rotate(180deg);
+.btn-primary.disabled,
+.btn-primary:disabled {
+    color: var(--light_text_dark-bg_quarternary, rgba(255, 255, 255, 0.20));
+    background-color: var(--light_btn_primary_disabled, #2C2D2E);
 }
 
-.btn.btn-dark-bg:active {
-    --btn-color: var(--main-primary);
-    border: 1px solid var(--main-primary);
+/* Light mode button light background secondary */
+
+.btn-secondary-light {
+    color: var(--light_btn_primary_normal, #141414);
+    background-color: var(--light_btn_dark-bg_secondary_normal, #FFFFFF);
 }
 
-.btn.btn-flex:active {
-    --btn-color: var(--main-primary);
+.btn-secondary-light:focus-visible {
+    outline: 3px solid var(--main_primary, #6349FF);
+    background-color: var(--light_btn_dark-bg_secondary_focused, #FFFFFF);
+    color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
 }
 
-.btn:disabled,
-.btn.btn-dark-bg:disabled {
-    --btn-color: var(--light_btn_dark-bg_secondary_disabled);
-    border: transparent;
+@media (hover: hover) {
+    .btn-secondary-light:hover {
+        background-color: var(--light_btn_dark-bg_secondary_hovered, #FFFFFF);
+        color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+    }
 }
 
-.btn-primary {
-
+@media (hover: none) {
+    .btn-secondary-light:active {
+        background-color: var(--light_btn_dark-bg_secondary_hovered, #FFFFFF);
+        color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+    }
 }
 
-.btn-secondary {
-
+.btn-secondary-light.disabled,
+.btn-secondary-light:disabled {
+    color: var(--light_text_light-bg_quarternary, rgba(0, 0, 0, 0.20));
+    background-color: var(--light_btn_dark-bg_secondary_disabled, #FFFFFF);
 }
 
-.btn-tertiary {
+/* Light mode button dark background secondary */
 
+.btn-secondary-dark {
+    color: var(--light_btn_primary_normal, #141414);
+    background-color: var(--light_btn_light-bg_secondary_normal, #F5F6F7);
 }
 
-.btn-flex {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+.btn-secondary-dark:focus-visible {
+    outline: 3px solid var(--main_primary, #6349FF);
+    background-color: var(--light_btn_light-bg_secondary_focused, #F5F6F7);
+    color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+}
+
+@media (hover: hover) {
+    .btn-secondary-dark:hover {
+        background-color: var(--light_btn_light-bg_secondary_hovered, #F5F6F7);
+        color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+    }
+}
+
+@media (hover: none) {
+    .btn-secondary-dark:active {
+        background-color: var(--light_btn_light-bg_secondary_hovered, #F5F6F7);
+        color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+    }
+}
+
+.btn-secondary-dark.disabled,
+.btn-secondary-dark:disabled {
+    color: var(--light_text_light-bg_quarternary, rgba(0, 0, 0, 0.20));
+    background-color: var(--light_btn_light-bg_secondary_disabled, #F5F6F7);
+}
+
+/* Light mode button all background tertiary */
+
+.btn-tertiary-primary,
+.btn-tertiary-secondary,
+.btn-tertiary-label,
+.btn-tertiary-left,
+.btn-tertiary-right {
+    background-color: transparent;
+    letter-spacing: -0.01em;
+    font-style: normal;
+    border-radius: unset;
+}
+
+.btn-tertiary-primary {
+    color: var(--main_primary, #6349FF);
+}
+
+.btn-tertiary-primary:focus-visible {
+    box-shadow: 0px 1px var(--main_secondary, #492FE4);
+    color: var(--main_secondary, #492FE4);
+}
+.btn-tertiary-primary.btn-md:focus-visible,
+.btn-tertiary-secondary.btn-md:focus-visible,
+.btn-tertiary-secondary:focus-visible,
+.btn-tertiary-label:focus-visible {
+    box-shadow: 0px 1px var(--main_primary, #6349FF);
+    color: var(--main_primary, #6349FF);
+}
+.btn-tertiary-left:focus-visible,
+.btn-tertiary-right:focus-visible {
+    color: var(--main_primary, #6349FF);
+}
+.btn-tertiary-left:focus-visible .btn-tertiary-text,
+.btn-tertiary-right:focus-visible .btn-tertiary-text {
+    box-shadow: 0px 1px var(--main_primary, #6349FF);
+}
+
+@media (hover: hover) {
+    .btn-tertiary-primary:hover {
+        color: var(--main_secondary, #492FE4);
+    }
+
+    .btn-tertiary-primary.btn-md:hover,
+    .btn-tertiary-secondary:hover,
+    .btn-tertiary-secondary.btn-md:hover {
+        color: var(--main_primary, #6349FF);
+    }
+
+    .btn-tertiary-label:hover,
+    .btn-tertiary-left:hover,
+    .btn-tertiary-right:hover {
+        color: var(--light_btn_primary_normal, #141414);
+    }
+}
+
+@media (hover: none) {
+    .btn-tertiary-primary:active {
+        color: var(--main_secondary, #492FE4);
+    }
+
+    .btn-tertiary-primary.btn-md:active,
+    .btn-tertiary-secondary.btn-md:active,
+    .btn-tertiary-secondary:active {
+        color: var(--main_primary, #6349FF);
+    }
+
+    .btn-tertiary-label:active,
+    .btn-tertiary-left:active,
+    .btn-tertiary-right:active {
+        color: var(--light_btn_primary_normal, #141414);
+    }
+}
+
+.btn-tertiary-primary.disabled,
+.btn-tertiary-primary:disabled,
+.btn-tertiary-primary.btn-md.disabled,
+.btn-tertiary-primary.btn-md:disabled,
+.btn-tertiary-secondary.disabled,
+.btn-tertiary-secondary:disabled,
+.btn-tertiary-secondary.btn-md.disabled,
+.btn-tertiary-secondary.btn-md:disabled,
+.btn-tertiary-label.disabled,
+.btn-tertiary-label:disabled,
+.btn-tertiary-label.btn-md.disabled,
+.btn-tertiary-label.btn-md:disabled,
+.btn-tertiary-left.disabled,
+.btn-tertiary-left:disabled,
+.btn-tertiary-left.btn-md.disabled,
+.btn-tertiary-left.btn-md:disabled,
+.btn-tertiary-right.disabled,
+.btn-tertiary-right:disabled,
+.btn-tertiary-right.btn-md.disabled,
+.btn-tertiary-right.btn-md:disabled {
+    color: var(--light_text_light-bg_quarternary, rgba(0, 0, 0, 0.20));
+}
+
+/* Light mode button all background tertiary secondary */
+
+.btn-tertiary-secondary {
+    color: var(--light_text_light-bg_primary, #141414);
+}
+
+/* Light mode button all background tertiary label */
+
+.btn-tertiary-label,
+.btn-tertiary-primary.btn-md,
+.btn-tertiary-secondary.btn-md {
+    color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+}
+
+/* Light mode button all background tertiary left  */
+
+.btn > svg > path {
+   stroke: currentColor;
+}
+
+.btn-tertiary-left {
+    color: var(--light_text_light-bg_tertiary, rgba(0, 0, 0, 0.45));
     gap: 4px;
 }
 
-.btn-dark-bg {
-    border-radius: 8px;
-    width: 44px;
+/* Light mode button all background tertiary right */
+
+.btn-tertiary-right {
+    color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+    gap: 4px;
+}
+
+/* button tertiary size medium */
+
+.btn-primary.btn-md,
+.btn-secondary-light.btn-md,
+.btn-secondary-dark.btn-md,
+.btn-secondary-right.btn-md {
+    padding: 12px 32px;
     height: 44px;
-    background: var(--light_btn_dark-bg_secondary_normal);
 }
 
-/* button-icon */
-svg rect {
-    fill: currentColor;
+.btn-tertiary-primary.btn-md,
+.btn-tertiary-secondary.btn-md,
+.btn-tertiary.btn-md,
+.btn-tertiary-left.btn-md,
+.btn-tertiary-right.btn-md {
+    font-size: 0.8125rem;
 }
 
-svg path {
-    stroke: currentColor;
+.btn-tertiary-left.btn-md .btn-tertiary-icon {
+    width: 12px;
+    height: 12px;
 }
 
-.btn__icon {
-    display: inline-block;
-    vertical-align: -.2em;
-    width: 24px;
-    height: 24px;
+.btn.btn-wide {
+    width: 100%;
 }
 
-.btn__text {
-    z-index: 1;
-    background: #fff;
-}
-
-@media screen and (max-width: 1023px) {
-    .btn__icon {
-        width: 20px;
-        height: 20px;
-        border-radius: 8px;
-    }
-}
-
-/* counter */
-.counter {
-    display: flex;
-    width: 16px;
-    height: 16px;
-    transform: translateX(-16px);
-    border-radius: 50%;
-    padding-bottom: 0px;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-    transition: all .15s;
-    background: var(--main_primary, #6349FF);
-    color: var(--light_text_dark-bg_primary, #FFFFFF);
-
-    /* шрифты задать через переменные */
-    font-family: Suisse Intl, sans-serif;
-    font-size: 0.6667rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
-    letter-spacing: -0.1px;
-}
-
-.btn-flex.success .counter {
-    visibility: visible;
-    transform: translateX(0);
+.btn.hidden {
+    display: none;
 }

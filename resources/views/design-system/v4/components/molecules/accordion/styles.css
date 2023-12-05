@@ -1,0 +1,113 @@
+.accordion-item {
+    border-radius: 12px;
+    padding: 0 24px;
+    background: var(--light_fill_dark-bg_secondary, #FFFFFF);
+}
+
+.accordion-item:not(:first-child) {
+    margin-top: 12px;
+}
+
+summary::-webkit-details-marker{display:none;}
+summary::-moz-list-bullet{list-style-type:none;}
+summary::marker{display:none;}
+
+summary {
+    user-select: none;
+}
+
+.accordion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 24px 0;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.accordion-item .accordion-title {
+    margin-right: 10px;
+}
+
+.accordion-icon path {
+    stroke: currentColor;
+}
+
+.accordion-item[open] .accordion-icon {
+    transform: rotate(-180deg);
+}
+
+.panel {
+    overflow: hidden;
+    padding-bottom: 24px;
+    margin-top: -6px;
+    line-height: 1.25rem;
+    font-size: 0.9375rem;
+}
+
+.panel ul:not(:first-child),
+.panel ol:not(:first-child),
+.panel p:not(:first-child) {
+    margin-top: 20px;
+}
+
+.accordion-item:focus {
+    outline: none;
+}
+
+.accordion-item:focus-visible {
+    outline: 2px solid var(--main_primary, #6349FF);
+}
+
+@media (hover: hover) {
+    .accordion-item:hover .accordion {
+        color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+    }
+}
+
+
+
+/*.accordion-line {*/
+/*    line-height: 2rem;*/
+/*}*/
+/*.col-4-accordion-line{*/
+/*    width: 25%;*/
+/*    float: right;*/
+/*}*/
+/*.panel .accordion-list .accordion-col:not(:first-of-type) {*/
+/*    margin-left: 60px;*/
+/*}*/
+
+/*.panel .accordion-list .accordion-col .accordion-row {*/
+/*    margin-top: 10px;*/
+/*}*/
+
+@media screen and (max-width: 1023px) {
+    .accordion-item {
+        padding: 0 20px;
+        border-radius: 10px;
+    }
+
+    .accordion {
+        padding: 20px 0;
+        font-size: 0.9375rem;
+        letter-spacing: -0.01em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .accordion-item {
+        padding: 0 16px;
+        border-radius: 8px;
+    }
+
+    .accordion {
+        padding: 16px 0;
+        font-size: 0.9375rem;
+        letter-spacing: -0.01em;
+    }
+}

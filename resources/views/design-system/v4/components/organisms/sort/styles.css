@@ -1,0 +1,146 @@
+@import "../../molecules/dropdown-list/styles.css";
+
+.sort {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sort-container {
+    position: relative;
+}
+
+.sort-header {
+    display: flex;
+    align-items: end;
+    justify-content: right;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.sort-status {
+    line-height: 1.1rem;
+    font-size: 0.9375rem;
+    user-select: none;
+}
+
+.dropdown-list {
+    position: absolute;
+    right: 0;
+    top: 37px;
+
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+}
+
+.sort-container.open .dropdown-list {
+    opacity: 1;
+    z-index: 1;
+    visibility: visible;
+}
+
+/* шторка сортировки */
+.overlay-swipe {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all .15s ease-in-out;
+
+    visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    background-color: var(--transparent_black-2, rgba(0, 0, 0, 0.60));
+    overflow-y: hidden;
+    pointer-events: auto;
+}
+
+.overlay-swipe.active {
+    z-index: 500;
+    visibility: visible;
+    opacity: 1;
+}
+
+.draggable-block {
+    background-color: var(--neutral_white, #FFFFFF);
+    border-radius: 20px 20px 0px 0px;
+    transition: all .3s ease-in-out;
+    bottom: -100%;
+    width: 100%;
+    /* зачем max-height?  */
+    max-height: calc(100% - 12px);
+    overflow: auto;
+    position: relative;
+    padding: 32px 0 16px;
+}
+
+.draggable-block::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    left: calc(50% - 24px);
+    border-radius: 2px;
+    width: 48px;
+    height: 4px;
+
+    background-color: var(--neutral_gray-4, #D5D6D7);
+    z-index: 10;
+}
+
+.draggable-block.show {
+    bottom: 0;
+}
+.draggable-block.dragged {
+    transition: none;
+}
+
+.draggable-block-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+.draggable-content {
+    /* какой max-height? */
+    max-height: calc(100vh - 164px);
+    overflow: auto;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.draggable-block .dropdown-list {
+    width: 100%;
+    padding: 0;
+    gap: 8px;
+}
+.draggable-block.show .dropdown-list {
+    opacity: 1;
+    visibility: visible;
+    position: inherit;
+    z-index: 1;
+}
+.draggable-block .option {
+    padding: 8px 0;
+}
+.draggable-block .option::after{
+    right: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .sort-body {
+        display: none;
+    }
+}

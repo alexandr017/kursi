@@ -1,0 +1,68 @@
+@import "../../atoms/controls/styles.css";
+
+.list-controls {
+    box-shadow: 0 1px var(--neutral_gray-5, #EAECEE);
+    position: relative;
+}
+
+.list-controls-header {
+    padding: var(--spacing-x4, 16px) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--light_text_light-bg_primary, #141414);
+    user-select: none;
+    cursor: pointer;
+}
+
+.list-controls-header:focus {
+    outline: none;
+}
+
+.list-controls.open .list-controls-icon {
+    transform: rotate(-180deg);
+}
+
+.list-controls-title {
+    font-style: normal;
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+.list-controls-icon path {
+    stroke: currentColor;
+}
+
+.list-controls-header:focus-visible {
+    color: var(--main_primary, #6349FF);
+}
+
+@media (hover: hover) {
+    .list-controls-header:hover {
+        color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+    }
+}
+
+.list-controls-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s;
+}
+
+.list-controls-content .checkbox-label,
+.list-controls-content .radio-label {
+    padding: var(--spacing-x2, 8px) 0;
+    cursor: pointer;
+}
+
+.list-controls-content .checkbox-label:first-child,
+.list-controls-content .radio-label:first-child {
+    padding-top: var(--spacing-x1, 4px);
+}
+
+.list-controls.open .list-controls-content {
+    padding-bottom: var(--spacing-x4, 16px);
+}
+
+

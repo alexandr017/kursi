@@ -1,0 +1,17 @@
+.badge {
+    border-radius: 14px;
+    padding: 2px 8px;
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+.badge-primary {
+    background-color: var(--main_primary, #6349FF);
+    color: var(--light_text_dark-bg_primary, #FFFFFF);
+}
+
+.badge-secondary {
+    background-color: var(--light_fill_light-bg_secondary, #F5F6F7);
+    color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+}

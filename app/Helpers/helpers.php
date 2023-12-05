@@ -177,107 +177,45 @@ function linkWithSlash(string|null $link) : string
 
 
 // функция для подключения верстки
-if (! function_exists('includeComponent')) {
-    /**
-     * @param string $component
-     * @param string $mode
-     * @return null
-     */
-    function includeComponent($component, $mode = null)
-    {
-        $component = resource_path('view/design-system/v4/components') . $component;
-        return includeDesignSystemItem($component, $mode);
+//if (! function_exists('includeComponent')) {
+//    function includeComponent(string $component, int $inFirstOrder = 0) : void
+//    {
+//        //$component = resource_path('views/design-system/v4/') . $component;
+//        addDesignItemToGlobalScope($component, $inFirstOrder);
+//    }
+//}
+//
+//
+//// функция для подключения натяжки
+//if (! function_exists('includeModule')) {
+//    function includeModule(string $component, int $inFirstOrder = 0) : void
+//    {
+//        //$component = resource_path('views/site/v3/modules') . $component;
+//        addDesignItemToGlobalScope($component, $inFirstOrder);
+//    }
+//}
+
+
+
+function includeComponent(string $component, int $inFirstOrder = 0) : void
+{
+    if (!isset($GLOBALS['m'])) {
+        $GLOBALS['m'] = [];
+        $GLOBALS['m']['first_order'] = [];
+        $GLOBALS['m']['default_order'] = [];
     }
-}
 
-
-// функция для подключения натяжки
-if (! function_exists('includeModule')) {
-    /**
-     * @param string $component
-     * @param string $mode
-     * @return null
-     */
-    function includeModule($component, $mode = null)
-    {
-        $component = resource_path('view/site/v3/modules') . $component;
-        return includeDesignSystemItem($component, $mode);
-    }
-
-}
-
-
-// функция для подключения натяжки
-if (! function_exists('includeDesignSystemItem')) {
-    /**
-     * @param string $component
-     * @param string $mode
-     * @return null
-     */
-    function includeDesignSystemItem($component, $mode = null)
-    {
-        if (!isset($GLOBALS ['m'])) {
-            $GLOBALS ['m'] = [];
+    if (!in_array($component, $GLOBALS ['m']['default_order'])) {
+        if ($inFirstOrder) {
+            $GLOBALS['m']['first_order'] [] = $component;
+        } else {
+            $GLOBALS['m']['default_order'] [] = $component;
         }
 
-        $priorityArr = ['amp', 'turbo', 'mob', 'pc'];
-
-        // site.v3.modules.
-        $template = $component ;
-
-        // определяем режим, если он не задан явно
-        if ($mode == null) {
-            if (isAmpPage()) {
-                $mode = 'amp';
-            } elseif (isTurboPage()) {
-                $mode = 'turbo';
-            } elseif (isMobileDevice()) {
-                $mode = 'mob';
-            } else {
-                $mode = 'pc';
-            }
+        $htmlFile = $component . '/index.blade.php';
+        if (file_exists(resource_path('views/design-system/v4/') . $htmlFile)) {
+            view('design-system.v4.' . $component . '.index')->render();
         }
-
-
-        // согласно приоритету грузим скрипты и стили модуля (если существует файл css)
-        foreach ($priorityArr as $priority) {
-
-            if ($mode == $priority) {
-
-                $jsFile = $template . '/' . $mode . '.js';
-                if (file_exists($jsFile)) {
-                    if (!in_array($component, $GLOBALS ['m'])) {
-                        $GLOBALS ['m'][] = $component;
-                    }
-                }
-
-                $cssFile = $template . '/' . $mode . '.css';
-
-                if (\Cache::has($cssFile)) {
-                    echo \Cache::get($cssFile);
-                    //echo 'body{load: from_cache}';
-                    return null;
-                }
-
-                if (file_exists($cssFile)) {
-                    $code = file_get_contents($cssFile);
-                    echo $code;
-                    \Cache::put($cssFile, $code, \Carbon\Carbon::now()->addMinutes(1));
-                    return null;
-                } else {
-                    if ($mode == 'amp') {
-                        $mode = 'turbo';
-                    } elseif ($mode == 'turbo') {
-                        $mode = 'mob';
-                    } elseif($mode == 'mob') {
-                        $mode = 'pc';
-                    }
-                }
-            }
-        }
-
-        return null;
-
     }
 }
 
@@ -337,4 +275,31 @@ if (! function_exists('isMobileDevice')) {
         }
         return false;
     }
+}
+
+
+if (! function_exists('compressCSS')) {
+    /**
+     * @param string $s
+     * @return string
+     */
+    function compressCSS(string $s) : string
+    {
+        $s = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $s);
+        return str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $s);
+    }
+}
+
+
+function clearData(string $data) : string
+{
+    $hackBlackList = ['--', 'drop', ';', '#', '/*', '*/', 'version()', 'concat', 'extract'];
+
+    foreach ($hackBlackList as $term) {
+        if (strstr($data, $term)) {
+            return '';
+        }
+    }
+
+    return addslashes(stripslashes(htmlspecialchars(strip_tags($data))));
 }

@@ -1,0 +1,119 @@
+@import "components/molecules/filter-select";
+@import "components/atoms/subnavigation";
+
+.filter-list {
+    border-radius: 15px;
+    background: var(--light_fill_dark-bg_secondary, #FFFFFF);
+    padding: 0 var(--spacing-x5, 20px) var(--spacing-x4, 16px);
+    max-width: 312px;
+}
+
+.filter-common-list {
+    margin-top: var(--spacing-x2, 8px);
+}
+
+.filter-mobile .filter-common-list {
+    margin-top: 0;
+}
+
+.filter-common-list .checkbox-label {
+    padding: var(--spacing-x2, 8px) 0;
+    cursor: pointer;
+}
+
+.filter-mobile-header {
+    display: none;
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    top: 0;
+    padding: 18px 0;
+    text-align: center;
+    background: var(--neutral_white, #FFFFFF);
+    z-index: 20;
+}
+
+.filter-mobile .filter-mobile-header {
+    display: block;
+}
+
+.filter-common-list .list-controls-header {
+    display: none;
+    pointer-events: none;
+    user-select: none;
+}
+
+.filter-mobile .list-controls-header {
+    display: block;
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.01em;
+    padding: var(--spacing-x5, 20px) 0 var(--spacing-x4, 16px);
+}
+
+.filter-header-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.filter-close {
+    position: absolute;
+    top: 18px;
+    right: 0;
+    cursor: pointer;
+}
+
+.filter-list.filter-mobile {
+    border-radius: unset;
+    padding: 56px var(--spacing-x4, 16px) 92px;
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    overflow: scroll;
+}
+
+.filter-list.hidden {
+    display: none;
+}
+
+.filter-mobile .list-controls-content {
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-mobile .list-controls-icon {
+    display: none;
+}
+
+.filter-mobile .filter-btn-wrapper {
+    background: var(--neutral_white, #ffffff);
+    padding: var(--spacing-x5, 20px) 0;
+    position: fixed;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    z-index: 20;
+}
+
+.filter-mobile label.reverse {
+    justify-content: space-between;
+}
+
+.btn-reset-courses {
+    margin-top: 20px;
+}
+
+.filter-mobile .btn-reset-courses {
+    margin-top: 16px;
+}

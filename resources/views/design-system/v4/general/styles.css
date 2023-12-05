@@ -19,7 +19,7 @@ body{
     line-height: 24px;
     text-align: left;
     color: var(--light_text_light-bg_primary, #141414);
-    background-color: var(--light_bg_primary, #F5F6F7);
+    /*background-color: var(--light_bg_primary, #F5F6F7);*/
 }
 
 body, input, textarea, select, .btn , .btn-1, .education-btn{
@@ -45,20 +45,24 @@ p {
     margin: var(--spacing-x5) 0;
 }
 
-ul, ol {
+.content ul,
+.content ol {
     padding: 0;
     margin: var(--spacing-x5) 0;
 }
 
-ul li {
+.content ul li {
     position: relative;
     list-style-type: none;
     padding-left: 13px;
     margin-top: 8px;
 }
 
+.content ul li:first-of-type {
+    margin-top: 0;
+}
 
-ul li:before {
+.content ul li:before {
     content: "";
     background: var(--light_text_light-bg_primary);
     width: 5px;
@@ -66,7 +70,7 @@ ul li:before {
     border-radius: 50%;
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 10px;
 }
 
 .border-radius {
@@ -88,7 +92,6 @@ ul li:before {
 hr {
     height: 1px;
     border: none;
-    background-color:#EBEBEB;
 }
 
 .text-center {
@@ -182,7 +185,7 @@ figure figcaption {
         margin: var(--spacing-x4) 0;
     }
 
-    ul, ol {
+    .content ul, ol {
         padding: 0;
         margin: var(--spacing-x4) 0;
     }
@@ -199,7 +202,7 @@ figure figcaption {
         margin: var(--spacing-x3) 0;
     }
 
-    ul, ol {
+    .content ul, ol {
         padding: 0;
         margin: var(--spacing-x3) 0;
     }

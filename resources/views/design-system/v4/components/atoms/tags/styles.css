@@ -1,0 +1,40 @@
+.tag {
+    text-decoration: none;
+    padding: 8px 12px;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    color: var(--light_text_light-bg_primary, #141414);
+    background-color: var(--light_fill_dark-bg_secondary, #FFFFFF);
+    border-radius: 18px;
+
+    font-size: 0.9375rem;
+    font-style: normal;
+    line-height: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+.tag:focus {
+    outline: none;
+}
+
+.tag:focus-visible {
+    outline: 2px solid var(--main_primary, #6349FF);
+}
+
+@media (hover: hover) {
+    .tag:hover {
+        color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+    }
+}
+
+.tag:active {
+    color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+}
+
+.tag.disabled {
+    outline: none;
+    color: var(--light_text_light-bg_quarternary, rgba(0, 0, 0, 0.20));
+    cursor: default;
+}
+

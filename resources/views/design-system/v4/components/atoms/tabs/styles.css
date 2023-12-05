@@ -1,0 +1,70 @@
+/*.tab-item {*/
+/*    position: absolute;*/
+/*    z-index: -1;*/
+/*    opacity: 0;*/
+/*    top: -9999px;*/
+/*}*/
+
+.tab-label {
+    padding: 8px 16px;
+    border-radius: 18px;
+    color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+    font-size: 0.9375rem;
+    letter-spacing: -0.01em;
+    line-height: 1.25rem;
+    cursor: pointer;
+}
+
+.tab-label.dark {
+    background-color: var(--light_fill_light-bg_secondary, #F5F6F7);
+}
+
+.tab-label.light {
+    background-color: var(--light_fill_dark-bg_secondary, #FFFFFF);
+    color: var(--light_text-light-background-secondary, rgba(0, 0, 0, 0.60));
+}
+
+.tab-label.selected {
+    background-color: var(--light_btn_primary_normal, #141414);
+    color: var(--light_text_dark-bg_primary, #FFFFFF);
+}
+
+/*.tab-item:focus,*/
+.tab-label:focus {
+    outline: none;
+}
+
+/*.tab-item:focus-visible + label,*/
+.tab-label:focus-visible {
+    outline: 2px solid var(--main_primary, #6349FF);
+    color: var(--light_text_light-bg_primary, #141414);
+}
+
+/*.tab-item:focus-visible + label.selected*/
+.tab-label.selected:focus-visible {
+    outline: 3px solid var(--main_primary, #6349FF);
+    background-color: var(--light_btn_primary_focused, #2C2D2E);
+    color: var(--light_text_dark-bg_primary, #FFFFFF);
+}
+
+@media (hover: hover) {
+    .tab-label.dark:hover,
+    .tab-label.light:hover {
+        color: var(--light_text_light-bg_primary, #141414);
+    }
+
+    .tab-label.selected:hover {
+        background-color: var(--light_btn_primary_hovered, #2C2D2E);
+        color: var(--light_text_dark-bg_primary, #FFFFFF);
+    }
+}
+
+.tab-label.dark:active,
+.tab-label.light:active {
+    color: var(--light_text_light-bg_primary, #141414);
+}
+
+.tab-label.selected:active {
+    background-color: var(--light_btn_primary_hovered, #2C2D2E);
+    color: var(--light_text_dark-bg_primary, #FFFFFF);
+}

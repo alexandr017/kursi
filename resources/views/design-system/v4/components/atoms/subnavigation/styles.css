@@ -1,0 +1,66 @@
+@import "../../atoms/button/styles.css";
+@import "../../atoms/button-icon/styles.css";
+
+.btn-filter {
+    position: relative;
+}
+
+.btn-filter .bi.bi-filter {
+    width: 20px;
+    height: 20px;
+}
+
+.bi-filter,
+.bi-sort {
+    margin-right: 4px;
+}
+
+.btn-text {
+    z-index: 1;
+    letter-spacing: -0.01em;
+}
+
+.btn-filter.success .counter {
+    /*visibility: visible;*/
+    /*transform: translateX(0);*/
+    display: flex;
+}
+
+.counter {
+    display: none;
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+    padding-top: 2px;
+    /*transform: translateX(-16px);*/
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    /*visibility: hidden;*/
+    transition: all .15s;
+    background: var(--main_primary, #6349FF);
+    color: var(--light_text_dark-bg_primary, #FFFFFF);
+
+    font-size: 0.625rem;
+    line-height: 1rem;
+    letter-spacing: -0.01em;
+}
+
+@media (hover: hover) {
+    .btn-filter:hover,
+    .btn-sort:hover {
+        color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+    }
+}
+
+@media (hover: none) {
+    .btn-filter:active,
+    .btn-sort:active {
+        color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+    }
+}
+
+.btn-filter:disabled,
+.btn-sort:disabled {
+    color: var(--light_text_light-bg_quarternary, rgba(0, 0, 0, 0.20));
+}

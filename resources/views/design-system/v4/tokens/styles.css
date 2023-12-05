@@ -115,13 +115,19 @@
 }
 
 .blur-size-l {
-    background: rgba(245, 246, 247, 0.85);
+    --webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
 }
 
 .blur-size-m {
-    background: rgba(245, 246, 247, 0.85);
+    --webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
 }
 
+.bg-light {
+    background: var(--light_fill_light-bg_blur, rgba(255, 255, 255, 0.85));
+}
 
+.bg-dark {
+    background: var(--light_fill_dark-bg_blur, rgba(245, 246, 247, 0.85));
+}

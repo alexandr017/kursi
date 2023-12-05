@@ -41,4 +41,9 @@ Route::prefix('auth')->group(function () {
 });
 
 
-Route::get('design-system', [App\Http\Controllers\DesignSystem::class, 'index']);
+Route::get('design-system', [App\Http\Controllers\DesignSystemController::class, 'index']);
+Route::get('design-system/templates', [App\Http\Controllers\DesignSystemController::class, 'templates']);
+Route::get('design-system/{component}', [App\Http\Controllers\DesignSystemController::class, 'component']);
+
+Route::get('test-page', [App\Http\Controllers\Site\V4\TestPageController::class, 'index']);
+Route::get('load-scripts', [App\Http\Controllers\Site\JsScriptsController::class, 'index']);

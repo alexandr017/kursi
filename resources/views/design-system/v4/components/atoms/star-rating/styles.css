@@ -1,0 +1,8 @@
+.rating-wrap {
+    display: flex;
+    gap: 4px;
+}
+
+.rating-wrap svg {
+    cursor: pointer;
+}
