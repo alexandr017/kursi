@@ -75,6 +75,18 @@ class ListingsController extends AdminController
         $data = $request->all();
         $data = emptyDataToNull($data);
         $data['breadcrumbs'] = BreadcrumbsConverter::put($data['url'], $data['h1']);
+        if (!isset($data['rating_count'])) {
+            $data['rating_count'] = 0;
+        }
+
+        if (!isset($data['title'])) {
+            $data['title'] = $data['h1'];
+        }
+
+        if (!isset($data['description'])) {
+            $data['description'] = $data['lead'];
+        }
+
         $result = $this->listingRepository->createListing($data);
 
         if ($result) {
@@ -128,6 +140,18 @@ class ListingsController extends AdminController
 
         $data = $request->all();
         $data = emptyDataToNull($data);
+        if (!isset($data['rating_count'])) {
+            $data['rating_count'] = 0;
+        }
+
+        if (!isset($data['title'])) {
+            $data['title'] = $data['h1'];
+        }
+
+        if (!isset($data['description'])) {
+            $data['description'] = $data['lead'];
+        }
+
         $result = $this->listingRepository->updateListing($id, $data);
 
         if ($result) {

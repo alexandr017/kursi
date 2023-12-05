@@ -2,6 +2,7 @@
 
 namespace App\Services\Company\Action;
 
+use App\Exceptions\Company\CompanyNotFoundException;
 use App\Repositories\Company\CompanyRepositoryInterface;
 
 class GetCompanyAction
@@ -12,6 +13,11 @@ class GetCompanyAction
 
     public function run(int $sectionId)
     {
-        return $this->companyRepository->getCompany($sectionId);
+        try {
+            return $this->companyRepository->getCompany($sectionId);
+
+        } catch (CompanyNotFoundException) {
+            abort(404);
+        }
     }
 }

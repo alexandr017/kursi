@@ -84,6 +84,19 @@ window.CKEDITOR_elements.forEach((el) => {
         // Whether or not to show the showAutoCompleteButton button on the toolbar
         showAutoCompleteButton: true,
 
+        on: {
+            paste: function (evt) {
+                // Get the pasted content
+                let pastedData = evt.data.dataValue;
+
+                if (!pastedData.startsWith('<')) {
+                    // Wrap the pasted content in <p> tags
+                    // Set the modified content back to the editor
+                    evt.data.dataValue = '<p>' + pastedData + '</p>';
+                }
+
+            }
+        }
     });
 });
 

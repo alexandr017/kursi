@@ -13,6 +13,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Название</th>
+            <th scope="col">Школа</th>
             <th scope="col">Статус</th>
             <th scope="col" style="min-width: 100px">Действия</th>
         </tr>
@@ -22,6 +23,7 @@
             <tr>
                 <th scope="row">{{$item->id}}</th>
                 <td>{{$item->title}}</td>
+                <td>{{$item->school?->name}}</td>
                 <td>
                     @if($item->status)
                         <span class="badge badge-success">Вкл</span>
