@@ -10,7 +10,7 @@ includeComponent("components/organisms/header");
         <div class="container">
             <div class="header-wrapper">
                 <div class="header-wrapper-left">
-                    <a class="header-logo header-menu-item" href="/">
+                    <a class="header-logo" href="/">
                         <img src="images/header-logo.svg" alt="Курсы.ру">
                     </a>
                     <button class="btn btn-primary btn-md btn-catalog header-menu-item">
@@ -37,118 +37,79 @@ includeComponent("components/organisms/header");
                         <span class="hamburger-l-2"></span>
                     </button>
                 </nav>
-                <div class="search-block with-links open-search-block">
-                    <div class="" >
-                        <input name="text" type="search" value="" class="" placeholder="Что хотите найти?" >
-                        <input class="" type="button" value="Найти">
+                <div class="search-block open-search-block">
+                    <div class="search-input-wrapper">
+                        <input class="form-control search-input-text" type="search" name="" value="" placeholder="Что хотите найти?">
                     </div>
+                    <button class="btn btn-tertiary-label search-block-clear hidden">Очистить</button>
+                    <button class="btn btn-primary search-btn hidden">Найти</button>
 
-                    <button class="search-block__clear hidden">Очистить</button>
-                    <button class="btn btn-cnv-square search-btn hidden" type="submit">Найти</button>
-                    <div class="clear search-close">
-                        <svg class="search-close-btn" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
-                            <rect x="3.69147" y="19.2479" width="22" height="1.5" rx="0.75" transform="rotate(-45 3.69147 19.2479)" fill="#616263"></rect>
-                            <rect x="4.75214" y="3.69141" width="22" height="1.5" rx="0.75" transform="rotate(45 4.75214 3.69141)" fill="#616263"></rect>
+                    <button class="btn btn-icon btn-icon-close search-close-btn">
+                        <svg class="bi" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3.96973" y="19.2781" width="22" height="1.5" rx="0.75" transform="rotate(-45 3.96973 19.2781)" fill="#141414"></rect>
+                            <rect x="5.03027" y="3.7218" width="22" height="1.5" rx="0.75" transform="rotate(45 5.03027 3.7218)" fill="#141414"></rect>
                         </svg>
-                    </div>
+                    </button>
 
-                    <div class="search-block-links" style="top: 58px;">
+                    <div class="search-block-links" >
                         <div class="container animate">
                             <div class="links-block-group">
-                                <div class="links-block">
-                                    <span class="h-title-small">Часто ищут</span>
+                                <div class="links-block ">
+                                    <div class="h-title-small">Часто ищут</div>
                                     <div class="links-block-columns">
                                         <div class="links-block-column">
-
-                                            <a class="search-link" href="/deposits/fizicheskim-licam" onclick="g('link_search')">
-                                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <rect width="36" height="36" rx="8" fill="#F4F5F6"></rect>
-                                                    <path d="M17.2187 21.8996C20.2953 21.8543 22.7528 19.3235 22.7075 16.2468C22.6623 13.1701 20.1314 10.7127 17.0547 10.7579C13.978 10.8032 11.5206 13.334 11.5659 16.4107C11.6111 19.4874 14.142 21.9448 17.2187 21.8996Z" stroke="#616263" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M24.5162 25.324L20.6831 20.7244" stroke="#616263" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <a class="btn btn-tertiary-light search-link" href="/dlya-detej" target="_blank">
+                                                <svg class="btn-tertiary-icon"  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12.9093 12.7607L17.0931 16.9445M8.63102 14.5036C11.7923 14.5036 14.3551 11.9408 14.3551 8.77952C14.3551 5.61822 11.7923 3.05548 8.63102 3.05548C5.46972 3.05548 2.90698 5.61822 2.90698 8.77952C2.90698 11.9408 5.46972 14.5036 8.63102 14.5036Z" stroke="black" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
-                                                Вклады физическим лицам
+                                                <span class="btn-tertiary-text">Для детей</span>
                                             </a>
-
-
-                                            <a class="search-link" href="/deposits/vygodnye" onclick="g('link_search')">
-                                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <rect width="36" height="36" rx="8" fill="#F4F5F6"></rect>
-                                                    <path d="M17.2187 21.8996C20.2953 21.8543 22.7528 19.3235 22.7075 16.2468C22.6623 13.1701 20.1314 10.7127 17.0547 10.7579C13.978 10.8032 11.5206 13.334 11.5659 16.4107C11.6111 19.4874 14.142 21.9448 17.2187 21.8996Z" stroke="#616263" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M24.5162 25.324L20.6831 20.7244" stroke="#616263" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <a class="btn btn-tertiary-light search-link" href="/programmirovanie" target="_blank">
+                                                <svg class="btn-tertiary-icon"  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12.9093 12.7607L17.0931 16.9445M8.63102 14.5036C11.7923 14.5036 14.3551 11.9408 14.3551 8.77952C14.3551 5.61822 11.7923 3.05548 8.63102 3.05548C5.46972 3.05548 2.90698 5.61822 2.90698 8.77952C2.90698 11.9408 5.46972 14.5036 8.63102 14.5036Z" stroke="black" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
-                                                Выгодные вклады
+                                                <span class="btn-tertiary-text">Программирование</span>
                                             </a>
-
-
-                                            <a class="search-link" href="/deposits/s-popolneniem" onclick="g('link_search')">
-                                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <rect width="36" height="36" rx="8" fill="#F4F5F6"></rect>
-                                                    <path d="M17.2187 21.8996C20.2953 21.8543 22.7528 19.3235 22.7075 16.2468C22.6623 13.1701 20.1314 10.7127 17.0547 10.7579C13.978 10.8032 11.5206 13.334 11.5659 16.4107C11.6111 19.4874 14.142 21.9448 17.2187 21.8996Z" stroke="#616263" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M24.5162 25.324L20.6831 20.7244" stroke="#616263" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <a class="btn btn-tertiary-light search-link" href="/dizajn" target="_blank">
+                                                <svg class="btn-tertiary-icon"  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12.9093 12.7607L17.0931 16.9445M8.63102 14.5036C11.7923 14.5036 14.3551 11.9408 14.3551 8.77952C14.3551 5.61822 11.7923 3.05548 8.63102 3.05548C5.46972 3.05548 2.90698 5.61822 2.90698 8.77952C2.90698 11.9408 5.46972 14.5036 8.63102 14.5036Z" stroke="black" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
-                                                С пополнением
+                                                <span class="btn-tertiary-text">Дизайн</span>
                                             </a>
-
                                         </div>
                                         <div class="links-block-column">
-
-                                            <a class="search-link" href="/deposits/juridicheskim-licam" onclick="g('link_search')">
-                                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <rect width="36" height="36" rx="8" fill="#F4F5F6"></rect>
-                                                    <path d="M17.2187 21.8996C20.2953 21.8543 22.7528 19.3235 22.7075 16.2468C22.6623 13.1701 20.1314 10.7127 17.0547 10.7579C13.978 10.8032 11.5206 13.334 11.5659 16.4107C11.6111 19.4874 14.142 21.9448 17.2187 21.8996Z" stroke="#616263" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M24.5162 25.324L20.6831 20.7244" stroke="#616263" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <a class="btn btn-tertiary-light search-link" href="/analitika" target="_blank">
+                                                <svg class="btn-tertiary-icon"  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12.9093 12.7607L17.0931 16.9445M8.63102 14.5036C11.7923 14.5036 14.3551 11.9408 14.3551 8.77952C14.3551 5.61822 11.7923 3.05548 8.63102 3.05548C5.46972 3.05548 2.90698 5.61822 2.90698 8.77952C2.90698 11.9408 5.46972 14.5036 8.63102 14.5036Z" stroke="black" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
-                                                Вклады юридическим лицам
+                                                <span class="btn-tertiary-text">Аналитика</span>
                                             </a>
-
-
-                                            <a class="search-link" href="/deposits/pensionnyj" onclick="g('link_search')">
-                                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <rect width="36" height="36" rx="8" fill="#F4F5F6"></rect>
-                                                    <path d="M17.2187 21.8996C20.2953 21.8543 22.7528 19.3235 22.7075 16.2468C22.6623 13.1701 20.1314 10.7127 17.0547 10.7579C13.978 10.8032 11.5206 13.334 11.5659 16.4107C11.6111 19.4874 14.142 21.9448 17.2187 21.8996Z" stroke="#616263" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M24.5162 25.324L20.6831 20.7244" stroke="#616263" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <a class="btn btn-tertiary-light search-link" href="/inostrannye-yazyki" target="_blank">
+                                                <svg class="btn-tertiary-icon"  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12.9093 12.7607L17.0931 16.9445M8.63102 14.5036C11.7923 14.5036 14.3551 11.9408 14.3551 8.77952C14.3551 5.61822 11.7923 3.05548 8.63102 3.05548C5.46972 3.05548 2.90698 5.61822 2.90698 8.77952C2.90698 11.9408 5.46972 14.5036 8.63102 14.5036Z" stroke="black" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
-                                                Вклады для пенсионеров
+                                                <span class="btn-tertiary-text">Иностранные языки</span>
                                             </a>
-
-
-                                            <a class="search-link" href="/deposits/v-rubljah" onclick="g('link_search')">
-                                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <rect width="36" height="36" rx="8" fill="#F4F5F6"></rect>
-                                                    <path d="M17.2187 21.8996C20.2953 21.8543 22.7528 19.3235 22.7075 16.2468C22.6623 13.1701 20.1314 10.7127 17.0547 10.7579C13.978 10.8032 11.5206 13.334 11.5659 16.4107C11.6111 19.4874 14.142 21.9448 17.2187 21.8996Z" stroke="#616263" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                    <path d="M24.5162 25.324L20.6831 20.7244" stroke="#616263" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <a class="btn btn-tertiary-light search-link" href="/marketing" >
+                                                <svg class="btn-tertiary-icon"  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12.9093 12.7607L17.0931 16.9445M8.63102 14.5036C11.7923 14.5036 14.3551 11.9408 14.3551 8.77952C14.3551 5.61822 11.7923 3.05548 8.63102 3.05548C5.46972 3.05548 2.90698 5.61822 2.90698 8.77952C2.90698 11.9408 5.46972 14.5036 8.63102 14.5036Z" stroke="black" stroke-opacity="0.6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                 </svg>
-                                                Вклады в рублях
+                                                <span class="btn-tertiary-text">Маркетинг</span>
                                             </a>
-
                                         </div>
                                     </div>
                                 </div>
-                                <div class="links-block">
-                                    <a class="h-title-small" href="/deposits" onclick="g('link_search')">
-                                        Вклады в банках
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                            <path d="M4 10L8 6L4 2" stroke="black" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </a>
-                                    <div class="links-block-list">
-                                        <a class="search-link" href="/banks/vtb/deposits" onclick="g('link_search')">
-                                            <img src="/v4/images/mini-logo/vtb.svg" alt="ВТБ">
-                                            ВТБ
-                                        </a>
-                                        <a class="search-link" href="/banks/sberbank/deposits" onclick="g('link_search')">
-                                            <img src="/v4/images/mini-logo/sber.svg" alt="Сбербанк">
-                                            Сбербанк
-                                        </a>
-                                        <a class="search-link" href="/banks/rshb/deposits" onclick="g('link_search')">
-                                            <img src="/v4/images/mini-logo/rshb.svg" alt="Россельхозбанк">
-                                            Россельхозбанк
-                                        </a>
+                                <div class="links-block hidden">
+                                    <div class="h-title-small result">Результаты поиска</div>
+                                    <div class="links-block-list search-links-result">
+                                        <a class="link tertiary-label search-link" href="#" target="_blank">Курсы UX/UI дизайна</a>
+                                        <a class="link tertiary-label search-link" href="#" target="_blank">Курсы графического дизайна</a>
+                                        <a class="link tertiary-label search-link" href="#" target="_blank">Курсы графического дизайна</a>
+                                        <a class="link tertiary-label search-link" href="#" target="_blank">Курсы 3D-дженералист</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="search-blurred" onclick="searchToggle()"></div>
                     </div>
                 </div>
                 <div class="catalog-overlay"></div>
