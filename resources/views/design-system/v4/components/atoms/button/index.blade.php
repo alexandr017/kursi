@@ -1,5 +1,5 @@
 <?php
-includeComponent('components/atoms/buttons');
+//includeComponent('components/atoms/button');
 ?>
 <div class="container">
     <div class="row" style="gap: 50px">

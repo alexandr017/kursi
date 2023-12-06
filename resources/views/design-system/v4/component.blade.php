@@ -1,6 +1,3 @@
-<?php
-includeComponent("components/$componentType/$componentName");
-?>
 @extends('design-system.v4.templates.layout')
 @section('title', 'Дизайн система - Шаблон "' . $componentType . ' - '. $componentName)
 @section('h1', 'Дизайн система - Шаблон "' . $componentType . ' - '. $componentName)

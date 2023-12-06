@@ -1,5 +1,5 @@
 <?php
-includeComponent('components/atoms/button');
+//includeComponent('components/atoms/button');
 includeComponent('components/atoms/button-icon');
 includeComponent('components/atoms/subnavigation');
 ?>

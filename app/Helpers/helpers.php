@@ -217,18 +217,42 @@ function includeComponent(string $component, int $inFirstOrder = 0) : void
         $GLOBALS['m']['default_order'] = [];
     }
 
-    if (!in_array($component, $GLOBALS ['m']['default_order'])) {
-        if ($inFirstOrder) {
-            $GLOBALS['m']['first_order'] [] = $component;
-        } else {
-            $GLOBALS['m']['default_order'] [] = $component;
+    $isInArray = false;
+    if (in_array($component, $GLOBALS ['m']['default_order'])) {
+        foreach ($GLOBALS ['m']['default_order'] as $k => $item) {
+            if ($item == $component) {
+                $isInArray = true;
+                unset($GLOBALS ['m']['default_order'][$k]);
+            }
         }
+    }
 
+    if ($inFirstOrder) {
+        $GLOBALS['m']['first_order'] [] = $component;
+    } else {
+        $GLOBALS['m']['default_order'] [] = $component;
+    }
+
+
+    if (!$isInArray) {
         $htmlFile = $component . '/index.blade.php';
         if (file_exists(resource_path('views/design-system/v4/') . $htmlFile)) {
             view('design-system.v4.' . $component . '.index')->render();
         }
     }
+
+//    if (!in_array($component, $GLOBALS ['m']['default_order'])) {
+//        if ($inFirstOrder) {
+//            $GLOBALS['m']['first_order'] [] = $component;
+//        } else {
+//            $GLOBALS['m']['default_order'] [] = $component;
+//        }
+//
+//        $htmlFile = $component . '/index.blade.php';
+//        if (file_exists(resource_path('views/design-system/v4/') . $htmlFile)) {
+//            view('design-system.v4.' . $component . '.index')->render();
+//        }
+//    }
 }
 
 
@@ -297,6 +321,7 @@ if (! function_exists('compressCSS')) {
      */
     function compressCSS(string $s) : string
     {
+        return $s;
         $s = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $s);
         return str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $s);
     }

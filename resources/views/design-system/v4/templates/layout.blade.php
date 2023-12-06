@@ -4,7 +4,7 @@ includeComponent('fonts/suisse-intl', 1);
 includeComponent('tokens', 1);
 includeComponent('general', 1);
 includeComponent('grid', 1);
-includeComponent('components/atoms/button', 1);
+//includeComponent('components/atoms/button', 1);
 if(isset($templateName)) {
     includeComponent("components/templates/$templateName");
 }

@@ -1,5 +1,5 @@
 <?php
-includeComponent('components/molecules/accordion');
+//includeComponent('components/molecules/accordion');
 ?>
 <div style="background: #F5F6F7; padding: 20px 0;">
     <div class="container">
