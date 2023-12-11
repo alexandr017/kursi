@@ -21,6 +21,8 @@
 #</IfModule>
 
 <IfModule mod_rewrite.c>
+    RewriteRule ^tvorchestvo-i-kontent/videomontazh/$ /tvorchestvo-i-kontent/videosemka/ [R=301,L]
+
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
