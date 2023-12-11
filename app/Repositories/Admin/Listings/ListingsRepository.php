@@ -105,6 +105,9 @@ class ListingsRepository
         return DB::transaction(function() use($id) : null|Listing
         {
 
+            $listingCourses = ListingCourse::query()->where('listing_id', $id);
+            $listingCourses->delete();
+
             $listing = Listing::find($id);
             $listing->delete();
 
