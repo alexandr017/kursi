@@ -12,7 +12,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 
-class CompanyRepository implements CompanyRepositoryInterface
+class CompanyRepository
 {
     private function query(): Builder
     {
@@ -22,6 +22,18 @@ class CompanyRepository implements CompanyRepositoryInterface
     private function reviewsQuery(): Builder
     {
         return SchoolReview::query();
+    }
+
+    private function indexQuery(IndexCompaniesDto $dto): Builder
+    {
+        $query = $this->query();
+
+        $query->where('status', 1)
+            ->withCount('courses')
+            ->with(['url']);
+
+
+        return $query;
     }
 
     public function getCompany(int $id): Company
@@ -86,11 +98,7 @@ class CompanyRepository implements CompanyRepositoryInterface
 
     public function index(IndexCompaniesDto $dto): LengthAwarePaginator
     {
-        $query = $this->query();
-
-        $query->where('status', 1)
-            ->withCount('courses')
-            ->with(['url']);
+        $query = $this->indexQuery($dto);
 
         if ($dto->sortKey) {
             $query->orderBy($dto->sortKey, $dto->sortValue);
@@ -106,13 +114,21 @@ class CompanyRepository implements CompanyRepositoryInterface
         );
     }
 
+    public function indexByDefault(IndexCompaniesDto $dto): LengthAwarePaginator
+    {
+        $query = $this->indexQuery($dto);
+
+        return $query->paginate(
+            $dto->perPage,
+            ['*'],
+            'page',
+            $dto->page
+        );
+    }
+
     public function getForStructuredData(IndexCompaniesDto $dto): Collection
     {
-        $query = $this->query();
-
-        $query->where('status', 1)
-            ->withCount('courses')
-            ->with(['url']);
+        $query = $this->indexQuery($dto);
 
         if ($dto->sortKey) {
             $query->orderBy($dto->sortKey, $dto->sortValue);
@@ -124,10 +140,18 @@ class CompanyRepository implements CompanyRepositoryInterface
             ->get();
     }
 
+    public function getForStructuredDataDefault(IndexCompaniesDto $dto): Collection
+    {
+        $query = $this->indexQuery($dto);
+
+        return $query->limit(100)
+            ->get();
+    }
+
     public function getPopularReviews(): Collection
     {
         return $this->reviewsQuery()
-            ->with(['company'])
+            ->with(['company.url'])
             ->orderByDesc('rating')
             ->limit(15)
             ->get();
@@ -157,5 +181,20 @@ class CompanyRepository implements CompanyRepositoryInterface
                 'page',
                 $page
             );
+    }
+
+    public function getActivesCount(): int
+    {
+        return $this->query()
+            ->where('status', 1)
+            ->whereNull('deleted_at')
+            ->count();
+    }
+
+    public function getActivesReviewsCount(): int
+    {
+        return $this->reviewsQuery()
+            ->where('status', 1)
+            ->count();
     }
 }

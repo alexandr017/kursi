@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-class PostRepository implements PostRepositoryInterface
+class PostRepository
 {
     private function query(): Builder
     {

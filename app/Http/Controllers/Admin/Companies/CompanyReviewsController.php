@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin\Companies;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests\Admin\Companies\CompanyReviewRequest;
+use App\Models\Companies\SchoolReview;
 use App\Repositories\Admin\Companies\CompanyReviewsRepository;
 use App\Repositories\Admin\Companies\CompaniesRepository;
+use App\Repositories\Cache\CacheRepositoryInterface;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
@@ -15,7 +17,9 @@ class CompanyReviewsController extends AdminController
 
     private mixed $companiesRepository;
 
-    public function __construct()
+    public function __construct(
+        public CacheRepositoryInterface $cacheRepository
+    )
     {
         $this->companyReviewsRepository = new CompanyReviewsRepository;
 
@@ -80,6 +84,8 @@ class CompanyReviewsController extends AdminController
         $this->companiesRepository->save($company);
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(SchoolReview::CACHE_KEYS);
+
             return redirect()
                 ->route('admin.company-reviews.index')
                 ->with('flash_success', 'Отзыв создан!');
@@ -137,6 +143,8 @@ class CompanyReviewsController extends AdminController
         $this->companiesRepository->save($company);
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(SchoolReview::CACHE_KEYS);
+
             return redirect()
                 ->route('admin.company-reviews.index')
                 ->with('flash_success', 'Отзыв обнавлена!');
@@ -157,6 +165,8 @@ class CompanyReviewsController extends AdminController
         $result = $this->companyReviewsRepository->deleteReview($id);
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(SchoolReview::CACHE_KEYS);
+
             return redirect()
                 ->route('admin.company-reviews.index')
                 ->with('flash_success', 'Отзыв удален!');

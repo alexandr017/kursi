@@ -25,6 +25,20 @@ class Course extends Model
     const STATUS_ACTIVE = 1;
     const STATUS_INACTIVE = 0;
 
+    const POPULARS_CACHE_KEY = 'popular_courses';
+    const POPULARS_FOR_STRUCTURED_DATA_CACHE_KEY = 'popular_for_structured_data_courses';
+    const WITH_PROMOTIONS_CACHE_KET = 'with_promotion_courses';
+    const WITH_PROMOTIONS_FOR_STRUCTURED_DATA_CACHE_KET = 'with_promotion_for_structured_data_courses';
+    const CACHE_KEY_ACTIVES_COUNT = 'active_courses_count';
+    const CACHE_KEYS = [
+      self::POPULARS_CACHE_KEY,
+      self::POPULARS_FOR_STRUCTURED_DATA_CACHE_KEY,
+      self::WITH_PROMOTIONS_CACHE_KET,
+      self::WITH_PROMOTIONS_FOR_STRUCTURED_DATA_CACHE_KET,
+      self::CACHE_KEY_ACTIVES_COUNT,
+    ];
+    const CACHE_SAVE_INTERVAL = 3600;
+
     protected $table = 'courses';
 
     protected $fillable = ['title', 'company_id', 'external_id', 'statistics_link', 'affiliate_link', 'link', 'link_type',

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-class CoursesRepository implements CoursesRepositoryInterface
+class CoursesRepository
 {
     private function query(): Builder
     {
@@ -64,7 +64,7 @@ class CoursesRepository implements CoursesRepositoryInterface
         return $this->query()
             ->withAvg('schoolReviews', 'rating')
             ->withCount('schoolReviews as reviews_count')
-            ->with(['tags', 'school'])
+            ->with(['tags', 'school.url'])
             ->where('is_popular', 1)
             ->limit(15)
             ->get();
@@ -84,7 +84,7 @@ class CoursesRepository implements CoursesRepositoryInterface
         return $this->query()
             ->withAvg('schoolReviews', 'rating')
             ->withCount('schoolReviews as reviews_count')
-            ->with(['tags', 'school'])
+            ->with(['tags', 'school.url'])
             ->where('has_promotion', 1)
             ->limit(15)
             ->get();
@@ -113,5 +113,13 @@ class CoursesRepository implements CoursesRepositoryInterface
                 'page',
                 $page
             );
+    }
+
+    public function getActivesCount(): int
+    {
+        return $this->query()
+            ->where('status', 1)
+            ->whereNull('deleted_at')
+            ->count();
     }
 }

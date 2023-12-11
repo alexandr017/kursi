@@ -6,7 +6,7 @@ use App\Exceptions\SavingErrorException;
 use App\Models\StaticPages\StaticPage;
 use Illuminate\Database\Eloquent\Builder;
 
-class StaticPageRepository implements StaticPageRepositoryInterface
+class StaticPageRepository
 {
     public function query(): Builder
     {

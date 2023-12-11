@@ -20,6 +20,11 @@ class Employee extends Model
     use HasFactory;
     use SoftDeletes;
 
+    const CACHE_KEY_BY_ID = 'employee_cache_key_by_id';
+    const CACHE_KEY_ALL_ACTIVE_EMPLOYEES = 'all_active_employees_cache_key';
+
+    const CACHE_SAVE_INTERVAL = 3600;
+
     protected $fillable = ['name', 'photo', 'title', 'meta_description', 'h1', 'breadcrumbs', 'lead',  'content', 'status',
         'old_id', 'rating_value', 'rating_count', 'job', 'email', 'vk_link', 'telegram_link', 'education', 'sort_order'];
 

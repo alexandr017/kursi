@@ -8,8 +8,9 @@ use App\Models\ListingRating\ListingRating;
 use App\Models\Team\Employee;
 use App\Models\Team\EmployeeRating;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 
-class EmployeeRepository implements EmployeeRepositoryInterface
+class EmployeeRepository
 {
     private function query(): Builder
     {
@@ -45,5 +46,14 @@ class EmployeeRepository implements EmployeeRepositoryInterface
         }
 
         return true;
+    }
+
+    public function getAllEmployees(): Collection
+    {
+        return $this->query()
+            ->where('status', 1)
+            ->whereNull('deleted_at')
+            ->with(['urls'])
+            ->get();
     }
 }

@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin\StaticPages;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests\Admin\StaticPages\StaticPageRequest;
+use App\Models\StaticPages\StaticPage;
 use App\Repositories\Admin\StaticPages\StaticPagesRepository;
+use App\Repositories\Cache\CacheRepositoryInterface;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
@@ -12,7 +14,9 @@ class StaticPagesController extends AdminController
 {
     private mixed $pageRepository;
 
-    public function __construct()
+    public function __construct(
+        public CacheRepositoryInterface $cacheRepository
+    )
     {
         $this->pageRepository = new StaticPagesRepository;
     }
@@ -104,6 +108,8 @@ class StaticPagesController extends AdminController
         $result = $this->pageRepository->updatePage($id, $data);
 
         if ($result) {
+            $this->cacheRepository->remove(StaticPage::CACHE_KEY_BY_ID . $id);
+            $this->cacheRepository->remove(StaticPage::CACHE_KEY_BY_BREADCRUMBS . $result['breadcrumbs']);
             return redirect()
                 ->route('admin.static-pages.index')
                 ->with('flash_success', 'Страница обнавлена!');

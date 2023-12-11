@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin\Listings;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests\Admin\Listings\ListingRequest;
+use App\Models\Listing\Listing;
 use App\Repositories\Admin\Listings\ListingsRepository;
 use App\Repositories\Admin\Employees\EmployeesRepository;
 use App\Repositories\Admin\Courses\CoursesRepository;
+use App\Repositories\Cache\CacheRepositoryInterface;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\RedirectResponse;
@@ -23,7 +25,9 @@ class ListingsController extends AdminController
 
     private mixed $coursesRepository;
 
-    public function __construct()
+    public function __construct(
+        public CacheRepositoryInterface $cacheRepository
+    )
     {
         $this->listingRepository = new ListingsRepository;
         $this->employeesRepository = new EmployeesRepository;
@@ -90,6 +94,7 @@ class ListingsController extends AdminController
         $result = $this->listingRepository->createListing($data);
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(Listing::CACHE_KEYS);
             return redirect()
                 ->route('admin.listings.index')
                 ->with('flash_success', 'Листинг создан!');
@@ -155,6 +160,8 @@ class ListingsController extends AdminController
         $result = $this->listingRepository->updateListing($id, $data);
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(Listing::CACHE_KEYS);
+
             return redirect()
                 ->route('admin.listings.index')
                 ->with('flash_success', 'Листинг обнавлен!');
@@ -176,6 +183,8 @@ class ListingsController extends AdminController
         $result = $this->listingRepository->deleteListing($id);
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(Listing::CACHE_KEYS);
+
             return redirect()
                 ->route('admin.listings.index')
                 ->with('flash_success', 'Листинг удалена!');

@@ -14,4 +14,5 @@ interface CoursesRepositoryInterface
     public function getPromotions(): Collection;
     public function getPromotionsForStructuredData(): Collection;
     public function getBySearch(string $search, int $page = 1): LengthAwarePaginator;
+    public function getActivesCount(): int;
 }
