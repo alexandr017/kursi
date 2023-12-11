@@ -24,7 +24,7 @@
                         <label for="course_{{$item->id}}"><i class="red"></i>{{$item->title}}</label>
                     </td>
                     <td>
-                        <label for="course_{{$item->id}}"><i class="red"></i>{{$item->school->name}}</label>
+                        <label for="course_{{$item->id}}"><i class="red"></i>{{$item->school?->name}}</label>
                     </td>
                     <td>
                         <input type="number" name="course[{{$item->id}}]" id="course[{{$item->id}}]" value="{{$item->listings->first()->pivot->sort}}" required>
