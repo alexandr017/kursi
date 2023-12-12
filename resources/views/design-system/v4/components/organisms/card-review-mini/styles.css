@@ -1,0 +1,355 @@
+.card-review-md {
+    display: flex;
+    width: 304px;
+    height: 260px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: var(--spacing-x3, 12px);
+    border-radius: 16px;
+    padding: var(--spacing-x3, 12px) var(--spacing-x4, 16px) var(--spacing-x4, 16px);
+    background-color: var(--light_fill_dark-bg_secondary, #FFFFFF);
+    transition: box-shadow 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+@media (hover: hover) {
+    .card-review-md:hover {
+        box-shadow: 0 0 15px 0 rgba(20, 20, 20, 0.05);
+    }
+
+    .card-review-md:hover .card-review-md_body-text {
+        color: var(--light_text_light-bg_primary, #141414);
+    }
+}
+
+.card-review-md:focus-within {
+    outline: none;
+    border: unset;
+    box-shadow: 0 0 0 2px #6349FF;
+}
+.card-review-md:focus-within .card-review-md_body-text {
+    color: var(--light_text_light-bg_primary, #141414);
+}
+
+
+.card-review-md_header {
+    order: 1;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 40px;
+}
+.card-review-md_school-logo {
+    order: 1;
+    width: 32px;
+    height: 32px;
+    margin-top: 4px;
+    margin-right: var(--spacing-x3, 12px);
+}
+.card-review-md_school-logo .hidden {
+    display: none;
+}
+.card-review-md_title-wrapper {
+    order: 2;
+    width: calc(100% - 56px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.25rem;
+}
+.card-review_title-wrapper, .card-review_body-text {
+    font-size: 0.9375rem;
+    letter-spacing: -0.01em;
+}
+.card-review-md_title {
+    color: var(--light_text_light-bg_primary, #141414);
+}
+.card-review-md_rating-reviews {
+    order: 3;
+    display: flex;
+    align-items: center;
+
+    color: var(--light_text_light-bg_primary, #141414);
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    margin-top: -20px;
+    margin-left: 44px;
+}
+.card-review-md_rating-icon {
+    min-width: 16px;
+    min-height: 16px;
+    margin-bottom: 2px;
+}
+.card-review-md_label {
+    order: 4;
+    color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+
+    max-width: calc(100% - 105px);
+    margin-top: -20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-review-md_label:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 3px;
+    height: 3px;
+    background-color: currentColor;
+    margin: 0 8px;
+    border-radius: 50%;
+}
+
+
+.card-review-md_name-date {
+    order: 3;
+    width: 100%;
+    display: flex;
+    align-self: end;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 10px;
+
+    line-height: 1.25rem;
+    color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+    overflow: hidden;
+    margin-top: auto;
+}
+.card-review-md_name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.25rem;
+}
+.card-review-md_date.hidden {
+    display: none;
+}
+
+.card-review-md_body {
+    order:2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-base, 4px);
+    width: 100%;
+}
+.card-review-md_body-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5rem;
+    height: 24px;
+}
+.card-review-md_body-text {
+    position: relative;
+    max-height: 120px;
+    line-height: 1.25rem;
+    flex-grow: 1;
+    overflow: hidden;
+    color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+    transition: color 0.15s ease-in-out;
+}
+.card-review-md_body-text::after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 1.5em;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 30%);
+    z-index: 1;
+}
+.card-review-md_body-text.short::after  {
+    display: none;
+}
+.card-review-md_btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+.card-review-md_btn::before {
+    content: '...';
+    display: inline-flex;
+    opacity: 0.3;
+    padding-right: 8px;
+    display: none;
+}
+.card-review-md_btn.inline {
+    position: static;
+    display: inline-flex;
+    padding-left: 8px;
+}
+.card-review-md_btn.inline::before {
+    display: none;
+}
+
+/* модальное окно для мини карточки отзыва */
+.card-review-md-cont_bg {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: var(--transparent_black-2, rgba(0, 0, 0, 0.60));
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    user-select: none;
+}
+.card-review-md-cont_bg.active {
+    opacity: 1;
+}
+
+.card-review-md_body-text {
+    scrollbar-width: thin;
+    scrollbar-color: #D5D6D7 transparent;
+}
+.card-review-md_body-text::-webkit-scrollbar {
+    width: 20px;
+}
+.card-review-md_body-text::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+.card-review-md_body-text::-webkit-scrollbar-thumb {
+    background-color: var(--neutral_gray-4, #D5D6D7);
+    border-radius: 100px;
+    background-clip: content-box;
+    border: 8px solid transparent;
+}
+
+
+.card-review-md.open {
+    width: 780px;
+    height: 536px;
+    border-radius: 20px;
+    padding: var(--spacing-x6, 24px);
+    gap: var(--spacing-x6, 24px);
+    z-index: 1100;
+    cursor: auto;
+}
+.card-review-md.open:focus-within {
+    box-shadow: unset;
+}
+
+.card-review-md.open .card-review-md_header {
+    height: 44px;
+}
+.card-review-md.open .card-review-md_school-logo {
+    width: 44px;
+    height: 44px;
+    margin-top: 0;
+}
+.card-review-md.open .card-review-md_title-wrapper{
+    width: calc(100% - 56px - 36px);
+    line-height: 1.5rem;
+}
+.card-review-md.open .card-review-md_rating-reviews {
+    order: 4;
+    margin-left: 56px;
+}
+.card-review-md.open .card-review-md_label {
+    order: 5;
+}
+.btn-close-review {
+    order: 3;
+    align-self: baseline;
+    margin-left: auto;
+}
+
+.card-review-md.open .card-review-md_body {
+    gap: var(--spacing-x5, 20px);
+}
+.card-review-md.open .card-review-md_body-title {
+    white-space: normal;
+    overflow: unset;
+    text-overflow: unset;
+    height: auto;
+}
+.card-review-md.open .card-review-md_body-text {
+    max-height: 284px;
+    overflow: auto;
+    color: var(--light_text_light-bg_primary, #141414);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-x5, 20px);
+}
+.card-review-md.open .ellipsis,
+.card-review-md.open .card-review-md_btn,
+.card-review-md.open .card-review-md_body-text::after {
+    display: none;
+}
+
+@media screen and (max-width: 1023px) {
+    .card-review-md_body-title {
+        height: 20px;
+        line-height: 1.25rem;
+    }
+
+    .card-review-md.open {
+        width: 100%;
+        height: 100%;
+        border-radius: unset;
+    }
+    .card-review-md.open .card-review-md_title {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .card-review-md.open .card-review-md_body {
+        gap: var(--spacing-x4, 16px);
+        max-height: calc(100vh - 160px);
+        overflow: hidden;
+    }
+    .card-review-md.open .card-review-md_body-title {
+        width: 100%;
+    }
+    .card-review-md.open .card-review-md_body-text {
+        max-height: 87%;
+        gap: var(--spacing-x4, 16px);
+    }
+}
+
+
+@media screen and (max-width: 767px) {
+    .card-review-md {
+        width: 264px;
+        height: 260px;
+    }
+
+    .card-review-md.open {
+        padding: var(--spacing-x4, 16px);
+        gap: var(--spacing-x4, 16px);
+    }
+    .card-review-md.open .card-review-md_body {
+        gap: var(--spacing-x3, 12px);
+        max-height: calc(100vh - 128px);
+        overflow: hidden;
+    }
+    .card-review-md.open .card-review-md_body-text,
+    .card-review-md.open .card-review-md_name-date {
+        font-size: 0.9375rem;
+    }
+    .card-review-md.open .card-review-md_body-text{
+        max-height: 82%;
+    }
+    .card-review-md.open .card-review-md_name {
+        max-width: 55%;
+    }
+    .card-review-md.open .card-review-md_date {
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .card-review-md.open .card-review-md_body-text{
+        max-height: 78%;
+    }
+}

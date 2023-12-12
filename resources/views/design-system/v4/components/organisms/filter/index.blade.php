@@ -1,6 +1,6 @@
 <?php
+includeComponent('components/atoms/button');
 includeComponent('components/molecules/filter-select');
-includeComponent('components/atoms/subnavigation');
 
 includeComponent("components/organisms/filter");
 ?>

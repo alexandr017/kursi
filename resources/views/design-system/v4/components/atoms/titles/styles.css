@@ -1,4 +1,4 @@
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, .h1-desk, .h2-desk, .h3-desk, .h4-desk, .h5-desk, .h6-desk, .h4-desk-info {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     line-height: 1.25;
@@ -6,54 +6,68 @@
     letter-spacing: -0.02em;
 }
 
-h1,.h1 {
+h1,.h1, .h1-desk {
     font-size: 2rem;
     line-height: 40px;
     margin: var(--spacing-x10) 0 var(--spacing-x5) 0;
 }
 
-h2,.h2 {
+h2,.h2, .h2-desk {
     font-size: 1.625rem;
     line-height: 32px;
     margin: var(--spacing-x10) 0 var(--spacing-x5) 0;
 }
 
-h3,.h3 {
+h3,.h3, .h3-desk {
     font-size: 1.25rem;
     line-height: 28px;
     margin: var(--spacing-x6) 0 var(--spacing-x5) 0;
 }
 
-h4,.h4 {
+h4,.h4, .h4-desk {
     font-size: 1rem;
     line-height: 24px;
     margin: var(--spacing-x6) 0 var(--spacing-x5) 0;
 }
 
+.h4-desk-info {
+    font-size: 1.0625rem;
+    line-height: 1.625rem;
+    letter-spacing: -0.01em;
+}
+
+.h1-desk, .h2-desk, .h3-desk, .h4-desk {
+    margin: 0;
+}
+
 @media  screen and (max-width: 1023px){
-    h1,.h1 {
+    h1,.h1, .h1-desk {
         font-size: 1.625rem;
         line-height: 32px;
         margin: var(--spacing-x8) 0 var(--spacing-x4) 0;
     }
 
-    h2,.h2 {
+    h2,.h2, .h2-desk {
         font-size: 1.375rem;
         line-height: 28px;
         margin: var(--spacing-x8) 0 var(--spacing-x4) 0;
     }
 
-    h3,.h3 {
+    h3,.h3, .h3-desk {
         font-size: 1.125rem;
         line-height: 24px;
         margin: var(--spacing-x6) 0 var(--spacing-x4) 0;
     }
 
-    h4,.h4 {
+    h4,.h4, .h4-desk {
         font-size: 0.9375rem;
         line-height: 20px;
         letter-spacing: -0.01em;
         margin: var(--spacing-x6) 0 var(--spacing-x4) 0;
+    }
+
+    .h1-desk, .h2-desk, .h3-desk, .h4-desk {
+        margin: 0;
     }
 }
 

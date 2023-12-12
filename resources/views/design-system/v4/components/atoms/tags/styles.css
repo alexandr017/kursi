@@ -1,9 +1,10 @@
+.tag.disabled {
+    pointer-events: none;
+}
+
 .tag {
     text-decoration: none;
     padding: 8px 12px;
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
     color: var(--light_text_light-bg_primary, #141414);
     background-color: var(--light_fill_dark-bg_secondary, #FFFFFF);
     border-radius: 18px;
@@ -19,7 +20,7 @@
 }
 
 .tag:focus-visible {
-    outline: 2px solid var(--main_primary, #6349FF);
+    box-shadow: 0 0 0 2px #6349FF;
 }
 
 @media (hover: hover) {
@@ -37,4 +38,3 @@
     color: var(--light_text_light-bg_quarternary, rgba(0, 0, 0, 0.20));
     cursor: default;
 }
-

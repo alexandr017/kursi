@@ -22,8 +22,17 @@ body{
     /*background-color: var(--light_bg_primary, #F5F6F7);*/
 }
 
-body, input, textarea, select, .btn , .btn-1, .education-btn{
+body, input, textarea, select, .btn, button,
+.h-body, .h-body-lg, .h-body-md, .h-body-small, .h-body-e-small {
     font-family: 'Suisse Intl', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    line-height: 1.625rem;
+    font-style: normal;
+}
+
+input, textarea, select {
+    -webkit-appearance: none;
 }
 
 a, .link{
@@ -140,12 +149,9 @@ hr {
 .pb-5 {padding-bottom: 80px;}
 .pb-6 {padding-bottom: 120px;}
 
-
-
 figure {
     margin: 0 0 10px;
 }
-
 
 figure figcaption {
     font-size: 0.95rem;
@@ -158,7 +164,7 @@ figure figcaption {
 .text-bold {
     font-weight: bold;
 }
-.hiddenStyle {
+.hiddenStyle, .hidden {
     display: none;
 }
 
@@ -170,12 +176,74 @@ figure figcaption {
     overflow: auto;
 }
 
-@media screen and (max-width: 1023px) {
-    body{
-        font-size: 0.9375rem;
-        letter-spacing: -0.01em;
-    }
+.h-body-lg {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
 
+.h-body-md {
+    font-size: 0.9375rem;
+    letter-spacing: -0.01em;
+}
+
+.h-body-small {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    letter-spacing: -0.01em;
+}
+
+.h-body-e-small {
+    font-size: 0.625rem;
+    line-height: 1rem;
+    letter-spacing: -0.01em;
+}
+
+/* titles */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, .h1-desk, .h2-desk, .h3-desk, .h4-desk, .h5-desk, .h6-desk, .h4-desk-info {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.25;
+    font-style: normal;
+    letter-spacing: -0.02em;
+}
+
+h1,.h1, .h1-desk {
+    font-size: 2rem;
+    line-height: 40px;
+    margin: var(--spacing-x10) 0 var(--spacing-x5) 0;
+}
+
+h2,.h2, .h2-desk {
+    font-size: 1.625rem;
+    line-height: 32px;
+    margin: var(--spacing-x10) 0 var(--spacing-x5) 0;
+}
+
+h3,.h3, .h3-desk {
+    font-size: 1.25rem;
+    line-height: 28px;
+    margin: var(--spacing-x6) 0 var(--spacing-x5) 0;
+}
+
+h4,.h4, .h4-desk {
+    font-size: 1rem;
+    line-height: 24px;
+    margin: var(--spacing-x6) 0 var(--spacing-x5) 0;
+}
+
+.h4-desk-info {
+    font-size: 1.0625rem;
+    line-height: 1.625rem;
+    letter-spacing: -0.01em;
+}
+
+.h1-desk, .h2-desk, .h3-desk, .h4-desk {
+    margin: 0;
+}
+/* end titles */
+
+
+@media screen and (max-width: 1023px) {
     .content img,
     .content iframe {
         margin: var(--spacing-x4) 0;
@@ -189,13 +257,42 @@ figure figcaption {
         padding: 0;
         margin: var(--spacing-x4) 0;
     }
+
+
+    h1,.h1, .h1-desk {
+        font-size: 1.625rem;
+        line-height: 32px;
+        margin: var(--spacing-x8) 0 var(--spacing-x4) 0;
+    }
+
+    h2,.h2, .h2-desk {
+        font-size: 1.375rem;
+        line-height: 28px;
+        margin: var(--spacing-x8) 0 var(--spacing-x4) 0;
+    }
+
+    h3,.h3, .h3-desk {
+        font-size: 1.125rem;
+        line-height: 24px;
+        margin: var(--spacing-x6) 0 var(--spacing-x4) 0;
+    }
+
+    h4,.h4, .h4-desk {
+        font-size: 0.9375rem;
+        line-height: 20px;
+        letter-spacing: -0.01em;
+        margin: var(--spacing-x6) 0 var(--spacing-x4) 0;
+    }
+
+    .h1-desk, .h2-desk, .h3-desk, .h4-desk {
+        margin: 0;
+    }
 }
 
 @media screen and (max-width: 767px) {
-    body{
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 24px;
+    .h-body-md {
+        font-size: 0.8125rem;
+        line-height: 1.25rem;
     }
 
     p {
@@ -204,6 +301,23 @@ figure figcaption {
 
     .content ul, ol {
         padding: 0;
+        margin: var(--spacing-x3) 0;
+    }
+
+
+    h1,.h1 {
+        margin: var(--spacing-x6) 0 var(--spacing-x3) 0;
+    }
+
+    h2,.h2 {
+        margin: var(--spacing-x4) 0 var(--spacing-x3) 0;
+    }
+
+    h3,.h3 {
+        margin: var(--spacing-x3) 0;
+    }
+
+    h4,.h4 {
         margin: var(--spacing-x3) 0;
     }
 }

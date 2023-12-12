@@ -1,5 +1,4 @@
-@import "components/molecules/filter-select";
-@import "components/atoms/subnavigation";
+/*@import "components/molecules/filter-select";*/
 
 .filter-list {
     border-radius: 15px;

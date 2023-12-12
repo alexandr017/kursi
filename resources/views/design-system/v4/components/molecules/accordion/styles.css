@@ -60,7 +60,7 @@ summary {
 }
 
 .accordion-item:focus-visible {
-    outline: 2px solid var(--main_primary, #6349FF);
+    box-shadow: 0 0 0 2px #6349FF;
 }
 
 @media (hover: hover) {
@@ -68,23 +68,6 @@ summary {
         color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
     }
 }
-
-
-
-/*.accordion-line {*/
-/*    line-height: 2rem;*/
-/*}*/
-/*.col-4-accordion-line{*/
-/*    width: 25%;*/
-/*    float: right;*/
-/*}*/
-/*.panel .accordion-list .accordion-col:not(:first-of-type) {*/
-/*    margin-left: 60px;*/
-/*}*/
-
-/*.panel .accordion-list .accordion-col .accordion-row {*/
-/*    margin-top: 10px;*/
-/*}*/
 
 @media screen and (max-width: 1023px) {
     .accordion-item {

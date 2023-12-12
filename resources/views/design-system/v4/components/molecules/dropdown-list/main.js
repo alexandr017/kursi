@@ -1,14 +1,14 @@
 let dropdownLists = document.querySelectorAll('.dropdown-list');
-if(dropdownLists.length != 0){
+if(dropdownLists!==null){
     dropdownLists.forEach((dropdownList) => {
         let options = dropdownList.querySelectorAll('.option');
         options.forEach((option) => {
-           option.addEventListener('click', function (){
-               if(!option.classList.contains('disabled')){
-                   options.forEach(item => item.classList.remove('selected'));
-                   option.classList.add('selected');
-               }
-           });
+            option.addEventListener('click', function (){
+                if(!option.classList.contains('disabled')){
+                    options.forEach(item => item.classList.remove('selected'));
+                    option.classList.add('selected');
+                }
+            });
         });
     });
 }
