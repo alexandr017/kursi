@@ -68,6 +68,8 @@ class EmployeesController extends AdminController
         $result = $this->employeesRepository->createEmployee($data);
 
         if ($result) {
+            $this->cacheRepository->remove(Employee::CACHE_KEY_ALL_ACTIVE_EMPLOYEES);
+
             return redirect()
                 ->route('admin.employees.index')
                 ->with('flash_success', 'Сотрудник добавлен!');
@@ -115,6 +117,7 @@ class EmployeesController extends AdminController
 
         if ($result) {
             $this->cacheRepository->remove(Employee::CACHE_KEY_BY_ID . $id);
+            $this->cacheRepository->remove(Employee::CACHE_KEY_ALL_ACTIVE_EMPLOYEES);
             return redirect()
                 ->route('admin.employees.index')
                 ->with('flash_success', 'Сотрудник обнавлен!');
@@ -137,6 +140,7 @@ class EmployeesController extends AdminController
 
         if ($result) {
             $this->cacheRepository->remove(Employee::CACHE_KEY_BY_ID . $id);
+            $this->cacheRepository->remove(Employee::CACHE_KEY_ALL_ACTIVE_EMPLOYEES);
 
             return redirect()
                 ->route('admin.employees.index')

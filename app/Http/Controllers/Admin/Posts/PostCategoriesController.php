@@ -143,6 +143,9 @@ class PostCategoriesController extends AdminController
         $result = $this->postCategoryRepository->deleteCategory($id);
 
         if ($result) {
+            $this->cacheRepository->remove(PostCategory::CACHE_KEY_ALL_WHICH_HAVE_POSTS);
+            $this->cacheRepository->remove(PostCategory::CACHE_KEY_BY_ID . $id);
+
             return redirect()
                 ->route('admin.post-categories.index')
                 ->with('flash_success', 'Категория удалена!');
