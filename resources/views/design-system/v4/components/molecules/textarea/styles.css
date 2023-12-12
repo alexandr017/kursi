@@ -17,13 +17,13 @@ textarea:focus {
 }
 
 textarea:focus-visible {
-    outline: 2px solid var(--main_primary, #6349FF);
+    box-shadow: 0 0 0 2px #6349FF;
 }
 
 /* scrollbar for mozilla */
 textarea {
     scrollbar-width: thin;
-    scrollbar-color: var(--neutral_gray-4, #D5D6D7) transparent;
+    scrollbar-color: #D5D6D7 transparent;
 }
 
 /* scrollbar for other */

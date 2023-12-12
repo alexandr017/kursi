@@ -4,6 +4,7 @@
     font-size: 0.8125rem;
     line-height: 1.25rem;
     letter-spacing: -0.01em;
+    white-space: nowrap;
 }
 
 .badge-primary {

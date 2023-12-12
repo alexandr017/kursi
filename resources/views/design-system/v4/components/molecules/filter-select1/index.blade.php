@@ -1,4 +1,5 @@
 <?php
+includeComponent("components/atoms/controls");
 includeComponent("components/molecules/filter-select1");
 ?>
 <div style="padding: 50px 0;">

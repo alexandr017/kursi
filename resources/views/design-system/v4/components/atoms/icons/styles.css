@@ -1,0 +1,34 @@
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-youtube {
+    background-image: url("../../../../images/icons/social-media/youtube.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+.icon-vk {
+    background-image: url("../../../../images/icons/social-media/vk.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+.icon-dzen {
+    background-image: url("../../../../images/icons/social-media/dzen.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+.icon-vcru {
+    background-image: url("../../../../images/icons/social-media/vcru.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+.icon-dtf {
+    background-image: url("../../../../images/icons/social-media/dtf.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}

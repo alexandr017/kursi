@@ -1,5 +1,5 @@
 let sortBtn = document.querySelectorAll('.sort-container')[0];
-if (sortBtn.length != 0) {
+if (sortBtn!==null) {
     let sortStatus = sortBtn.querySelector('.sort-status');
     let sortItems = sortBtn.querySelectorAll('.sort-body .option');
     window.isMobScreen = false;
@@ -118,12 +118,6 @@ function setDraggableBlock(draggableBlock, overlaySwipe) {
             } else {
                 currentY = e.clientY - initialY;
             }
-
-            // if (!contentBlockIsScrolled || (currentY > 150 && contentBlock.scrollTop === 0)) {
-            //     e.preventDefault();
-            // } else {
-            //     return;
-            // }
 
             yOffset = currentY;
 

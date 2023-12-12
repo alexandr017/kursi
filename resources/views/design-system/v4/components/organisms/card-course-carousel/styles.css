@@ -1,0 +1,84 @@
+/*@import "components/organisms/cards/card-course-mini";*/
+/*@import "components/atoms/swiper-slider";*/
+
+.course-carousel-block {
+    position: relative;
+}
+
+.course-carousel-title {
+    line-height: 2.75rem;
+}
+
+.course-carousel-block .swiper {
+    max-width: 1264px;
+    height: 388px;
+    margin-top: 24px;
+}
+
+.card-course-md.swiper-slide {
+    display: flex;
+    max-width: unset;
+}
+
+.card-course-md.swiper-slide:focus-within {
+    box-shadow: unset;
+}
+
+.course-carousel-block .swiper-controls {
+    position: absolute;
+    display: flex;
+    gap: 8px;
+    top: 0;
+    right: 36px;
+}
+
+@media screen and (max-width: 1320px) {
+    .card-course-carousel .card-course-md_rating-reviews,
+    .card-course-carousel .card-course-md_duration {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 1190px) {
+    .card-course-carousel .card-course-md_rating-reviews,
+    .card-course-carousel .card-course-md_duration {
+        font-size: 0.8125rem;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .course-carousel-block .swiper-controls {
+        display: none;
+    }
+
+    .course-carousel-title {
+        line-height: 1.75rem;
+    }
+
+    .card-course-carousel.swiper {
+        margin-left: 24px;
+        max-width: calc(100% - 24px);
+    }
+
+    .card-course-md.swiper-slide {
+        width: 304px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card-course-carousel .card-course-md_rating-reviews,
+    .card-course-carousel .card-course-md_duration {
+        font-size: 0.6875rem;
+    }
+
+    .card-course-carousel.swiper {
+        margin-top: 20px;
+        margin-left: 16px;
+        max-width: calc(100% - 16px);
+        height: 368px;
+    }
+
+    .card-course-md.swiper-slide {
+        width: 264px;
+    }
+}

@@ -1,0 +1,63 @@
+/*@import "components/organisms/cards/card-review-mini";*/
+/*@import "components/atoms/swiper-slider";*/
+
+.review-carousel-block {
+    position: relative;
+}
+
+.review-carousel-title {
+    line-height: 2.75rem;
+}
+
+.review-carousel-block .swiper {
+    max-width: 1264px;
+    height: 260px;
+    margin-top: 24px;
+}
+
+.card-review-md.swiper-slide {
+    display: flex;
+}
+
+.card-review-md.swiper-slide:focus-within {
+    box-shadow: unset;
+}
+
+.swiper-controls {
+    position: absolute;
+    display: flex;
+    gap: 8px;
+    top: 0;
+    right: 36px;
+}
+
+@media screen and (max-width: 1023px) {
+    .swiper-controls {
+        display: none;
+    }
+
+    .review-carousel-title {
+        line-height: 1.75rem;
+    }
+
+    .card-review-carousel.swiper {
+        margin-left: 24px;
+        max-width: calc(100% - 24px);
+    }
+
+    .card-review-md.swiper-slide {
+        width: 304px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card-review-carousel.swiper {
+        margin-top: 20px;
+        margin-left: 16px;
+        max-width: calc(100% - 16px);
+    }
+
+    .card-review-md.swiper-slide {
+        width: 264px;
+    }
+}

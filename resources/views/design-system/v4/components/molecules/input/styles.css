@@ -43,25 +43,21 @@
 }
 
 .form-control:focus-visible {
-    /*outline: 2px solid var(--main_primary, #6349FF);*/
-    box-shadow: 0 0 0 2px var(--main_primary, #6349FF);
+    box-shadow: 0 0 0 2px #6349FF;
 }
 
 @media (hover: hover) {
     .form-control:hover {
-        /*outline: 1px solid var(--neutral_gray-4, #D5D6D7);*/
-        box-shadow: 0 0 0 1px var(--neutral_gray-4, #D5D6D7);
+        box-shadow: 0 0 0 1px #D5D6D7;
     }
 }
 
 .form-control:active {
-    /*outline: 1px solid var(--neutral_gray-4, #D5D6D7);*/
-    box-shadow: 0 0 0 1px var(--neutral_gray-4, #D5D6D7);
+    box-shadow: 0 0 0 1px #D5D6D7;
 }
 
 .form-group.error .form-control,
 .form-control.error {
-    /*outline: 1px solid #E64646;*/
     box-shadow: 0 0 0 1px #E64646;
 }
 

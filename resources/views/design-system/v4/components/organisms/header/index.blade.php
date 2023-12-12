@@ -1,7 +1,7 @@
 <?php
-includeComponent("components/atoms/button-icon");
+includeComponent('components/atoms/button');
 includeComponent("components/atoms/tabs");
-
+includeComponent("components/molecules/input");
 includeComponent("components/organisms/header");
 ?>
 <div style="background: var(--light_bg_primary, #F5F6F7)">
@@ -157,7 +157,7 @@ includeComponent("components/organisms/header");
                                         <div class="catalog-menu-list catalog-menu-category"
                                              data-catalog-category="all">
                                             <div class="catalog-menu-item">
-                                                <a href="#" target="_blank">
+                                                <a href="kursy.ru" target="_blank">
                                                     <span>Администрирование</span>
                                                     <svg class="arrow-right" width="20" height="20" viewBox="0 0 20 20"
                                                          fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -203,7 +203,7 @@ includeComponent("components/organisms/header");
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#" target="_blank">
+                                                            <a href="kursy.ru" target="_blank">
                                                                 <span>3D-моделирование</span>
                                                                 <svg class="arrow-right" width="20" height="20"
                                                                      viewBox="0 0 20 20" fill="none"

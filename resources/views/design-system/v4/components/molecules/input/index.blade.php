@@ -1,4 +1,5 @@
 <?php
+includeComponent("components/atoms/button");
 includeComponent("components/molecules/input");
 ?>
 <div class="container">

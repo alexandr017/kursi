@@ -1,8 +1,8 @@
 :root {
-  /* Variables - токены вариантов, все доступные переменные цветов
-   Palette - палитра (neutral, transparent, main)
-   Name - название цвета (black, gray-2, white, ...)
-   --palette_name: value; */
+    /* Variables - токены вариантов, все доступные переменные цветов
+     Palette - палитра (neutral, transparent, main)
+     Name - название цвета (black, gray-2, white, ...)
+     --palette_name: value; */
 
     --neutral_black: #141414;
     --neutral_gray: #2C2D2E;
@@ -12,7 +12,7 @@
     --neutral_gray-5: #EAECEE;
     --neutral_gray-6: #F5F6F7;
     --neutral_white: #FFFFFF;
-    
+
     --transparent_black: rgba(0, 0, 0, 0.85);
     --transparent_black-2: rgba(0, 0, 0, 0.60);
     --transparent_black-3: rgba(0, 0, 0, 0.45);
@@ -22,21 +22,21 @@
     --transparent_white-3: rgba(255, 255, 255, 0.45);
     --transparent_white-4: rgba(255, 255, 255, 0.20);
     --transparent_gray: rgba(245, 246, 247, 0.85);
-    
+
     --main_primary: #6349FF;
     --main_secondary: #492FE4;
 
-/* Aliases - токены решений, называют контекст, в котором используется стиль,
-  ссылаются на токен вариантов
-     1) Mode - тема интерфейса (light, dark)
-     2) Type – тип токена (text, fill, btn)
-     3) Background – цвет бэкграунда страницы (light-bg, dark-bg)
-     4) Item – тип элемента (primary, secondary)
-     5) State – состояние элемента (normal, hovered)
-    --mode_type_background_item_state: value;
-    
-    Если у токена не указан один из шагов семантики, его можно пропустить
-    Например, если токен относится к страницам с любым бэкграундом. */
+    /* Aliases - токены решений, называют контекст, в котором используется стиль,
+      ссылаются на токен вариантов
+         1) Mode - тема интерфейса (light, dark)
+         2) Type – тип токена (text, fill, btn)
+         3) Background – цвет бэкграунда страницы (light-bg, dark-bg)
+         4) Item – тип элемента (primary, secondary)
+         5) State – состояние элемента (normal, hovered)
+        --mode_type_background_item_state: value;
+
+        Если у токена не указан один из шагов семантики, его можно пропустить
+        Например, если токен относится к страницам с любым бэкграундом. */
 
     /* backgrounds light mode */
 
@@ -115,12 +115,12 @@
 }
 
 .blur-size-l {
-    --webkit-backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     backdrop-filter: blur(25px);
 }
 
 .blur-size-m {
-    --webkit-backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
 }
 

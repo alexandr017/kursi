@@ -1,7 +1,5 @@
-@import "../../atoms/controls/styles.css";
-
 .list-controls {
-    box-shadow: 0 1px var(--neutral_gray-5, #EAECEE);
+    box-shadow: 0 1px #EAECEE;
     position: relative;
 }
 
