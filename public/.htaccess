@@ -21,7 +21,113 @@
 #</IfModule>
 
 <IfModule mod_rewrite.c>
-    RewriteRule ^tvorchestvo-i-kontent/videomontazh/$ /tvorchestvo-i-kontent/videosemka/ [R=301,L]
+    Redirect 301 /besplatnye/administrirovanie/linux/ https://kursy.ru/administrirovanie/linux/besplatnye/
+    Redirect 301 /besplatnye/administrirovanie/ https://kursy.ru/administrirovanie/besplatnye/
+
+    Redirect 301 /drugoe/tovaroved/ https://kursy.ru/menedzhment/tovaroved/
+
+    Redirect 301 /besplatnye/analitika/sistemnaya-analitika/ https://kursy.ru/analitika/sistemnaya-analitika/besplatnye/
+    Redirect 301 /besplatnye/analitika/data-science/ https://kursy.ru/analitika/data-science/besplatnye/
+    Redirect 301 /besplatnye/analitika/biznes-analitika/ https://kursy.ru/analitika/biznes-analitika/besplatnye/
+    Redirect 301 /besplatnye/analitika/ https://kursy.ru/analitika/besplatnye/
+
+    Redirect 301 /besplatnye/dizajn/graficheskij-dizajn/ https://kursy.ru/dizajn/graficheskij-dizajn/besplatnye/
+    Redirect 301 /besplatnye/dizajn/dizajn-interera/ https://kursy.ru/dizajn/dizajn-interera/besplatnye/
+    Redirect 301 /besplatnye/dizajn/figma/ https://kursy.ru/dizajn/figma/besplatnye/
+    Redirect 301 /besplatnye/dizajn/ux-ui/ https://kursy.ru/dizajn/ux-ui/besplatnye/
+    Redirect 301 /besplatnye/dizajn/illyustratsiya/ https://kursy.ru/dizajn/illyustratsiya/besplatnye/
+    Redirect 301 /besplatnye/dizajn/adobe-illustrator/ https://kursy.ru/dizajn/adobe-illustrator/besplatnye/
+    Redirect 301 /besplatnye/dizajn/photoshop/ https://kursy.ru/dizajn/photoshop/besplatnye/
+    Redirect 301 /besplatnye/dizajn/after-effects/ https://kursy.ru/dizajn/after-effects/besplatnye/
+    Redirect 301 /besplatnye/dizajn/blender/ https://kursy.ru/dizajn/blender/besplatnye/
+    Redirect 301 /besplatnye/dizajn/dizajn-odezhdy/ https://kursy.ru/dizajn/dizajn-odezhdy/besplatnye/
+    Redirect 301 /besplatnye/dizajn/ https://kursy.ru/dizajn/besplatnye/
+
+    Redirect 301 /besplatnye/inostrannye-yazyki/anglijskij/ https://kursy.ru/inostrannye-yazyki/anglijskij/besplatnye/
+    Redirect 301 /besplatnye/inostrannye-yazyki/russkij/ https://kursy.ru/inostrannye-yazyki/russkij/besplatnye/
+    Redirect 301 /besplatnye/inostrannye-yazyki/ https://kursy.ru/inostrannye-yazyki/besplatnye/
+
+    Redirect 301 /besplatnye/krasota-i-zdorove/nutritsiologiya/ https://kursy.ru/krasota-i-zdorove/nutritsiologiya/besplatnye/
+    Redirect 301 /besplatnye/krasota-i-zdorove/stilist/ https://kursy.ru/krasota-i-zdorove/imidzhmejker/besplatnye/
+    Redirect 301 /besplatnye/krasota-i-zdorove/ https://kursy.ru/krasota-i-zdorove/besplatnye/
+
+    Redirect 301 /besplatnye/marketing/smm/ https://kursy.ru/marketing/smm/besplatnye/
+    Redirect 301 /besplatnye/marketing/kopirajting/ https://kursy.ru/marketing/kopirajting/besplatnye/
+    Redirect 301 /besplatnye/marketing/internet-marketing/ https://kursy.ru/marketing/internet-marketing/besplatnye/
+    Redirect 301 /besplatnye/marketing/targeting/ https://kursy.ru/marketing/targeting/besplatnye/
+    Redirect 301 /besplatnye/marketing/seo/ https://kursy.ru/marketing/seo/besplatnye/
+    Redirect 301 /besplatnye/marketing/kontekstnaya-reklama/ https://kursy.ru/marketing/kontekstnaya-reklama/besplatnye/
+    Redirect 301 /besplatnye/marketing/ https://kursy.ru/marketing/besplatnye/
+
+    Redirect 301 /besplatnye/menedzhment/menedzher-po-prodazham/ https://kursy.ru/menedzhment/menedzher-po-prodazham/besplatnye/
+    Redirect 301 /besplatnye/menedzhment/predprinimatelstvo/ https://kursy.ru/menedzhment/predprinimatelstvo/besplatnye/
+    Redirect 301 /besplatnye/menedzhment/project-manager/ https://kursy.ru/menedzhment/project-manager/besplatnye/
+    Redirect 301 /besplatnye/menedzhment/menedzher-marketplejsov/ https://kursy.ru/menedzhment/menedzher-marketplejsov/besplatnye/
+    Redirect 301 /besplatnye/menedzhment/upravlenie-proektami/ https://kursy.ru/menedzhment/upravlenie-proektami/besplatnye/
+    Redirect 301 /besplatnye/menedzhment/risk-menedzhment/ https://kursy.ru/menedzhment/risk-menedzhment/besplatnye/
+    Redirect 301 /besplatnye/menedzhment/upravlenie-prodazhami/ https://kursy.ru/menedzhment/rukovoditelya-otdela-prodazh/besplatnye/
+    Redirect 301 /besplatnye/menedzhment/logistika/ https://kursy.ru/menedzhment/logistika/besplatnye/
+    Redirect 301 /besplatnye/menedzhment/ https://kursy.ru/menedzhment/besplatnye/
+
+    Redirect 301 /besplatnye/prikladnye-programmy/excel/ https://kursy.ru/prikladnye-programmy/excel/besplatnye/
+    Redirect 301 /besplatnye/prikladnye-programmy/ https://kursy.ru/prikladnye-programmy/besplatnye/
+
+    Redirect 301 /besplatnye/programmirovanie/python/ https://kursy.ru/programmirovanie/python/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/qa-testirovanie/ https://kursy.ru/programmirovanie/qa-testirovanie/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/java/ https://kursy.ru/programmirovanie/java/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/htmlcss/ https://kursy.ru/programmirovanie/html-css/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/javascript/ https://kursy.ru/programmirovanie/javascript/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/sozdanie-sajtov/ https://kursy.ru/programmirovanie/sozdanie-saytov/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/php/ https://kursy.ru/programmirovanie/php/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/veb-razrabotka/ https://kursy.ru/programmirovanie/veb-razrabotka/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/tilda/ https://kursy.ru/dizajn/tilda/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/razrabotka-igr/ https://kursy.ru/programmirovanie/razrabotka-igr/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/git/ https://kursy.ru/programmirovanie/git/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/ruchnoe-testirovanie/ https://kursy.ru/programmirovanie/ruchnoe-testirovanie/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/it/ https://kursy.ru/programmirovanie/it/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/swift/ https://kursy.ru/programmirovanie/swift/besplatnye/
+    Redirect 301 //besplatnye/programmirovanie/unity/ https://kursy.ru//programmirovanie/unity/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/unreal-engine/ https://kursy.ru/programmirovanie/unreal-engine/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/sql/ https://kursy.ru/programmirovanie/sql/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/golang/ https://kursy.ru/programmirovanie/golang/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/devops/ https://kursy.ru/programmirovanie/devops/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/no-code/ https://kursy.ru/programmirovanie/no-code-razrabotka/besplatnye/
+    Redirect 301 /besplatnye/programmirovanie/ https://kursy.ru/programmirovanie/besplatnye/
+
+    Redirect 301 /besplatnye/samorazvitie/psihologiya/ https://kursy.ru/samorazvitie/psihologiya/besplatnye/
+    Redirect 301 /besplatnye/samorazvitie/vedenie-peregovorov/ https://kursy.ru/samorazvitie/vedenie-peregovorov/besplatnye/
+    Redirect 301 /besplatnye/samorazvitie/proforientatsiya/ https://kursy.ru/samorazvitie/proforientatsiya/besplatnye/
+    Redirect 301 /besplatnye/samorazvitie/seksologiya/ https://kursy.ru/samorazvitie/seksologiya/besplatnye/
+    Redirect 301 /besplatnye/samorazvitie/soft-skills/ https://kursy.ru/samorazvitie/soft-skills/besplatnye/
+    Redirect 301 /besplatnye/samorazvitie/liderstvo/ https://kursy.ru/samorazvitie/liderstvo/besplatnye/
+    Redirect 301 https://kursy.ru/besplatnye/samorazvitie/proforientatsiya/ https://kursy.ru/samorazvitie/proforientatsiya/besplatnye/
+    Redirect 301 /besplatnye/samorazvitie/ https://kursy.ru/samorazvitie/besplatnye/
+
+    Redirect 301 /besplatnye/finansy/buhgalteriya/ https://kursy.ru/finansy/buhgalteriya/besplatnye/
+    Redirect 301 /besplatnye/finansy/ https://kursy.ru/finansy/besplatnye/
+
+
+    Redirect 301 /besplatnye/tvorchestvo-i-kontent/fotograf/ https://kursy.ru/tvorchestvo-i-kontent/fotograf/besplatnye/
+    Redirect 301 /besplatnye/tvorchestvo-i-kontent/videomontazh/ https://kursy.ru/tvorchestvo-i-kontent/videomontazh/besplatnye/
+    Redirect 301 /besplatnye/tvorchestvo-i-kontent/captire-one/ https://kursy.ru/tvorchestvo-i-kontent/capture-one/besplatnye/
+    Redirect 301 /besplatnye/tvorchestvo-i-kontent/adobe-premiere-pro/ https://kursy.ru/tvorchestvo-i-kontent/adobe-premiere-pro/besplatnye/
+    Redirect 301 /besplatnye/tvorchestvo-i-kontent/stsenarist/ https://kursy.ru/tvorchestvo-i-kontent/stsenarist/besplatnye/
+    Redirect 301 /besplatnye/tvorchestvo-i-kontent/risovanie/ https://kursy.ru/tvorchestvo-i-kontent/risovanie/besplatnye/
+    Redirect 301 /besplatnye/tvorchestvo-i-kontent/ https://kursy.ru/tvorchestvo-i-kontent/besplatnye/
+
+    Redirect 301 /besplatnye/drugoe/vospitanie-detej/ https://kursy.ru/drugoe/vospitanie-detej/besplatnye/
+    Redirect 301 /besplatnye/drugoe/metodist/ https://kursy.ru/drugoe/metodist/besplatnye/
+    Redirect 301 /besplatnye/drugoe/zhurnalistika/ https://kursy.ru/drugoe/zhurnalistika/besplatnye/
+    Redirect 301 /besplatnye/drugoe/ https://kursy.ru/drugoe/besplatnye/
+
+
+    Redirect 301 /tvorchestvo-i-kontent/videomontazh/ https://kursy.ru/tvorchestvo-i-kontent/videosemka/
+
+    Redirect 301 /marketing/digital-marketing/ https://kursy.ru/marketing/internet-marketing/
+
+    Redirect 301 /besplatnye/marketing/digital-marketing/ https://kursy.ru/marketing/internet-marketing/besplatnye/
+
+    Redirect 301 /besplatnye/analitika/analitika-dannyh/ https://kursy.ru/analitika/besplatnye/
 
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
