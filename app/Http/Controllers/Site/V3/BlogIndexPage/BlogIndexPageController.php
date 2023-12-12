@@ -20,15 +20,6 @@ class BlogIndexPageController extends Controller
         $dto = IndexPostCategoryDto::fromBlogIndexRequest($request, page: $pageNumber);
         $result = $action->run($dto);
 
-        // todo: можно написать более красиво через репозиторий
-        $page = \DB::table('seo_for_pages')->where(['id' => self::SEO_PAGE_ID])->first();
-
-        $page->h1 .= ' - страница ' . $dto->page;
-        $page->title .= ' - страница ' . $dto->page;
-        $page->meta_description .= ' - страница ' . $dto->page;
-
-        $breadcrumbs = BreadcrumbsRender::get($page->breadcrumbs, $page->h1);
-
         return view('site.v3.templates.blog.category', [
             'posts' => $result->posts,
             'category' => $result->category,
@@ -36,8 +27,8 @@ class BlogIndexPageController extends Controller
             'pageNumber' => (int) $pageNumber,
             'pagesCount' => $result->posts->lastPage(),
             'pageAlias' => 'znaniya',
-            'page' => $page,
-            'breadcrumbs' => $breadcrumbs
+            'page' => $result->page,
+            'breadcrumbs' => $result->breadcrumbs
         ]);
     }
 

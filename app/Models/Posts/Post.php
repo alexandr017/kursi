@@ -24,6 +24,15 @@ class Post extends Model
     use HasFactory;
     use SoftDeletes;
 
+    const CACHE_SAVE_INTERVAL = 3600;
+    const POPULARS_CACHE_KEY = 'popular_posts';
+    const POPULARS_FOR_STRUCTURED_DATA_CACHE_KEY = 'populars_for_structures_data_posts';
+
+    const CACHE_KEYS = [
+      self::POPULARS_CACHE_KEY,
+      self::POPULARS_FOR_STRUCTURED_DATA_CACHE_KEY,
+    ];
+
     protected $fillable = ['category_id', 'title', 'meta_description', 'h1', 'breadcrumbs', 'preview',
         'lead', 'content', 'author_id', 'status', 'rating_value', 'rating_count', 'old_id'];
 

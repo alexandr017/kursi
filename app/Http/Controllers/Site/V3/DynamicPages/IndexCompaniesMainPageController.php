@@ -18,16 +18,12 @@ class IndexCompaniesMainPageController extends Controller
         $dto = IndexCompaniesDto::fromRequest($request);
         $companies = $action->run($dto);
 
-        // todo: можно написать более красиво через репозиторий
-        $page = \DB::table('seo_for_pages')->where(['id' => self::SEO_PAGE_ID])->first();
-
-        $breadcrumbs = [['h1' => $page->breadcrumbs ?? $page->h1]];
         return  $dto->needToRender() ?
             view('site.v3.templates.company.companies', [
                 'companies' =>$companies['companies'],
                 'companiesForStructuredData' => $companies['companiesForStructuredData'],
-                'breadcrumbs' => $breadcrumbs,
-                'page' => $page]
+                'breadcrumbs' => $companies['breadcrumbs'],
+                'page' => $companies['page']]
             ) :
             view('site.v3.templates.company.company-catalog-section', ['companies' => $companies['companies']]);
     }

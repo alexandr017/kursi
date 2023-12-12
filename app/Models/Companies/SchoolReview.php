@@ -44,6 +44,18 @@ class SchoolReview extends Model
         'minuses', 'content', 'rating', 'author_name', 'code', 'old_id','created_at',
     ];
 
+    const POPULARS_CACHE_KEY = 'populars_cache_key';
+    const POPULARS_FOR_STRUCTURED_DATA_CACHE_KEY = 'populars_for_structured_data_cache_key';
+    const CACHE_KEY_ACTIVES_COUNT = 'active_reviews_count';
+
+    const CACHE_KEYS = [
+        self::POPULARS_FOR_STRUCTURED_DATA_CACHE_KEY,
+        self::POPULARS_CACHE_KEY,
+        self::CACHE_KEY_ACTIVES_COUNT
+    ];
+
+    const CACHE_SAVE_INTERVAL = 3600;
+
     public function company(): BelongsTo
     {
         return $this->belongsTo(Company::class, 'school_id', 'id');

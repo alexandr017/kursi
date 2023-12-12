@@ -19,6 +19,15 @@ class StaticPage extends Model
 
     const MAIN_PAGE = 'Главная';
     const CONTACTS = 'Контакты';
+    const CACHE_KEY_BY_BREADCRUMBS = 'cache_key_by_breadcrumbs';
+    const CACHE_KEY_BY_ID = 'cache_key_by_id';
+
+    const CACHE_KEYS = [
+        self::CACHE_KEY_BY_BREADCRUMBS,
+        self::CACHE_KEY_BY_ID,
+    ];
+
+    const CACHE_SAVE_INTERVAL = 3600;
 
     protected $table = 'seo_for_pages';
 

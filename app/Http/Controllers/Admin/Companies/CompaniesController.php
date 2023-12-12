@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin\Companies;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests\Admin\Companies\CompanyRequest;
+use App\Models\Companies\Company;
 use App\Repositories\Admin\Companies\CompaniesRepository;
+use App\Repositories\Cache\CacheRepositoryInterface;
 use App\Services\Breadcrumbs\BreadcrumbsConverter;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -14,7 +16,9 @@ class CompaniesController extends AdminController
 {
     private mixed $companyRepository;
 
-    public function __construct()
+    public function __construct(
+        public CacheRepositoryInterface $cacheRepository
+    )
     {
         $this->companyRepository = new CompaniesRepository;
     }
@@ -70,6 +74,7 @@ class CompaniesController extends AdminController
         $result = $this->companyRepository->createCompany($data);
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(Company::CACHE_KEYS);
             return redirect()
                 ->route('admin.companies.index')
                 ->with('flash_success', 'Компания создана!');
@@ -123,6 +128,8 @@ class CompaniesController extends AdminController
         $result = $this->companyRepository->updateCompany($id, $data);
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(Company::CACHE_KEYS);
+
             return redirect()
                 ->route('admin.companies.index')
                 ->with('flash_success', 'Компания обнавлена!');
@@ -144,6 +151,8 @@ class CompaniesController extends AdminController
         $result = $this->companyRepository->deleteCompany($id);
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(Company::CACHE_KEYS);
+
             return redirect()
                 ->route('admin.companies.index')
                 ->with('flash_success', 'Компания удалена!');

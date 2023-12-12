@@ -21,16 +21,9 @@ class PostCategoriesController extends Controller implements DynamicPagesInterfa
         $action = resolve(IndexPostCategoryAction::class);
         $result = $action->run($dto);
 
-        $breadcrumbs = BreadcrumbsRender::get($result->category->breadcrumbs, $result->category->h1);
-        $page = \DB::table('seo_for_pages')->where(['id' => self::SEO_PAGE_ID])->first();
-
-        if ($result->category) {
-            $page->h1 = 'Статьи по ' . $result->category->h1 . ' - страница ' . $dto->page;
-            $page->title = $result->category->title . ' - страница ' . $dto->page;
-            $page->meta_description = $result->category->meta_description . ' - страница ' . $dto->page;
-        }
-
         $editLink = null;
+
+        //ToDo: Need to transfer to action
         $user = \Request::user();
 
         if ($user && $user->role->role != UserRole::ROLE_USER) {
@@ -44,9 +37,9 @@ class PostCategoriesController extends Controller implements DynamicPagesInterfa
             'pageNumber' => $paginatePage,
             'pagesCount' => $result->posts->lastPage(),
             'pageAlias' => $result->category->urls->url,
-            'breadcrumbs' => $breadcrumbs,
+            'breadcrumbs' => $result->breadcrumbs,
             'editLink' => $editLink,
-            'page' => $page,
+            'page' => $result->page,
             ]);
     }
 }

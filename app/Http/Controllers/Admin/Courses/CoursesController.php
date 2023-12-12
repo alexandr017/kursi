@@ -8,6 +8,7 @@ use App\Repositories\Admin\Courses\CoursesRepository;
 use App\Repositories\Admin\Companies\CompaniesRepository;
 use App\Http\Requests\Admin\Course\CoursesRequest;
 use App\Repositories\Admin\Listings\ListingsRepository;
+use App\Repositories\Cache\CacheRepositoryInterface;
 use App\Repositories\Tags\TagRepositoryInterface;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -19,7 +20,8 @@ class CoursesController extends AdminController
     private mixed $listingRepository;
 
     public function __construct(
-        private TagRepositoryInterface $tagRepository
+        private TagRepositoryInterface $tagRepository,
+        public CacheRepositoryInterface $cacheRepository
     )
     {
         $this->coursesRepository = new CoursesRepository;
@@ -100,6 +102,8 @@ class CoursesController extends AdminController
         }
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(Course::CACHE_KEYS);
+
             return redirect()
                 ->route('admin.courses.index')
                 ->with('flash_success', 'Курс добавлен!');
@@ -186,6 +190,8 @@ class CoursesController extends AdminController
         }
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(Course::CACHE_KEYS);
+
             return redirect()
                 ->route('admin.courses.index')
                 ->with('flash_success', 'Курс обнавлен!');
@@ -207,6 +213,8 @@ class CoursesController extends AdminController
         // todo сделать удаление также и привязанных курсов (то есть из таблицы courses_tags)
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(Course::CACHE_KEYS);
+
             return redirect()
                 ->route('admin.courses.index')
                 ->with('flash_success', 'Курс удален!');

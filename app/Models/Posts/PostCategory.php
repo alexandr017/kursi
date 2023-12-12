@@ -17,6 +17,10 @@ use Eloquent;
 class PostCategory extends Model
 {
     private const SECTION_TYPE = 2;
+    const CACHE_KEY_BY_ID = 'post_category_cache_key_by_id';
+    const CACHE_KEY_ALL_WHICH_HAVE_POSTS = 'poast_categories_which_have_childes_cache_key';
+    const CACHE_SAVE_INTERVAL = 3600;
+
 
     use HasFactory;
     use SoftDeletes;

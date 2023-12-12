@@ -9,7 +9,7 @@ use App\Models\ListingRating\ListingRating;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 
-class ListingRepository implements ListingRepositoryInterface
+class ListingRepository
 {
     private function query(): Builder
     {

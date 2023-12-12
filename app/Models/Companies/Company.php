@@ -19,6 +19,17 @@ use Eloquent;
 class Company extends Model
 {
     private const SECTION_TYPE = 5;
+    const CACHE_SAVE_INTERVAL = 3600;
+    const CACHE_KEY_DEFAULT_INDEX = 'companies_default_index';
+    const CACHE_KEY_DEFAULT_FOR_STRUCTURED_DATA = 'companies_default_for_structured_data';
+    const CACHE_KEY_ACTIVES_COUNT = 'companies_actives_count';
+
+    const CACHE_KEYS = [
+        self::CACHE_KEY_DEFAULT_INDEX,
+        self::CACHE_KEY_DEFAULT_FOR_STRUCTURED_DATA,
+        self::CACHE_KEY_ACTIVES_COUNT,
+    ];
+
     use HasFactory;
     use SoftDeletes;
 

@@ -7,7 +7,7 @@ use App\Models\Posts\PostCategory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 
-class PostCategoryRepository implements PostCategoryRepositoryInterface
+class PostCategoryRepository
 {
     private function query(): Builder
     {

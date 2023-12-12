@@ -175,7 +175,7 @@ return [
         Webwizo\Shortcodes\ShortcodesServiceProvider::class,
         App\Providers\ShortcodesServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
-
+        Illuminate\Redis\RedisServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -192,6 +192,7 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
         'Shortcode'   => Webwizo\Shortcodes\Facades\Shortcode::class,
+        'Redis' => Illuminate\Support\Facades\Redis::class,
 
     ])->toArray(),
 

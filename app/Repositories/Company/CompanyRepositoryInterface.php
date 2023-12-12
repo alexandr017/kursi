@@ -15,8 +15,12 @@ interface CompanyRepositoryInterface
     public function getCompanyReviews(IndexCompanyReviewsDto $dto): LengthAwarePaginator;
     public function saveReview(SchoolReview $review): bool;
     public function index(IndexCompaniesDto $dto): LengthAwarePaginator;
+    public function indexByDefault(IndexCompaniesDto $dto): LengthAwarePaginator;
     public function getForStructuredData(IndexCompaniesDto $dto): Collection;
+    public function getForStructuredDataDefault(IndexCompaniesDto $dto): Collection;
     public function getPopularReviews(): Collection;
     public function getPopularReviewsForStructuredData(): Collection;
     public function getBySearch(string $q, int $page = 1): LengthAwarePaginator;
+    public function getActivesCount(): int;
+    public function getActivesReviewsCount(): int;
 }

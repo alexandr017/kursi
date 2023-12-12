@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin\Posts;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests\Admin\Posts\PostCategoryRequest;
+use App\Models\Posts\PostCategory;
 use App\Repositories\Admin\Posts\PostCategoriesRepository;
+use App\Repositories\Cache\CacheRepositoryInterface;
 use App\Services\Breadcrumbs\BreadcrumbsConverter;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -14,7 +16,9 @@ class PostCategoriesController extends AdminController
 {
     private mixed $postCategoryRepository;
 
-    public function __construct()
+    public function __construct(
+        public CacheRepositoryInterface $cacheRepository
+    )
     {
         $this->postCategoryRepository = new PostCategoriesRepository;
     }
@@ -65,6 +69,8 @@ class PostCategoriesController extends AdminController
         $result = $this->postCategoryRepository->createCategory($data);
 
         if ($result) {
+            $this->cacheRepository->remove(PostCategory::CACHE_KEY_ALL_WHICH_HAVE_POSTS);
+
             return redirect()
                 ->route('admin.post-categories.index')
                 ->with('flash_success', 'Категория создана!');
@@ -113,6 +119,9 @@ class PostCategoriesController extends AdminController
         $result = $this->postCategoryRepository->updateCategory($id, $data);
 
         if ($result) {
+            $this->cacheRepository->remove(PostCategory::CACHE_KEY_ALL_WHICH_HAVE_POSTS);
+            $this->cacheRepository->remove(PostCategory::CACHE_KEY_BY_ID . $id);
+
             return redirect()
                 ->route('admin.post-categories.index')
                 ->with('flash_success', 'Категория обнавлена!');

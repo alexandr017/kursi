@@ -4,22 +4,33 @@ namespace App\Providers;
 
 use App\Repositories\BackCall\BackCallRepository;
 use App\Repositories\BackCall\BackCallRepositoryInterface;
+use App\Repositories\Cache\CacheRepository;
+use App\Repositories\Cache\CacheRepositoryInterface;
 use App\Repositories\Comments\CommentRepository;
 use App\Repositories\Comments\CommentRepositoryInterface;
+use App\Repositories\Company\CompanyCacheRepository;
 use App\Repositories\Company\CompanyRepository;
 use App\Repositories\Company\CompanyRepositoryInterface;
+use App\Repositories\Courses\CoursesCacheRepository;
 use App\Repositories\Courses\CoursesRepository;
 use App\Repositories\Courses\CoursesRepositoryInterface;
+use App\Repositories\Employee\EmployeeCacheRepository;
 use App\Repositories\Employee\EmployeeRepository;
 use App\Repositories\Employee\EmployeeRepositoryInterface;
+use App\Repositories\History\HistoryCacheRepository;
+use App\Repositories\History\HistoryRepositoryInterface;
+use App\Repositories\Listing\ListingCacheRepository;
 use App\Repositories\Listing\ListingRepository;
 use App\Repositories\Listing\ListingRepositoryInterface;
+use App\Repositories\PostCategory\PostCategoryCacheRepository;
 use App\Repositories\PostCategory\PostCategoryRepository;
 use App\Repositories\PostCategory\PostCategoryRepositoryInterface;
+use App\Repositories\Posts\PostCacheRepository;
 use App\Repositories\Posts\PostRepository;
 use App\Repositories\Posts\PostRepositoryInterface;
 use App\Repositories\Question\QuestionRepository;
 use App\Repositories\Question\QuestionRepositoryInterface;
+use App\Repositories\StaticPage\StaticPageCacheRepository;
 use App\Repositories\StaticPage\StaticPageRepository;
 use App\Repositories\StaticPage\StaticPageRepositoryInterface;
 use App\Repositories\Subscriber\SubscriberRepository;
@@ -45,11 +56,11 @@ class RepositoryServiceProvider extends ServiceProvider
         );
         $this->app->bind(
             CoursesRepositoryInterface::class,
-            CoursesRepository::class
+            CoursesCacheRepository::class
         );
         $this->app->bind(
             ListingRepositoryInterface::class,
-            ListingRepository::class
+            ListingCacheRepository::class
         );
         $this->app->bind(
             TagRepositoryInterface::class,
@@ -57,15 +68,15 @@ class RepositoryServiceProvider extends ServiceProvider
         );
         $this->app->bind(
             CompanyRepositoryInterface::class,
-            CompanyRepository::class
+            CompanyCacheRepository::class
         );
         $this->app->bind(
             PostRepositoryInterface::class,
-            PostRepository::class
+            PostCacheRepository::class
         );
         $this->app->bind(
             PostCategoryRepositoryInterface::class,
-            PostCategoryRepository::class
+            PostCategoryCacheRepository::class
         );
         $this->app->bind(
             UrlRepositoryInterface::class,
@@ -73,11 +84,11 @@ class RepositoryServiceProvider extends ServiceProvider
         );
         $this->app->bind(
             EmployeeRepositoryInterface::class,
-            EmployeeRepository::class
+            EmployeeCacheRepository::class
         );
         $this->app->bind(
             StaticPageRepositoryInterface::class,
-            StaticPageRepository::class
+            StaticPageCacheRepository::class
         );
         $this->app->bind(
             UserRepositoryInterface::class,
@@ -94,6 +105,14 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             QuestionRepositoryInterface::class,
             QuestionRepository::class
+        );
+        $this->app->bind(
+            CacheRepositoryInterface::class,
+            CacheRepository::class
+        );
+        $this->app->bind(
+            HistoryRepositoryInterface::class,
+            HistoryCacheRepository::class
         );
     }
 

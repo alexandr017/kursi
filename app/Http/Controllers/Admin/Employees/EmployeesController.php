@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin\Employees;
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Models\Team\Employee;
 use App\Repositories\Admin\Employees\EmployeesRepository;
 use App\Http\Requests\Admin\Employees\EmployeeRequest;
+use App\Repositories\Cache\CacheRepositoryInterface;
 use App\Services\Breadcrumbs\BreadcrumbsConverter;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -14,7 +16,9 @@ class EmployeesController extends AdminController
 {
     private mixed $employeesRepository;
 
-    public function __construct()
+    public function __construct(
+        public CacheRepositoryInterface $cacheRepository
+    )
     {
         $this->employeesRepository = new EmployeesRepository;
     }
@@ -110,6 +114,7 @@ class EmployeesController extends AdminController
         $result = $this->employeesRepository->updateEmployee($id, $data);
 
         if ($result) {
+            $this->cacheRepository->remove(Employee::CACHE_KEY_BY_ID . $id);
             return redirect()
                 ->route('admin.employees.index')
                 ->with('flash_success', 'Сотрудник обнавлен!');
@@ -131,6 +136,8 @@ class EmployeesController extends AdminController
         $result = $this->employeesRepository->deleteEmployee($id);
 
         if ($result) {
+            $this->cacheRepository->remove(Employee::CACHE_KEY_BY_ID . $id);
+
             return redirect()
                 ->route('admin.employees.index')
                 ->with('flash_success', 'Сотрудник удален!');

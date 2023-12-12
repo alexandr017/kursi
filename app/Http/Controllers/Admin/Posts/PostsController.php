@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin\Posts;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Requests\Admin\Posts\PostRequest;
+use App\Models\Posts\Post;
 use App\Repositories\Admin\Posts\PostsRepository;
 use App\Repositories\Admin\Posts\PostCategoriesRepository;
 use App\Repositories\Admin\Employees\EmployeesRepository;
+use App\Repositories\Cache\CacheRepositoryInterface;
 use App\Services\Breadcrumbs\BreadcrumbsConverter;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -18,7 +20,9 @@ class PostsController extends AdminController
     private mixed $postCategoriesRepository;
     private mixed $employeesRepository;
 
-    public function __construct()
+    public function __construct(
+        public CacheRepositoryInterface $cacheRepository
+    )
     {
         $this->postRepository = new PostsRepository;
         $this->postCategoriesRepository = new PostCategoriesRepository;
@@ -74,6 +78,8 @@ class PostsController extends AdminController
         $result = $this->postRepository->createPost($data);
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(Post::CACHE_KEYS);
+
             return redirect()
                 ->route('admin.posts.index')
                 ->with('flash_success', 'Запись создана!');
@@ -127,6 +133,8 @@ class PostsController extends AdminController
         $result = $this->postRepository->updatePost($id, $data);
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(Post::CACHE_KEYS);
+
             return redirect()
                 ->route('admin.posts.index')
                 ->with('flash_success', 'Запись обнавлена!');
@@ -148,6 +156,8 @@ class PostsController extends AdminController
         $result = $this->postRepository->deletePost($id);
 
         if ($result) {
+            $this->cacheRepository->bulkRemove(Post::CACHE_KEYS);
+
             return redirect()
                 ->route('admin.posts.index')
                 ->with('flash_success', 'Запись удалена!');

@@ -44,6 +44,19 @@ class Listing extends Model
     const STATUS_INACTIVE = 0;
     const SECTION_TYPE = 6;
 
+
+    const CATALOG_ALL_CACHE_KEY = 'catalog_all_listings';
+    const CATALOG_FOR_CHILDES_CACHE_KEY = 'catalog_for_childes_listings';
+    const CATALOG_FREE_CACHE_KEY = 'catalog_free_listings';
+    const LISTINGS_PARENT_CHILDES = 'listing_parent_childes';
+    const CACHE_SAVE_INTERVAL = 3600;
+
+    const CACHE_KEYS = [
+        self::CATALOG_ALL_CACHE_KEY,
+        self::CATALOG_FOR_CHILDES_CACHE_KEY,
+        self::CATALOG_FREE_CACHE_KEY,
+        self::LISTINGS_PARENT_CHILDES,
+    ];
     public function courses(): BelongsToMany
     {
         return $this->belongsToMany(
