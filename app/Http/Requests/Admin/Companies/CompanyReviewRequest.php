@@ -27,7 +27,7 @@ class CompanyReviewRequest extends FormRequest
     {
         return [
             "school_id" => ["required"],
-            "title" => ["required"],
+            "title" => ["nullable"],
             "pluses" => ["nullable"],
             "minuses" => ["nullable"],
             "content" => ["required"],

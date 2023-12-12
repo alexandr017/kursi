@@ -21,7 +21,7 @@ class CompanyController extends Controller implements DynamicPagesInterface
         $user = \Request::user();
 
         if ($user && $user->role->role != UserRole::ROLE_USER) {
-            $editLink = "/admin/listings/{$company->id}/edit";
+            $editLink = "/admin/companies/{$company->id}/edit";
         }
 
         return view('site.v3.templates.company.company', compact('company', 'breadcrumbs', 'editLink'));

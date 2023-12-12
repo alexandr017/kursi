@@ -71,6 +71,10 @@ class CompanyReviewsController extends AdminController
         $data = $request->all();
         $data = emptyDataToNull($data);
 
+        if (!isset($data['title']) && isset($data['author_name'])) {
+            $data['title'] = 'Отзыв от: ' . $data['author_name'];
+        }
+
         $result = $this->companyReviewsRepository->createReview($data);
 
         $company = $this->companiesRepository->find($result['school_id']);
@@ -128,6 +132,10 @@ class CompanyReviewsController extends AdminController
 
         $data = $request->all();
         $data = emptyDataToNull($data);
+        if (!isset($data['title']) && isset($data['author_name'])) {
+            $data['title'] = 'Отзыв от: ' . $data['author_name'];
+        }
+
         $result = $this->companyReviewsRepository->updateReview($id, $data);
 
         $company = $this->companiesRepository->find($result['school_id']);

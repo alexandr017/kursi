@@ -9,8 +9,8 @@
 </div>
 
 <div class="form-group">
-    <label for="title"><i class="red">*</i> Заголовок</label>
-    <input type="text" class="form-control" name="title" id="title" required
+    <label for="title"> Заголовок</label>
+    <input type="text" class="form-control" name="title" id="title"
            @if(old('title'))
                value="{{old('title')}}"
            @else

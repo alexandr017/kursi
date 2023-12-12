@@ -1,6 +1,6 @@
 @extends('admin.v2.layout')
-@section('title', 'Листинги - Ранжирование курса')
-@section('h1', 'Листинги - Ранжирование курса')
+@section('title', 'Листинги - Привязка куса')
+@section('h1', 'Листинги - Привязка куса')
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 @section('content')
