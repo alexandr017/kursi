@@ -8,8 +8,8 @@ includeComponent("components/organisms/card-review-mini");
             <div class="card-review-md">
                 <div class="card-review-md_header h-body-md">
                     <a class="card-review-md_school-logo card-review-md_link" href="https://kursy.ru/schools/geekbrains/">
-                        <img class="card-review_logo-s" src="./images/school-logo/skillbox-s.png" alt="school name">
-                        <img class="card-review_logo-m hidden" src="./images/school-logo/skillbox-m.png" alt="school name">
+                        <img class="card-review_logo-s" src="/images/design-system-images/companies/skillbox-s.png" alt="school name">
+                        <img class="card-review_logo-m hidden" src="/images/design-system-images/companies/skillbox-m.png" alt="school name">
                     </a>
                     <div class="card-review-md_title-wrapper">
                         <a class="card-review-md_title card-review-md_link" href="https://kursy.ru/schools/geekbrains/">UI-дизайнер: практические навыки дизайнера
@@ -49,8 +49,8 @@ includeComponent("components/organisms/card-review-mini");
             <div class="card-review-md">
                 <div class="card-review-md_header h-body-md">
                     <a class="card-review-md_school-logo card-review-md_link" href="https://kursy.ru/schools/geekbrains/">
-                        <img class="card-review_logo-s" src="./images/school-logo/skillbox-s.png" alt="school name">
-                        <img class="card-review_logo-m hidden" src="./images/school-logo/skillbox-m.png" alt="school name">
+                        <img class="card-review_logo-s" src="/images/design-system-images/companies/skillbox-s.png" alt="school name">
+                        <img class="card-review_logo-m hidden" src="/images/design-system-images/companies/skillbox-m.png" alt="school name">
                     </a>
                     <div class="card-review-md_title-wrapper">
                         <a class="card-review-md_title card-review-md_link" href="https://kursy.ru/schools/geekbrains/">UI-дизайнер: практические навыки дизайнера
@@ -84,8 +84,8 @@ includeComponent("components/organisms/card-review-mini");
             <div class="card-review-md">
                 <div class="card-review-md_header h-body-md">
                     <a class="card-review-md_school-logo card-review-md_link" href="https://kursy.ru/schools/geekbrains/">
-                        <img class="card-review_logo-s" src="./images/school-logo/skillbox-s.png" alt="school name">
-                        <img class="card-review_logo-m hidden" src="./images/school-logo/skillbox-m.png" alt="school name">
+                        <img class="card-review_logo-s" src="/images/design-system-images/companies/skillbox-s.png" alt="school name">
+                        <img class="card-review_logo-m hidden" src="/images/design-system-images/companies/skillbox-m.png" alt="school name">
                     </a>
                     <div class="card-review-md_title-wrapper">
                         <a class="card-review-md_title card-review-md_link" href="https://kursy.ru/schools/geekbrains/">UI-дизайнер</a>
@@ -117,8 +117,8 @@ includeComponent("components/organisms/card-review-mini");
             <div class="card-review-md">
                 <div class="card-review-md_header h-body-md">
                     <a class="card-review-md_school-logo card-review-md_link" href="https://kursy.ru/schools/geekbrains/">
-                        <img class="card-review_logo-s" src="./images/school-logo/skillbox-s.png" alt="school name">
-                        <img class="card-review_logo-m hidden" src="./images/school-logo/skillbox-m.png" alt="school name">
+                        <img class="card-review_logo-s" src="/images/design-system-images/companies/skillbox-s.png" alt="school name">
+                        <img class="card-review_logo-m hidden" src="/images/design-system-images/companies/skillbox-m.png" alt="school name">
                     </a>
                     <div class="card-review-md_title-wrapper">
                         <a class="card-review-md_title card-review-md_link" href="https://kursy.ru/schools/geekbrains/">GeekBrains</a>

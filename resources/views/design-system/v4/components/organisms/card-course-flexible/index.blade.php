@@ -9,7 +9,7 @@ includeComponent("components/organisms/card-course-flexible");
         <div class="card-course">
             <div class="card-course_header">
                 <a class="card-course_school-logo card-course_link" href="https://kursy.ru/schools/geekbrains/">
-                    <img src="./images/school-logo/skillbox-m.png" alt="school name">
+                    <img src="/images/design-system-images/companies/skillbox-m.png" alt="school name">
                 </a>
 
                 <div class="card-course_title-wrapper">

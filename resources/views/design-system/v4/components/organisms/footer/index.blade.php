@@ -8,7 +8,7 @@ includeComponent("components/organisms/footer");
         <div class="footer-wrapper">
             <div class="footer-row">
                 <div class="footer-logo">
-                    <img src="./images/footer-logo.svg" alt="Логотип Курсы.ру">
+                    <img src="/images/design-system-images/logo/footer-logo.svg" alt="Логотип Курсы.ру">
                 </div>
                 <div class="social-links-list">
                     <a class="link soc-media" href="https://www.youtube.com/channel/UCLi7thqu3euhnNd286CCg8g" target="_blank">

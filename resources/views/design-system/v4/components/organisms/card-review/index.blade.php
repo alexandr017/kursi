@@ -8,7 +8,7 @@ includeComponent("components/organisms/card-review");
             <div class="card-review">
                 <div class="card-review_header h-body-md">
                     <a class="card-review_school-logo card-review_link" href="https://kursy.ru/schools/geekbrains/">
-                        <img src="./images/school-logo/skillbox-m.png" alt="school name">
+                        <img src="/images/design-system-images/companies/skillbox-m.png" alt="school name">
                     </a>
                     <div class="card-review_title-wrapper">
                         <a class="card-review_title card-review_link" href="https://kursy.ru/schools/geekbrains/">UI-дизайнер: практические навыки дизайнера
@@ -37,7 +37,7 @@ includeComponent("components/organisms/card-review");
             <div class="card-review">
                 <div class="card-review_header h-body-md">
                     <a class="card-review_school-logo card-review_link" href="https://kursy.ru/schools/geekbrains/">
-                        <img src="./images/school-logo/skillbox-m.png" alt="school name">
+                        <img src="/images/design-system-images/companies/skillbox-m.png" alt="school name">
                     </a>
                     <div class="card-review_title-wrapper">
                         <a class="card-review_title card-review_link" href="https://kursy.ru/schools/geekbrains/">UI-дизайнер: практические навыки дизайнера
@@ -66,7 +66,7 @@ includeComponent("components/organisms/card-review");
             <div class="card-review">
                 <div class="card-review_header h-body-md">
                     <a class="card-review_school-logo card-review_link" href="https://kursy.ru/schools/geekbrains/">
-                        <img src="./images/school-logo/skillbox-m.png" alt="school name">
+                        <img src="/images/design-system-images/companies/skillbox-m.png" alt="school name">
                     </a>
                     <div class="card-review_title-wrapper">
                         <a class="card-review_title card-review_link" href="https://kursy.ru/schools/geekbrains/">UI-дизайнер: практические навыки дизайнера
@@ -95,7 +95,7 @@ includeComponent("components/organisms/card-review");
             <div class="card-review">
                 <div class="card-review_header h-body-md">
                     <a class="card-review_school-logo card-review_link" href="https://kursy.ru/schools/geekbrains/">
-                        <img src="./images/school-logo/skillbox-m.png" alt="school name">
+                        <img src="/images/design-system-images/companies/skillbox-m.png" alt="school name">
                     </a>
                     <div class="card-review_title-wrapper">
                         <a class="card-review_title card-review_link" href="https://kursy.ru/schools/geekbrains/">UI-дизайнер: практические навыки дизайнера
@@ -124,7 +124,7 @@ includeComponent("components/organisms/card-review");
             <div class="card-review">
                 <div class="card-review_header h-body-md">
                     <a class="card-review_school-logo card-review_link" href="https://kursy.ru/schools/geekbrains/">
-                        <img src="./images/school-logo/skillbox-m.png" alt="school name">
+                        <img src="/images/design-system-images/companies/skillbox-m.png" alt="school name">
                     </a>
                     <div class="card-review_title-wrapper">
                         <a class="card-review_title card-review_link" href="https://kursy.ru/schools/geekbrains/">UI-дизайнер: практические навыки дизайнера

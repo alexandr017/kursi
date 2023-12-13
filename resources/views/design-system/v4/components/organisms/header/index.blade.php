@@ -11,7 +11,7 @@ includeComponent("components/organisms/header");
             <div class="header-wrapper">
                 <div class="header-wrapper-left">
                     <a class="header-logo" href="/">
-                        <img src="images/header-logo.svg" alt="Курсы.ру">
+                        <img src="/images/design-system-images/logo/header-logo.svg" alt="Курсы.ру">
                     </a>
                     <button class="btn btn-primary btn-md btn-catalog header-menu-item">
                         <span class="bi"></span>
