@@ -21,6 +21,10 @@
         </ul>
         <p style="padding: 20px 0;">Молекулы</p>
         <ul>
+            <li><a href="/design-system/molecules?name=button-more">Кнопка показать еще</a></li>
+            <li><a href="/design-system/molecules?name=top-links">Верхний блок перелинковки</a></li>
+            <li><a href="/design-system/molecules?name=lead-block">Лид блок</a></li>
+            <li><a href="/design-system/molecules?name=breadcrumbs">Хлебные крошки</a></li>
             <li><a href="/design-system/molecules?name=accordion">Аккордион</a></li>
             <li><a href="/design-system/molecules?name=dropdown-list">Выпадающий список</a></li>
             <li><a href="/design-system/molecules?name=filter-select">Параметры фильтров/фильтр-аккордион</a></li>

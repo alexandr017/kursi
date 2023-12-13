@@ -1,0 +1,36 @@
+.lead-block {
+    max-width: 660px;
+}
+
+.lead-block_header {
+    display: flex;
+    align-items: center;
+}
+
+.lead-block_header-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+    line-height: 1.25rem;
+}
+
+.lead-block_header-text.open {
+    white-space: normal;
+}
+
+.btn-lead-open,
+.btn-lead-close {
+    color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
+}
+
+.btn-lead-close {
+    display: inline-flex;
+    vertical-align: bottom;
+}
+
+@media screen and (max-width: 767px) {
+    .lead-block_header-text {
+        font-size: 0.9375rem;
+    }
+}

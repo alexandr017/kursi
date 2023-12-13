@@ -515,5 +515,11 @@ includeComponent('components/atoms/button');
 </div>
 <!-- =========== end subnavigation =============== -->
 
+<div class="container">
+    <div class="row" style="padding-top: 20px; gap: 20px; padding-bottom: 100px;">
+        <button class="btn btn-secondary-dark btn-md btn-wide">Посмотреть еще</button>
+    </div>
+</div>
+
 
 
