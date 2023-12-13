@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin\Listings;
 
+use App\Rules\UrlValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\ValidationRule;
 use App\Http\Requests\Admin\AdminRequestTrait;
@@ -44,7 +45,7 @@ class ListingRequest extends FormRequest
             'rating_sum' => [],
             'status' => ['required', 'numeric'],
 
-            'url' => ['required', 'max:255']
+            'url' => ['required', 'max:255', new UrlValidationRule()]
         ];
     }
 

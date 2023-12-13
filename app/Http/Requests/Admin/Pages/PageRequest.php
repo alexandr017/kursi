@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin\Pages;
 
+use App\Rules\UrlValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\ValidationRule;
 use App\Http\Requests\Admin\AdminRequestTrait;
@@ -35,7 +36,7 @@ class PageRequest extends FormRequest
             'rating_value' => ['nullable', 'numeric'],
             'rating_count' => ['nullable', 'numeric'],
 
-            'url' => ['required', 'max:255']
+            'url' => ['required', 'max:255', new UrlValidationRule()]
         ];
     }
 

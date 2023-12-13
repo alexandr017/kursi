@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin\Posts;
 
+use App\Rules\UrlValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\ValidationRule;
 use App\Http\Requests\Admin\AdminRequestTrait;
@@ -33,7 +34,7 @@ class PostCategoryRequest extends FormRequest
             'content' => ['required'],
             'status' => ['required', 'numeric'],
 
-            'url' => ['required', 'max:255']
+            'url' => ['required', 'max:255', new UrlValidationRule()]
         ];
     }
 
