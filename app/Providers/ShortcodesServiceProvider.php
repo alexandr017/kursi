@@ -7,6 +7,8 @@ use Illuminate\Support\ServiceProvider;
 use Shortcode;
 
 use App\Shortcodes\Date\Year;
+use App\Shortcodes\Accordion\AccordionWrap;
+use App\Shortcodes\Accordion\AccordionItem;
 
 
 class ShortcodesServiceProvider extends ServiceProvider
@@ -29,5 +31,8 @@ class ShortcodesServiceProvider extends ServiceProvider
     public function register()
     {
         Shortcode::register('current_year', Year::class); // Текущий год
+
+        Shortcode::register('accordion_wrap', AccordionWrap::class); // Аккордеон
+        Shortcode::register('accordion_item', AccordionItem::class);
     }
 }
