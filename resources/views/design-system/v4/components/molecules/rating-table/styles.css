@@ -1,0 +1,163 @@
+.rating-table-wrapper {
+    margin-top: var(--spacing-x8, 32px);
+}
+
+.rating-table {
+    padding: 0 var(--spacing-x6, 24px) var(--spacing-x2, 8px);
+    border-radius: 16px;
+    background: var(--light_fill_dark-bg_secondary, #FFFFFF);
+
+    white-space: nowrap;
+    table-layout: fixed;
+    width: 100%;
+    max-width: 100%;
+    border-spacing: 0;
+    border: 0;
+    overflow: hidden;
+}
+
+.rating-table .th {
+    padding: var(--spacing-x5, 20px) var(--spacing-x5, 20px) var(--spacing-x4, 16px) 0;
+    box-shadow: 0 1px #EAECEE;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+    line-height: 1.5rem;
+}
+.rating-table .th:first-of-type {
+    padding: var(--spacing-x5, 20px) var(--spacing-x10, 40px) var(--spacing-x4, 16px) 0;
+}
+.rating-table .th:last-of-type {
+    padding: var(--spacing-x5, 20px) 0 var(--spacing-x4, 16px) 0;
+}
+
+.rating-table .tr:last-of-type .td {
+    box-shadow: unset;
+}
+
+.rating-table .td {
+    box-shadow: 0 1px #EAECEE;
+    text-align: left;
+    padding: var(--spacing-x4, 16px) var(--spacing-x5, 20px) var(--spacing-x4, 16px) 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.25rem;
+}
+.rating-table .td:first-of-type {
+    padding: var(--spacing-x4, 16px) var(--spacing-x10, 40px) var(--spacing-x4, 16px) 0;
+}
+.rating-table .td:last-of-type {
+    padding: var(--spacing-x4, 16px) 0 var(--spacing-x4, 16px) 0;
+}
+
+.col-course {
+    width: 304px;
+}
+
+.col-school,
+.col-rating,
+.col-price,
+.col-installment {
+    width: 14.7%;
+}
+
+.col-duration {
+    width: 13%;
+}
+
+.rating-table-link {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+@media screen and (max-width: 1199px) {
+    .col-school,
+    .col-rating,
+    .col-price,
+    .col-installment {
+        width: 15.8%;
+    }
+
+    .col-duration {
+        width: 12%;
+    }
+
+
+}
+
+@media screen and (max-width: 1023px) {
+    .rating-table-wrapper {
+        overflow-x: auto;
+        margin-top: var(--spacing-x6, 24px);
+    }
+
+    .rating-table {
+        padding: 0 var(--spacing-x5, 20px);
+        border-radius: 12px;
+    }
+
+    .col-course {
+        width: 270px;
+    }
+
+    .col-school,
+    .col-rating,
+    .col-price,
+    .col-installment {
+        width: 182px;
+    }
+    .col-duration {
+        width: 161px;
+    }
+
+    .rating-table .th:first-of-type {
+        padding: var(--spacing-x5, 20px) var(--spacing-x5, 20px) var(--spacing-x4, 16px) 0;
+    }
+
+    .rating-table .th,
+    .rating-table .td {
+        line-height: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .rating-table-wrapper {
+        margin-top: var(--spacing-x5, 20px);
+    }
+
+    .rating-table_body {
+        font-size: 0.9375rem;
+    }
+
+    .rating-table {
+        padding: 0 var(--spacing-x4, 16px);
+    }
+
+    .col-course {
+        width: 270px;
+    }
+
+    .col-school,
+    .col-rating,
+    .col-price,
+    .col-installment {
+        width: 183px;
+    }
+    .col-duration {
+        width: 163px;
+    }
+
+    .rating-table .th {
+        padding: var(--spacing-x3, 12px) var(--spacing-x5, 20px) var(--spacing-x4, 16px) 0;
+    }
+    .rating-table .th:first-of-type {
+        padding: var(--spacing-x3, 12px) var(--spacing-x5, 20px) var(--spacing-x4, 16px) 0;
+    }
+    .rating-table .th:last-of-type {
+        padding: var(--spacing-x3, 12px) 0 var(--spacing-x4, 16px) 0;
+    }
+}
