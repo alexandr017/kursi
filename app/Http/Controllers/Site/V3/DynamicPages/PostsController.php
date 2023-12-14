@@ -20,7 +20,7 @@ class PostsController extends Controller implements DynamicPagesInterface
             }, 'author'])->first();
 
         if ($post == null) {
-            abort(4040);
+            abort(404);
         }
 
         // если категория выключена то пост не покадывать
