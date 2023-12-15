@@ -3,9 +3,10 @@ includeComponent('components/atoms/tags');
 includeComponent('components/atoms/swiper-slider');
 includeComponent('components/molecules/top-links');
 ?>
-<div style="background: var(--light_fill_dark-bg_blur, rgba(245, 246, 247, 0.85)); padding: 40px 0;">
+{{--<div style="background: var(--light_fill_dark-bg_blur, rgba(245, 246, 247, 0.85)); padding: 40px 0;">--}}
+{{--    <div class="container">--}}
+{{--        start top-links --}}
 
-    <div class="container">
         <div class="top-links" >
             <div class="top-links-wrapper">
                 <div class="slider-wrapper">
@@ -27,7 +28,8 @@ includeComponent('components/molecules/top-links');
             </div>
             <span class="tag tag-btn-more">+ Еще 20</span>
         </div>
-    </div>
 
-</div>
+{{-- end top-links--}}
+{{--    </div>--}}
+{{--</div>--}}
 

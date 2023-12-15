@@ -2,8 +2,8 @@
 includeComponent('components/atoms/star-rating');
 includeComponent('components/organisms/star-rating-area');
 ?>
-<div style="background-color: var(--light_bg_primary, #F5F6F7); padding: 40px 0;">
-    <div class="container">
+{{--<div style="background-color: var(--light_bg_primary, #F5F6F7); padding: 40px 0;">--}}
+{{--    <div class="container">--}}
 {{-- начало компонента rating-area --}}
 
         <div class="rating-area">
@@ -62,5 +62,5 @@ includeComponent('components/organisms/star-rating-area');
         </div>
 
 {{--конец компонента rating-area --}}
-    </div>
-</div>
+{{--    </div>--}}
+{{--</div>--}}

@@ -315,6 +315,10 @@ button,
     display: none;
 }
 
+.btn.btn-more {
+    background-color: var(--light_btn_dark-bg_secondary_normal, #FFFFFF);
+}
+
 /* footer link */
 .footer-link {
     border-radius: unset;

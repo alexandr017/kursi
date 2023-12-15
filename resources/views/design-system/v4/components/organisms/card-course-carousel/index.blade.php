@@ -4,9 +4,10 @@ includeComponent('components/atoms/swiper-slider');
 includeComponent('components/organisms/card-course-mini');
 includeComponent('components/organisms/card-course-carousel');
 ?>
-<div style="padding: 20px 0; background: #F5F6F7;">
+{{--<div style="padding: 20px 0; background: #F5F6F7;">--}}
+{{-- start course-carousel --}}
 
-    <div class="course-carousel-block container">
+    <div class="course-carousel-block">
         <h2 class="course-carousel-title">Лучшие курсы по UX/UI дизайну</h2>
         <div class="swiper-controls">
             <button class="btn btn-icon btn-icon-arrow btn-icon-dark btn-prev">
@@ -892,5 +893,6 @@ includeComponent('components/organisms/card-course-carousel');
         </div>
     </div>
 
-</div>
+{{-- end card-course-carousel --}}
+{{--</div>--}}
 

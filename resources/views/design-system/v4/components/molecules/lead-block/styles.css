@@ -24,7 +24,7 @@
     color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));
 }
 
-.btn-lead-close {
+.btn.btn-lead-close {
     display: inline-flex;
     vertical-align: bottom;
 }

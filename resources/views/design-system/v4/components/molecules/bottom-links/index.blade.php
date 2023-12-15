@@ -3,8 +3,9 @@ includeComponent('components/atoms/button');
 includeComponent('components/molecules/bottom-links');
 ?>
 
-<div style="background-color: #F5F6F7; padding: 40px 0;">
-    <div class="container">
+{{--<div style="background-color: #F5F6F7; padding: 40px 0;">--}}
+{{--    <div class="container">--}}
+{{-- start bottom-links --}}
 
         <div class="bottom-links">
             <h2 class="h2 bottom-links_title">Популярные курсы по дизайну</h2>
@@ -195,6 +196,7 @@ includeComponent('components/molecules/bottom-links');
             </div>
         </div>
 
-    </div>
-</div>
+{{-- end bottom-links --}}
+{{--    </div>--}}
+{{--</div>--}}
 

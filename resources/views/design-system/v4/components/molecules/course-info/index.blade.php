@@ -2,8 +2,9 @@
 includeComponent('components/atoms/button');
 includeComponent('components/molecules/course-info');
 ?>
-<div style="background: #f5f6f7; padding: 40px 0;">
-    <div class="container">
+{{--<div style="background: #f5f6f7; padding: 40px 0;">--}}
+{{--    <div class="container">--}}
+{{-- start-course-info--}}
 
         <div class="course-info">
             <h2 class="h2 course-info_title">ТОП- <span>3</span> лучших онлайн-курсов по UX/UI-дизайну</h2>
@@ -242,6 +243,7 @@ includeComponent('components/molecules/course-info');
 
         </div>
 
-    </div>
-</div>
+{{-- end course-info--}}
+{{--    </div>--}}
+{{--</div>--}}
 

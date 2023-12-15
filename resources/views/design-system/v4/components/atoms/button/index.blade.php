@@ -517,7 +517,7 @@ includeComponent('components/atoms/button');
 
 <div class="container">
     <div class="row" style="padding-top: 20px; gap: 20px; padding-bottom: 100px;">
-        <button class="btn btn-secondary-dark btn-md btn-wide">Посмотреть еще</button>
+        <button class="btn btn-secondary-dark btn-md btn-wide btn-more">Посмотреть еще</button>
     </div>
 </div>
 

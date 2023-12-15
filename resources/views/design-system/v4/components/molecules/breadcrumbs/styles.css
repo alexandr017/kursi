@@ -3,3 +3,6 @@
     gap: 4px;
 }
 
+.breadcrumbs_link:last-of-type svg {
+    display: none;
+}

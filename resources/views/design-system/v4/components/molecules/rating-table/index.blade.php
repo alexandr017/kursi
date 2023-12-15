@@ -3,8 +3,8 @@ includeComponent('components/atoms/button');
 includeComponent('components/molecules/rating-table');
 ?>
 
-<div style="background: #EAECEE; padding: 40px 0;">
-    <div class="container">
+{{--<div style="background: #EAECEE; padding: 40px 0;">--}}
+{{--    <div class="container">--}}
 {{--     начало компонента rating-table    --}}
 
         <div class="rating-table-block">
@@ -182,5 +182,5 @@ includeComponent('components/molecules/rating-table');
         </div>
 
         {{--     конец компонента rating-table    --}}
-    </div>
-</div>
+{{--    </div>--}}
+{{--</div>--}}

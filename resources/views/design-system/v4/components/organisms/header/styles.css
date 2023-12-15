@@ -357,18 +357,18 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 }
 
 
-.search-block-clear {
+.search-block .search-block-clear {
     position: absolute;
     right: 206px;
     z-index: 40;
 }
 
-.search-btn {
+.search-block .search-btn {
     margin-right: 8px;
     z-index: 5;
 }
 
-.search-close-btn {
+.search-block .search-close-btn {
     z-index: 60;
     margin-left: 24px;
 }

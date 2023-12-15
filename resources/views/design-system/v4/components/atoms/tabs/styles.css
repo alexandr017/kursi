@@ -1,4 +1,4 @@
-.tab-label {
+.btn.tab-label {
     padding: 8px 16px;
     border-radius: 18px;
     color: var(--light_text_light-bg_secondary, rgba(0, 0, 0, 0.60));

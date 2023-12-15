@@ -4,7 +4,7 @@ includeComponent("components/atoms/tabs");
 includeComponent("components/molecules/input");
 includeComponent("components/organisms/header");
 ?>
-<div style="background: var(--light_bg_primary, #F5F6F7)">
+{{--<div style="background: var(--light_bg_primary, #F5F6F7)">--}}
 
     <header class="header-main bg-dark blur-size-l">
         <div class="container">
@@ -4815,55 +4815,55 @@ includeComponent("components/organisms/header");
         </div>
     </header>
 
-    <div class="container" style="padding-top: 76px; padding-bottom: 76px;">
-        <div class="row" style="gap: 20px;">
-            <div style="background: var(--light_bg_secondary, #FFFFFF); width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">
-                <div style="margin-top: auto; margin-left: auto">
-                    <button class="btn btn-primary btn-md">Смотреть курс</button>
-                </div>
-            </div>
-            <div style="background: red; width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">
-                <div style="margin-top: auto; margin-left: auto">
-                    <button class="btn btn-primary btn-md">Смотреть курс</button>
-                </div>
-            </div>
-            <div style="background: var(--light_bg_secondary, #FFFFFF); width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">
-                <div style="margin-top: auto; margin-left: auto">
-                    <button class="btn btn-primary btn-md">Смотреть курс</button>
-                </div>
-            </div>
-            <div style="background: red; width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">
-                <div style="margin-top: auto; margin-left: auto">
-                    <button class="btn btn-primary btn-md">Смотреть курс</button>
-                </div>
-            </div>
-            <div style="background: var(--light_bg_secondary, #FFFFFF); width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">
-                <div style="margin-top: auto; margin-left: auto">
-                    <button class="btn btn-primary btn-md">Смотреть курс</button>
-                </div>
-            </div>
-            <div style="background: red; width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">
-                <div style="margin-top: auto; margin-left: auto">
-                    <button class="btn btn-primary btn-md">Смотреть курс</button>
-                </div>
-            </div>
-            <div style="background: var(--light_bg_secondary, #FFFFFF); width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">
-                <div style="margin-top: auto; margin-left: auto">
-                    <button class="btn btn-primary btn-md">Смотреть курс</button>
-                </div>
-            </div>
-            <div style="background: red; width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">
-                <div style="margin-top: auto; margin-left: auto">
-                    <button class="btn btn-primary btn-md">Смотреть курс</button>
-                </div>
-            </div>
-            <div style="background: var(--light_bg_secondary, #FFFFFF); width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">
-                <div style="margin-top: auto; margin-left: auto">
-                    <button class="btn btn-primary btn-md">Смотреть курс</button>
-                </div>
-            </div>
-        </div>
+{{--    <div class="container" style="padding-top: 76px; padding-bottom: 76px;">--}}
+{{--        <div class="row" style="gap: 20px;">--}}
+{{--            <div style="background: var(--light_bg_secondary, #FFFFFF); width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">--}}
+{{--                <div style="margin-top: auto; margin-left: auto">--}}
+{{--                    <button class="btn btn-primary btn-md">Смотреть курс</button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div style="background: red; width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">--}}
+{{--                <div style="margin-top: auto; margin-left: auto">--}}
+{{--                    <button class="btn btn-primary btn-md">Смотреть курс</button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div style="background: var(--light_bg_secondary, #FFFFFF); width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">--}}
+{{--                <div style="margin-top: auto; margin-left: auto">--}}
+{{--                    <button class="btn btn-primary btn-md">Смотреть курс</button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div style="background: red; width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">--}}
+{{--                <div style="margin-top: auto; margin-left: auto">--}}
+{{--                    <button class="btn btn-primary btn-md">Смотреть курс</button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div style="background: var(--light_bg_secondary, #FFFFFF); width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">--}}
+{{--                <div style="margin-top: auto; margin-left: auto">--}}
+{{--                    <button class="btn btn-primary btn-md">Смотреть курс</button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div style="background: red; width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">--}}
+{{--                <div style="margin-top: auto; margin-left: auto">--}}
+{{--                    <button class="btn btn-primary btn-md">Смотреть курс</button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div style="background: var(--light_bg_secondary, #FFFFFF); width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">--}}
+{{--                <div style="margin-top: auto; margin-left: auto">--}}
+{{--                    <button class="btn btn-primary btn-md">Смотреть курс</button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div style="background: red; width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">--}}
+{{--                <div style="margin-top: auto; margin-left: auto">--}}
+{{--                    <button class="btn btn-primary btn-md">Смотреть курс</button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div style="background: var(--light_bg_secondary, #FFFFFF); width: 100%; height: 200px; border-radius: 10px; padding: 20px; display: flex;">--}}
+{{--                <div style="margin-top: auto; margin-left: auto">--}}
+{{--                    <button class="btn btn-primary btn-md">Смотреть курс</button>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
-    </div>
-</div>
+{{--    </div>--}}
+{{--</div>--}}
 

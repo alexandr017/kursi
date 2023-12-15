@@ -9,6 +9,7 @@
     gap: var(--spacing-x6, 24px);
     padding: var(--spacing-x5, 20px);
     position: relative;
+    max-width: 100%;
 }
 
 .card-course:hover {

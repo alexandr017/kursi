@@ -4,9 +4,10 @@ includeComponent("components/organisms/card-review-mini");
 includeComponent("components/atoms/swiper-slider");
 includeComponent("components/organisms/card-review-carousel");
 ?>
-<div style="padding: 20px 0; background: #F5F6F7;">
+{{--<div style="padding: 20px 0; background: #F5F6F7;">--}}
+{{-- start review-carousel-block --}}
 
-    <div class="review-carousel-block container">
+    <div class="review-carousel-block">
         <h2 class="review-carousel-title">Отзывы о курсах по UX/UI дизайну</h2>
         <div class="swiper-controls">
             <button class="btn btn-icon btn-icon-arrow btn-icon-dark btn-prev">
@@ -139,7 +140,6 @@ includeComponent("components/organisms/card-review-carousel");
                         </div>
                     </div>
                 </div>
-
                 <div class="card-review-md swiper-slide">
                     <div class="card-review-md_header h-body-md">
                         <a class="card-review-md_school-logo card-review-md_link"
@@ -191,7 +191,6 @@ includeComponent("components/organisms/card-review-carousel");
                         </div>
                     </div>
                 </div>
-
                 <div class="card-review-md swiper-slide">
                     <div class="card-review-md_header h-body-md">
                         <a class="card-review-md_school-logo card-review-md_link"
@@ -240,7 +239,6 @@ includeComponent("components/organisms/card-review-carousel");
                         </div>
                     </div>
                 </div>
-
                 <div class="card-review-md swiper-slide">
                     <div class="card-review-md_header h-body-md">
                         <a class="card-review-md_school-logo card-review-md_link"
@@ -284,7 +282,6 @@ includeComponent("components/organisms/card-review-carousel");
                         </div>
                     </div>
                 </div>
-
                 <div class="card-review-md swiper-slide">
                     <div class="card-review-md_header h-body-md">
                         <a class="card-review-md_school-logo card-review-md_link"
@@ -504,7 +501,8 @@ includeComponent("components/organisms/card-review-carousel");
         </div>
     </div>
 
-</div>
+{{-- end review-carousel-block --}}
+{{--</div>--}}
 
 
 

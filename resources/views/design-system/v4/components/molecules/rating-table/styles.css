@@ -70,7 +70,7 @@
 /*    width: 13%;*/
 /*}*/
 
-.rating-table-link {
+.rating-table .rating-table-link {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

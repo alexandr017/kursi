@@ -2,7 +2,9 @@
 includeComponent('components/atoms/button');
 includeComponent('components/molecules/lead-block');
 ?>
-<div class="container">
+{{--<div class="container">--}}
+{{--    start lead-block --}}
+
     <div class="lead-block">
         <div class="lead-block_header">
             <div class="lead-block_header-text h-body-md">
@@ -24,20 +26,8 @@ includeComponent('components/molecules/lead-block');
                 </svg>
             </button>
         </div>
-{{--        <div class="lead-block_body hidden">--}}
-{{--            Курсы UX/UI дизайна помогают научиться создавать интерфейсы. Приобретаются знания и опыт в престижной,--}}
-{{--            высокооплачиваемой профессии. Онлайн–курсы знакомят с принципами создания интуитивно понятного для--}}
-{{--            пользователей интерфейса, который поможет достичь поставленных целей. Учеба научит анализировать сценарии--}}
-{{--            поведения пользовательского продукта--}}
-{{--            <button class="btn btn-icon btn-lead-less">--}}
-{{--                <svg class="lead-block_icon" width="20" height="20" viewBox="0 0 20 20" fill="none"--}}
-{{--                     xmlns="http://www.w3.org/2000/svg">--}}
-{{--                    <path d="M15.5 12.75L10 7.25L4.5 12.75" stroke="#141414" stroke-width="1.5" stroke-linecap="round"--}}
-{{--                          stroke-linejoin="round"/>--}}
-{{--                </svg>--}}
-{{--            </button>--}}
-{{--        </div>--}}
     </div>
 
-</div>
+{{-- end lead-block --}}
+{{--</div>--}}
 

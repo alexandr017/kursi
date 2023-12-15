@@ -4,8 +4,10 @@ includeComponent('components/molecules/filter-select');
 
 includeComponent("components/organisms/filter");
 ?>
-<div style="background: #EAECEE; padding: 50px 0;">
-    <div class="container">
+{{--<div style="background: #EAECEE; padding: 50px 0;">--}}
+{{--    <div class="container">--}}
+{{--    start filter    --}}
+
         <button class="btn btn-icon btn-filter hidden">
             <svg class="bi bi-filter" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.7533 13.3193C12.7533 12.8196 12.9483 12.3403 13.2953 11.9869C13.6424 11.6335 14.1131 11.435 14.6039 11.435C15.0948 11.435 15.5655 11.6335 15.9125 11.9869C16.2596 12.3403 16.4546 12.8196 16.4546 13.3193C16.4546 13.8191 16.2596 14.2983 15.9125 14.6517C15.5655 15.0051 15.0948 15.2036 14.6039 15.2036C14.1131 15.2036 13.6424 15.0051 13.2953 14.6517C12.9483 14.2983 12.7533 13.8191 12.7533 13.3193ZM12.7533 13.3193C9.13965 13.3193 3.5 13.3193 3.5 13.3193M7.24673 6.68095C7.24673 7.1807 7.05175 7.65998 6.70468 8.01336C6.35762 8.36673 5.8869 8.56525 5.39607 8.56525C4.90525 8.56525 4.43453 8.36673 4.08747 8.01336C3.7404 7.65998 3.54542 7.1807 3.54542 6.68095C3.54542 6.1812 3.7404 5.70192 4.08747 5.34855C4.43453 4.99517 4.90525 4.79665 5.39607 4.79665C5.8869 4.79665 6.35762 4.99517 6.70468 5.34855C7.05175 5.70192 7.24673 6.1812 7.24673 6.68095ZM7.24673 6.68095C10.8604 6.68095 16.5 6.68095 16.5 6.68095" stroke="#141414" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -212,5 +214,7 @@ includeComponent("components/organisms/filter");
                 <button type="reset" class="btn btn-secondary-dark btn-md btn-wide btn-reset-courses hidden">Очистить фильтры</button>
             </div>
         </div>
-    </div>
-</div>
+
+{{--    end filter    --}}
+{{--    </div>--}}
+{{--</div>--}}
