@@ -183,23 +183,23 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#UX-UI" target="_blank">
-                                                                <span>UX/UI дизайн</span>
+                                                            <a href="/#UX-UI" target="_blank">
+                                                                UX/UI дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#web-design" target="_blank">
-                                                                <span>Веб-дизайн</span>
+                                                            <a href="/#web-design" target="_blank">
+                                                                Веб-дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#graf-design" target="_blank">
-                                                                <span>Графический дизайн</span>
+                                                            <a href="/#graf-design" target="_blank">
+                                                                Графический дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -233,23 +233,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -285,8 +285,8 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -320,23 +320,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -373,23 +373,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -426,23 +426,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -479,23 +479,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -531,23 +531,23 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#UX-UI" target="_blank">
-                                                                <span>UX/UI дизайн</span>
+                                                            <a href="/#UX-UI" target="_blank">
+                                                                UX/UI дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#web-design" target="_blank">
-                                                                <span>Веб-дизайн</span>
+                                                            <a href="/#web-design" target="_blank">
+                                                                Веб-дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#graf-design" target="_blank">
-                                                                <span>Графический дизайн</span>
+                                                            <a href="/#graf-design" target="_blank">
+                                                                Графический дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -581,23 +581,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -683,8 +683,8 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -718,23 +718,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -771,23 +771,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -824,23 +824,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -877,23 +877,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -929,8 +929,8 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -964,23 +964,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1017,23 +1017,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1070,23 +1070,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1123,23 +1123,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1175,8 +1175,8 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -1210,23 +1210,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1263,23 +1263,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1316,23 +1316,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1369,23 +1369,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1421,8 +1421,8 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -1456,23 +1456,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1509,23 +1509,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1562,23 +1562,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1615,23 +1615,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1667,8 +1667,8 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -1702,23 +1702,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1755,23 +1755,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1808,23 +1808,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1861,23 +1861,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -1913,8 +1913,8 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -1948,23 +1948,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2001,23 +2001,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2054,23 +2054,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2107,23 +2107,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2159,8 +2159,8 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -2194,23 +2194,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2247,23 +2247,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2300,23 +2300,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2353,23 +2353,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2405,8 +2405,8 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -2453,23 +2453,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2506,23 +2506,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2559,23 +2559,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2611,8 +2611,8 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -2646,23 +2646,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2699,23 +2699,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2752,23 +2752,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2805,23 +2805,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2857,8 +2857,8 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -2892,23 +2892,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2945,23 +2945,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -2998,23 +2998,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -3051,23 +3051,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -3103,8 +3103,8 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -3138,23 +3138,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -3191,23 +3191,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -3244,23 +3244,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -3297,23 +3297,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -3349,8 +3349,8 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -3384,23 +3384,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -3437,23 +3437,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -3490,23 +3490,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -3543,23 +3543,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -3598,23 +3598,23 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#UX-UI" target="_blank">
-                                                                <span>UX/UI дизайн</span>
+                                                            <a href="/#UX-UI" target="_blank">
+                                                                UX/UI дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#web-design" target="_blank">
-                                                                <span>Веб-дизайн</span>
+                                                            <a href="/#web-design" target="_blank">
+                                                                Веб-дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#graf-design" target="_blank">
-                                                                <span>Графический дизайн</span>
+                                                            <a href="/#graf-design" target="_blank">
+                                                                Графический дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -3648,23 +3648,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -3699,23 +3699,23 @@ includeComponent("components/organisms/header");
                                                     <div class="catalog-title">Иностранные языки</div>
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#UX-UI" target="_blank">
-                                                                <span>UX/UI дизайн</span>
+                                                            <a href="/#UX-UI" target="_blank">
+                                                                UX/UI дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#web-design" target="_blank">
-                                                                <span>Веб-дизайн</span>
+                                                            <a href="/#web-design" target="_blank">
+                                                                Веб-дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#graf-design" target="_blank">
-                                                                <span>Графический дизайн</span>
+                                                            <a href="/#graf-design" target="_blank">
+                                                                Графический дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -3749,23 +3749,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -3801,23 +3801,23 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#UX-UI" target="_blank">
-                                                                <span>UX/UI дизайн</span>
+                                                            <a href="/#UX-UI" target="_blank">
+                                                                UX/UI дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#web-design" target="_blank">
-                                                                <span>Веб-дизайн</span>
+                                                            <a href="/#web-design" target="_blank">
+                                                                Веб-дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#graf-design" target="_blank">
-                                                                <span>Графический дизайн</span>
+                                                            <a href="/#graf-design" target="_blank">
+                                                                Графический дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -3851,23 +3851,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -3903,23 +3903,23 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#UX-UI" target="_blank">
-                                                                <span>UX/UI дизайн</span>
+                                                            <a href="/#UX-UI" target="_blank">
+                                                                UX/UI дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#web-design" target="_blank">
-                                                                <span>Веб-дизайн</span>
+                                                            <a href="/#web-design" target="_blank">
+                                                                Веб-дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#graf-design" target="_blank">
-                                                                <span>Графический дизайн</span>
+                                                            <a href="/#graf-design" target="_blank">
+                                                                Графический дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -3953,23 +3953,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -4005,23 +4005,23 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#UX-UI" target="_blank">
-                                                                <span>UX/UI дизайн</span>
+                                                            <a href="/#UX-UI" target="_blank">
+                                                                UX/UI дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#web-design" target="_blank">
-                                                                <span>Веб-дизайн</span>
+                                                            <a href="/#web-design" target="_blank">
+                                                                Веб-дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#graf-design" target="_blank">
-                                                                <span>Графический дизайн</span>
+                                                            <a href="/#graf-design" target="_blank">
+                                                                Графический дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -4055,23 +4055,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -4107,23 +4107,23 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#UX-UI" target="_blank">
-                                                                <span>UX/UI дизайн</span>
+                                                            <a href="/#UX-UI" target="_blank">
+                                                                UX/UI дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#web-design" target="_blank">
-                                                                <span>Веб-дизайн</span>
+                                                            <a href="/#web-design" target="_blank">
+                                                                Веб-дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#graf-design" target="_blank">
-                                                                <span>Графический дизайн</span>
+                                                            <a href="/#graf-design" target="_blank">
+                                                                Графический дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -4157,23 +4157,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -4209,23 +4209,23 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#UX-UI" target="_blank">
-                                                                <span>UX/UI дизайн</span>
+                                                            <a href="/#UX-UI" target="_blank">
+                                                                UX/UI дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#web-design" target="_blank">
-                                                                <span>Веб-дизайн</span>
+                                                            <a href="/#web-design" target="_blank">
+                                                                Веб-дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#graf-design" target="_blank">
-                                                                <span>Графический дизайн</span>
+                                                            <a href="/#graf-design" target="_blank">
+                                                                Графический дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -4259,23 +4259,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -4311,23 +4311,23 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#UX-UI" target="_blank">
-                                                                <span>UX/UI дизайн</span>
+                                                            <a href="/#UX-UI" target="_blank">
+                                                                UX/UI дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#web-design" target="_blank">
-                                                                <span>Веб-дизайн</span>
+                                                            <a href="/#web-design" target="_blank">
+                                                                Веб-дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#graf-design" target="_blank">
-                                                                <span>Графический дизайн</span>
+                                                            <a href="/#graf-design" target="_blank">
+                                                                Графический дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -4361,23 +4361,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -4413,23 +4413,23 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#UX-UI" target="_blank">
-                                                                <span>UX/UI дизайн</span>
+                                                            <a href="/#UX-UI" target="_blank">
+                                                                UX/UI дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#web-design" target="_blank">
-                                                                <span>Веб-дизайн</span>
+                                                            <a href="/#web-design" target="_blank">
+                                                                Веб-дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#graf-design" target="_blank">
-                                                                <span>Графический дизайн</span>
+                                                            <a href="/#graf-design" target="_blank">
+                                                                Графический дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -4463,23 +4463,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -4515,23 +4515,23 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#UX-UI" target="_blank">
-                                                                <span>UX/UI дизайн</span>
+                                                            <a href="/#UX-UI" target="_blank">
+                                                                UX/UI дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#web-design" target="_blank">
-                                                                <span>Веб-дизайн</span>
+                                                            <a href="/#web-design" target="_blank">
+                                                                Веб-дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#graf-design" target="_blank">
-                                                                <span>Графический дизайн</span>
+                                                            <a href="/#graf-design" target="_blank">
+                                                                Графический дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -4565,23 +4565,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -4617,23 +4617,23 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#UX-UI" target="_blank">
-                                                                <span>UX/UI дизайн</span>
+                                                            <a href="/#UX-UI" target="_blank">
+                                                                UX/UI дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#web-design" target="_blank">
-                                                                <span>Веб-дизайн</span>
+                                                            <a href="/#web-design" target="_blank">
+                                                                Веб-дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#graf-design" target="_blank">
-                                                                <span>Графический дизайн</span>
+                                                            <a href="/#graf-design" target="_blank">
+                                                                Графический дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -4667,23 +4667,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>
@@ -4719,23 +4719,23 @@ includeComponent("components/organisms/header");
 
                                                     <div class="catalog-menu-list">
                                                         <div class="catalog-menu-item">
-                                                            <a href="#all-courses" target="_blank">
-                                                                <span>Все курсы категории</span>
+                                                            <a href="/#all-categories" target="_blank">
+                                                                Все курсы категории
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#UX-UI" target="_blank">
-                                                                <span>UX/UI дизайн</span>
+                                                            <a href="/#UX-UI" target="_blank">
+                                                                UX/UI дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#web-design" target="_blank">
-                                                                <span>Веб-дизайн</span>
+                                                            <a href="/#web-design" target="_blank">
+                                                                Веб-дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
-                                                            <a href="#graf-design" target="_blank">
-                                                                <span>Графический дизайн</span>
+                                                            <a href="/#graf-design" target="_blank">
+                                                                Графический дизайн
                                                             </a>
                                                         </div>
                                                         <div class="catalog-menu-item">
@@ -4769,23 +4769,23 @@ includeComponent("components/organisms/header");
 
                                                                 <div class="catalog-menu-list">
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#all-direction" target="_blank">
-                                                                            <span>Все курсы направления</span>
+                                                                        <a href="/#all-direction" target="_blank">
+                                                                            Все курсы направления
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-general" target="_blank">
-                                                                            <span>3D-дженералист</span>
+                                                                        <a href="/#3d-general" target="_blank">
+                                                                            3D-дженералист
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-animation" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#3d-animation" target="_blank">
+                                                                            3D-анимация
                                                                         </a>
                                                                     </div>
                                                                     <div class="catalog-menu-item">
-                                                                        <a href="#3d-visual" target="_blank">
-                                                                            <span>3D-анимация</span>
+                                                                        <a href="/#4d-visual" target="_blank">
+                                                                            4D-анимация
                                                                         </a>
                                                                     </div>
                                                                 </div>

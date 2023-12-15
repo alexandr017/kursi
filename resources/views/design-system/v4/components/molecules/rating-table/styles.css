@@ -24,12 +24,15 @@
     white-space: nowrap;
     font-weight: 600;
     line-height: 1.5rem;
+    width: 14.7%;
 }
 .rating-table .th:first-of-type {
     padding: var(--spacing-x5, 20px) var(--spacing-x10, 40px) var(--spacing-x4, 16px) 0;
+    width: 304px;
 }
 .rating-table .th:last-of-type {
     padding: var(--spacing-x5, 20px) 0 var(--spacing-x4, 16px) 0;
+    width: 13%;
 }
 
 .rating-table .tr:last-of-type .td {
@@ -52,20 +55,20 @@
     padding: var(--spacing-x4, 16px) 0 var(--spacing-x4, 16px) 0;
 }
 
-.col-course {
-    width: 304px;
-}
+/*.col-course {*/
+/*    width: 304px;*/
+/*}*/
 
-.col-school,
-.col-rating,
-.col-price,
-.col-installment {
-    width: 14.7%;
-}
+/*.col-school,*/
+/*.col-rating,*/
+/*.col-price,*/
+/*.col-installment {*/
+/*    width: 14.7%;*/
+/*}*/
 
-.col-duration {
-    width: 13%;
-}
+/*.col-duration {*/
+/*    width: 13%;*/
+/*}*/
 
 .rating-table-link {
     white-space: nowrap;
@@ -75,18 +78,22 @@
 }
 
 @media screen and (max-width: 1199px) {
-    .col-school,
-    .col-rating,
-    .col-price,
-    .col-installment {
+    /*.col-school,*/
+    /*.col-rating,*/
+    /*.col-price,*/
+    /*.col-installment {*/
+    /*    width: 15.8%;*/
+    /*}*/
+
+    /*.col-duration {*/
+    /*    width: 12%;*/
+    /*}*/
+    .rating-table .th {
         width: 15.8%;
     }
-
-    .col-duration {
+    .rating-table .th:last-of-type {
         width: 12%;
     }
-
-
 }
 
 @media screen and (max-width: 1023px) {
@@ -100,22 +107,30 @@
         border-radius: 12px;
     }
 
-    .col-course {
-        width: 270px;
-    }
+    /*.col-course {*/
+    /*    width: 270px;*/
+    /*}*/
 
-    .col-school,
-    .col-rating,
-    .col-price,
-    .col-installment {
-        width: 182px;
-    }
-    .col-duration {
-        width: 161px;
-    }
+    /*.col-school,*/
+    /*.col-rating,*/
+    /*.col-price,*/
+    /*.col-installment {*/
+    /*    width: 182px;*/
+    /*}*/
+    /*.col-duration {*/
+    /*    width: 161px;*/
+    /*}*/
 
     .rating-table .th:first-of-type {
         padding: var(--spacing-x5, 20px) var(--spacing-x5, 20px) var(--spacing-x4, 16px) 0;
+        width: 270px;
+    }
+
+    .rating-table .th {
+        width: 182px;
+    }
+    .rating-table .th:last-of-type {
+        width: 161px;
     }
 
     .rating-table .th,
@@ -137,27 +152,30 @@
         padding: 0 var(--spacing-x4, 16px);
     }
 
-    .col-course {
-        width: 270px;
-    }
+    /*.col-course {*/
+    /*    width: 270px;*/
+    /*}*/
 
-    .col-school,
-    .col-rating,
-    .col-price,
-    .col-installment {
-        width: 183px;
-    }
-    .col-duration {
-        width: 163px;
-    }
+    /*.col-school,*/
+    /*.col-rating,*/
+    /*.col-price,*/
+    /*.col-installment {*/
+    /*    width: 183px;*/
+    /*}*/
+    /*.col-duration {*/
+    /*    width: 163px;*/
+    /*}*/
 
     .rating-table .th {
         padding: var(--spacing-x3, 12px) var(--spacing-x5, 20px) var(--spacing-x4, 16px) 0;
+        width: 183px;
     }
     .rating-table .th:first-of-type {
         padding: var(--spacing-x3, 12px) var(--spacing-x5, 20px) var(--spacing-x4, 16px) 0;
+        width: 270px;
     }
     .rating-table .th:last-of-type {
         padding: var(--spacing-x3, 12px) 0 var(--spacing-x4, 16px) 0;
+        width: 163px;
     }
 }

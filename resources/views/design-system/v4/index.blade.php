@@ -49,7 +49,7 @@
             <li><a href="/design-system/organisms?name=footer">Футер</a></li>
             <li><a href="/design-system/organisms?name=header">Шапка</a></li>
             <li><a href="/design-system/organisms?name=sort">Сортировка</a></li>
-
+            <li><a href="/design-system/organisms?name=star-rating-area">Звездный рейтинг</a></li>
         </ul>
         <p style="padding: 20px 0;">Шаблоны</p>
         <ul>
