@@ -41,11 +41,11 @@ window.addEventListener('load', ()=>{
 
     function hideContainer(){
         if(document.documentElement.offsetWidth < 1024) {
-            carouselContainer.classList.remove('container');
-            carouselTitle.classList.add('container');
+            // carouselContainer.classList.remove('container');
+            // carouselTitle.classList.add('container');
         } else {
-            carouselContainer.classList.add('container');
-            carouselTitle.classList.remove('container');
+            // carouselContainer.classList.add('container');
+            // carouselTitle.classList.remove('container');
         }
     }
 })

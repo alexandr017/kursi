@@ -3,6 +3,7 @@
 
 .review-carousel-block {
     position: relative;
+    width: 100%;
 }
 
 .review-carousel-title {
@@ -28,10 +29,14 @@
     display: flex;
     gap: 8px;
     top: 0;
-    right: 36px;
+    right: 0;
 }
 
 @media screen and (max-width: 1023px) {
+    .review-carousel-block {
+        width: calc(100vw - 24px);
+    }
+
     .swiper-controls {
         display: none;
     }
@@ -41,8 +46,8 @@
     }
 
     .card-review-carousel.swiper {
-        margin-left: 24px;
-        max-width: calc(100% - 24px);
+        margin-left: 0;
+        max-width: 100%;
     }
 
     .card-review-md.swiper-slide {
@@ -51,10 +56,14 @@
 }
 
 @media screen and (max-width: 767px) {
+    .review-carousel-block {
+        width: calc(100vw - 16px);
+    }
+
     .card-review-carousel.swiper {
         margin-top: 20px;
-        margin-left: 16px;
-        max-width: calc(100% - 16px);
+        margin-left: 0;
+        max-width: 100%;
     }
 
     .card-review-md.swiper-slide {

@@ -44,7 +44,7 @@
 
 @media screen and (max-width: 1023px) {
     .header-btn-group,
-    .btn-catalog {
+    .btn.btn-catalog {
         display: none;
     }
 
@@ -52,7 +52,7 @@
         z-index: auto;
     }
 
-    .btn-hamburger {
+    .btn.btn-hamburger {
         display: flex;
     }
 

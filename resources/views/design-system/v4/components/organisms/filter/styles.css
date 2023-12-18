@@ -1,5 +1,9 @@
 /*@import "components/molecules/filter-select";*/
 
+.filter-block {
+    width: 312px;
+}
+
 .filter-list {
     border-radius: 15px;
     background: var(--light_fill_dark-bg_secondary, #FFFFFF);
@@ -77,7 +81,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 10;
+    z-index: 100;
     overflow: scroll;
 }
 
@@ -115,4 +119,12 @@
 
 .filter-mobile .btn-reset-courses {
     margin-top: 16px;
+}
+
+@media screen and (max-width: 1023px) {
+    .filter-block {
+        width: auto;
+        position: absolute;
+        top: 56px;
+    }
 }

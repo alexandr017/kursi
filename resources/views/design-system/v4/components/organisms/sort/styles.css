@@ -1,9 +1,9 @@
-/*@import "components/molecules/dropdown-list";*/
-
 .sort {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-left: auto;
+    align-self: baseline;
 }
 
 .sort-container {

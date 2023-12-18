@@ -41,12 +41,12 @@ window.addEventListener('load', ()=>{
 
 
     function hideContainer(){
-        if(document.documentElement.offsetWidth < 1024) {
-            courseCarouselContainer.classList.remove('container');
-            courseCarouselTitle.classList.add('container');
+        if(window.innerWidth < 1024) {
+            //courseCarouselContainer.classList.remove('container');
+            //courseCarouselTitle.classList.add('container');
         } else {
-            courseCarouselContainer.classList.add('container');
-            courseCarouselTitle.classList.remove('container');
+            //courseCarouselContainer.classList.add('container');
+            //courseCarouselTitle.classList.remove('container');
         }
     }
 

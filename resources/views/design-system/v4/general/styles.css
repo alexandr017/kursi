@@ -82,6 +82,13 @@ p {
     top: 10px;
 }
 
+.bg-primary {
+    background-color: var(--light_bg_primary, #F5F6F7);
+}
+.bg-secondary {
+    background-color: var(--neutral_white, #FFFFFF);
+}
+
 .border-radius {
     border-radius: 25px;
 }
@@ -118,8 +125,8 @@ hr {
 }
 
 .p-2 {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .p-3 {
@@ -133,7 +140,8 @@ hr {
 }
 
 .p-5 {
-    padding: 80px 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .pt-1 {padding-top: 10px;}
@@ -264,8 +272,85 @@ h4,.h4, .h4-desk {
 }
 /* end titles */
 
+.page_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.page_content {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    width: calc(100% - 20px - 312px);
+    font-size: 0.9375rem;
+    line-height: 1.25rem;
+}
+.page_top-grid {
+    display: flex;
+    gap: var(--spacing-x5, 20px);
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+}
+
+.content-block {
+    padding: var(--spacing-x6, 24px);
+    border-radius: 16px;
+    background: var(--light_fill_dark-bg_secondary, #FFFFFF);
+    font-size: 0.9375rem;
+}
+
+.content-block p {
+    padding-top: var(--spacing-x5, 20px);
+}
+
+.content-block ul,
+.content-block ol {
+    padding: var(--spacing-x5, 20px) 0 0 0;
+    margin: 0 0 0 13px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-x2, 8px);
+}
+
+.content-block ul li,
+.content-block ol li {
+    width: 100%;
+}
+
+.content_title:not(:first-of-type) {
+    margin-top: var(--spacing-x10, 40px);
+}
 
 @media screen and (max-width: 1023px) {
+    .content-block {
+        border-radius: 12px;
+        padding: var(--spacing-x5, 20px);
+    }
+
+    .content-block p {
+        padding-top: var(--spacing-x4, 16px);
+    }
+    .content-block ul,
+    .content-block ol {
+        padding-top: var(--spacing-x4, 16px);
+    }
+
+    .content_title:not(:first-of-type) {
+        margin-top: var(--spacing-x8, 32px);
+    }
+
+    .page_content {
+        width: 100%;
+    }
+
+    .page_wrapper {
+        gap: 32px;
+        padding-bottom: 32px;
+    }
+
     .content img,
     .content iframe {
         margin: var(--spacing-x4) 0;
@@ -312,6 +397,22 @@ h4,.h4, .h4-desk {
 }
 
 @media screen and (max-width: 767px) {
+    .content-block {
+        padding: var(--spacing-x4, 16px);
+    }
+
+    .content-block p {
+        padding-top: var(--spacing-x3, 12px);
+    }
+    .content-block ul,
+    .content-block ol {
+        padding-top: var(--spacing-x3, 12px);
+    }
+
+    .content_title:not(:first-of-type) {
+        margin-top: var(--spacing-x4, 16px);
+    }
+
     .h-body-md {
         font-size: 0.8125rem;
         line-height: 1.25rem;

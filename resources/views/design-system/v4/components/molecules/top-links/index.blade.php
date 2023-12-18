@@ -23,7 +23,7 @@ includeComponent('components/molecules/top-links');
                     <a class="tag" href="https://vsezaimyonline.ru" target="_blank">Adobe Photoshop</a>
                     <a class="tag" href="https://vsezaimyonline.ru" target="_blank">Figma</a>
                     <a class="tag" href="https://vsezaimyonline.ru" target="_blank">UX-аналитика</a>
-                    <span class="swiper-slide tag tag-btn-close hidden">Свернуть</span>
+                    <span class="tag tag-btn-close hidden">Свернуть</span>
                 </div>
             </div>
             <span class="tag tag-btn-more">+ Еще 20</span>
