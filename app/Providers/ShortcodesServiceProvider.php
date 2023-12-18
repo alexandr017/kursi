@@ -16,6 +16,8 @@ use App\Shortcodes\Cards\MaxDuration;
 use App\Shortcodes\Cards\MinCost;
 use App\Shortcodes\Cards\MaxCost;
 
+use App\Shortcodes\CodeLibFix\CodeLibFix;
+
 class ShortcodesServiceProvider extends ServiceProvider
 {
     /**
@@ -44,7 +46,9 @@ class ShortcodesServiceProvider extends ServiceProvider
         Shortcode::register('min_duration', MinDuration::class);
         Shortcode::register('max_duration', MaxDuration::class);
         Shortcode::register('min_cost', MinCost::class);
+
         Shortcode::register('max_cost', MaxCost::class);
+        Shortcode::register('code_lib_fix', CodeLibFix::class);
 
 
     }
