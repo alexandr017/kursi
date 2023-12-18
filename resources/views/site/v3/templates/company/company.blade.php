@@ -1,6 +1,4 @@
-<?php
-//$ampLink = linkToAMP();
-?>
+<?php global $c; $c = $company->coursesStructuredData;?>
 @extends('site.v3.layouts.main')
 @section ('title', Shortcode::compile($company->title))
 @section ('og_title', Shortcode::compile($company->h1))
