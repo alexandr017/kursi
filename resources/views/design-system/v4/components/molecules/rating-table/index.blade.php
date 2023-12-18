@@ -115,7 +115,7 @@ includeComponent('components/molecules/rating-table');
             </div>
         </div>
 
-        <div class="rating-table-block pt-4">
+        <div class="rating-table-block">
             <h2 class="rating-table_title">Бесплатные курсы по UX/UI-дизайну</h2>
             <div class="rating-table-wrapper">
                 <table class="rating-table">

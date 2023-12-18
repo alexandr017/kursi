@@ -163,7 +163,7 @@
 .card-review-md_body-text.short::after  {
     display: none;
 }
-.card-review-md_btn {
+.btn.card-review-md_btn {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -259,7 +259,7 @@
 .card-review-md.open .card-review-md_label {
     order: 5;
 }
-.btn-close-review {
+.btn.btn-close-review {
     order: 3;
     align-self: baseline;
     margin-left: auto;

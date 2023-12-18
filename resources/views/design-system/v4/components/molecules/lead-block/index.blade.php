@@ -5,6 +5,8 @@ includeComponent('components/molecules/lead-block');
 {{--<div class="container">--}}
 {{--    start lead-block --}}
 
+<div class="lead-block_wrapper">
+    <h1 class="h1 lead-block_title">Курсы UX/UI дизайна</h1>
     <div class="lead-block">
         <div class="lead-block_header">
             <div class="lead-block_header-text h-body-md">
@@ -27,6 +29,7 @@ includeComponent('components/molecules/lead-block');
             </button>
         </div>
     </div>
+</div>
 
 {{-- end lead-block --}}
 {{--</div>--}}

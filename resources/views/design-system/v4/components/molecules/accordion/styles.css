@@ -1,3 +1,11 @@
+.faq-block {
+    width: 100%;
+}
+
+.faq_title {
+    margin-bottom: var(--spacing-x8, 32px);
+}
+
 .accordion-item {
     border-radius: 12px;
     padding: 0 24px;
@@ -69,7 +77,25 @@ summary {
     }
 }
 
+.panel ul,
+.panel ol {
+    margin: 0 0 0 13px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-x2, 8px);
+}
+
+.panel ul li,
+.panel ol li {
+    width: 100%;
+}
+
 @media screen and (max-width: 1023px) {
+    .faq_title {
+        margin-bottom: var(--spacing-x6, 24px);
+    }
+
     .accordion-item {
         padding: 0 20px;
         border-radius: 10px;
@@ -83,6 +109,10 @@ summary {
 }
 
 @media screen and (max-width: 767px) {
+    .faq_title {
+        margin-bottom: var(--spacing-x5, 20px);
+    }
+
     .accordion-item {
         padding: 0 16px;
         border-radius: 8px;

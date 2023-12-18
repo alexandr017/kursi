@@ -1,5 +1,11 @@
+.top-links-sort {
+    display: flex;
+    gap: var(--spacing-x5, 20px);
+    width: 100%;
+}
+
 .top-links {
-    max-width: 1019px;
+    max-width: calc(100% - 245px);
     display: flex;
     gap: 8px;
 }
@@ -50,7 +56,15 @@
     }
 }
 
+
 @media screen and (max-width: 1023px){
+    .top-links-sort {
+        display: flex;
+        gap: var(--spacing-x5, 20px);
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
     .top-links {
         max-width: 100%;
         position: relative;
@@ -58,10 +72,13 @@
     }
 
     .top-links-wrapper {
-        position: absolute;
-        left: 0;
-        top: 0;
+        /*position: absolute;*/
+        /*left: 0;*/
+        /*top: 0;*/
         max-width: calc(100vw - 24px);
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
     }
 
     .slider-wrapper {

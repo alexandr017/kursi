@@ -162,7 +162,7 @@ function updateFilterCounter(operator = null){
             window.filterCounter--;
             break;
     }
-    
+
     if(window.filterCounter === 0){
         filterCounter.innerHTML = '';
         filterCounter.closest('.btn-filter').classList.remove('success');
@@ -177,9 +177,9 @@ function updateFilterCounter(operator = null){
     }
 }
 
-// при ширине эрана меньше 767 - мобильный дизайн для фильтра
+// при ширине эрана меньше 1024 - мобильный дизайн для фильтра
 function checkMobileFilterDesign(filterList) {
-    window.isMobScreen = document.documentElement.clientWidth <= 767;
+    window.isMobScreen = document.documentElement.clientWidth <= 1024;
     // функция изменения
 
     if (window.isMobScreen) {

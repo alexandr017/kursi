@@ -1,5 +1,13 @@
+.lead-block_wrapper {
+    margin-bottom: 52px;
+}
+
 .lead-block {
     max-width: 660px;
+}
+
+.lead-block_title {
+    margin-bottom: var(--spacing-x4, 16px);
 }
 
 .lead-block_header {
@@ -30,6 +38,14 @@
 }
 
 @media screen and (max-width: 767px) {
+    .lead-block_wrapper {
+        margin-bottom: 32px;
+    }
+
+    .lead-block_title {
+        margin-bottom: var(--spacing-x2, 8px);
+    }
+
     .lead-block_header-text {
         font-size: 0.9375rem;
     }

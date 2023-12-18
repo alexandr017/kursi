@@ -1,3 +1,14 @@
+.rating-tables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+}
+
+.rating-table-block {
+    overflow: hidden;
+}
+
 .rating-table-wrapper {
     margin-top: var(--spacing-x8, 32px);
 }
@@ -97,6 +108,17 @@
 }
 
 @media screen and (max-width: 1023px) {
+    .rating-tables {
+        gap: 32px;
+        width: calc(100vw - 24px);
+    }
+
+    .rating-table-block {
+        width: calc(100vw - 24px);
+        overflow-x: scroll;
+    }
+
+
     .rating-table-wrapper {
         overflow-x: auto;
         margin-top: var(--spacing-x6, 24px);

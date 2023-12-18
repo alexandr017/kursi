@@ -1,3 +1,9 @@
+.breadcrumbs-block {
+    margin-top: 76px;
+    padding-top: 20px;
+    margin-bottom: 32px;
+}
+
 .breadcrumbs {
     display: flex;
     gap: 4px;
@@ -5,4 +11,17 @@
 
 .breadcrumbs_link:last-of-type svg {
     display: none;
+}
+
+@media screen and (max-width: 1023px) {
+    .breadcrumbs-block {
+        margin-top: 60px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .breadcrumbs-block {
+        padding-top: 16px;
+        margin-bottom: 20px;
+    }
 }
