@@ -1,6 +1,6 @@
 @extends('design-system.v4.templates.layout')
-@section('title', 'Дизайн система - Шаблон "' . $templateName . '"')
-@section('h1', 'Дизайн система - Шаблон "' . $templateName . '"')
+{{--@section('title', 'Дизайн система - Шаблон "' . $templateName . '"')--}}
+{{--@section('h1', 'Дизайн система - Шаблон "' . $templateName . '"')--}}
 
 @section('content')
 
