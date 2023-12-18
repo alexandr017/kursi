@@ -8,6 +8,6 @@ class TestPageController extends Controller
 {
     public function index()
     {
-        return view('site.v4.templates.test.test');
+        return view('design-system.v4.templates.test.index');
     }
 }
