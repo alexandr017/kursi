@@ -38,7 +38,7 @@ class Listing extends Model
 
     protected $fillable = [
         'parent_id', 'name', 'photo', 'title', 'description', 'slug', 'meta_description', 'meta_title', 'h1',
-        'breadcrumbs', 'lead', 'content', 'author_id', 'rating_value', 'rating_count', 'rating_sum', 'status'];
+        'breadcrumbs', 'lead', 'content', 'faq', 'author_id', 'rating_value', 'rating_count', 'rating_sum', 'status'];
 
     const STATUS_ACTIVE = 1;
     const STATUS_INACTIVE = 0;
@@ -67,6 +67,11 @@ class Listing extends Model
     public function author(): BelongsTo
     {
         return $this->belongsTo(Employee::class, 'author_id');
+    }
+
+    public function similars(): HasMany
+    {
+        return $this->hasMany(ListingSimilar::class, 'listing_id');
     }
 
     public function childes(): HasMany

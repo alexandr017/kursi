@@ -8,6 +8,7 @@ use App\Models\Courses\CourseTag;
 use App\Models\History\History;
 use App\Models\Listing\Listing;
 use App\Models\Listing\ListingCourse;
+use App\Models\Listing\ListingSimilar;
 use App\Models\PostComments\PostComment;
 use App\Models\Tags\Tag;
 use Carbon\Carbon;
@@ -17,6 +18,7 @@ use App\Models\Urls\Url;
 use App\Models\Team\Employee;
 use App\Models\Companies\Company;
 use Illuminate\Support\Collection;
+use League\Csv\Reader;
 use Str;
 use Symfony\Component\DomCrawler\Crawler;
 use Throwable;
@@ -848,6 +850,191 @@ $company->h1";
             //}
             //$_listing =
         }
+
+    }
+
+    public function coursesActualization()
+    {
+        $csvFilePath = storage_path('/import-14-11/courses-actualizations.csv');
+        $csv = Reader::createFromPath($csvFilePath, 'r');
+        $data = $csv->getRecords();
+
+        $allData  = [];
+        $tagsItems = [];
+
+        foreach ($data as  $key => $datum) {
+            if ($key == 0 || $datum['0'] == '') {
+                continue;
+            }
+
+            if ($datum['49'] != '') {
+                $id = $datum['0'];
+                $tags  = explode(',', $datum['49']);
+
+                foreach ($tags as $tag) {
+                    if ($tag == ' ' || $tag == '') {
+                        continue;
+                    }
+
+                    $tagsItems[] = [
+                        'course_id' => $id,
+                        'tag_id' => $tag,
+                    ];
+                }
+            }
+
+            $newItem = [
+                'id' => $datum['0'],
+                'title' => $datum['1'],
+                'company_id' => $datum['2'],
+                'external_id' => $datum['3'] == '' ? null : $datum['3'],
+                'statistics_link' => $datum['4'],
+                'affiliate_link' => $datum['5'],
+                'direct_link' => $datum['6'],
+                'status' => (int)$datum['7'],
+                'is_popular' => (int)$datum['8'],
+                'is_best' => (int)$datum['9'],
+                'has_promotion' => (int)$datum['10'],
+                'duration' => (int)$datum['11'],
+                'duration_type' => $datum['12'],
+                'cost' => (int)$datum['13'],
+                'sale_cost' => (int)$datum['14'],
+                'sale_value' => (int)$datum['15'],
+                'payment_value' => (int)$datum['16'],
+                'currency' => $datum['17'],
+                'payment_type' => $datum['18'],
+                'is_cost_by_query' => (int)$datum['19'],
+                'reviews_count' => (int)$datum['20'],
+                'installment_period' => (int)$datum['21'],
+                'installment_payment' => (int)$datum['22'],
+                'duration_in_hours' => (int)$datum['23'],
+                'created_at' => $datum['24'] == '' ? Carbon::now(): $datum['24'],
+                'updated_at' => $datum['25'] == ''  ? null : $datum['25'],
+                'deleted_at' => $datum['26'] == ''  ? null : $datum['26'],
+                'old_id' => $datum['27'] == '' ? null : $datum['27'],
+                'direction' => $datum['29'] == 'Не определено' ? null : (int)$datum['29'],
+                'complexity' => $datum['31'] == 'Не в списке' ? null : (int)$datum['31'],
+                'learning_type' => $datum['33'] == 'Не в списке' ? null : (int)$datum['33'],
+                'format_learning_type' => $datum['35'] == 'Не в списке' ? null : (int)$datum['35'],
+                'chart' => $datum['37'] == 'Не в списке' ? null : (int)$datum['37'],
+                'employment' => $datum['39'] == 'Не в списке' ? null : (int)$datum['39'],
+                'document_type' => $datum['41'] == 'Не в списке' ? null : (int)$datum['41'],
+                'document' => $datum['42'] == 'Есть' ? 1 : 0,
+                'access' => $datum['43'] == 'Не в списке' ? null : (int)$datum['43'],
+                'tools' => $datum['44'] == '' ? null : $datum['44'],
+                'portfolio' => $datum['46'] == 'Не в списке' ? null : (int)$datum['46'],
+                'portfolio_project' => $datum['47'] == '' ? null : $datum['47'],
+                'description_course' => $datum['48'] == '' ? null : $datum['48'],
+                'link' => $datum['50'] == '' ? null : $datum['50'],
+                'price_request' => $datum['51'] = '' ? null : (int)$datum['51'],
+                'duration_month' => $datum['52'] == 'Неверная единица измерения' ? :  (float)str_replace(',', '.', $datum['52']),
+                'trial_period' => (bool)$datum['54'],
+                'free_status' => (bool)$datum['55'],
+
+            ];
+
+            $allData[] = $newItem;
+        }
+
+        $allData = collect($allData)->chunk(1000)->toArray();
+
+        $newTags = [
+            [
+                'id' => 1,
+                'name'  => 'Профессия',
+            ],
+            [
+                'id' => 2,
+                'name'  => 'Трудоустройство',
+            ],
+            [
+                'id' => 3,
+                'name'  => 'Сертификат',
+            ],
+            [
+                'id' => 4,
+                'name'  => 'Диплом',
+            ],
+            [
+                'id' => 5,
+                'name'  => 'Продвинутым',
+            ],
+            [
+                'id' => 6,
+                'name'  => 'Пробный период',
+            ],
+            [
+                'id' => 7,
+                'name'  => 'Начинающим',
+            ],
+            [
+                'id' => 8,
+                'name'  => 'Профпереподготовка',
+            ],
+            [
+                'id' => 9,
+                'name'  => 'Повышение квалификации',
+            ],
+            [
+                'id' => 12,
+                'name'  => 'Офлайн',
+            ],
+        ];
+
+        \DB::transaction(function () use ($allData, $tagsItems, $newTags) {
+            foreach ($allData as $iterationData) {
+                Course::query()->upsert($iterationData, 'id');
+                dump('iteration');
+            }
+
+            Tag::query()->upsert($newTags, 'id');
+
+
+            CourseTag::query()->delete();
+            CourseTag::query()->insert($tagsItems);
+        });
+    }
+
+    public function listingsSimilars()
+    {
+        $csvFilePath = storage_path('/import-14-11/listings-content.csv');
+        $csv = Reader::createFromPath($csvFilePath, 'r');
+        $data = $csv->getRecords();
+
+        foreach ($data as  $key => $datum) {
+            if ($key == 0 || $datum['0'] == '') {
+                continue;
+            }
+
+            $id = $datum['1'];
+            $similars = $datum['3'];
+            $similarsIds = explode(',', $similars);
+
+            foreach ($similarsIds as $similarId) {
+                if (!(int)$similarId) {
+                    continue;
+                }
+
+                $newData[] = [
+                    'listing_id' => $id,
+                    'similar_id' => $similarId,
+                ];
+            }
+        }
+
+        $insertData = collect($newData)->chunk(100)->toArray();
+
+        \DB::transaction(function () use ($insertData) {
+
+            foreach ($insertData as $insertDatum) {
+                try {
+                    ListingSimilar::query()->insert($insertDatum);
+                } catch (Throwable $exception) {
+                    dump($exception->getMessage());
+                    dd($insertDatum);
+                }
+            }
+        });
 
     }
 }

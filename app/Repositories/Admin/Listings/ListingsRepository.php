@@ -4,6 +4,7 @@ namespace App\Repositories\Admin\Listings;
 
 use App\Models\Courses\Course;
 use App\Models\Listing\ListingCourse;
+use App\Models\Listing\ListingSimilar;
 use DB;
 use App\Models\Listing\Listing;
 use App\Services\FakeRating\FakeRating;
@@ -132,4 +133,27 @@ class ListingsRepository
         return ListingCourse::query()->where('listing_id', $id)->get();
     }
 
+    public function getAll(): Collection
+    {
+        return Listing::query()
+            ->where('status', 1)
+            ->whereNull('listings.deleted_at')
+            ->get();
+    }
+
+    public function getSimilarsByListingId(int $id): Collection
+    {
+        return ListingSimilar::query()
+            ->where('listing_id', $id)
+            ->get();
+    }
+
+    public function syncSimilars(int $listingId, array $data): bool
+    {
+        ListingSimilar::query()->where('listing_id', $listingId)->delete();
+
+        ListingSimilar::query()->insert($data);
+
+        return true;
+    }
 }

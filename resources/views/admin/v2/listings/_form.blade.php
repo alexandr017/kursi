@@ -132,6 +132,16 @@
     <textarea class="form-control" name="content" id="content">{{$content}}</textarea>
 </div>
 
+<div class="form-group">
+    <label for="faq">Часто задаваемые вопросы </label>
+    <?php
+    $faq = old('faq')
+        ? old('faq')
+        : (isset($item) ? $item->faq : '');
+    ?>
+    <textarea class="form-control" name="faq" id="faq">{{$faq}}</textarea>
+</div>
+
 @include('admin.v2.includes.rating')
 
 'rating_sum' => [],
@@ -147,7 +157,7 @@
 @section('additional-scripts')
     @parent
     <script>
-        window.CKEDITOR_elements = ['lead', 'content'];
+        window.CKEDITOR_elements = ['lead', 'content', 'faq'];
     </script>
     <script src="/admin/modules/ckeditor/ckeditor.js"></script>
     <script src="/admin/modules/ckeditor/config.js"></script>
