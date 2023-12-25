@@ -228,6 +228,56 @@ class ListingsController extends AdminController
         return view('admin.v2.listings.courses-edit', compact('id', 'courses', 'allCourses', 'breadcrumbs'));
     }
 
+    public function listingsListForEdit(int $id) : View
+    {
+        $listings = $this->listingRepository->getSimilarsByListingId($id);
+        $allListings = $this->listingRepository->getAll();
+
+        $existedIds = $listings->pluck('similar_id');
+        foreach ($allListings as $listing) {
+            if ($existedIds->contains($listing->id)) {
+                $listing->checked = true;
+            }
+        }
+
+
+        $breadcrumbs = [
+            ['h1' => 'Листиинги', 'link' => route('admin.listings.index')],
+            ['h1' => 'Редактирование'],
+        ];
+
+        return view('admin.v2.listings.listings-ranging', compact('id', 'listings', 'allListings', 'breadcrumbs'));
+    }
+
+    public function updateListingSimilars(FormRequest $request, $id): RedirectResponse
+    {
+        $data = $request->all()['listings'] ?? [];
+
+        $dataForSave = [];
+
+        foreach ($data as $similarId) {
+            $dataForSave[] = [
+                'listing_id' => $id,
+                'similar_id' => $similarId,
+            ];
+        }
+
+        $result = DB::transaction(function() use($id, $dataForSave): bool
+        {
+            return $this->listingRepository->syncSimilars($id, $dataForSave);
+        });
+
+        if ($result) {
+            return redirect()
+                ->route('admin.listings.edit',$id)
+                ->with('flash_success', 'Верхняя перелинковка обнавлен!');
+        } else {
+            return redirect()
+                ->route('admin.listings.edit',$id)
+                ->with('flash_errors', 'Ошибка обновления верхний перелинковки !');
+        }
+    }
+
     public function updateCoursesSort(FormRequest $request, $id): RedirectResponse
     {
         $data = $request->all()['course'] ?? [];

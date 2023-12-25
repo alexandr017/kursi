@@ -30,7 +30,9 @@ class Course extends Model
     protected $fillable = ['title', 'company_id', 'external_id', 'statistics_link', 'affiliate_link', 'link', 'link_type',
         'direct_link', 'duration', 'duration_type', 'no_duration', 'cost', 'sale_cost', 'sale_value', 'payment_value', 'currency', 'payment_type',
         'is_cost_by_query', 'reviews_count', 'installment_period', 'installment_payment', 'duration_in_hours',
-        'is_popular', 'is_best', 'has_promotion', 'status', 'old_id'
+        'is_popular', 'is_best', 'has_promotion', 'status', 'old_id', 'direction', 'complexity', 'learning_type',
+        'format_learning_type', 'chart', 'employment', 'document_type', 'document', 'access', 'tools', 'portfolio',
+        'portfolio_project', 'description_course', 'price_request', 'duration_month', 'trial_period', 'free_status',
     ];
 
     public function tags(): BelongsToMany

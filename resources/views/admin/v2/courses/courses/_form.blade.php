@@ -74,6 +74,16 @@ external_id ?
 </div>
 
 <div class="form-group">
+    <label for="description_course">Описание </label>
+    <?php
+    $description_course = old('description_course')
+        ? old('description_course')
+        : (isset($item) ? $item->description_course : '');
+    ?>
+    <textarea class="form-control" name="description_course" id="description_course">{{$description_course}}</textarea>
+</div>
+
+<div class="form-group">
     <label for="statistics_link"> Ссылка Keitaro </label>
     <input type="text" class="form-control" name="statistics_link" id="statistics_link"
            @if(old('statistics_link'))
@@ -154,6 +164,19 @@ external_id ?
                    value="{{$item->duration}}"
         @endif
         @endif
+    >
+</div>
+
+<div class="form-group">
+    <label for="duration_month">Продолжительность в месяцах </label>
+    <input type="text" class="form-control" name="duration_month" id="duration_month"
+           @if(old('duration_month'))
+               value="{{old('duration_month')}}"
+           @else
+               @if(isset($item))
+                   value="{{$item->duration_month}}"
+            @endif
+            @endif
     >
 </div>
 
@@ -343,6 +366,148 @@ external_id ?
     </select>
 </div>
 
+<div class="form-group">
+    <label for="direction">Направление</label>
+    <select name="direction" id="direction" class="form-control">
+        <option value="1" @if(isset($item) && $item->direction == '1') selected @endif>Администрирование</option>
+        <option value="2" @if(isset($item) && $item->direction == '2') selected @endif>Аналитика</option>
+        <option value="3" @if(isset($item) && $item->direction == '3') selected @endif>Дизайн</option>
+        <option value="4" @if(isset($item) && $item->direction == '4') selected @endif>Иностранные языки</option>
+        <option value="5" @if(isset($item) && $item->direction == '5') selected @endif>Красота и здоровье</option>
+        <option value="6" @if(isset($item) && $item->direction == '6') selected @endif>Маркетинг</option>
+        <option value="7" @if(isset($item) && $item->direction == '7') selected @endif>Менеджмент</option>
+        <option value="8" @if(isset($item) && $item->direction == '8') selected @endif>Прикладные программы</option>
+        <option value="9" @if(isset($item) && $item->direction == '9') selected @endif>Программирование</option>
+        <option value="10" @if(isset($item) && $item->direction == '10') selected @endif>Рукоделие</option>
+        <option value="11" @if(isset($item) && $item->direction == '11') selected @endif>Саморазвитие</option>
+        <option value="12" @if(isset($item) && $item->direction == '12') selected @endif>Спорт</option>
+        <option value="13" @if(isset($item) && $item->direction == '13') selected @endif>Творчество и контент</option>
+        <option value="14" @if(isset($item) && $item->direction == '14') selected @endif>Финансы</option>
+        <option value="15" @if(isset($item) && $item->direction == '15') selected @endif>Другое</option>
+        <option value="16" @if(isset($item) && $item->direction == '16') selected @endif>Для детей </option>
+        <option value="17" @if(isset($item) && $item->direction == '17') selected @endif>Бесплатные</option>
+        <option value='' @if(isset($item) && $item->direction == null) selected @endif>Не определено</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="complexity">Сложность</label>
+    <select name="complexity" id="complexity" class="form-control">
+        <option value="1" @if(isset($item) && $item->complexity == '1') selected @endif>Не определено</option>
+        <option value="2" @if(isset($item) && $item->complexity == '2') selected @endif>Начинающим</option>
+        <option value="3" @if(isset($item) && $item->complexity == '3') selected @endif>Продвинутым</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="learning_type">Тип обучения</label>
+    <select name="learning_type" id="learning_type" class="form-control">
+        <option value="1" @if(isset($item) && $item->learning_type == '1') selected @endif>Вебинар</option>
+        <option value="2" @if(isset($item) && $item->learning_type == '2') selected @endif>Курс</option>
+        <option value="3" @if(isset($item) && $item->learning_type == '3') selected @endif>Профессия</option>
+        <option value="4" @if(isset($item) && $item->learning_type == '4') selected @endif>Повышение квалификации</option>
+        <option value="5" @if(isset($item) && $item->learning_type == '5') selected @endif>Профпереподготовка</option>
+        <option value="" @if(isset($item) && $item->learning_type == null) selected @endif>Не в списке</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="format_learning_type">Формат обучения</label>
+    <select name="format_learning_type" id="format_learning_type" class="form-control">
+        <option value="1" @if(isset($item) && $item->format_learning_type == '1') selected @endif>В записи</option>
+        <option value="2" @if(isset($item) && $item->format_learning_type == '2') selected @endif>Онлайн</option>
+        <option value="3" @if(isset($item) && $item->format_learning_type == '3') selected @endif>Офлайн</option>
+        <option value="" @if(isset($item) && $item->format_learning_type == null) selected @endif>Не в списке</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="chart">График</label>
+    <select name="chart" id="chart" class="form-control">
+        <option value="1" @if(isset($item) && $item->chart == '1') selected @endif>не определено</option>
+        <option value="2" @if(isset($item) && $item->chart == '2') selected @endif>Есть расписание</option>
+        <option value="3" @if(isset($item) && $item->chart == '3') selected @endif>Свободный график</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="employment">Трудоустройство</label>
+    <select name="employment" id="employment" class="form-control">
+        <option value="1" @if(isset($item) && $item->employment == '1') selected @endif>Нет</option>
+        <option value="2" @if(isset($item) && $item->employment == '2') selected @endif>Гарантия трудоустройства</option>
+        <option value="3" @if(isset($item) && $item->employment == '3') selected @endif>Помощь в трудоустройстве</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="document_type">Документ об окончание</label>
+    <select name="document_type" id="document_type" class="form-control">
+        <option value="1" @if(isset($item) && $item->document_type == '1') selected @endif>Нет</option>
+        <option value="2" @if(isset($item) && $item->document_type == '2') selected @endif>Сертификат</option>
+        <option value="3" @if(isset($item) && $item->document_type == '3') selected @endif>Диплом</option>
+        <option value="4" @if(isset($item) && $item->document_type == '4') selected @endif>Диплом государственного образца</option>
+        <option value="5" @if(isset($item) && $item->document_type == '5') selected @endif>Удостоверение о повышении квалификации</option>
+        <option value="6" @if(isset($item) && $item->document_type == '6') selected @endif>Диплом о профессиональной переподготовке</option>
+        <option value="7" @if(isset($item) && $item->document_type == '7') selected @endif>Удостоверение о повышении квалификации и диплом о прохождении курса</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="access">Доступ после прохождения</label>
+    <select name="access" id="access" class="form-control">
+        <option value="0" @if(isset($item) && ($item->access == '0' || $item->access == null )) selected @endif>Нет</option>
+        <option value="1" @if(isset($item) && $item->access == '1') selected @endif>Есть</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="portfolio">Портфолио</label>
+    <select name="portfolio" id="portfolio" class="form-control">
+        <option value="0" @if(isset($item) && ($item->portfolio == '0' || $item->portfolio == null )) selected @endif>Нет</option>
+        <option value="1" @if(isset($item) && $item->portfolio == '1') selected @endif>Есть</option>
+    </select>
+</div>
+
+
+<div class="form-group">
+    <label for="trial_period">Пробный период</label>
+    <select name="trial_period" id="trial_period" class="form-control">
+        <option value="0" @if(isset($item) && ($item->trial_period == '0' || $item->trial_period == null )) selected @endif>Нет</option>
+        <option value="1" @if(isset($item) && $item->trial_period == '1') selected @endif>Есть</option>
+    </select>
+</div>
+
+
+<div class="form-group">
+    <label for="free_status">Бесплатный </label>
+    <select name="free_status" id="free_status" class="form-control">
+        <option value="0" @if(isset($item) && ($item->free_status == '0' || $item->trial_period == null )) selected @endif>Нет</option>
+        <option value="1" @if(isset($item) && $item->free_status == '1') selected @endif>Да</option>
+    </select>
+</div>
+
+
+<div class="form-group">
+    <label for="tools"> Инструменты </label>
+    <?php
+    $tools = old('tools')
+        ? old('tools')
+        : (isset($item) ? $item->tools : '');
+    ?>
+    <textarea class="form-control" name="tools" id="tools">{{$tools}}</textarea>
+</div>
+
+<div class="form-group">
+    <label for="portfolio_project"> Портфолио проект </label>
+    <?php
+    $portfolio_project = old('portfolio_project')
+        ? old('portfolio_project')
+        : (isset($item) ? $item->portfolio_project : '');
+    ?>
+    <textarea class="form-control" name="portfolio_project" id="portfolio_project">{{$portfolio_project}}</textarea>
+</div>
+
+
 
 
 <div class="form-group">
@@ -352,3 +517,12 @@ external_id ?
         <option value="0" @if(isset($item) && $item->status == 0) selected @endif>Отключен</option>
     </select>
 </div>
+
+@section('additional-scripts')
+    @parent
+    <script>
+        window.CKEDITOR_elements = ['tools', 'portfolio_project', 'description_course'];
+    </script>
+    <script src="/admin/modules/ckeditor/ckeditor.js"></script>
+    <script src="/admin/modules/ckeditor/config.js"></script>
+@endsection
