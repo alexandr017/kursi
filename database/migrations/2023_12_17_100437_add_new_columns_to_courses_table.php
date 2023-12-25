@@ -54,6 +54,8 @@ return new class extends Migration
             $table->dropColumn('description_course');
             $table->dropColumn('price_request');
             $table->dropColumn('duration_month');
+            $table->dropColumn('free_status');
+            $table->dropColumn('trial_period');
             $table->string('title')->change();
         });
     }
