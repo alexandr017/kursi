@@ -58,4 +58,9 @@ class Company extends Model
         return $this->hasOne(Url::class, 'section_id','id')
             ->where('section_type', self::SECTION_TYPE);
     }
+
+    public function incrementRatingCount()
+    {
+        $this->rating_count ++;
+    }
 }

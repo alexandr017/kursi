@@ -158,4 +158,14 @@ class CompanyRepository implements CompanyRepositoryInterface
                 $page
             );
     }
+
+
+    public function saveCompany(Company $company): bool
+    {
+        if (!$company->save()) {
+            throw new SavingErrorException();
+        }
+
+        return true;
+    }
 }

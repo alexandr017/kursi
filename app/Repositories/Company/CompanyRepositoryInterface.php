@@ -19,4 +19,5 @@ interface CompanyRepositoryInterface
     public function getPopularReviews(): Collection;
     public function getPopularReviewsForStructuredData(): Collection;
     public function getBySearch(string $q, int $page = 1): LengthAwarePaginator;
+    public function saveCompany(Company $company): bool;
 }
